@@ -1,0 +1,357 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros}
+\linespread{1.25}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\KM{{\rm KM}}
+
+\title{Sphere algebras and higher loop algebras}
+
+\begin{document}
+\maketitle
+
+\def\PD{{\rm PD}}
+\def\Bar{\overline}
+
+We have defined the Kac-Moody factorization algebra as a universal holomorphic factorization algebra in any dimension. In this section we focus on the restriction of the factorization algebra to two complex manifolds of dimension $d$, $X = \CC^d \setminus \{0\}$ and $X = (\CC \setminus \{0\})^d$. In each case we show that the structure ...
+
+\section{The higher sphere algebra}
+
+\brian{Facts about the Dolbeault cohomology of the higher annulus. It is not Stein! Recall the Jouanolou model, denoted $A_d$.}
+%Recall, the polydisk centered at $z \in \CC^d$ of radius $r$ was defined to be the following open subset 
+%\ben
+%\PD^d_{r}(z) = \{(w_1,\ldots,w_d)\in \CC^d \; | \; |w_i - z_i| < r\} \subset \CC^d .
+%\een
+%For $z \in \CC^d$, and $0 < r < R < \infty$ define the following open subset
+%\ben
+%A^d_{r<R}(z) = \PD^d_R (z) \setminus \Bar{\PD^d_r(z)}
+%\een
+%We think of this as a model for the $d$-dimensional annulus. When $z = 0$ we simply denote this by $A^{d}_{r<R}$. 
+%
+%We will need a convenient model for the Dolbeault complex $\Omega^{0,*}(A^d_{r<R})$ of this $d$-dimensional annulus. For $d=1$ the $\dbar$-cohomology of $A^d_{r<R}$ is concentrated in degree zero (in fact, any open subset of $\CC$ is Stein). 
+%
+%For $d > 1$, the $\dbar$-cohomology of $A^{d}_{r<R}$ is concentrated in degrees $0$ and $d-1$. In degree zero, of course, $H^0_{\dbar}(A^d_{r<R})$ is identified with holomorphic functions on $A^{d}_{r<R}$. In degree $d-1$ ...
+%
+%There is a natural action of the $d$-dimensional torus $(S^1)^d = S^1 \times \cdots \times$ on $A_{r<R}$ given by rotating each coordinate:
+%\ben
+%(\lambda_1,\ldots,\lambda_d) \cdot (z_1,\ldots,z_d) = (\lambda_1 z_1,\ldots,\lambda_d z_d) .
+%\een
+%We obtained an induced action of $S^1$ via the diagonal embedding $S^1 \to S^1 \times \cdots \times S^1$. This induces an action on the Dolbeault complex of $A^d_{r<R}$. Let
+%\ben
+%\left(\Omega^{0,*}(A^{d}_{r<R})\right)^{(k)} \subset \Omega^{0,*}(A^{d}_{r<R})
+%\een
+%denote the weight $k$ subspace.
+
+Consider the radial projection map
+\ben
+\rho : \CC^d \setminus 0 \to \RR_{>0}
+\een
+sending $z = (z_1, \ldots, z_d)$ to $|z| = \sqrt{|z_1|^2 + \cdots + |z_d|^2}$. 
+
+\brian{This is essentially in KHF, should we recall it?}
+
+\begin{lem}
+There is a map of commutative dg algebras
+\ben
+j : A_d \to \Omega^{0,*}(\CC^d \setminus 0) 
+\een
+that induces a quasi-isomorphism $A_d \simeq \oplus_{k \in \ZZ} \Omega^{0,*}(\CC^d \setminus 0)^{(k)}$. 
+\end{lem}
+
+Note that $j$ induces a map of commutative dg algebras $j : A_d \to \Omega^{0,*}(\rho^{-1}(I))$ where $I \subset \RR_{>0}$ is any interval. If $a \in A_{d}$ we will denote the resulting element in the Dolbeault complex by $a(z) := j(a)$.
+
+\subsection{The case of zero level}
+
+\def\pr{{\rm pr}}
+\def\id{{\rm id}}
+
+\brian{only look at annular part}
+
+First we will consider the higher Kac-Moody factorization algebra on $\CC^d$ ``at level zero". That is, the factorization algebra $\KM^{\CC^d}_{\fg, 0}$.
+
+We obtain a factorization algebra on $\RR_{>0}$ via pushing forward the higher Kac-Moody factorization algebra along the radial projection map $\rho_* \left(\KM^{\CC^d \setminus 0}_{\fg,0}\right)$. Explicitly, to an open set $I \subset \RR_{>0}$ this factorization algebra assigns the dg vector space
+\ben
+{\rm C}^{\rm Lie}_*\left(\Omega_c^{0,*}(\rho^{-1}(I)) \tensor \fg)\right) .
+\een
+When $I$ is an interval, the subset $\rho^{-1}(I) \subset \CC^{d}$ is a higher dimensional annulus as mentioned above. It is homeomorphic to $S^{2d-1} \times I$. 
+
+We wish to compare this one-dimensional factorization algebra to the higher current Lie algebra $A_d \tensor \fg$, or more accurately, its universal enveloping algebra $U(A_d \tensor \fg)$. The universal enveloping algebra has the structure of a dg associative algebra and so defines a factorization algebra on any one-manifold. Let $U(A_d \tensor \fg)^{\rm fact}$ be the corresponding factorization algebra on the manifold $\RR_{>0}$.
+
+Let $I \subset \RR_{>0}$ be an open subset. There is the natural map $\rho^* : \Omega^*_c(I) \to \Omega^*_c(\rho^{-1}(I))$ given by pulling back differential forms. We can post-compose this with the natural projection ${\rm pr}_{\Omega^{0,*}} : \Omega^*_c \to \Omega^{0,*}_c$ to obtain a map of commutative algebras $\pr_{\Omega^{0,*}} \circ \rho^* : \Omega^*_c(I) \to \Omega^{0,*}_c(\rho^{-1}(I))$. Using the map $j$ defined in Section \brian{ref} we obtain a map of commutative dg algebras
+\ben
+\begin{array}{cccc}
+\Phi(I) = (\pr_{\Omega^{0,*}} \circ \rho^*) \tensor j : & \Omega^*_c(I) \tensor A_d & \to & \Omega^{0,*}_c\left((\rho^{-1}(I)\right) \\
+& \varphi \tensor a & \mapsto & \left((\pr_{\Omega^{0,*}} \circ \rho^*) \varphi\right) \wedge j(a) 
+\end{array}
+\een
+Since this is a map of commutative dg algebras it defines a map of dg Lie algebras
+\ben
+\Phi(I) \tensor \id_{\fg} :  (\Omega^*_c(I) \tensor A_d) \tensor \fg = \Omega^*_c(I) \tensor (A_d \tensor \fg) \to \Omega^{0,*}(\rho^{-1}(I)) \tensor \fg 
+\een
+which maps $\varphi \tensor a \tensor X \mapsto \Phi(\varphi \tensor a) \tensor X$. \brian{Explicitly}... . We will drop the $\id_{\fg}$ from the notation and will denote this map simply by $\Phi (I)$. Note that $\Phi(I)$ is compatible with inclusions of open sets, hence extends to a map of cosheaves of dg Lie algebras that we will call $\Phi$.  
+
+
+\begin{prop} The map $\Phi$ extends to a map of factorization Lie algebras
+\ben
+\Phi : \Omega^*_{\RR_{>0},c} \tensor (A_d \tensor \fg) \to \rho_*\left(\Omega^{0,*}_{\CC^d \setminus 0,c} \tensor \fg\right).
+\een 
+Hence, it defines a map of factorization algebras
+\ben
+{\rm C}_*(\Phi) : \left(U (A_d \tensor \fg)\right)^{fact} \to \rho_*\left(\KM^{\CC^d \setminus 0}_{\fg,0} \right) .
+\een
+\end{prop}
+
+\subsection{The case of non-zero level}
+
+\begin{thm} There is a map of factorization algebras on $\RR_{>0}$
+\ben
+\left(U \Hat{\fg}_{d,\theta} \right)^{fact} \to \rho_*\left(\KM^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right)  .
+\een
+Moreover, its image is quasi-isomorphic to the subfactorization algebra consisting of the $S^1$-eigenspaces
+\ben
+\cA_{d, \fg,\theta} := \bigoplus_{k \in \ZZ} \rho_*\left(\KM^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) ^{(k)} \subset \rho_*\left(\KM^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) .
+\een
+\end{thm}
+
+\begin{proof}
+To prove the result we will construct a sequence of maps of factorization Lie algebras on $\RR_{>0}$:
+\ben
+\xymatrix{
+& \sG_1 \ar[dr]^-{\Phi_1} & & \sG_2 \\
+\sG_0 \ar[ur]^-{\simeq}_{\Phi_0} & & \sG_1' \ar[ur]_{\Phi_2} & .
+}
+\een
+We will show that the factorization envelope of $\sG_0$ is equivalent to the factorization algebra $\left(U \Hat{\fg}_{d,\theta}\right)^{fact}$. Moreover, the factorization envelope of $\sG_2$ is the push-forward $\rho_* \KM_{\fg,\theta}$. Hence, the desired map of factorization algebras is produced by applying the factorization envelope functor to the above composition of factorization Lie algebras. 
+
+First, we introduce the factorization Lie algebra. To an open set $I \subset \RR$, it assigns the dg Lie algebra $\sG_0(I) = \Omega^*_{c}(I) \tensor \Hat{\fg}_{d,\theta}$, where $\Hat{\fg}_{d,\theta}$ is the central extension from \brian{ref}. The differential and Lie bracket are determined by the fact that we are tensoring a commutative dg algebra with a dg Lie algebra. A slight variant of Proposition 3.4.0.1 in \cite{CG1}, which shows that the one-dimensional factorization envelope of an ordinary Lie algebra produces its ordinary universal enveloping algebra, shows that there is a quasi-isomorphism of factorization algebras on $\RR$,
+\ben
+(U \Hat{\fg}_{d,\theta})^{fact} \xrightarrow{\simeq} {\rm C}^{\rm Lie}_*(\sG_0) .
+\een
+The factorization Lie algebra $\sG_0$ is a central extension of the factorization Lie algebra $\Omega^*_{\RR,c} \tensor (A_d \tensor \fg)$ by the trivial module $\Omega^*_c \oplus \CC \cdot K$. Indeed, the cocycle determining the central extension is given by
+\ben
+\theta_0 (\varphi_0 \alpha_0,\ldots,\varphi_d \alpha_d) = (\varphi_0 \wedge \cdots \wedge \varphi_d) \theta_{A_d}(\alpha_1,\ldots,\alpha_d) .
+\een 
+The factorization Lie algebra $\Omega^*_{\RR,c} \tensor (A_d \tensor \fg)$ is the compactly supported sections of the local Lie algebra $\Omega^*_{\RR} \tensor (A_d \tensor \fg)$ and this cocycle determining the extension is a local cocycle. 
+
+Next, we define the factorization dg Lie algebra $\sG_1$ on $\RR$. This is also obtained as a central extension of the factorization Lie algebra $\Omega^{*}_{\RR,c} \tensor (A_d \tensor \fg)$: 
+\ben
+0 \to \CC \cdot K [-1] \to \sG_1 \to \Omega^{*}_{\RR,c} \tensor (A_d \tensor \fg) \to 0
+\een
+determined by the following cocycle. For an open interval $I$ write $\varphi_i \in \Omega^*_c(I)$, $\alpha_i\in A_d \tensor \fg$. The cocycle is defined by
+\be\label{cocycle 1}
+\theta_1 (\varphi_0 \alpha_0, \ldots, \varphi_d \alpha_d) =  \left(\int_{I} \varphi_0 \wedge \cdots \varphi_d \right) \theta_{A_d} (\alpha_0,\ldots,\alpha_d)
+\ee
+Recall, if we write $\alpha_i = a_i X_i$ for $a_i \in A_d, X_i \in \fg$ the cocycle $\theta_{A_d}$ is given by 
+\ben
+\theta_{A_d} (a_0 X_0, \ldots, \ldots, a_dX_d) = \Reszero \left(a_0 \wedge \partial a_1 \wedge \cdots \wedge \partial a_d \right) \theta(X_0,\ldots,X_d) .
+\een
+The functional $\theta_1$ determines a local cocycle in $\cloc^*\left(\Omega^*_\RR \tensor (A_d \tensor \fg)\right)$ of degree one. 
+
+\def\dR{{\rm dR}}
+
+We now define a map of factorization Lie algebras $\Phi_0 : \sG_0 \to \sG_1$. On and open set $I \subset \RR$, we define the map $\Phi_0(I) : \sG_0(I) \to \sG_1(I)$ by
+\ben
+\Phi_0(I)(\varphi \alpha, \psi K) = \left(\varphi \alpha, \int \psi \cdot K\right) .
+\een
+For a fixed open set $I \subset \RR$, the map $\Phi_0$ fits into the commutative diagram of short exact sequences
+\ben
+\xymatrix{
+0 \ar[r] & \Omega^*_c(I) \tensor \CC \cdot K  \ar[d]^-{\int}_-{\simeq} \ar[r] & \sG_0(I) \ar[d]^-{\Phi_0(I)} \ar[r] & \Omega^*_c(I) \tensor (A_d \tensor \fg) \ar@{=}[d] \ar[r] & 0 \\
+0 \ar[r] & \CC \cdot K [-1] \ar[r] & \sG_1(I) \ar[r] & \Omega^*_c(I) \tensor (A_d \tensor \fg) \ar[r] & 0 .
+}
+\een
+To see that $\Phi_0(I)$ is a map of dg Lie algebras we simply observe that the cocycles determining the central extensions are related by $\theta_1 = \int \circ \; \theta_0$, where $\int : \Omega^*_c(I) \to \CC$ as in the diagram above. Since $\int$ is a quasi-isomorphism, the map $\Phi_0(I)$ is as well. It is clear that as we vary the interval $I$ we obtain a quasi-isomorphism of factorization Lie algebras $\Phi_0 : \sG_0 \xto{\simeq} \sG_1$. 
+
+%To verify that this is a map of factorization Lie algebras, it suffices to show that for each $I \subset \RR$, $\Phi_1$ determines a map of cocommutative coalgebras 
+%\ben
+%\Phi_1 : {\rm C}^{\rm Lie}_*\left(\Omega^*_c(I) \tensor \Hat{\fg}_{d,\theta}\right) \to {\rm C}^{\rm Lie}_*(\sG_1(I)) .
+%\een 
+%Clearly, modulo the central element $K$ the Lie brackets are identical. Thus, we need to show that the cocycles determining the central extensions are compatible. Fix $I \subset \RR$ and suppose $\varphi_0,\ldots, \varphi_d \in \Omega^*_c(I)$, $\alpha_0,\ldots,\alpha_d \in A_d \tensor \fg$. Then, the cocycle in $\Omega^*_c(I) \tensor \Hat{\fg}_{d,\theta}$ is given by
+
+We now define the factorization dg Lie algebra $\sG_1'$. Like $\sG_0$ and $\sG_0$, it is a central extension of $\Omega^*_{\RR,c} \tensor (A_d \tensor \fg)$. The cocycle determining the central extension is defined by
+\ben
+\theta_1' (\varphi_0 a_0 X_0, \ldots, \ldots, \varphi_d a_dX_d) = \theta_1(\varphi_0 a_0 X_0, \ldots, \ldots, \varphi_d a_dX_d) + \Tilde{\theta}_1(\varphi_0 a_0 X_0, \ldots, \ldots, \varphi_d a_dX_d) 
+\een
+where $\theta_1$ was defined in Equation (\ref{cocycle 1}). Before writing down the explicit formula for $\Tilde{\theta}_1$ we introduce some notation. Set
+\begin{align*}
+E & = r \frac{\partial}{\partial r} , \\
+\d \vartheta & = \sum_i \frac{\d z_i}{z_i} .
+\end{align*} 
+We view $E$ as a vector field on $\RR_{>0}$ and $\d \vartheta$ as a $(1,0)$-form on $\CC^{d} \setminus 0$. Define the functional
+\ben
+\Tilde{\theta}_1(\varphi_0 a_0 X_0,\ldots,\varphi_d a_d X_d) = \frac{1}{2} \sum_{i=1}^{d} \left( \int_I \varphi_0 (E \cdot \varphi_i) \varphi_1\cdots \Hat{\varphi_i} \cdots \varphi_{d}\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)  .
+\een
+The functional $\Tilde{\theta}$ defines a local functional in $\cloc^*\left(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg) \right)$ of cohomological degree one. One immediately checks that it is a cocycle. This completes the definition of the factorization Lie algebra $\sG_1'$. 
+
+The factorization Lie algebras $\sG_1$ and $\sG_1'$ are identical as precosheaves of vector spaces. In fact, if we put a filtration on $\sG_1$ and $\sG_1'$ where the central element $K$ has filtration degree one, then the associated graded factorization Lie algebras ${\rm Gr} \; \sG_1$ and ${\rm Gr} \; \sG_1'$ are also identical. The only difference in the Lie algebra structures comes from the deformation of the cocycle determining the extension of $\sG_1'$ given by $\Tilde{\theta}_1$. 
+
+In fact, we will show that $\Tilde{\theta}_1$ is actually an exact cocycle via the cobounding element $\eta \in \cloc^*\left(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg)\right)$ defined by
+\ben
+\eta(\varphi_0a_0X_0,\ldots,\varphi_da_dX_d) = \sum_{i=1}^d \left(\int_I \varphi_0 \left(\iota_{E} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i} \cdots \varphi_d\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)  .
+\een
+
+\begin{lem} One has $\d \eta = \Tilde{\theta}_1$, where $\d$ is the differential for the cochain complex $\cloc^*(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg))$. In particular, the factorization Lie algebras $\sG_1$ and $\sG_1'$ are quasi-isomorphic (as $L_\infty$ algebras). An explicit quasi-isomorphism is given by the $L_\infty$ map $\Phi_1 : \sG_1 \to \sG_1'$ that sends the central element $K$ to itself and an element $(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)$ to 
+\ben
+(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) + \eta(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d)\cdot K \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)) \oplus \CC \cdot K .
+\een
+\end{lem}
+
+Finally, we define the factorization Lie algebra $\sG_2$. We have already seen that the local cocycle $J(\theta) \in \cloc^*(\fg^{\CC^d})$ determines a central extension of factorization Lie algebras
+\ben
+0 \to \CC \cdot K[-1] \to \sG_{J(\theta)} \to \Omega^{0,*}_{\CC^d,c} \tensor \fg \to 0 .
+\een
+Of course, we can restrict $\sG_{J(\theta)}$ to a factorization algebra on $\CC^d \setminus 0$. The factorization algebra $\sG_2$ is defined as the pushforward of this restriction along the radial projection: $\sG_2 := \rho_* \left(\sG_{J(\theta)}|_{\CC^d \setminus 0}\right)$. 
+
+Recall the map $\Phi : \Omega^*_{\RR_{>0},c} \tensor (A_d \tensor \fg) \to \rho_*(\Omega^{0,*}_{\CC^d \setminus 0,c} \tensor \fg)$ defined in \brian{ref}. On each open set $I \subset \RR_{>0}$ we can extend $\Phi$ by the identity on the central element to a linear map $\Phi_2 : \sG_1' (I) \to \sG_2 (I)$. 
+
+\begin{lem} The map $\Phi_2 : \sG_1'(I) \to \sG_2(I)$ is a map of dg Lie algebras. Moreover, it extends to a map of factorization Lie algebras $\Phi_2 : \sG_1' \to \sG_2$. 
+\end{lem}
+\begin{proof}
+Modulo the central element $\Phi_2$ reduces to the map $\Phi$, which we have already seen is a map of factorization Lie algebras in Proposition \brian{ref}. Thus, to show that $\Phi_2$ is a map of factorization Lie algebras we need to show that it is compatible with the cocycles determing the respective central extensions. That is, we need to show that 
+\be\label{1vs2}
+\theta_1'(\varphi_0 a_0 X_0,\ldots,\varphi_d a_d X_d) = \theta_2(\Phi(\varphi_0 a_0X_0),\ldots,\Phi(\varphi_da_dX_d))
+\ee
+for all $\varphi_i a_i X_i \in \Omega^*_{c}(I) \tensor (A_d \tensor \fg)$. The cocycle $\theta_1'$ is only nonzero if one of the $\varphi_i$ inputs is a $1$-form. We evaluate the left-hand side on the $(d+1)$-tuple $(\varphi_0 \d r a_0X_0,\varphi_1 a_1 X_1,\ldots,\varphi_da_dX_d)$ where $\varphi_i \in C^\infty_c(I)$, $a_i \in A_d$, $X_i \in \fg$ for $i=0,\ldots,d$. The result is
+\bearray
+& &\label{calc1a} \left(\int_I \varphi_0 \cdots \varphi_d \d r\right) \left(\oint a_0 \partial a_1 \cdots \partial a_d\right) \theta(X_0,\ldots,X_d) \\
+& + & \label{calc1b} \frac{1}{2} \sum_{i=1}^{d} \left( \int_I \varphi_0 (E \cdot \varphi_i) \varphi_1\cdots \Hat{\varphi_i} \cdots \varphi_{d}\d r\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)
+\eearray
+We wish to compare this to the right-hand side of Equation (\ref{1vs2}). Recall that $\Phi(\varphi_0 \d r a_0 X_0) = \varphi(r) \d r a_0(z) X_0$ and $\Phi(\varphi_i a_i X_i) = \varphi(r) a_i(z) X_i$. Plugging this into the explicit formula for the cocycle $\theta_2$ we see the right-hand side of (\ref{1vs2}) is 
+\be\label{calc2}
+\left(\int_{\rho^{-1}(I)} \varphi_0(r) \d r a_0(z) \partial(\varphi_1(r) a_1(z)) \cdots \partial(\varphi_d(r) a_d(z))\right) \theta(X_0,\ldots,X_d) .
+\ee
+
+We pick out the term in (\ref{calc2}) in which the $\partial$ operators only act on the elements $a_i(z)$, $i=1,\ldots, d$. This term is of the form
+\ben
+\int_{\rho^{-1}(I)} \varphi_0(r) \cdots \varphi_d(r) \d r a_0(z) \partial(a_1(z)) \cdots \partial(a_d(z)) \theta(X_0,\ldots,X_d).
+\een 
+Separating variables we find that this is precisely the first term (\ref{calc1a}) in the expansion of the left-hand side of (\ref{1vs2}). 
+
+Now, note that we can rewrite the $\partial$-operator in terms of the radius $r$ as
+\begin{align*}
+\partial = \sum_{i=1}^d \d z_i \frac{\partial}{\partial z_i} = \sum_{i=1}^d \d z_i \zbar_i \frac{\partial}{\partial (r^2)} = \sum_{i=1}^d \d z_i \frac{r^2}{2 z_i} \frac{\partial}{\partial r} .
+\end{align*}
+
+The remaining terms in (\ref{calc2}) correspond to the expansion of
+\ben
+\partial(\varphi_1(r) a_1(z)) \cdots \partial(\varphi_d(r) a_d(z)),
+\een
+using the Leibniz rule, for which the $\partial$ operators act on at least one of the functions $\varphi_1,\ldots,\varphi_d$. In fact, only terms in which $\partial$ acts on precisely one of the functions $\varphi_1,\ldots, \varphi_d$ will be nonzero. For instance, consider the term
+\be\label{term1}
+(\partial \varphi_1) a_1(z) (\partial \varphi_2) a_2(z) \partial(\varphi_3(z) a_3(z)) \cdots \partial(\varphi_d(z) a_d(z)).
+\ee
+Now, $\partial \varphi_i(r) = \omega \frac{\partial \varphi}{\partial r}$ where $\omega$ is the one-form $\sum_i (r^2 / 2 z_i) \d z_i$. Thus, (\ref{term1}) is equal to
+\ben
+\left(\omega \frac{\partial \varphi_1}{\partial r} \right) a_1(z) \left(\omega \frac{\partial \varphi_2}{\partial r}  \right) a_2(z) \partial(\varphi_3(z) a_3(z)) \cdots \partial(\varphi_d(z) a_d(z),
+\een
+which is clearly zero as $\omega$ appears twice.
+
+We observe that terms in the expansion of (\ref{calc2}) for which $\partial$ acts on precisely one of the functions $\varphi_1,\ldots,\varphi_d$ can be written as
+\ben
+\sum_{i=1}^d \int_{\rho^{-1}(I)} \varphi_0(r)\left(r \frac{\partial}{\partial r} \varphi_i(r)\right) \varphi_1(r) \cdots \Hat{\varphi_i(r)} \cdots \varphi_d(r) \d r \frac{r}{2 z_i} \d z_i a_0(z) a_i(z) \partial a_1(z) \cdots \Hat{\partial a_i(z)} \cdots \partial a_d(z) .
+\een 
+Finally, notice that the function $z_i / 2r$ is independent of the radius $r$. Thus, separating variables we find the integral can be written as
+\ben
+\frac{1}{2} \sum_{i=1}^d \left(\int_{I} \varphi_0 \left(r \frac{\partial}{\partial r} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i } \cdots \varphi_d \d r\right) \left(\oint \frac{\d z_i}{z_i} a_0 a_i \partial a_2 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) .
+\een
+This is precisely equal to the second term (\ref{calc1b}) above. Hence, the cocycles are compatible and the proof is complete. 
+
+\end{proof}
+\end{proof}
+%We will denote by $S$ a (possibly empty) subset of $\{0,\ldots,d\}$. Let $S'$ denote its complement. Define
+%\ben
+%\Tilde{\theta}_1(\varphi_i a_i X_i) = \sum_{S} \left(\int_{I} \left(\prod_{s \in S} E \cdot \varphi_s \right) %\left(\prod_{s \in S'} \varphi\right) \right) \left(\oint ... \right)
+%\een
+
+\section{Higher loop algebras}
+We now put the Kac-Moody factorization algebra on the $d$-fold $(\CC^\times)^d$. Our main result in this section involves extracting the structure of an $E_d$ algebra from considering the nesting of ``polyannuli" in $(\CC^\times)^d$. When $d=1$, we have seen that the nesting of ordinary annuli give rise to the structure of an associative algebra. For $d > 1$, a polyannulus is a complex submanifold of the form $\AA_1 \times \cdots \times \AA_d \subset (\CC^\times)^d$ where each $\AA_i \subset \CC^\times$ is an ordinary annulus. Equivalently, a polyannulus is the complement of a closed polydisk inside of a larger open polydisk. We will see how the nesting of annuli in each component gives rise to the structure of a locally constant factorization algebra in $d$ {\em real} dimensions, and hence defines an $E_d$ algebra. 
+
+\subsection{}
+
+Define the commutative algebra 
+\ben
+B_d = \CC[z_1,z_1^{-1}] \tensor \cdots \tensor \CC[z_d,z_d^{-1}] . 
+\een 
+If $\fg$ is any Lie algebra we define the Lie algebra $L^d \fg := B_d \tensor \fg$. This is the algebraic version of the $d$-fold loop space of the Lie algebra $\fg$:
+\ben
+L(L( \cdots L(\fg)\ldots)) = {\rm Map}((S^1)^{\times d}, \fg) .
+\een
+We will write elements as $f \tensor X \in B_d \tensor \fg$ for $f = f(z_1,\ldots,f_d) \in B_d$ and $X \in \fg$. 
+
+In the commutative algebra $B_d$ there are derivations $\partial / \partial z_1, \ldots, \partial / \partial z_d$. Let $\Omega^1_{B_d} = B_d [\d z_1,\ldots, \d z_d]$ be the vector space of algebraic differentials. Similarly, define $\Omega^k_{B_d}$ by $B_d \tensor \wedge^k \CC \{\d z_1,\ldots, \d z_d\}$. There is a universal algebraic differential $\partial : B_d \to \Omega^1_{B_d}$ given in coordinates by $\partial = \sum_i \frac{\partial}{\partial z_i} \d z_i$. 
+
+We note that the space of $d$-forms $\Omega^d_{B_d}$ admits a residue map defined by taking $d$-fold iterated one-dimensional residues:
+\ben
+\oint_{|z_1| = 1} \cdots \oint_{|z_d| = 1} : \Omega^d_{B_d} \to \CC .
+\een 
+Explicitly, if $f \d z_1 \cdots \d z_d$ is a top form then
+\ben
+\oint_{|z_1| = 1} \cdots \oint_{|z_d| = 1} f \d z_1 \cdots \d z_d = (2 \pi i)^n \times \{{\rm coefficient \; of \;} z_1^{-1} \cdots z_d^{-1}\}.
+\een
+
+Given a homogenous degree $d$ invariant polynomial on $\fg$ there is a shifted extension of $L^d \fg$ that is closely related to the extension we discussed in the previous section. 
+
+\begin{prop} Given any $\theta \in \Sym^{d+1}(\fg^\vee)^\fg$ there is $(d-1)$-shifted $L_\infty$-central extension of $L^d \fg$ 
+\ben
+0 \to \CC[d-1] \to \Hat{L^d \fg}_\theta \to L^d \fg \to 0
+\een
+with brackets given by $\ell_2 = [-,-]_{L^d \fg}$ and
+\ben
+\ell_{d+1} (f_0 \tensor X_0, \cdots, f_d \tensor X_d) = \theta(X_1,\ldots, X_d) \oint_{|z_1| = 1} \cdots \oint_{|z_d| = 1} f_0 \partial f_1 \cdots \partial f_d \cdot K
+\een
+and all other brackets zero. Here, $K$ is the generator of the central part of the Lie algebra of degree $-d + 1$.
+\end{prop}
+
+
+\subsection{}
+
+Given any Lie algebra $\fh$ we can define the universal enveloping algebra $U \fh$ which is an associative. In fact, the functor $\fh \mapsto U \fh$ from Lie algebras to associative algebras is left adjoint to the forgetful functor obtained by forming the commutator in the associative algebra. The homotopical generalization of associative algebras are $E_1$-algebras which are algebras over the operad of little 1-disks. 
+
+\begin{thm}[\cite{knuds}] There is a forgetful functor $F : {\rm Alg}_{E_d} \to {\rm dgLie}_\CC$ and it admits a left adjoint
+\ben
+U_{E_d} : {\rm dgLie}_\CC \to {\rm Alg}_{E_d}
+\een
+called the $E_d$-universal enveloping algebra. If $\fh$ is an ordinary Lie algebra the $E_d$-algebra has underlying graded vector space
+\ben
+U_{E_d} (\fh) = \Sym\left(\fh[1-d]\right)  .
+\een
+\end{thm}
+
+There is an equivalence of categories between $E_d$ algebras and locally constant factorization algebras on $\RR^d$. If $A$ is an $E_d$ algebra we denote by $A^{fact}$ its associated locally constant factorization algebra on $\RR^d$. 
+
+\begin{prop} Suppose $\fh$ is a dg Lie algebra. Then, there is a quasi-isomorphism of factorization algebras on $\RR^d$:
+\ben
+\left(U_{E_d}\fh\right)^{fact} \simeq \clieu_*(\Omega^*_{c,\RR^d} \tensor \fh)
+\een
+\end{prop}
+
+\subsubsection{}
+We now explain how the higher dimensional Kac-Moody factorization algebra is related to the universal $E_d$ enveloping algebra of the Lie algebra $B_d \tensor \fg$ (and its central extension). We will consider the factorization algebra restricted to the complex manifold $(\CC^\times)^d \subset \CC^d$. Throughout this section we will denote the factorization algebra $\KM^{(\CC^\times)^d}_{\fg, \theta}$ on $(\CC^\times)^d$ simply by $\KM_{\fg,\theta}$. 
+
+Let $\vec{\rho} : (\CC^\times)^d \to (\RR_{>0})^d$ be the map sending $(z_1,\ldots,z_d) \mapsto (|z_1|, \ldots, |z_d|)$. If $I_1,\ldots,I_d \subset \RR_{>0}$ is any collection of intervals we see that $\vec{\rho}^{-1}(I_1\times \cdots \times I_d) \subset (\CC^\times)^d$ is a polyannulus. Thus, to understand the behavior of a factorization algebra $\cF$ on $(\CC^\times)^d$ with respect to the nesting of polyannuli, as discussed in the beginning of this section, it suffices to understand the factorization product of cubes of the pushforward of the factorization algebra $\vec{\rho}_* \cF$ on $(\RR_{>0})^d$. 
+
+A general factorization algebra $\cF$ on $(\CC^\times)^d$ does not define a $E_d$ algebra in the way we have just described. Indeed, even in the case of a holomorphic factorization algebra, it is reasonable to expect that the pushforward factorization algebra will be sensitive to the length of the sides of the cubes in $\RR_{>0}$. Just as in the case of the previous section, where we considered compactification along the $2d-1$ sphere in $\CC^d \setminus 0$, we will show that there is a well-behaved sub-factorization algebra that {\em is} locally constant and hence does define the structure of an $E_d$ algebra. 
+
+There is a holomorphic action of the $d$-torus $T^d = S^1 \times \cdot \times S^1$ on the complex manifold $(\CC^\times)^d$ by rotating component-wise. Hence, there is an induced action of $T^d$ on the Dolbeault complex $\Omega^{0,*}((\CC^\times)^d) \cong \Omega^{0,*}(\CC^{\times})^{\tensor d}$. The action of the torus is induced from a tensor product of $S^1$ representations with respect to this decomposition. For an integer $n \in \ZZ$ let $\Omega^{0,*}(\CC^\times)^{(n)} \subset \Omega^{0,*}(\CC^\times)$ be the dg subspace consisting of all forms with eigenvalue $n$. Similarly, for each sequence of integers $(n_1,\ldots,n_d)$ we let
+\ben
+\Omega^{0,*}\left((\CC^{\times})^d\right)^{(n_1,\ldots,n_d)} \subset \Omega^{0,*}\left((\CC^{\times})^d\right)
+\een 
+be the tensor product $\Omega^{0,*}(\CC^\times)^{(n_1)} \tensor \cdots \tensor \Omega^{0,*}(\CC^\times)^{(n_d)}$. 
+
+For each open set $U \subset (\CC^\times)^d$ we can define, in a completely analogous way, the subspace
+\ben
+\KM^{(\CC^\times)^d}_{\fg, \theta} (U)^{(n_1,\ldots,n_d)} \subset \KM^{(\CC^\times)^d}_{\fg, \theta} (U) .
+\een 
+
+\begin{thm} Let $\theta \in \Sym^{d+1}(\fg^\vee)^{\fg}$. There is a subfactorization algebra $\cB_{d, \fg, \theta} \subset \KM_{\fg,\theta}$ on $(\CC^\times)^d$ that assigns to an open set $U \subset (\CC^\times)^d$ the dg vector space 
+\ben
+\oplus_{(n_1,\ldots, n_d) \in \ZZ^d} \KM_{\fg, \theta} (U)^{(n_1,\ldots,n_d)} .
+\een 
+Moreover, there is a quasi-isomorphism of factorization algebras on $\RR_{>0}^d$ 
+\ben
+\left(U_{E_d} \left(\Hat{L^d g}_\theta\right)\right)^{fact} \; \simeq \; \vec{\rho}_* \cB_{d,\fg,\theta} .
+\een 
+\end{thm}
+
+\end{document}

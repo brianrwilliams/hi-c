@@ -5,6 +5,8 @@
 
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 
+\def\KM{{\rm KM}}
+
 \title{The higher Kac-Moody factorization algebra}
 
 \begin{document}
@@ -182,7 +184,6 @@ is a cochain map. Moreover, it is injective at the level of cohomology.
 \end{rmk}
 
 \section{The factorization algebra}
-\def\KM{{\rm KM}}
 
 Given any cocycle $\theta \in \cloc^*(\fg^X)$ of degree one we define a factorization algebra on $X$. 
 
@@ -196,6 +197,48 @@ Explicitly, on an open set $U \subset X$, the cochain complex $\KM^X_{\fg,\theta
 and the differential is given by $\dbar + \d_\fg + \theta$ where $\d_\fg$ is the extension of the Chevalley-Eilenberg differential for $\fg$ to the Dolbeault complex, and where $\theta$ is extended to the full symmetric algebra by the rule that it is a (graded) derivation. 
 
 \begin{eg} As an example, using the map $J$ of Proposition \ref{prop j map}, we can construct a factorization algebra on $X$ for any invariant polynomial $P \in \Sym^{d+1}(\fg^\vee)^\fg$. Since $j$ is injective, we obtain a unique factorization algebra for every such polynomial, hence it makes sense to denote $\KM^X_{\fg, P} := \KM^X_{\fg,j(P)}$. 
+\end{eg}
+
+\subsection{For an arbitrary principal bundle}
+
+There is a local Lie algebra related to $\fg^X$ associated to any principal $G$ bundle. Formally speaking, one can understand $\fg^X$, or rather its global sections $\fg^X(X)$, as being the dg Lie algebra describing the formal neighborhood of the {\em trivial} $G$-bundle inside the derived moduli stack of $G$-bundle on $X$. Indeed, if ${\rm triv}$ denotes the trivial bundle then one has
+\ben
+\Hat{\rm triv} = B \fg^X(X)
+\een
+where the hat denotes formal completion. In other words, the $(-1)$-shifted tangent space of the moduli stack of $G$-bundles is identified with the dg Lie algebra $\fg^X(X)$. At an arbitrary principal $G$ bundle $P$, the dg Lie algebra describing the formal completion $\Hat{P}$ is also the global sections of a local Lie algebra that we now. 
+
+Let ${\rm ad}(P)$ denote the bundle of Lie algebras on $X$ associated to $P$. We define the local Lie algebra by
+\ben
+\fg^{P \to X} := \Omega^{0,*}(X ; {\rm ad}(P)),
+\een 
+i.e. the $(0,*)$-forms on $X$ with coefficients in the bundle ${\rm ad}(P)$. The Lie bracket on ${\rm ad}(P)$ together with the Dolbeault operator $\dbar$ define the structure of the local Lie algebra. The global sections of this local Lie algebra describe the formal completion of $P$ in the moduli of $G$ bundles: $\Hat{P} = B \fg^{P \to X}(X)$. 
+
+\subsection{A variant on the construction}
+
+The definition of the following flavor of factorization algebras have appeared in Section 3.6 of \cite{book1}, but we wish to further analyze them here. As in the cases above, we work on a complex $d$-fold $X$ and consider the local Lie algebra $\fg^X = \Omega^{0,*}(X; \fg)$. The variant we discuss in this section involves a different $(-1)$-shifted central extension of this local Lie algebra. In this section, we fix an invariant pairing $\<-,-\>$ on the Lie algebra $\fg$. 
+
+Fix a closed $(d-1,d-1)$-form $\omega \in \Omega^{d-1,d-1}(X)$. Define the quadratic functional on $\fg^X$ by
+\ben
+\phi_\omega (\alpha , \beta) = \int_X \omega \wedge \<\alpha, \partial \beta\> .
+\een
+
+\begin{lem} The functional $\phi_\omega$ is a local cocycle of degree one in $\cloc^*(\fg^X)$. 
+\end{lem}
+\begin{proof} Clearly $\phi_\omega$ is local and degree one. The differential on $\cloc^*(\fg^X)$ is of the form $\dbar + \d_{\fg}$ where $\d_\fg$ is the Chevalley-Eilenberg differential on $\fg$ extended to $(0,*)$-forms. Since the pairing is invariant one has $\d_\fg(\phi_\omega) = 0$. Finally, to see that it is a cocycle we note that
+\ben
+\int_X \d_{dR}(\omega \wedge \<\alpha, \partial \beta\>) = \int_X \omega \wedge \<\dbar \alpha, \partial \beta\> \pm \int_X \omega \wedge \<\alpha, \dbar \partial \beta\>
+\een
+using the fact that $\omega$ is closed and $\omega \wedge \<\alpha, \partial \beta\>$ is $\partial$-closed. 
+\end{proof}
+
+\begin{dfn} Let $X$ be a complex $d$-fold and $\omega \in \Omega^{d-1,d-1}(X)$ a closed form. Define the factorization algebra $U^{fact}_{\phi_\omega}(\fg^X)$ on $X$ as the twisted factorization envelope of $\fg^X$ twisted by the cocycle $\phi_\omega$. 
+\end{dfn}
+
+\begin{eg} Suppose that $X$ is a K\"{a}hler $d$-fold and let $\omega \in \Omega^{1,1}(X)$ be the K\"{a}hler form. We can then take the $(d-1,d-1)$-form above to be the $(d-1)$st power of the K\"{a}hler form $\omega^{d-1}$. We will refer to the factorization algebra
+\ben
+{\rm KKM}^X := U^{fact}_{\phi_{\omega^{d-1}}} (\fg^X)
+\een
+as the {\em K\"{a}hler-Kac-Moody} factorization algebra on $X$. In the case that $d =2$, the factorization algebra is related to the four-dimensional generalization of the Wess-Zumino-Witten model studied by Nair and Schiff in \cite{NairSchiff} and later by Nekrasov et. al. in \cite{NekThesis, LMNS}. We will return to this example later to describe its local operators as a consequence of its factorization algebra structure and to give an interpretation of it as a boundary of a certain Chern-Simons--like gauge theory. 
 \end{eg}
 
 \appendix
@@ -253,6 +296,19 @@ One immediately checks that $(\fg \oplus \CC, D)$ is an $L_\infty$ model for $\H
 D_{d+1} (a_0X_0,\ldots, a_d X_d) = \Reszero \left(a_0 \wedge \partial a_1 \wedge \cdots \wedge \partial a_d \right) \theta(X_0,\ldots,X_d) \cdot K .
 \een
 \end{eg}
+
+\begin{lem} Suppose $\fg$ is an $L_\infty$ algebra and we are given two central extensions 
+\ben
+0 \to \CC \cdot K [k] \to \Tilde{\fg}, \Tilde{\fg}' \to \fg \to 0
+\een
+of $L_\infty$ algebras by the trivial module placed in degree $-k$. Suppose that the cocycles determining the central extensions differ by an exact cocycle of the form $\d \eta \in \clie^*(\fg)$ where $\eta$ is a cochain of degree $k+1$. Then, the map
+\ben
+\id + \eta \cdot K: \clieu_*(\Tilde{\fg}) \to \clieu_*(\Tilde{\fg}')
+\een
+determines an $L_\infty$-isomorphism $\Tilde{\fg} \cong \Tilde{\fg}'$. 
+\end{lem}
+
+In the lemma above the map $\id + \eta$ sends the element $X_1\cdots X_n \in \Sym^n (\fg)$ to $X_1\cdots X_n + \eta(X_1,\ldots,X_n) \cdot K$ and is the identity on the subspace generated by the central element $K$. 
 
 \subsection{Homotopy Poisson structures}
 

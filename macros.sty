@@ -1,10 +1,10 @@
 \usepackage{mathrsfs,amsmath, amscd, amsthm,amssymb, amsfonts, verbatim,subfigure, enumerate}
 %\usepackage[mathcal]{eucal}
 \usepackage[mathscr]{euscript}
-
 \usepackage[all,cmtip]{xy}
 \usepackage{graphicx}
-\usepackage{fullpage}
+\usepackage[top=1in, bottom=1.25in, left=1.3in, right=1.3in]{geometry}
+%\usepackage{fullpage}
 %\usepackage{epstopdf}
 %\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `basename #1 .tif`.png}
 %Use Palatino font
@@ -20,6 +20,7 @@
 
 \theoremstyle{definition}
 \newtheorem{dfn}[thm]{Definition}
+\newtheorem{dfn/lem}{Definition/Lemma}
 
 \theoremstyle{remark}
 \newtheorem{rmk}[thm]{Remark}
@@ -48,6 +49,7 @@
 \def\ch{{\rm ch}}
 
 \def\clie{{\rm C}_{\rm Lie}}
+\def\clieu{{\rm C}^{\rm Lie}}
 \def\Def{{\rm Def}}
 \def\cloc{{\rm C}_{\rm loc}}
 
@@ -104,4 +106,10 @@
 \def\fu{\mathfrak u}\def\fv{\mathfrak v}\def\fw{\mathfrak w}\def\fx{\mathfrak x}
 \def\fy{\mathfrak y}\def\fz{\mathfrak z}
 
-\def\hey{\rm hey}
+
+%random
+\def\rad{{\rm rad}}
+\def\Reszero{\underset{z=0}{\rm Res}}
+\def\id{{\rm id}}
+\def\L8{L_\infty}
+\def\Lcat{L_\infty{\rm Alg}}

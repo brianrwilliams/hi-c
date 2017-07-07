@@ -1,0 +1,80 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros}
+\linespread{1.25}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+
+\def\KM{{\rm KM}}
+\def\oloc{\mathscr{O}_{\rm loc}}
+
+\title{A families index theorem}
+
+\begin{document}
+\maketitle
+
+\section{A statement of the index theorem}
+
+\section{The $\beta\gamma$ system}
+
+\section{Equivariant field theories}
+
+\subsection{Inner actions and obstructions}
+
+\section{Computing the anomaly}
+
+\begin{prop} Let $V$ be a $\fg$ module and $X$ a complex $d$-fold. The classical $\fg^X$-equivariant theory
+\ben
+\sE_{X,V} = T^*[-1] (\Omega^{0,*}(X ; V))
+\een
+admits a canonical $\fg^X$-equivariant quantization. The cohomology class of the obstruction $[\Theta_V] \in H^1(\cloc^*(\fg^X))$ to lifting this to an inner action by the local Lie algebra $\fg^X$ is identified with the image of $$\#\ch_{d+1}(V) \in \Sym^{d+1}(\fg^\vee)^\fg$$ under the map $J : \Sym^{d+1}(\fg^\vee)^\fg [-1] \to \cloc^*(\fg^X)$. 
+\end{prop}
+
+As a simple corollary we find the anomaly in a slightly more general situation.
+
+\begin{cor} Let $P$ be a principal $G$-bundle on $X$, and $V$ a $G$-representation. Then we can consider the $\fg^X_P = \Omega^{0,*}(X ; {\rm ad}(P))$-equivariant theory
+\ben
+\sE_{P \to X, V} = T^*[-1] (\Omega^{0,*}(X ; P \times^G V)) .
+\een
+This theory admits a canonical $\fg^X_P$-equivariant quantization. Moreover, the cohomology class of the obstruction $[\Theta_{V}]$ to an inner action is also identified with $\#\ch_{d+1}(V)$. 
+\end{cor}
+
+We will prove the proposition in the following steps. First, we argue that it suffices to calculate this obstruction on an arbitrary open set in $X$. Taking this open set to be a disk we see that it suffices to compute the cocycle in the case that $X = \CC^d$. This calculation is done explicitly in terms of one-loop Feynman diagrams. 
+
+\subsection{}
+
+By construction, the data of a classical BV theory on $X$ is sheaf-like on the manifold. That is, we have a sheaf of $(-1)$-shifted elliptic complexes $\sE$ on $X$ together with a local functional $I \in \oloc(\sE)(X)$. The space of local functionals $\oloc(\sE)$ also forms a sheaf on $X$, so it makes sense to restrict $I$ to any open set $U \subset X$. In this way, for each open we have a $(-1)$-shifted elliptic complex $\sE(U)$ together with a local functional $I |_{U}\in \oloc(\sE)(U)$ -- that is, a classical field theory on $U \subset X$. A fancy way of saying this is that the space of classical field theories on $X$ forms a sheaf. 
+
+A very slightly refined version of this takes into account an action of a local Lie algebra. If $\sL$ is a local Lie algebra on $X$ then the space of $\sL$-equivariant classical BV theories also forms a sheaf on $X$. 
+
+Costello has shown in \cite{cosren} that the space of quantum field theories also form a sheaf on $X$. In a completely analogous way, one can show that the space of $\sL$-equivariant quantum field theories forms a sheaf on $X$. 
+
+We have already seen how the obstruction to lifting a quantum field theory with an action of a local Lie algebra $\sL$ to an inner action arises as a failure of satisfying the QME. Since an $\sL$-equivariant theory satisfies the QME modulo terms in $\cloc^*(\sL)(X)$, this obstruction $\Theta(X)$is a degree one cocycle in $\cloc^*(\sL)(X)$. By the remarks above, we can restrict any $\sL$-equivariant field theory to an arbitrary open set $U \subset X$. Hence, for each open $U \subset X$ we have an obstruction element $\Theta^U$. The complex $\cloc^*(\sL)(X)$ also has a refinement to a sheaf of complexes on $X$ and the obstruction $\Theta^U$ is an element in $\cloc^*(\sL)(U)$. We will need the following elementary fact that the obstruction to having an inner action is natural with respect to the restriction of open sets.
+
+\begin{lem} Let $i_U^V : U \hookrightarrow V$ be any inclusion of open sets in $X$. Then
+\ben
+(i_U^V)^* ([\Theta^V]) = [\Theta^U]
+\een
+where $(i_U^V)^* : \cloc^*(\sL)(V) \to \cloc^*(\sL)(U)$ is the restriction map and the brackets $[-]$ denotes the cohomology class of the cocycle. In other words, the map that sends a quantum field theory on $X$ with an $\sL$-action to its obstruction to having an inner $\sL$-action is a map of sheaves. 
+\end{lem}
+
+For any complex $d$-fold $X$ we have defined the map $J^X : {\rm Sym}^{d+1}(\fg^\vee)^\fg \to \cloc^*(\fg^X)$. The complex $\cloc^*(\fg^X)$
+
+\begin{lem} The map 
+\ben
+J : \ul{\Sym^{d+1} (\fg^\vee)^\fg} \to \cloc^*(\fg^X)
+\een
+defined on each open by $J|_{U} = J^U$ is a map of sheaves. Here, the underline means the constant sheaf. 
+\end{lem} 
+
+\begin{lem} For any open sets $i_{U}^V : U \subset V$ in $X$ the induced map
+\ben
+(i_U^V)^* : H^1\left(V ; \cloc^*(\fg^X)\right) \to H^1\left(U ; \cloc^*(\fg^X)\right)
+\een
+is injective.
+\end{lem}
+
+\brian{The last key observation is that $(i_U^V)^* J^V = J^U$.}
+
+
+\end{document}
