@@ -1,0 +1,138 @@
+\section{Higher Kac--Moody as a boundary theory}
+
+In this section we show how the Kac--Moody factorization algebra appears as the boundary of a class of supersymmetric gauge theories. 
+We choose to focus on two examples, the four dimensional boundary of a five dimensional gauge theory, and the six dimensional boundary of a seven dimensional gauge theory.
+
+These examples extrapolate a ubiquitous relationship between Chern--Simons theory and the Wess-Zumino-Witten conformal field theory.
+\brian{expand on this}
+
+The five dimensional gauge theory we consider is obtained as a twist of $\cN=1$ supersymmetric pure gauge theory.
+This twist is {\em not} topological, but it is holomorphic in four real (two complex) directions, and topological in the transverse direction.
+We will show how a deformation of this theory yields a boundary condition on manifolds of the form $X \times [0,1]$, where $X$ is a Calabi--Yau surface, at $X \times \{0\}$. 
+Moreover, this boundary condition determines a factorization algebra of classical observables supported on the boundary that is equal to a certain degenerate classical limit of the Kac--Moody factorization algebra. 
+We show that there is a quantization of this theory that returns the Kac--Moody at a certain level.  
+
+The seven dimensional theory similarly appears as a twist, this time of maximally supersymmetric gauge theory. 
+We perform a similar analysis to show how to find the higher Kac--Moody on a Calabi--Yau three-fold in the manner sketched above.
+
+\subsection{The $P_0$ structure}
+
+In ordinary classical mechanics, the symplectic structure on the phase space induces the structure of a Poisson algebra on the operators of the theory.
+Classically, the data of a field theory in the BV--formalism involves a $(-1)$-shifted symplectic form on the space of fields. 
+It is shown in \cite{CG2} that this induces the factorization algebra of classical observables with the structure of a strict $P_0$-algebra.
+A $P_0$-algebra is a shifted version of a Poisson algebra in this graded setting.
+Indeed, the data of such an algebra includes a commutative dg product together with a bracket of cohomological degree $+1$. 
+These 
+
+In this section we will describe the $P_0$ structure on the higher dimensional Kac--Moody factorization algebra at level zero. 
+We will give an interpretation of this $P_0$ structure as coming from a Poisson structure on a particular formal moduli space.
+
+\subsubsection{}
+
+
+Suppose $\fh$ is any $L_\infty$ algebra. 
+Then, we can define the commutative dg algebra of Chevalley--Eilenberg cochains on $\clie^*(\fh)$. 
+We formulate a convenient way to define homotopy Poisson structures on this commutative dg algebra.  
+The $L_\infty$ algebra $\fh$ acts on $\fh[1]$ via the adjoint representation, and this extends to an action on the completed symmetric algebra $\Hat{\Sym}(\fh[1])$. 
+Consider an element $\Pi \in \clie^*(\fh ; \Hat{\Sym}(\fh[1])$ of total degree $1-n$ \brian{or $n-1$}.
+ 
+
+
+
+This $P_0$ algebra is induced from a {\em local} Poisson structure on a certain moduli space that we now discuss. 
+
+First, we introduce the following local $L_\infty$ algebra on $X$,
+\ben
+\sL = \Omega^{d,*}_X \tensor \fg [d - 2] \; , \; \; \; \;\; \; \ell_1 = \dbar \tensor \id_{\fg}  , \; \; \; \ell_n = 0 \; \; {\rm for} \; n > 1. 
+\een
+Thus, this an abelian $L_\infty$ algebra concentrated in degrees $-d + 2$ to $2$. 
+
+We have already discussed how local Lie algebras define factorization algebras via the enveloping construction. 
+There is another construction of a factorization algebra that is ``Fourier dual" to this. 
+On an open set $U \subset X$ we assign the complex of Chevalley--Eilenberg cochains on $\sL(U)$, $\clie^*(\sL(U))$.
+The product maps are defined in a natural way. 
+For more details see \brian{ref} in \cite{CG2}. 
+
+For each open $U \subset X$ we have a formal moduli problem $B \sL(U)$ whose functions is commutative dg ring $\clie^*(\sL(U))$. 
+These formal moduli problems glue together to define a {\em local} moduli problem $B \sL$ on $X$ \cite{BY}. 
+The induced factorization algebra of functions on the local moduli problem will be denoted by $\sO(B\sL)$. 
+
+\begin{prop}
+The local moduli problem $B \sL$ satisfies $\sO(B \sL) = \sF_{\fg, 0}$. 
+Moreover, there is a local $(-1)$-shifted Poisson structure on $B\sL$ defined by the Poisson tensor $\Pi = \Pi_{1, 2} + \Pi_{0,d+1} $ where 
+\ben
+\Pi_{1,2} = [-,-] : \left(\Omega^{d,*}_X \tensor \fg \right) \tensor \left(\Omega^{0,*}_X \tensor \fg\right) \to \Omega^{d,*}_X \tensor \fg 
+\een 
+and
+\ben
+\Pi_{0,d+1} : \left(\Omega^{0,*}_X \tensor \fg\right)^{\tensor d} \to \Omega^{d,*}_X\tensor \fg
+\een
+sends $\alpha_1 \tensor \cdots \tensor \alpha_d \mapsto \partial \alpha_1 \wedge \cdots \wedge \partial \alpha_d$.
+In particular, $\sF_{\fg,0}$ has the structure of a $P_0$ factorization algebra. 
+\end{prop}
+
+\subsection{5d $N=1$ supersymmetric gauge theory}
+\brian{discuss twist}
+
+\begin{prop} The twist of 5d $N=1$ supersymmetric pure gauge theory exists on any manifold of the form 
+\ben
+\RR \times X
+\een
+where $X$ is a Calabi-Yau surface. 
+The fields of the theory are
+\ben
+\sE_{5d} = \Omega^{*}(\RR) \tensor \Omega^{0,*}(X ; \fg \oplus \fg^*) [1]
+\een
+and the action is
+\ben
+S(\alpha, \beta) = \frac{1}{2} \int \beta (\d_{dR} + \dbar) \alpha \wedge \Omega + \frac{1}{6} \int \beta [\alpha,\alpha] \wedge \Omega
+\een
+where $\alpha$ is valued in $\fg$ and $\beta$ is valued in $\fg^*$. 
+Here, $\Omega$ is the holomorphic volume form on $X$, and we have used the evaluation pairing between $\fg$ and $\fg^*$. 
+\end{prop}
+
+\begin{thm} Consider the twisted theory $\sE_{5d}$ on the manifold $\RR_{\geq 0} \times X$, where $X$ is a Calabi-Yau surface. 
+Then:
+\begin{itemize}
+\item[(1)] there is a boundary condition at $\{0\} \times X$ whose associated degenerate field theory is equivalent to the Kac-Moody on $X$ at level zero with its $P_0$ structure from Section \ref{sec}, and
+\item[(2)] there exists a one-loop quantization of the $5d$ theory with boundary factorization algebra given by the by the Kac-Moody factorization algebra with level given by the local cocycle corresponding to $\# \ch_3 \in \Sym^3(\fg^*)^\fg$ under the map $J$ above. 
+\end{itemize}
+\end{thm}
+
+\subsection{Maximally supersymmetric 7d gauge theory}
+
+In this section we will see how the six-dimensional Kac-Moody degenerate field theory arises as the boundary of a supersymmetric gauge theory in seven dimensions.
+
+\begin{prop} The twist of maximally supersymmetric $7d$ pure gauge theory exists on any manifold of the form 
+\ben
+\RR \times X
+\een
+where $X$ is a Calabi-Yau $3$-fold.
+The fields of the theory are
+\ben
+\sE_{7d} = \Omega^{*}(\RR) \tensor \Omega^{0,*}(X) \tensor \fg [\epsilon] [1]
+\een
+where $\epsilon$ is a formal parameter of cohomological degree $-1$.
+If we write the fields as $\alpha + \epsilon \beta$ the action has the form
+\ben
+S(\alpha + \epsilon \beta) = \frac{1}{2} \int \beta (\d_{dR} + \dbar) \alpha \wedge \Omega + \frac{1}{3} \int \left(\beta [\alpha,\alpha] + \alpha [\alpha, \beta]\right) \wedge \Omega .
+\een 
+Here, $\Omega$ is the holomorphic volume form on $X$.
+\end{prop}
+
+\begin{thm} Consider the twisted theory $\sE_{7d}$ on the manifold $\RR_{\geq 0} \times X$, where $X$ is a Calabi-Yau $3$-fold. 
+Then:
+\begin{itemize}
+\item[(1)] there is a boundary condition at $\{0\} \times X$ whose associated degenerate field theory is equivalent to the Kac-Moody on $X$ at level zero with its $P_0$ structure from Section \ref{sec}, and
+\item[(2)] there exists a one-loop quantization of the $7d$ theory with boundary factorization algebra given by the by the Kac-Moody factorization algebra with level given by the local cocycle corresponding to $\# \ch_4 \in \Sym^4(\fg^*)^\fg$ under the map $J$ above. 
+\end{itemize}
+\end{thm}
+
+\subsubsection{}
+
+The gauge theory we consider arises as a deformation of a partial twist of maximally supersymmetric Yang-Mills gauge theory in seven dimensions. 
+
+\subsubsection{}
+
+\begin{thm} Suppose we put $\Tilde{\cY}_\theta$, the deformation of the twisted $N=2$ gauge theory we considered above, on a seven manifold of the form $X \times \RR_{\geq 0}$ where $X$ is a Calabi-Yau six-fold. Then, there is a boundary condition on $X \times \{0\} \subset X \times \RR_{\geq 0}$ whose associated boundary theory is equivalent to the degenerate field theory $\sK_\theta$ on $X$. 
+\end{thm}

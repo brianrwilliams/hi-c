@@ -1,84 +1,146 @@
-\documentclass[10pt]{amsart}
+\def\pr{{\rm pr}}
+\def\id{{\rm id}}
 
-\usepackage{macros}
-\linespread{1.25}
+\section{Sphere and loop algebras}
 
-\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
-\def\KM{{\rm KM}}
+We have defined the Kac--Moody factorization algebra as a universal holomorphic factorization algebra in any dimension. 
+In this section we focus on the restriction of the factorization algebra to two complex manifolds of dimension $d$, $X = \CC^d \setminus \{0\}$ and $X = (\CC \setminus \{0\})^d$. 
+In each case we show how the factorization product encodes the structure of a dg Lie algebra.
+Our main results in this section identify these dg Lie algebras with higher dimensional generalizations of loop and affine algebras. 
 
-\title{Sphere algebras and higher loop algebras}
+We first consider a dg Lie algebra $\Hat{\fg}_{d,\theta}$, labeled by the dimension and a parameter $\theta \in \Sym^{d+1}(\fg^*)^\fg$, whose zeroeth cohomology is a Lie algebra extension of the $(2d-1)$-sphere algebra
+\ben
+{\rm Map}(S^{2d-1}, \fg) .
+\een
+At the level of cohomology this extension is trivial, but at the level of cochain complexes it is non-trivial. 
 
-\begin{document}
-\maketitle
+The dg Lie algebra determines a dg associative algebra via the universal enveloping algebra $U(\Hat{\fg}_{d,\theta})$. 
+Our first main result in this section relates this associative algebra to the Kac--Moody factorization algebra. 
 
-\def\PD{{\rm PD}}
-\def\Bar{\overline}
+\begin{thm}\label{thm sphere alg} The associative algebra $U(\Hat{\fg}_{d,\theta})$ determines a locally constant factorization algebra on the real one-manifold $\RR$ that we denote $U(\Hat{\fg}_{d,\theta})^{fact}$. 
+Moreover, there is an injective dense map of factorization algebras on $\RR$:
+\ben
+\Phi^{S^{2d-1}} : \left(U \Hat{\fg}_{d,\theta} \right)^{fact} \to \rho_*\left(\sF^{\CC^d \setminus \{0\}}_{\fg,\theta} \right)  .
+\een
+where the right-hand side is the push-forward of the Kac--Moody factorization algebra on $\CC^{d}\setminus \{0\}$ along the radial projection map.
+\end{thm}
 
-We have defined the Kac-Moody factorization algebra as a universal holomorphic factorization algebra in any dimension. In this section we focus on the restriction of the factorization algebra to two complex manifolds of dimension $d$, $X = \CC^d \setminus \{0\}$ and $X = (\CC \setminus \{0\})^d$. In each case we show that the structure ...
+Next, we consider the higher loop Lie algebra 
+\ben
+L^d \fg = L ( \cdots (L \fg) \cdots ) = {\rm Map}(S^{1} \times S^1 , \fg).
+\een
+We study a class of {\em shifted} central extension of this Lie algebra, also parametrized by $\theta \in \Sym^{d+1}(\fg^*)^\fg$, that we denote by $\Hat{L^d \fg}_\theta$. 
 
-\section{The higher sphere algebra}
+A result of Knudsen \cite{BK}, which we recall in Section \ref{??}, states that every dg Lie algebra determines an $E_d$-algebra, for any $d>1$, called the universal $E_d$ enveloping algebra.
+This agrees with the ordinary universal enveloping algebra in the case $d=1$. 
+For the dg Lie algebra $\Hat{L^d \fg}_{\theta}$, we denote this $E_d$ algebra by $U^{E_d}(\Hat{L^d \fg}_{\theta})$.
+Its associated locally constant factorization algebra on $\RR^d$ is denoted $U^{E_d}(\Hat{L^d \fg}_{\theta})^{fact}$. 
 
-\brian{Facts about the Dolbeault cohomology of the higher annulus. It is not Stein! Recall the Jouanolou model, denoted $A_d$.}
-%Recall, the polydisk centered at $z \in \CC^d$ of radius $r$ was defined to be the following open subset 
+The Kac--Moody factorization algebra on the $d$-fold $(\CC^\times)^d$ determines a real $d$-dimensional factorization algebra by considering the radius in each complex direction. 
+We denote this factorization algebra on $\RR^d$ by $\vec{\rho}_*\left(\sF_{\fg,\theta}^{\CC^{\times d}}\right)$. 
+
+\begin{thm} There is a dense injective map of factorization algebras on $\RR^d$: 
+\ben
+\Phi^{L^d} : \left(U_{E_d} \left(\Hat{L^d g}_\theta\right)\right)^{fact} \to \vec{\rho}_*\left(\sF_{\fg,\theta}^{\CC^{\times d}}\right).
+\een 
+\end{thm}
+
 %\ben
-%\PD^d_{r}(z) = \{(w_1,\ldots,w_d)\in \CC^d \; | \; |w_i - z_i| < r\} \subset \CC^d .
+%\cA_{d, \fg,\theta} := \bigoplus_{k \in \ZZ} \rho_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) ^{(k)} \subset \rho_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) .
 %\een
-%For $z \in \CC^d$, and $0 < r < R < \infty$ define the following open subset
-%\ben
-%A^d_{r<R}(z) = \PD^d_R (z) \setminus \Bar{\PD^d_r(z)}
-%\een
-%We think of this as a model for the $d$-dimensional annulus. When $z = 0$ we simply denote this by $A^{d}_{r<R}$. 
-%
-%We will need a convenient model for the Dolbeault complex $\Omega^{0,*}(A^d_{r<R})$ of this $d$-dimensional annulus. For $d=1$ the $\dbar$-cohomology of $A^d_{r<R}$ is concentrated in degree zero (in fact, any open subset of $\CC$ is Stein). 
-%
-%For $d > 1$, the $\dbar$-cohomology of $A^{d}_{r<R}$ is concentrated in degrees $0$ and $d-1$. In degree zero, of course, $H^0_{\dbar}(A^d_{r<R})$ is identified with holomorphic functions on $A^{d}_{r<R}$. In degree $d-1$ ...
-%
-%There is a natural action of the $d$-dimensional torus $(S^1)^d = S^1 \times \cdots \times$ on $A_{r<R}$ given by rotating each coordinate:
-%\ben
-%(\lambda_1,\ldots,\lambda_d) \cdot (z_1,\ldots,z_d) = (\lambda_1 z_1,\ldots,\lambda_d z_d) .
-%\een
-%We obtained an induced action of $S^1$ via the diagonal embedding $S^1 \to S^1 \times \cdots \times S^1$. This induces an action on the Dolbeault complex of $A^d_{r<R}$. Let
-%\ben
-%\left(\Omega^{0,*}(A^{d}_{r<R})\right)^{(k)} \subset \Omega^{0,*}(A^{d}_{r<R})
-%\een
-%denote the weight $k$ subspace.
+%\end{thm}
 
-Consider the radial projection map
+
+\subsection{The higher sphere algebra}
+
+The affine algebra associated to a Lie algebra $\fg$ together with an invariant pairing is defined as a central extension of the loop algebra of $\fg$
+\ben
+\CC \to \Hat{\fg} \to Lg 
+\een
+where loop algebra is equal to $\sO(D^{1 \times}) \tensor \fg = \fg [z,z^{-1}]$.
+The central extension is determined by the cocycle 
+\ben
+f \tensor X, g \tensor Y \mapsto \oint f \d g \<X,Y\> .
+\een 
+We use the punctured algebraic disk $D^{1\times} = {\rm Spec} \;  \CC [z,z^{-1}]$, but the definition also makes sense for the puncture formal disk (formal loops). 
+
+Let $D^d = {\rm Spec} \; \CC[z_1,\ldots, z_d]$ be the $d$-dimensional algebraic disk.
+The punctured $d$-disk is no longer affine, in fact its cohomology is given by
+\ben
+H^*(D^{d \times}, \sO) = 
+\een
+Instead of working with the naive commutative algebra $\Gamma(D^{d \times}, \sO)$ we will use the dg commutative algebra of {\em derived} sections $\RR \Gamma(D^{d \times}, \sO)$. 
+An explicit model for this has been written down in \cite{FHK} based on the Jouanolou method for resolving singularities. 
+We recall its definition.
+
+\begin{dfn} Let $A_d$ be the commutative dg algebra generated by elements $$z_1,\ldots,z_d, z_1^*,\ldots,z_d^*, (z_1 z_1^*)^{-1}, \ldots (z_1z_d^*)^{-1}$$ in degree zero and $$\d z_1,\ldots , \d z_d, \d z_1^*,\ldots, \d z_d^*$$ in degree one.
+Introduce a $*$-weight, so that $z_i^*, \d z_i^*$ have $*$-weight $+1$ and $(z_i^*)^{-1}$ has $*$-weight $-1$.
+We require that:
+\begin{itemize}
+\item[(i)] every element is of total $*$-weight zero and
+\item[(ii)] the contraction of every element with the Euler vector field $\sum_{i} z_i^* \partial_{z_{i}^*}$ vanishes.
+\end{itemize}
+\end{dfn}
+
+The key properties of the dg algebra $A_d$ we will utlilize are summarized in the following result of \cite{FHK}.
+
+\begin{prop}[\cite{FHK} Proposition 1.3.1]
+The commutative dg algebra $A_d$ is a model for $\RR \Gamma(D^{d\times}, \sO)$. 
+Moreover, there is a dense map of commutative dg algebras
+\ben
+j : A_d \to \Omega^{0,*}(\CC^d \setminus 0) 
+\een
+sending $z_i \mapsto z_i$, $z_i^* \mapsto \Bar{z}_i$, and $\d z_i^* \mapsto \d \zbar_i$.
+\end{prop}
+
+We are interested in the dg Lie algebra $A_d \tensor \fg$. 
+In \cite{FHK} they show, via knowledge of the Lie algebra cohomology, that there is a central extension of this \brian{not sure what to say}
+
+\begin{dfn} Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
+Let $\Hat{\fg}_{d,\theta}$ be the dg Lie algebra central extension of $A_d \tensor \fg$ determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
+\ben
+\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
+\een
+where $a_i \tensor X_i \in A_d \tensor \fg$. 
+\end{dfn}
+
+\subsection{The strategy}
+
+We consider the restriction of the factorization algebra $\sF_{\fg,\theta}$ on $\CC^{d} \setminus \{0\}$ to the collection of open sets diffeomorphic to spherical shells.
+This restriction has the structure of a one-dimensional factorization algebra corresponding to the iterated nesting of spherical shells. 
+We show that there is a dense subfactorization algebra that is locally constant, hence corresponds to an $A_\infty$ algebra.
+We conclude by identifying this $A_\infty$ algebra as a the universal enveloping algebra of a certain $L_\infty$ algebra, that agree with the higher dimensional affine algebras of \cite{FHK}
+
+Introduce the radial projection map
 \ben
 \rho : \CC^d \setminus 0 \to \RR_{>0}
 \een
 sending $z = (z_1, \ldots, z_d)$ to $|z| = \sqrt{|z_1|^2 + \cdots + |z_d|^2}$. 
+We will restrict our factorization algebra to spherical shells by pushing forward the factorization algebra along this map.
+Indeed, the preimage of an open interval is such a spherical shell, and the factorization product on the line is equivalent to the nesting of shells. 
 
-\brian{This is essentially in KHF, should we recall it?}
+\subsubsection{The case of zero level}
 
-\begin{lem}
-There is a map of commutative dg algebras
-\ben
-j : A_d \to \Omega^{0,*}(\CC^d \setminus 0) 
-\een
-that induces a quasi-isomorphism $A_d \simeq \oplus_{k \in \ZZ} \Omega^{0,*}(\CC^d \setminus 0)^{(k)}$. 
-\end{lem}
+First we will consider the higher Kac-Moody factorization algebra on $\CC^d \setminus \{0\}$ ``at level zero". That is, the factorization algebra $\sF^{\CC^d \setminus \{0\} }_{\fg, 0}$.
+In this section we will omit $\CC^d \setminus \{0\}$ from the notation, and simply refer to the factorization algebra by $\sF_{\fg,0}$. 
 
-Note that $j$ induces a map of commutative dg algebras $j : A_d \to \Omega^{0,*}(\rho^{-1}(I))$ where $I \subset \RR_{>0}$ is any interval. If $a \in A_{d}$ we will denote the resulting element in the Dolbeault complex by $a(z) := j(a)$.
-
-\subsection{The case of zero level}
-
-\def\pr{{\rm pr}}
-\def\id{{\rm id}}
-
-\brian{only look at annular part}
-
-First we will consider the higher Kac-Moody factorization algebra on $\CC^d$ ``at level zero". That is, the factorization algebra $\KM^{\CC^d}_{\fg, 0}$.
-
-We obtain a factorization algebra on $\RR_{>0}$ via pushing forward the higher Kac-Moody factorization algebra along the radial projection map $\rho_* \left(\KM^{\CC^d \setminus 0}_{\fg,0}\right)$. Explicitly, to an open set $I \subset \RR_{>0}$ this factorization algebra assigns the dg vector space
+Let $\rho_* \left(\sF_{\fg,0}\right)$ be the factorization algebra on $\RR_{>0}$ obtained by pushing forward along the radial projection map. Explicitly, to an open set $I \subset \RR_{>0}$ this factorization algebra assigns the dg vector space
 \ben
 {\rm C}^{\rm Lie}_*\left(\Omega_c^{0,*}(\rho^{-1}(I)) \tensor \fg)\right) .
 \een
-When $I$ is an interval, the subset $\rho^{-1}(I) \subset \CC^{d}$ is a higher dimensional annulus as mentioned above. It is homeomorphic to $S^{2d-1} \times I$. 
 
-We wish to compare this one-dimensional factorization algebra to the higher current Lie algebra $A_d \tensor \fg$, or more accurately, its universal enveloping algebra $U(A_d \tensor \fg)$. The universal enveloping algebra has the structure of a dg associative algebra and so defines a factorization algebra on any one-manifold. Let $U(A_d \tensor \fg)^{\rm fact}$ be the corresponding factorization algebra on the manifold $\RR_{>0}$.
+%We will need a different model for this factorization algebra.
+%Let $\Omega^{*}_{\RR_{>0}}$ be the sheaf of differential forms on the positive real line.
+%We can define the sheaf of dg Lie algebras $\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg)$.
+%It's universal factorization enveloping algebra $U^{fact}\left(\Omega^{*}_{>0} \tensor (A_d \tensor \fg)\right)$ is a factorization algebra on $\RR_{>0}$. 
+%A slight variant of Proposition 3.4.0.1 in \cite{CG1}, which shows that there is a quasi-isomorphism of factorization algebras
+%\ben
+%U^{fact}\left(\Omega^{*}_{>0} \tensor (A_d \tensor \fg)\right)
+%\een
 
-Let $I \subset \RR_{>0}$ be an open subset. There is the natural map $\rho^* : \Omega^*_c(I) \to \Omega^*_c(\rho^{-1}(I))$ given by pulling back differential forms. We can post-compose this with the natural projection ${\rm pr}_{\Omega^{0,*}} : \Omega^*_c \to \Omega^{0,*}_c$ to obtain a map of commutative algebras $\pr_{\Omega^{0,*}} \circ \rho^* : \Omega^*_c(I) \to \Omega^{0,*}_c(\rho^{-1}(I))$. Using the map $j$ defined in Section \brian{ref} we obtain a map of commutative dg algebras
+Let $I \subset \RR_{>0}$ be an open subset. There is the natural map $\rho^* : \Omega^*_c(I) \to \Omega^*_c(\rho^{-1}(I))$ given by the pull back of differential forms. We can post compose this with the natural projection ${\rm pr}_{\Omega^{0,*}} : \Omega^*_c \to \Omega^{0,*}_c$ to obtain a map of commutative algebras $\pr_{\Omega^{0,*}} \circ \rho^* : \Omega^*_c(I) \to \Omega^{0,*}_c(\rho^{-1}(I))$. 
+The map $j$ from Proposition \ref{prop fhk1} determines a map of dg commutative algebras $j : A_d \to \Omega^{0,*}(\rho^{-1}(I))$. 
+Thus, we obtain a map
 \ben
 \begin{array}{cccc}
 \Phi(I) = (\pr_{\Omega^{0,*}} \circ \rho^*) \tensor j : & \Omega^*_c(I) \tensor A_d & \to & \Omega^{0,*}_c\left((\rho^{-1}(I)\right) \\
@@ -89,8 +151,11 @@ Since this is a map of commutative dg algebras it defines a map of dg Lie algebr
 \ben
 \Phi(I) \tensor \id_{\fg} :  (\Omega^*_c(I) \tensor A_d) \tensor \fg = \Omega^*_c(I) \tensor (A_d \tensor \fg) \to \Omega^{0,*}(\rho^{-1}(I)) \tensor \fg 
 \een
-which maps $\varphi \tensor a \tensor X \mapsto \Phi(\varphi \tensor a) \tensor X$. \brian{Explicitly}... . We will drop the $\id_{\fg}$ from the notation and will denote this map simply by $\Phi (I)$. Note that $\Phi(I)$ is compatible with inclusions of open sets, hence extends to a map of cosheaves of dg Lie algebras that we will call $\Phi$.  
+which maps $(\varphi \tensor a) \tensor X \mapsto \Phi(\varphi \tensor a) \tensor X$. 
+We will drop the $\id_{\fg}$ from the notation and will denote this map simply by $\Phi (I)$. Note that
+$\Phi(I)$ is compatible with inclusions of open sets, hence extends to a map of cosheaves of dg Lie algebras that we will call $\Phi$.  
 
+We can summarize the results as follows.
 
 \begin{prop} The map $\Phi$ extends to a map of factorization Lie algebras
 \ben
@@ -98,33 +163,32 @@ which maps $\varphi \tensor a \tensor X \mapsto \Phi(\varphi \tensor a) \tensor 
 \een 
 Hence, it defines a map of factorization algebras
 \ben
-{\rm C}_*(\Phi) : \left(U (A_d \tensor \fg)\right)^{fact} \to \rho_*\left(\KM^{\CC^d \setminus 0}_{\fg,0} \right) .
+{\rm C}_*(\Phi) : U^{fact}\left(\Omega^{*}_{\RR_{>0}} \tensor (A_d \tensor \fg)\right) \to \rho_*\left(\sF^{\CC^d \setminus 0}_{\fg,0} \right) .
 \een
 \end{prop}
 
-\subsection{The case of non-zero level}
+The fact that we obtain a map of factorization algebras follows from the universal property of the universal enveloping factorization algebra we discussed in Section \ref{sec ??}.
 
-\begin{thm} There is a map of factorization algebras on $\RR_{>0}$
-\ben
-\left(U \Hat{\fg}_{d,\theta} \right)^{fact} \to \rho_*\left(\KM^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right)  .
-\een
-Moreover, its image is quasi-isomorphic to the subfactorization algebra consisting of the $S^1$-eigenspaces
-\ben
-\cA_{d, \fg,\theta} := \bigoplus_{k \in \ZZ} \rho_*\left(\KM^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) ^{(k)} \subset \rho_*\left(\KM^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) .
-\een
-\end{thm}
+\subsubsection{The case of non-zero level}
+We now proceed to the proof of Theorem \label{thm sphere alg}. 
+The dg Lie algebra $\fg_{d,\theta}$ determines a dg associative algebra via its universal enveloping algebra $U(\fg_{d,\theta})$. \brian{define it?} 
+By \brian{ref} this dg algebra determines a factorization algebra on the one-manifold $\RR_{>0}$ that assigns to every open interval $I \subset \RR_{>0}$ the dg vector space $U(A_d \tensor \fg)$. 
+The factorization product is uniquely determined by the algebra structure. 
+Henceforth, we denote this factorization algebra by $U(\fg_{d,\theta})^{fact}$.
 
-\begin{proof}
-To prove the result we will construct a sequence of maps of factorization Lie algebras on $\RR_{>0}$:
+To prove the theorem we will construct a sequence of maps of factorization Lie algebras on $\RR_{>0}$:
 \ben
 \xymatrix{
 & \sG_1 \ar[dr]^-{\Phi_1} & & \sG_2 \\
 \sG_0 \ar[ur]^-{\simeq}_{\Phi_0} & & \sG_1' \ar[ur]_{\Phi_2} & .
 }
 \een
-We will show that the factorization envelope of $\sG_0$ is equivalent to the factorization algebra $\left(U \Hat{\fg}_{d,\theta}\right)^{fact}$. Moreover, the factorization envelope of $\sG_2$ is the push-forward $\rho_* \KM_{\fg,\theta}$. Hence, the desired map of factorization algebras is produced by applying the factorization envelope functor to the above composition of factorization Lie algebras. 
+The factorization envelope of $\sG_0$ is equivalent to the factorization algebra $U (\Hat{\fg}_{d,\theta})^{fact}$. 
+Moreover, the factorization envelope of $\sG_2$ is the push-forward of of the higher Kac--Moody factorization algebra $\rho_* \sF_{\fg,\theta}$. 
+Hence, the desired map of factorization algebras is produced by applying the factorization envelope functor to the above composition of factorization Lie algebras. 
 
-First, we introduce the factorization Lie algebra. To an open set $I \subset \RR$, it assigns the dg Lie algebra $\sG_0(I) = \Omega^*_{c}(I) \tensor \Hat{\fg}_{d,\theta}$, where $\Hat{\fg}_{d,\theta}$ is the central extension from \brian{ref}. The differential and Lie bracket are determined by the fact that we are tensoring a commutative dg algebra with a dg Lie algebra. A slight variant of Proposition 3.4.0.1 in \cite{CG1}, which shows that the one-dimensional factorization envelope of an ordinary Lie algebra produces its ordinary universal enveloping algebra, shows that there is a quasi-isomorphism of factorization algebras on $\RR$,
+First, we introduce the factorization Lie algebra $\sG_0$. 
+To an open set $I \subset \RR$, it assigns the dg Lie algebra $\sG_0(I) = \Omega^*_{c}(I) \tensor \Hat{\fg}_{d,\theta}$, where $\Hat{\fg}_{d,\theta}$ is the central extension from \brian{ref}. The differential and Lie bracket are determined by the fact that we are tensoring a commutative dg algebra with a dg Lie algebra. A slight variant of Proposition 3.4.0.1 in \cite{CG1}, which shows that the one-dimensional factorization envelope of an ordinary Lie algebra produces its ordinary universal enveloping algebra, shows that there is a quasi-isomorphism of factorization algebras on $\RR$,
 \ben
 (U \Hat{\fg}_{d,\theta})^{fact} \xrightarrow{\simeq} {\rm C}^{\rm Lie}_*(\sG_0) .
 \een
@@ -140,12 +204,10 @@ Next, we define the factorization dg Lie algebra $\sG_1$ on $\RR$. This is also 
 \een
 determined by the following cocycle. For an open interval $I$ write $\varphi_i \in \Omega^*_c(I)$, $\alpha_i\in A_d \tensor \fg$. The cocycle is defined by
 \be\label{cocycle 1}
-\theta_1 (\varphi_0 \alpha_0, \ldots, \varphi_d \alpha_d) =  \left(\int_{I} \varphi_0 \wedge \cdots \varphi_d \right) \theta_{A_d} (\alpha_0,\ldots,\alpha_d)
+\theta_1 (\varphi_0 \alpha_0, \ldots, \varphi_d \alpha_d) =  \left(\int_{I} \varphi_0 \wedge \cdots \varphi_d \right) \theta_{\rm FHK} (\alpha_0,\ldots,\alpha_d)
 \ee
-Recall, if we write $\alpha_i = a_i X_i$ for $a_i \in A_d, X_i \in \fg$ the cocycle $\theta_{A_d}$ is given by 
-\ben
-\theta_{A_d} (a_0 X_0, \ldots, \ldots, a_dX_d) = \Reszero \left(a_0 \wedge \partial a_1 \wedge \cdots \wedge \partial a_d \right) \theta(X_0,\ldots,X_d) .
-\een
+where $\theta_{\rm FHK}$ was defined in Definition \ref{def fhk cocycle}.
+
 The functional $\theta_1$ determines a local cocycle in $\cloc^*\left(\Omega^*_\RR \tensor (A_d \tensor \fg)\right)$ of degree one. 
 
 \def\dR{{\rm dR}}
@@ -184,7 +246,7 @@ We view $E$ as a vector field on $\RR_{>0}$ and $\d \vartheta$ as a $(1,0)$-form
 \een
 The functional $\Tilde{\theta}$ defines a local functional in $\cloc^*\left(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg) \right)$ of cohomological degree one. One immediately checks that it is a cocycle. This completes the definition of the factorization Lie algebra $\sG_1'$. 
 
-The factorization Lie algebras $\sG_1$ and $\sG_1'$ are identical as precosheaves of vector spaces. In fact, if we put a filtration on $\sG_1$ and $\sG_1'$ where the central element $K$ has filtration degree one, then the associated graded factorization Lie algebras ${\rm Gr} \; \sG_1$ and ${\rm Gr} \; \sG_1'$ are also identical. The only difference in the Lie algebra structures comes from the deformation of the cocycle determining the extension of $\sG_1'$ given by $\Tilde{\theta}_1$. 
+The factorization Lie algebras $\sG_1$ and $\sG_1'$ are identical as precosheaves of vector spaces. In fact, if we put a filtration on $\sG_1$ and $\sG_1'$ where the central element $K$ has filtration degree one, then the associated graded factorization Lie algebras ${\rm Gr} \; \sG_1$ and ${\rm Gr} \; \sG_1'$ are also identified. The only difference in the Lie algebra structures comes from the deformation of the cocycle determining the extension of $\sG_1'$ given by $\Tilde{\theta}_1$. 
 
 In fact, we will show that $\Tilde{\theta}_1$ is actually an exact cocycle via the cobounding element $\eta \in \cloc^*\left(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg)\right)$ defined by
 \ben
@@ -258,16 +320,16 @@ Finally, notice that the function $z_i / 2r$ is independent of the radius $r$. T
 This is precisely equal to the second term (\ref{calc1b}) above. Hence, the cocycles are compatible and the proof is complete. 
 
 \end{proof}
-\end{proof}
+
 %We will denote by $S$ a (possibly empty) subset of $\{0,\ldots,d\}$. Let $S'$ denote its complement. Define
 %\ben
 %\Tilde{\theta}_1(\varphi_i a_i X_i) = \sum_{S} \left(\int_{I} \left(\prod_{s \in S} E \cdot \varphi_s \right) %\left(\prod_{s \in S'} \varphi\right) \right) \left(\oint ... \right)
 %\een
 
-\section{Higher loop algebras}
+\subsection{Higher loop algebras}
 We now put the Kac-Moody factorization algebra on the $d$-fold $(\CC^\times)^d$. Our main result in this section involves extracting the structure of an $E_d$ algebra from considering the nesting of ``polyannuli" in $(\CC^\times)^d$. When $d=1$, we have seen that the nesting of ordinary annuli give rise to the structure of an associative algebra. For $d > 1$, a polyannulus is a complex submanifold of the form $\AA_1 \times \cdots \times \AA_d \subset (\CC^\times)^d$ where each $\AA_i \subset \CC^\times$ is an ordinary annulus. Equivalently, a polyannulus is the complement of a closed polydisk inside of a larger open polydisk. We will see how the nesting of annuli in each component gives rise to the structure of a locally constant factorization algebra in $d$ {\em real} dimensions, and hence defines an $E_d$ algebra. 
 
-\subsection{}
+\subsubsection{}
 
 Define the commutative algebra 
 \ben
@@ -304,7 +366,7 @@ and all other brackets zero. Here, $K$ is the generator of the central part of t
 \end{prop}
 
 
-\subsection{}
+\subsubsection{}
 
 Given any Lie algebra $\fh$ we can define the universal enveloping algebra $U \fh$ which is an associative. In fact, the functor $\fh \mapsto U \fh$ from Lie algebras to associative algebras is left adjoint to the forgetful functor obtained by forming the commutator in the associative algebra. The homotopical generalization of associative algebras are $E_1$-algebras which are algebras over the operad of little 1-disks. 
 
@@ -326,8 +388,7 @@ There is an equivalence of categories between $E_d$ algebras and locally constan
 \een
 \end{prop}
 
-\subsubsection{}
-We now explain how the higher dimensional Kac-Moody factorization algebra is related to the universal $E_d$ enveloping algebra of the Lie algebra $B_d \tensor \fg$ (and its central extension). We will consider the factorization algebra restricted to the complex manifold $(\CC^\times)^d \subset \CC^d$. Throughout this section we will denote the factorization algebra $\KM^{(\CC^\times)^d}_{\fg, \theta}$ on $(\CC^\times)^d$ simply by $\KM_{\fg,\theta}$. 
+We now explain how the higher dimensional Kac-Moody factorization algebra is related to the universal $E_d$ enveloping algebra of the Lie algebra $B_d \tensor \fg$ (and its central extension). We will consider the factorization algebra restricted to the complex manifold $(\CC^\times)^d \subset \CC^d$. Throughout this section we will denote the factorization algebra $\sF^{(\CC^\times)^d}_{\fg, \theta}$ on $(\CC^\times)^d$ simply by $\sF_{\fg,\theta}$. 
 
 Let $\vec{\rho} : (\CC^\times)^d \to (\RR_{>0})^d$ be the map sending $(z_1,\ldots,z_d) \mapsto (|z_1|, \ldots, |z_d|)$. If $I_1,\ldots,I_d \subset \RR_{>0}$ is any collection of intervals we see that $\vec{\rho}^{-1}(I_1\times \cdots \times I_d) \subset (\CC^\times)^d$ is a polyannulus. Thus, to understand the behavior of a factorization algebra $\cF$ on $(\CC^\times)^d$ with respect to the nesting of polyannuli, as discussed in the beginning of this section, it suffices to understand the factorization product of cubes of the pushforward of the factorization algebra $\vec{\rho}_* \cF$ on $(\RR_{>0})^d$. 
 
@@ -341,17 +402,32 @@ be the tensor product $\Omega^{0,*}(\CC^\times)^{(n_1)} \tensor \cdots \tensor \
 
 For each open set $U \subset (\CC^\times)^d$ we can define, in a completely analogous way, the subspace
 \ben
-\KM^{(\CC^\times)^d}_{\fg, \theta} (U)^{(n_1,\ldots,n_d)} \subset \KM^{(\CC^\times)^d}_{\fg, \theta} (U) .
+\sF^{(\CC^\times)^d}_{\fg, \theta} (U)^{(n_1,\ldots,n_d)} \subset \sF^{(\CC^\times)^d}_{\fg, \theta} (U) .
 \een 
 
-\begin{thm} Let $\theta \in \Sym^{d+1}(\fg^\vee)^{\fg}$. There is a subfactorization algebra $\cB_{d, \fg, \theta} \subset \KM_{\fg,\theta}$ on $(\CC^\times)^d$ that assigns to an open set $U \subset (\CC^\times)^d$ the dg vector space 
-\ben
-\oplus_{(n_1,\ldots, n_d) \in \ZZ^d} \KM_{\fg, \theta} (U)^{(n_1,\ldots,n_d)} .
-\een 
-Moreover, there is a quasi-isomorphism of factorization algebras on $\RR_{>0}^d$ 
-\ben
-\left(U_{E_d} \left(\Hat{L^d g}_\theta\right)\right)^{fact} \; \simeq \; \vec{\rho}_* \cB_{d,\fg,\theta} .
-\een 
-\end{thm}
 
-\end{document}
+
+
+%Recall, the polydisk centered at $z \in \CC^d$ of radius $r$ was defined to be the following open subset 
+%\ben
+%\PD^d_{r}(z) = \{(w_1,\ldots,w_d)\in \CC^d \; | \; |w_i - z_i| < r\} \subset \CC^d .
+%\een
+%For $z \in \CC^d$, and $0 < r < R < \infty$ define the following open subset
+%\ben
+%A^d_{r<R}(z) = \PD^d_R (z) \setminus \Bar{\PD^d_r(z)}
+%\een
+%We think of this as a model for the $d$-dimensional annulus. When $z = 0$ we simply denote this by $A^{d}_{r<R}$. 
+%
+%We will need a convenient model for the Dolbeault complex $\Omega^{0,*}(A^d_{r<R})$ of this $d$-dimensional annulus. For $d=1$ the $\dbar$-cohomology of $A^d_{r<R}$ is concentrated in degree zero (in fact, any open subset of $\CC$ is Stein). 
+%
+%For $d > 1$, the $\dbar$-cohomology of $A^{d}_{r<R}$ is concentrated in degrees $0$ and $d-1$. In degree zero, of course, $H^0_{\dbar}(A^d_{r<R})$ is identified with holomorphic functions on $A^{d}_{r<R}$. In degree $d-1$ ...
+%
+%There is a natural action of the $d$-dimensional torus $(S^1)^d = S^1 \times \cdots \times$ on $A_{r<R}$ given by rotating each coordinate:
+%\ben
+%(\lambda_1,\ldots,\lambda_d) \cdot (z_1,\ldots,z_d) = (\lambda_1 z_1,\ldots,\lambda_d z_d) .
+%\een
+%We obtained an induced action of $S^1$ via the diagonal embedding $S^1 \to S^1 \times \cdots \times S^1$. This induces an action on the Dolbeault complex of $A^d_{r<R}$. Let
+%\ben
+%\left(\Omega^{0,*}(A^{d}_{r<R})\right)^{(k)} \subset \Omega^{0,*}(A^{d}_{r<R})
+%\een
+%denote the weight $k$ subspace.

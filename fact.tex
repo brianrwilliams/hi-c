@@ -1,44 +1,32 @@
-\documentclass[10pt]{amsart}
-
-\usepackage{macros}
-\linespread{1.25}
-
-\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
-
-\def\KM{{\rm KM}}
-
-\title{The higher Kac-Moody factorization algebra}
-
-\begin{document}
-\maketitle
-
 \brian{Add intro comparing to Kapranov-Hennion-Faonte.}
 
-\section{Local Lie algebras and factorization}
+\section{Universal holomorphic factorization algebras}
 
-\subsection{A recollection of local Lie algebras} 
+\subsection{Local Lie algebras and factorization}
+
+\subsubsection{A recollection of local Lie algebras} 
 
 \begin{dfn} A {\em local Lie algebra} (or {\em local $L_\infty$ algebra}) on $X$ is the following data:
 \begin{itemize}
-\item[(i)] a $\ZZ$-graded vector bundle $L$ on $X$, with sheaf of sections that we denote $\cL$;
+\item[(i)] a $\ZZ$-graded vector bundle $L$ on $X$, with sheaf of sections that we denote $\sL$;
 \item[(ii)] for each $n \in \ZZ$ a polydifferential operator 
 \ben
-\ell_n : \cL^{\tensor n} \to \cL[2-n];
+\ell_n : \sL^{\tensor n} \to \sL[2-n];
 \een
 \end{itemize}
-such that the collection $\{\ell_n\}$ endow $\cL$ with the structure of a sheaf of $L_\infty$ algebras. 
+such that the collection $\{\ell_n\}$ endow $\sL$ with the structure of a sheaf of $L_\infty$ algebras. 
 \end{dfn}
 
-We often refer to a local Lie algebra $(L, \{\ell_n\})$ simply by its sheaf of sections $\cL$. A local Lie algebra defines the sheaf of complexes $\clieu_*(\cL)$ that sends an open set $U \subset X$ to the complex $\clieu_*(\cL(U))$. Note that $\clieu_*(\cL)$ is itself the sheaf of sections of a graded vector bundle and that it has the structure of a sheaf of cocommutative coalgebras. 
+We often refer to a local Lie algebra $(L, \{\ell_n\})$ simply by its sheaf of sections $\sL$. A local Lie algebra defines the sheaf of complexes $\clieu_*(\sL)$ that sends an open set $U \subset X$ to the complex $\clieu_*(\sL(U))$. Note that $\clieu_*(\sL)$ is itself the sheaf of sections of a graded vector bundle and that it has the structure of a sheaf of cocommutative coalgebras. 
 
-\begin{dfn} A map $f : \cL \to \cL'$ of local Lie algebras on $X$ is a polydifferential operator 
+\begin{dfn} A map $f : \sL \to \sL'$ of local Lie algebras on $X$ is a polydifferential operator 
 \ben
-f : \clieu_*(\cL) \to \clieu_*(\cL')
+f : \clieu_*(\sL) \to \clieu_*(\sL')
 \een
 that is, in addition, a map of sheaves of cocommutative coalgebras. 
 \end{dfn}
 
-\subsection{Universal objects}
+\subsubsection{Universal objects}
 
 \def\CplxMan{{\rm CplxMan}}
 \def\Hol{{\rm Hol}}
@@ -47,28 +35,28 @@ that is, in addition, a map of sheaves of cocommutative coalgebras.
 Let $\CplxMan$ be the category of complex manifolds with holomorphic maps. There is a fibered category $\VB$ of holomorphic vector bundles over $\CplxMan$. Likewise, there is a category of local Lie algebras fibered over $\CplxMan$. Its objects are pairs $(X,L)$ consisting of a complex manifold $X$ together with a local Lie algebra $L$ on $X$. Maps between $(f,F) : (X,L) \to (X',L')$ is a holomorphic map $f : X \to X'$ together with a map of local Lie algebras on $X$, $F : L \to f^*L'$.
 ...
 
-Given a local Lie algebra with underlying $\ZZ$-graded vector bundle $L$ we can consider both its sheaf of sections $\cL$. This has the structure of a sheaf of $L_\infty$ algebras. We can also consider its cosheaf of compactly supported sections, that we denote $\cL_c$. The cosheaf of compactly supported sections is not, however, a cosheaf of Lie algebras. It does, however, have a certain ``factorization" property that we will exploit to define factorization algebras on the underlying manifold. 
+Given a local Lie algebra with underlying $\ZZ$-graded vector bundle $L$ we can consider both its sheaf of sections $\sL$. This has the structure of a sheaf of $L_\infty$ algebras. We can also consider its cosheaf of compactly supported sections, that we denote $\sL_c$. The cosheaf of compactly supported sections is not, however, a cosheaf of Lie algebras. It does, however, have a certain ``factorization" property that we will exploit to define factorization algebras on the underlying manifold. 
 
-\begin{dfn} A {\em prefactorization Lie algebra} $\ell$ on a manifold $X$ is the data:
+\begin{dfn} A {\em prefactorization Lie algebra} $\sG$ on a manifold $X$ is the data:
 \begin{itemize}
-\item[(i)] for each open set $U \subset X$ an $L_\infty$ algebra $\ell(U)$;
+\item[(i)] for each open set $U \subset X$ an $L_\infty$ algebra $\sG(U)$;
 \item[(ii)] for each pairwise disjoint collection of open sets $U_1,\ldots,U_n$ contained inside some open set $V \subset X$ a map of $L_\infty$ algebras
 \ben
-\ell(U_1) \oplus \cdots \oplus \ell(U_n) \to \ell(V) .
+\sG(U_1) \oplus \cdots \oplus \sG(U_n) \to \sG(V) .
 \een 
 \end{itemize} 
 \end{dfn}
 There is a symmetric monoidal structure on the category of $L_\infty$ algebras $\Lcat$ given by the direct sum $\oplus$ of underlying chain complexes. Thus, a prefactorization Lie algebra is simply a symmetric monoidal functor
 \ben
-\ell : {\rm Op}(X)^{\sqcup} \to \Lcat^{\oplus} .
+\sG : {\rm Op}(X)^{\sqcup} \to \Lcat^{\oplus} .
 \een
-In particular, $\ell$ is a precosheaf of $L_\infty$ algebras. 
+In particular, $\sG$ is a precosheaf of $L_\infty$ algebras. 
 
 In the holomorphic setting the above definition makes sense in a wider context, where we consider all complex manifolds of a fixed dimension uniformly. 
 
 \begin{dfn} A {\em universal holomorphic prefactorization Lie algebra} of dimension $d$ is a symmetric monoidal functor
 \ben
-\ell : {\rm Hol}^{\sqcup}_d \to \Lcat^{\oplus}
+\sG: {\rm Hol}^{\sqcup}_d \to \Lcat^{\oplus}
 \een
 from the symmetric monoidal category of holomorphic manifolds with embeddings equipped with disjoint union to the category of $L_\infty$ algebras equipped with direct sum.
 \end{dfn}
@@ -80,33 +68,34 @@ Just like in the case of factorization algebras, we have the following definitio
 
 Local Lie algebras provide a nice class of factorization Lie algebras. 
 
-\begin{lem} Suppose $L$ is a local Lie algebra on $X$. Then the precosheaf of compactly supported sections $\cL_c$ is a factorization Lie algebra on $X$. Similarly, if $L$ is a universal holomorphic local Lie algebra then its functor of compactly supported sections $\cL_c$ is a universal holomorphic factorization Lie algebra.
+\begin{lem} Suppose $L$ is a local Lie algebra on $X$. Then the precosheaf of compactly supported sections $\sL_c$ is a factorization Lie algebra on $X$. Similarly, if $L$ is a universal holomorphic local Lie algebra then its functor of compactly supported sections $\sL_c$ is a universal holomorphic factorization Lie algebra.
 \end{lem}
 
 We briefly elaborate by what we mean by the compactly supported sections of a universal local Lie algebra $L$. Such an object determines a functor
 \ben
-\cL_c : \Hol_d \to \Lcat
+\sL_c : \Hol_d \to \Lcat
 \een
 defined by sending a complex $d$-fold $X$ to the space of compactly supported sections of the bundle $L(X)$. This has the structure of an $L_\infty$ algebra by definition. Given a holomorphic embedding $f : X \to Y$ one defines the map
 \ben
-f_c : \cL_c(X) \to \cL_c(Y)
+f_c : \sL_c(X) \to \sL_c(Y)
 \een
 by \brian{finish}...
 
-\subsubsection{}
+Given a Lie algebra $\fg$ one can define the cocoummutative coalgebra $\clieu_*(\fg)$ of Chevalley--Eilenberg chains. 
+This is the cochain complex computing Lie algebra homology. 
 
-We review how one constructs a factorization algebra from a local Lie algebra or a factorization Lie algebra. This will be the primary way that we will construct factorization algebras in this paper. We show that the construction also works to define, from universal Lie algebras, universal factorization algebras. Much of this section is a recollection of  the material in Section 3.6 of \cite{fact1}.
+From a factorization Lie algebra, we construct a factorization algebra in a similar way.
+We show that the construction also works to define, from universal Lie algebras, universal factorization algebras. Much of this section is a recollection of  the material in Section 3.6 of \cite{fact1}.
 
-Given an ordinary Lie algebra $\fg$ we can define the Chevalley-Eilenberg chain complex $\clieu_*(\fg)$ computing Lie algebra homology. 
-
-\begin{lem} Suppose $\mathscr{G}$ is a factorization Lie algebra on $X$. Then, the assignment 
+\begin{lem} Suppose $\sG$ is a factorization Lie algebra on $X$. Then, the assignment 
 \ben
-\clieu_*(\cL_c) : U \mapsto \clieu_*(\cL_c(U))
+\clieu_*(\sG) : U \mapsto \clieu_*(\sG(U))
 \een
-defines a factorization algebra on $X$. Similarly, if $L$ is a universal holomorphic factorization Lie algebra then $\clieu_*(\cL_c)$ defines a universal holomorphic factorization algebra. 
+defines a factorization algebra on $X$. 
+If $\sG$ is a universal holomorphic factorization Lie algebra then $\clieu_*(\sG)$ defines a universal holomorphic factorization algebra. 
 \end{lem}
 
-\subsection{}
+\subsection{The Kac--Moody factorization algebra}
 
 In this section we introduce the local Lie algebra that will be the main focus of the paper. The local Lie algebra will be defined on any complex manifold and is constructed using the data of a Lie algebra $\fg$. For most of this paper we will assume that we have an ordinary Lie algebra, but a very slight generalization can be used to handle dg Lie or $L_\infty$ algebras. 
 
@@ -130,6 +119,28 @@ Here $\wedge$ denotes the wedge product of differential forms. The sheaf of sect
 the restriction of the polydifferential operators $\dbar$ and $[-,-]$ to the vector space $\fg^X(U)$ coincides with structure of a dg Lie algebra obtained by tensoring the dg commutative algebra $\Omega^{0,*}(U)$ with the Lie algebra $\fg$. Now, if $U \hookrightarrow V$ is an inclusion of open sets we need to show that the induced map $\Omega^{0,*}(V) \tensor \fg \to \Omega^{0,*}(U) \tensor \fg$ is a map of dg Lie algebras. This follows from the general fact that if $f : A \to B$ to is a map of commutative dg algebras then the induced map $f \tensor \id_{\fg} : A \tensor \fg \to B \tensor \fg$ is a map of dg Lie algebras (where the dg Lie structure on $A \tensor \fg$ and $B \tensor \fg$ is the one mentioned above). 
 \end{proof}
 
+\begin{rmk} 
+The sheaf of dg Lie algebras $\fg^X$ has the following geometric description.
+Any dg Lie algebra $\fh$ can be interpreted as a formal moduli problem $B \fh$. 
+If $U \subset X$ is an open set, the dg Lie algebra $\fg^X(U)$ describes the formal neighborhood of the trivial bundle inside the moduli space of holomorphic $G$-bundles on $X$ that are trivialized away from $U$. 
+In particular, $\fg^X(X)$ describes the moduli space of holomorphic $G$-bundles on $X$.
+Suppose $\alpha \in \fg^X(X)$ is a Maurer--Cartan element.
+That is, $\alpha$ is a $\fg$-valued $(0,1)$-form satisfying the Maurer--Cartan equation $\dbar \alpha  + \frac{1}{2}[\alpha, \alpha] = 0$.
+We obtain a connection on the trivial $G$-bundle of the form $\dbar + \alpha$. 
+In fact, all first order deformations of the trivial $G$-bundle are of this form.
+The gauge transformations are of the form $\alpha \mapsto \alpha + \dbar \lambda + [\lambda, \alpha]$ where $\lambda : X \to \fg$ is a smooth map. 
+In general $H^2_{\rm Lie} (\fg^X(X))$ is non-trivial, except when $d=1$ in which it vanishes for degree reasons.
+This reflects the possibility for obstructions to first-order deformations of the trivial bundle. 
+ 
+The work in \cite{FHK} has made this perspective precise in general complex dimension by giving a derived model for the moduli space of $G$-bundles.
+They show that the cohomology of the shifted tangent space at the trivial bundle is the $\dbar$-cohomology of $\fg^X(X)$:
+\ben
+H^*\left(T_{triv} {\rm Bun}_G(X)\right) [-1] \cong H^*_{\dbar}(\fg^X(X)) = H^*(X , \sO^{hol}) \tensor \fg
+\een
+as graded Lie algebras.
+\end{rmk}
+
+
 Given the local Lie algebra $\fg(X)$ we obtain a factorization Lie algebra on $X$ by considering its compactly supported sections $\fg_c^X : U \subset X \mapsto \Omega^{0,*}_c(U) \tensor \fg$. 
 
 The local Lie algebra $\fg(X)$ makes sense on any complex manifold and is functorial in the universal sense discussed above. That is, we have a bundle $\fg(-)$ on the category of all complex dimensional $d$-folds. Thus, its compactly supported sections restricted to the subcategory $\Hol_d$ defines a universal holomorphic factorization Lie algebra. Explicitly, this is the functor
@@ -140,28 +151,31 @@ sending $X \to \fg^X_c(X)$.
 
 In fact, there is a certain functoriality in the complex manifold that we now describe 
 
-\section{Central extensions from local cocycles}
+\subsection{Central extensions from local cocycles}
 
-In this section we describe the extensions of the local Lie algebra $\fg^X$. Let $\ul{C}[k]$ be the local Lie algebra defined on any complex manifold $X$ given by the constant bundle concentrated in cohomological degree $-k$. We wish to describe extensions of a local Lie algebra $\cL$ on $X$ by the constant Lie algebra $\CC[k]$. This is a local Lie algebra $\Hat{\cL}$ that fits into an exact sequence of local Lie algebras
+In this section we describe the extensions of the local Lie algebra $\fg^X$. Let $\ul{C}[k]$ be the local Lie algebra defined on any complex manifold $X$ given by the constant bundle concentrated in cohomological degree $-k$. We wish to describe extensions of a local Lie algebra $\sL$ on $X$ by the constant Lie algebra $\CC[k]$. This is a local Lie algebra $\Hat{\sL}$ that fits into an exact sequence of local Lie algebras
 \be\label{kext}
-0 \to \ul{\CC}[k] \to \Hat{\cL} \to \cL \to 0 .
+0 \to \ul{\CC}[k] \to \Hat{\sL} \to \sL \to 0 .
 \ee
 
-Every cocycle $\alpha \in \cloc^*(\cL)(X)$ of total degree $2+k$ determines a central extension as in (\ref{kext}) as follows. The underlying vector bundle for the extended local Lie algebra is given by $L \oplus \ul{\CC
+Every cocycle $\alpha \in \cloc^*(\sL)(X)$ of total degree $2+k$ determines a central extension as in (\ref{kext}) as follows. The underlying vector bundle for the extended local Lie algebra is given by $L \oplus \ul{\CC
 }[k]$. 
 
 Moreover, any two cohomologous cocycles determine quasi-isomorphic extensions. 
 
-\begin{lem} The space of $k$-shifted central extensions as in Equation (\ref{kext}) is a torsor for the abelian group $H^{2+k}(\cL)(X)$. 
+\begin{lem} The space of $k$-shifted central extensions as in Equation (\ref{kext}) is a torsor for the abelian group $H^{2+k}(\sL)(X)$. 
 \end{lem}
 
 
 \ben
 \cloc^*(\fg^X) = 
 \een
-Recall, a local $k$-cocycle of a local Lie algebra determines a $(k-2)$-shifted central extension, by the constant sheaf $\ul{\CC}$. We are interested in $(-1)$-shifted central extensions, and hence, local $1$-cocycles. For $\fg^X$ we can describe such a family of $1$-cocycles.
+Recall, a local $k$-cocycle of a local Lie algebra determines a $(k-2)$-shifted central extension, by the constant sheaf $\ul{\CC}$. We are interested in $(-1)$-shifted central extensions, and hence, local $1$-cocycles. 
+If $\theta$ is such a local cocycle, denote by $\fg^X_\theta$ the corresponding centrally extended local Lie algebra. 
 
-Let $P$ be an invariant polynomial of $\fg$ of homogenous degree $d+1$. That is, $P \in \Sym^{d+1}(\fg^\vee)^\fg$. We can extend $P$ to a functional on $\Omega^{0,*}(X) \tensor \fg$ by the rule
+There is a particular family of local cocycles that we will be especially interested in.
+Let $P$ be an invariant polynomial of $\fg$ of homogenous degree $d+1$. 
+That is, $P \in \Sym^{d+1}(\fg^\vee)^\fg$. We can extend $P$ to a functional on $\Omega^{0,*}(X) \tensor \fg$ by the rule
 \ben
 \begin{array}{cccc}
 P^X : & \Sym^{d+1}(\Omega^{0,*}(X) \tensor \fg) & \to & \CC \\
@@ -183,23 +197,24 @@ is a cochain map. Moreover, it is injective at the level of cohomology.
 \begin{rmk} We extend the operator $\partial : \Omega^{k,l} \to \Omega^{k+1,l}$ to $\Omega^{0,*}(X) \tensor \fg \to \Omega^{1,*}(X)\tensor \fg$ by the operator $\partial \tensor 1$. 
 \end{rmk}
 
-\section{The factorization algebra}
+\subsection{The factorization algebra}
 
 Given any cocycle $\theta \in \cloc^*(\fg^X)$ of degree one we define a factorization algebra on $X$. 
 
-\begin{dfn} Let $\theta$ be a local cocycle of $\fg^X$ of cohomological degree one. Define $\KM_{\fg,\theta}^X$ to be the factorization algebra on $X$ that assigns to an open set $U \subset X$ the cochain complex ${\rm C}^{{\rm Lie}, \theta}_*\left(\fg^X(U)\right)$. In other words, $\KM^X_{\fg,\theta}$ is the twisted factorization envelope ${\rm U}^{\rm fact}_\theta(\fg^X)$. 
+\begin{dfn} Let $\theta$ be a local cocycle of $\fg^X$ of cohomological degree one. Define $\sF_{\fg,\theta}^X$ to be the factorization algebra on $X$ to be the twisted factorization envelope $U^{\rm fact}_\theta (\fg^X)$. 
+Equivalently, this is the factorization envelope of the extended Lie algebra $\Hat{\fg}^X_\theta$ determined by $\theta$. 
 \end{dfn}
 
-Explicitly, on an open set $U \subset X$, the cochain complex $\KM^X_{\fg,\theta}(U)$ has as its underlying graded vector space
+Explicitly, on an open set $U \subset X$, the cochain complex $\sF^X_{\fg,\theta}(U)$ has as its underlying graded vector space
 \ben
 \Sym\left(\fg^X_{c}(U)[1] \oplus \CC \cdot K\right)
 \een
 and the differential is given by $\dbar + \d_\fg + \theta$ where $\d_\fg$ is the extension of the Chevalley-Eilenberg differential for $\fg$ to the Dolbeault complex, and where $\theta$ is extended to the full symmetric algebra by the rule that it is a (graded) derivation. 
 
-\begin{eg} As an example, using the map $J$ of Proposition \ref{prop j map}, we can construct a factorization algebra on $X$ for any invariant polynomial $P \in \Sym^{d+1}(\fg^\vee)^\fg$. Since $j$ is injective, we obtain a unique factorization algebra for every such polynomial, hence it makes sense to denote $\KM^X_{\fg, P} := \KM^X_{\fg,j(P)}$. 
+\begin{eg} As an example, using the map $J$ of Proposition \ref{prop j map}, we can construct a factorization algebra on $X$ for any invariant polynomial $P \in \Sym^{d+1}(\fg^\vee)^\fg$. Since $j$ is injective, we obtain a unique factorization algebra for every such polynomial, hence it makes sense to denote $\sF^X_{\fg, P} := \sF^X_{\fg,j(P)}$. 
 \end{eg}
 
-\subsection{For an arbitrary principal bundle}
+\subsubsection{Arbitrary principal bundle}
 
 There is a local Lie algebra related to $\fg^X$ associated to any principal $G$ bundle. Formally speaking, one can understand $\fg^X$, or rather its global sections $\fg^X(X)$, as being the dg Lie algebra describing the formal neighborhood of the {\em trivial} $G$-bundle inside the derived moduli stack of $G$-bundle on $X$. Indeed, if ${\rm triv}$ denotes the trivial bundle then one has
 \ben
@@ -213,7 +228,7 @@ Let ${\rm ad}(P)$ denote the bundle of Lie algebras on $X$ associated to $P$. We
 \een 
 i.e. the $(0,*)$-forms on $X$ with coefficients in the bundle ${\rm ad}(P)$. The Lie bracket on ${\rm ad}(P)$ together with the Dolbeault operator $\dbar$ define the structure of the local Lie algebra. The global sections of this local Lie algebra describe the formal completion of $P$ in the moduli of $G$ bundles: $\Hat{P} = B \fg^{P \to X}(X)$. 
 
-\subsection{A variant on the construction}
+\subsubsection{A variant on the construction}
 
 The definition of the following flavor of factorization algebras have appeared in Section 3.6 of \cite{book1}, but we wish to further analyze them here. As in the cases above, we work on a complex $d$-fold $X$ and consider the local Lie algebra $\fg^X = \Omega^{0,*}(X; \fg)$. The variant we discuss in this section involves a different $(-1)$-shifted central extension of this local Lie algebra. In this section, we fix an invariant pairing $\<-,-\>$ on the Lie algebra $\fg$. 
 
@@ -231,86 +246,37 @@ Fix a closed $(d-1,d-1)$-form $\omega \in \Omega^{d-1,d-1}(X)$. Define the quadr
 using the fact that $\omega$ is closed and $\omega \wedge \<\alpha, \partial \beta\>$ is $\partial$-closed. 
 \end{proof}
 
-\begin{dfn} Let $X$ be a complex $d$-fold and $\omega \in \Omega^{d-1,d-1}(X)$ a closed form. Define the factorization algebra $U^{fact}_{\phi_\omega}(\fg^X)$ on $X$ as the twisted factorization envelope of $\fg^X$ twisted by the cocycle $\phi_\omega$. 
+\begin{dfn} Let $X$ be a complex $d$-fold and $\omega \in \Omega^{d-1,d-1}(X)$ a closed form. Define the factorization algebra $U^{fact}_{\omega}(\fg^X)$ on $X$ as the twisted factorization envelope of $\fg^X$ twisted by the cocycle $\phi_\omega$. 
 \end{dfn}
 
 \begin{eg} Suppose that $X$ is a K\"{a}hler $d$-fold and let $\omega \in \Omega^{1,1}(X)$ be the K\"{a}hler form. We can then take the $(d-1,d-1)$-form above to be the $(d-1)$st power of the K\"{a}hler form $\omega^{d-1}$. We will refer to the factorization algebra
 \ben
-{\rm KKM}^X := U^{fact}_{\phi_{\omega^{d-1}}} (\fg^X)
+\sF^{(X,\omega)} := U^{fact}_{\omega^{d-1}} (\fg^X)
 \een
 as the {\em K\"{a}hler-Kac-Moody} factorization algebra on $X$. In the case that $d =2$, the factorization algebra is related to the four-dimensional generalization of the Wess-Zumino-Witten model studied by Nair and Schiff in \cite{NairSchiff} and later by Nekrasov et. al. in \cite{NekThesis, LMNS}. We will return to this example later to describe its local operators as a consequence of its factorization algebra structure and to give an interpretation of it as a boundary of a certain Chern-Simons--like gauge theory. 
 \end{eg}
 
-\appendix
+\subsection{Relation to the ordinary Kac-Moody on Riemann surfaces}
 
-\section{$L_\infty$ structures}
+In this section we pause to discuss a direct relationship of the higher dimensional Kac-Moody factorization algebras discussed above to the familiar Kac-Moody vertex algebras which are defined on one-dimensional complex manifolds. 
 
-\brian{this may be an unnecessary section. Want to stress that KHF do not write down an explicit $L_\infty$-model but it will often be convenient for us to use one.}
+Throughout this section we fix a Riemann surface $\Sigma$ and consider a holomorphic family of complex $(d-1)$-folds over it. That is, we have a holomorphic fibration $\pi : X \to \Sigma$ whose fibers $\pi^{-1}(x)$, $x \in \Sigma$ are $(d-1)$-dimensional. For a fixed Lie algebra $\fg$ we put the higher dimensional Kac-Moody on $X$ and consider its pushforward along $\pi$ to get some factorization algebra on $\Sigma$. We will see how this pushforward is related to the one-dimensional Kac-Moody factorization (and vertex) algebra on $\Sigma$.  
 
-Suppose $V$ is a dg vector space. Then, the symmetric algebra 
+\subsubsection{A reminder of the ordinary current algebra}
+
+The affine algebra $\Hat{\fg}$ of a Lie algebra $\fg$ together with a invariant pairing $\<-,-\>_\fg$ is defined as a Lie algebra central extension of the loop algebra $L \fg = \fg[t,t^{-1}]$ defined by the cocycle $(f,g) \mapsto {\rm Res_{0}} (f \partial g)$. There is a slight generalization of this construction defined for any dg Lie algebra $(\fg, \d_\fg)$. We take as the input data a $\fg$-invariant pairing $\<-,-\>_\fg$ that is closed for the differential $\d_{\fg}$. This means that for any $X,Y \in \fg$ we have $\<\d_\fg X, Y\> + (-1)^{|X|} \<X, \d_\fg Y\> = 0$ where $|X|$ is the cohomological degree of $X$ in $\fg$. Equivalently, $\<-,-\>$...
+
+The loop algebra of a dg Lie algebra $L \fg = \fg [t,t^{-1}]$ is still defined and from the $\d_\fg$-closed invariant pairing we get a 2-cochain on $L \fg$ defined by the same formula as in the ordinary case. The fact that it is a cocycle comes from being closed for both the differential $\d_\fg$ and the Chevalley-Eilenberg differential for $L \fg$ (by invariance). Thus, we obtain a dg Lie algebra central extension $\Hat{\fg}$ of $L \fg$. 
+
+From the affine algebra associated to $\fg$ one builds the Kac-Moody vertex algebra by inducing the trivial module for $\Hat{\fg}$ up via the subalgebra of positive loops $L_+ \fg \subset L \fg$. It is immediate that the same construction carries over for the case of a dg Lie algebra. One obtains, in this way, a {\em dg vertex algebra}. That is, a vertex algebra in the category of cochain complexes. We denote the level $\kappa$ vacuum Kac-Moody dg vertex algebra obtained in this way by $\Hat{\fg}_{\kappa}$. 
+
+\subsubsection{Level zero}
+
+\subsubsection{}
+
+\begin{cor} Fix a Lie algebra with invariant pairing $\<-,-\>$. Let $\Sigma$ be an arbitrary Riemann surface and $d > 1$. Consider the volume form $\omega \in \Omega^{d-1,d-1} (\PP^{d-1})$. Then, the pushforward of the factorization algebra $\sF_{\omega}^{\Sigma \times \PP^{d-1}}$ along the projection $\pi : \Sigma \times \PP^{d-1} \to \Sigma$ is quasi-isomorphic to the ordinary Kac-Moody factorization algebra of central charge ${\rm vol}(\omega)$
 \ben
-\Sym(V) := \prod_{k} \Sym^{k} (V)
-\een
-has the natural structure of a dg cocommutative coalgebra.
+\pi_* \sF_{\omega}^{\Sigma \times \PP^{d-1}} \simeq \sF^{\Sigma}_{{\rm vol}(\omega)} .
+\een 
+\end{cor}
 
-\begin{dfn} An {\em $L_\infty$ algebra} is a dg vector space $V$ together with a coderivation
-\ben
-D : \Sym(V) \to \Sym(V) .
-\een
-A {\em morphism} of $L_\infty$ algebras $f : (V,D) \to (V',D')$ is a morphism of dg cocommutative coalgebras
-\ben
-f : \left(\Sym(V), D \right) \to \left(\Sym(V'), D'\right) .
-\een
-Denote the category of $L_\infty$ algebras by $\Lcat$. 
-\end{dfn}
-
-The complex $(\Sym(V), D)$ is the complex of Chevalley-Eilenberg chains of the $L_\infty$ algebra $\fg = (V,D)$. In the case of a dg Lie algebra this is the usual complex of Chevalley-Eilenberg chains. Without loss of generality we denote this complex by $\clieu(\fg)$ just as in the classical case.
-
-We may a remark about dg Lie algebras and their close relatives, $L_\infty$ algebras. 
-
-\begin{thm}\brian{Kriz and May?} Every $L_\infty$ algebra $(V, D)$ is quasi-isomorphic (in the category $\Lcat$) to a dg Lie algebra.
-\end{thm}
-
-By an $L_\infty$ algebra model for a dg Lie algebra $\fg$, we mean an $L_\infty$ algebra $(L, D)$ together with a quasi-isomorphism $(L, D) \simeq \fg$. 
-
-\subsection{Extensions from cocycles}
-
-Suppose $\fg$ is a dg Lie algebra. Let $\theta \in \clie^*(\fg)$ be a cocycle of degree $2$, so its cohomology class is an element $[\theta] \in H^{2}_{\rm Lie}(\fg)$. By \brian{ref}, we know that $\theta$ determines a central extension in the category of dg Lie algebras:
-\ben
-0 \to \CC\cdot K \to \Hat{\fg} \to \fg \to 0 
-\een
-that only depends, up to isomorphism, on the cohomology class of $\theta$. 
-
-The explicit dg Lie algebra structure on $\Hat{\fg}$ may be tricky to describe. However, if we are willing to work in the category of $L_\infty$ algebras, there is an explicit model for $\fg$ as an $L_\infty$ algebra. The underlying dg vector space for the $L_\infty$ algebra is the same as that of the dg Lie algebra, $\Hat{\fg} \oplus \CC\cdot K$. To equip this with an $L_\infty$ structure we need to provide a coderivation $D = D_1 + D_2 + \cdots $ for the cocommutative coalgebra $\Sym(\fg \oplus \CC\cdot K) = \prod_{k} \Sym^k(\fg \oplus \CC\cdot K)$. Indeed, we define
-\ben
-\begin{array}{lcl}
-D_1(X_1) & = & \d_{\fg}(X_1) + \theta(X_1) \\
-D_2(X_1,X_2) & = & [X_1,X_2]_{\fg} + \theta(X_1,X_2) \\
-D_k(X_1,\ldots,X_k) & = & \theta(X_1,\ldots,X_k) \;\; , \;\; {\rm for} \;\; k \geq 3 . 
-\end{array}
-\een
-One immediately checks that $(\fg \oplus \CC, D)$ is an $L_\infty$ model for $\Hat{\fg}$. 
-
-\begin{eg} As an example, consider the following $L_\infty$ model for the dg Lie algebra $\Hat{\fg}_{d,\theta}$. As a dg vector space $\Hat{\fg}_{d,\theta}$ is of the form $A_d \tensor \fg \oplus \CC \cdot K$. The only nonzero components of the coderivation determining the $L_\infty$ structure are $D_1$,$D_2$, and $D_{d+1}$ and they are determined by $D_1(a X) = (\dbar a) X$, $D_2 (aX,bY) = (a \wedge b) [X,Y]_{\fg}$, and
-\ben
-D_{d+1} (a_0X_0,\ldots, a_d X_d) = \Reszero \left(a_0 \wedge \partial a_1 \wedge \cdots \wedge \partial a_d \right) \theta(X_0,\ldots,X_d) \cdot K .
-\een
-\end{eg}
-
-\begin{lem} Suppose $\fg$ is an $L_\infty$ algebra and we are given two central extensions 
-\ben
-0 \to \CC \cdot K [k] \to \Tilde{\fg}, \Tilde{\fg}' \to \fg \to 0
-\een
-of $L_\infty$ algebras by the trivial module placed in degree $-k$. Suppose that the cocycles determining the central extensions differ by an exact cocycle of the form $\d \eta \in \clie^*(\fg)$ where $\eta$ is a cochain of degree $k+1$. Then, the map
-\ben
-\id + \eta \cdot K: \clieu_*(\Tilde{\fg}) \to \clieu_*(\Tilde{\fg}')
-\een
-determines an $L_\infty$-isomorphism $\Tilde{\fg} \cong \Tilde{\fg}'$. 
-\end{lem}
-
-In the lemma above the map $\id + \eta$ sends the element $X_1\cdots X_n \in \Sym^n (\fg)$ to $X_1\cdots X_n + \eta(X_1,\ldots,X_n) \cdot K$ and is the identity on the subspace generated by the central element $K$. 
-
-\subsection{Homotopy Poisson structures}
-
-
-\end{document}
