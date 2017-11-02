@@ -15,7 +15,6 @@ A result of \brian{ref} identifies the moduli space of $G$-bundles on $X$ with t
 {\rm Bun}_G(X) \cong G_{\rm out} ?? G(\Hat{\sK}_x) / G(\Hat{\sO}_x) .
 \een
 
-
 Let ${\rm Bun}_{G}(X)$ denote the moduli space of $G$-bundles on the complex $d$-fold $X$. 
 For $d > 1$ \cite{FHK} have constructed a global smooth derived realization of this space, but its full structure will not be used in this discussion. 
 We recall the definition of the determinant line bundle associated to a representation as a functor
@@ -96,43 +95,91 @@ By the general yoga of Koszul duality, a Maurer--Cartan element defines a map of
 \ben
 S^{\sL} : \sL(X) \to \oloc(\sE)[-1] .
 \een
+\brian{compare to finite dimensional case}
 
 \subsubsection{Quantum symmetries}
 
-We now discuss how to lift symmetries to the quantum level. 
+We now discuss symmetries of a quantum field theory.
+From the data of such a quantum symmetry is a local cocycle on the $L_\infty$ algebra that we interpret as a type of ``local index".
+
 We follow the approach of Costello \cite{Cosbook} to perturbative QFT based on the Wilsonian renormalization of the path integral.
-Suppose $\sE$ is the space of fields. 
+We start with a space of fields $\sE$ equipped with a square zero elliptic differential operator $Q$ of cohomological degree zero, and a $(-1)$-shifted symplectic pairing.
+This is the data of a {\em free} theory in the classical BV formalism.
 A QFT is a family of functionals $\{S[L]\}$ ...
 
 The main result of \cite{CG2} says that associated to any QFT $(\sE, S^\q)$ defined on $X$ there is a factorization algebra $\Obs^\q$ on $X$ called the {\em quantum observables}. 
-
 
 \begin{thm}[\cite{CG2} Theorem 12.5.0.1]
 Suppose we have an $\sL$-symmetry of a QFT $(\sE, S^\q)$. 
 Then, there is a cohomology class $\alpha_\sE \in H^1_{red,loc}(\sL)[[\hbar]]$ such that the factorization Lie algebra $\sL_c$ acts (up to homotopy) on the factorization algebra of quantum observables $\Obs_{\sE}^\q[\hbar^{-1}]$ by $\alpha_\sE$ times the identity.
 \end{thm}
 
-We can view $\alpha_{\sE}$ as the ``local character" for the action of the local Lie algebra $\sL$ on the observables.
-Indeed, this statement implies that for any open set $U \subset X$ we have an action of the $L_\infty$ algebra $\sL_c(U)$ on $\Obs^\q(U)[\hbar^{-1}]$, and that this action is homotopy equivalent to the trivial action times the character $\alpha_{\sE}$. 
+We will call $\alpha_{\sE}$ the {\em anomaly cocycle} corresponding to the $\sL$-symmetry.
+This cocycle $\alpha = \alpha_{\sE}$ can be viewed as the ``local character" for the action of the local Lie algebra $\sL$ on the observables.
+Indeed, this statement implies that for any open set $U \subset X$ we have an action of the $L_\infty$ algebra $\sL_c(U)$ on $\Obs^\q(U)[\hbar^{-1}]$, and that this action is homotopy equivalent to the trivial action times the character $\alpha$. 
 Moreover, this homotopy equivalence is compatible with the factorization structure. 
+
+There is a convincing way to repackage this action of $\sL_c$ on the quantum observables. 
+Let $\Obs^\q_{\alpha}$ denote the $\sL_c$-equivariant factorization algebra
+\ben
+\Obs^\q \tensor_{\CC[[\hbar]]} {\ul \CC}_\alpha [[\hbar]]
+\een
+where $\CC_\alpha[[\hbar]]$ denotes the $\CC[[\hbar]]$-linear constant factorization algebra with action of $\sL_c$ given by the character $\alpha$. 
+The theorem implies that there is a quasi-isomorphism of factorization algebras
+\ben
+\clieu_*(\sL_c, \Obs^\q_\alpha)[\hbar^{-1}] \simeq \clieu_*(\sL_c) \tensor \Obs^\q[\hbar^{-1}] .
+\een
+
+There is a natural augmentation map of factorization algebras $\epsilon : \clieu_*(\sL_c) \to \ul{\CC}$ that projects onto the $\Sym^0$ component. 
+Furthermore, the unit observable $\mathbb{1} : \ul{\CC} \to \Obs^\q$ defines a map of factorization algebras
+\ben 
+\mathbb{1} : \clieu_*(\sL_c, \ul{\CC}_\alpha[[\hbar]]) \to \clieu_*(\sL_c, \Obs^\q_\alpha) .
+\een
+
+\begin{thm}[\cite{CG2}] \label{thm noether} The composition defines a sequence of maps of factorization algebras
+\ben
+\clieu_*(\sL_c, \CC_\alpha[[\hbar]]) \xto{\mathbb{1}} \clieu_*(\sL_c, \Obs^\q_\alpha)[\hbar^{-1}] \simeq \clieu_*(\sL_c) \tensor \Obs^\q[\hbar^{-1}] \xto{\epsilon} \Obs^\q [\hbar^{-1}] .
+\een
+In summary, there is a map of factorization algebras
+\ben
+\Phi : \clieu_{*,\alpha} (\sL_c) \to \Obs^\q [\hbar^{-1}]
+\een
+where $\clieu_{*,\alpha}(\sL)$ is the $\CC[[\hbar]]$-linear twisted factorization envelope of $\sL$ by $\alpha$. 
+\end{thm}
 
 In the remainder of this section we interpret the implication of this for the Kac--Moody 
 
-\subsection{Free theories and the $\beta\gamma$ system}
+\subsection{The anomaly for the $\beta\gamma$ system}
+
+\subsubsection{The quantization of free BV theories}
 
 \brian{statement about determinants a la Gwilliam-Haugseng}
 
-\subsection{Computing the anomaly}
+\subsubsection{}
 
-\begin{prop} Let $V$ be a $\fg$ module and $X$ a complex $d$-fold. The classical $\fg^X$-equivariant theory
+We now introduce the higher dimensional free $\beta\gamma$ system. 
+This is a free BV theory defined on any complex $d$-fold $X$.
+Let $V$ be a finite dimensional vector space. 
+The fields are defined as 
 \ben
-\sE_{X,V} = T^*[-1] (\Omega^{0,*}(X ; V))
+\sE(X, V) = \Omega^{0,*}(X) \tensor V \oplus \Omega^{d,*}(X) \tensor V^\vee [d-1] .
+\een 
+We denote a general field by $(\gamma, \beta)$ according to the above decomposition. 
+The action is 
+\ben
+S(\gamma, \beta) = \int_X \<\beta, \dbar \gamma\>
 \een
-admits a canonical $\fg^X$-equivariant quantization. 
-The cohomology class of the obstruction $[\Theta_V] \in H^1(\cloc^*(\fg^X))$ to lifting this to an inner action by the local Lie algebra $\fg^X$ is identified with the image of $$\#\ch_{d+1}(V) \in \Sym^{d+1}(\fg^\vee)^\fg$$ under the map $J : \Sym^{d+1}(\fg^\vee)^\fg [-1] \to \cloc^*(\fg^X)$. 
-\end{prop}
+where the brackets $\<-,-\>$ denote the obvious pairing between $V$ and its dual. 
 
-As a simple corollary we find the anomaly in a slightly more general situation.
+
+Now, we are ready to state the main result about the anomaly cocycle for the Kac--Moody symmetry of the higher dimensional $\beta\gamma$ system.
+
+\begin{thm} Let $V$ be a finite dimensional $\fg$-module and $X$ any complex $d$-fold.
+There exists a one-loop exact $\fg^X$-symmetry of the quantum $\beta\gamma$ system valued in $V$ quantizing the natural classical $\fg^X$-symmetry.
+Moreover, the anomaly cocycle $\alpha_V \in H^1_{\rm loc}(\fg^X)$ is identified with the image of $$\#\ch_{d+1}(V) \in \Sym^{d+1}(\fg^\vee)^\fg$$ under the map $J : \Sym^{d+1}(\fg^\vee)^\fg [-1] \to \cloc^*(\fg^X)$. 
+\end{thm}
+
+As a simple corollary, we find the anomaly in a slightly more general situation.
 
 \begin{cor} Let $P$ be a principal $G$-bundle on $X$, and $V$ a $G$-representation. 
 Then we can consider the $\fg^X_P = \Omega^{0,*}(X ; {\rm ad}(P))$-equivariant theory
@@ -143,9 +190,13 @@ This theory admits a canonical $\fg^X_P$-equivariant quantization.
 Moreover, the cohomology class of the obstruction $[\Theta_{V}]$ to an inner action is also identified with $\#\ch_{d+1}(V)$. 
 \end{cor}
 
-We will prove the proposition in the following steps. First, we argue that it suffices to calculate this obstruction on an arbitrary open set in $X$. Taking this open set to be a disk we see that it suffices to compute the cocycle in the case that $X = \CC^d$. This calculation is done explicitly in terms of one-loop Feynman diagrams. 
+We will prove the proposition in the following steps. 
+First, we argue that it suffices to calculate this obstruction on an arbitrary open set in $X$. 
+Taking this open set to be a disk we see that it is enough to compute the cocycle in the case that $X = \CC^d$. 
+In this case, we find a quantization that is actually finite at the one-loop level. 
+This means that there are no counterterms necessary, and we can explicitly calculate the cocycle in terms of the weight of a  simple one-loop Feynman diagram.
 
-\subsubsection{}
+\subsubsection{The reduction to a disk}
 
 By construction, the data of a classical BV theory on $X$ is sheaf-like on the manifold. That is, we have a sheaf of $(-1)$-shifted elliptic complexes $\sE$ on $X$ together with a local functional $I \in \oloc(\sE)(X)$. The space of local functionals $\oloc(\sE)$ also forms a sheaf on $X$, so it makes sense to restrict $I$ to any open set $U \subset X$. In this way, for each open we have a $(-1)$-shifted elliptic complex $\sE(U)$ together with a local functional $I |_{U}\in \oloc(\sE)(U)$ -- that is, a classical field theory on $U \subset X$. A fancy way of saying this is that the space of classical field theories on $X$ forms a sheaf. 
 
@@ -178,4 +229,30 @@ defined on each open by $J|_{U} = J^U$ is a map of sheaves. Here, the underline 
 is injective.
 \end{lem}
 
+
 \brian{The last key observation is that $(i_U^V)^* J^V = J^U$.}
+
+
+\subsubsection{The theory on a disk}
+
+\subsubsection{The Heisenberg algebra}
+
+In ordinary classical mechanics, the Heisenberg algebra is a convenient tool to construct the deformation quantization for quadratic Hamiltonians.
+This construction carries over for symplectic dg vector spaces.
+We will use it to give a model for the sphere observables of the $\beta\gamma$ system.
+Furthermore, we provide a map from the sphere Lie algebra $\Hat{\fg}_{d, \theta}$ to a completion of this algebra as a corollary of the Theorem \ref{thm noether}.
+
+Let $A_d$ be the commutative dg algebra from Section \ref{sec lie} and $V$ a finite dimensional vector space. 
+Consider the dg (0-shfted) symplectic vector space
+\ben
+W_d(V) = A_d \tensor V \oplus A_d \tensor V^\vee [d-1]
+\een
+with pairing defined by
+\ben
+\omega_W (a \tensor v, b \tensor v^\vee) = \<v, v^\vee\> \oint_{S^{2d-1}} a \wedge b 
+\een
+where $\oint_{S^{2d-1}}$ is the higher residue and $\<v,v^\vee\>$ denotes the pairing between $V$ and its dual. 
+Clearly $\omega_W$ is non-degenerate and it is immediate to check that $\d \omega = 0$ where $\d$ is the differential on $A_d$, so that $\omega$ indeed defines a symplectic structure. 
+
+
+
