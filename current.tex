@@ -58,14 +58,32 @@ so that the sheaf of holomorphic sections of $\ad(P)$ encodes a class of local s
 
 If one takes a BV/BRST approach to field theory, as we will in this paper,
 then one works with a cohomological version of fields and symmetries.
-For instance, it is natural to view the classical fields as consisting of Dolbeault forms
+For instance, it is natural to view the classical fields as consisting of the graded vector space of Dolbeault forms
 \[
 \gamma \in \Omega^{0,*}(X,\cV) \quad \text{and} \quad \beta \in \Omega^{0,*}(X, \cV^!) \cong \Omega^{d,*}(X, \cV^*),
 \]
 but using the same action functional, extended in the natural way.
 As we are working with a free theory and hence have only a quadratic action,
 the equations of motion are linear and can be viewed as equipping the fields with the differential $\dbar$.
+In this sense, the sheaf $\cE$ of solutions to the equations of motion can be identified with the elliptic complex that assigns to an open set $U \subset X$, the complexe
+\[
+\cE(U) = \Omega^{0,*}(U,\cV) \oplus \Omega^{0,*}(U, \cV^!),
+\]
+with $\dbar$ as the differential.
+This dg approach is certainly appealing from the perspective of complex geometry,
+where one routinely works with the Dolbeault complex of a holomorphic bundle.
 
+It is natural then to encode the local symmetries in the same way.
+Let $\cAd(P)$ denote the Dolbeault complex of $\ad(P)$ viewed as a sheaf.
+That is, it assigns to the open set $U \subset X$, the dg Lie algebra 
+\[
+\Omega^{0,*}(X,\ad(P))
+\]
+with differential $\dbar$ for this bundle.
+By construction, $\cAd(P)$ acts on $\cE$.
+In words, $\cE$ is a sheaf of dg modules for the sheaf of dg Lie algebra~$\cAd(P)$.
+
+\subsubsection{}
 
 The observables of this classical theory are then the commutative dg algebra
 \[
@@ -73,9 +91,7 @@ The observables of this classical theory are then the commutative dg algebra
 \]
 where \owen{not sure how to describe this is a way not mentioning a ton of annoying functional analytic technicalities \dots}
 
-Let $\cAd(P)$ denote the Dolbeault complex of $\ad(P)$ viewed as a sheaf.
-That is, it assigns to the open set $U \subset X$, the dg Lie algebra $\Omega^{0,*}(X,\ad(P))$.
-Then by construction, $\cAd(P)$ acts on the 
+
 
 \subsection{Definitions}
 
