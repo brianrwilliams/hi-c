@@ -2,21 +2,46 @@
 
 \section{Formal index theorem on the moduli of $G$-bundles}
 
-Suppose $X$ is a complex curve and $G$ is a simple Lie group.
-If $x \in X$, denote by $\Hat{\sO}_x$ the completed local ring at $x$ which is non-canonically isomorphic to the ring of power series $\CC[[t]]$. 
-Let $\Hat{\sK}_x$ denote its field of fractions, which can be identified with Laurent series $\CC((t))$. 
-The corresponding formal disk and formal punctured disk are denoted by $\Hat{D}_x = {\rm Spec}(\Hat{\sO}_x)$, $\Hat{D}_x^{\times} = {\rm Spec}(\Hat{\sK}_x)$.
-Let $G(\Hat{\sO}_x)$ be the group of maps $\Hat{D}_x \to G$ and $G(\Hat{\sK}_x)$ be the group of maps $\Hat{D}_x^\times \to G$. 
-The latter is sometimes called the formal loop group of $G$. 
+%Suppose $X$ is a complex curve and $G$ is a simple Lie group.
+%If $x \in X$, denote by $\Hat{\sO}_x$ the completed local ring at $x$ which is non-canonically isomorphic to the ring of power series $\CC[[t]]$. 
+%Let $\Hat{\sK}_x$ denote its field of fractions, which can be identified with Laurent series $\CC((t))$. 
+%The corresponding formal disk and formal punctured disk are denoted by $\Hat{D}_x = {\rm Spec}(\Hat{\sO}_x)$, $\Hat{D}_x^{\times} = {\rm Spec}(\Hat{\sK}_x)$.
+%Let $G(\Hat{\sO}_x)$ be the group of maps $\Hat{D}_x \to G$ and $G(\Hat{\sK}_x)$ be the group of maps $\Hat{D}_x^\times \to G$. 
+%The latter is sometimes called the formal loop group of $G$. 
+%
+%There is a subgroup $G_{\rm out}$ of $G(\Hat{\sK}_x)$ consisting of the maps $X \setminus x \to G$.
+%A result of \brian{ref} identifies the moduli space of $G$-bundles on $X$ with the double quotient
+%\ben
+%{\rm Bun}_G(X) \cong G_{\rm out} ?? G(\Hat{\sK}_x) / G(\Hat{\sO}_x) .
+%\een
 
-There is a subgroup $G_{\rm out}$ of $G(\Hat{\sK}_x)$ consisting of the maps $X \setminus x \to G$.
-A result of \brian{ref} identifies the moduli space of $G$-bundles on $X$ with the double quotient
-\ben
-{\rm Bun}_G(X) \cong G_{\rm out} ?? G(\Hat{\sK}_x) / G(\Hat{\sO}_x) .
-\een
-
+In this section we formulate and prove a families index theorem over the moduli space of holomorphic principal $G$-bundles on a complex manifold. 
+Fix a complex $d$-fold $X$. 
 Let ${\rm Bun}_{G}(X)$ denote the moduli space of $G$-bundles on the complex $d$-fold $X$. 
 For $d > 1$ \cite{FHK} have constructed a global smooth derived realization of this space, but its full structure will not be used in this discussion. 
+
+Suppose $\sP \to X \times B$ is a holomorphic family of principal $G$-bundles on $X$. 
+For each point $b$ in the parameter space $B$ the restriction $\sP|_{X \times \{b\}}$ is a principal $G$-bundle on $X = X \times \{b\}$. 
+Such families are classified by a map $f_{\sP} : B \to {\rm Bun}_G(X)$.
+
+Suppose $V$ is a $G$-representation. 
+Given any principal $G$-bundle $P$ on $X$ we obtain the vector bundle $P \times^G V$ on $X$ via the Borel construction. 
+Similarly, if $\sP$ is a family of $G$-bundles as above, we obtain a family of vector bundles $\sV_\sP$ over $X \times B$ whose fiber over $X \times \{b\}$ is the vector bundle $\sV_b = \sP|_{X \times \{b\}} \times^G V$ on $X$.
+
+Moreover, $\sV_\sP$ is a family of holomorphic vector bundles. 
+In particular, for each $b$ there is a $\dbar$-operator
+\ben
+\dbar_b : \Gamma(X, \sV_b) \to \Gamma(X, T_X^{*0,1} \tensor \sV_b) .
+\een
+We can extend this operator to an elliptic complex 
+\ben
+\Omega^{0,0}(X , \sV_b) \xto{\dbar_b} \Omega^{0,1}(X , \sV_b) \xto{\dbar_b} \cdots \xto{\dbar_b} \Omega^{0,d}(X , \sV_b)
+\een
+where $d$ is the dimension of $X$. 
+Denote this elliptic complex by $\Omega^{0,*}(X , \sV_b)$. 
+This construction also makes sense in families.
+We denote the holomorphic family of elliptic complexes by $\Omega^{0,*}(X , \sV)$ over $X \times B$ whose fiber over $b \in B$ is $\Omega^{0,*}(X , \sV_b)$.
+
 We recall the definition of the determinant line bundle associated to a representation as a functor
 \ben
 \kappa : {\rm Rep}(G) \to {\rm Pic}(\Bun_G(X)) .
