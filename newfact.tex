@@ -1,0 +1,55 @@
+\section{The Kac--Moody factorization algebra}
+
+In this section we introduce the ...
+
+\subsection{The factorization algebra}
+
+\brian{Define factorization algebra. I suggest we use the notation $\UU(\cAd(P))$ and $\UU_\alpha(\cAd(P))$.}
+
+\subsection{The shifted Poisson structure}
+
+Every associative algebra determines a Lie algebra via the commutator. 
+There is a left adjoint to this forgetful functor given by the enveloping algebra of a Lie algebra. 
+Given a Lie algebra $\fg$, this enveloping algebra $U \fg$ can also be thought of as a quantization of a certain Poisson algebra.
+The Poincar\'{e}--Birkoff--Witt theorem says that the associated graded ${\rm Gr} \; U \fg$ by the filtration given by symmetric degree is precisely $\CC[\fg^*]$.
+It is a classical fact that the linear dual $\fg^*$ of a Lie algebra has the structure of a Poisson manifold. 
+The Poisson bracket on $\CC[\fg^*] = \Sym(\fg)$ is defined by extending the Lie bracket on the quadratic functions by the Leibniz rule. 
+
+In a completely analogous way, the factorization enveloping algebra of a local Lie algebra has a ``classical limit" given by a $P_0$ factorization algebra. 
+Recall, the factorization enveloping algebra of $\sL$ evaluated on an open set $U$ is given by the Chevalley--Eilenberg complex
+\ben
+\clieu_*(\sL_c(U)) = \left(\Sym^*(\sL_c(U)[1]), \d_\sL + \d_{CE}\right) .
+\een
+There is a filtration of this complex defined by $F^k = \Sym^{\geq k} (\sL_c(U)[1])$. 
+Moreover, this defines a filtration of the factorization algebra $\UU(\sL)$. 
+
+\begin{lem} Let $\sL$ be a local Lie algebra. 
+Then, the associated graded factorization algebra ${\rm Gr} \; \UU(\sL)$ has the structure of a $P_0$ factorization algebra. 
+Similarly, if $\alpha \in \cloc^*(\sL)$ is a cocycle of cohomological degree one then ${\rm Gr} \; \UU_\alpha(\sL)$ has the structure of a $P_0$ factorization algebra.
+\end{lem}
+
+Up to issues of functional analysis, one should think of the $P_0$ algebra ${\rm Gr} \; \UU(\sL)$ as the algebra of functions on the sheaf of dg vector spaces $\sL^\vee [-1]$ with differential induced from that on $\sL$. 
+The $P_0$ algebra ${\rm Gr} \; \UU_\alpha(\sL)$ is equal to functions on the same sheaf of dg vector spaces but with bracket modified by $\alpha$. 
+
+\begin{cor} For any principal $G$-bundle $P \to X$ consider the associated graded factorization algebra
+\ben
+{\rm Gr} \; \UU (\cAd(P)) = \left(\Sym^*(\cAd(P)[1]), \dbar \right) .
+\een
+Then, every $\alpha \in H^1_{\rm loc}(\cAd(P))$ determines the structure of a $P_0$ factorization algebra on ${\rm Gr} \; \UU (\cAd(P))$. 
+\end{cor}
+
+In the case that $\alpha = J(\theta)$ is the local cocycle corresponding to a symmetric polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$ the Poisson structure can be described explicitly as follows. 
+The Poisson tensor is of the form $\Pi = \Pi_{[-,-]} + \Pi_\alpha $ where 
+\ben
+\Pi_{[-,-]} = \wedge \tensor [-,-] : \left(\Omega^{d,*}_X \tensor \fg \right) \tensor \left(\Omega^{0,*}_X \tensor \fg\right) \to \Omega^{d,*}_X \tensor \fg 
+\een 
+and
+\ben
+\Pi_{\alpha} : \left(\Omega^{0,*}_X \tensor \fg\right)^{\tensor d} \to \Omega^{d,*}_X\tensor \fg
+\een
+sends $\alpha_1 \tensor \cdots \tensor \alpha_d \mapsto \partial \alpha_1 \wedge \cdots \wedge \partial \alpha_d$. 
+
+\subsubsection{BV quantization}
+
+The factorization envelope $\UU \sL$ is a very special quantization of the $P_0$ factorization algebra of functions on $\sL^\vee [-1]$.
+\brian{Take the BD envelope of a Lie algebra, then set $\hbar = 1$.} 

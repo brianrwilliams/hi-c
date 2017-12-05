@@ -22,11 +22,12 @@ Our main result is to interpret a certain anomaly coming from BV quantization as
 This anomaly is computed via an explicit Feynman diagrammatic calculation and is related to a local cocycle of the current algebra discussed in Section \brian{ref}. 
 An immediate corollary is a formal universal version of the Grothendieck--Riemann--Roch theorem over the moduli space of bundles. 
 
-A secondary result involves the higher Kac--Moody factorization algebra. 
+We will arrive at this result in a way that is local-to-global on space-time which we formulate in terms of factorization algebras.
 In \cite{CG1, CG2} it is shown how the observables of a QFT determine a factorization algebra. 
 We study the associated family of factorization algebras associated to the family of QFT's over the moduli space of $G$-bundles mentioned in the preceding paragraph. 
 We recollect a formulation of Noether's theorem for symmetries of a theory in terms of factorization algebras developed in Chapter ?? of \cite{CG2}. 
-Then, we show how this produces a {\em free field realization} of the Kac--Moody factorization algebra generalizing that of the Kac--Moody vertex algebra in chiral conformal field theory \cite{??}. 
+The central object in this discussion is a ``local index" which describes how the Kac--Moody factorization algebra acts on the observables of the QFT. 
+Locally on space-time we see how Noether's theorem provides a {\em free field realization} of the Kac--Moody factorization algebra generalizing that of the Kac--Moody vertex algebra in chiral conformal field theory \cite{??}. 
 
 \subsection{The families index}
 
@@ -56,27 +57,28 @@ Denote this elliptic complex by $\Omega^{0,*}(X , \sV_b)$.
 This construction also makes sense in families.
 We denote the holomorphic family of elliptic complexes by $\Omega^{0,*}(X , \sV)$ over $X \times B$ whose fiber over $b \in B$ is $\Omega^{0,*}(X , \sV_b)$.
 
-We recall the definition of the determinant line bundle associated to a representation as a functor
-\ben
-\kappa : {\rm Rep}(G) \to {\rm Pic}(\Bun_G(X)) .
-\een
-
-Consider the universal $G$-bundle $\sB {\rm un}_G(X)$ over the space $\Bun_G(X) \times X$ whose fiber over $\{P \to X\} \times X$ is equal to the bundle $P$ itself:
-\ben
-\xymatrix{
-P \ar[r] \ar[d] & \sB {\rm un}_G(X) \ar[d]^G \\
-\{P\} \times X \ar[r] & \Bun_G(X) \times X .
-}
-\een
-Given a representation $V$ consider the associated vector bundle $\sV = \sB {\rm un}_G(X) \times^G V$ over $\Bun_G(X) \times X$. 
-If $p_1 : \Bun_G(X) \times X \to \Bun_G(X)$ is the projection, the determinant line bundle associated to $V$ is defined by
-\ben
-\kappa_V := \det (\RR p_{1*} \sV)
-\een
-where $\RR p_{1*}$ is the derived pushforward, and the determinant is interpreted in the graded sense.
-For instance, if $W = W_0 + W_1 [-1]$ is a graded vector space concentrated in degree zero and one then $\det(W) = \det(W_0) \tensor \det(W_1)^{-1}$.
+%We recall the definition of the determinant line bundle associated to a representation as a functor
+%\ben
+%\kappa : {\rm Rep}(G) \to {\rm Pic}(\Bun_G(X)) .
+%\een
+%
+%Consider the universal $G$-bundle $\sB {\rm un}_G(X)$ over the space $\Bun_G(X) \times X$ whose fiber over $\{P \to X\} \times X$ is equal to the bundle $P$ itself:
+%\ben
+%\xymatrix{
+%P \ar[r] \ar[d] & \sB {\rm un}_G(X) \ar[d]^G \\
+%\{P\} \times X \ar[r] & \Bun_G(X) \times X .
+%}
+%\een
+%Given a representation $V$ consider the associated vector bundle $\sV = \sB {\rm un}_G(X) \times^G V$ over $\Bun_G(X) \times X$. 
+%If $p_1 : \Bun_G(X) \times X \to \Bun_G(X)$ is the projection, the determinant line bundle associated to $V$ is defined by
+%\ben
+%\kappa_V := \det (\RR p_{1*} \sV)
+%\een
+%where $\RR p_{1*}$ is the derived pushforward, and the determinant is interpreted in the graded sense.
+%For instance, if $W = W_0 + W_1 [-1]$ is a graded vector space concentrated in degree zero and one then $\det(W) = \det(W_0) \tensor \det(W_1)^{-1}$.
 
 \subsection{Quantization in formal families}
+\brian{this section is probably unnecessary, but I may use something like it it in my thesis. I'll probably remove it.}
 
 We will be most concerned with families of QFT's over moduli spaces that are {\em formal}.  
 There is a Koszul duality between formal moduli spaces and dg Lie algebras.
