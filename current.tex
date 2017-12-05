@@ -145,25 +145,25 @@ The idea is that $\Obs^{cl}$ has a Poisson bracket $\{-,-\}$ of degree 1
 Hence one can ask to realize the action of $\cAd(P)_c$ via the Poisson bracket.
 In other words, we ask to find a map of (precosheaves of) dg Lie algebras
 \[
-\rho \colon \cAd(P)_c \to \Obs^{cl}[-1]
+J \colon \cAd(P)_c \to \Obs^{cl}[-1]
 \]
 such that for any $f \in \cAd(P)_c(U)$ and $F \in \Obs^{cl}(U)$,
 we have
 \[
-f \cdot F = \{\rho(f),F\}.
+f \cdot F = \{J(f),F\}.
 \]
 Such a map would realize every symmetry as given by an observable,
 much as in Hamiltonian mechanics.
 
 In this case, there is such a map:
 \[
-\rho(f)(\gamma,\beta) = \int_U \langle\beta, f \gamma\rangle.
+J(f)(\gamma,\beta) = \int_U \langle\beta, f \gamma\rangle.
 \]
 This functional is local, and it is natural to view it as describing the ``minimal coupling'' between our free $\beta\gamma$ system and a kind of gauge field implicit in $\cAd(P)$.
 \owen{This is a little misleading, given the nature of the forms, but I think it is fixable.}
 This construction thus shows again that it is natural to work with compactly supported sections of $\cAd(P)$,
 since it allows one to encode the Noether map in a natural way.
-We call $\cAd(P)_c$ the Lie algebra of {\em classical currents} as we have explained how, via $\rho$, we realize these symmetries as classical observables.
+We call $\cAd(P)_c$ the Lie algebra of {\em classical currents} as we have explained how, via $J$, we realize these symmetries as classical observables.
 
 \begin{rmk}
 We remark that it is not always possible to produce such a Noether map,
@@ -183,12 +183,12 @@ Two conditions are preeminent:
 The first condition is more or less what  BV quantization means, 
 whereas the second is a version of the locality of field theory.
 
-We can now ask whether the Noether map $\rho$ determines a map of precosheaves of dg Lie algebras from $\cAd(P)_c$ to $\Obs^q[-1]$.
+We can now ask whether the Noether map $J$ determines a map of precosheaves of dg Lie algebras from $\cAd(P)_c$ to $\Obs^q[-1]$.
 Since the Lie bracket has not changed on the observables, 
-the only question is where $\rho$ is a cochain map for the new differential $\d^q$
+the only question is where $J$ is a cochain map for the new differential $\d^q$
 If we write $\d^q = \d^{cl} + \hbar \Delta$,\footnote{By working with smeared observables, one really can work with the naive BV Laplacian $\Delta$. Otherwise, one must take a little more care.} then 
 \[
-[\d,\rho] = \hbar \Delta \circ \rho.
+[\d,J] = \hbar \Delta \circ J.
 \]
 Naively---i.e., ignoring renormalization issues---this term is the functional $ob$ on $\cAd(P)_c$ given 
 \[
@@ -200,7 +200,7 @@ This obstruction should resemble standard anomalies.
 \owen{Is that transition too abrupt? Should we provide an example?}
 
 This functional $ob$ is a cocycle in Lie algebra cohomology for $\cAd(P)$ and hence determines a central extension $\widehat{\cAd(P)}_c$ as precosheaves of dg Lie algebras.
-It is the Lie algebra of {\em quantum} currents, as there is a lift of $\rho$ to a map out of this extension to the quantum observables.
+It is the Lie algebra of {\em quantum} currents, as there is a lift of $J$ to a map $J^q$ out of this extension to the quantum observables.
 
 \subsection{Definitions}
 
@@ -211,26 +211,53 @@ We now introduce some definitions that aim to capture the abstract structure of 
 It will be convenient to generalize Lie algebras to $L_\infty$ algebras,
 which involve multilinear brackets that satisfy higher versions of the Jacobi relation up to homotopy.
 
+\owen{Just wanted to mention that your original definition of local Lie algebra was a little misleading, because it used $n \in \ZZ$ (not just positive integers) and said $\ell_n: \sL^{\otimes n} \to \sL[2-n]$. This tensor product might mislead people into thinking you mean tensor of sheaves of $C^\infty$-modules, which isn't correct. }
+
 \begin{dfn} 
 A {\em local $L_\infty$ algebra} on $X$ is the following data:
 \begin{itemize}
-\item[(i)] a $\ZZ$-graded vector bundle $L$ on $X$, with sheaf of sections that we denote $\sL$;
-\item[(ii)] for each $n \in \ZZ$ a polydifferential operator 
+\item[(i)] a $\ZZ$-graded vector bundle $L$ on $X$, whose sheaf of smooth sections we denote $\sL^{sh}$, and
+\item[(ii)] for each positive integer $n$, a polydifferential operator in $n$ inputs
 \ben
-\ell_n : \sL^{\tensor n} \to \sL[2-n];
+\ell_n : \underbrace{\sL^{sh} \times \cdots \times \sL^{sh}}_{\text{$n$ times}} \to \sL[2-n]
 \een
 \end{itemize}
-such that the collection $\{\ell_n\}$ endow $\sL$ with the structure of a sheaf of $L_\infty$ algebras. 
+such that the collection $\{\ell_n\}_{n \in \NN}$ satisfy the conditions of an $L_\infty$ algebra.
+Thus $\sL^{sh}$ is a sheaf of $L_\infty$ algebras. 
 \end{dfn}
 
-We typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ by its sheaf of sections $\sL$. 
-Our favorite example is, of course,~$\cAd(P)$.
-We will often use local {\em Lie} algebra, especially if $\sL$ is a sheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
+In practice, we prefer to work with the compactly supported sections of $L$,
+as explained in \owen{cross ref}, for which we reserve the more succinct notation~$\sL$.
 
 \begin{dfn}
 Given a local $L_\infty$ algebra $\sL$ on $X$, 
-let $\sL_c$ denote the precosheaf of $L_\infty$ algebras that assigns compactly supported sections of $L$ to each open of~$X$.
+let $\sL$ denote the precosheaf of $L_\infty$ algebras that assigns compactly supported sections of $L$ to each open of~$X$.
 \end{dfn}
+
+We typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ by $\sL$. 
+We will often use local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
+
+\begin{eg}
+Our favorite example, of course, arises from the adjoint bundle $\ad{P} \to X$ associated to a holomorphic principal $G$-bundle $P \to X$. 
+We will hereafter use $\cAd(P)$ to denote the compactly supported sections of Dolbeault complex of $\ad{P}$.
+\owen{Is that too confusing?}
+\end{eg}
+
+\begin{eg}
+Another key local Lie algebra makes sense on an arbitrary complex $d$-fold.
+Let $\fg$ be an ordinary Lie algebra, such as ${\frak{s}\frak{l}}_n$.
+Let
+\[
+\sG^{sh} = \Omega^{0,*} \otimes \fg,
+\]
+which is a sheaf of dg Lie algebras on the category of complex $d$-folds and local biholomorphisms,\footnote{A biholomorphism is a map $\phi: X \to Y$ that is biijective and both $\phi$ and $\phi^{-1}$ are holomorphic. A {\em local} biholomorphism means a map $\phi: X \to Y$ such that for every point $x \in X$ has a neighborhood on which $\phi$ is a biholomorphism.
+\owen{Not sure what you think of burying this in a footnote, but it seems tangential and not worth elaborating on in the main text.}}
+and $\sG$ to denote $\Omega^{0,*}_c \otimes \fg$.
+We use $\sG|_X$ to denote the restriction of $\sG$ to a fixed complex $d$-fold~$X$.
+\end{eg}
+
+Much of the rest of the section is devoted to constructing and analyzing various cocycles and extensions,
+so we postpone further examples.
 
 \subsubsection{}
 
@@ -246,18 +273,30 @@ Let $\cloc^*(\sL)$ denote this cochain complex, as explained in detail in \owen{
 The differential is, in essence, just precomposition with the polydifferentials defining the brackets of~$\sL$.\footnote{Altogether $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology for this kind of Lie algebra.} 
 
 \begin{dfn}
-A cocycle $\alpha$ of degree $2+k$ in $\cloc^*(\sL)$ determines a $k$-shifted central extension
+A cocycle $\theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a $k$-shifted central extension
 \be\label{kext}
-0 \to \CC[k] \to \Hat{\sL}_\alpha \to \sL \to 0
+0 \to \CC[k] \to \Hat{\sL}_\theta \to \sL \to 0
 \ee
 of precosheaves of $L_\infty$ algebras,
 where
 \[
-\Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \alpha(x_1,\ldots,x_n)).
+\Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \theta(x_1,\ldots,x_n)).
 \]
 \end{dfn}
 
 Cohomologous cocycles determine quasi-isomorphic extensions. 
+
+\begin{eg}
+Let $X$ be a Riemann surface, i.e., a complex $1$-fold, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
+Consider the local Lie algebra $\sG|_X$.
+There is a natural cocycle depending precisely on two inputs:
+\[
+\theta( \alpha \otimes x, \beta \otimes y) = \kappa(x,y) \, \int_X \alpha \wedge \partial \beta  ,
+\]
+where $\alpha, \beta \in \Omega^{0,*}_c(X)$ and $x,y \in \fg$.
+As explained in \owen{cross ref} and Section ??? of \cite{CG1},
+this cocycle determines an affine Kac-Moody algebra extending the loop algebra $L\fg = \fg[z,z^{-1}]$.
+\end{eg}
 
 \subsubsection{}
 
