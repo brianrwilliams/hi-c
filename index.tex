@@ -15,7 +15,22 @@
 %{\rm Bun}_G(X) \cong G_{\rm out} ?? G(\Hat{\sK}_x) / G(\Hat{\sO}_x) .
 %\een
 
-In this section we formulate and prove a families index theorem over the moduli space of holomorphic principal $G$-bundles on a complex manifold. 
+The main goal of the BV formalism developed in \cite{CosBook} is to rigorously construct quantum field theories using a combination of homological methods and a rigorous model for renormalization. 
+A particular nicety of this approach is the ability to study {\em families} of field theories. 
+In this section we will consider a family of QFT's parametrized by the moduli space of principal $G$-bundles. 
+Our main result is to interpret a certain anomaly coming from BV quantization as a families index over ${\rm Bun}_G(X)$. 
+This anomaly is computed via an explicit Feynman diagrammatic calculation and is related to a local cocycle of the current algebra discussed in Section \brian{ref}. 
+An immediate corollary is a formal universal version of the Grothendieck--Riemann--Roch theorem over the moduli space of bundles. 
+
+We will arrive at this result in a way that is local-to-global on space-time which we formulate in terms of factorization algebras.
+In \cite{CG1, CG2} it is shown how the observables of a QFT determine a factorization algebra. 
+We study the associated family of factorization algebras associated to the family of QFT's over the moduli space of $G$-bundles mentioned in the preceding paragraph. 
+We recollect a formulation of Noether's theorem for symmetries of a theory in terms of factorization algebras developed in Chapter ?? of \cite{CG2}. 
+The central object in this discussion is a ``local index" which describes how the Kac--Moody factorization algebra acts on the observables of the QFT. 
+Locally on space-time we see how Noether's theorem provides a {\em free field realization} of the Kac--Moody factorization algebra generalizing that of the Kac--Moody vertex algebra in chiral conformal field theory \cite{??}. 
+
+\subsection{The families index}
+
 Fix a complex $d$-fold $X$. 
 Let ${\rm Bun}_{G}(X)$ denote the moduli space of $G$-bundles on the complex $d$-fold $X$. 
 For $d > 1$ \cite{FHK} have constructed a global smooth derived realization of this space, but its full structure will not be used in this discussion. 
@@ -42,40 +57,73 @@ Denote this elliptic complex by $\Omega^{0,*}(X , \sV_b)$.
 This construction also makes sense in families.
 We denote the holomorphic family of elliptic complexes by $\Omega^{0,*}(X , \sV)$ over $X \times B$ whose fiber over $b \in B$ is $\Omega^{0,*}(X , \sV_b)$.
 
-We recall the definition of the determinant line bundle associated to a representation as a functor
-\ben
-\kappa : {\rm Rep}(G) \to {\rm Pic}(\Bun_G(X)) .
-\een
+%We recall the definition of the determinant line bundle associated to a representation as a functor
+%\ben
+%\kappa : {\rm Rep}(G) \to {\rm Pic}(\Bun_G(X)) .
+%\een
+%
+%Consider the universal $G$-bundle $\sB {\rm un}_G(X)$ over the space $\Bun_G(X) \times X$ whose fiber over $\{P \to X\} \times X$ is equal to the bundle $P$ itself:
+%\ben
+%\xymatrix{
+%P \ar[r] \ar[d] & \sB {\rm un}_G(X) \ar[d]^G \\
+%\{P\} \times X \ar[r] & \Bun_G(X) \times X .
+%}
+%\een
+%Given a representation $V$ consider the associated vector bundle $\sV = \sB {\rm un}_G(X) \times^G V$ over $\Bun_G(X) \times X$. 
+%If $p_1 : \Bun_G(X) \times X \to \Bun_G(X)$ is the projection, the determinant line bundle associated to $V$ is defined by
+%\ben
+%\kappa_V := \det (\RR p_{1*} \sV)
+%\een
+%where $\RR p_{1*}$ is the derived pushforward, and the determinant is interpreted in the graded sense.
+%For instance, if $W = W_0 + W_1 [-1]$ is a graded vector space concentrated in degree zero and one then $\det(W) = \det(W_0) \tensor \det(W_1)^{-1}$.
 
-Consider the universal $G$-bundle $\sB {\rm un}_G(X)$ over the space $\Bun_G(X) \times X$ whose fiber over $\{P \to X\} \times X$ is equal to the bundle $P$ itself:
-\ben
-\xymatrix{
-P \ar[r] \ar[d] & \sB {\rm un}_G(X) \ar[d]^G \\
-\{P\} \times X \ar[r] & \Bun_G(X) \times X .
-}
-\een
-Given a representation $V$ consider the associated vector bundle $\sV = \sB {\rm un}_G(X) \times^G V$ over $\Bun_G(X) \times X$. 
-If $p_1 : \Bun_G(X) \times X \to \Bun_G(X)$ is the projection, the determinant line bundle associated to $V$ is defined by
-\ben
-\kappa_V := \det (\RR p_{1*} \sV)
-\een
-where $\RR p_{1*}$ is the derived pushforward, and the determinant is interpreted in the graded sense.
-For instance, if $W = W_0 + W_1 [-1]$ is a graded vector space concentrated in degree zero and one then $\det(W) = \det(W_0) \tensor \det(W_1)^{-1}$.
+\subsection{Quantization in formal families}
+\brian{this section is probably unnecessary, but I may use something like it it in my thesis. I'll probably remove it.}
 
-\subsection{Symmetries of BV theories}
+We will be most concerned with families of QFT's over moduli spaces that are {\em formal}.  
+There is a Koszul duality between formal moduli spaces and dg Lie algebras.
+The shifted tangent space of a formal moduli space is a dg Lie algebra, and the Maurer--Cartan elements of this dg Lie algebras completely describe the formal moduli space.
+This duality allows us to interpret such formal families of theories in terms of symmetries by dg Lie algebras. 
+Before discussing the requisite machinery to talk about symmetries of a QFT in the BV formalism we recount a general algebraic situation. 
+First, we step back and recall symmetries in classical mechanics. 
 
-First, we review what symmetries look like in classical mechanics. 
 Let $\fg$ be a Lie algebra and $(M, \omega)$ a symplectic manifold. 
 A symplectic action of $\fg$ on $M$ is a map of Lie algebras $\rho : \fg \to {\rm Vect}^{\rm symp}(M, \omega)$, where the target is the Lie algebra of symplectic vector fields. 
-Let $\sO(M)$ be the commutative algebra of smooth functions on $M$.
-An action of the Lie algebra $\fg$ on $M$ induces a map of Lie algebras $\rho : \fg \to {\rm Der}(\sO(M))$ by derivations. 
-The Poisson bracket $\{-,-\}$ on functions also determines a map of Lie algebras $\sO(M) \to {\rm Der}(\sO(M))$ sending $f \mapsto \{f,-\}$. 
+Let $C^\infty(M)$ be the commutative algebra of smooth functions on $M$.
+An action of the Lie algebra $\fg$ on $M$ induces a map of Lie algebras $\rho : \fg \to {\rm Der}(C^\infty(M))$ by derivations. 
+The Poisson bracket $\{-,-\}$ on functions also determines a map of Lie algebras $\sO(M) \to {\rm Der}(C^\infty (M))$ sending $f \mapsto \{f,-\}$. 
 The symplectic action is {\em Hamiltonian} if there exists a lifting $\Tilde{\rho} : \fg \to C^\infty(M)$.
 
-A classical field theory is determined by an (infinite-dimensional) space of fields with a shifted symplectic structure. 
-We recall how ...
+The obstruction to lifting a symplectic action to a Hamiltonian one is an element in the cohomology of $M$. 
+Thus, in the case that $M$ is a symplectic vector space $V$ there is no obstruction to lifting a symplectic action of $\fg$ on $V$ to a Hamiltonian action.
+If $C^\infty_\hbar(M)$ is a quantization of $(M,\omega)$ then it is reasonable to ask for quantizations of the co-moment map.
+We study the analogous problem in the context of BV quantization. 
 
-\subsubsection{Classical symmetries}
+Recall, a BV quantization of a $P_0$ algebra $A$ is a BD algebra $A^\q$ defined over the ring $\CC[[\hbar]]$ such that $A^\q / (\hbar)$ is isomorphic to $A$ as $P_0$ algebras.
+A Hamiltonian action of $\fg$ on $A$ is a map of dg Lie algebras \footnote{Really, one can imagine an $L_\infty$ morphism.}
+\ben
+\Phi : \fg \to A [-1] .
+\een 
+By the universal property of the $P_0$ envelope this determines a map of $P_0$ algebras $\Phi : U^{P_0} \fg \to A$. 
+
+\begin{dfn} Fix a Hamiltonian action of a dg Lie algebra $\fg$ on a $P_0$ algebra $A$ with co-moment map $\Phi : \fg \to A[-1]$.
+A {\em weak} $\fg$-equivariant quantization is a BV quantization $A^\q$ together with a map of BD algebras
+\ben
+\Phi^\q : U^{BD}_\alpha (\fg) \to A^\q
+\een
+where $\alpha \in \hbar H^1(\fg)[\hbar]$ is a twisting cocycle, that reduces modulo $\hbar$ to the map $\Phi$. 
+A weak $\fg$-equivariant quantization is {\em strong} if $\alpha = 0$. 
+\end{dfn}
+
+The $\alpha$-twisted BD envelope is defined by 
+\ben
+U^{BD}_\alpha(\fg) = \left(\Sym^*(\fg[-1])[[\hbar]], \d_\fg + \hbar \d_{CE} + \alpha\right) .
+\een
+Thus, in the case that $\alpha = 0$ we recover the ordinary BD envelope from Section \brian{ref}. 
+
+With the algebraic prerequisites in place, we are ready to discuss lifting this to the level of field theory. 
+
+\subsection{Classical symmetries of a classical BV theory}
 
 In the BV formalism, the data of a classical field theory on $X$ consists of a sheaf of fields $\sE$, an action functional $S \in \oloc(\sE)$ of degree zero, and a $(-1)$-shifted $\CC$-valued pairing on $\sE$. 
 The pairing induces a bracket $\{-,-\}$ on the space of local functionals, and this data is required to satisfy the condition $\{S,S\} = 0$.
@@ -120,14 +168,29 @@ By the general yoga of Koszul duality, a Maurer--Cartan element defines a map of
 \ben
 S^{\sL} : \sL(X) \to \oloc(\sE)[-1] .
 \een
-\brian{compare to finite dimensional case}
+This construction has consequences for the classical observables of the theory $\sE$. 
 
-\subsubsection{Quantum symmetries}
+\brian{recall classical obs}
 
-We now discuss symmetries of a quantum field theory.
-From the data of such a quantum symmetry is a local cocycle on the $L_\infty$ algebra that we interpret as a type of ``local index".
+\begin{prop} Suppose... \brian{!}
+Then, for each open $U \subset X$, $S^{\sL}$ determines a Hamiltonian action of $\sL_c(U)$ on the $P_0$ algebra $\Obs^{\rm cl}(U)$. 
+Thus, we have a map of dg Lie algebras 
+\ben
+\Phi_U : \sL_c(U) \to \Obs^{\rm cl} (U)[-1] .
+\een 
+Moreover, this map is compatible with inclusions of open sets and so determines a map of precosheaves of dg Lie algebras $\Phi : \sL_c \to \Obs^{\rm cl} [-1]$. 
+\end{prop}
 
-We follow the approach of Costello \cite{Cosbook} to perturbative QFT based on the Wilsonian renormalization of the path integral.
+This is the appearance of the co-moment map in the setting of classical BV theory. 
+There is an immediate enhancement of this result to factorization algebras. 
+Indeed, by the universal property of the $P_0$ envelope the map $\Phi$ determines a map of $P_0$ factorization algebras
+\ben
+\Phi : U^{P_0}(\sL_c) \to \Obs^{\rm cl} .
+\een
+
+\subsection{Quantum symmetries in the BV formalism}
+
+We follow the approach of Costello \cite{CosBook} to perturbative QFT based on the Wilsonian renormalization of the path integral.
 We start with a space of fields $\sE$ equipped with a square zero elliptic differential operator $Q$ of cohomological degree zero, and a $(-1)$-shifted symplectic pairing.
 This is the data of a {\em free} theory in the classical BV formalism.
 A QFT is a family of functionals $\{S[L]\}$ ...
@@ -172,13 +235,20 @@ In summary, there is a map of factorization algebras
 where $\clieu_{*,\alpha}(\sL)$ is the $\CC[[\hbar]]$-linear twisted factorization envelope of $\sL$ by $\alpha$. 
 \end{thm}
 
-In the remainder of this section we interpret the implication of this for the Kac--Moody 
+\brian{remark about Noether}
 
 \subsection{The anomaly for the $\beta\gamma$ system}
 
+In the remainder of this section we examine an instance of the above situation for the current algebra acting on the free $\beta\gamma$ system with coefficients in a vector bundle. 
+Our goal is to arrive at the index theorem over the moduli of principal $G$-bundles mentioned in the introduction of this section. 
+We will also interpret Theorem \ref{thm noether} as providing a higher dimensional version of {\em free field realization} of the Kac--Moody factorization algebra.
+
+Before discussing the specific example, we recount some facts about BV quantization for {\em free theories}. 
+
 \subsubsection{The quantization of free BV theories}
 
-\brian{statement about determinants a la Gwilliam-Haugseng}
+\brian{Owen, please try to point to the correct references and adjust the way I state results so that it fits with your thesis / paper with Rune.}
+
 
 \subsubsection{}
 
