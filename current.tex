@@ -238,8 +238,8 @@ We typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ by $\sL$.
 We will often use local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
 
 \begin{eg}
-Our favorite example, of course, arises from the adjoint bundle $\ad{P} \to X$ associated to a holomorphic principal $G$-bundle $P \to X$. 
-We will hereafter use $\cAd(P)$ to denote the compactly supported sections of Dolbeault complex of $\ad{P}$.
+Our favorite example, of course, arises from the adjoint bundle $\ad(P) \to X$ associated to a holomorphic principal $G$-bundle $P \to X$. 
+We will hereafter use $\cAd(P)$ to denote the compactly supported sections of Dolbeault complex of $\ad(P)$.
 \owen{Is that too confusing?}
 \end{eg}
 
@@ -256,24 +256,21 @@ and $\sG$ to denote $\Omega^{0,*}_c \otimes \fg$.
 We use $\sG|_X$ to denote the restriction of $\sG$ to a fixed complex $d$-fold~$X$.
 \end{eg}
 
-Much of the rest of the section is devoted to constructing and analyzing various cocycles and extensions,
-so we postpone further examples.
-
 \subsubsection{}
 
-We are interested in a certain class of central extensions of such an~$\sL_c$.
+We are interested in a certain class of central extensions of such an~$\sL$.
 
 \begin{dfn}
 A {\em local functional} on $\sL$ of cohomological degree $k$ is \owen{yuck} 
 \end{dfn}
 
-The graded vector space of local functionals is a subcomplex of $\clie^*(\sL_c)$, 
-the naive Lie algebra cochains of $\sL_c$.
+The graded vector space of local functionals is a subcomplex of $\clie^*(\sL)$, 
+the naive Lie algebra cochains of $\sL$.
 Let $\cloc^*(\sL)$ denote this cochain complex, as explained in detail in \owen{give precise citation}.
 The differential is, in essence, just precomposition with the polydifferentials defining the brackets of~$\sL$.\footnote{Altogether $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology for this kind of Lie algebra.} 
 
 \begin{dfn}
-A cocycle $\theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a $k$-shifted central extension
+A cocycle $\theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
 \be\label{kext}
 0 \to \CC[k] \to \Hat{\sL}_\theta \to \sL \to 0
 \ee
@@ -298,32 +295,36 @@ As explained in \owen{cross ref} and Section ??? of \cite{CG1},
 this cocycle determines an affine Kac-Moody algebra extending the loop algebra $L\fg = \fg[z,z^{-1}]$.
 \end{eg}
 
+Much of the rest of the section is devoted to constructing and analyzing various cocycles and extensions.
+
 \subsubsection{}
 
-There is a particular family of local cocycles that we will be especially interested in.
-Let $P$ be an invariant polynomial of $\fg$ of homogenous degree $d+1$. 
-That is, $P \in \Sym^{d+1}(\fg^\vee)^\fg$. We can extend $P$ to a functional on $\Omega^{0,*}(X) \tensor \fg$ by the rule
-\ben
-\begin{array}{cccc}
-P^X : & \Sym^{d+1}(\Omega^{0,*}(X) \tensor \fg) & \to & \CC \\
-	 & (\omega_1 \tensor X_1,\ldots,\omega_{d+1} \tensor X_{d+1}) & \mapsto & (\omega_1\wedge \cdots \wedge \omega_{d+1}) P(X_1,\ldots,X_{d+1})
-\end{array}
-\een
+There is a particular family of local cocycles that we will be especially interested in, 
+generalizing the preceding example.
 
-\begin{prop}\label{prop j map} The assignment
+Let $p$ be an invariant polynomial on $\fg$ of homogenous degree $d+1$. 
+That is, $p$ is an element of $\Sym^{d+1}(\fg^\vee)^\fg$. 
+We can extend $p$ to a functional $J(p)$ on $\sG(X) = \Omega^{0,*}_c(X) \tensor \fg$ by the formula
+\[
+J(p) (\omega_1 \tensor x_1,\ldots,\omega_{d+1} \tensor x_{d+1}) = p(x_1,\ldots,x_{d+1}) \int_X \omega_1\wedge \partial \omega_2 \cdots \wedge \partial \omega_{d+1}.
+\]
+Note that we use $d$ copies of the holomorphic derivative $\partial: \Omega^{0,*} \to \Omega^{1,*}$ to obtain an element of $\Omega^{d,*}_c$ in the integrand (and hence something that has a chance of being integrated).
+
+This formula clearly makes sense for any complex $d$-fold $X$, 
+and since integration is local on $X$, 
+it intertwines nicely with the structure maps of~$\sG$.
+
+\begin{prop}\label{prop j map} 
+The assignment
 \ben
-J : \Sym^{d+1} (\fg^\vee)^\fg [-1] \to \cloc^*(\fg^X)
-\een
-sending and invariant polynomial $P$, of homogeneous degree $d+1$, to the local functional 
-\ben
-(\alpha_1,\ldots, \alpha_{d+1}) \mapsto \int P^X\left(\alpha_1, \partial \alpha_2,\ldots, \partial \alpha_{d+1}\right)
+J : \Sym^{d+1} (\fg^\vee)^\fg [-1] \to \cloc^*(\sG)
 \een
 is a cochain map. Moreover, it is injective at the level of cohomology. 
 \end{prop}
 
-\begin{rmk} We extend the operator $\partial : \Omega^{k,l} \to \Omega^{k+1,l}$ to $\Omega^{0,*}(X) \tensor \fg \to \Omega^{1,*}(X)\tensor \fg$ by the operator $\partial \tensor 1$. 
-\end{rmk}
+\owen{Need to prove it.}
 
+\owen{We have another notational challenge here. For a fixed manifold $X$, one can talk about the local cochains $\cloc^*(\sG|_X)$, but we don't yet say what we mean by the thing that works on all $d$-folds simultaneously. If one takes a little care, it is a sheaf on that site, but I'm not sure we should do all that heavy lifting in this section.}
 
 \subsection{The FHK extensions}
 
