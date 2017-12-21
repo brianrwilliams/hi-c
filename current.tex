@@ -223,14 +223,14 @@ A {\em local $L_\infty$ algebra} on $X$ is the following data:
 \een
 \end{itemize}
 such that the collection $\{\ell_n\}_{n \in \NN}$ satisfy the conditions of an $L_\infty$ algebra.
-Thus $\sL^{sh}$ is a sheaf of $L_\infty$ algebras. 
+Thus, $\sL^{sh}$ is a sheaf of $L_\infty$ algebras. 
 \end{dfn}
 
 In practice, we prefer to work with the compactly supported sections of $L$,
 as explained in \owen{cross ref}, for which we reserve the more succinct notation~$\sL$.
 
 \begin{dfn}
-Given a local $L_\infty$ algebra $\sL$ on $X$, 
+Given a local $L_\infty$ algebra $(L, \{\ell_n\})$ on $X$, 
 let $\sL$ denote the precosheaf of $L_\infty$ algebras that assigns compactly supported sections of $L$ to each open of~$X$.
 \end{dfn}
 
@@ -299,8 +299,8 @@ Much of the rest of the section is devoted to constructing and analyzing various
 
 \subsubsection{}
 
-There is a particular family of local cocycles that we will be especially interested in, 
-generalizing the preceding example.
+There is a particular family of local cocycles that has special importance for us and
+that generalizes the preceding example.
 
 Let $p$ be an invariant polynomial on $\fg$ of homogenous degree $d+1$. 
 That is, $p$ is an element of $\Sym^{d+1}(\fg^\vee)^\fg$. 
@@ -326,7 +326,109 @@ is a cochain map. Moreover, it is injective at the level of cohomology.
 
 \owen{We have another notational challenge here. For a fixed manifold $X$, one can talk about the local cochains $\cloc^*(\sG|_X)$, but we don't yet say what we mean by the thing that works on all $d$-folds simultaneously. If one takes a little care, it is a sheaf on that site, but I'm not sure we should do all that heavy lifting in this section.}
 
-\subsection{The FHK extensions}
+\subsection{The sphere Lie algebras, or FHK current algebras}
+
+Our goal in this section is to develop a higher-dimensional analogue of the loop algebra $L\fg = \fg[z,z^{-1}]$ and its central extensions.
+As the title might suggest, the analogue explored in this section has been developed substantially by Faonte-Hennion-Kapranov \cite{FHK},
+and our treatment will bear a strong imprint from their approach.
+For further discussion on their work and its connection with ours,
+see Remark \ref{} and Section~\ref{sec: cf with FHK}.
+
+One common approach is to take iterated loops (and we discuss that direction \owen{somewhere else}), 
+but a different natural generalization is to generalize the circle $S^1$ by the sphere $S^{2d-1}$.
+That is, we work with a ``sphere algebra'' of maps from $S^{2d-1}$ into $\fg$.
+For topologists, this direction might seem natural,
+but it may not seem too natural from the perspective of algebraic geometry.
+In particular, an algebro-geometric sphere is given by a punctured affine $d$-space $\dAA^d = \AA^d \setminus \{0\}$ or a punctured formal $d$-disk,
+but every map from these spaces to $\fg$ extends to a map from $\AA^d$ or the formal $d$-disk into $\fg$ (essentially, by Hartog's lemma).
+Thus, this direction seems fruitless.
+The key to evading this issue is to work with the derived space of maps,
+since the derived sections of $\cO$ on the punctured affine $d$-space is interesting.
+
+This fact ought not to be too surprising: 
+as a smooth manifold, punctured affine $d$-space is equivalent to $\RR_{> 0} \times S^{2d-1}$,
+and this equivalence manifests itself in the cohomology of the structure sheaf.
+Explicitly,
+\[
+H^*(\dAA^d, \cO_{alg}) = 
+\begin{cases} 0, & * \neq 0, d-1 \\ \CC[z_1,\ldots,z_d], & * = 0 \\ \CC[z_1^{-1},\ldots,z_d^{-1}] \frac{1}{z_1 \cdots z_d}, & * = d-1 \end{cases}
+\]
+as one can show by direct computation (e.g., use the cover by the affine opens of the form $\AA^d \setminus \{z_i =0\}$).
+When $d = 1$, this recovers the usual Laurent series;
+and it is natural to view the above as the higher-dimensional analogue of the Laurent series,
+with the polar part now in degree~$d-1$.
+
+Hence, the derived global sections $\RR\Gamma(\dAA^d,\cO)$ of $\cO$ provide a homotopy-commutative algebra,
+and thus one obtains a homotopy-Lie algebra by tensoring with $\fg$,
+which we will call the sphere Lie algebra by analogy with the loop Lie algebra.
+One can then study central extensions of this homotopy-Lie algebra,
+which are analogous to the affine Kac-Moody Lie algebras.
+For explicit constructions, it is convenient to have a commutative dg algebra that models the derived global sections.
+It should be no surprise that we like to work with the Dolbeault complex.
+We will use this approach to relate the sphere Lie algebra and its extensions to the current algebras that we've already introduced.
+
+\begin{rmk}
+We strongly encourage the reader to examine the seminal work \cite{FHK},
+as it puts these constructions into a clear geometric context and offers a systematic generalization in derived algebraic geometry of the rich, fruitful relationship between affine Kac-Moody algebras and the moduli of $G$-bundles on algebraic curves.
+Indeed, for us, the lack of such an interpretation was a long-standing conceptual obstacle,
+as we had found these higher extensions and the action of these current algebras on holomorphic field theories by direct computation;
+but we did not have the toolkit to understand them in derived geometry.
+In turn we hope our work here helps derived geometers recognize how such constructions fit into field theory.
+\end{rmk}
+
+\subsubsection{Compactification along the sphere}
+
+\subsubsection{Comparison with the FHK approach}
+\label{sec: cf with FHK}
+
+We use the punctured algebraic disk $D^{1\times} = {\rm Spec} \;  \CC [z,z^{-1}]$, but the definition also makes sense for the puncture formal disk (formal loops). 
+
+Let $D^d = {\rm Spec} \; \CC[z_1,\ldots, z_d]$ be the $d$-dimensional algebraic disk.
+The punctured $d$-disk is no longer affine, in fact its cohomology is given by
+\ben
+H^*(D^{d \times}, \sO) = 
+\een
+Instead of working with the naive commutative algebra $\Gamma(D^{d \times}, \sO)$ we will use the dg commutative algebra of {\em derived} sections $\RR \Gamma(D^{d \times}, \sO)$. 
+An explicit model for this has been written down in \cite{FHK} based on the Jouanolou method for resolving singularities. 
+We recall its definition.
+
+\begin{dfn} 
+Let $A_d$ be the commutative dg algebra generated by elements $$z_1,\ldots,z_d, z_1^*,\ldots,z_d^*, (z_1 z_1^*)^{-1}, \ldots (z_1z_d^*)^{-1}$$ in degree zero and $$\d z_1,\ldots , \d z_d, \d z_1^*,\ldots, \d z_d^*$$ in degree one.
+Introduce a $*$-weight, so that $z_i^*, \d z_i^*$ have $*$-weight $+1$ and $(z_i^*)^{-1}$ has $*$-weight $-1$.
+We require that:
+\begin{itemize}
+\item[(i)] every element is of total $*$-weight zero and
+\item[(ii)] the contraction of every element with the Euler vector field $\sum_{i} z_i^* \partial_{z_{i}^*}$ vanishes.
+\end{itemize}
+\end{dfn}
+
+The key properties of the dg algebra $A_d$ we will utlilize are summarized in the following result of~\cite{FHK}.
+
+\begin{prop}[\cite{FHK} Proposition 1.3.1]
+The commutative dg algebra $A_d$ is a model for $\RR \Gamma(D^{d\times}, \sO)$. 
+Moreover, there is a dense map of commutative dg algebras
+\ben
+j : A_d \to \Omega^{0,*}(\CC^d \setminus 0) 
+\een
+sending $z_i \mapsto z_i$, $z_i^* \mapsto \Bar{z}_i$, and $\d z_i^* \mapsto \d \zbar_i$.
+\end{prop}
+
+We are interested in the dg Lie algebra $A_d \tensor \fg$. 
+In \cite{FHK} they show, via knowledge of the Lie algebra cohomology, that there is a central extension of this \brian{not sure what to say}
+
+\begin{dfn} 
+Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
+Let $\Hat{\fg}_{d,\theta}$ be the dg Lie algebra central extension of $A_d \tensor \fg$ determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
+\ben
+\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
+\een
+where $a_i \tensor X_i \in A_d \tensor \fg$. 
+\end{dfn}
+
+
+
+
+
 
 \subsection{Dimension $d$ extensions via Gelfand-Kazhdan geometry}
 
