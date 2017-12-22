@@ -94,17 +94,44 @@ Thus, to finish we must show the following.
 \begin{proof}
 
 Let's fix some notation. 
-We enumerate the vertices by integers $i = 0,\ldots, d$. 
-Label the coordinate at the $i$th vertex by $z^{(i)} = (z_1^{(i)}, \ldots, z_d^{(i)})$. 
+We enumerate the vertices by integers $a = 0,\ldots, d$. 
+Label the coordinate at the $i$th vertex by $z^{(a)} = (z_1^{(a)}, \ldots, z_d^{(a)})$. 
 The incoming edges of the wheel will be denoted by homogeneous Dolbeault forms 
 \ben
-\alpha^{(i)} = \sum_{J} A^{(i)}_J \d \zbar_J^{(i)} \in \Omega^{0,*}(\CC^d) .
+\alpha^{(a)} = \sum_{J} A^{(a)}_J \d \zbar_J^{(a)} \in \Omega_c^{0,*}(\CC^d) .
 \een
-where the sum is over the multiindex $J = (j_1,\ldots, j_k)$ where $j_a = 1,\ldots, d$ and $(0,k)$ is the homogenous form type. 
+where the sum is over the multiindex $J = (j_1,\ldots, j_k)$ where $j_a = 1,\ldots, d$ and $(0,k)$ is the homogenous Dolbeault form type. 
 For instance, if $\alpha$ is a $(0,2)$ form we would write
 \ben
 \alpha = \sum_{j_1 < j_2} A_{(j_1,j_2)} \d \zbar_{j_1} \d\zbar_{j_2} .
 \een
+Denote the functional obtained as the $\epsilon \to 0$ weight of the wheel with $(d+1)$ vertices from Lemma \ref{lem anomaly} by $W_L$.
+The $L\to 0$ limit of $W_L$ is the local functional representing the one-loop anomaly $\Theta$. 
 
+The weight has the form
+\ben
+W_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
+\een
+We introduce coordinates
+\begin{align*}
+w^{(0)} & = z^{(0)} \\
+w^{(a)} & = z^{(a)} - z^{(a-1)} \;\;\; 1 \leq a \leq d .
+\end{align*}
+The heat kernel and propagator part of the integral is of the form
+\[
+\begin{array}{ccl}
+\displaystyle
+K_\epsilon(w^{(0)},w^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (w^{(a-1)}, w^{(a)}) & = & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d}  \\ & & \displaystyle \times \d^d \Bar{w}^{(0)} \prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \d^d w^{(a)} \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right)
+\\ & & \displaystyle \times e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} .
+\end{array}
+\]
+Here, $M_{ab}$ is the $d \times d$ square matrix satisfying
+\ben
+\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)} = |\sum_{a = 1}^d w^{(a)} |^2 / \epsilon + \sum_{a = 1}^d |w^{(a)}|^2 / t_a .
+\een
+Note that
+\ben
+\prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right) = \left( \sum_{i_1,\ldots i_d} \epsilon_{i_1\cdots i_d} \prod_{a=1}^d \Bar{w}^{(a)}_{i_1}\right) \prod_{a=1}^d \d^d \Bar{w}^{(a)} .
+\een
 
 \end{proof}
