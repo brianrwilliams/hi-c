@@ -1,0 +1,110 @@
+\section{A formal index theorem}
+
+\subsection{The anomaly calculation}
+
+In this section we finish the proof of the formal index theorem by performing the local Feynman diagram calculation of the anomaly on $\CC^d$. 
+First we have the following general lemma about the exact form of the anomaly for a free theory charged by a local Lie algebra. 
+Recall, in this situation there is an $\sL$-dependent anomaly $\Theta^\sL \in \cloc^*(\sL)[[\hbar]]$ that we have related to the character of $\sL$ acting on the theory. 
+For us, the free theory is the $\beta\gamma$ system valued in some representation of the Lie algebra $\fg$, and the local Lie algebra is $\Omega^{0,*}(X) \tensor \fg$. 
+
+\begin{lem} \label{lem anomaly} Let $\sE$ be a free theory that is charged by the local Lie algebra $\sL$ via the interaction $I^\sL$. 
+Furthermore, suppose that the limit
+\ben
+\lim_{\epsilon \to 0} W(P_\epsilon^L, I^{\sL})
+\een
+exists.
+Then, the one-loop anomaly $\Theta^\sL$ is the $L \to 0$ limit of the following sum of Feynman weights
+\ben
+\sum_{\Gamma, e} \lim_{\epsilon \to 0} W_{\Gamma,e} (P_{\epsilon, L}, K_\epsilon, I^\sL) .
+\een
+The sum is over graphs that are wheels $\Gamma$ and distinguished edges $e \in E(\Gamma)$. 
+The weight $W_{\Gamma,e} (P_{\epsilon, L}, K_\epsilon, I^\sL)$ means we label the vertices by $I^\sL$ and place $P_{\epsilon,L}$ on all edges besides $e$, where we put $K_\epsilon$. 
+\end{lem}
+
+Before jumping in to the calculation for the $\Omega^{0,*}(\CC^d) \tensor \fg$ charged $\beta\gamma$ system on $\CC^d$ we need to set up some notation.
+Part of the data of a free theory is a gauge fixing condition $Q^{GF}$. 
+This is an operation on fields of cohomological degree $-1$ and enables us to fix the propagator uniquely. 
+For the $\beta\gamma$ system on $\CC^d$ with values in the vector space $V$ the gauge fixing operator we choose is 
+\ben
+Q^{GF} = \dbar^* \tensor \id_V = \pm \sum_i \frac{\partial}{\partial z_i} \frac{\partial}{\partial (\d \zbar_i)} \tensor \id_V .
+\een
+
+The propagator with UV-IR cutoff $\epsilon,L$ is equal to
+\ben
+P_{\epsilon, L} (z, w) = \int_{t = \epsilon}^L \dbar^* K_t(z,w)\d t .
+\een
+Here, 
+\ben
+K_t (z,w) = k_t(z,w) \Omega(z,w) (\id_V \tensor 1 + 1 \tensor \id_{V^*})
+\een
+where $k_t$ the heat kernel for the Dolbeault Laplacian $\dbar^* \dbar + \dbar \dbar^*$ acting on smooth functions on $\CC^d$, $\Omega(z,w)$ is a constant coefficient differential form on~$\CC^d_z \times \CC^d_w$ satisfying
+\ben
+\int_{z \in \CC^d} \phi(z) \wedge \Omega(z,w) = \pm \phi(w),
+\een
+and $\id_V , \id_{V^*} \in \Sym^2(V \oplus V^*)$ represent the identity maps $V \to V$, $V^* \to V^*$. 
+Explicitly, if we choose a basis $\{e_a\}$ for $V$ with dual basis $\{e_a^*\}$ we have the following formula for $K_t(z,w)$: 
+\ben
+K_t(z,w) = \frac{1}{(4 \pi t)^d} e^{-|z-w|^2/ t} \left((\d^d z - \d^d w) \wedge \prod_{i} (\d \zbar_i - \d \Bar{w}_i) \right) \left(\sum_{a = 1}^{\dim V} (e_a \tensor e_a^* + e_a^* \tensor e_a) \right).
+\een
+
+Now, we are ready to apply Lemma \ref{lem anomaly} to compute the anomaly cocycle. 
+The fact that the limit of $W(P_{\epsilon,L}, I^{\sL})$ as $\epsilon \to 0$ exists is technical and left in the appendix. 
+We provide an explicit analysis of the sum of the Feynman weights corresponding to wheels.
+We find that the sum reduces to evaluating the weight of a single wheel with $d+1$ vertices. 
+
+Fix $k \geq 1$ to be the number of vertices of the wheel $\Gamma$. 
+By differential form type reasons, the wheels with number of vertices $k \leq d$ vanish identically. 
+To see this, note that the integral computing the Feynman weight is an integral over $\CC^{dk}$. 
+Each propagator contributes a differential form of Dolbeault type $(d, d-1)$.
+The heat kernel contributes a differential form of type $(d,d)$. 
+Thus, in total the internal edges contribute a differential form of type 
+\ben
+(kd, (k-1)(d-1) + d) = (kd, (k-1)d + 1).
+\een
+Now, the anomaly is a cocycle of $\sL$ of cohomological degree $+1$.
+\brian{finish}
+
+The reason that the wheels of valency $k > d+1$ vanish is more subtle, and relies on analytic bounds of the integral computing the weight. 
+We provide this argument in the appendix. 
+
+We are left with the weight of a wheel with $k = d+1$ vertices. 
+Each trivalent vertex is labeled by both an analytic factor and Lie algebraic factor. 
+The Lie algebraic part of each vertex can be thought of as the defining map of the representation $\rho : \fg \to {\rm End}(V)$. 
+The diagrammitcs of the wheel amounts to taking the trace of the symmetric $(d+1)$st power of this Lie algebra factor. 
+Thus, the Lie algebraic factor of the weight of the wheel is the $(d+1)$st component of the character of the representation
+\ben
+{\rm ch}_{d+1}^\fg(V) = \frac{1}{(d+1)!} {\rm Tr}\left(\rho(X)^{d+1}\right) \in \Sym^{d+1}(\fg^*) .
+\een
+
+To finish the calculation we must compute the analytic weight of the wheel with $d+1$ vertices. 
+Recall, our goal is to identify the anomaly $\Theta$ with the image of ${\rm ch}_{d+1}^\fg(V)$ under the map
+\ben
+J : \Sym^{d+1}(\fg^*)^\fg \to \cloc^*(\Omega^{0,*}(\CC^d)\tensor \fg)
+\een
+that sends an element $\theta$ to the local functional $\int \theta(\alpha \partial \alpha \cdots \partial \alpha)$. 
+We have just seen that the Lie algebra factor in local functional representing the anomaly agrees with the $(d+1)$st Chern character. 
+Thus, to finish we must show the following.
+
+\begin{lem} As a functional on the abelian dg Lie algebra $\Omega^{0,*}(\CC^d)$, the analytic factor of the weight $\lim_{L\to 0} \lim_{\epsilon \to 0} W_{\Gamma, e} (P_{\epsilon, L}, K_\epsilon, I)$ is equal to a scalar multiple of the local functional
+\ben
+\int \alpha \partial \alpha \cdots \partial \alpha \in \cloc^*(\Omega^{0,*}(\CC^d)) .
+\een
+\end{lem}
+
+\begin{proof}
+
+Let's fix some notation. 
+We enumerate the vertices by integers $i = 0,\ldots, d$. 
+Label the coordinate at the $i$th vertex by $z^{(i)} = (z_1^{(i)}, \ldots, z_d^{(i)})$. 
+The incoming edges of the wheel will be denoted by homogeneous Dolbeault forms 
+\ben
+\alpha^{(i)} = \sum_{J} A^{(i)}_J \d \zbar_J^{(i)} \in \Omega^{0,*}(\CC^d) .
+\een
+where the sum is over the multiindex $J = (j_1,\ldots, j_k)$ where $j_a = 1,\ldots, d$ and $(0,k)$ is the homogenous form type. 
+For instance, if $\alpha$ is a $(0,2)$ form we would write
+\ben
+\alpha = \sum_{j_1 < j_2} A_{(j_1,j_2)} \d \zbar_{j_1} \d\zbar_{j_2} .
+\een
+
+
+\end{proof}
