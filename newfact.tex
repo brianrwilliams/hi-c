@@ -55,11 +55,16 @@ The factorization envelope $\UU \sL$ is a particular quantization of the $P_0$ f
 
 \brian{Take the BD envelope of a Lie algebra, then set $\hbar = 1$.} 
 
-\subsection{Higher OPE}
+\subsection{The algebra on a sphere}
 
-There is a rich history of the interaction between factorization algebras and vertex algebras originating from Beilinson and Drinfeld's \cite{BD} pioneering work in the subject of chiral algebras using the language of $D$-modules. 
-In \cite{CG1} it is shown how factorization algebras on $\CC$ we work with are directly related to vertex algebras. 
-The class of ...
+\brian{good place to review what the universal enveloping algebra of an $L_\infty$ algebra is}
+
+\subsection{The factorization algebra on a disk}.
+
+We now consider the value of the factorization algebra on the complex $d$-disk $D^d \subset \CC^d$. 
+We note that the factorization algebra is translation invariant, so for disks of fixed radius, the value will be independent of where the disk is centered. 
+Moreover, we will find that there is a (dense) subspace of the value of the factorization algebra on the disk that is also independent of the {\em radius} of the disk. 
+It is this subspace that we will refer to as the ``state space" of the higher dimensional Kac--Moody algebra. 
 
 A translation invariant factorization algebra $\sF$ on $\CC^d$ has an action of the real $2d$-dimensional vector space spanned by the constant vector fields
 \ben
@@ -67,6 +72,64 @@ A translation invariant factorization algebra $\sF$ on $\CC^d$ has an action of 
 \een  
 In particular, this means that each vector field acts by a derivation on $\sF(U)$ for any $U \subset \CC^d$. 
 For a precise definition of a (smoothly) translation invariant factorization algebra see Definition 4.8.1.3 of \cite{CG1}. 
+
+\brian{KM is translation invariant}
+
+\subsubsection{}
+
+For any open $V \subset \CC^d$ the underlying graded vector space of $\UU(\Omega^{0,*}(V) \tensor \fg)$ is
+\ben
+\Sym^*(\Omega^{0, \#}_c(V) \tensor \fg [1]) .
+\een 
+For any $q \geq 0$ one has, by Serre duality, an identification
+\ben
+\Omega^{0,q}_c (V) \cong \left(\Omega^{d, d-q}(V)\right)^\vee .
+\een 
+At the level of cohomology this is an identification, $H^{d-q}_{\dbar}(V , \Omega^d_{hol}) \to H$ \brian{how to phrase this..}
+
+\begin{lem}\label{lem disk cohomology}Let $D(z,r)$ be the disk centered at $z$ of radius $r$. 
+Then, the map induced by Serre duality
+\ben
+\Sym \left(\left(\d^d z \sO_{hol}(D(z,r)) \tensor \fg^* \right)^\vee [-d+1]\right) \to \UU(\Omega^{0,*}(V) \tensor \fg) 
+\een
+is a quasi-isomorphism.
+\end{lem}
+\begin{proof}
+Consider the spectral sequence induced by the filtration by symmetric degree on $\UU(\Omega^{0,*}(V) \tensor \fg)$.
+The $E_1$ page of this spectral sequence is equal to the cohomology of the complex
+\ben
+\left(\Sym^*(\Omega^{0, *}_c(D(z,r)) \tensor \fg [1]), \dbar \right) .
+\een
+The differential is induced from the Lie bracket on $\fg$. 
+Since $D(z,r)$ is Stein, we have by \brian{ref} a quasi-isomorphism
+\ben
+\Omega^{0,*}_c(D(z,r)) \simeq \left(\Omega^d_{hol}(D(z,r)) \right)^\vee [-d]  .
+\een
+Thus, the $E_1$-page is equal to the symmetric algebra on the graded vector space $\left(\Omega^d_{hol}(D(z,r)) \right)^\vee [-d+1]$. 
+The differential is zero for degree reasons, and hence the spectral sequence collapses. 
+The result follows using the framing $\Omega^d_{hol}(D(z,r)) = \d^d z \sO_{hol}(D(z,r))$. 
+\end{proof}
+
+This lemma says that elements in the cohomology of $\UU(\Omega^{0,*}(D(z,r)) \tensor \fg)$ are described by polynomial functions on the graded vector space $\d^d z \sO_{hol}(D(z,r)) \tensor \fg^* [1]$. 
+We will drop the holomorphic volume form factor $\d^d z$ for notational expedience. 
+Given $X \in \fg$ and $n_1,\ldots,n_d$ we can define the following {\em linear} functional on $\sO_{hol}(D(z,r))$.
+\ben
+\begin{array}{cccl}
+\Large
+X(n_1,\ldots,n_d ; z) : & \sO_{hol}(D(z,r)) \tensor \fg^* & \to & \CC \\
+ & f \tensor \xi & \mapsto & \<X, \xi\> \frac{\partial^{n_1}}{\partial z^{n_1}_1} \cdots \frac{\partial^{n_d}}{\partial z_d^{n_d}} f(z) 
+\end{array}
+\een
+where $\<-,-\>$ denotes the evaluation pairing between $\fg$ and $\fg^*$. 
+By Lemma \ref{lem disk cohomology} this functional determines an element in the cohomology of the factorization algebra $\UU(\Omega^{0,*} \tensor \fg)$ on the disk $D(z,r)$. 
+This element is of cohomological degree $d-1$. 
+
+\brian{-------}
+\brian{Higher OPE structure on $\CC^d$.}
+
+There is a rich history of the interaction between factorization algebras and vertex algebras originating from Beilinson and Drinfeld's \cite{BD} pioneering work in the subject of chiral algebras using the language of $D$-modules. 
+In \cite{CG1} it is shown how factorization algebras on $\CC$ we work with are directly related to vertex algebras. 
+The class of ..
 
 \begin{dfn} A translation invariant factorization algebra $\CC^d$ is {\em holomorphically} translation invariant if, for any $U \subset \CC^d$, there exists degree $-1$ derivations
 \ben
@@ -120,54 +183,8 @@ and a $z$-dependent bilinear map
 \een
 \end{prop}
 
-\brian{Higher OPE structure on $\CC^d$.}
 
-For any open $V \subset \CC^d$ the underlying graded vector space of $\UU(\Omega^{0,*}(V) \tensor \fg)$ is
-\ben
-\Sym^*(\Omega^{0, \#}_c(V) \tensor \fg [1]) .
-\een 
-For any $q \geq 0$ one has, by Serre duality, an identification
-\ben
-\Omega^{0,q}_c (V) \cong \left(\Omega^{d, d-q}(V)\right)^\vee .
-\een 
-At the level of cohomology this is an identification, $H^{d-q}_{\dbar}(V , \Omega^d_{hol}) \to H$ \brian{how to phrase this..}
 
-\begin{lem}\label{lem disk cohomology}Let $D(z,r)$ be the disk centered at $z$ of radius $r$. 
-Then, the map induced by Serre duality
-\ben
-\Sym \left(\left(\d^d z \sO_{hol}(D(z,r)) \tensor \fg^* \right)^\vee [-d+1]\right) \to \UU(\Omega^{0,*}(V) \tensor \fg) 
-\een
-is a quasi-isomorphism.
-\end{lem}
-\begin{proof}
-Consider the spectral sequence induced by the filtration by symmetric degree on $\UU(\Omega^{0,*}(V) \tensor \fg)$.
-The $E_1$ page of this spectral sequence is equal to the cohomology of the complex
-\ben
-\left(\Sym^*(\Omega^{0, *}_c(D(z,r)) \tensor \fg [1]), \dbar \right) .
-\een
-The differential is induced from the Lie bracket on $\fg$. 
-Since $D(z,r)$ is Stein, we have by \brian{ref} a quasi-isomorphism
-\ben
-\Omega^{0,*}_c(D(z,r)) \simeq \left(\Omega^d_{hol}(D(z,r)) \right)^\vee [-d]  .
-\een
-Thus, the $E_1$-page is equal to the symmetric algebra on the graded vector space $\left(\Omega^d_{hol}(D(z,r)) \right)^\vee [-d+1]$. 
-The differential is zero for degree reasons, and hence the spectral sequence collapses. 
-The result follows using the framing $\Omega^d_{hol}(D(z,r)) = \d^d z \sO_{hol}(D(z,r))$. 
-\end{proof}
-
-This lemma says that elements in the cohomology of $\UU(\Omega^{0,*}(D(z,r)) \tensor \fg)$ are described by polynomial functions on the graded vector space $\d^d z \sO_{hol}(D(z,r)) \tensor \fg^* [1]$. 
-We will drop the holomorphic volume form factor $\d^d z$ for notational expedience. 
-Given $X \in \fg$ and $n_1,\ldots,n_d$ we can define the following {\em linear} functional on $\sO_{hol}(D(z,r))$.
-\ben
-\begin{array}{cccl}
-\Large
-X(n_1,\ldots,n_d ; z) : & \sO_{hol}(D(z,r)) \tensor \fg^* & \to & \CC \\
- & f \tensor \xi & \mapsto & \<X, \xi\> \frac{\partial^{n_1}}{\partial z^{n_1}_1} \cdots \frac{\partial^{n_d}}{\partial z_d^{n_d}} f(z) 
-\end{array}
-\een
-where $\<-,-\>$ denotes the evaluation pairing between $\fg$ and $\fg^*$. 
-By Lemma \ref{lem disk cohomology} this functional determines an element in the cohomology of the factorization algebra $\UU(\Omega^{0,*} \tensor \fg)$ on the disk $D(z,r)$. 
-This element is of cohomological degree $d-1$. 
 
 \begin{prop} 
 Let $X,Y \in \fg$ and $\{n_i\}, \{m_j\}$ be collections of non-negative integers where $i,j = 1,\ldots,d$. 
