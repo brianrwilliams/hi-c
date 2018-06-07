@@ -1,5 +1,19 @@
 \section{A formal index theorem}
 
+The main goal of the BV formalism developed in \cite{CosBook} is to rigorously construct quantum field theories using a combination of homological methods and a rigorous model for renormalization. 
+A particular nicety of this approach is the ability to study {\em families} of field theories. 
+In this section we will consider a family of QFT's parametrized by the moduli space of principal $G$-bundles. 
+Our main result is to interpret a certain anomaly coming from BV quantization as a families index over ${\rm Bun}_G(X)$. 
+This anomaly is computed via an explicit Feynman diagrammatic calculation and is related to a local cocycle of the current algebra discussed in Section \brian{ref}. 
+An immediate corollary is a formal universal version of the Grothendieck--Riemann--Roch theorem over the moduli space of bundles. 
+
+We will arrive at this result in a way that is local-to-global on space-time which we formulate in terms of factorization algebras.
+In \cite{CG1, CG2} it is shown how the observables of a QFT determine a factorization algebra. 
+We study the associated family of factorization algebras associated to the family of QFT's over the moduli space of $G$-bundles mentioned in the preceding paragraph. 
+We recollect a formulation of Noether's theorem for symmetries of a theory in terms of factorization algebras developed in Chapter ?? of \cite{CG2}. 
+The central object in this discussion is a ``local index" which describes how the Kac--Moody factorization algebra acts on the observables of the QFT. 
+Locally on space-time we see how Noether's theorem provides a {\em free field realization} of the Kac--Moody factorization algebra generalizing that of the Kac--Moody vertex algebra in chiral conformal field theory \cite{??}. 
+
 \subsection{The anomaly calculation}
 
 In this section we finish the proof of the formal index theorem by performing the local Feynman diagram calculation of the anomaly on $\CC^d$. 
@@ -159,3 +173,61 @@ C \int_{\CC^d} \alpha^{(0)} \partial \alpha^{(1)} \cdots\partial \alpha^{(d)}
 \een
 as desired.
 \end{proof}
+
+\subsubsection{The reduction to a disk}
+
+In this section we show how the anomaly cocycle for the $\fg^X$-equivariant quantization on any complex $d$-fold $X$ is completely determined by it's behavior locally on $X$.
+Thus, our local calculation on $\CC^d$ above is enough to pin down the obstruction.
+
+The fundament idea is that BV quantization behaves like a sheaf on the manifold. 
+Classically, we have a sheaf of $(-1)$-shifted elliptic complexes $\sE$ on $X$ together with a local functional $I \in \oloc(\sE)(X)$. The space of local functionals $\oloc(\sE)$ also forms a sheaf on $X$, so it makes sense to restrict $I$ to any open set $U \subset X$. In this way, for each open we have a $(-1)$-shifted elliptic complex $\sE(U)$ together with a local functional $I |_{U}\in \oloc(\sE)(U)$ -- that is, a classical field theory on $U \subset X$. A fancy way of saying this is that the space of classical field theories on $X$ forms a sheaf. 
+
+A very slightly refined version of this takes into account an action of a local Lie algebra. 
+If $\sL$ is a local Lie algebra on $X$ then the space of $\sL$-equivariant classical BV theories also forms a sheaf on $X$. 
+
+Costello has shown in \cite{CostelloRenormalization} that the simplicial set of quantum field theories forms a sheaf on $X$. In a completely analogous way, one can show that the space of $\sL$-equivariant quantum field theories forms a sheaf on $X$, for any local Lie algebra $\sL$.
+
+We have already seen how the obstruction to lifting a quantum field theory with an action of a local Lie algebra $\sL$ to an inner action arises as a failure of satisfying the equivariant QME. 
+Since an $\sL$-equivariant theory satisfies the QME modulo terms in $\cloc^*(\sL)(X)$, this obstruction $\Theta(X)$is a degree one cocycle $\Theta \in \cloc^*(\sL)(X)$. 
+By the discussion above, we can restrict any $\sL$-equivariant field theory to an arbitrary open set $U \subset X$. 
+Hence, for each open $U \subset X$ we have an obstruction element $\Theta^U$. The complex $\cloc^*(\sL)(X)$ also has a refinement to a sheaf of complexes on $X$ and the obstruction $\Theta^U$ is an element in $\cloc^*(\sL)(U)$. 
+The following is an immediate consequence of Costello's theorem that quantum field theories form a sheaf on $X$.
+
+\begin{lem} Let $\Theta^U$ be the obstruction cocycle on the open set $U$. 
+Suppose $i_U^V : U \hookrightarrow V$ be an inclusion of open sets in $X$. 
+Then
+\ben
+(i_U^V)^* ([\Theta^V]) = [\Theta^U]
+\een
+where $(i_U^V)^* : \cloc^*(\sL)(V) \to \cloc^*(\sL)(U)$ is the restriction map and the brackets $[-]$ denotes the cohomology class of the cocycle. In other words, the map that sends a quantum field theory on $X$ with an $\sL$-action to its obstruction to having an inner $\sL$-action is a map of sheaves. 
+\end{lem}
+
+We now restrict to the case of the local Lie algebra $\fg^X$ defined on a complex $d$-fold $X$.
+For any complex $d$-fold $X$ we have defined the map $J^X : {\rm Sym}^{d+1}(\fg^\vee)^\fg \to \cloc^*(\fg^X)$. 
+We'd like to understand this construction better once we take into account that $\cloc^*(\fg^X)$ forms a sheaf on $X$. 
+By definition, the sheaf $\cloc^*(\fg^X)$ is defined as
+\ben
+\cloc^*(\fg^X) = \Omega^{d,d}_X \tensor_{D_X} \cred^*(J \fg^X)
+\een
+where $J \fg^X$ denotes the $\infty$-jet bundle of the local Lie algebra $\fg^X$. 
+The local Lie algebra $\fg^X$ satisfies the conditions of being a {\em holomorphic} local Lie algebra, defined in Section \ref{??}.
+Thus, we can write the local cohomology in terms of holomorphic data as
+\ben
+\Omega^{d,d}_X \tensor_{D_X} \cloc^*(J \fg^X) \simeq \Omega^{d,hol}_X \tensor^{\LL}_{D_X^{hol}} \cred^*(J^{hol}\sO_X^{hol} \tensor \fg) .
+\een 
+
+\begin{lem} The map 
+\ben
+J : \ul{\Sym^{d+1} (\fg^\vee)^\fg} \to \cloc^*(\fg^X)
+\een
+defined on each open by $J|_{U} = J^U$ is a map of sheaves. Here, the underline means the constant sheaf. 
+\end{lem} 
+
+\begin{lem} For any open sets $i_{U}^V : U \subset V$ in $X$ the induced map
+\ben
+(i_U^V)^* : H^1\left(V ; \cloc^*(\fg^X)\right) \to H^1\left(U ; \cloc^*(\fg^X)\right)
+\een
+is injective.
+\end{lem}
+
+
