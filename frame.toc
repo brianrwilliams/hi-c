@@ -1,43 +1,50 @@
-\contentsline {section}{\tocsection {}{1}{Lie algebras of currents}}{1}{section.1}
-\contentsline {subsection}{\tocsubsection {}{1.1}{Motivational discussion}}{1}{subsection.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{1.1.1}{}}{1}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{1.1.2}{}}{2}{subsubsection.1.1.2}
-\contentsline {subsection}{\tocsubsection {}{1.2}{Definitions}}{2}{subsection.1.2}
-\contentsline {subsection}{\tocsubsection {}{1.3}{The FHK extensions}}{3}{subsection.1.3}
-\contentsline {subsection}{\tocsubsection {}{1.4}{Dimension $d$ extensions via Gelfand-Kazhdan geometry}}{3}{subsection.1.4}
-\contentsline {section}{\tocsection {}{2}{Factorization algebras of currents}}{3}{section.2}
-\contentsline {subsection}{\tocsubsection {}{2.1}{The factorization algebra}}{3}{subsection.2.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{2.1.1}{Arbitrary principal bundle}}{4}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{2.1.2}{A variant on the construction}}{4}{subsubsection.2.1.2}
-\contentsline {subsection}{\tocsubsection {}{2.2}{Relation to the ordinary Kac-Moody on Riemann surfaces}}{5}{subsection.2.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{2.2.1}{A reminder of the ordinary current algebra}}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{Level zero}}{5}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{2.2.3}{}}{5}{subsubsection.2.2.3}
-\contentsline {section}{\tocsection {}{3}{Sphere and loop algebras}}{6}{section.3}
-\contentsline {subsection}{\tocsubsection {}{3.1}{The higher sphere algebra}}{7}{subsection.3.1}
-\contentsline {subsection}{\tocsubsection {}{3.2}{The strategy}}{8}{subsection.3.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{The case of zero level}}{8}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{The case of non-zero level}}{9}{subsubsection.3.2.2}
-\contentsline {subsection}{\tocsubsection {}{3.3}{Higher loop algebras}}{13}{subsection.3.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.3.1}{}}{13}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{3.3.2}{}}{14}{subsubsection.3.3.2}
-\contentsline {section}{\tocsection {}{4}{Formal index theorem on the moduli of $G$-bundles}}{15}{section.4}
-\contentsline {subsection}{\tocsubsection {}{4.1}{Symmetries of BV theories}}{16}{subsection.4.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.1}{Classical symmetries}}{16}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.1.2}{Quantum symmetries}}{17}{subsubsection.4.1.2}
-\contentsline {subsection}{\tocsubsection {}{4.2}{The anomaly for the $\beta \gamma $ system}}{18}{subsection.4.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.1}{The quantization of free BV theories}}{18}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.2}{}}{18}{subsubsection.4.2.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.3}{The reduction to a disk}}{19}{subsubsection.4.2.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.4}{The theory on a disk}}{20}{subsubsection.4.2.4}
-\contentsline {subsubsection}{\tocsubsubsection {}{4.2.5}{The Heisenberg algebra}}{20}{subsubsection.4.2.5}
-\contentsline {section}{\tocsection {}{5}{Higher Kac--Moody as a boundary theory}}{20}{section.5}
-\contentsline {subsection}{\tocsubsection {}{5.1}{The $P_0$ structure}}{21}{subsection.5.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{5.1.1}{}}{21}{subsubsection.5.1.1}
-\contentsline {subsection}{\tocsubsection {}{5.2}{5d $N=1$ supersymmetric gauge theory}}{22}{subsection.5.2}
-\contentsline {subsection}{\tocsubsection {}{5.3}{Maximally supersymmetric 7d gauge theory}}{22}{subsection.5.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{5.3.1}{}}{23}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{5.3.2}{}}{23}{subsubsection.5.3.2}
-\contentsline {section}{\tocsection {Appendix}{A}{$L_\infty $ algebras and their modules}}{23}{appendix.A}
-\contentsline {subsection}{\tocsubsection {}{A.1}{Extensions from cocycles}}{24}{subsection.A.1}
-\contentsline {section}{\tocsection {Appendix}{B}{Homotopy Poisson structures}}{24}{appendix.B}
+\contentsline {section}{\tocsection {}{1}{Lie algebras of currents}}{2}{section.1}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Motivational discussion}}{2}{subsection.1.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.1}{}}{2}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.2}{}}{3}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.3}{}}{3}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.4}{}}{4}{subsubsection.1.1.4}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.1.5}{}}{5}{subsubsection.1.1.5}
+\contentsline {subsection}{\tocsubsection {}{1.2}{Definitions}}{5}{subsection.1.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.2.1}{}}{6}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.2.2}{}}{7}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.2.3}{}}{7}{subsubsection.1.2.3}
+\contentsline {subsection}{\tocsubsection {}{1.3}{The sphere Lie algebras, or FHK current algebras}}{8}{subsection.1.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.3.1}{Compactification along the sphere}}{9}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{1.3.2}{Comparison with the FHK approach}}{9}{subsubsection.1.3.2}
+\contentsline {subsection}{\tocsubsection {}{1.4}{Dimension $d$ extensions via Gelfand-Kazhdan geometry}}{10}{subsection.1.4}
+\contentsline {section}{\tocsection {}{2}{Factorization algebras of currents}}{10}{section.2}
+\contentsline {subsection}{\tocsubsection {}{2.1}{The factorization algebra}}{10}{subsection.2.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.1.1}{Arbitrary principal bundle}}{10}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.1.2}{A variant on the construction}}{11}{subsubsection.2.1.2}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Relation to the ordinary Kac-Moody on Riemann surfaces}}{11}{subsection.2.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.1}{A reminder of the ordinary current algebra}}{12}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{Level zero}}{12}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.3}{}}{12}{subsubsection.2.2.3}
+\contentsline {section}{\tocsection {}{3}{Sphere and loop algebras}}{12}{section.3}
+\contentsline {subsection}{\tocsubsection {}{3.1}{The higher sphere algebra}}{13}{subsection.3.1}
+\contentsline {subsection}{\tocsubsection {}{3.2}{The strategy}}{14}{subsection.3.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{The case of zero level}}{15}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{The case of non-zero level}}{16}{subsubsection.3.2.2}
+\contentsline {subsection}{\tocsubsection {}{3.3}{Higher loop algebras}}{19}{subsection.3.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.3.1}{}}{20}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{3.3.2}{}}{20}{subsubsection.3.3.2}
+\contentsline {section}{\tocsection {}{4}{Formal index theorem on the moduli of $G$-bundles}}{21}{section.4}
+\contentsline {subsection}{\tocsubsection {}{4.1}{The families index}}{22}{subsection.4.1}
+\contentsline {subsection}{\tocsubsection {}{4.2}{Quantization in formal families}}{22}{subsection.4.2}
+\contentsline {subsection}{\tocsubsection {}{4.3}{Classical symmetries of a classical BV theory}}{24}{subsection.4.3}
+\contentsline {subsection}{\tocsubsection {}{4.4}{Quantum symmetries in the BV formalism}}{25}{subsection.4.4}
+\contentsline {subsection}{\tocsubsection {}{4.5}{The anomaly for the $\beta \gamma $ system}}{26}{subsection.4.5}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.5.1}{The quantization of free BV theories}}{26}{subsubsection.4.5.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.5.2}{}}{26}{subsubsection.4.5.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.5.3}{The reduction to a disk}}{27}{subsubsection.4.5.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.5.4}{The theory on a disk}}{28}{subsubsection.4.5.4}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.5.5}{The Heisenberg algebra}}{28}{subsubsection.4.5.5}
+\contentsline {section}{\tocsection {}{5}{Higher Kac--Moody as a boundary theory}}{28}{section.5}
+\contentsline {subsection}{\tocsubsection {}{5.1}{$5$d $\mathcal N=1$ supersymmetric gauge theory}}{29}{subsection.5.1}
+\contentsline {subsection}{\tocsubsection {}{5.2}{$5{\rm d}$ $\mathcal N=1$ from $6{\rm d}$ $\mathcal N=(1,0)$}}{30}{subsection.5.2}
+\contentsline {subsection}{\tocsubsection {}{5.3}{The classical boundary observables}}{31}{subsection.5.3}
+\contentsline {subsection}{\tocsubsection {}{5.4}{The quantum boundary observables}}{32}{subsection.5.4}
+\contentsline {section}{\tocsection {Appendix}{A}{$L_\infty $ algebras and their modules}}{32}{appendix.A}
+\contentsline {subsection}{\tocsubsection {}{A.1}{Extensions from cocycles}}{33}{subsection.A.1}
+\contentsline {section}{\tocsection {Appendix}{B}{Homotopy Poisson structures}}{33}{appendix.B}
