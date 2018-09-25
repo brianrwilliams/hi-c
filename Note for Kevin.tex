@@ -1,8 +1,43 @@
+\documentclass[10pt]{amsart}
+
+\usepackage{macros,slashed}
+
+\linespread{1.25}
+
+\usepackage{parskip}
+\setlength{\parindent}{18pt}
+\setlength{\parindent}{0cm}
+
+\setcounter{tocdepth}{1}
+
+\title{Higher dimensional Kac-Moody symmetries}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{red}{OG: }\textcolor{red}}
+
+\def\q{{\rm q}}
+\def\Obs{{\rm Obs}}
+\def\ad{{\rm ad}}
+\def\cAd{\cA{\rm d}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{trees}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc,through}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{pgffor}
+%\usepackage{tikz-feynman} 
+
+\begin{document}
+%\maketitle
+
 \section{Higher Kac--Moody as a boundary theory}
 
 In this section we show how the Kac--Moody factorization algebra appears as the boundary of a twist of supersymmetric gauge theory.
 
-This example extrapolates the ubiquitous relationship between Chern--Simons theory on a$3$-manifold and the Wess-Zumino-Witten conformal field theory.
+This example extrapolates the ubiquitous relationship between Chern--Simons theory on a $3$-manifold and the Wess-Zumino-Witten conformal field theory.
 \brian{expand on this}
 
 The five dimensional gauge theory we consider is obtained as a twist of $\cN=1$ supersymmetric pure gauge theory.
@@ -234,22 +269,22 @@ If we turn on the deformation $F_\theta$, the factorization algebra of boundary 
 \brian{Enhancement to arbitrary principal bundle.
 Gauge theory will be valued in the adjoint bundle.}
 
-\subsection{The quantum boundary observables}
-
-We now turn to the quantum observables on the boundary of the $5$-dimensional gauge theory.
-Classically, we have just seen that on the boundary we find the $P_0$-envelope of the current algebra. 
-There is a na\"{i}ve quantization of this $P_0$-envelope given by the factorization enveloping algebra. 
-
-
-\begin{thm}
-There exists an exact one-loop quantization of the holomorphic/topological twist of $5$-dimensional $\cN=1$ gauge theory deformed by the term $F_\theta$ on $\CC^2 \times \RR_{\geq 0}$. 
-The factorization algebra of quantum boundary observables on $\CC^2$ is equivalent to the Kac--Moody factorization algebra $\UU_{\theta_\hbar} (\Omega^{0,*}(\CC^2) \tensor \fg)$ where the $\hbar$-dependent level is
-\ben
-\theta_\hbar = \theta + \# \hbar \ch_{3}^\fg (\fg) \in \Sym^3(\fg^*)^\fg [\hbar] .
-\een
-\end{thm}
-
-\brian{this is analogous to the usual *shift* by the critical level in the quantization of CS/WZW}
+%\subsection{The quantum boundary observables}
+%
+%We now turn to the quantum observables on the boundary of the $5$-dimensional gauge theory.
+%Classically, we have just seen that on the boundary we find the $P_0$-envelope of the current algebra. 
+%There is a na\"{i}ve quantization of this $P_0$-envelope given by the factorization enveloping algebra. 
+%
+%
+%\begin{thm}
+%There exists an exact one-loop quantization of the holomorphic/topological twist of $5$-dimensional $\cN=1$ gauge theory deformed by the term $F_\theta$ on $\CC^2 \times \RR_{\geq 0}$. 
+%The factorization algebra of quantum boundary observables on $\CC^2$ is equivalent to the Kac--Moody factorization algebra $\UU_{\theta_\hbar} (\Omega^{0,*}(\CC^2) \tensor \fg)$ where the $\hbar$-dependent level is
+%\ben
+%\theta_\hbar = \theta + \# \hbar \ch_{3}^\fg (\fg) \in \Sym^3(\fg^*)^\fg [\hbar] .
+%\een
+%\end{thm}
+%
+%\brian{this is analogous to the usual *shift* by the critical level in the quantization of CS/WZW}
 
 %\begin{thm} Consider the twisted theory $\sE_{5d}$ on the manifold $\RR_{\geq 0} \times X$, where $X$ is a Calabi-Yau surface. 
 %Then:
@@ -296,3 +331,203 @@ The factorization algebra of quantum boundary observables on $\CC^2$ is equivale
 %
 %\begin{thm} Suppose we put $\Tilde{\cY}_\theta$, the deformation of the twisted $N=2$ gauge theory we considered above, on a 7-manifold of the form $X \times \RR_{\geq 0}$ where $X$ is a Calabi-Yau 6-fold. \owen{You should use the complex dimension rather than the real dimension. Better yet, use less colloquial style, like ``$X$ is a Calabi-Yau manifold of complex dimension 3.''} Then, there is a boundary condition on $X \times \{0\} \subset X \times \RR_{\geq 0}$ whose associated boundary theory is equivalent to the degenerate field theory $\sK_\theta$ on $X$. 
 %\end{thm}
+
+
+\section{Boundary OPE}
+
+We compute the boundary OPE in the presence of the chiral boundary condition of the $5$-dimensional gauge theory we have just discussed.
+We restrict ourselves to the manifold $\CC^2 \times \RR_{\geq 0}$, so that the boundary is $\CC^2$. 
+By general reasoning, we know that the boundary observables combine to give the structure of a holomorphically translation invariant factorization algebra on $\CC^2$. 
+
+We have seen that such a factorization algebra induces a certain algebraic structure on the cohomology of the local observables, that is, the observables on a small disk $V = \Obs^\q (D^2)$. 
+\brian{It may be better to work with the point observables.}
+This algebraic structure is encoded by two classes of operations.
+First, there is a commutative product
+\ben
+\cdot : V \tensor V \to V . 
+\een 
+Second, there is a sequence of $k$-ary brackets, for $k \geq 2$, parametrized by the space $H^{0,?}_{\dbar} ({\rm Conf}_k(\CC^2))$ which take the form
+\ben
+\Pi_k : V^{\tensor k} \to V \tensor H^{0,?}_{\dbar} ({\rm Conf}_k(\CC^2)) [?] .
+\een
+In particular, when $k = 2$ we have a binary operation $\Pi_2 : V \tensor V \to V \tensor z_1^{-1} z_2^{-1} \CC [z_1^{-1}, z_2^{1}] [-1]$.
+Together, the product and the brackets $\{\Pi_k\}$ make up the higher dimensional OPE for holomorphically translation invariant theories on $\CC^2$. 
+
+\subsection{The local observables}
+
+We have already seen that the classical boundary observables are equivalent to the classical limit of the higher dimensional Kac--Moody factorization algebra. 
+Nevertheless, it will be convenient to have explicit representatives for the boundary operators. 
+
+In the presence of our chiral boundary condition, the boundary fields on $\CC^2 \times \{0\} \subset \CC^2 \times \RR_{\geq 0}$ are given by 
+\ben
+\beta \in \Omega^{0,*}(\CC^2) \tensor \fg^* [1] . 
+\een
+Fix non-negative integers $n_1,n_2 \geq 0$, a Lie algebra element $M \in \fg$, and a point $z^{(0)} \in \CC^2$. 
+Define the linear operator
+\ben
+O(n_1, n_2 ; M)(w) : \beta \mapsto \partial_{z_1}^{n_1} \partial_{z_2}^{n_2} \<\beta, M\>_{\fg} (z^{(0)}) .
+\een 
+To read this operator off, we pair the dual Lie algebra part of $\beta$ with $M\in \fg$ to get a smooth function on $\CC^2$. 
+Then, we apply the constant coefficient differential operator $\partial_{z_1}^{n_1} \partial_{z_2}^{n_2}$ and evaluate at $z^{(0)}$.
+This operator is only defined if $\beta$ is a zero form.
+In particular, $O(n_1, n_2 ; M)(z^{(0)})$ has cohomological degree $+1$. 
+
+\brian{Recall the Lemma that the collection $\{O(n_1, n_2 ; M)(z^{(0)})\}$ form a dense subspace of operators on a disk containing $z^{(0)}$.}
+
+For $i = 1,2$ consider the operator 
+\ben
+\Bar{\eta}_i = \frac{\partial}{\partial(\d \zbar_i)}
+\een
+acting on the fields $\Omega^{0,*}(\CC^2) \tensor \fg^*[1]$. 
+This operator decreases the cohomological degree by one and satisfies 
+\ben
+[\dbar, \eta_i] = \frac{\partial}{\partial \zbar_i} .
+\een
+Furthermore, this induces an action on the observables. 
+Applied to $O(n_1, n_2 ; M)(z_0)$ we see that
+\ben
+\Bar{\eta}_i O(n_1, n_2 ; M)(z_0) : \beta^{0,1} \d \zbar^j \mapsto \delta_{ij} \partial_{z_1}^{n_1} \partial_{z_2}^{n_2} \<\beta^{0,1} , M\>_{\fg} (z^{(0)}) .
+\een
+\brian{I may have missed a sign.}
+
+\subsection{Sourcing the boundary operators}
+
+To compute the boundary OPE we must first find the bulk fields that source the boundary operators. 
+For simplicity, we focus on the boundary operators corresponding to $n_1, n_2 = 0$ and denote $O(M)(z^{(0)}) = O(0,0; z^{(0)})$. 
+
+\begin{lem} 
+Let $M \in \fg$ and $z^{(0)} \in \CC^2$. 
+In the gauge
+\ben
+Q^{GF} = \dbar^* \tensor 1 + 1 \tensor \d_{dR} ,
+\een
+the operator $O(M)(z^{(0)})$ sources the is the $\fg$-valued $2$-form field
+\ben
+\alpha(M)(z^{(0)}) = \alpha(z^{(0)}) \tensor M
+\een
+where 
+\ben
+\alpha(z^{(0)}) = \left(\d \zbar_1 \d \zbar_2 \frac{\partial}{\partial t} - \d \zbar_1 \d t \frac{\partial}{\partial z_2} + \d \zbar_2 \d t \frac{\partial}{\partial z_1} \right) \left(t^2 + |z-z^{(0)}|^2 \right)^{-3/2} .
+\een
+\end{lem}
+
+Similarly, the boundary operator $\eta_i O(M)(z_0)$ is sources the field $\eta_i \alpha (M)(z_0)$. 
+
+\subsection{Holomorphic descent}
+
+Before going in to the calculation of the boundary OPE of the $5$d gauge theory, we set up the general method by which we compute the higher OPE for translation invariant holomorphic theories. 
+
+We suppose we have a theory of the following general form. 
+Let $\cV$ be a $\ZZ$-graded \brian{translation invariant} holomorphic vector bundle on $\CC^2$. 
+Moreover, suppose that it carries a fiberwise pairing $\<-,-\>_\sV$ of degree $+1$. 
+The space of fields of the theory is $\Omega^{0,*}(\CC^2, \sV)$ with $\dbar$ playing the role of the linearized BRST differential. 
+
+The other piece of data of a classical theory is the interaction. 
+A translation invariant local functional $I \in \oloc(\Omega^{0,*}(\CC^2, \sV))$ can be written as a sum of functionals of the form
+\ben
+I(\alpha) = \int_{\CC^2} \d z_1 \d z_2 L(D_1\alpha, \ldots, D_k \alpha)
+\een
+where $L : \sV^{\tensor k} \to \CC$ is a linear map, and each $D_i$ is a constant coefficient differential operator lying in the space
+\ben
+\CC\left[\Bar{\eta}_i, \frac{\partial}{\partial \zbar_i}, \frac{\partial}{\partial z_i}\right] .
+\een 
+
+\brian{Book shows why CME implies $D_i$ only involve $z$-derivatives.}
+
+\subsubsection{}
+
+Let's first consider the classical observables.
+
+\begin{prop} \brian{cite book}
+The classical observables 
+\ben
+\Obs^{cl} : U \mapsto \left(\sO(\Omega^{0,*}(\CC^2, \sV), \dbar + \{I,-\} \right)
+\een
+form a holomorphically translation invariant factorization algebra on $\CC^2$. 
+\end{prop}
+
+First, we explain how to compute the $z$-dependent brackets using a holomorphic version of descent.  
+Suppose $O(z)$ is supported at $z$ and is closed for the classical differential $\d^{cl} = \dbar + \{I,-\}$. 
+By translation invariance, we see that $O(z)$ determines a $C^\infty(\CC^2)$-valued observable.
+Next, consider the $\Omega^{0,1} (\CC^2)$-valued observable
+\ben
+O^{(0,1)} = \eta_1 O(z) \d \zbar_1 + \eta_2 O(z) \d \zbar_2 .
+\een 
+and the $\Omega^{0,2}(\CC^2)$-valued observable
+\ben
+O^{(0,2)} = \eta_1 \eta_2 O(z) \d \zbar_1 \d \zbar_2 .
+\een 
+Let $\Tilde{O} = O + O^{(0,1)} + O^{(0,2)}$ be the full $\Omega^{0,*}(\CC^2)$-valued observable.
+Observe that $\Tilde{O}$ is closed for the total differential $\dbar + \d^{cl}$. 
+
+To every compact submanifold $K \subset \CC^2$ and element $f(z_1,z_2) \d z_1 \d z_2 \in \d z_1 \d z_2 \CC[z_1,z_2] \subset \Omega^2_{hol}(\CC^2)$ we define the observable
+\ben
+O_{K,f} = \int_K \Tilde{O} f \d z_1 \d z_2 .
+\een 
+
+Now, suppose $O, O'$ are two local observables. 
+Let $K = S^3$ and consider the factorization product 
+\ben
+O (0) \star O'_{S^3, f} .
+\een 
+This is another local observable, and we assert that it is the image of $\Pi_2(O, O')$ after taking the $S^3$-residue against the function $f$
+\ben
+\oint_{S^3} \Pi_k(O,O') f \d z_1 \d z_2 .
+\een 
+
+\subsection{The boundary OPE}
+
+We now compute the quantum OPE for the boundary of the $5$d gauge theory.
+Our calculation is not identical to the calculation for the case of a holomorphic translation invariant theory in the previous section, since the boundary theory we consider is not described by an action functional. 
+Nevertheless, the calculation shares many similar traits. 
+
+First, let's consider the tree-level contribution. 
+
+\begin{prop} The tree level contribution to the OPE of the boundary observables of the $5$d gauge theory in the presence of the deformation $F_\theta$ is the same as the OPE for the Kac--Moody factorization algebra on $\CC^2$ at level $\theta \in \Sym^3(\fg^*)^\fg$. 
+\end{prop}
+
+\begin{proof}
+Let $M_1,M_2 \in \fg$, $z^{(1)}, z^{(2)} \in \CC^2$.
+Consider the two operators $O(M_1)(z^{(1)})$ and $O(M_2)(z^{(2)}$ inserted at $z^{(1)}$ and $z^{(2)}$, respectively. 
+
+Suppose first that we turn the deformation off $F_\theta = 0$.
+In this case, there is only a single diagram contributing to the tree-level OPE.
+\brian{Draw picture.}
+It corresponds to the operators propagating into the bulk through their source fields and scattering according to the  term in the action
+\ben 
+\int_{\CC^2 \times \RR_{\geq 0}} \d z_1 \d z_2  \<\beta, [\alpha, \alpha]\> .
+\een 
+The resulting boundary operator will be a linear in the field $\beta$. 
+
+This is not quite the way we want to compute the OPE.
+In fact, if we perform this naive prescription for calculating the OPE we will get a regular dependence on the difference $z^{(1)} - z^{(2)}$. 
+However, this is exactly what we expect from the general theory of holomorphically translation invariant factorization algebras: the cohomological degree zero part of the OPE is commutative. 
+
+To compute the interesting part of the OPE, that is, the degree $-1$ bracket $\Pi_2(O(M_1), O(M_2))$ we must use the method of descent discussed in the previous section. 
+(For diagrammatic reasons, at tree level we find $\Pi_k = 0$ for $k > 2$ when the deformation is turned off.)
+
+The prescription for computing this is similar to the case that the holomorphic theory is described by an action functional. 
+First, we use the homotopies $\Bar{\eta}_1, \Bar{\eta}_2$ to define the differential form valued observable
+\ben
+\Tilde{O}(M_1) = O(M_1) + \eta_1 O(M_1) \d \zbar_1 + \eta_2 O(M_1) \d \zbar_2  + \eta_1 \eta_2 O(M_1) \d \zbar_1 \d \zbar_2 .
+\een
+For the OPE bracket, only the $(0,1)$-part of the observable will be important. 
+
+The fields sourced by $O(M_1)(z^{(1)}, O(M_2)(z^{(2)}$ are $\alpha(z^{(1)}) \tensor M_1, \alpha (z^{(2)} \tensor M_2$ respectively where $\alpha(z)$ is as in Lemma \ref{lem source}. 
+The field sourced by $\eta_i O(M_1)$ is $(\eta_i \alpha(z^{(1)})) \tensor M_1$.
+
+It is clear the the Lie algebraic part of the diagram is equal to the bracket $[M_1,M_2]$.
+The integral computing the analytic part of the OPE is of the form
+\ben
+\oint_{z^{(2)} \in S^3} \int_{(z,t) \in \CC^2 \times \RR_{\geq 0}} \d z_1 \d z_2 \alpha(0) \wedge (\Bar{\eta}_1 \alpha(z^{(2)}) \d \zbar_1^{(2)} + \Bar{\eta}_2 \alpha(z^{(2)}) \d z_2^{(2)}) f(z_1^{(1)}, z_2^{(2)}) \d z_1^{(1)} \d z_2^{(2)} .
+\een
+
+It is enough to compute
+\ben
+\int_{\CC^2 \times \RR_{\geq 0}} \d z_1 \d z_2  \alpha(0) \wedge \eta_i \alpha(z^{(2)})
+\een
+for $i = 1,2$. 
+\brian{This is a mess! I think I'm getting something close but I can't simplify a last piece of the argument!}
+
+\end{proof}
+\end{document}

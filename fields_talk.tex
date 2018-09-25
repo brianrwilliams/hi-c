@@ -1,0 +1,271 @@
+\documentclass[10pt]{beamer}
+ 
+\usepackage{macros-beamer}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{tikz-cd}
+
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.markings}
+\tikzset{
+	% >=stealth', %%  Uncomment for more conventional arrows
+    vector/.style={decorate, decoration={snake}, draw},
+	provector/.style={decorate, decoration={snake,amplitude=2.5pt}, draw},
+	antivector/.style={decorate, decoration={snake,amplitude=-2.5pt}, draw},
+    fermion/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    fermionbar/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    fermionnoarrow/.style={draw=black},
+    gluon/.style={decorate, draw=black,
+        decoration={coil,amplitude=4pt, segment length=5pt}},
+    scalar/.style={dashed,draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+    scalarbar/.style={dashed,draw=black, postaction={decorate},
+        dwecoration={markings,mark=at position .55 with {\arrow[draw=black]{<}}}},
+    scalarnoarrow/.style={dashed,draw=black},
+    electron/.style={draw=black, postaction={decorate},
+        decoration={markings,mark=at position .55 with {\arrow[draw=black]{>}}}},
+	bigvector/.style={decorate, decoration={snake,amplitude=4pt}, draw},
+}
+
+\newcommand{\vin}{\rotatebox[origin=c]{-90}{$\in$}}
+ 
+ \setbeamertemplate{footline}[frame number]
+ 
+%Information to be included in the title page:
+\title{The holomorphic $\sigma$-model and its symmetries}
+\author{Brian Williams}
+\institute{Northwestern University \\ Advisors: John Francis and Kevin Costello}
+\date{May 1, 2018}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Outline of this talk}
+\begin{enumerate}
+\item Higher dimensional Kac-Moody algebras and sphere algebras.
+\item Boundary conditions for (twisted) supersymmetric gauge theories.
+\item An approach to AdS/CFT duality.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{Current algebras}
+
+\begin{itemize}
+\item Symmetries of (perturbative) quantum field theories described by (dg) Lie algebras. 
+Locality $\rightsquigarrow$ sheaves/cosheaves of Lie algebras.
+\item Throughout this talk $X$ is a complex manifold. 
+We are interested in {\em holomorphic} field theories on $X$.
+\item Holomorphic gauge symmetries by a Lie algebra $\fg$ leads to sheaf of Lie algebras $\sO^{hol}_X \tensor \fg$. 
+Resolve by vector bundles and use sheaf of dg Lie algebras $$\Omega^{0,*}_X \tensor \fg$$ equipped with $\dbar$. 
+Also have its cosheaf version $\Omega^{0,*}_{X,c} \tensor \fg$. 
+\item Costello-Gwilliam: observables of a QFT form a {\em factorization algebra}. 
+Can also model symmetries by factorization algebras. 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Enveloping algebras}
+
+For any open set $U \subset X$ consider the Chevalley-Eilenberg cochain complex (computing Lie algebra {\em homology})
+\ben
+\clieu_*(\Omega^{0,*}_c(U) \tensor \fg) = \left(\Sym\left(\Omega^{0,*}_c(U) \tensor \fg[1]\right), \dbar + \d_\fg\right) .
+\een
+As we vary the open sets $U \subset X$ these complexes combine to define a factorization algebra, known as the {\em factorization enveloping algebra} of $\Omega^{0,*}_X \tensor \fg$ that we denote $U^{fact}(\Omega^{0,*}_X \tensor \fg)$. 
+
+In complex dimension one this recovers the chiral envelope of Beilinson-Drinfeld.
+In fact, when placed on $X = \CC$, Costello-Gwilliam show the following.
+
+\begin{prop}[Costello-Gwilliam]
+The factorization algebra $U^{fact}(\Omega^{0,*} \tensor \fg)$ on $X = \CC$ determines a vertex algebra with underlying vector space 
+\ben
+\Sym (\sO^{hol} (D)^\vee \tensor \fg) \cong \Sym(z^{-1} \fg[z^{-1}]) ,
+\een
+where $D\subset \CC$ is the unit disk, that is isomorphic to the {\bf Kac-Moody vertex algebra} of central charge zero.
+\end{prop}
+
+%Recall, the ``fields" of the Kac-Moody consist of $X (z) = \sum_{n} X_n z^n$ where $X \in \fg$.
+%The OPE is
+%\ben
+%X(z_1) Y(z_2) \sim \frac{[X,Y]}{z_1-z_2} .
+%\een
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Currents}
+
+The {\em currents} of a QFT are those operators supported on codimension one submanifolds; for instance $S^{2d-1} \subset \CC^d$. 
+
+When $d=1$ we have $\CC^\times = S^1 \times \RR_{>0}$ and can obtain a factorization algebra on $\RR_{>0}$ by pushing forward one on $\CC^\times$ along the projection map $\pi : S^1 \times \RR_{>0} \to \RR_{>0}$.
+``Reduction along $S^1$". 
+
+Take the factorization enveloping algebra $U^{fact}(\Omega^{0,*} \tensor \fg)$ on $\CC^\times$.
+The pushforward along $\pi$ is a locally constant factorization algebra on $\RR_{>0}$ which is equivalent, as an associative algebra, to 
+\ben
+U (\fg[z,z^{-1}]) = U({\rm algebraic\;loops\;in\;} \fg) .
+\een
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Higher dimensions}
+
+We now consider $U^{fact}(\Omega^{0,*}\tensor \fg)$ on higher dimensional affine space $\CC^d$, or its puncture $\CC^{d} \setminus 0$. 
+
+For currents, we view $\CC^d \setminus 0 = S^{2d-1} \times \RR_{>0}$ and reduce along
+\ben
+\pi : S^{2d-1} \times \RR_{>0} \to \RR_{>0} .
+\een
+Take a Dolbeault model for $\CC^d \setminus 0$. 
+
+Complex $A_d$ concentrated in degrees $0,\ldots,d-1$ modeling $\CC^{d} \setminus 0$. 
+
+\begin{prop}[W.] 
+The pushforward of $U^{fact}(\Omega^{0,*}\tensor \fg)$ along $\pi$ is a locally constant factorization algebra. 
+It is equivalent, as a dg associative algebra, to
+\ben
+U(A_d \tensor \fg) .
+\een
+\end{prop}
+
+When $d=1$ this recovers the ordinary loop algebras.
+In general, we get ``sphere algebras" which have interesting derived directions. 
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{An approach to holography}
+We have already seen a bulk-boundary relationship between the Kac-Moody factorization algebra and higher dimensional supersymmetric gauge theories. 
+
+A more ambitious goal would be to study a rich holographic duality known as AdS/CFT duality. 
+
+Outline of a program developed by Costello-Li to formulate and prove a twisted version of the AdS/CFT correspondence in a variety of contexts. 
+
+Roughly, the program states that the following algebras of operators:
+
+\begin{itemize}
+\item operators of {\em twisted} supergravity (or string, $M$-theory) living at the location of a stack of branes;
+
+\item operators of twisted maximally supersymmetric gauge theory living on a stack of $N$ branes in the ``large $N$ limit";
+\end{itemize}
+
+are {\bf Koszul dual}. 
+
+Costello has checked this in the case of $M2$ and $M5$ (at tree level) branes in the twisted $\Omega$-background of $11$-dimensional supergravity. 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{A simplified version}
+\begin{itemize}
+\item The operators of a QFT form a factorization algebra.
+\item Full theory of Koszul duality for factorization algebras is not completely developed, though we can engineer a simplified situation for which we can appeal to known methods. 
+\end{itemize}
+Consider a stack of $N\geq 1$, $D(2k-1)$ branes living on a submanifold of the form
+\ben
+\RR \times S^{2k-1} \times \{0\} \subset \underbrace{\RR \times S^{2k-1}} \times \RR^\ell \subset \RR^{10}
+\een
+Roughly, this is a gauge theory with gauge algebra $\fgl (N)$.
+Reduce along $$\RR \times S^{2k-1} \xto{\pi} \RR .$$
+Theory along the brane becomes a ``quantum mechanics" type theory (with potentially infinitely many Kaluza-Klein modes) and hence determine an associative algebra $$\sA(N)$$ equipped with a Moyal product, depending on $N$. 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Large $N$ limit}
+A caveat is that we actually need to use a supergroup version of the above situation. 
+Amounts to replacing $\fgl(N)$ by $\fgl(N|N)$ ($N$ branes plus $N$ anti-branes). 
+Have maps
+\ben
+\fgl(N|N) \hookrightarrow \fgl(N'|N')
+\een
+for any $N < N'$.
+Induces map of algebras
+\ben
+\sA(N'|N') \to \sA(N|N),
+\een
+and hence we may define the ``large $N$" limit of the operators living on the brane by the limit
+\ben
+\sA(\infty|\infty) = \lim_{N} \sA(N|N) .
+\een
+\end{frame}
+
+\def\PV{{\rm PV}}
+
+\begin{frame}
+\frametitle{Twisted supergravity}
+Costello-Li have developed a way to twist supergravity using the data of a square-zero Killing spinor.
+Choice of Killing spinor $Q$ in type IIB supergravity on $\RR^{10}$ determines complex structure $\RR^{10} \cong_Q \CC^5$. 
+In fact, up to $R$-symmetry, this is the unique $SU(5)$-invariant Killing spinor. 
+$$ $$
+{\bf Conjecture} (Costello-Li): The twist of type IIB supergravity by this killing spinor is equivalent to Kodaira-Spencer theory on $\CC^5$.
+$$ $$
+If $(X^d,\omega)$ is any Calabi-Yau manifold let $\PV^{i,j}(X) = \Omega^{0,j}(X, \Wedge^i T^{1,0}X)$ be the Dolbeault resolution of holomorphic polyvector fields.
+Using volume form have operator $\partial : \PV^{i,j} \to \PV^{i-1,j}$ and integration map
+\ben
+\int : \PV^{d,d}(X) \cong_\omega \Omega^{0,d}(X) \to \CC \; \; , \;\; \alpha \mapsto \int_X \omega \wedge \alpha .
+\een
+\end{frame}
+
+\begin{frame}
+\frametitle{D3 branes}
+\begin{itemize}
+
+\item Investigate AdS/CFT for $D3$ branes. 
+
+\item By work of Baulieu (2010) and later Costello-Li (2016) the holomorphic twist of the theory living on a stack of $D(2k-1)$-branes ($k = 1,\ldots,5$) in type IIB supergravity is equal to {\em holomorphic Chern-Simons} on $\CC^k \subset \CC^5$. 
+
+\item The case we are interested in is $k=2$, for which holomorphic Chern-Simons is equivalent to a holomorphic twist of $\cN=4$ SYM on $\RR^4$. 
+Mathematically, this is the cotangent theory to the moduli space of {\em Higgs bundles}. 
+
+\item 
+Concretely, the complex of fields (in the BV formalism) on any open $U \subset \CC^2$ is
+\ben
+\Omega^{0,*}(U) \tensor \fgl_{N|N}[\epsilon_1,\epsilon_2,\epsilon_3][1]
+\een
+equipped with the $\dbar$ differential. 
+Here, the $\epsilon_i$ are odd variables of degree $1$. 
+Remember we are using the super Lie algebra.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Operators on the $D3$ brane}
+
+We place the theory on the $D3$ brane on the complex surface $\CC^2 \setminus \{0\} \cong S^3 \times \RR_{>0}$. 
+
+The classical operators of the theory are functions on the moduli space of the solutions to the equations of motion. 
+In the BV formalism this takes the form of Lie algebra cohomology
+\ben
+\clie^*\left(\Omega^{0,*}(\CC^2 \setminus 0)\tensor \fgl_{N|N}[\epsilon_1,\epsilon_2,\epsilon_3] \right)
+\een
+Recall the complex $A_2$ whose cohomology is a dense subalgebra $H^*(A_2) \subset H_{\dbar}^*(\CC^2 \setminus 0)$. 
+Quantum operators are topologically generated by an $\hbar$-deformation of the CE cohomology
+\ben
+\sA_{\hbar}(N|N) = {\rm C}_{{\rm Lie}, \hbar}^*\left(A_2 \tensor \fgl_{N|N}[\epsilon_1,\epsilon_2,\epsilon_3]\right) .
+\een
+Loday-Quillen-Tsygan tells us how to take large $N$ limit of classical operators:
+\ben
+\sA_{\hbar = 0}(N|N) \xto{N \to \infty} \cSym^{>0}\left(HC^*(A_2 [\epsilon_1,\epsilon_2,\epsilon_3])\right) = \sA_{\hbar = 0}(\infty|\infty).
+\een
+Here, $HC^*$ is the complex computing cyclic cohomology (dual to cyclic homology). 
+The full quantum $\sA_{\hbar}(\infty|\infty)$ is a deformation over $\CC[[\hbar]]$.
+\end{frame}
+
+In practice, this is really a curved version of Koszul duality since augmentations may not exist. 
+
+
+
+
+
+
+\end{document}

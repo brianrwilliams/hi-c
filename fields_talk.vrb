@@ -1,0 +1,19 @@
+\frametitle{An approach to holography}
+We have already seen a bulk-boundary relationship between the Kac-Moody factorization algebra and higher dimensional supersymmetric gauge theories.
+
+A more ambitious goal would be to study a rich holographic duality known as AdS/CFT duality.
+
+Outline of a program developed by Costello-Li to formulate and prove a twisted version of the AdS/CFT correspondence in a variety of contexts.
+
+Roughly, the program states that the following algebras of operators:
+
+\begin{itemize}
+\item operators of {\em twisted} supergravity (or string, $M$-theory) living at the location of a stack of branes;
+
+\item operators of twisted maximally supersymmetric gauge theory living on a stack of $N$ branes in the ``large $N$ limit";
+\end{itemize}
+
+are {\bf Koszul dual}.
+
+Costello has checked this in the case of $M2$ and $M5$ (at tree level) branes in the twisted $\Omega$-background of $11$-dimensional supergravity.
+
