@@ -15,6 +15,11 @@
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 \def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
 
+\def\opp{{\rm op}}
+\def\Ch{{\rm Ch}}
+\def\dgLie{{\rm dgLie}}
+\def\Lcat{L_\infty{\rm Alg}}
+
 
 \begin{document}
 \maketitle
@@ -111,10 +116,12 @@ This leads us to our next main result which is to prove a version of the Grothen
 
 \section{Current algebras on complex manifolds}
 
-\subsection{Recollections}
-
 This paper takes general definitions and constructions from \cite{CG1} and specializes them to the context of complex manifolds.
 In this subsection we will review some of the key ideas but refer to \cite{CG1} for foundational results.
+
+\owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
+
+\subsection{Local Lie algebras}
 
 \brian{fix these
 ...
@@ -124,8 +131,6 @@ We recall some definitions that we will use throughout the paper.
 The first concept we introduce is that of a {\em local Lie algebra}. 
 This is the central object needed to discuss symmetries of field theories that are local on the spacetime manifold. 
 }
-
-%\subsubsection{Local Lie algebras}
 
 A key notion for us is a sheaf of Lie algebras on a smooth manifold.
 These often appear as infinitesimal automorphisms of geometric objects,
@@ -155,7 +160,7 @@ where the operations are local in the sense of not enlarging support of sections
 (As we will see, such Lie algebras often appear by acting naturally on the local functionals from physics, namely functionals determined by Lagrangian densities.)
 
 \begin{rmk}
-We will use $\sL$ to denote the precosheaf of {\em compactly supported} sections $L$,
+We will use $\sL$ to denote the precosheaf of {\em compactly supported} sections of $L$,
 which assigns a dg Lie algebra to each open set $U \subset X$, 
 since the differential and bracket respect support.
 At times we will abusively refer to $\sL$ to mean the data determining the local Lie algebra,
@@ -185,7 +190,7 @@ let $\sAd(P)^{sh}$ denote the local Lie algebra whose sections are $\Omega^{0,*}
 whose differential is $\dbar_P$, and whose bracket is the pointwise operation just defined above.
 \end{dfn}
 
-\owen{We should add some remark about Atiyah algebras \dots}
+\owen{We should add some remark about Atiyah algebras \dots We could also add a comment about the deformation-theoretic content of this dg Lie algebra.}
 
 This construction admits important variations.
 For example, we can move from working over a fixed manifold $X$ to working over a site.
@@ -199,7 +204,7 @@ Let $G$ be a complex Lie group and let $\fg$ denote its ordinary Lie algebra.
 There is a natural functor 
 \[
 \begin{array}{cccc}
-\sG^{sh} :&  {\rm Hol}_d & \to & {\rm Lie}^{\rm dg}\\
+\sG^{sh} :&  {\rm Hol}_d^\opp & \to & {\dgLie}\\
 & X & \mapsto &\Omega^{0,*}(X) \otimes \fg,
 \end{array}
 \]
@@ -252,169 +257,169 @@ We lose, however, the interpretation in terms of infinitesimal symmetries of the
 In practice, we prefer to work with the compactly supported sections of $L$, for which we reserve the more succinct notation~$\sL$.
 This is a precosheaf of $L_\infty$ algebras that assigns compactly supported sections of $L$ to each open of~$X$.
 
-As a potential source of confusion, we warn the reader than we typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ simply by $\sL$. 
-Also, we will often use the term local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
+%As a potential source of confusion, we warn the reader than we typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ simply by $\sL$. 
+%Also, we will often use the term local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
+%
+%\subsubsection{Holomorphic principal bundles}
+%
+% 
+%\subsubsection{Deformations of holomorphic principal bundles}
+%
+%The dg Lie algebra $\sAd(P)^{sh}(X) = \Omega^{0,*}(X, \ad(P))$ appears naturally in the deformation theory of holomorphic $G$-bundles. 
+%By definition, the bundle $P \to X$ comes equipped with a $G$-equivariant $(0,1)$-connection $\dbar_P : C^\infty_P \to \Omega^{0,1}_P$. 
+%Consider two holomorphic structures $\dbar_P$ and $\dbar_P'$ on the same underlying complex principal bundle. 
+%By the fundamental property of connections we see that $\dbar_P - \dbar_P'$ defines a $(0,1)$ form with values in $\fg$:
+%\[
+%\alpha_{P,P'} = \dbar_P - \dbar_P' \in \Omega^{0,1}(P) \tensor \fg .
+%\]
+%This element is $G$-equivariant, so that it actually descends to an element $\alpha_{P,P'} \in \Omega^{0,1}(X, \ad(P))$. 
+%Furthermore, since $\dbar_P^2 = \dbar_P'^2 = 0$, we see that $\alpha_{P,P'}$ satisfies the following holomorphic version of the Maurer-Cartan equation
+%\[
+%\dbar \alpha_{P,P'} + \frac{1}{2} [\alpha_{P,P'}, \alpha_{P,P'}] = 0 .
+%\]
+%
+%Any other element $\alpha \in \Omega^{0,1}(X, \ad(P))$ satisfying the Maurer-Cartan equation determines a deformation of the holomorphic $G$-bundle $\dbar_P$.
+%Of course, two deformations $\alpha,\alpha'$ are equivalent if there exists a holomorphic gauge transformation $f \in \Gamma^{hol}(X, \ad(P))$ such that $\alpha' = [f, \alpha']$. 
+%Moreover, there may be obstructions to having such a deformation. 
+%This situation is exactly what a formal moduli problem, see Section \ref{sec: formal moduli}, is designed to describe.
+%
+%\owen{I don't know that we should include the stuff about formal moduli problems. Or it could be shrunk to a small remark that this Lie algebra determines a deformation theory.}
+%
+%We define the formal moduli problem ${\rm Def}_{P\to X}$ associated to the holomorphic principal $G$-bundle $P \to X$. 
+%As above, denote the fixed $(0,1)$-connection by $\dbar_P$ defining the complex structure of the holomorphic principal bundle. 
+%Define
+%\[
+%{\rm Def}_{P \to X} : {\rm dgArt}_\CC \to {\rm sSets}
+%\]
+%which sends a dg Artinian ring $(A, \fm)$ (again, see Section \ref{sec: formal moduli}) to the simplicial set $\Def_{P \to X}(A)$ whose $n$-simplices are
+%\[
+%{\rm Def}_{P \to X}(A) [n] = \left\{\alpha \in \left(\Omega^{0,*}(X , {\rm ad}(P)) \tensor \fm \tensor \Omega^*(\Delta^n)\right)^1  \;  | \; \dbar_P \alpha + \d_A \alpha + \d_{\Delta_n} \alpha + \frac{1}{2} [\alpha,\alpha] = 0\right\} .
+%\]
+%Here, $\d_A$ is the internal differential of $A$ and $\d_{\Delta_n}$ is the de Rham operator for differential forms on the $n$-simplex $\Delta^n$. 
+%
+%\begin{lem}
+%The functor $\Def_{P \to X} : A \mapsto \Def_{P \to X}(A)$ defines a formal moduli problem.
+%\end{lem} 
+%
+%We unpack the definition of this formal moduli problem.
+%Suppose first that $(A, \fm)$ is an ordinary Artinian algebra (not dg) concentrated in degree zero. 
+%Then, the set of zero simplices above is equal to
+%\beqn\label{zerosimplices}
+%\{\alpha \in \Omega^{0,1}(X , \ad(P)) \tensor \fm \; | \; \dbar_P \alpha + \frac{1}{2} [\alpha,\alpha] = 0 \} .
+%\eeqn
+%A $1$-simplex is an element $\alpha(t) + \beta(t) \d t \in \Omega^{0,*}(X, \ad(P)) \tensor \fm \tensor \Omega^*([0,1])$ where, for each $t$, $\alpha(t) \in \Omega^{0,1}(X , \ad(P))$ and $\beta(t) \in \Omega^{0,0}(X, \ad(P))$.
+%The Maurer-Cartan equation for the $1$-simplices is equivalent to the pair of equations
+%\begin{align*}
+%\dbar_P \alpha(t) + \frac{1}{2}[\alpha(t), \alpha(t)] & = 0 ,\\
+%\dbar_P \beta(t) + \frac{\partial}{\partial t} \alpha(t) + [\beta(t), \alpha(t)] & = 0 .
+%\end{align*}
+%The first equation says that $\alpha(t)$ determines a family of complex structures on the $G$-bundle $P \to X$ and.
+%The second equation says that holomorphically gauge equivalent deformations of complex structure are cochain homotopy equivalent. 
+%It follows from a result of Getzler \cite{GetzlerLie} that the space $\Def_{P \to X}(A)$ is homotopy equivalent to the homotopy quotient of (\ref{zerosimplices}) by the group associated to the nilpotent Lie algebra of gauge transformations $\Gamma^{hol}(X, \ad(P)) \tensor \fm$. 
+%
+%By construction, the formal moduli problem $\Def_{X \to P}$ is represented by the dg Lie algebra $\sAd(P)^{sh}(X)$ which is the sheaf of sections of the local Lie algebra $\sAd(P)$ we consider in this paper. 
+%Naturally, we expect the formal neighborhood of the derived moduli space of $G$-bundles defined in \cite{FHK} near $P$ to be equivalent to this formal moduli problem.
+%
+%Note that in the case of a Riemann surface $H^2 (X ; \ad(P)) = 0$ and deformations of holomorphic $G$-bundles always exist. 
+%In higher dimensions, however, there may be obstructions which is one reason why working with the full dg model for holomorphic gauge symmetries is essential. 
 
-\subsubsection{Holomorphic principal bundles}
+\subsection{Current algebras, or enveloping factorization algebras of local Lie algebras}
 
- 
-\subsubsection{Deformations of holomorphic principal bundles}
+Local Lie algebras often appear as symmetries of 
 
-The dg Lie algebra $\sAd(P)^{sh}(X) = \Omega^{0,*}(X, \ad(P))$ appears naturally in the deformation theory of holomorphic $G$-bundles. 
-By definition, the bundle $P \to X$ comes equipped with a $G$-equivariant $(0,1)$-connection $\dbar_P : C^\infty_P \to \Omega^{0,1}_P$. 
-Consider two holomorphic structures $\dbar_P$ and $\dbar_P'$ on the same underlying complex principal bundle. 
-By the fundamental property of connections we see that $\dbar_P - \dbar_P'$ defines a $(0,1)$ form with values in $\fg$:
-\[
-\alpha_{P,P'} = \dbar_P - \dbar_P' \in \Omega^{0,1}(P) \tensor \fg .
-\]
-This element is $G$-equivariant, so that it actually descends to an element $\alpha_{P,P'} \in \Omega^{0,1}(X, \ad(P))$. 
-Furthermore, since $\dbar_P^2 = \dbar_P'^2 = 0$, we see that $\alpha_{P,P'}$ satisfies the following holomorphic version of the Maurer-Cartan equation
-\[
-\dbar \alpha_{P,P'} + \frac{1}{2} [\alpha_{P,P'}, \alpha_{P,P'}] = 0 .
-\]
 
-Any other element $\alpha \in \Omega^{0,1}(X, \ad(P))$ satisfying the Maurer-Cartan equation determines a deformation of the holomorphic $G$-bundle $\dbar_P$.
-Of course, two deformations $\alpha,\alpha'$ are equivalent if there exists a holomorphic gauge transformation $f \in \Gamma^{hol}(X, \ad(P))$ such that $\alpha' = [f, \alpha']$. 
-Moreover, there may be obstructions to having such a deformation. 
-This situation is exactly what a formal moduli problem, see Section \ref{sec: formal moduli}, is designed to describe.
-
-\owen{I don't know that we should include the stuff about formal moduli problems. Or it could be shrunk to a small remark that this Lie algebra determines a deformation theory.}
-
-We define the formal moduli problem ${\rm Def}_{P\to X}$ associated to the holomorphic principal $G$-bundle $P \to X$. 
-As above, denote the fixed $(0,1)$-connection by $\dbar_P$ defining the complex structure of the holomorphic principal bundle. 
-Define
-\[
-{\rm Def}_{P \to X} : {\rm dgArt}_\CC \to {\rm sSets}
-\]
-which sends a dg Artinian ring $(A, \fm)$ (again, see Section \ref{sec: formal moduli}) to the simplicial set $\Def_{P \to X}(A)$ whose $n$-simplices are
-\[
-{\rm Def}_{P \to X}(A) [n] = \left\{\alpha \in \left(\Omega^{0,*}(X , {\rm ad}(P)) \tensor \fm \tensor \Omega^*(\Delta^n)\right)^1  \;  | \; \dbar_P \alpha + \d_A \alpha + \d_{\Delta_n} \alpha + \frac{1}{2} [\alpha,\alpha] = 0\right\} .
-\]
-Here, $\d_A$ is the internal differential of $A$ and $\d_{\Delta_n}$ is the de Rham operator for differential forms on the $n$-simplex $\Delta^n$. 
-
-\begin{lem}
-The functor $\Def_{P \to X} : A \mapsto \Def_{P \to X}(A)$ defines a formal moduli problem.
-\end{lem} 
-
-We unpack the definition of this formal moduli problem.
-Suppose first that $(A, \fm)$ is an ordinary Artinian algebra (not dg) concentrated in degree zero. 
-Then, the set of zero simplices above is equal to
-\beqn\label{zerosimplices}
-\{\alpha \in \Omega^{0,1}(X , \ad(P)) \tensor \fm \; | \; \dbar_P \alpha + \frac{1}{2} [\alpha,\alpha] = 0 \} .
-\eeqn
-A $1$-simplex is an element $\alpha(t) + \beta(t) \d t \in \Omega^{0,*}(X, \ad(P)) \tensor \fm \tensor \Omega^*([0,1])$ where, for each $t$, $\alpha(t) \in \Omega^{0,1}(X , \ad(P))$ and $\beta(t) \in \Omega^{0,0}(X, \ad(P))$.
-The Maurer-Cartan equation for the $1$-simplices is equivalent to the pair of equations
-\begin{align*}
-\dbar_P \alpha(t) + \frac{1}{2}[\alpha(t), \alpha(t)] & = 0 ,\\
-\dbar_P \beta(t) + \frac{\partial}{\partial t} \alpha(t) + [\beta(t), \alpha(t)] & = 0 .
-\end{align*}
-The first equation says that $\alpha(t)$ determines a family of complex structures on the $G$-bundle $P \to X$ and.
-The second equation says that holomorphically gauge equivalent deformations of complex structure are cochain homotopy equivalent. 
-It follows from a result of Getzler \cite{GetzlerLie} that the space $\Def_{P \to X}(A)$ is homotopy equivalent to the homotopy quotient of (\ref{zerosimplices}) by the group associated to the nilpotent Lie algebra of gauge transformations $\Gamma^{hol}(X, \ad(P)) \tensor \fm$. 
-
-By construction, the formal moduli problem $\Def_{X \to P}$ is represented by the dg Lie algebra $\sAd(P)^{sh}(X)$ which is the sheaf of sections of the local Lie algebra $\sAd(P)$ we consider in this paper. 
-Naturally, we expect the formal neighborhood of the derived moduli space of $G$-bundles defined in \cite{FHK} near $P$ to be equivalent to this formal moduli problem.
-
-Note that in the case of a Riemann surface $H^2 (X ; \ad(P)) = 0$ and deformations of holomorphic $G$-bundles always exist. 
-In higher dimensions, however, there may be obstructions which is one reason why working with the full dg model for holomorphic gauge symmetries is essential. 
-
-\subsection{Local Lie algebras and factorization algebras of currents}
-
-\def\Ch{{\rm Ch}}
-\def\dgLie{{\rm dgLie}}
-\def\Lcat{L_\infty{\rm Alg}}
-
-\owen{I'm inclined to remove almost all of this section. To show that we get a factorization algebra with values in Lie algebras, we need to use the nontrivial fact that the forgetful functor $Alg_O(C) \to C$ preserves {\em sifted} colimits, and so a prefactorization algebra with values in Lie algebras is a factorization algebra therein if it forgets to a factorization algebra.}
- 
-There is a rich theory of factorization algebras and factorization homology for which we only use a part of in this work. 
-In addition to the foundational work of Beilinson-Drinfeld \cite{BD}, the modern theory has been developed extensively in the work of Ayala-Francis \cite{AFTopMan}, Lurie \cite{LurieHA}, and Costello-Gwilliam \cite{CG1,CG2}.
-In this work, a factorization algebra is a symmetric monoidal functor from the category of opens on a fixed manifold, with monoidal product given by disjoint union, to the category of chain complexes, with monoidal product given by tensor product.
-The general theory allows a factorization algebra to take values in an arbitrary symmetric monoidal $\infty$-category.
-The concept of a factorization Lie algebra is perhaps not as well-known as an ordinary factorization algebra (valued in vector spaces, or chain complexes), but certainly falls under this general theory.
-The notion of a factorization Lie algebra is a convenient one to connect the theory of local Lie algebras and factorization algebras.
-The definitions we recall in this section can be found in \cite{CG1} and are certainly subsumed in \cite{LurieHA}. 
-
-\begin{dfn} 
-Let $\sC^{\tensor}$ be a symmetric monoidal category and $X$ a space.
-A {\em prefactorization algebra} on $X$ with values in $\sC$ is a functor of symmetric monoidal categories
-\[
-\sF : {\rm Disj}^{\sqcup}_X \to \sC^\tensor .
-\]
-A {\em strict factorization algebra} with values in $\sC$ is a prefactorization algebra $\sF$ such that: 
-\begin{enumerate}
-\item $\sF$ is a cosheaf with respect to the Weiss topology;
-\item for any disjoint open sets $U, V \subset X$ the structure map $\sF(U) \tensor \sF(V) \to \sF(U \sqcup V)$ is an isomorphism.
-\end{enumerate}
-\end{dfn}
-
-There are two important symmetric monoidal categories we will be most interested in as the target of a factorization algebra.
-The first is the category of chain complexes $\Ch^{\tensor}$ (over $\CC, \RR$) with symmetric monoidal product given by the tensor product.
-The next is the category of dg Lie algebras $\dgLie^{\oplus}$ with symmetric monoidal structure given by the direct sum.
-
-In both of these categories there is the notion of a quasi-isomorphism, which allows us to weaken the above definition slightly.  
-
-\begin{dfn} 
-Let $\sF$ be a prefactorization algebra on $X$ with values in $\sC = \Ch^{\tensor}$ or $\dgLie^{\oplus}$. 
-Then, $\sF$ is a {\em homotopy factorization algebra} if
-\begin{enumerate}
-\item $\sF$ is a homotopy cosheaf with respect to the Weiss topology;
-\item for any disjoint open sets $U, V \subset X$ the structure map $\sF(U) \tensor \sF(V) \to \sF(U \sqcup V)$ is a quasi-isomorphism.
-\end{enumerate}
-\end{dfn}
-
-%Not surprisingly, there is a version of the definition for homotopy factorization algebras with values in an arbitrary symmetric monoidal $\infty$-category, but we do not wish to dive into the general formalism here but refer to the source references \cite{AF1, LurieHA,..} for a complete treatment.
-
-For the remainder of this paper we will only discuss factorization algebras valued in these categories $\Ch^\tensor, \dgLie^{\oplus}$.
-When we do not say otherwise, a {\em factorization algebra} will mean a homotopy factorization algebra with values in $\Ch$. 
-Likewise, a {\em factorization Lie algebra} will mean a homotopy factorization algebra with values in $\dgLie$. 
-Note that the direct sum is {\em not} the coproduct for Lie algebras, so a prefactorization Lie algebra is different than just a precosheaf of Lie algebras. 
-
-We have already encountered a modest extension of the category of dg Lie algebras to the category of $L_\infty$ algebras $\Lcat$ which will come up in our discussion below.
-This category is also symmetric monoidal using the direct sum, and we will also refer to homotopy factorization algebras with values in $\Lcat$ as factorization Lie algebras.
-
-The primary appearance of factorization Lie algebras, for us, comes from local Lie algebras.
- 
-\begin{lem}
-Suppose $(L, \{\ell_n\})$ is a local Lie algebra on $X$.
-Then, the compactly supported sections $\sL$ has the structure of a factorization Lie algebra.
-\end{lem}
-\begin{proof}
-%Since $\sL$ is the compactly supported sections of a graded vector bundle, it is a cosheaf. 
-By the cosheaf property, we know that $\sL(U \sqcup V) \cong \sL(U) \oplus \sL(V)$. 
-This is an isomorphism of $L_\infty$ algebras since any element of $\sL(U)$ commutes with $\sL(V)$ inside of $\sL(U \sqcup V)$. 
-Similarly, if $\{U_i\}$ is a disjoint collection of opens in $X$ and $\sqcup_i U_i \subset W$, then we define the factorization structure map by
-\[
-\oplus_i \sL(U_i) \cong \sL(\sqcup_i U_i) \to \sL (W)
-\]
-where the second map is the structure map for the cosheaf. 
-These structure maps exhibit $\sL$ as a prefactorization Lie algebra (i.e. a prefactorization algebra valued in the category of $L_\infty$ algebras). 
-\end{proof}
-
-There is a functor from dg Lie algebras to cochain complexes 
-\[
-\clieu_* : \dgLie \to \Ch
-\]
-sending $(\fg, \d , [-,-])$ to the complex
-\[
-\clieu_* (\fg) = \left(\Sym(\fg[1]), \d + \d_{CE}\right) .
-\]
-Here, $\d$ denotes the extension of the differential on $\fg$ to the symmetric algebra by the Leibniz rule, and $\d_{CE}$ encodes the Lie bracket.
-There is a completely similar functor from $L_\infty$ algebras to chain complexes that we denote by the same name.
-
-The functor $\clieu_*$ is symmetric monoidal with respect to the direct sum of Lie algebras and the tensor product of cochain complexes $\clieu_*(\fg \oplus \fh) = \clieu_*(\fg) \tensor \clieu_*(\fh)$. 
-Since a factorization Lie algebra uses the direct sum monoidal structure, the following definition makes sense.
-
-\begin{dfn/lem}
-Suppose $\sG$ is a factorization Lie algebra on a manifold $X$ then, $\clieu_*(\sG)$ has the structure of a factorization algebra (valued in cochain complexes with tensor product). 
-\end{dfn/lem}
-
-We have already seen that every local Lie algebra gives rise to a factorization Lie algebra.
-By the construction above, we obtain the following composition of functors.
-\[
-{\rm Lie}_X \to {\rm Fact}^{\rm Lie}_X \to {\rm Fact}_X
-\]
-Here ${\rm Lie}_X$ is the category of local Lie algebras on $X$.
-If $\sL$ is a local Lie algebra we let $\UU(\sL)$ be the image under this composition, and call it the {\em enveloping factorization algebra} of $\sL$. 
+%
+%\owen{I'm inclined to remove almost all of this section. To show that we get a factorization algebra with values in Lie algebras, we need to use the nontrivial fact that the forgetful functor $Alg_O(C) \to C$ preserves {\em sifted} colimits, and so a prefactorization algebra with values in Lie algebras is a factorization algebra therein if it forgets to a factorization algebra.}
+% 
+%There is a rich theory of factorization algebras and factorization homology for which we only use a part of in this work. 
+%In addition to the foundational work of Beilinson-Drinfeld \cite{BD}, the modern theory has been developed extensively in the work of Ayala-Francis \cite{AFTopMan}, Lurie \cite{LurieHA}, and Costello-Gwilliam \cite{CG1,CG2}.
+%In this work, a factorization algebra is a symmetric monoidal functor from the category of opens on a fixed manifold, with monoidal product given by disjoint union, to the category of chain complexes, with monoidal product given by tensor product.
+%The general theory allows a factorization algebra to take values in an arbitrary symmetric monoidal $\infty$-category.
+%The concept of a factorization Lie algebra is perhaps not as well-known as an ordinary factorization algebra (valued in vector spaces, or chain complexes), but certainly falls under this general theory.
+%The notion of a factorization Lie algebra is a convenient one to connect the theory of local Lie algebras and factorization algebras.
+%The definitions we recall in this section can be found in \cite{CG1} and are certainly subsumed in \cite{LurieHA}. 
+%
+%\begin{dfn} 
+%Let $\sC^{\tensor}$ be a symmetric monoidal category and $X$ a space.
+%A {\em prefactorization algebra} on $X$ with values in $\sC$ is a functor of symmetric monoidal categories
+%\[
+%\sF : {\rm Disj}^{\sqcup}_X \to \sC^\tensor .
+%\]
+%A {\em strict factorization algebra} with values in $\sC$ is a prefactorization algebra $\sF$ such that: 
+%\begin{enumerate}
+%\item $\sF$ is a cosheaf with respect to the Weiss topology;
+%\item for any disjoint open sets $U, V \subset X$ the structure map $\sF(U) \tensor \sF(V) \to \sF(U \sqcup V)$ is an isomorphism.
+%\end{enumerate}
+%\end{dfn}
+%
+%There are two important symmetric monoidal categories we will be most interested in as the target of a factorization algebra.
+%The first is the category of chain complexes $\Ch^{\tensor}$ (over $\CC, \RR$) with symmetric monoidal product given by the tensor product.
+%The next is the category of dg Lie algebras $\dgLie^{\oplus}$ with symmetric monoidal structure given by the direct sum.
+%
+%In both of these categories there is the notion of a quasi-isomorphism, which allows us to weaken the above definition slightly.  
+%
+%\begin{dfn} 
+%Let $\sF$ be a prefactorization algebra on $X$ with values in $\sC = \Ch^{\tensor}$ or $\dgLie^{\oplus}$. 
+%Then, $\sF$ is a {\em homotopy factorization algebra} if
+%\begin{enumerate}
+%\item $\sF$ is a homotopy cosheaf with respect to the Weiss topology;
+%\item for any disjoint open sets $U, V \subset X$ the structure map $\sF(U) \tensor \sF(V) \to \sF(U \sqcup V)$ is a quasi-isomorphism.
+%\end{enumerate}
+%\end{dfn}
+%
+%%Not surprisingly, there is a version of the definition for homotopy factorization algebras with values in an arbitrary symmetric monoidal $\infty$-category, but we do not wish to dive into the general formalism here but refer to the source references \cite{AF1, LurieHA,..} for a complete treatment.
+%
+%For the remainder of this paper we will only discuss factorization algebras valued in these categories $\Ch^\tensor, \dgLie^{\oplus}$.
+%When we do not say otherwise, a {\em factorization algebra} will mean a homotopy factorization algebra with values in $\Ch$. 
+%Likewise, a {\em factorization Lie algebra} will mean a homotopy factorization algebra with values in $\dgLie$. 
+%Note that the direct sum is {\em not} the coproduct for Lie algebras, so a prefactorization Lie algebra is different than just a precosheaf of Lie algebras. 
+%
+%We have already encountered a modest extension of the category of dg Lie algebras to the category of $L_\infty$ algebras $\Lcat$ which will come up in our discussion below.
+%This category is also symmetric monoidal using the direct sum, and we will also refer to homotopy factorization algebras with values in $\Lcat$ as factorization Lie algebras.
+%
+%The primary appearance of factorization Lie algebras, for us, comes from local Lie algebras.
+% 
+%\begin{lem}
+%Suppose $(L, \{\ell_n\})$ is a local Lie algebra on $X$.
+%Then, the compactly supported sections $\sL$ has the structure of a factorization Lie algebra.
+%\end{lem}
+%\begin{proof}
+%%Since $\sL$ is the compactly supported sections of a graded vector bundle, it is a cosheaf. 
+%By the cosheaf property, we know that $\sL(U \sqcup V) \cong \sL(U) \oplus \sL(V)$. 
+%This is an isomorphism of $L_\infty$ algebras since any element of $\sL(U)$ commutes with $\sL(V)$ inside of $\sL(U \sqcup V)$. 
+%Similarly, if $\{U_i\}$ is a disjoint collection of opens in $X$ and $\sqcup_i U_i \subset W$, then we define the factorization structure map by
+%\[
+%\oplus_i \sL(U_i) \cong \sL(\sqcup_i U_i) \to \sL (W)
+%\]
+%where the second map is the structure map for the cosheaf. 
+%These structure maps exhibit $\sL$ as a prefactorization Lie algebra (i.e. a prefactorization algebra valued in the category of $L_\infty$ algebras). 
+%\end{proof}
+%
+%There is a functor from dg Lie algebras to cochain complexes 
+%\[
+%\clieu_* : \dgLie \to \Ch
+%\]
+%sending $(\fg, \d , [-,-])$ to the complex
+%\[
+%\clieu_* (\fg) = \left(\Sym(\fg[1]), \d + \d_{CE}\right) .
+%\]
+%Here, $\d$ denotes the extension of the differential on $\fg$ to the symmetric algebra by the Leibniz rule, and $\d_{CE}$ encodes the Lie bracket.
+%There is a completely similar functor from $L_\infty$ algebras to chain complexes that we denote by the same name.
+%
+%The functor $\clieu_*$ is symmetric monoidal with respect to the direct sum of Lie algebras and the tensor product of cochain complexes $\clieu_*(\fg \oplus \fh) = \clieu_*(\fg) \tensor \clieu_*(\fh)$. 
+%Since a factorization Lie algebra uses the direct sum monoidal structure, the following definition makes sense.
+%
+%\begin{dfn/lem}
+%Suppose $\sG$ is a factorization Lie algebra on a manifold $X$ then, $\clieu_*(\sG)$ has the structure of a factorization algebra (valued in cochain complexes with tensor product). 
+%\end{dfn/lem}
+%
+%We have already seen that every local Lie algebra gives rise to a factorization Lie algebra.
+%By the construction above, we obtain the following composition of functors.
+%\[
+%{\rm Lie}_X \to {\rm Fact}^{\rm Lie}_X \to {\rm Fact}_X
+%\]
+%Here ${\rm Lie}_X$ is the category of local Lie algebras on $X$.
+%If $\sL$ is a local Lie algebra we let $\UU(\sL)$ be the image under this composition, and call it the {\em enveloping factorization algebra} of $\sL$. 
 
 \subsection{Shifted extensions of current algebras}
 
