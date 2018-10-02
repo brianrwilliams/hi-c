@@ -323,10 +323,37 @@ This is a precosheaf of $L_\infty$ algebras that assigns compactly supported sec
 %Note that in the case of a Riemann surface $H^2 (X ; \ad(P)) = 0$ and deformations of holomorphic $G$-bundles always exist. 
 %In higher dimensions, however, there may be obstructions which is one reason why working with the full dg model for holomorphic gauge symmetries is essential. 
 
-\subsection{Current algebras, or enveloping factorization algebras of local Lie algebras}
+\subsection{Current algebras as enveloping factorization algebras of local Lie algebras}
 
-Local Lie algebras often appear as symmetries of 
+Local Lie algebras often appear as symmetries of classical field theories.
+For instance, as we will show in section \owen{add cross ref}, 
+each finite-dimensional complex representation $V$ of a Lie algebra $\fg$
+determines a charged $\beta\gamma$-type system on a complex $d$-fold $X$ with choice of holomorphic principal bundle $\pi: P \to X$.
+Namely, the on-shell $\gamma$ fields are holomorphic sections for the associated bundle $P \times^G V \to X$, 
+and the on-shell $\beta$ fields are holomorphic $d$-forms with values in the associated bundle $P \times^G V^* \to X$.
+It should be plausible that $\sAd(P)^{sh}$ acts as symmetries of this classical field theory,
+since holomorphic sections of the adjoint bundle manifestly send on-shell fields to on-shell fields.
 
+Such a symmetry determines currents, which we interpret as observables of the classical theory.
+Note, however, a mismatch: 
+while fields are contravariant in space(time) because fields pull back along inclusions of open sets, 
+observables are covariant because an observable on a smaller region extends to any larger region containing it.
+The currents, as observables, thus do not form a sheaf but a precosheaf.
+We introduce the following terminology.
+
+\begin{dfn}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its precosheaf $\sL$ of {\em linear currents} is given by taking compactly supported sections of~$L$.
+\end{dfn}
+
+We use the term ``linear'' here because the product of two such currents is not in $\sL$ itself, 
+although such a product will exist in the larger precosheaf of observables.
+
+\begin{rmk}
+This precosheaf of dg Lie algebras ``forgets'' to a cosheaf of cochain complexes.
+(The coproduct of dg Lie algebras is not the direct sum of cochain complexes, so $\sL$ is not a cosheaf of dg Lie algebras.)
+It forms, however, a factorization algebra with values in dg Lie algebras,
+since the forgetful functor from dg Lie algebras to cochain complexes preserves
+\end{rmk}
 
 %
 %\owen{I'm inclined to remove almost all of this section. To show that we get a factorization algebra with values in Lie algebras, we need to use the nontrivial fact that the forgetful functor $Alg_O(C) \to C$ preserves {\em sifted} colimits, and so a prefactorization algebra with values in Lie algebras is a factorization algebra therein if it forgets to a factorization algebra.}
