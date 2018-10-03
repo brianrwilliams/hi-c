@@ -52,7 +52,7 @@
 
 \section{The holomorphic gauge anomaly}
 
-\subsection{The quantum master equation}
+\subsection{The quantum master equation} 
 
 \subsection{Equivariant holomorphic matter}
 
@@ -83,6 +83,60 @@ When $d=1$ to formulate this theory in the BV formalism we simply
 \subsection{A calculation of the anomaly}
 
 \subsection{Free field realization}
+
+\subsubsection{The $\beta\gamma$ factorization algebra}
+
+It is the general philosophy of \cite{CG1,CG2} that the observables of a quantum field theory form a factorization algebra on the underlying spacetime. 
+In this section we describe the factorization algebra associated to the higher $\beta\gamma$ system on $\CC^d$ associated to any $\fg$-representation $V$. 
+
+For any vector space $V$, we can consider the commutative algebra of algebraic and formal algebraic functions denoted by
+\ben
+\sO(V) = \Sym (V^\vee) = \bigoplus_{n \geq 0} (V^\vee)^{\tensor n}_{S_n} \;\;\; , \;\;\; \Hat{\sO}(V) = \Hat{\rm Sym}(V^\vee) = \prod_{n \geq 0} (V^\vee)^{\tensor n}_{S_n} . 
+\een 
+
+The factorization algebra of classical observables assigns to every open set in $\CC^d$ a cochain complex. 
+By definition, the classical observables supported on an open set $U \subset \CC^d$ are the algebraic, or formal algebraic, functions on the graded vector space of fields supported on $U$. 
+For our example, the differential is just given by the $\dbar$ operator. 
+
+Thus
+\ben
+\Obs^{cl}_V(U) = \left(\Sym \left(\Omega^{0,*}(U)^\vee \tensor V^\vee \oplus \Omega^{d,*}(U)^\vee \tensor V [-d+1]\right), \dbar\right)
+\een
+and the completed version $\Hat{\Obs}^{cl}_V(U)$. 
+As usual, we use the completed tensor product when defining the symmetric products. 
+
+\begin{prop} (Classical Noether's Theorem)
+The assignment that sends an element $\alpha \in \Omega^{0,*}_c(U, \fg)$ to the observable
+\ben
+\gamma \tensor \beta \in \Omega^{0,*}(U, V) \tensor \Omega^{d,*}(U, V^*) \mapsto \int_U \<\beta, \alpha \cdot \gamma\>_V
+\een
+determines a map of factorization algebras
+\ben
+\Phi^{\cl} : \UU(\sG) \to \Obs^{cl}_V .
+\een
+\end{prop}
+
+\begin{rmk}
+The formula for $\Phi^{\cl}$ is identical to that of the local functional $I^\fg(\alpha)$ defining the action of $\sG$ on the $\beta\gamma$ system.
+Ordinarily, a local functional does not determine an observable on an open set since the integral may not exist.
+However, since $\alpha$ is compactly supported on $U$, it makes sense to restrict $I^\fg(\alpha)$ to an observable on $U$. 
+This is precisely the observable $\Phi^{\cl}(\alpha)$. 
+\end{rmk}
+
+\subsubsection{}
+
+\begin{cor}
+There is a map of factorization algebras on $\CC^d$, $\Phi^\q : \UU_{\# \ch_{d+1}(\fg^{ad})}(\fg^{\CC^d}) \to \Obs^\q_V$ 
+that fits into the following diagram 
+\ben
+\begin{tikzcd}
+ \UU_{\# \ch_{d+1}(\fg^{ad})} (\fg^{\CC^d}) \ar[d] \ar[r, dotted, "\Phi^\q"] & \Obs^\q_V \ar[d, "\hbar \to 0"] \\
+ \UU (\fg^{\CC^d}) \ar[r, "\Phi^{cl}"] & \Obs^{cl}_V ,
+ \end{tikzcd}
+ \een
+ where $\Phi^{cl}$ is as in Equation (\ref{classicalPhi}). 
+ \end{cor}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% OLD DRAFT BELOW %%%%%%%%%%%%%%%%%%%%%
 
