@@ -423,7 +423,23 @@ For a local Lie algebra $(L\to X, \ell_1,\ell_2)$,
 its {\em factorization algebra of quantum currents}  is given by taking the enveloping 1-shifted $BD$   algebra of the compactly supported sections of~$L$.
 \end{dfn}
 
-As before, $\Sym$ here means the construction involving sections of the external tensor product.
+As mentioned just after the definition of the classical currents, 
+the symmetric powers here mean the construction involving sections of the external tensor product.
+Specializing $\hbar = 1$, we recover the following construction.
+
+\begin{dfn}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
+its {\em enveloping factorization algebra}  is given by taking the Chevalley-Eilenberg chains $C_*(\sL)$ of the compactly supported sections of~$L$.
+\end{dfn}
+
+Here the symmetric powers use sections of the external tensor powers, just as with the classical or quantum currents.
+
+When a local Lie algebra acts as symmetries of a classical field theory,
+it sometimes also lifts to symmetries of a BV quantization.
+In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Sym(\sL[1]) \to \Obs^\q$ realizing quantum currents as quantum observables.
+Sometimes, however, the classical symmetries do not lift directly to quantum symmetries.
+We now turn to discussing the natural home for the obstructions to such lifts.
+
 
 
 %\begin{rmk}
@@ -529,7 +545,7 @@ As before, $\Sym$ here means the construction involving sections of the external
 %Here ${\rm Lie}_X$ is the category of local Lie algebras on $X$.
 %If $\sL$ is a local Lie algebra we let $\UU(\sL)$ be the image under this composition, and call it the {\em enveloping factorization algebra} of $\sL$. 
 
-\subsection{Shifted extensions of current algebras}
+\subsection{Local cocycles and shifted extensions}
 
 \owen{I think we should shift the emphasis: we want to identify interesting shifted central extensions, and the Gelfand-Fuks cohomology provides them via local cocycles.}
 
