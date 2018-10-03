@@ -375,7 +375,7 @@ it is natural to study this enveloping algebra by itself.
 For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its precosheaf $\Sym(\sL[1])$ of {\em classical currents} is given by taking the enveloping 1-shifted Poisson algebra of the compactly supported sections of~$L$.
 \end{dfn}
 
-We emphasize here that we mean by $\Sym(\sL[1])$ not the symmetric algebra in the purely algebraic sense, but taking into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
+We emphasize here that we mean by $\Sym(\sL[1])$ {\em not} the symmetric algebra in the purely algebraic sense, but rather a construction that takes into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
 Explicitly, the $n$th symmetric power  $\Sym^n(\sL[1])$ means the smooth, compactly supported, and $S_n$-invariant sections of the graded vector bundle 
 \[
 L[1]^{\boxtimes n} \to X^n.
@@ -386,8 +386,45 @@ see \cite{CG1}, notably the appendices.
 A key result of \cite{CG1}, namely Theorem 5.6.0.1, is that this precosheaf of currents forms a factorization algebra. 
 From hereon we refer to  $\Sym(\sL[1])$ as the {\em factorization algebra of classical currents}.
 
-There is a quantum counterpart to this construction, using the Batalin-Vilkovisky formalism for quantization.
-\owen{Now describe enveloping algebra as a BV quantization of the classical currents}
+There is a quantum counterpart to this construction, in the Batalin-Vilkovisky formalism.
+The idea is that for a dg Lie algebra $\fg$, 
+the enveloping 1-shifted Poisson algebra $\Sym(\fg[1])$ admits a natural BV quantization via the Chevalley-Eilenberg chains $C_*(\fg)$.  
+This assertion is transparent by examining the Chevalley-Eilenberg differential:
+\[
+\d_{CE}(xy) = \d_\fg(x)y \pm x\, \d_\fg(y) + [x,y]
+\]
+for $x,y$ elements of $\fg[1]$.
+The first two terms behave like a derivation of $\Sym(\fg[1])$, 
+and the last term agrees with the shifted Poisson bracket.
+More accurately, to keep track of the $\hbar$-dependency in quantization,
+we introduce a kind of Rees construction.
+\owen{cross ref stuff with Rune and the other paper}
+
+\begin{dfn}
+\label{def: BD envelope}
+The {\em enveloping $BD$ algebra} $U^{BD}(\fg)$ of a dg Lie algebra $\fg$ is given by the graded-commutative algebra in $\CC[[\hbar]]$-modules
+\[
+\Sym(\fg[1])[[\hbar]] \cong \Sym_{\CC[[\hbar]]}(\fg[[\hbar]][1]),
+\]
+but the differential is defined as a coderivation with respect to the natural graded-cocommutative coalgebra structure,
+by the condition
+\[
+\d(xy) = \d_\fg(x)y \pm x\, \d_\fg(y) + \hbar [x,y].
+\]
+\end{dfn}
+
+This construction determines a BV quantization of the enveloping 1-shifted Poisson algebra,
+as can be verified directly from the definitions.
+(For further discussion see \cite{GH} and \cite{CG2}.)
+It is also straightforward to extend this construction to ``quantize'' the factorization algebra of classical currents.
+
+\begin{dfn}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
+its {\em factorization algebra of quantum currents}  is given by taking the enveloping 1-shifted $BD$   algebra of the compactly supported sections of~$L$.
+\end{dfn}
+
+As before, $\Sym$ here means the construction involving sections of the external tensor product.
+
 
 %\begin{rmk}
 %The precosheaf of dg Lie algebras $\sL$ ``forgets'' to a cosheaf of cochain complexes by ignoring the bracket.
