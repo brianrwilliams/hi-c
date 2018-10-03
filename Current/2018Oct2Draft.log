@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 OCT 2018 08:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 OCT 2018 10:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1463,15 +1463,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 2113.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2113.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2113.
 
+Package rerunfilecheck Info: File `2018Oct2Draft.out' has not changed.
+(rerunfilecheck)             Checksum: 74255F2E4F881AA279145E884228E44B;2523.
 
-
-Package rerunfilecheck Warning: File `2018Oct2Draft.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `2018Oct2Draft.out':
-(rerunfilecheck)             Before: 396ED38185D360D940154CAF235C5A16;2535
-(rerunfilecheck)             After:  74255F2E4F881AA279145E884228E44B;2523.
 
 LaTeX Warning: There were undefined references.
 
@@ -1507,7 +1501,7 @@ ve/2015/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2015
 dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/xypic/xycmat10.pfb></usr/local/texlive/2015/texmf-dist/fonts/
 type1/public/xypic/xycmbt10.pfb>
-Output written on 2018Oct2Draft.pdf (37 pages, 311742 bytes).
+Output written on 2018Oct2Draft.pdf (37 pages, 311732 bytes).
 PDF statistics:
  527 PDF objects out of 1000 (max. 8388607)
  465 compressed objects within 5 object streams
