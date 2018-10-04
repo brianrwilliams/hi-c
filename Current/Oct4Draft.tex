@@ -591,8 +591,8 @@ This sheaf of cochain complexes on $X$ has global sections that we denote by~$\c
 \end{dfn}
 
 \begin{rmk}
-Altogether $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology \cite{Fuks, LosikDiag},
-where the adjective ``diagonal'' indicates that we are interested in continuous cochains whose integral kernels are supported on the small diagonal.
+This construction $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology \cite{Fuks, LosikDiag},
+where the adjective ``diagonal'' indicates that we are interested in continuous cochains whose integral kernels are supported on the small diagonals.
 \end{rmk}
 
 
@@ -606,7 +606,7 @@ Explicitly, a $k$-cocycle $\Theta$ of degree $n$ on a dg Lie algebra $\fg$ deter
 Similarly, local cocycles provide shifted central extensions of local Lie algebras.
 
 \begin{dfn}
-A cocycle $\Theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
+For a local Lie algebra $(L, \ell_1,\ell_2)$, a cocycle $\Theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
 \beqn\label{kext}
 0 \to \CC[k] \to \Hat{\sL}_\theta \to \sL \to 0
 \eeqn
@@ -614,24 +614,29 @@ of precosheaves of $L_\infty$ algebras, where the $L_\infty$ structure maps are 
 \[
 \Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \Theta(x_1,\ldots,x_n)).
 \]
+Here we set $\ell_n = 0$ for $n > 2$.
 \end{dfn}
 
-Cohomologous cocycles determine quasi-isomorphic extensions of precosheaves of Lie algebras. 
+As usual, cohomologous cocycles determine quasi-isomorphic extensions. 
 Much of the rest of the section is devoted to constructing and analyzing various cocycles and the resulting extensions.
 
-Local cocycles give a direct way of deforming the enveloping factorization algebra of a local Lie algebra.
-Suppose that we have a local cocycle $\Theta \in \cloc^*(\sL)$ is of cohomological degree $+1$. 
-We define the {\em twisted enveloping factorization algebra} to be the factorization algebra sending the open set $U \subset X$ to the cochain complex
+Local cocycles give a direct way of deforming the various current algebras a local Lie algebra.
+For example, we have the following construction.
+
+\begin{dfn} 
+Let $\Theta$ be a degree 1 local cocycle for a local Lie algebra $(L \to X, \ell_1,\ell_2)$. 
+Let $K$ denote a degree zero parameter so that $\CC[K]$ is a polynomial algebra concentrated in degree zero.
+The {\em twisted enveloping factorization algebra} $\UU_\Theta(\sL)$ assigns to an open $U \subset X$, the cochain complex
 \begin{align*}
 \UU_\Theta(\sL)(U) & = \left(\Sym(\sL(U)[1] \oplus \CC \cdot K), \d_{\sL} + K \cdot \Theta\right) \\
 & = \left(\Sym(\sL(U)[1])[K] , \d_{\sL} + K \cdot \Theta\right),
 \end{align*}
-where $\d_{\sL}$ denotes the differential on the untwisted enveloping factorization algebra applied to $U$ and $\Theta$ is the operator on the symmetric algebra extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ by demanding that it is a graded derivation.
-Here, $K$ is a formal algebraic parameter. 
-We denote this twisted enveloping factorization algebra by $\UU_\Theta(\sL)$. 
-We will consider this as a factorization algebra valued in the symmetric monoidal category of chain complexes that are linear over the commutative ring $\CC[K]$. 
-Specialization at certain values of $K$ yields an ordinary factorization algebra. 
- 
+where $\d_{\sL}$ denotes the differential on the untwisted enveloping factorization algebra and $\Theta$ is the operator extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ to the symmetric coalgebra as a graded coderivation.
+This twisted enveloping factorization algebra is module for the commutative ring $\CC[K]$. 
+\end{dfn}
+
+An analogous construction applies to the quantum currents, which we will denote~$\Cur^\q_\Theta(\sL)$.
+
 \subsubsection{The $J$ functional} \label{sec: g j functional}
 
 There is a particular family of local cocycles that has special importance in studying symmetries of higher dimensional holomorphic gauge theories. 
