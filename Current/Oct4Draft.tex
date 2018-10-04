@@ -712,7 +712,7 @@ is an cochain map.
 \end{prop}
 
 \begin{proof} 
-\owen{I'm not sure what's the best way to write a proof. Currently the key explicit computations aren't actually done, so I might be inclined to write "direct computation shows \dots" Alternatively we just include it.}
+\owen{I'm not sure what's the best way to write a proof. Currently the key explicit computations aren't actually done, so I might be inclined to write "direct computation shows \dots" Alternatively we just do the computations. What you wrote somehow feels in between: not enough for those who need details and more than needed for those who know what's going on.}
 The element $\fj_X(\theta)$ is local as it is expressed as a density produced by polydifferential operators.
 We need to show that $\fj_X(\theta)$ is closed for the differential on $\cloc^*(\sG_X)$. 
 Note that $\sG_X$ is the tensor product of the dg commutative algebra $\Omega^{0,*}_X$ and the Lie algebra $\fg$.
@@ -727,18 +727,21 @@ The differential $\d_{CE}$ is obtained from the differential in the Chevalley-Ei
 The second line follows from the fact that the homogenous polynomial $\theta : \fg \times \cdots \times \fg \to \CC$ is closed in the Chevalley-Eilenberg complex for $\fg$.
 \end{proof}
 
-Having the fundamental construction of the cocycle down, we discuss two modest extensions of the construction. 
+As should be clear from the construction, everything here works over the site ${\rm Hol}_d$ of complex $d$-folds, and hence we use $\fj(\theta)$ to denote the local cocycle for the local Lie algebra $\sG$ on~${\rm Hol}_d$.
+
+There are two modest extensions of the construction. 
+\owen{You only write one, however, \dots What's the other?}
 First is to consider an arbitrary $G$-bundle $P$ on $X$. 
-Suppose $\ad(P)$ is trivialized over an open set $U \subset X$.
-On this open set, we can write an element $\alpha \in \sAd(P) (U) = \Omega^{0,*}_c(U, \ad(P))$ as 
-$\alpha = \omega \tensor X$ where $\omega \in \Omega^{0,*}(X)$ and $X \in \fg$. 
-Thus, the formula above for $\fj_X(\theta)$ still makes sense on $\sAd(P)(U)$. 
-Since the expression for the cocycle is clearly independent of the choice of a coordinate it glues to define a global section. 
-Thus, for any principal bundle we have a cochain map
+When $\ad(P)$ is trivialized over an open set $U \subset X$,
+the formula for $\fj_X(\theta)$ makes sense on $\sAd(P)(U)$.
+This local expression for the cocycle is independent of the choice of coordinates,
+so we can glue over any sufficiently refined cover to obtain a global cocycle. 
+Thus, we have a cochain map
 \[
 \fj_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
 \]
-given by the same formula as in (\ref{j g formula}).
+given by the same formula as in~\eqref{j g formula}.
+\owen{Should we make this a definition?}
 
 %\subsubsection{Relation to Chern-Weil theory}
 %
@@ -788,7 +791,50 @@ given by the same formula as in (\ref{j g formula}).
 %\Omega^k_{cl}(B \fg) = \Omega^k(B \fg) \xto{\partial} \Omega^{k+1}(B \fg) \xto \cdots
 %\]
 
-\subsubsection{Holomorphic translation invariance}
+\subsection{The higher Kac-Moody factorization algebra}
+
+Finally, we can introduce the central object of this paper.
+
+\begin{dfn}
+Let $X$ be a complex manifold of complex dimension $d$ equipped with a holomorphic principal $G$-bundle $P$.
+Let $\Theta$ be a degree 1 cocycle in $\cloc^*(\sAd(P))$. 
+The {\em Kac-Moody factorization algebra on $X$ of type $\Theta$} is the twisted enveloping factorization algebra $\UU_\Theta (\sAd(P))$ that assigns
+\[
+\left(\Sym\left(\Omega^{0,*}_c(U, \ad(P))[1]\right) [K] , \dbar + \d_{CE} + \Theta\right) 
+\]
+to an open set $U \subset X$~is
+\end{dfn}
+
+\begin{rmk} 
+As in the definition of twisted enveloping factorization algebras, the factorization algebras $\UU_\Theta(\sAd(P))$ are modules for the ring $\CC[K]$. 
+In keeping with conventions above, when $P$ is the trivial bundle on $X$, 
+we will denote the Kac-Moody factorization algebra by $\UU_\Theta(\sG_X)$. 
+\end{rmk}
+
+The most important class of such higher Kac-Moody algebras makes sense over the site ${\rm Hol}_d$ of all complex $d$-folds.
+
+\begin{dfn}
+Let $\fg$ be an ordinary Lie algebra and let $\theta \in \Sym^{d+1}(\fg^*)^\fg$.  
+Let $\UU_\theta (\sG)$ denote the twisted enveloping factorization algebra $\UU_{\fj(\theta)} (\sG)$ for the local Lie algebra $\sG = \Omega^{0,*}_c \otimes \fg$ on the site ${\rm Hol}_d$ of complex $d$-folds.
+\end{dfn}
+
+In the case $d = 1$ the definition above agrees with the Kac-Moody factorization algebra on Riemann surfaces given in \cite{CG1}.
+There, it is shown that this factorization algebra, restricted to the complex manifold $\CC$, recovers a vertex algebra isomorphic to that of the ordinary Kac-Moody vertex algebra.
+Thus, we think of the object $\UU_\Theta(\sAd(P))$ as a higher dimensional version of the Kac-Moody vertex algebra.
+
+\subsubsection{Holomorphic translation invariance and higher dimensional vertex algebras}
+
+To put some teeth into the previous paragraph,
+we note that \cite{CG1} introduces a family of colored operads ${\rm PDiscs_d}$, the little $d$-dimensional polydiscs operads,
+that provide a holomorphic analog of the little $d$-disks operads~$E_d$.
+In the case $d=1$, Theorem 5.3.3 of \cite{CG1} shows that a ${\rm PDiscs_1}$-algebra $\cA$ that is suitably equivariant under rotation determines a vertex algebra $\VV(\cA)$.
+This construction $\VV$ is functorial.
+As shown in \cite{CG1}, many vertex algebras appear this way, and any vertex algebras that arise from physics should, in light of the main results of~\cite{CG1,CG2}.
+
+For this reason, one can interpret ${\rm PDiscs_d}$-algebras, particularly when suitably equivariant under rotation, as providing a systematic and operadic generalization of vertex algebras to higher dimensions. 
+Proposition 5.2.2 of \cite{CG1} provides a useful recognition principle for when a factorization algebra on $\CC^d$ determine such a ${\rm PDiscs_d}$-algebra: 
+the factorization algebra must be equivariant under translation in a way that is holomorphic.
+\owen{Continue here \dots}
 
 On the complex $d$-fold $X = \CC^d$ the local Lie algebra $\sG_{\CC^d}$ is holomorphically translation invariant, see Section \ref{sec: hol trans}.
 Thus, it makes sense to consider cocycles on this local Lie algebra that are also holomorphically translation invariant.
