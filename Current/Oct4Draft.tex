@@ -19,6 +19,7 @@
 \def\Ch{{\rm Ch}}
 \def\dgLie{{\rm dgLie}}
 \def\Lcat{L_\infty{\rm Alg}}
+\def\Cur{{\rm Cur}}
 
 
 \begin{document}
@@ -372,19 +373,26 @@ To study the general structure of such currents, without respect to a particular
 it is natural to study this enveloping algebra by itself.
 
 \begin{dfn}
-For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its precosheaf $\Sym(\sL[1])$ of {\em classical currents} is given by taking the enveloping 1-shifted Poisson algebra of the compactly supported sections of~$L$.
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its {\em classical currents} $\Cur^\cl(\sL)$ is the precosheaf $\Sym(\sL[1])$ given by taking the enveloping 1-shifted Poisson algebra of the compactly supported sections of~$L$.
+It assigns
+\[
+\Cur^\cl(\sL)(U) = \Sym(\sL(U)[1])
+\]
+to an open subset $U \subset X$. 
 \end{dfn}
 
-We emphasize here that we mean by $\Sym(\sL[1])$ {\em not} the symmetric algebra in the purely algebraic sense, but rather a construction that takes into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
-Explicitly, the $n$th symmetric power  $\Sym^n(\sL[1])$ means the smooth, compactly supported, and $S_n$-invariant sections of the graded vector bundle 
+We emphasize here that by $\Sym(\sL(U)[1])$ we do {\em not} mean the symmetric algebra in the purely algebraic sense, but rather a construction that takes into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
+Explicitly, the $n$th symmetric power  $\Sym^n(\sL(U)[1])$ means the smooth, compactly supported, and $S_n$-invariant sections of the graded vector bundle 
 \[
-L[1]^{\boxtimes n} \to X^n.
+L[1]^{\boxtimes n} \to U^n.
 \]
 For further discussion of functional analytic aspects (which play no tricky role in our work here),
 see \cite{CG1}, notably the appendices.
 
 A key result of \cite{CG1}, namely Theorem 5.6.0.1, is that this precosheaf of currents forms a factorization algebra. 
-From hereon we refer to  $\Sym(\sL[1])$ as the {\em factorization algebra of classical currents}.
+From hereon we refer to  $\Cur^\cl(\sL)$ as the {\em factorization algebra of classical currents}.
+If the local Lie algebra acts as symmetries on some classical field theory,
+we obtain a map of factorization algebras $J: \Cur^\cl(\sL) \to \Obs^\cl$ that encodes each current as a classical observable.
 
 There is a quantum counterpart to this construction, in the Batalin-Vilkovisky formalism.
 The idea is that for a dg Lie algebra $\fg$, 
@@ -420,7 +428,12 @@ It is also straightforward to extend this construction to ``quantize'' the facto
 
 \begin{dfn}
 For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
-its {\em factorization algebra of quantum currents}  is given by taking the enveloping $BD$   algebra of the compactly supported sections of~$L$.
+its {\em factorization algebra of quantum currents} $\Cur^\q(\sL)$ is given by taking the enveloping $BD$   algebra of the compactly supported sections of~$L$.
+It assigns
+\[
+\Cur^\q(\sL)(U) = U^{BD}(\sL(U)[1])
+\]
+to an open subset $U \subset X$.
 \end{dfn}
 
 As mentioned just after the definition of the classical currents, 
@@ -429,14 +442,14 @@ Specializing $\hbar = 1$, we recover the following construction.
 
 \begin{dfn}
 For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
-its {\em enveloping factorization algebra}  is given by taking the Chevalley-Eilenberg chains $\cliels(\sL)$ of the compactly supported sections of~$L$.
+its {\em enveloping factorization algebra} $\UU(\sL)$ is given by taking the Chevalley-Eilenberg chains $\cliels(\sL)$ of the compactly supported sections of~$L$.
 \end{dfn}
 
 Here the symmetric powers use sections of the external tensor powers, just as with the classical or quantum currents.
 
 When a local Lie algebra acts as symmetries of a classical field theory,
 it sometimes also lifts to symmetries of a BV quantization.
-In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Sym(\sL[1]) \to \Obs^\q$ realizing quantum currents as quantum observables.
+In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Cur^\q(\sL) \to \Obs^\q$ realizing quantum currents as quantum observables.
 Sometimes, however, the classical symmetries do not lift directly to quantum symmetries.
 We now turn to discussing the natural home for the obstructions to such lifts.
 
