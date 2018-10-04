@@ -122,6 +122,19 @@ In this subsection we will review some of the key ideas but refer to \cite{CG1} 
 
 \owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
 
+\owen{The following appear later but I think it would fit more naturally here or in the intro}
+
+Let us recall the familiar complex one-dimensional case that we wish to extend. 
+Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
+Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
+There is a natural cocycle depending precisely on two inputs:
+\[
+\theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
+\]
+where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
+In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization of $\sG_X$ via this cocycle recovers the Kac-Moody vertex algebra and the affine algebra extending $L\fg = \fg[z,z^{-1}]$.
+
+
 \subsection{Local Lie algebras}
 
 \brian{fix these
@@ -562,7 +575,10 @@ We now turn to discussing the natural home for the obstructions to such lifts.
 
 Some basic questions about a dg Lie algebra $\fg$, such as the classification of extensions and derivations, are encoded cohomologically, typically as cocycles in the Chevalley-Eilenberg cochains $\clies(\fg,V)$ with coefficients in some $\fg$-representation~$V$.
 When working with local Lie algebras, it is natural to focus on cocycles that are also local in the appropriate sense.
-Explicitly, we want to restrict to cocycles that are built out of polydifferential operators.
+(Explicitly, we want to restrict to cocycles that are built out of polydifferential operators.)
+After introducing the relevant construction, we turn to studying how such cocycles determine modified current algebras.
+
+\subsubsection{Local cochains of a local Lie algebra}
 
 In Appendix \ref{appx:locfncl} we define the local cochains of a local Lie algebra, but we briefly recall it here.
 The basic idea is that a local cochain is a Lagrangian density: 
@@ -595,6 +611,7 @@ This construction $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks coho
 where the adjective ``diagonal'' indicates that we are interested in continuous cochains whose integral kernels are supported on the small diagonals.
 \end{rmk}
 
+\subsubsection{Shifted extensions}
 
 For an ordinary Lie algebra $\fg$, central extensions are parametrized by 2-cocycles on $\fg$ valued in the trivial module~$\CC$. 
 It is possible to interpret arbitrary cocycles as determining as determining {\em shifted} central extensions as {\em $L_\infty$ algebras}.
@@ -620,6 +637,8 @@ Here we set $\ell_n = 0$ for $n > 2$.
 As usual, cohomologous cocycles determine quasi-isomorphic extensions. 
 Much of the rest of the section is devoted to constructing and analyzing various cocycles and the resulting extensions.
 
+\subsubsection{Twists of the current algebras}
+
 Local cocycles give a direct way of deforming the various current algebras a local Lie algebra.
 For example, we have the following construction.
 
@@ -632,60 +651,76 @@ The {\em twisted enveloping factorization algebra} $\UU_\Theta(\sL)$ assigns to 
 & = \left(\Sym(\sL(U)[1])[K] , \d_{\sL} + K \cdot \Theta\right),
 \end{align*}
 where $\d_{\sL}$ denotes the differential on the untwisted enveloping factorization algebra and $\Theta$ is the operator extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ to the symmetric coalgebra as a graded coderivation.
-This twisted enveloping factorization algebra is module for the commutative ring $\CC[K]$. 
+This twisted enveloping factorization algebra is module for the commutative ring~$\CC[K]$,
+and so specializing the value of $K$ determines nontrivial modifications of~$\UU(\sL)$. 
 \end{dfn}
 
 An analogous construction applies to the quantum currents, which we will denote~$\Cur^\q_\Theta(\sL)$.
 
-\subsubsection{The $J$ functional} \label{sec: g j functional}
+\subsubsection{A special class of cocycles: the $\fj$ functional} \label{sec: g j functional}
 
-There is a particular family of local cocycles that has special importance in studying symmetries of higher dimensional holomorphic gauge theories. 
+There is a particular family of local cocycles that has special importance in studying symmetries of higher dimensional holomorphic field theories. 
 
-Let us recall the familiar complex one-dimensional case that we wish to extend. 
-Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
-Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
-There is a natural cocycle depending precisely on two inputs:
+Consider 
 \[
-\theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
+\theta \in \Sym^{d+1}(\fg^*)^\fg,
 \]
-where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
-In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization of $\sG_X$ via this cocycle recovers the Kac-Moody vertex algebra and the affine algebra extending $L\fg = \fg[z,z^{-1}]$.
+so that $\theta$ is a $\fg$-invariant polynomial on $\fg$ of homogenous degree $d+1$. 
+This data determines a local functional for $\sG = \Omega^{0,*} \otimes \fg$ on any complex $d$-fold as follows.
 
-We are interested in a generalization of this construction that makes sense in arbitrary dimensions.
-Let $\theta$ be an invariant polynomial on $\fg$ of homogenous degree $d+1$. 
-That is, $\theta$ is an element of $\Sym^{d+1}(\fg^*)^\fg$. 
-For any complex $d$-fold $X$ we can extend $\theta$ to a functional $J_X(\theta)$ on the compactly supported Dolbeault complex $\Omega^{0,*}_c(X) \tensor \fg$ by the formula
+\begin{dfn}
+For any complex $d$-fold $X$, extend $\theta$ to a functional $\fJ_X(\theta)$ on $\sG_X = \Omega^{0,*}_c(X) \tensor \fg$ by the formula
 \beqn\label{j g formula}
-J_X(\theta) (\omega_0 \tensor Y_0,\ldots,\omega_{d} \tensor Y_{d}) = \theta(Y_0,\ldots,Y_{d}) \int_X \omega_0\wedge \partial \omega_1 \cdots \wedge \partial \omega_{d}.
+\fJ_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \int_X \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d),
 \eeqn
-Note that we use $d$ copies of the holomorphic derivative $\partial: \Omega^{0,*} \to \Omega^{1,*}$ to obtain an element of $\Omega^{d,*}_c$ in the integrand (and hence something that can be integrated).
-If we extend $\theta$ to a functional on the Dolbeault complex in the natural way
-\[
-\theta : \Omega^{*,*}(X)^{\tensor d+1} \to \Omega^{*,*}(X)
-\]
-then we can write the cocycle more succinctly as $J_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \int_X \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)$. 
+where $\partial$ denotes the holomorphic de Rham differential.
+In this formula, we define the integral to be zero whenever the integrand is not a $(d,d)$-form.
+\end{dfn}
 
-This formula clearly makes sense for any complex $d$-fold $X$, 
+To make this formula as clear as possible, suppose the $\alpha_i$ are pure tensors of the form $\omega_i \otimes y_i$ with $\omega_i \in \Omega^{0,*}_c(X)$ and $y_i \in \fg$.
+Then
+\[
+\fJ_X(\theta) (\omega_0 \tensor y_0,\ldots,\omega_{d} \tensor y_{d}) = \theta(y_0,\ldots,y_{d}) \int_X \omega_0\wedge \partial \omega_1 \cdots \wedge \partial \omega_{d}.
+\]
+Note that we use $d$ copies of the holomorphic derivative $\partial: \Omega^{0,*} \to \Omega^{1,*}$ to obtain an element of $\Omega^{d,*}_c$ in the integrand and hence something that can be integrated.
+
+This formula manifestly makes sense for any complex $d$-fold $X$, 
 and since integration is local on $X$, 
 it intertwines nicely with the structure maps of~$\sG_X$.
 
-\begin{prop}\label{prop j map} 
-For any complex $d$-fold $X$ and invariant polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$, the functional $J_X(\theta)$ is a local functional in $\cloc^*(\sG_X)$. 
-In fact, the assignment 
+\begin{dfn}
+For any complex $d$-fold $X$ and any $\theta \in \Sym^{d+1}(\fg^*)^\fg$, 
+let $\fj_X(\theta)$ denote the local cochain in $\cloc^*(\sG_X)$ defined~by
 \[
-J_X : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sG_X) \;\;\; , \;\; \theta \mapsto J_X(\theta)
+\fj_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d).
+\]
+Hence $\fJ_X(\theta) = \int_X \fj_X(\theta)$.
+\end{dfn}
+
+This integrand $\fj_X(\theta)$ is in fact a local cocycle, and 
+in a moment we will use it to produce an important shifted central extension of~$\sG_X$.
+
+\begin{prop}\label{prop j map} 
+The assignment 
+\[
+\begin{array}{cccc}
+\fj_X : & \Sym^{d+1} (\fg^*)^\fg [-1]  & \to & \cloc^*(\sG_X) \\ 
+& \theta &\mapsto & \fj_X(\theta)
+\end{array}
 \]
 is an cochain map.
 \end{prop}
 
 \begin{proof} 
-The functional $J_X(\theta)$ is local as it is expressed as the integral of a multilinear map composed with a product of differential operators.
-We need to show that $J_X(\theta)$ is closed for the differential on $\cloc^*(\sG_X)$. 
-The total differential splits as a sum $\dbar + \d_{\fg}$ where $\dbar$ denotes the induced $\dbar$ differential on functionals and $\d_{CE}$ is constructed from the Lie bracket on $\fg$. 
+\owen{I'm not sure what's the best way to write a proof. Currently the key explicit computations aren't actually done, so I might be inclined to write "direct computation shows \dots" Alternatively we just include it.}
+The element $\fj_X(\theta)$ is local as it is expressed as a density produced by polydifferential operators.
+We need to show that $\fj_X(\theta)$ is closed for the differential on $\cloc^*(\sG_X)$. 
+Note that $\sG_X$ is the tensor product of the dg commutative algebra $\Omega^{0,*}_X$ and the Lie algebra $\fg$.
+Hence the differential on the local cochains of $\sG_X$ splits as a sum $\dbar + \d_{\fg}$ where $\dbar$ denotes the differential on functionals  induced from the $\dbar$ differential on the Dolbeault forms and $\d_{\fg}$ is induced from the Lie bracket on $\fg$. 
 We observe that
 \begin{align*}
-\dbar J_X(\theta) & = 0 \\
-\d_{CE} J_X(\theta) & = 0 .
+\dbar \fj_X(\theta) & = 0 \\
+\d_{CE} \fj_X(\theta) & = 0 .
 \end{align*}
 The first line follows from the fact that $\dbar$ and $\partial$ are graded commutative. 
 The differential $\d_{CE}$ is obtained from the differential in the Chevalley-Eilenberg complex of $\fg$ in a natural way. 
@@ -697,51 +732,51 @@ First is to consider an arbitrary $G$-bundle $P$ on $X$.
 Suppose $\ad(P)$ is trivialized over an open set $U \subset X$.
 On this open set, we can write an element $\alpha \in \sAd(P) (U) = \Omega^{0,*}_c(U, \ad(P))$ as 
 $\alpha = \omega \tensor X$ where $\omega \in \Omega^{0,*}(X)$ and $X \in \fg$. 
-Thus, the formula above for $J_X(\theta)$ still makes sense on $\sAd(P)(U)$. 
+Thus, the formula above for $\fj_X(\theta)$ still makes sense on $\sAd(P)(U)$. 
 Since the expression for the cocycle is clearly independent of the choice of a coordinate it glues to define a global section. 
 Thus, for any principal bundle we have a cochain map
 \[
-J_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
+\fj_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
 \]
 given by the same formula as in (\ref{j g formula}).
 
-\subsubsection{Relation to Chern-Weil theory}
-
-\owen{I can't quite put my finger on what the main assertion is in this section. Is it relevant to anything else? Something along these lines might fit more naturally in the context of the anomaly section.}
-
-If $\fg$ is the Lie algebra of a group $G$, there is an interpretation of the space of extensions $\Sym^{d+1}(\fg^*)^\fg$ in terms of $G$.
-Let $\Omega^j_G$ denote the sheaf of $j$-forms on $G$. 
-
-\begin{thm}{\cite{BottBG}}\label{prop: bott} Let $G$ be a Lie group (such as $\GL_n(\CC)$ or $U(n)$). 
-Then, there is an isomorphism 
-\[
-H^i(G , \Omega^j_G) \cong H^{i-j}_c(G , {\rm Sym}^j (\fg^*)) .
-\] 
-Where the right-hand site denotes the continuous group cohomology.
-\end{thm} 
-
-\begin{rmk}
-The theorem above also holds integrally, as shown in \cite{Totaro}.
-\end{rmk}
-
-The continuous group cohomology satisfies $H^k_c(G, \Sym^j(\fg^*)) = 0$ for $k > 0$ and $H^0_c(G, \Sym^j(\fg^*)) = \Sym^j(\fg^*)^G$.
-Thus, the cohomology is supported along the diagonal and one has $H^{k}(G, \Omega^k_G) = \Sym^k(\fg^*)^G$. 
-
-This relationship is compatible with the classical construction of characteristic classes from invariant polynomials using Chern-Weil theory.
-The Hodge-to-de Rham spectral sequence for the Lie group $G$ has $E_1$ page of the form $H^i(G, \Omega^j)$ and converges to the de Rham cohomology $H^*(BG)$. 
-Since the cohomology is supported along the diagonal on the $E_1$ page there is a resulting map
-\[
-\Sym^j(\fg^*)^G \to H^*(B G) .
-\]
-This is the usual Chern-Weil map defining the universal characteristic classes for $G$-bundles.  
-It is an isomorphism when $G$ is compact.
-
-\begin{rmk}
-When $\fg$ is a an arbitrary dg Lie algebra, or more generally an $L_\infty$ algebra, we have encountered a version of $J_X(\theta)$ in Section \ref{sec: forms to local}. 
-We showed that for any $L_\infty$ algebra there is a map of cochain complexes $J : \Omega^{d+1}_{cl}(B\fg) [d] \to \cloc^*(\sG_X)$.
-The expression for $J_X$ in (\ref{j g formula}) is an explicit formula for this construction in the case that $\fg$ is an ordinary Lie algebra.
-Indeed, when $\fg$ is an ordinary Lie algebra we have $H^{d+1} (\Omega^{d+1}_{cl}(B\fg)) = \Sym^{d+1}(\fg^*)^\fg$, so the construction in Section \ref{sec: forms to local} is a special case.
-\end{rmk}
+%\subsubsection{Relation to Chern-Weil theory}
+%
+%\owen{I can't quite put my finger on what the main assertion is in this section. Is it relevant to anything else? Something along these lines might fit more naturally in the context of the anomaly section.}
+%
+%If $\fg$ is the Lie algebra of a group $G$, there is an interpretation of the space of extensions $\Sym^{d+1}(\fg^*)^\fg$ in terms of $G$.
+%Let $\Omega^j_G$ denote the sheaf of $j$-forms on $G$. 
+%
+%\begin{thm}{\cite{BottBG}}\label{prop: bott} Let $G$ be a Lie group (such as $\GL_n(\CC)$ or $U(n)$). 
+%Then, there is an isomorphism 
+%\[
+%H^i(G , \Omega^j_G) \cong H^{i-j}_c(G , {\rm Sym}^j (\fg^*)) .
+%\] 
+%Where the right-hand site denotes the continuous group cohomology.
+%\end{thm} 
+%
+%\begin{rmk}
+%The theorem above also holds integrally, as shown in \cite{Totaro}.
+%\end{rmk}
+%
+%The continuous group cohomology satisfies $H^k_c(G, \Sym^j(\fg^*)) = 0$ for $k > 0$ and $H^0_c(G, \Sym^j(\fg^*)) = \Sym^j(\fg^*)^G$.
+%Thus, the cohomology is supported along the diagonal and one has $H^{k}(G, \Omega^k_G) = \Sym^k(\fg^*)^G$. 
+%
+%This relationship is compatible with the classical construction of characteristic classes from invariant polynomials using Chern-Weil theory.
+%The Hodge-to-de Rham spectral sequence for the Lie group $G$ has $E_1$ page of the form $H^i(G, \Omega^j)$ and converges to the de Rham cohomology $H^*(BG)$. 
+%Since the cohomology is supported along the diagonal on the $E_1$ page there is a resulting map
+%\[
+%\Sym^j(\fg^*)^G \to H^*(B G) .
+%\]
+%This is the usual Chern-Weil map defining the universal characteristic classes for $G$-bundles.  
+%It is an isomorphism when $G$ is compact.
+%
+%\begin{rmk}
+%When $\fg$ is a an arbitrary dg Lie algebra, or more generally an $L_\infty$ algebra, we have encountered a version of $\fj_X(\theta)$ in Section \ref{sec: forms to local}. 
+%We showed that for any $L_\infty$ algebra there is a map of cochain complexes $J : \Omega^{d+1}_{cl}(B\fg) [d] \to \cloc^*(\sG_X)$.
+%The expression for $\fj_X$ in (\ref{j g formula}) is an explicit formula for this construction in the case that $\fg$ is an ordinary Lie algebra.
+%Indeed, when $\fg$ is an ordinary Lie algebra we have $H^{d+1} (\Omega^{d+1}_{cl}(B\fg)) = \Sym^{d+1}(\fg^*)^\fg$, so the construction in Section \ref{sec: forms to local} is a special case.
+%\end{rmk}
 
 %Recall, that functions on the formal moduli space $B\fg$ associated to $\fg$ is given by $\sO(B\fg) = \clie^*(\fg)$. 
 %Similarly, the $k$-forms on $B\fg$ have a Lie algebraic expression:
@@ -773,37 +808,6 @@ J_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG({\CC^d}))^
 
 This is a special case of Proposition \ref{prop: local def} in the case that $\fg$ is an ordinary Lie algebra.  
 We refer the reader to that section for details.
-
-\subsection{The higher Kac-Moody factorization algebra}
-
-Finally, we can define the central object of this paper.
-
-\begin{dfn}
-Let $X$ be any complex manifold of dimension $d$ equipped with a principal $G$-bundle $P$.
-Moreover, suppose $\Theta \in \cloc^*(\sAd(P))$ is a local cocycle of degree $+1$. 
-The {\em Kac-Moody factorization algebra on $X$ of type $\Theta$} is the twisted enveloping factorization algebra whose value on an open set $U \subset X$ is
-\[
-\UU_\Theta (\sAd(P))(U) = \left(\Sym\left(\Omega^{0,*}_c(U, \ad(P))[1]\right) [K] , \dbar + \d_{CE} + \Theta\right) .
-\]
-\end{dfn}
-
-As shorthand, for $\theta \in \Sym^{d+1}(\fg^*)^\fg$, 
-we use $\UU_\theta (\sAd(P))$ for $\UU_{J_X^P (\theta)} (\sAd(P))$. 
-
-\begin{rmk} 
-As in the definition of twisted enveloping factorization algebras above, the factorization algebras $\UU_\Theta(\sAd(P))$ take values in dg modules for the ring $\CC[K]$. 
-In keeping with conventions above, when $P$ is the trivial bundle on $X$ we will denote the Kac-Moody factorization algebra by $\UU_\Theta(\sG_X)$. 
-\end{rmk}
-
-\begin{rmk}
-For fixed $\theta$ the cocycle $J_X(\theta)$ is more-or-less independent of the complex manifold $X$.
-In this way, the factorization algebra $\UU_\theta (\sG)$ actually defines a factorization algebra on the entire {\em category} of complex manifolds of a fixed dimension.
-We will not explore this type of {\em universal} factorization algebra here, but leave it to future work.
-\end{rmk}
-
-In the case $d = 1$ the definition above agrees with the Kac-Moody factorization algebra on Riemann surfaces given in \cite{CG1}.
-There, they show that the factorization algebra specialized to the complex manifold $\CC$ defines a vertex algebra isomorphic to that of the ordinary Kac-Moody vertex algebra.
-Thus, we think of the object $\UU_\Theta(\sAd(P))$ as a higher dimensional version of the Kac-Moody vertex algebra.
 
 \section{Local aspects of the higher Kac-Moody factorization algebras} 
 \label{sec: sphere ops}
@@ -1326,7 +1330,7 @@ The $P_0$ algebra ${\rm Gr} \; \UU_\alpha(\sL)$ is equal to functions on the sam
 Then, any element $\Theta \in H^1_{\rm loc}(\sAd(P))$ determines the structure of a $P_0$ factorization algebra on ${\rm Gr} \; \UU (\sAd(P))$. 
 \end{cor}
 
-In the case that $\Theta = J_X (\theta)$ is the local cocycle corresponding to a symmetric polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$ the Poisson structure can be described explicitly as follows. 
+In the case that $\Theta = \fj_X (\theta)$ is the local cocycle corresponding to a symmetric polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$ the Poisson structure can be described explicitly as follows. 
 The Poisson tensor is of the form $\Pi = \Pi_{[-,-]} + \Pi_\theta $ where 
 \[
 \Pi_{[-,-]} = \wedge \tensor [-,-] : \left(\Omega^{d,*}_X \tensor \fg \right) \tensor \left(\Omega^{0,*}_X \tensor \fg\right) \to \Omega^{d,*}_X \tensor \fg 
@@ -1476,9 +1480,9 @@ Thus, the statement implies that there is a quasi-isomorphism
 
 \subsection{Variants of the higher Kac-Moody factorization algebras}
 
-So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $J_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $\fj_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
 There is another class of local cocycles that appear when studying symmetries of holomorphic theories. 
-Unlike the cocycle $J_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
+Unlike the cocycle $\fj_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
 
 Let $X$ be a complex manifold of dimension $d$ and suppose $\omega$ is a $(k,k)$ form on $X$. 
 Fix, in addition, a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
@@ -1501,7 +1505,7 @@ Moreover, for fixed $\theta$ the cohomology class $[\phi_{\theta,\omega}] \in H^
 \end{lem}
 
 Note that when $\omega = 1$ it trivially satisfies the conditions of the lemma. 
-In this case $\phi_{\theta, 1} = J_X(\theta)$ in the notation of the last section. 
+In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
 
 This class of cocycles is related to the ordinary Kac-Moody factorization and vertex algebra on Riemann surfaces in a natural way.
 Consider the following two examples. 
