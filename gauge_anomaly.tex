@@ -54,9 +54,11 @@
 
 \subsection{The quantum master equation} 
 
+Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
+
 \subsection{Equivariant holomorphic matter}
 
-We propose a free BV theory that one may think of as higher dimensional matter in a holomorphic setting. 
+We introduce a classical field theory in the BV formalism that one may think of as higher dimensional ``matter" in a holomorphic setting. 
 When the complex dimension is one this returns the chiral $\beta\gamma$ system from ordinary conformal field theory. 
 In higher dimensions one can also realize this theory as a certain twist of supersymmetric matter. 
 First, we motivate in terms of ordinary fields and \brian{not sure}. 
@@ -81,6 +83,40 @@ The condition that this action be compatible with the action functional (\ref{ac
 When $d=1$ to formulate this theory in the BV formalism we simply 
 
 \subsection{A calculation of the anomaly}
+
+To calculate the anomaly to solving the $\sG_d$-equivariant master equation we utilize a general result about the quantum master equation for holomorphic field theories formulated in \cite{BWhol}. 
+In general, since the effective field theory defining the prequantization $\{I^{\sG}[L]\}$ is given by a Feynman diagram expansion, the anomaly to solving the quantum master equation is also given by a potentially complicated sum of diagrams. 
+As an immediate corollary of Proposition 4.4 for holomorphic theories on $\CC^d$, we find that only a simple class of diagrams appear in the anomaly. 
+
+\begin{lem}
+Let $\Theta[L]$ be the obstruction to solving the $\sG_d$-equivariant quantum master equation.
+Then, $\Theta := \lim_{L \to 0} \Theta[L]$ exists, and is a local cocycle 
+\ben
+\Theta \in \cloc^*(\sG_d) .
+\een
+Furthermore, $\Theta$ is computed by the following limit
+\ben
+\hbar \Theta = \frac{1}{2} \lim_{L \to 0} \lim_{\epsilon \to 0} \sum_{\Gamma \in {\rm Wheel}_{d+1} \; , e} W_{\Gamma, e}(P_{\epsilon <L}, K_\epsilon, I^{\sG}) ,
+\een 
+where the sum is over all wheels of valency $(d+1)$ and internal edges $e$. 
+\end{lem}
+
+\begin{rmk}
+If $\Gamma$ is a graph with a distinguished edge $e$ and $A,B$ are elements of the tensor square of fields $A, B \in \sE \tensor \sE$, we let $W_{\Gamma,e}(A,B, I)$ denotes the weight of the graph where we place $B$ at the internal edge labeled $e$ and $A$ on the remaining internal edges.
+\end{rmk}
+
+In the remainder of this section we will characterize this anomaly algebraically, using the identification of Proposition \cite{prop: ??}. 
+Actually, it is immediate based on symmetry arguments what the obstruction is up to a scalar multiple. 
+
+First, we note that the element $\Theta \in \cloc^*(\sG_d)$ lifts to the invariant subspace of $U(d)$-invariant, holomorphic translation invariant local cocycles.
+This follows from the fact that both the functional $I^{\sG}$ and propagator $P_{\epsilon<L}$ are $U(d)$-invariant, holomorphic translation invariant.
+By Proposition \ref{prop: transobs} we see that $\Theta$ must be cohomological to a cocycle of the form
+\ben
+(\alpha_0, \ldots, \alpha_d) \mapsto \int \theta(\alpha_0 \tensor \partial \alpha_1 \tensor \cdots \tensor \partial \alpha_d) 
+\een
+where $\theta$ is some element of $\Sym^{d+1}(\fg^*)^\fg$.
+
+The 
 
 \subsection{Free field realization}
 
