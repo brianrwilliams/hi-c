@@ -174,7 +174,7 @@ where the operations are local in the sense of not enlarging support of sections
 (As we will see, such Lie algebras often appear by acting naturally on the local functionals from physics, namely functionals determined by Lagrangian densities.)
 
 \begin{rmk}
-We will use $\sL$ to denote the precosheaf of {\em compactly supported} sections of $L$,
+For a local Lie algebra, we reserve the more succinct notation $\sL$ to denote the precosheaf of {\em compactly supported} sections of $L$,
 which assigns a dg Lie algebra to each open set $U \subset X$, 
 since the differential and bracket respect support.
 At times we will abusively refer to $\sL$ to mean the data determining the local Lie algebra,
@@ -198,7 +198,7 @@ where $s, t$ are sections and $x$ is a point in $X$.
 This bracket naturally extends to Dolbeault forms with values in the adjoint bundle,
 as the Dolbeault forms are a graded-commutative algebra.
 
-\begin{dfn}
+\begin{dfn}\label{dfn: adjoint local}
 For $\pi : P \to X$ a holomorphic principal $G$-bundle,
 let $\sAd(P)^{sh}$ denote the local Lie algebra whose sections are $\Omega^{0,*}(X,\ad(P))$,
 whose differential is $\dbar_P$, and whose bracket is the pointwise operation just defined above.
@@ -227,9 +227,17 @@ Restricted to each slice ${{\rm Hol}_d}_{/X}$, it determines the local Lie algeb
 We use $\sG$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
 \end{dfn}
 
+\begin{rmk}
 It is not necessary to start with a complex Lie group: 
 the construction makes sense for a dg Lie algebra over $\CC$ of finite total dimension.
 We lose, however, the interpretation in terms of infinitesimal symmetries of the principal bundle.
+\end{rmk}
+
+\begin{rmk}
+For any complex manifold $X$ we can restrict the functor $\sG^{sh}$ to the overcategory of opens in $X$, that we denote by $\sG^{sh}_X$. 
+In this case, $\sG^{sh}_X$, or its compactly supported version $\sG_X$, comes from the local Lie algebra of Definition \ref{dfn: adjoint local} in the case of the trivial $G$-bundle on $X$. 
+In the case that $X = \CC^d$ we will denote the sheaves and cosheaves of the local Lie algebra by $\sG_d^{sh}, \sG_d$ respectively.
+\end{rmk}
 
 %In this paper, it is convenient for us to work with Lie algebras that are suitably coherent in the homotopical sense.
 %Recall, an $L_\infty$-algebra is a generalization of a dg Lie algebra where the Jacobi identity is only required to hold up to homotopy.
@@ -268,8 +276,7 @@ We lose, however, the interpretation in terms of infinitesimal symmetries of the
 %\end{dfn}
 %
 
-In practice, we prefer to work with the compactly supported sections of $L$, for which we reserve the more succinct notation~$\sL$.
-This is a precosheaf of $L_\infty$ algebras that assigns compactly supported sections of $L$ to each open of~$X$.
+
 
 %As a potential source of confusion, we warn the reader than we typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ simply by $\sL$. 
 %Also, we will often use the term local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
@@ -888,16 +895,16 @@ Local cocycles here determine higher Kac-Moody algebras that are holomorphically
 The following result indicates tells us that we have already encountered all the relevant cocycles so long as we also impose rotation invariance, which is a natural condition.
 
 \begin{prop}
+\label{prop: trans j}
 The map $\fj_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{\CC^d})$ factors through the  subcomplex of local cochains that are rotationally and holomorphically translation invariant.
 This map 
 \[
-\fj_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG({\CC^d}))^{\CC^{2d|d}}\right)^{U(d)}
+\fj_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG({\CC^d}))^{\CC^{d}_{\rm hol}}\right)^{U(d)}
 \]
 is a quasi-isomorphism.
 \end{prop}
 
-As the proof is rather lengthy, we provide it in Appendix B.
-\owen{Make this not hardcoded}
+As the proof is rather lengthy, we provide it in Appendix \ref{sec: hol trans}.
 
 \section{Local aspects of the higher Kac-Moody factorization algebras} 
 \label{sec: sphere ops}
@@ -1678,7 +1685,7 @@ i : \oloc(\sE) \hookrightarrow \sO_{red}(\sE_c) .
 \]
 Often times when we describe a local functional we will write down its value on test compactly supported sections, then check that it is given by integrating a Lagrangian density, which amounts to lifting the functional along $i$. 
 
-\section{Computing the deformation complex}
+\section{Computing the deformation complex}\label{sec: hol trans}
 
 There is a succinct way of expressing holomorphic translation invariance as the Lie algebra invariants of a certain {\em dg Lie algebra}.
 Denote by $\CC^d[1]$ the abelian $d$-dimensional graded Lie algebra in concentrated in degree $-1$ by the elements $\{\Bar{\eta}_i\}$.
