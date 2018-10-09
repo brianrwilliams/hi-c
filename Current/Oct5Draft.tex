@@ -409,6 +409,10 @@ L[1]^{\boxtimes n} \to U^n.
 For further discussion of functional analytic aspects (which play no tricky role in our work here),
 see \cite{CG1}, notably the appendices.
 
+\begin{eg}
+\brian{might be good to mention the abelian example $\sL = \Omega^*_c$ and how this returns "currents" in the ordinary sense}
+\end{eg}
+
 A key result of \cite{CG1}, namely Theorem 5.6.0.1, is that this precosheaf of currents forms a factorization algebra. 
 From hereon we refer to  $\Cur^\cl(\sL)$ as the {\em factorization algebra of classical currents}.
 If the local Lie algebra acts as symmetries on some classical field theory,
@@ -601,7 +605,7 @@ In other words, it is a left $D_X$-module, where $D_X$ denotes the sheaf of smoo
 For a local Lie algebra, this $JL$ obtains the structure of a dg Lie algebra in left $D_X$-modules.
 Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\clies(JL)$ in the category of left $D_X$-modules. 
 By taking the de Rham complex of this left $D_X$-module, we obtain the local cochains.
-\owen{I took the full de Rham complex, but if you prefer, we can just tensor with densities.}
+\owen{I took the full de Rham complex, but if you prefer, we can just tensor with densities.} \brian{Though, the de Rham complex is computed by the derived tensor product.}
 For a variety of reasons, it is useful to ignore the ``constants'' term and work with the reduced cochains.
 Hence we have the following definition.
 
@@ -625,7 +629,7 @@ For an ordinary Lie algebra $\fg$, central extensions are parametrized by 2-cocy
 It is possible to interpret arbitrary cocycles as determining as determining {\em shifted} central extensions as {\em $L_\infty$ algebras}.
 Explicitly, a $k$-cocycle $\Theta$ of degree $n$ on a dg Lie algebra $\fg$ determines an $L_\infty$ algebra structure on the direct sum $\fg \oplus \CC[n-k]$ with the following brackets $\{\Hat{\ell}_m\}_{m \geq 1}$: $\Hat{\ell}_1$ is simply the differential on $\fg$, $\Hat{\ell}_2$ is the bracket on $\fg$, $\Hat{\ell}_m = 0$ for $m >2$ except
 \[
-\Hat{\ell}_k(x_1 + a_1, \ldots, x_k + a_k) = 0+ \Theta(x_1,x_2,\ldots, x_k).
+\Hat{\ell}_k(x_1 + a_1, \ldots, x_k + a_k) = 0+ \Theta(x_1,x_2,\ldots, x_k) \in \fg \oplus \CC[n-k] .
 \]
 (See \owen{add ref} for further discussion. Note that $n=2$ for $k=2$ with ordinary Lie algebras.)
 Similarly, local cocycles provide shifted central extensions of local Lie algebras.
@@ -749,10 +753,9 @@ since $\theta$ is closed in~$\clies(\fg)$.
 
 As should be clear from the construction, everything here works over the site ${\rm Hol}_d$ of complex $d$-folds, and hence we use $\fj(\theta)$ to denote the local cocycle for the local Lie algebra $\sG$ on~${\rm Hol}_d$.
 
-There are two modest extensions of the construction. 
-\owen{You only write one, however, \dots What's the other?}
-First is to consider an arbitrary $G$-bundle $P$ on $X$. 
-When $\ad(P)$ is trivialized over an open set $U \subset X$,
+\begin{rmk}
+There is modest extension of the cocycle $\fj_X$ that makes sense for the local Lie algebra $\sAd(P)$,  where $P \to X$ is a principal $G$-bundle. 
+When the bundle $\ad(P)$ is trivialized over an open set $U \subset X$,
 the formula for $\fj_X(\theta)$ makes sense on $\sAd(P)(U)$.
 This local expression for the cocycle is independent of the choice of coordinates,
 so we can glue over any sufficiently refined cover to obtain a global cocycle. 
@@ -761,7 +764,7 @@ Thus, we have a cochain map
 \fj_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
 \]
 given by the same formula as in~\eqref{j g formula}.
-\owen{Should we make this a definition?}
+\end{rmk}
 
 %\subsubsection{Relation to Chern-Weil theory}
 %
