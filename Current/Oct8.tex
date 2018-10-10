@@ -918,28 +918,62 @@ we obtain an algebra (more precisely, a homotopy-coherent associative algebra) t
 \item by compactifying along a torus $(S^1)^d$, 
 we obtain an algebra over the little $d$-disks operad.
 \end{enumerate}
-In both cases these algebras behave like enveloping algebras of homotopy-coherent Lie algebras (in a sense we will spell out in detail below). 
-It is important to be aware that these algebras sit as dense subalgebra inside the algebraic structure produced by compactification;
-we will elaborate on this subtlety below.
+In both cases these algebras behave like enveloping algebras of homotopy-coherent Lie algebras (in a sense we will spell out in detail below), which allows for simpler descriptions of some phenomena. 
+It is important to be aware, however, that these algebras do not encode the full algebraic structure produced by the compactification; instead, they sit as dense subalgebras.
+We will elaborate on this subtlety below.
 
-To orient the reader, we quickly outline the key ideas.
-For the physically-minded, 
-we recall from the two-dimensional setting that it can be helpful to view the punctured plane as a cylinder,
+For factorization algebras, compactification is accomplished by the pushforward operation.
+Given a map $f: X \to Y$ of manifolds and a factorization algebra $\cF$ on $X$,
+its {\em pushforward} $f_* \cF$ is the factorization algebra on $Y$ where
+\[
+f_*\cF(U) = \cF(f^{-1}(U))
+\]
+for any open $U \subset Y$.
+The first example we treat arises from the radial projection map
+\[
+r: \CC^d \setminus \{0\} \to (0,\infty)
+\]
+sending $z$ to its length $|z|$. 
+The preimage of a point is simply a $2d-1$-sphere,
+so one can interpret the pushforward enveloping factorization algebra $r_* \UU \cG_d$ as compactification along these spheres.
+Our first main result is that there is a locally constant factorization algebra $\cA$ along $(0,\infty)$ with a natural map
+\[
+\phi: \cA \to r_* \UU \cG_d
+\]
+that is dense from the point of view of the topological vector space structure.
+By a theorem of Lurie, locally constant factorization algebras on $\RR$ correspond to homotopy-coherent associative algebras,
+so that we can interpret $\phi$ as saying that the pushforward is approximated by an associative algebra, in this derived sense.
+We will show explicitly that this algebra is the $A_\infty$ algebra arising as the enveloping algebra of an $L_\infty$ algebra already introduced by Faonte-Hennion-Kapranov.
+
+For the physically-minded reader, 
+this process should be understood as a version of radial ordering.
+Recall from the two-dimensional setting that it can be helpful to view the punctured plane as a cylinder,
 and to use the radius as a kind of time parameter.
-Time ordering of operators is then replaced by radial ordering;
-concatenating nested annuli is the geometric source .
-Many computations can be nicely organized in this manner.
-From this perspective, the Hilbert space is associated to the origin in the plane 
+Time ordering of operators is then replaced by radial ordering.
+Many computations can be nicely organized in this manner,
+because a natural class of operators arises by using a Cauchy integral around the circle of a local operator.
+The same technique works in higher dimensions where one now computes residues along the $2d-1$-spheres.
+From this perspective, the natural Hilbert space is associated to the origin in the plane
 (more accurately to an arbitrarily small disk around the origin),
-as one can concatenate annuli 
+and this picture also extends to higher dimensions.
+Hence we obtain a kind of vacuum module for this higher dimensional generalization of the Kac-Moody algebras.
 
+Our second cluster of results uses compactification along the projection map
+\[
+\begin{array}{ccc}
+\CC^d \setminus \{\text{coordinate hyperplanes}\} & \to & (0,\infty)^d \\
+(z_1,\ldots,z_d) & \mapsto & (|z_1|,\ldots,|z_d|).
+\end{array}
+\]
+We construct an $E_d$ algebra that maps densely into the pushforward.
+%The annular algebra $\sA$ that we just discussed in the complex one-dimensional case has a generalization to arbitrary dimensions.The higher dimensional versions of annuli we consider are given by open sets equal to neighborhoods of $(2d-1)$-spheres.
+%In this section we describe the higher dimensional version of this annular algebra for the Kac-Moody factorization algebra.
+%This amounts to specializing the factorization algebra to the complex manifold $X = \CC^d \setminus \{0\}$ and extracting the data of an $A_\infty$-algebra from the factorization product in the radial direction.
+%The reduction of the factorization algebra along $S^{2d-1} \subset \CC^d \setminus \{0\}$ produces a one-dimensional factorization algebra via pushing forward along the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$.
+%Embedded inside of this factorization algebra is a locally constant factorization algebra, which will define for us our $A_\infty$-algebra.
+%Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
 
-The annular algebra $\sA$ that we just discussed in the complex one-dimensional case has a generalization to arbitrary dimensions.The higher dimensional versions of annuli we consider are given by open sets equal to neighborhoods of $(2d-1)$-spheres.
-In this section we describe the higher dimensional version of this annular algebra for the Kac-Moody factorization algebra.
-This amounts to specializing the factorization algebra to the complex manifold $X = \CC^d \setminus \{0\}$ and extracting the data of an $A_\infty$-algebra from the factorization product in the radial direction.
-The reduction of the factorization algebra along $S^{2d-1} \subset \CC^d \setminus \{0\}$ produces a one-dimensional factorization algebra via pushing forward along the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$.
-Embedded inside of this factorization algebra is a locally constant factorization algebra, which will define for us our $A_\infty$-algebra.
-Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
+\owen{I want to move this into the next subsections}
 
 We will recognize this $A_\infty$-algebra as the universal enveloping algebra of an $L_\infty$ algebra which is obtained as a central extension of an algebraic version of the sphere algebra
 \beqn\label{mapping space}
