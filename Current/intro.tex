@@ -1,0 +1,90 @@
+\section*{}
+
+%\chapter{Local symmetries of holomorphic theories}\label{chap: symmetries}
+
+\owen{Obviously we'll write a new intro when we know what we want to accomplish in this paper.}
+
+In this chapter we investigate the symmetries that generic holomorphic quantum field theories possess.
+Our overarching goal is to develop tools for understanding such symmetries that provide a systematic generalization of methods used in chiral conformal field theory on Riemann surfaces, especially for the Kac-Moody and Virasoro vertex algebras \cite{IgorKM, KacVertex, BorcherdsVertex}. 
+We will utilize the tools of BV quantization and factorization algebras that have already heavily percolated this thesis.
+The primordial example of a holomorphic theory we consider is the holomorphic $\sigma$-model studied in the previous chapter. 
+
+We will focus on two main types of symmetries: holomorphic gauge symmetries and symmetries by holomorphic diffeomorphisms (or holomorphic reparametrizations). 
+An ordinary gauge symmetry is characterized as being local on the spacetime manifold. 
+Each of the types of symmetries we consider share this characteristic, but they also enjoy an additional structure: they are holomorphic (up to homotopy) on the spacetime manifold. 
+This means that they are specific to the type of theories we consider.
+Moreover, they store more information about the geometry of the underlying manifold as compared to the smooth version of such symmetries.
+
+Infinitesimally speaking, a symmetry is encoded by the action of a Lie algebra.
+For the holomorphic gauge symmetry this will become a sort of current algebra which is equivalent to holomorphic functions on the complex manifold with values in a Lie algebra.
+For the holomorphic diffeomorphisms this Lie algebra is that of holomorphic vector fields.
+Locality implies that this actually extends to a symmetry by a sheafy version of a Lie algebra. 
+The precise sheafy version we mean is called a {\em local Lie algebra}, which we will recall in the main body of the text. 
+To every local Lie algebra we can assign a factorization algebra through the so-called enveloping factorization algebra:
+\[
+\mathbb{U} : {\rm Lie}_X \to {\rm Fact}_X .
+\]
+Here, ${\rm Lie}_X$ is the category of local Lie algebras.
+By this construction, we see that the Lie algebra of symmetries of a theory define a factorization algebra on the manifold where the theory lives. 
+
+One compelling reason for constructing a factorization algebra model for Lie algebras encoding the symmetries of a theory is that it allows one to consider universal versions of such objects.
+There is a variation of the definition of a factorization algebra that lives, in some sense, on the entire category of manifolds (or complex manifolds). 
+Such a perspective has been developed in great generality by Ayala-Francis in \cite{AFTopMan}.
+In the case of the symmetry by a current algebra on Riemann surfaces a universal version of the Kac-Moody has been studied in \cite{CG1}.
+For the case of conformal symmetry our work in \cite{BWVir} provides a factorization algebra lift of the ordinary Virasoro vertex algebra that exists uniformly on the site of Riemann surfaces. 
+In this chapter, we extend each of these objects to arbitrary complex dimensions.
+Our formulation lends itself to an explicit computation of the factorization homology along certain complex manifolds, for which we will focus on a class of examples called {\em Hopf manifolds}.
+
+Studying such local symmetries involves rich geometric input even at the classical level, but the skeptical mathematician may view this as a repackaging of already familiar objects in complex geometry.
+The main advantage of working with factorization algebra analogs of such symmetries is in their relationship to studying quantizations of field theories.
+A similar obstruction deformation theory for studying quantizations of classical field theories also allows us to study the problem of {\em quantizing} the action of a (local) Lie algebra on a theory.
+Moreover, we already know that factorization algebras describe the operator product expansion of the observables of a QFT.
+A formulation of Noether's theorem in Chapter 12 of \cite{CG2} makes the relationship between the associated factorization algebra corresponding to a symmetry and the factorization algebra of observables of the theory.
+
+Of course, quantizing a symmetry of a field theory may not always exist.
+In fact, this failure sheds light into subtle field theoretic phenomena of the underlying system. 
+For example, in the case of conformal symmetries of a conformal field theory, the failure is exactly measured by the {\em central charge} of the theory. 
+It is well established that the central charge is a very important invariant associated to a conformal field theory.
+At the Lie theoretic level, this failure is measured by a cocycle which in turn defines a central extension of the Lie algebra. 
+It is this central extension that acts on the theory. 
+
+For this reason, an essential aspect of studying the local symmetries of holomorphic field theories we mentioned above is to characterize the possible cocycles that give rise to central extensions. 
+As we have already mentioned, for vector fields in complex dimension one this is related to the central charge and the central extension of the Witt algebra (vector fields on the circle) known as the Virasoro Lie algebra.
+In the case of a current algebra associated to a Lie algebra, central extensions are related to the {\em level} and the corresponding central extensions are called affine algebras. 
+
+\begin{thm}\label{thm: chap3 1}
+The following is true about the local Lie algebras associated to holomorphic diffeomorphisms and holomorphic gauge symmetries.
+\begin{enumerate}
+\item Let $\fg$ be a Lie algebra and $\fg^X$ is associated current algebra defined on any complex manifold $X$. 
+There is an embedding of the cohomology $H^*_{Lie}(\fg , \Sym^{d+1} g^\vee [-d-1])$ inside of the local cohomology of $\fg^X$.
+\item There is an isomorphism between the local cohomology of holomorphic vector fields on any complex manifold $X$ of dimension $d$ and $H_{dR}^*(X) \tensor H^*_{GF}(\W_d)[2d]$, where  $H^*_{GF}(\W_d)$ is the Gelfand-Fuks cohomology of vector fields on the formal disk.
+\end{enumerate}
+\end{thm}
+
+The central extensions we are interested in come from classes of degree $+1$ of the above local Lie algebras.
+In the case of holomorphic vector fields the result above implies that all such extensions are parametrized by $H^{2d+1}(\W_d)$. 
+It is a classical result of Fuks \cite{Fuks} that this cohomology is isomorphic to $H^{2d+2}(BU(d))$. 
+In complex dimension one this cohomology is one dimensional corresponding to the class $c_1^2$. 
+In general, we obtain new classes, which are shown to agree with calculations in the physics 
+literature in dimensions four and six. 
+
+In general, any of these cohomology classes define factorization algebras by twisting the enveloping factorization algebra. 
+We especially focus on this construction in the case that the complex $d$-fold is equal to affine space $\CC^d$, or some natural open submanifolds thereof.
+In the case of the current algebra, our result is compatible with recent work of Kapranov et. al. in \cite{FHK} where they study higher dimensional versions of affine algebras, and their relationship to the (derived) moduli space of $G$-bundles in an analogous way that affine algebras are related to the moduli of bundles on curves via Kac-Moody uniformization.  
+Our second main result shows how to recover these higher affine algebras from our factorization algebra on punctured affine space $\CC^d \setminus\{0\}$, see Theorem \ref{thm sphere alg}.
+
+The extensions of part (1) of Theorem \ref{thm: chap3 1} are related to cohomology classes in the moduli of $G$-bundles on complex $d$-folds.
+We will show how techniques in equivariant BV quantization lead to natural families of QFTs defined over formal neighborhoods in the moduli space of $G$-bundles. 
+Our techniques allow us to study quantizations of such families, in particular there are anomalies to quantization. 
+An explicit analysis of Feynman diagrams leads to a computation of certain classes in the local cohomology which we relate to Chern classes of natural line bundles on ${\rm Bun}_G(X)$.
+This leads us to our next main result which is to prove a version of the Grothendieck-Riemann-Roch (GRR) theorem using the aforementioned methods of BV quantization, see Theorem \ref{thm ggrr}.
+
+%\begin{thm}
+%Let $V$ be a finite dimensional $\fg$-module and $X$ any compact affine complex manifold. 
+%There exists a BV quantization of the $\beta\gamma$-system on $X$ with values in $V$ that is equivariant for the local Lie algebra $\fg^X$. 
+%Moreover, the first Chern class of the line bundle on $B \fg^X$ defined by the factorization homology of the quantization is equal to
+%\[
+%c_1(\Obs^\q(X)) = C \ch_{d+1}(V) \in \Sym^{d+1}(\fg^\vee)^\fg 
+%\]
+%where $C$ is some nonzero number.
+%\end{thm}
