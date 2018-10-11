@@ -248,19 +248,96 @@ so that we have a natural map
 \RR \Gamma(\pAA^d, \cO_{\rm alg}) \to \RR \Gamma(\pAA^d, \cO) \simeq \Omega^{0,*}(\pAA^d)
 \]
 that replaces our inclusion of Laurent polynomials into the Dolbeault complex on~$\pAA^d$.
-T
 
+For explicit constructions, it is convenient to have an explicit dg commutative algebra that models the derived global sections.
+It should be no surprise that we like to work with the Dolbeault complex,
+but there is also an explicit dg model $A_d$ for the algebraic version derived global sections due to Faonte-Hennion-Kapranov \cite{FHK} and based on the Jouanolou method for resolving singularities. 
 
-
-The affine algebra associated to a Lie algebra $\fg$ together with an invariant pairing $\kappa$ is defined as a central extension of the loop algebra of $\fg$
+\begin{dfn}
+Let $a_d$ denote the algebra  
 \[
-\CC \to \Hat{\fg}_{\kappa} \to Lg 
+\CC[z_1,\ldots,z_d, z_1^*,\ldots,z_d^*][(z z^*)^{-1}]
 \]
-where we use the algebraic loop algebra $L\fg = g [z,z^{-1}]$.
-The central extension is determined by the cocycle 
+defined by localizing the polynomial algebra with respect to $zz^* = \sum_i z_i z^*_i$.
+View this algebra $a_d$ as concentrated in bidegree $(0,0)$, 
+and consider the bigraded-commutative algebra $R_d$ over $a_d$ that is freely generated in bidegree $(1,0)$ by elements
 \[
-(f \tensor X, g \tensor Y) \mapsto \oint f \d g \kappa(X,Y) .
+\d z_1,\ldots , \d z_d,
 \] 
+and in bidegree $(0,1)$ by
+\[
+\d z_1^*,\ldots, \d z_d^*.
+\]
+We equip $R_d$ with a $*$-weight where the $z_i^*$ and $\d z_i^*$ have $*$-weight $1$ and where $(z_i^*)^{-1}$ has $*$-weight $-1$.
+We require that:
+\begin{itemize}
+\item[(i)] every element is of total $*$-weight zero and
+\item[(ii)] the contraction of every element with the Euler vector field $\sum_{i} z_i^* \partial_{z_{i}^*}$ vanishes.
+\end{itemize}
+\owen{I don't know how to parse this at all. What $*$-weight do the $z_i$ have? Why this weight? As written it suggests that you're picking a subcomplex of $A_d$ but I don't think that's what you mean.}
+\end{dfn}
+
+We equip this bigraded algebra with differentials in both directions.
+Define a map $\dbar : A_d^{p,q} \to A_d^{p,q+1}$ of bidegree $(0,1)$~by
+\[
+\dbar = \sum_i \d z^*_i \frac{\partial}{\partial z_i^*}
+\]
+and define a a map of bidegree $(1,0)$~by
+\[
+\partial = \sum_i \d z_i \frac{\partial}{\partial z_i} .
+\]
+These differentials commute $\dbar \partial = \partial \dbar$, and each squares to zero.
+
+When $p=0$ we see that the resulting complex $(A_d, \dbar) = (\oplus_q A_d^{q}[-q], \dbar)$ has the structure of a commutative dg algebra.
+This commutative dg algebra is model for $\RR(\AA^{d \times}, \sO^{alg})$.
+Note that by conditions (i),(ii) this complex is concentrated in degrees $0,1,\ldots,d-1$. 
+
+For each $p$, the complex $A^{p,*}_d = (\oplus_q A^{p,q}[-q], \dbar)$ is a model for the $\RR \Gamma( \AA^{d\times}, \sO^{alg})$-module given by the derived space of sections of holomorphic $p$-forms $\RR \Gamma(\AA^{d\times}, \Omega^{p,alg})$. 
+We will denote the resulting bigraded algebra by
+\[
+A_d^{*,*} = \oplus_{p = 0} A_d^{p,*}[-p] = \oplus_{p=0} \oplus_{q=0} A^{p,q}_d [-p-q] .
+\]
+
+It is immediate to check that the formula for the ordinary Bochner-Martinelli kernel makes sense in the algebra $A_d$.
+That is, we define
+\[
+\omega_{BM}^{alg} (z,z^*) = \frac{(d-1)!}{(2 \pi i)^d} \frac{1}{(zz^*)^d} \sum_{i=1}^d (-1)^{i-1} z_i^* \d z_1^* \wedge \cdots \wedge \Hat{\d z_i^*} \wedge \cdots \wedge \d z_d^*,
+\]
+which is an element of $A_d^{d-1}$. 
+
+The key properties of the dg algebra $A_d$ and its dg modules $A_{d}^{p,*}$ we will utilize are summarized in the following result of \cite{FHK}.
+
+\begin{prop}[\cite{FHK} Proposition 1.3.1]\label{prop: Ad} $\;$
+\begin{enumerate}
+\item
+The commutative dg algebra $(A_d,\dbar)$ is a model for $\RR \Gamma(A^{d\times}, \sO^{alg})$
+\[
+A_d \simeq \RR\Gamma(\AA^{d \times}, \sO^{alg}) .
+\]
+Similarly, $(A_d^{p,*},\dbar) \simeq \RR \Gamma(\AA^{d\times}, \Omega^{p,alg})$.
+\item There is a dense map of commutative bigraded algebras
+\[
+j : A^{*,*}_d \to \Omega^{*,*}(\CC^d \setminus \{0\}) 
+\]
+sending $z_i \mapsto z_i$, $z_i^* \mapsto \Bar{z}_i$, and $\d z_i^* \mapsto \d \zbar_i$ that is compatible with the $\dbar$ and $\partial$ differentials on both sides.
+\item Finally, there is a unique $\GL_n$-equivariant residue map
+\[
+{\rm Res}_{z=0} : A_d^{d,d-1} \to \CC
+\]
+that satisfies
+\[
+\Res_{z=0} \left(f(z) \omega_{BM}^{alg}(z,z^*) \d z_1 \cdots \d z_d\right) = f(0)
+\]
+where $f (z) \in \CC[z_1,\ldots,z_d]$. 
+In particular, for any $\omega \in A^{d,d-1}_d$ one has
+\[
+{\rm Res}_{z=0} (\omega) = \oint_{S^{2d-1}} j(\omega)
+\]
+where $S^{2d-1}$ is any sphere centered at the origin in $\CC^d$. 
+\end{enumerate}
+\end{prop}
+
+
 A natural generalization of the loop algebra is to generalize the circle $S^1$, which is equal to the units in $\CC$, by the sphere $S^{2d-1}$, which is equal to the units in $\CC^d$.
 That is, we take the ``sphere algebra'' of maps from $S^{2d-1}$ into $\fg$.
 For topologists, this direction might seem natural,
@@ -271,28 +348,6 @@ Thus, this direction seems fruitless, since naively there would be no interestin
 The key to evading this issue is to work with the {\em derived} space of maps. 
 Indeed, the sheaf cohomology of $\sO$ on the punctured affine $d$-space is interesting. 
 
-This fact ought not to be too surprising: 
-as a smooth manifold, punctured affine $d$-space is equivalent to $\RR_{> 0} \times S^{2d-1}$,
-and this equivalence manifests itself in the cohomology of the structure sheaf.
-Explicitly,
-\[
-H^*(\AA^{d\times}, \sO^{alg}) = 
-\begin{cases} 0, & * \neq 0, d-1 \\ \CC[z_1,\ldots,z_d], & * = 0 \\ \CC[z_1^{-1},\ldots,z_d^{-1}] \frac{1}{z_1 \cdots z_d}, & * = d-1 \end{cases}
-\]
-as one can show by direct computation (e.g., use the cover by the affine opens of the form $\AA^d \setminus \{z_i =0\}$).
-When $d = 1$, this recovers the usual Laurent series;
-and it is natural to view the above as the higher-dimensional analogue of the Laurent series,
-with the polar part now in degree~$d-1$.
-
-Hence, the derived global sections $\RR\Gamma(\AA^{d\times},\sO)$ of $\sO$ provide a homotopy-commutative algebra,
-and thus one obtains a homotopy-Lie algebra by tensoring with $\fg$,
-which we will call the sphere Lie algebra by analogy with the loop Lie algebra.
-One can then study central extensions of this homotopy-Lie algebra, which are analogous to the affine Kac-Moody Lie algebras.
-For explicit constructions, it is convenient to have a commutative dg algebra that models the derived global sections.
-It should be no surprise that we like to work with the Dolbeault complex.
-We will use this approach to relate the sphere Lie algebra and its extensions to the current algebras that we've already introduced.
-
-An explicit dg model $A_d$ for the derived global sections has been written down in \cite{FHK} based on the Jouanolou method for resolving singularities. 
 We have recalled its definition in Appendix \ref{chap: appendix}.
 
 We are interested in the dg Lie algebra $A_d \tensor \fg$. 
