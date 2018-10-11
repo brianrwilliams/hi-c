@@ -1,3 +1,5 @@
+\def\pAA{\mathring{\AA}}
+
 \section{Local aspects of the higher Kac-Moody factorization algebras} 
 \label{sec: sphere ops}
 
@@ -175,16 +177,18 @@ and so we can introduce a sheaf
 \]
 that is a soft resolution of $\underline{\fg[z,z^{-1}]}$.
 There is then a map of sheaves of dg Lie algebras
-\[
+\beqn
+\label{eqn:looptolinearcurrent}
 \mathtt{Lg}^{sh} \to r_* \sG_1^{sh}
-\]
+\eeqn
 that sends $\alpha \otimes x\, z^n$ to $r^*\alpha \cdot z^n \otimes x$, with $x \in \fg$ and $\alpha$ a differential form on $(0,\infty)$.
 This map restricts nicely to compactly support sections $\mathtt{Lg} \to r_* \sG$.
 By taking Chevalley-Eilenberg chains on both sides, we obtain a map of factorization algebras
-\[
+\beqn
+\label{eqn:Uoflooptolinearcurrent}
 \UU\mathtt{Lg} = \cliel(\mathtt{Lg}) \to \cliel(r_* \sG) = r_*\UU\sG.
-\]
-The left hand side encodes the associative algebra $U(L\fg)$, the enveloping algebra of $L\fg$,
+\eeqn
+The left hand side $\UU\mathtt{Lg}$ encodes the associative algebra $U(L\fg)$, the enveloping algebra of $L\fg$,
 as can be seen by direct computation (see section 3.4 of \cite{CG1}) or by a general result of Knudsen~\cite{Knudsen}.
 The right hand side contains operators encoded by Cauchy integrals, 
 and it is possible to identify such as operator, up to exact terms, as the limit of a sequence of elements from~$U(L\fg)$.
@@ -192,10 +196,18 @@ and it is possible to identify such as operator, up to exact terms, as the limit
 We extend this argument to the affine Kac-Moody Lie algebras by working with suitable extensions on $\mathtt{Lg}$.
 It is a deformation-theoretic argument, as we view the extensions as deforming the bracket.
 
-There are two aspects to this construction:
+We wish to replace the punctured plane $\CC^*$ by the punctured $d$-dimensional affine space 
+\[
+\pAA^d = \CC^d \setminus \{0\},
+\] 
+the current algebras of $\sG_1$ by the current algebras of $\sG_d$,
+and, of course, the extensions depending on $\Sym^2(\fg^*)^\fg$ by other local cocycles.
+There are two nontrivial steps to this generalization:
 \begin{enumerate}
-\item finding a 
+\item finding a suitable replacement for the Laurent polynomials, so that we can recapitulate (without any issues) the construction of the maps \eqref{eqn:looptolinearcurrent} and \eqref{eqn:Uoflooptolinearcurrent}, and
+\item deforming this construction to encompass the extensions of $\sG_d$ and hence the twisted enveloping factorization algebras~$\UU_\theta \sG_d$.
 \end{enumerate}
+We undertake the steps in order.
 
 %We consider the restriction of the factorization algebra $\UU_\theta (\sG)$ on $\CC^{d} \setminus \{0\}$ to the collection of open sets diffeomorphic to spherical shells.
 %This restriction has the structure of a one-dimensional factorization algebra corresponding to the iterated nesting of spherical shells. 
@@ -203,6 +215,42 @@ There are two aspects to this construction:
 %We conclude by identifying an $A_\infty$ model for this algebra as the universal enveloping algebra of a certain $L_\infty$ algebra, that agree with the higher dimensional affine algebras.
 
 \subsubsection{Derived functions on punctured affine space}
+
+When $d=1$, we note that
+\[
+\CC[z,z^{-1}] \subset \cO(\CC^*) \xto{\simeq} \Omega^{0,*}(\CC^*),
+\]
+and so the Laurent polynomials are a dense subalgebra of the Dolbeault complex.
+When $d >1$, Hartog's lemma tells us that every holomorphic function on punctured $d$-dimensional space extends through the origin:
+\[
+\cO(\pAA^d) = \cO(\AA^d).
+\]
+This result might suggest that $\pAA^d$ is an unnatural place to seek a generalization of the loop algebra,
+but such pessimism is misplaced because $\pAA^d$ is not affine 
+and so its {\em derived} algebra of functions, 
+given by the derived global sections $\RR \Gamma(\pAA^d, \cO)$, 
+is more interesting than the underived global sections~$\cO(\pAA^d)$.
+
+Indeed, a straightforward computation in algebraic geometry shows
+\[
+H^*(\AA^{d\times}, \sO_{\rm alg}) = 
+\begin{cases} 
+0, & * \neq 0, d-1 \\ 
+\CC[z_1,\ldots,z_d], & * = 0 \\ \CC[z_1^{-1},\ldots,z_d^{-1}] \frac{1}{z_1 \cdots z_d}, & * = d-1 
+\end{cases}.
+\]
+(For instance, use the cover by the affine opens of the form $\AA^d \setminus \{z_i =0\}$.)
+When $d=1$, this computation recovers the Laurent polynomials,
+so we should view the cohomology in degree $d-1$ as providing the derived replacement of the polar part of the Laurent polynomials.
+A similar result holds in analytic geometry, of course,
+so that we have a natural map
+\[
+\RR \Gamma(\pAA^d, \cO_{\rm alg}) \to \RR \Gamma(\pAA^d, \cO) \simeq \Omega^{0,*}(\pAA^d)
+\]
+that replaces our inclusion of Laurent polynomials into the Dolbeault complex on~$\pAA^d$.
+T
+
+
 
 The affine algebra associated to a Lie algebra $\fg$ together with an invariant pairing $\kappa$ is defined as a central extension of the loop algebra of $\fg$
 \[
