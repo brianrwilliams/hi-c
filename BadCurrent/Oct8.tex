@@ -19,6 +19,7 @@
 \def\Ch{{\rm Ch}}
 \def\dgLie{{\rm dgLie}}
 \def\Lcat{L_\infty{\rm Alg}}
+\def\Cur{{\rm Cur}}
 
 
 \begin{document}
@@ -121,6 +122,19 @@ In this subsection we will review some of the key ideas but refer to \cite{CG1} 
 
 \owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
 
+\owen{The following appear later but I think it would fit more naturally here or in the intro}
+
+Let us recall the familiar complex one-dimensional case that we wish to extend. 
+Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
+Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
+There is a natural cocycle depending precisely on two inputs:
+\[
+\theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
+\]
+where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
+In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization of $\sG_X$ via this cocycle recovers the Kac-Moody vertex algebra and the affine algebra extending $L\fg = \fg[z,z^{-1}]$.
+
+
 \subsection{Local Lie algebras}
 
 \brian{fix these
@@ -143,7 +157,7 @@ A {\em local Lie algebra} on a smooth manifold $X$ is
 \item[(ii)] a degree 1 operator $\ell_1:\sL^{sh} \to \sL^{sh}$ on the sheaf $\sL^{sh}$ of smooth sections of~$L$, and
 \item[(iii)] a degree 0 bilinear operator
 \[
-\ell_2 : \underbrace{\sL^{sh} \times \sL^{sh}} \to \sL^{sh}
+\ell_2 : \sL^{sh} \times \sL^{sh} \to \sL^{sh}
 \]
 \end{itemize}
 such that $\ell_1^2 = 0$, $\ell_1$ is a differential operator, and $\ell_2$ is a bidifferential operator, and
@@ -160,7 +174,7 @@ where the operations are local in the sense of not enlarging support of sections
 (As we will see, such Lie algebras often appear by acting naturally on the local functionals from physics, namely functionals determined by Lagrangian densities.)
 
 \begin{rmk}
-We will use $\sL$ to denote the precosheaf of {\em compactly supported} sections of $L$,
+For a local Lie algebra, we reserve the more succinct notation $\sL$ to denote the precosheaf of {\em compactly supported} sections of $L$,
 which assigns a dg Lie algebra to each open set $U \subset X$, 
 since the differential and bracket respect support.
 At times we will abusively refer to $\sL$ to mean the data determining the local Lie algebra,
@@ -184,7 +198,7 @@ where $s, t$ are sections and $x$ is a point in $X$.
 This bracket naturally extends to Dolbeault forms with values in the adjoint bundle,
 as the Dolbeault forms are a graded-commutative algebra.
 
-\begin{dfn}
+\begin{dfn}\label{dfn: adjoint local}
 For $\pi : P \to X$ a holomorphic principal $G$-bundle,
 let $\sAd(P)^{sh}$ denote the local Lie algebra whose sections are $\Omega^{0,*}(X,\ad(P))$,
 whose differential is $\dbar_P$, and whose bracket is the pointwise operation just defined above.
@@ -213,9 +227,17 @@ Restricted to each slice ${{\rm Hol}_d}_{/X}$, it determines the local Lie algeb
 We use $\sG$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
 \end{dfn}
 
+\begin{rmk}
 It is not necessary to start with a complex Lie group: 
 the construction makes sense for a dg Lie algebra over $\CC$ of finite total dimension.
 We lose, however, the interpretation in terms of infinitesimal symmetries of the principal bundle.
+\end{rmk}
+
+\begin{rmk}
+For any complex manifold $X$ we can restrict the functor $\sG^{sh}$ to the overcategory of opens in $X$, that we denote by $\sG^{sh}_X$. 
+In this case, $\sG^{sh}_X$, or its compactly supported version $\sG_X$, comes from the local Lie algebra of Definition \ref{dfn: adjoint local} in the case of the trivial $G$-bundle on $X$. 
+In the case that $X = \CC^d$ we will denote the sheaves and cosheaves of the local Lie algebra by $\sG_d^{sh}, \sG_d$ respectively.
+\end{rmk}
 
 %In this paper, it is convenient for us to work with Lie algebras that are suitably coherent in the homotopical sense.
 %Recall, an $L_\infty$-algebra is a generalization of a dg Lie algebra where the Jacobi identity is only required to hold up to homotopy.
@@ -254,8 +276,7 @@ We lose, however, the interpretation in terms of infinitesimal symmetries of the
 %\end{dfn}
 %
 
-In practice, we prefer to work with the compactly supported sections of $L$, for which we reserve the more succinct notation~$\sL$.
-This is a precosheaf of $L_\infty$ algebras that assigns compactly supported sections of $L$ to each open of~$X$.
+
 
 %As a potential source of confusion, we warn the reader than we typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ simply by $\sL$. 
 %Also, we will often use the term local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
@@ -372,19 +393,26 @@ To study the general structure of such currents, without respect to a particular
 it is natural to study this enveloping algebra by itself.
 
 \begin{dfn}
-For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its precosheaf $\Sym(\sL[1])$ of {\em classical currents} is given by taking the enveloping 1-shifted Poisson algebra of the compactly supported sections of~$L$.
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its {\em classical currents} $\Cur^\cl(\sL)$ is the precosheaf $\Sym(\sL[1])$ given by taking the enveloping 1-shifted Poisson algebra of the compactly supported sections of~$L$.
+It assigns
+\[
+\Cur^\cl(\sL)(U) = \Sym(\sL(U)[1])
+\]
+to an open subset $U \subset X$. 
 \end{dfn}
 
-We emphasize here that we mean by $\Sym(\sL[1])$ {\em not} the symmetric algebra in the purely algebraic sense, but rather a construction that takes into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
-Explicitly, the $n$th symmetric power  $\Sym^n(\sL[1])$ means the smooth, compactly supported, and $S_n$-invariant sections of the graded vector bundle 
+We emphasize here that by $\Sym(\sL(U)[1])$ we do {\em not} mean the symmetric algebra in the purely algebraic sense, but rather a construction that takes into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
+Explicitly, the $n$th symmetric power  $\Sym^n(\sL(U)[1])$ means the smooth, compactly supported, and $S_n$-invariant sections of the graded vector bundle 
 \[
-L[1]^{\boxtimes n} \to X^n.
+L[1]^{\boxtimes n} \to U^n.
 \]
 For further discussion of functional analytic aspects (which play no tricky role in our work here),
 see \cite{CG1}, notably the appendices.
 
 A key result of \cite{CG1}, namely Theorem 5.6.0.1, is that this precosheaf of currents forms a factorization algebra. 
-From hereon we refer to  $\Sym(\sL[1])$ as the {\em factorization algebra of classical currents}.
+From hereon we refer to  $\Cur^\cl(\sL)$ as the {\em factorization algebra of classical currents}.
+If the local Lie algebra acts as symmetries on some classical field theory,
+we obtain a map of factorization algebras $J: \Cur^\cl(\sL) \to \Obs^\cl$ that encodes each current as a classical observable.
 
 There is a quantum counterpart to this construction, in the Batalin-Vilkovisky formalism.
 The idea is that for a dg Lie algebra $\fg$, 
@@ -402,9 +430,9 @@ we introduce a kind of Rees construction.
 
 \begin{dfn}
 \label{def: BD envelope}
-The {\em enveloping $BD$ algebra} $U^{BD}(\fg)$ of a dg Lie algebra $\fg$ is given by the graded-commutative algebra in $\CC[[\hbar]]$-modules
+The {\em enveloping $BD$ algebra} $U^{BD}(\fg)$ of a dg Lie algebra $\fg$ is given by the graded-commutative algebra in $\CC[\hbar]$-modules
 \[
-\Sym(\fg[1])[[\hbar]] \cong \Sym_{\CC[[\hbar]]}(\fg[[\hbar]][1]),
+\Sym(\fg[1])[\hbar] \cong \Sym_{\CC[\hbar]}(\fg[\hbar][1]),
 \]
 but the differential is defined as a coderivation with respect to the natural graded-cocommutative coalgebra structure,
 by the condition
@@ -420,7 +448,12 @@ It is also straightforward to extend this construction to ``quantize'' the facto
 
 \begin{dfn}
 For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
-its {\em factorization algebra of quantum currents}  is given by taking the enveloping 1-shifted $BD$   algebra of the compactly supported sections of~$L$.
+its {\em factorization algebra of quantum currents} $\Cur^\q(\sL)$ is given by taking the enveloping $BD$   algebra of the compactly supported sections of~$L$.
+It assigns
+\[
+\Cur^\q(\sL)(U) = U^{BD}(\sL(U))
+\]
+to an open subset $U \subset X$.
 \end{dfn}
 
 As mentioned just after the definition of the classical currents, 
@@ -429,14 +462,14 @@ Specializing $\hbar = 1$, we recover the following construction.
 
 \begin{dfn}
 For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
-its {\em enveloping factorization algebra}  is given by taking the Chevalley-Eilenberg chains $C_*(\sL)$ of the compactly supported sections of~$L$.
+its {\em enveloping factorization algebra} $\UU(\sL)$ is given by taking the Chevalley-Eilenberg chains $\cliels(\sL)$ of the compactly supported sections of~$L$.
 \end{dfn}
 
 Here the symmetric powers use sections of the external tensor powers, just as with the classical or quantum currents.
 
 When a local Lie algebra acts as symmetries of a classical field theory,
 it sometimes also lifts to symmetries of a BV quantization.
-In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Sym(\sL[1]) \to \Obs^\q$ realizing quantum currents as quantum observables.
+In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Cur^\q(\sL) \to \Obs^\q$ realizing quantum currents as quantum observables.
 Sometimes, however, the classical symmetries do not lift directly to quantum symmetries.
 We now turn to discussing the natural home for the obstructions to such lifts.
 
@@ -547,42 +580,58 @@ We now turn to discussing the natural home for the obstructions to such lifts.
 
 \subsection{Local cocycles and shifted extensions}
 
-\owen{I think we should shift the emphasis: we want to identify interesting shifted central extensions, and the Gelfand-Fuks cohomology provides them via local cocycles.}
+Some basic questions about a dg Lie algebra $\fg$, such as the classification of extensions and derivations, are encoded cohomologically, typically as cocycles in the Chevalley-Eilenberg cochains $\clies(\fg,V)$ with coefficients in some $\fg$-representation~$V$.
+When working with local Lie algebras, it is natural to focus on cocycles that are also local in the appropriate sense.
+(Explicitly, we want to restrict to cocycles that are built out of polydifferential operators.)
+After introducing the relevant construction, we turn to studying how such cocycles determine modified current algebras.
 
-In this section we describe the cohomology of the local Lie algebra $\sAd(P)$.
-As we have already encountered many times in this thesis, the cohomology we are interested in consists of those functionals on the local Lie algebra that are {\em local}.
-From the perspective of local Lie algebras, one appealing aspect of this class of functionals is that they give rise to local Lie algebra extensions of the current algebra.
-These extensions will be appear when we quantize holomorphic gauge symmetries.
+\subsubsection{Local cochains of a local Lie algebra}
 
-In Section \ref{sec: classical bv} we have introduced the local cohomology of a local Lie algebra, but we briefly recall it here.
-The basic idea is that a local cochain is a functional on the local Lie algebra obtained by integrating a polydifferential operator applied to an element in the local Lie algebra.
-If $L$ is a graded vector bundle, let $JL$ denote the corresponding $\infty$-jet bundle. 
-If $L$ is the underlying vector bundle of a local Lie algebra then $JL$ has the structure of a bundle of Lie algebras.
-Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\cred^*(JL)$\footnote{A local functional will always be defined modulo constants, hence we look at reduced cochains.}.
-For any vector bundle $JL$ has the structure of a $D_X$-module.
-In the case of a local Lie algebra, $JL$ is a Lie algebra object in $D_X$-modules.
-Thus, $\clie^*(JL)$ is a commutative dg algebra in $D_X$-modules. 
-The local cochain complex is obtained by tensoring the right $D_X$-modules of densities on $X$ over $D_X$ with this $D_X$-module.
+In Appendix \ref{appx:locfncl} we define the local cochains of a local Lie algebra in some detail, 
+but we briefly recall it here.
+The basic idea is that a local cochain is a Lagrangian density: 
+it takes in a section of the local Lie algebra and produces a smooth density on the manifold. 
+Such a cocycle determines a functional by integrating the density.
+As usual with Lagrangian densities, we wish to work with them up to total derivatives,
+i.e., we identify Lagrangian densities related using integration by parts and hence ignore boundary terms.
+
+In a bit more detail, for $L$ is a graded vector bundle, let $JL$ denote the corresponding $\infty$-jet bundle,
+which has a canonical flat connection.
+In other words, it is a left $D_X$-module, where $D_X$ denotes the sheaf of smooth differential operators on $X$.
+For a local Lie algebra, this $JL$ obtains the structure of a dg Lie algebra in left $D_X$-modules.
+Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\clies(JL)$ in the category of left $D_X$-modules. 
+By taking the de Rham complex of this left $D_X$-module, we obtain the local cochains.
+\owen{I took the full de Rham complex, but if you prefer, we can just tensor with densities.}
+For a variety of reasons, it is useful to ignore the ``constants'' term and work with the reduced cochains.
+Hence we have the following definition.
 
 \begin{dfn}
 Let $\sL$ be a local Lie algebra on $X$.
-The local cohomology of $\sL$ is defined as
+The {\em local Chevalley-Eilenberg cochains}  of $\sL$~is 
 \[
-\cloc^*(\sL) = \Omega^{d,d}_X \tensor_{D_X} \cred^*(J L) .
+\cloc^*(\sL) = \Omega^{*,*}_X[2d] \tensor_{D_X} \cred^*(J L) .
 \]
-This is a sheaf of cochain complexes on $X$ whose global sections we will denote by $\cloc^*(\sL(X))$.
+This sheaf of cochain complexes on $X$ has global sections that we denote by~$\cloc^*(\sL(X))$.
 \end{dfn}
 
-We note that the cochain complex of local functionals is a subcomplex of $\cred^*(\sL(X))$, the reduced Lie algebra cochains of the global sections $\sL(X)$.
-The differential on local functionals is, in essence, just precomposition with the polydifferentials defining the brackets of~$\sL$.
-Altogether $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology \cite{Fuks, LosikDiag} for this kind of Lie algebra. 
-We will discuss this further when we approach the local Lie algebra of holomorphic vector fields.
+\begin{rmk}
+This construction $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology \cite{Fuks, LosikDiag},
+where the adjective ``diagonal'' indicates that we are interested in continuous cochains whose integral kernels are supported on the small diagonals.
+\end{rmk}
 
-In ordinary Lie theory, central extensions are parametrized by cocycles on the Lie algebra valued in the trivial module. 
-Similarly, local cocycles define central extensions of local Lie algebras.
+\subsubsection{Shifted extensions}
+
+For an ordinary Lie algebra $\fg$, central extensions are parametrized by 2-cocycles on $\fg$ valued in the trivial module~$\CC$. 
+It is possible to interpret arbitrary cocycles as determining as determining {\em shifted} central extensions as {\em $L_\infty$ algebras}.
+Explicitly, a $k$-cocycle $\Theta$ of degree $n$ on a dg Lie algebra $\fg$ determines an $L_\infty$ algebra structure on the direct sum $\fg \oplus \CC[n-k]$ with the following brackets $\{\Hat{\ell}_m\}_{m \geq 1}$: $\Hat{\ell}_1$ is simply the differential on $\fg$, $\Hat{\ell}_2$ is the bracket on $\fg$, $\Hat{\ell}_m = 0$ for $m >2$ except
+\[
+\Hat{\ell}_k(x_1 + a_1, \ldots, x_k + a_k) = 0+ \Theta(x_1,x_2,\ldots, x_k).
+\]
+(See \owen{add ref} for further discussion. Note that $n=2$ for $k=2$ with ordinary Lie algebras.)
+Similarly, local cocycles provide shifted central extensions of local Lie algebras.
 
 \begin{dfn}
-A cocycle $\Theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
+For a local Lie algebra $(L, \ell_1,\ell_2)$, a cocycle $\Theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
 \beqn\label{kext}
 0 \to \CC[k] \to \Hat{\sL}_\theta \to \sL \to 0
 \eeqn
@@ -590,129 +639,167 @@ of precosheaves of $L_\infty$ algebras, where the $L_\infty$ structure maps are 
 \[
 \Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \Theta(x_1,\ldots,x_n)).
 \]
+Here we set $\ell_n = 0$ for $n > 2$.
 \end{dfn}
 
-Cohomologous cocycles determine quasi-isomorphic extensions of precosheaves of Lie algebras. 
+As usual, cohomologous cocycles determine quasi-isomorphic extensions. 
 Much of the rest of the section is devoted to constructing and analyzing various cocycles and the resulting extensions.
 
-Local cocycles give a direct way of deforming the enveloping factorization algebra of a local Lie algebra.
-Suppose that we have a local cocycle $\Theta \in \cloc^*(\sL)$ is of cohomological degree $+1$. 
-We define the {\em twisted enveloping factorization algebra} to be the factorization algebra sending the open set $U \subset X$ to the cochain complex
+\subsubsection{Twists of the current algebras}
+
+Local cocycles give a direct way of deforming the various current algebras a local Lie algebra.
+For example, we have the following construction.
+
+\begin{dfn} 
+Let $\Theta$ be a degree 1 local cocycle for a local Lie algebra $(L \to X, \ell_1,\ell_2)$. 
+Let $K$ denote a degree zero parameter so that $\CC[K]$ is a polynomial algebra concentrated in degree zero.
+The {\em twisted enveloping factorization algebra} $\UU_\Theta(\sL)$ assigns to an open $U \subset X$, the cochain complex
 \begin{align*}
 \UU_\Theta(\sL)(U) & = \left(\Sym(\sL(U)[1] \oplus \CC \cdot K), \d_{\sL} + K \cdot \Theta\right) \\
 & = \left(\Sym(\sL(U)[1])[K] , \d_{\sL} + K \cdot \Theta\right),
 \end{align*}
-where $\d_{\sL}$ denotes the differential on the untwisted enveloping factorization algebra applied to $U$ and $\Theta$ is the operator on the symmetric algebra extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ by demanding that it is a graded derivation.
-Here, $K$ is a formal algebraic parameter. 
-We denote this twisted enveloping factorization algebra by $\UU_\Theta(\sL)$. 
-We will consider this as a factorization algebra valued in the symmetric monoidal category of chain complexes that are linear over the commutative ring $\CC[K]$. 
-Specialization at certain values of $K$ yields an ordinary factorization algebra. 
- 
-\subsubsection{The $J$ functional} \label{sec: g j functional}
+where $\d_{\sL}$ denotes the differential on the untwisted enveloping factorization algebra and $\Theta$ is the operator extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ to the symmetric coalgebra as a graded coderivation.
+This twisted enveloping factorization algebra is module for the commutative ring~$\CC[K]$,
+and so specializing the value of $K$ determines nontrivial modifications of~$\UU(\sL)$. 
+\end{dfn}
 
-There is a particular family of local cocycles that has special importance in studying symmetries of higher dimensional holomorphic gauge theories. 
+An analogous construction applies to the quantum currents, which we will denote~$\Cur^\q_\Theta(\sL)$.
 
-Let us recall the familiar complex one-dimensional case that we wish to extend. 
-Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
-Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
-There is a natural cocycle depending precisely on two inputs:
+\subsubsection{A special class of cocycles: the $\fj$ functional} \label{sec: g j functional}
+
+There is a particular family of local cocycles that has special importance in studying symmetries of higher dimensional holomorphic field theories. 
+
+Consider 
 \[
-\theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
+\theta \in \Sym^{d+1}(\fg^*)^\fg,
 \]
-where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
-In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization of $\sG_X$ via this cocycle recovers the Kac-Moody vertex algebra and the affine algebra extending $L\fg = \fg[z,z^{-1}]$.
+so that $\theta$ is a $\fg$-invariant polynomial on $\fg$ of homogenous degree $d+1$. 
+This data determines a local functional for $\sG = \Omega^{0,*} \otimes \fg$ on any complex $d$-fold as follows.
 
-We are interested in a generalization of this construction that makes sense in arbitrary dimensions.
-Let $\theta$ be an invariant polynomial on $\fg$ of homogenous degree $d+1$. 
-That is, $\theta$ is an element of $\Sym^{d+1}(\fg^*)^\fg$. 
-For any complex $d$-fold $X$ we can extend $\theta$ to a functional $J_X(\theta)$ on the compactly supported Dolbeault complex $\Omega^{0,*}_c(X) \tensor \fg$ by the formula
+\begin{dfn}
+For any complex $d$-fold $X$, extend $\theta$ to a functional $\fJ_X(\theta)$ on $\sG_X = \Omega^{0,*}_c(X) \tensor \fg$ by the formula
 \beqn\label{j g formula}
-J_X(\theta) (\omega_0 \tensor Y_0,\ldots,\omega_{d} \tensor Y_{d}) = \theta(Y_0,\ldots,Y_{d}) \int_X \omega_0\wedge \partial \omega_1 \cdots \wedge \partial \omega_{d}.
+\fJ_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \int_X \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d),
 \eeqn
-Note that we use $d$ copies of the holomorphic derivative $\partial: \Omega^{0,*} \to \Omega^{1,*}$ to obtain an element of $\Omega^{d,*}_c$ in the integrand (and hence something that can be integrated).
-If we extend $\theta$ to a functional on the Dolbeault complex in the natural way
-\[
-\theta : \Omega^{*,*}(X)^{\tensor d+1} \to \Omega^{*,*}(X)
-\]
-then we can write the cocycle more succinctly as $J_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \int_X \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)$. 
+where $\partial$ denotes the holomorphic de Rham differential.
+In this formula, we define the integral to be zero whenever the integrand is not a $(d,d)$-form.
+\end{dfn}
 
-This formula clearly makes sense for any complex $d$-fold $X$, 
+To make this formula as clear as possible, suppose the $\alpha_i$ are pure tensors of the form $\omega_i \otimes y_i$ with $\omega_i \in \Omega^{0,*}_c(X)$ and $y_i \in \fg$.
+Then
+\beqn\label{jthetafactored}
+\fJ_X(\theta) (\omega_0 \tensor y_0,\ldots,\omega_{d} \tensor y_{d}) = \theta(y_0,\ldots,y_{d}) \int_X \omega_0\wedge \partial \omega_1 \cdots \wedge \partial \omega_{d}.
+\eeqn
+Note that we use $d$ copies of the holomorphic derivative $\partial: \Omega^{0,*} \to \Omega^{1,*}$ to obtain an element of $\Omega^{d,*}_c$ in the integrand and hence something that can be integrated.
+
+This formula manifestly makes sense for any complex $d$-fold $X$, 
 and since integration is local on $X$, 
 it intertwines nicely with the structure maps of~$\sG_X$.
 
-\begin{prop}\label{prop j map} 
-For any complex $d$-fold $X$ and invariant polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$, the functional $J_X(\theta)$ is a local functional in $\cloc^*(\sG_X)$. 
-In fact, the assignment 
+\begin{dfn}
+For any complex $d$-fold $X$ and any $\theta \in \Sym^{d+1}(\fg^*)^\fg$, 
+let $\fj_X(\theta)$ denote the local cochain in $\cloc^*(\sG_X)$ defined~by
 \[
-J_X : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sG_X) \;\;\; , \;\; \theta \mapsto J_X(\theta)
+\fj_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d).
+\]
+Hence $\fJ_X(\theta) = \int_X \fj_X(\theta)$.
+\end{dfn}
+
+This integrand $\fj_X(\theta)$ is in fact a local cocycle, and 
+in a moment we will use it to produce an important shifted central extension of~$\sG_X$.
+
+\begin{prop}\label{prop j map} 
+The assignment 
+\[
+\begin{array}{cccc}
+\fj_X : & \Sym^{d+1} (\fg^*)^\fg [-1]  & \to & \cloc^*(\sG_X) \\ 
+& \theta &\mapsto & \fj_X(\theta)
+\end{array}
 \]
 is an cochain map.
 \end{prop}
 
 \begin{proof} 
-The functional $J_X(\theta)$ is local as it is expressed as the integral of a multilinear map composed with a product of differential operators.
-We need to show that $J_X(\theta)$ is closed for the differential on $\cloc^*(\sG_X)$. 
-The total differential splits as a sum $\dbar + \d_{\fg}$ where $\dbar$ denotes the induced $\dbar$ differential on functionals and $\d_{CE}$ is constructed from the Lie bracket on $\fg$. 
-We observe that
+The element $\fj_X(\theta)$ is local as it is expressed as a density produced by polydifferential operators.
+We need to show that $\fj_X(\theta)$ is closed for the differential on $\cloc^*(\sG_X)$. 
+Note that $\sG_X$ is the tensor product of the dg commutative algebra $\Omega^{0,*}_X$ and the Lie algebra $\fg$.
+Hence the differential on the local cochains of $\sG_X$ splits as a sum $\dbar + \d_{\fg}$ where $\dbar$ denotes the differential on local cochains induced from the $\dbar$ differential on the Dolbeault forms and $\d_{\fg}$ denotes the differential induced from the Lie bracket on~$\fg$. 
+We now analyze each term separately.
+
+Observe that for any collection of $\alpha_i \in \sG$, we have
 \begin{align*}
-\dbar J_X(\theta) & = 0 \\
-\d_{CE} J_X(\theta) & = 0 .
+\dbar(\theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) 
+&= \theta(\dbar\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) \pm \theta(\alpha_0,\dbar \partial \alpha_1,\ldots,\partial \alpha_d) \pm \cdots \pm \theta(\alpha_0,\partial \alpha_1,\ldots,\dbar\partial \alpha_d)\\
+&= \sum_{i = 0}^d \pm \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
 \end{align*}
-The first line follows from the fact that $\dbar$ and $\partial$ are graded commutative. 
-The differential $\d_{CE}$ is obtained from the differential in the Chevalley-Eilenberg complex of $\fg$ in a natural way. 
-The second line follows from the fact that the homogenous polynomial $\theta : \fg \times \cdots \times \fg \to \CC$ is closed in the Chevalley-Eilenberg complex for $\fg$.
+because $\dbar$ is a derivation and $\theta$ wedges the form components.
+(It is easy to see this assertion when one works with inputs like in equation \eqref{jthetafactored}.)
+Hence viewing $\fj_X(\theta)$ as a map from $\sG$ to the Dolbeault complex, 
+it commutes with the differential $\dbar$.
+This fact is equivalent to $\dbar \fj_X(\theta) = 0$ in local cochains.
+
+Similarly, observe that for any collection of $\alpha_i \in \sG$, we have
+\begin{align*}
+(\d_\fg \fj_X(\theta))(\alpha_0, \alpha_1,\ldots, \alpha_d)
+&= (\d_\fg\theta)(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) \\
+&= 0
+\end{align*}
+since $\theta$ is closed in~$\clies(\fg)$.
 \end{proof}
 
-Having the fundamental construction of the cocycle down, we discuss two modest extensions of the construction. 
+As should be clear from the construction, everything here works over the site ${\rm Hol}_d$ of complex $d$-folds, and hence we use $\fj(\theta)$ to denote the local cocycle for the local Lie algebra $\sG$ on~${\rm Hol}_d$.
+
+There are two modest extensions of the construction. 
+\owen{You only write one, however, \dots What's the other?}
 First is to consider an arbitrary $G$-bundle $P$ on $X$. 
-Suppose $\ad(P)$ is trivialized over an open set $U \subset X$.
-On this open set, we can write an element $\alpha \in \sAd(P) (U) = \Omega^{0,*}_c(U, \ad(P))$ as 
-$\alpha = \omega \tensor X$ where $\omega \in \Omega^{0,*}(X)$ and $X \in \fg$. 
-Thus, the formula above for $J_X(\theta)$ still makes sense on $\sAd(P)(U)$. 
-Since the expression for the cocycle is clearly independent of the choice of a coordinate it glues to define a global section. 
-Thus, for any principal bundle we have a cochain map
+When $\ad(P)$ is trivialized over an open set $U \subset X$,
+the formula for $\fj_X(\theta)$ makes sense on $\sAd(P)(U)$.
+This local expression for the cocycle is independent of the choice of coordinates,
+so we can glue over any sufficiently refined cover to obtain a global cocycle. 
+Thus, we have a cochain map
 \[
-J_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
+\fj_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
 \]
-given by the same formula as in (\ref{j g formula}).
+given by the same formula as in~\eqref{j g formula}.
+\owen{Should we make this a definition?}
 
-\subsubsection{Relation to Chern-Weil theory}
-
-\owen{I can't quite put my finger on what the main assertion is in this section. Is it relevant to anything else? Something along these lines might fit more naturally in the context of the anomaly section.}
-
-If $\fg$ is the Lie algebra of a group $G$, there is an interpretation of the space of extensions $\Sym^{d+1}(\fg^*)^\fg$ in terms of $G$.
-Let $\Omega^j_G$ denote the sheaf of $j$-forms on $G$. 
-
-\begin{thm}{\cite{BottBG}}\label{prop: bott} Let $G$ be a Lie group (such as $\GL_n(\CC)$ or $U(n)$). 
-Then, there is an isomorphism 
-\[
-H^i(G , \Omega^j_G) \cong H^{i-j}_c(G , {\rm Sym}^j (\fg^*)) .
-\] 
-Where the right-hand site denotes the continuous group cohomology.
-\end{thm} 
-
-\begin{rmk}
-The theorem above also holds integrally, as shown in \cite{Totaro}.
-\end{rmk}
-
-The continuous group cohomology satisfies $H^k_c(G, \Sym^j(\fg^*)) = 0$ for $k > 0$ and $H^0_c(G, \Sym^j(\fg^*)) = \Sym^j(\fg^*)^G$.
-Thus, the cohomology is supported along the diagonal and one has $H^{k}(G, \Omega^k_G) = \Sym^k(\fg^*)^G$. 
-
-This relationship is compatible with the classical construction of characteristic classes from invariant polynomials using Chern-Weil theory.
-The Hodge-to-de Rham spectral sequence for the Lie group $G$ has $E_1$ page of the form $H^i(G, \Omega^j)$ and converges to the de Rham cohomology $H^*(BG)$. 
-Since the cohomology is supported along the diagonal on the $E_1$ page there is a resulting map
-\[
-\Sym^j(\fg^*)^G \to H^*(B G) .
-\]
-This is the usual Chern-Weil map defining the universal characteristic classes for $G$-bundles.  
-It is an isomorphism when $G$ is compact.
-
-\begin{rmk}
-When $\fg$ is a an arbitrary dg Lie algebra, or more generally an $L_\infty$ algebra, we have encountered a version of $J_X(\theta)$ in Section \ref{sec: forms to local}. 
-We showed that for any $L_\infty$ algebra there is a map of cochain complexes $J : \Omega^{d+1}_{cl}(B\fg) [d] \to \cloc^*(\sG_X)$.
-The expression for $J_X$ in (\ref{j g formula}) is an explicit formula for this construction in the case that $\fg$ is an ordinary Lie algebra.
-Indeed, when $\fg$ is an ordinary Lie algebra we have $H^{d+1} (\Omega^{d+1}_{cl}(B\fg)) = \Sym^{d+1}(\fg^*)^\fg$, so the construction in Section \ref{sec: forms to local} is a special case.
-\end{rmk}
+%\subsubsection{Relation to Chern-Weil theory}
+%
+%\owen{I can't quite put my finger on what the main assertion is in this section. Is it relevant to anything else? Something along these lines might fit more naturally in the context of the anomaly section.}
+%
+%If $\fg$ is the Lie algebra of a group $G$, there is an interpretation of the space of extensions $\Sym^{d+1}(\fg^*)^\fg$ in terms of $G$.
+%Let $\Omega^j_G$ denote the sheaf of $j$-forms on $G$. 
+%
+%\begin{thm}{\cite{BottBG}}\label{prop: bott} Let $G$ be a Lie group (such as $\GL_n(\CC)$ or $U(n)$). 
+%Then, there is an isomorphism 
+%\[
+%H^i(G , \Omega^j_G) \cong H^{i-j}_c(G , {\rm Sym}^j (\fg^*)) .
+%\] 
+%Where the right-hand site denotes the continuous group cohomology.
+%\end{thm} 
+%
+%\begin{rmk}
+%The theorem above also holds integrally, as shown in \cite{Totaro}.
+%\end{rmk}
+%
+%The continuous group cohomology satisfies $H^k_c(G, \Sym^j(\fg^*)) = 0$ for $k > 0$ and $H^0_c(G, \Sym^j(\fg^*)) = \Sym^j(\fg^*)^G$.
+%Thus, the cohomology is supported along the diagonal and one has $H^{k}(G, \Omega^k_G) = \Sym^k(\fg^*)^G$. 
+%
+%This relationship is compatible with the classical construction of characteristic classes from invariant polynomials using Chern-Weil theory.
+%The Hodge-to-de Rham spectral sequence for the Lie group $G$ has $E_1$ page of the form $H^i(G, \Omega^j)$ and converges to the de Rham cohomology $H^*(BG)$. 
+%Since the cohomology is supported along the diagonal on the $E_1$ page there is a resulting map
+%\[
+%\Sym^j(\fg^*)^G \to H^*(B G) .
+%\]
+%This is the usual Chern-Weil map defining the universal characteristic classes for $G$-bundles.  
+%It is an isomorphism when $G$ is compact.
+%
+%\begin{rmk}
+%When $\fg$ is a an arbitrary dg Lie algebra, or more generally an $L_\infty$ algebra, we have encountered a version of $\fj_X(\theta)$ in Section \ref{sec: forms to local}. 
+%We showed that for any $L_\infty$ algebra there is a map of cochain complexes $J : \Omega^{d+1}_{cl}(B\fg) [d] \to \cloc^*(\sG_X)$.
+%The expression for $\fj_X$ in (\ref{j g formula}) is an explicit formula for this construction in the case that $\fg$ is an ordinary Lie algebra.
+%Indeed, when $\fg$ is an ordinary Lie algebra we have $H^{d+1} (\Omega^{d+1}_{cl}(B\fg)) = \Sym^{d+1}(\fg^*)^\fg$, so the construction in Section \ref{sec: forms to local} is a special case.
+%\end{rmk}
 
 %Recall, that functions on the formal moduli space $B\fg$ associated to $\fg$ is given by $\sO(B\fg) = \clie^*(\fg)$. 
 %Similarly, the $k$-forms on $B\fg$ have a Lie algebraic expression:
@@ -724,111 +811,169 @@ Indeed, when $\fg$ is an ordinary Lie algebra we have $H^{d+1} (\Omega^{d+1}_{cl
 %\Omega^k_{cl}(B \fg) = \Omega^k(B \fg) \xto{\partial} \Omega^{k+1}(B \fg) \xto \cdots
 %\]
 
-\subsubsection{Holomorphic translation invariance}
+\subsection{The higher Kac-Moody factorization algebra}
 
-On the complex $d$-fold $X = \CC^d$ the local Lie algebra $\sG_{\CC^d}$ is holomorphically translation invariant, see Section \ref{sec: hol trans}.
-Thus, it makes sense to consider cocycles on this local Lie algebra that are also holomorphically translation invariant.
-
-In fact, on $X=\CC^d$ the functional $J_{\CC^d}$ gives us the following complete description of a natural subcomplex of local cochains.
-On $\CC^d$ exists a natural action by the group $U(d)$, where $U(d)$ acts in the defining way on $\CC^d$.
-Moreover, there since $\sG_{\CC^d}$ is built from the Dolbeault complex on $\CC^d$ there is an action of the dg Lie algebra $\CC^{2d|d}$ controling holomorphic translations, see Section \ref{sec: hol trans}. 
-For each $\theta \in \Sym^{d+1}(\fg^*)^\fg$ the functional $J_{\CC^d}(\theta)$ is invariant for $U(d)$ and $\CC^{2d|d}$.
-In fact, this describes up to quasi-isomorphism all such functionals.
-
-\begin{prop}
-The map $J_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{\CC^d})$ factors through the subcomplex of local cochains that are holomorphically translation invariant and invariant for the group $U(d)$ to define a quasi-isomorphism
-\[
-J_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG({\CC^d}))^{\CC^{2d|d}}\right)^{U(d)}
-\]
-\end{prop}
-
-This is a special case of Proposition \ref{prop: local def} in the case that $\fg$ is an ordinary Lie algebra.  
-We refer the reader to that section for details.
-
-\subsection{The Kac-Moody factorization algebra}
-
-Finally, we can define the central object of this paper.
+Finally, we can introduce the central object of this paper.
 
 \begin{dfn}
-Let $X$ be any complex manifold of dimension $d$ equipped with a principal $G$-bundle $P$.
-Moreover, suppose $\Theta \in \cloc^*(\sAd(P))$ is a local cocycle of degree $+1$. 
-The {\em Kac-Moody factorization algebra on $X$ of type $\Theta$} is the twisted enveloping factorization algebra whose value on an open set $U \subset X$ is
+Let $X$ be a complex manifold of complex dimension $d$ equipped with a holomorphic principal $G$-bundle $P$.
+Let $\Theta$ be a degree 1 cocycle in $\cloc^*(\sAd(P))$. 
+The {\em Kac-Moody factorization algebra on $X$ of type $\Theta$} is the twisted enveloping factorization algebra $\UU_\Theta (\sAd(P))$ that assigns
 \[
-\UU_\Theta (\sAd(P))(U) = \left(\Sym\left(\Omega^{0,*}_c(U, \ad(P))[1]\right) [K] , \dbar + \d_{CE} + \Theta\right) .
+\left(\Sym\left(\Omega^{0,*}_c(U, \ad(P))[1]\right) [K] , \dbar + \d_{CE} + \Theta\right) 
 \]
+to an open set $U \subset X$~is
 \end{dfn}
 
-As shorthand, for $\theta \in \Sym^{d+1}(\fg^*)^\fg$, 
-we use $\UU_\theta (\sAd(P))$ for $\UU_{J_X^P (\theta)} (\sAd(P))$. 
-
 \begin{rmk} 
-As in the definition of twisted enveloping factorization algebras above, the factorization algebras $\UU_\Theta(\sAd(P))$ take values in dg modules for the ring $\CC[K]$. 
-In keeping with conventions above, when $P$ is the trivial bundle on $X$ we will denote the Kac-Moody factorization algebra by $\UU_\Theta(\sG_X)$. 
+As in the definition of twisted enveloping factorization algebras, the factorization algebras $\UU_\Theta(\sAd(P))$ are modules for the ring $\CC[K]$. 
+In keeping with conventions above, when $P$ is the trivial bundle on $X$, 
+we will denote the Kac-Moody factorization algebra by $\UU_\Theta(\sG_X)$. 
 \end{rmk}
 
-\begin{rmk}
-For fixed $\theta$ the cocycle $J_X(\theta)$ is more-or-less independent of the complex manifold $X$.
-In this way, the factorization algebra $\UU_\theta (\sG)$ actually defines a factorization algebra on the entire {\em category} of complex manifolds of a fixed dimension.
-We will not explore this type of {\em universal} factorization algebra here, but leave it to future work.
-\end{rmk}
+The most important class of such higher Kac-Moody algebras makes sense over the site ${\rm Hol}_d$ of all complex $d$-folds.
+
+\begin{dfn}
+Let $\fg$ be an ordinary Lie algebra and let $\theta \in \Sym^{d+1}(\fg^*)^\fg$.  
+Let $\UU_\theta (\sG)$ denote the twisted enveloping factorization algebra $\UU_{\fj(\theta)} (\sG)$ for the local Lie algebra $\sG = \Omega^{0,*}_c \otimes \fg$ on the site ${\rm Hol}_d$ of complex $d$-folds.
+\end{dfn}
 
 In the case $d = 1$ the definition above agrees with the Kac-Moody factorization algebra on Riemann surfaces given in \cite{CG1}.
-There, they show that the factorization algebra specialized to the complex manifold $\CC$ defines a vertex algebra isomorphic to that of the ordinary Kac-Moody vertex algebra.
+There, it is shown that this factorization algebra, restricted to the complex manifold $\CC$, recovers a vertex algebra isomorphic to that of the ordinary Kac-Moody vertex algebra.
+(See Section 5 of Chapter 5.)
 Thus, we think of the object $\UU_\Theta(\sAd(P))$ as a higher dimensional version of the Kac-Moody vertex algebra.
+
+\subsubsection{Holomorphic translation invariance and higher dimensional vertex algebras}
+
+To put some teeth into the previous paragraph,
+we note that \cite{CG1} introduces a family of colored operads ${\rm PDiscs_d}$, the little $d$-dimensional polydiscs operads,
+that provide a holomorphic analog of the little $d$-disks operads~$E_d$.
+Concretely, this operad ${\rm PDiscs_d}$ encodes the idea of the operator product expansion, 
+where one now understands observables supported in small disks mapping into observables in large disks, rather than point-like observables.
+
+In the case $d=1$, Theorem 5.3.3 of \cite{CG1} shows that a ${\rm PDiscs_1}$-algebra $\cA$ determines a vertex algebra $\VV(\cA)$ so long as $\cA$ is suitably equivariant under rotation .
+This construction $\VV$ is functorial.
+As shown in \cite{CG1}, many vertex algebras appear this way, and any vertex algebras that arise from physics should, in light of the main results of~\cite{CG1,CG2}.
+
+For this reason, one can interpret ${\rm PDiscs_d}$-algebras, particularly when suitably equivariant under rotation, as providing a systematic and operadic generalization of vertex algebras to higher dimensions. 
+Proposition 5.2.2 of \cite{CG1} provides a useful mechanism for producing ${\rm PDiscs_d}$-algebra: 
+it says that if a factorization algebra is equivariant under translation in a holomorphic manner, then it determines such an algebra.
+
+Hence it is interesting to identify when the higher Kac-Moody factorization algebras are invariant in the sense needed to produce ${\rm PDiscs_d}$-algebras.
+We now address this question.
+
+First, note that on the complex $d$-fold $X = \CC^d$, 
+the local Lie algebra $\sG_{\CC^d}$ is manifestly equivariant under translation.
+
+It is important to recognize that this translation action is holomorphic in the sense that the infinitesimal action of the (complexified) vector fields $\partial/\partial \Bar{z}_i$ is homotopically trivial.
+Explicitly, consider the operator $\eta_i = \iota_{\partial/\partial \Bar{z}_i}$ on Dolbeault forms
+(and which hence extends to $\sG_{\CC^d}$), and
+note that
+\[
+[\dbar, \eta_i] = \partial/\partial \Bar{z}_i.
+\]
+Both the infinitesimal actions and this homotopical trivialization extend canonically to the Chevalley-Eilenberg chains of $\sG_{\CC^d}$ and hence to the enveloping factorization algebra and the current algebras.
+(For more discussion of these ideas see \owen{ref your paper as well as book}.)
+
+A succinct way to express this feature is to introduce a dg Lie algebra  
+\[
+\CC^d_{\rm hol} = \text{span}_\CC\{\partial/\partial z_1, \ldots, \partial/\partial z_d, \partial/\partial \Bar{z}_1,\ldots,\partial/\partial \Bar{z}_d, \eta_1,\ldots, \eta_d\}
+\]
+where the partial derivatives have degree 0 and the $\eta_i$ have degree -1,
+where the brackets are all trivial, 
+and where the differential behaves like $\dbar$ in the sense that the differential of $\eta_i$ is $\partial/\partial \Bar{z}_i$.
+We just argued in the preceding paragraph that $\sG_{\CC^d}$ and its current algebras are all strictly $\CC^d_{\rm hol}$-invariant. 
+
+When studying shifted extensions of $\sG_{\CC^d}$, 
+it then makes sense to consider local cocycles that are also translation invariant in this sense.
+Explicitly, we ask to work with cocycles~in
+\[
+\cloc^*(\sG_{\CC^d})^{\CC^d_{\rm hol}} \subset \cloc^*(\sG_{\CC^d}).
+\]
+Local cocycles here determine higher Kac-Moody algebras that are holomorphically translation invariant and hence yield ${\rm PDiscs}_d$-algebras.
+
+The following result indicates tells us that we have already encountered all the relevant cocycles so long as we also impose rotation invariance, which is a natural condition.
+
+\begin{prop}
+\label{prop: trans j}
+The map $\fj_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{\CC^d})$ factors through the  subcomplex of local cochains that are rotationally and holomorphically translation invariant.
+This map 
+\[
+\fj_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG({\CC^d}))^{\CC^{d}_{\rm hol}}\right)^{U(d)}
+\]
+is a quasi-isomorphism.
+\end{prop}
+
+As the proof is rather lengthy, we provide it in Appendix~\ref{sec: hol trans}.
 
 \section{Local aspects of the higher Kac-Moody factorization algebras} 
 \label{sec: sphere ops}
 
-The theory of factorization algebras we study here, and whose foundations have been layed out in \cite{CG1}, is largely motivated by the study of chiral algebras due to Beilinson and Drinfeld \cite{BD}.
-Part of their original goal was to develop a geometric counterpart to the algebraic theory of vertex algebras. 
-In \cite{CG1} the relationship between factorization algebras on vertex algebras has been made completely explicit. 
-
-Every holomorphically translation invariant factorization algebra on the complex manifold $X = \CC$ determines the structure of a vertex algebra.
-The underlying vector space, or state space, of the vertex algebra is given by the value of the factorization algebra assigns to a disk $D \subset \CC$. 
-The operator product expansion is encoded by the factorization product of configurations of disjoint disks inside of larger disks. 
-It is shown that the Kac-Moody factorization algebra $\UU_{\kappa}(\sG_\CC)$ on $\CC$, where $\kappa$ is a symmetric invariant bilinear form, recovers the Kac-Moody vertex algebra in this way. 
-The factorization algebras we consider are often much larger than the more algebraic objects that we wish to compare to. 
-In order to extract the structure of a vertex algebra, one must also assume that the factorization algebra is equivariant for the circle $S^1$ generating rotations in $\CC$. 
-To go from a factorization algebra to the underlying state space $\sV$ of the vertex algebra one takes the direct sum of all $S^1$-eigenspaces under this action. 
-See Theorem 5.2.3.1 of \cite{CG1} for more details.
-
-The fundamental structure we want contemplate in higher dimensions comes from considering the factorization product for different flavors of configurations of open sets. 
-We recall the one-dimensional story now.
-Suppose that $\sF$ is a holomorphically translation invariant factorization algebra on $\CC$, and that $\sF$ is equivariant for rotations $S^1$.
+A factorization algebra encodes an enormous amount of information, 
+and hence it is important to extract aspects that are simpler to understand.
+In this section we will take two approaches:
 \begin{enumerate}
-\item The first configuration is that of two (or possibly greater than two) disjoint annuli ${\rm Ann}_i$, $i=1,2$ of the same center that include inside of a larger annulus ${\rm Ann}_{big}$ of the same center. 
-The factorization structure map is of the form
-\beqn\label{1d ann}
-\sF({\rm Ann}_1) \tensor \sF({\rm Ann}_2) \to \sF({\rm Ann}_{big}) .
-\eeqn
-Let $\sA$ denote the subspace equal to the direct sum of all $S^1$-eigenspaces of $\sF({\rm Ann})$ where ${\rm Ann}$ is any annulus.
-One can show that $\sA$ is independent, up to quasi-isomorphism, of the annulus chosen and that the structure map (\ref{1d ann}) endows $\sA$ with the structure of an associative algebra.
-Thus, part of the factorization algebra structure defines an associative algebra.
-\item
-Consider a disk $D$ that is completely encircled by an annulus ${\rm Ann}$.
-Further, these disjoint open sets embed inside of a bigger disk $D_{big}$ of the same center.
-The structure map is of the form
-\beqn\label{module}
-\sF({\rm Ann}) \tensor \sF(D) \to \sF(D_{big}) .
-\eeqn
-We already mentioned that the state space $\sV$ is obtained by taking the direct sum of all $S^1$-eigenspaces of $\sF(D)$.
-Just as in the case of an annulus, $\sV$ is independent (up to quasi-isomorphism) of the radius and position of the disk.
-The structure map (\ref{module}) endows $\sV$ with the structure of a module over the algebra $\sA$.
-Thus, the other piece of structure we extract from a holomorphically translation invariant factorization aglebra is that of a module $\sV$ over $\sA$. 
-\end{enumerate} 
+\item by compactifying along a sphere of real dimension $2d-1$, 
+we obtain an algebra (more precisely, a homotopy-coherent associative algebra) that encodes the higher dimensional version of ``radial ordering'' of operators from two-dimensional conformal field theory, and
+\item by compactifying along a torus $(S^1)^d$, 
+we obtain an algebra over the little $d$-disks operad.
+\end{enumerate}
+In both cases these algebras behave like enveloping algebras of homotopy-coherent Lie algebras (in a sense we will spell out in detail below), which allows for simpler descriptions of some phenomena. 
+It is important to be aware, however, that these algebras do not encode the full algebraic structure produced by the compactification; instead, they sit as dense subalgebras.
+We will elaborate on this subtlety below.
 
-Often times, as is the case for enveloping vertex algebras, the data of (1), (2) is enough to nail down the vertex algebra structure uniquely. 
-In this section, we will first focus on generalizing the structure in (1) to the holomorphically translation invariant factorization algebra $\sG_{\CC^d}$.
-We will find the structure of an associative (really $E_1$ or $A_\infty$) algebra.
-Next, we will identify the module structure as in (2) of the higher dimensional ''state" space of the Kac-Moody factorization algebra.
-We will find many analogies with the ordinary vertex algebra case, and it is our hope that we will be able to extract from our work a concise algebraic formulation of "higher dimensional vertex algebras" in future work.
+For factorization algebras, compactification is accomplished by the pushforward operation.
+Given a map $f: X \to Y$ of manifolds and a factorization algebra $\cF$ on $X$,
+its {\em pushforward} $f_* \cF$ is the factorization algebra on $Y$ where
+\[
+f_*\cF(U) = \cF(f^{-1}(U))
+\]
+for any open $U \subset Y$.
+The first example we treat arises from the radial projection map
+\[
+r: \CC^d \setminus \{0\} \to (0,\infty)
+\]
+sending $z$ to its length $|z|$. 
+The preimage of a point is simply a $2d-1$-sphere,
+so one can interpret the pushforward enveloping factorization algebra $r_* \UU \cG_d$ as compactification along these spheres.
+Our first main result is that there is a locally constant factorization algebra $\cA$ along $(0,\infty)$ with a natural map
+\[
+\phi: \cA \to r_* \UU \cG_d
+\]
+that is dense from the point of view of the topological vector space structure.
+By a theorem of Lurie, locally constant factorization algebras on $\RR$ correspond to homotopy-coherent associative algebras,
+so that we can interpret $\phi$ as saying that the pushforward is approximated by an associative algebra, in this derived sense.
+We will show explicitly that this algebra is the $A_\infty$ algebra arising as the enveloping algebra of an $L_\infty$ algebra already introduced by Faonte-Hennion-Kapranov.
 
-The annular algebra $\sA$ that we just discussed in the complex one-dimensional case has a generalization to arbitrary dimensions.The higher dimensional versions of annuli we consider are given by open sets equal to neighborhoods of $(2d-1)$-spheres.
-In this section we describe the higher dimensional version of this annular algebra for the Kac-Moody factorization algebra.
-This amounts to specializing the factorization algebra to the complex manifold $X = \CC^d \setminus \{0\}$ and extracting the data of an $A_\infty$-algebra from the factorization product in the radial direction.
-The reduction of the factorization algebra along $S^{2d-1} \subset \CC^d \setminus \{0\}$ produces a one-dimensional factorization algebra via pushing forward along the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$.
-Embedded inside of this factorization algebra is a locally constant factorization algebra, which will define for us our $A_\infty$-algebra.
-Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
+For the physically-minded reader, 
+this process should be understood as a version of radial ordering.
+Recall from the two-dimensional setting that it can be helpful to view the punctured plane as a cylinder,
+and to use the radius as a kind of time parameter.
+Time ordering of operators is then replaced by radial ordering.
+Many computations can be nicely organized in this manner,
+because a natural class of operators arises by using a Cauchy integral around the circle of a local operator.
+The same technique works in higher dimensions where one now computes residues along the $2d-1$-spheres.
+From this perspective, the natural Hilbert space is associated to the origin in the plane
+(more accurately to an arbitrarily small disk around the origin),
+and this picture also extends to higher dimensions.
+Hence we obtain a kind of vacuum module for this higher dimensional generalization of the Kac-Moody algebras.
+
+Our second cluster of results uses compactification along the projection map
+\[
+\begin{array}{ccc}
+\CC^d \setminus \{\text{coordinate hyperplanes}\} & \to & (0,\infty)^d \\
+(z_1,\ldots,z_d) & \mapsto & (|z_1|,\ldots,|z_d|).
+\end{array}
+\]
+We construct an $E_d$ algebra that maps densely into the pushforward.
+%The annular algebra $\sA$ that we just discussed in the complex one-dimensional case has a generalization to arbitrary dimensions.The higher dimensional versions of annuli we consider are given by open sets equal to neighborhoods of $(2d-1)$-spheres.
+%In this section we describe the higher dimensional version of this annular algebra for the Kac-Moody factorization algebra.
+%This amounts to specializing the factorization algebra to the complex manifold $X = \CC^d \setminus \{0\}$ and extracting the data of an $A_\infty$-algebra from the factorization product in the radial direction.
+%The reduction of the factorization algebra along $S^{2d-1} \subset \CC^d \setminus \{0\}$ produces a one-dimensional factorization algebra via pushing forward along the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$.
+%Embedded inside of this factorization algebra is a locally constant factorization algebra, which will define for us our $A_\infty$-algebra.
+%Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
+
+\owen{I want to move this into the next subsections}
 
 We will recognize this $A_\infty$-algebra as the universal enveloping algebra of an $L_\infty$ algebra which is obtained as a central extension of an algebraic version of the sphere algebra
 \beqn\label{mapping space}
@@ -1249,6 +1394,8 @@ U^{E_d} \left( \Hat{L^d \fg}_{\theta} \right) .
 
 %\subsection{The disk as a module}
 
+\subsection{Large $N$ limits}
+
 \section{Global aspects of the higher Kac-Moody factorization algebras}
 
 In this section we explore global properties of the Kac-Moody factorization algebra on complex manifolds. 
@@ -1261,53 +1408,6 @@ Next, we will compute the factorization homology, or global sections, of the Kac
 We choose to focus on these because the answer admits a concise description in terms of classical algebra, and for the application for studying the gauge equivariance for the partition function of the higher dimensional $\sigma$-model from Chapter \ref{chap: holsig}. 
 After this, we discuss variants of the twisted Kac-Moody factorization algebra that exist on complex $d$-folds.
 These variants are related to the approach of studying higher dimensional holomorphic gauge symmetries due to Nekrasov, et. al..
-
-\subsection{The ``classical'' limit of the higher Kac-Moody algebras}
-
-We will exhibit the $P_0$ structure present in arbitrary Kac-Moody factorization algebras. 
-The content of this section is rather technical, but we will use the results in a forthcoming paper where we realize the Kac-Moody factorization algebra as the boundary operators of certain supersymmetric gauge theories.
- 
-Every associative algebra determines a Lie algebra via the commutator. 
-There is a left adjoint to this forgetful functor given by the enveloping algebra of a Lie algebra. 
-Given a Lie algebra $\fg$, this enveloping algebra $U \fg$ can also be thought of as a quantization of a certain Poisson algebra.
-The Poincar\'{e}-Birkoff-Witt theorem says that the associated graded ${\rm Gr} \; U \fg$ by the filtration given by symmetric degree is precisely $\CC[\fg^*]$.
-It is a classical fact that the linear dual $\fg^*$ of a Lie algebra has the structure of a Poisson manifold. 
-The Poisson bracket on $\CC[\fg^*] = \Sym(\fg)$ is defined by extending the Lie bracket on the quadratic functions by the Leibniz rule. 
-
-In a completely analogous way, the enveloping factorization algebra of a local Lie algebra has a ``classical limit" given by a $P_0$ factorization algebra. 
-Recall, the enveloping factorization algebra of a local Lie algebra $\sL$ evaluated on an open set $U$ is given by the Chevalley-Eilenberg complex of the compactly supported sections on $U$
-\[
-\UU(\sL)(U) = \clieu_*(\sL(U)) = \left(\Sym^*(\sL(U)[1]), \d_\sL + \d_{CE}\right) .
-\]
-There is a filtration of this complex defined by $F^k = \Sym^{\geq k} (\sL (U)[1])$. 
-Moreover, this defines a filtration of the factorization algebra $\UU(\sL)$. 
-
-\begin{lem} Let $\sL$ be a local Lie algebra. 
-Then, the associated graded factorization algebra ${\rm Gr} \; \UU(\sL)$ has the structure of a $P_0$ factorization algebra. 
-Similarly, if $\alpha \in \cloc^*(\sL)$ is a cocycle of cohomological degree one then ${\rm Gr} \; \UU_\alpha(\sL)$ has the structure of a $P_0$ factorization algebra.
-\end{lem}
-
-Up to issues of functional analysis, one should think of the $P_0$ algebra ${\rm Gr} \; \UU(\sL)$ as the algebra of functions on the sheaf of dg vector spaces $\sL^\vee [-1]$ with differential induced from that on $\sL$. 
-The $P_0$ algebra ${\rm Gr} \; \UU_\alpha(\sL)$ is equal to functions on the same sheaf of dg vector spaces but with bracket modified by $\alpha$. 
-
-\begin{cor} For any principal $G$-bundle $P \to X$ consider the associated graded factorization algebra
-\[
-{\rm Gr} \; \UU (\sAd(P)) : U \mapsto \left(\Sym^*(\Omega^{0,*}_c(U) [1]), \dbar \right) .
-\]
-Then, any element $\Theta \in H^1_{\rm loc}(\sAd(P))$ determines the structure of a $P_0$ factorization algebra on ${\rm Gr} \; \UU (\sAd(P))$. 
-\end{cor}
-
-In the case that $\Theta = J_X (\theta)$ is the local cocycle corresponding to a symmetric polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$ the Poisson structure can be described explicitly as follows. 
-The Poisson tensor is of the form $\Pi = \Pi_{[-,-]} + \Pi_\theta $ where 
-\[
-\Pi_{[-,-]} = \wedge \tensor [-,-] : \left(\Omega^{d,*}_X \tensor \fg \right) \tensor \left(\Omega^{0,*}_X \tensor \fg\right) \to \Omega^{d,*}_X \tensor \fg 
-\] 
-and
-\[
-\Pi_{\theta} : \left(\Omega^{0,*}_X \tensor \fg\right)^{\tensor d} \to \Omega^{d,*}_X\tensor \fg
-\]
-sends $\alpha_1 \tensor \cdots \tensor \alpha_d \mapsto \partial \alpha_1 \wedge \cdots \wedge \partial \alpha_d$. 
-In complex dimension one, Butson and Yoo \cite{BY} show that this $P_0$ algebra is compatible with the usual Poisson vertex algebra structure on the classical limit of the ordinary Kac-Moody vacuum module.
 
 \subsection{Hopf manifolds and twisted indices}
 
@@ -1447,9 +1547,11 @@ Thus, the statement implies that there is a quasi-isomorphism
 
 \subsection{Variants of the higher Kac-Moody factorization algebras}
 
-So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $J_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+\owen{Find more specific title}
+
+So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $\fj_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
 There is another class of local cocycles that appear when studying symmetries of holomorphic theories. 
-Unlike the cocycle $J_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
+Unlike the cocycle $\fj_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
 
 Let $X$ be a complex manifold of dimension $d$ and suppose $\omega$ is a $(k,k)$ form on $X$. 
 Fix, in addition, a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
@@ -1472,7 +1574,7 @@ Moreover, for fixed $\theta$ the cohomology class $[\phi_{\theta,\omega}] \in H^
 \end{lem}
 
 Note that when $\omega = 1$ it trivially satisfies the conditions of the lemma. 
-In this case $\phi_{\theta, 1} = J_X(\theta)$ in the notation of the last section. 
+In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
 
 This class of cocycles is related to the ordinary Kac-Moody factorization and vertex algebra on Riemann surfaces in a natural way.
 Consider the following two examples. 
@@ -1550,564 +1652,219 @@ This holomorphic theory is the twist (as we stated in the previous chapter) of t
 Thus, we obtain an enhancement of Johansen's result to a two-dimensional current algebra.
 \end{eg}
 
+\subsection{Large $N$ limits}
 
 %\brian{relate to work of Nekrasov et al}
 
-\section{Higher Kac-Moody factorization algebras as symmetries of field theories}
+\appendix
+\section{Local functionals}
+\label{appx:locfncl}
 
-The main goal of the BV formalism developed in \cite{CostelloRenormalization} is to rigorously construct quantum field theories using a combination of homological methods and a rigorous model for renormalization. 
-A particular nicety of this approach is the ability to study {\em families} of field theories, which we will turn into an equivariant version of BV quantization, see Section \ref{sec: equiv BV}. 
-In this section we will consider a family of QFT's parametrized by the moduli space of principal $G$-bundles. 
-Our main result is to interpret a certain anomaly coming from BV quantization as a families index over ${\rm Bun}_G(X)$. 
-This anomaly is computed via an explicit Feynman diagrammatic calculation and is related to a local cocycle of the current algebra discussed in Section \ref{sec: g j functional}.
- 
-We interpret this result as a formal universal version of the Grothendieck-Riemann-Roch theorem over the moduli space of bundles. 
-The main idea is that the local cocycles we have just discussed in Section \ref{sec: g j functional} can be interpreted as characteristic classes on the (formal neighborhood) of the moduli space of $G$-bundles.
+In our approach, the space of fields will always be equal to the space of smooth sections of a $\ZZ$-graded vector bundle $E\to X$ on a manifold $\sE = \Gamma(X, E)$. 
+The class of functionals $S : \sE \to \RR$ defining the classical theories we consider are required to be {\em local}, or given by the integral of a Lagrangian density. 
+We define this concept now.
 
-We will arrive at the result in a way that is local-to-global on spacetime which we formulate in terms of factorization algebras.
-The main them of Costello and Gwilliam's approach to QFT is that the observables of a QFT determine a factorization algebra. 
-We study the associated family of factorization algebras associated to the family of QFT's over the moduli space of $G$-bundles.
-We will recollect a formulation of Noether's theorem for symmetries of a theory in terms of factorization algebras developed in Chapter 11 of \cite{CG2}. 
-The central object in this discussion is a ``local index" which describes how the Kac-Moody factorization algebra acts on the observables of the QFT. 
-Locally on spacetime we see how Noether's theorem provides a {\em free field realization} of the Kac-Moody factorization algebra generalizing that of the Kac-Moody vertex algebra in chiral conformal field theory \cite{FrenkelFree}. 
+Let $D_X$ denote the sheaf of differential operators on $X$. 
+The $\infty$-jet bundle ${\rm Jet}(E)$ of a vector bundle $E$ is the vector bundle whose fiber over $x \in X$ is the space of formal germs at $x$ of sections of $E$. 
+It is a standard fact that ${\rm Jet}(E)$ is equipped with a flat connection giving its space of sections $J(E) = \Gamma(X, {\rm Jet}(E))$ the structure of a $D_X$-module.
 
-We now give a brief summary of the results, with a background for the situation we consider.
-Suppose that $P$ is a fixed holomorphic $G$-bundle on a complex manifold $X$.
-We have already seen how to express the formal deformation space of $P$ inside of the moduli of $G$-bundles using the dg Lie algebra $\sAd(P)(X) = \Omega^{0,*}(X , \ad (P))$.
-In particular, any Maurer-Cartan element of $\sAd(P)(X)$ defines a deformation of $P$. 
-We have seen that there is a refinement of this dg Lie algebra to a local Lie algebra $\sAd(P)$ whose enveloping factorization defines the higher Kac-Moody factorization algebra above.
-To any $G$-representation $V$ we will define a holomorphic theory with fields $\sE_V$ that is equivariant for this local Lie algebra. 
-Equivalently, we can think of $\sE_V$ as defining a family of theories over the formal completion of $P$ in the moduli of $G$-bundles
-\[
-\xymatrix{
-\sE_V|_{P'} \ar[d] \ar[r] & \sE_V \ar[d] \\
-\{P'\} \ar[r] & {\rm Bun}_G(X)^{\wedge}_P .
-}
-\]
-Over each fiber $P'$ the theory $\sE_V|_{P'}$ is a {\em free} theory, so admits a canonical BV quantization. 
-Our formulation of equivariant BV quantization is codification of the problem of gluing together these quantizations in a compatible way.
-We will show how this presents itself in the failure of the BV quantization to be a {\em flat} family. 
-Our main result is the following. 
+Above, we have defined the algebra of functions $\sO(\sE(X))$ on the space of sections $\sE(X)$.
+Similarly, let $\sO_{red}(\sE(X)) = \sO(\sE(X)) / \RR$ be the quotient by the constant polynomial functions. 
+The space $\sO_{red}(J(E))$ inherits a natural $D_X$-module structure from $J(E)$. 
+We refer to $\sO_{red}(J(E))$ as the space of {\em Lagrangians} on the vector bundle $E$. 
+Every element $F \in \sO_{red}(J(E))$ can be expanded as $F = \sum_n F_n$ where each $F_n$ is an element 
+\beqn
+F_n \in {\rm Hom}_{C^\infty_X} (J(E)^{\tensor n}, C^\infty_X)_{S_n} \cong {\rm PolyDiff}(\sE^{\tensor n}, C^\infty(X))_{S_n}
+\eeqn
+where the right-hand side is the space of polydifferential operators.
+The proof of the isomorphism on the right-hand side can be found in Chapter 5 of \cite{CostelloRenormalization}.
 
-\begin{thm}\label{thm ggrr}
-Let $P$ be any principal $G$-bundle over a compact affine complex manifold $X$ of dimension $d$.
-Suppose   $V$ is a $G$-representation.
-Then, the factorization homology $\int_X \Obs^\q_{V}$ defines a line bundle over the formal neighborhood of $P$ inside of the moduli of $G$-bundles.
-Moreover, its first Chern class is 
-\[
-c_1\left(\int_X \Obs^\q_{V}\right) = C \ch_{d+1}^\fg (V)
-\]
-under the identification of $\ch_{d+1}^{\fg} (V)$ as a cohomology class on the formal neighborhood of $P$ inside of the moduli of $G$-bundles in Equation (\ref{cohbung}) explained below.
-Here, $C$ is some nonzero complex number.
-\end{thm}
+A local functional is given by a Lagrangian densities modulo total derivatives.
+The mathematical definition is the following.
 
-There is an elucidating geometric description of how the classes $\ch_{d+1}(V)$ appear: they describe curvatures of line bundles over the moduli of $G$-bundles.
-Let ${\rm Bun}_{G}(X)$ denote the moduli space of $G$-bundles on the complex $d$-fold $X$. \footnote{For $d > 1$ \cite{FHK} have constructed a global smooth derived realization of this space, but its full structure will not be used in this discussion.}
-Over the space ${\rm Bun}_G(X) \times X$ there is the {\em universal} $G$-bundle. 
-If $P \to X$ is a $G$-bundle, the fiber over the point $\{[P]\} \times X$ is precisely the $G$-bundle $P \to X$. 
-This universal $G$-bundle is classified by a map $f : {\rm Bun}_G(X) \times X \to B G$. 
-Consider the following diagram
-\[
-\xymatrix{
-& {\rm Bun}_G(X) \times X \ar[dr]^-{f} \ar[dl]_-{\pi} & \\
-{\rm Bun}_G(X) & & B G
-}
-\]
-where $\pi : {\rm Bun}_G(X) \times X \to {\rm Bun}_G(X)$ denotes the projection. 
-If $\theta \in \Sym^{d+1}(\fg^*)^\fg \cong H^{d+1}(G , \Omega^{d+1}) \subset H^{2d+2}(BG)$ then we obtain via push-pull in the diagram above
-\[
-\int_\pi \circ f^* \theta \in H^2({\rm Bun}_G(X)) .
-\] 
-
-Let $\sP$ denote the universal principal $G$-bundle.
-This is the $G$-bundle over ${\rm Bun}_G(X) \times X$ whose fiber over $\{[P\to X]\} \times X$ is the principal $G$-bundle $P \to X$ itself. 
-Given any representation $V$ we can define the vector bundle
-\[
-\sV = \sP \times^G V
-\]
-over ${\rm Bun}_G(X) \times X$.
-The fiber of this bundle over $\{[P\to X]\} \times X$ is the associated vector bundle $P \times^G V$. 
-We take the determinant of the derived pushforward of $\sV$ along $\pi$ to obtain a line bundle $\det(\RR \pi_* \sV)$ on ${\rm Bun}_G(X)$. 
-We will see how the global observables $\int_X \Obs^\q_{P,V}$ provide a formal version of this line bundle near a fixed principal bundle $P$. 
-Moreover, if we naively apply the Grothendieck-Riemann-Roch theorem in this universal context one finds
-\[
-c_1(\det(\RR \pi_* \sV)) = \int_\pi {\rm Td}_X \cdot {\rm ch}(\sV) \in H^2(\Bun_G(X)) .
-\]
-In the case that $X$ is affine, so that ${\rm Td}_X = 1$, our theorem provides a proof of this formula using methods of perturbative QFT. 
-To prove the theorem on a general complex manifold we need to take into account the action of holomorphic vector fields, which is the content of the next section.
-
-\subsection{Higher dimensional holomorphic classical field theories with holomorphic symmetries}\label{sec: classical g equiv} 
-
-In this section, we consider a BV theory that is equivariant for the local Lie algebra $\sAd(P)$ in the language of Section \ref{sec: local equiv} 
-Let $V$ be any $G$-representation, and define the associated vector bundle $\sV_P = P \times^G V$ on $X$.
-The holomorphic theory we consider is based on the graded holomorphic vector bundle $\sV_P \oplus K_X \tensor \sV_P^* [d-1]$, where $\sV^*_P$ is the linear dual bundle. 
-The fields of the associated free BV theory are
-\[
-\sE_{P,V} = \Omega^{0,*}(X, \sV_P) \oplus \Omega^{d,*}(X , \sV_P^*)[d-1] .
-\]
-This is simply the $\beta\gamma$ system on $X$ twisted by the vector bundle $\sV_P$. 
-The action functional is $\int \<\beta, \dbar \gamma\>_{V}$ where the pairing is between $V$ and its dual. 
-In particular, the theory $\sE_V$ is free.
-Let $\Obs^\q_{P,V}$ denote the corresponding factorization algebra of quantum observables.
-
-The action of $\fg$ on $V$ extends to an action of the local Lie algebra $\sAd(P)$ on this classical BV theory.
-To define this equivariance we need to presribe a Noether current. 
-
-\begin{lem} 
-The local Noether current $I^{\fg} \in \cloc^*(\sAd(P)) \tensor \oloc(\sE_{P,V})$ defined by
-\[
-I^\fg(\alpha, \gamma,\beta) = \int_X \<\beta, \alpha \cdot \gamma\>_V
-\]
-satisfies the equivariant classical master equation
-\[
-(\d_{\fg} + \dbar) I^\fg + \frac{1}{2}\{I^\fg, I^\fg\} = 0 ,
-\] 
-where $\d_{\fg}$ encodes the Lie algebra structure on $\sAd(P)$.
-Hence, $I^\fg$ gives $\sE_V$ the structure of a classical $\sAd(P)$-equivariant theory.
-\end{lem}
-\begin{proof}
-If $\alpha$ is an element in $\sAd(P)$ and $\gamma \in \Omega^{0,*}(X, \sV_P)$ we define $\alpha \cdot \gamma$ through the $\fg$-module structure of $\fg$ on $V$ combined with the wedge product of Dolbeault forms. 
-Note that $I^\fg$ is arises from holomorphic differential operators so that $\dbar I^\fg = 0$.
-From the definition of the bracket we see that for $\alpha_1,\alpha_2$ one has $\{\int \<\beta, \alpha_1 \cdot \gamma\>, \int \<\beta, \alpha_2\cdot \gamma\>\} = \int \<\beta, [\alpha_1,\alpha_2] \cdot \gamma\>$ which cancels the term coming from $\d_{\fg}$. 
-\end{proof}
-
-\subsection{Anomalies obstructing quantization of the holomorphic symmetires}
-
-The main technique we employ is equivariant BV quantization, which we have reviewed in Section \ref{sec: equiv BV}. 
-Our main result holds for a compact affine manifold, which we will view as coming from a quotient of an open set in affine space $\CC^d$. 
-Thus, we will mostly work with the theory defined on $\CC^d$ and afterwards deduce our main result on the quotient via descent.
-Thus, we will work with the $\beta\gamma$ system
-\[
-\sE_V = \Omega^{0,*}(\CC^d, V) \oplus \Omega^{d,*}(\CC^d, V^*)[d-1]
-\]
-where $V$ is some $\fg$-module.
-The local Lie algebra which acts on this theory is $\sG = \Omega^{0,*}(\CC^d , \fg)$. 
-
-Our first step is to construct an equivariant effective prequantization.
-for the $\sG$-equivariant theory.
-As has been the case over and over again in this thesis, our situation for constructing the prequantization is vastly simplified since our theory comes from holomorphic data. 
-Indeed, the equivariant $\beta\gamma$ system is a holomorphic theory on $\CC^d$ so that we can apply Lemma \ref{lem: hol renorm}.
-As an immediate corollary, the following definition is well-defined. 
-
-\begin{dfn}
-For $L > 0$, let
-\[
-I^{\rm \fg}[L] := \lim_{\epsilon \to 0} W(P_{\epsilon < L}, I^{\rm \fg}) 
-= \lim_{\epsilon \to 0} \sum_{\Gamma } \frac{\hbar^{g(\Gamma)}}{|{\rm Aut}(\Gamma)|} W_\Gamma(P_{\epsilon<L}, I^{\fg}) . 
-\] 
-Here the sum is over all isomorphism classes of stabled connected graphs, but only graphs of genus $\leq 1$ contribute nontrivially. 
-By construction, the collection satisfies the RG flow equation and its tree-level $L \to 0$ limit is manifestly $I^{\fg}$.
-Hence $\{I^{\rm \fg}[L]\}_{L \in (0,\infty)}$ is a \emph{$\sG$-equivariant prequantization}.
+\begin{dfn} \label{dfn: local fnl}
+Let $E$ be a graded vector bundle on $X$.
+Define the sheaf of {\em local functionals} on $X$ to be
+\beqn
+\oloc(\sE) = {\rm Dens}_X \tensor_{D_X} \sO_{red}(J(E)),
+\eeqn
+where we use the natural right $D_X$-module structure on densities.
 \end{dfn}
 
-Our next step is to compute the obstruction to quantization of the $\sG$-equivariant theory.
-By definition, the scale $L$ {\em obstruction cocycle} $\Theta_{V}[L]$ is 
-the failure for the interaction $I^{\rm \fg}[L]$ to satisfy the scale $L$ equivariant quantum master equation. 
-Explicitly, one has
-\[
-\hbar \Theta_V [L] = (\d_{\fg} + Q)I^{\fg}[L] + \hbar \Delta_L I^{\rm \fg}[L] + \{I^{\fg}[L], I^{\fg}[L]\}_L.
+Note that we always consider local functionals coming from Lagrangians modulo constants. 
+We will not be concerned with local functions associated to constant Lagrangians. 
+
+From the expression for functionals in Lemma \ref{lem: fnls} we see that integration defines an inclusion of sheaves
+\[\label{local inclusion}
+i : \oloc(\sE) \hookrightarrow \sO_{red}(\sE_c) .
 \]
-A completely analogous argument as in Corollary 16.0.5 of \cite{WG2} we see that the scale $L$ obstruction is given by a sum over wheels. 
+Often times when we describe a local functional we will write down its value on test compactly supported sections, then check that it is given by integrating a Lagrangian density, which amounts to lifting the functional along $i$. 
 
-\begin{lem}
-Only wheels contribute to the anomaly cocycle $\Theta_V[L]$. 
-Moreover, one has
-\[
-\Theta_V[L] = \sum_{\substack{\Gamma \in \text{\rm Wheels}\\ e \in {\rm Edge}(\Gamma)}} W_{\Gamma,e}(P_{\epsilon<L}, K_\epsilon,
-I^{\rm \fg}),
-\]
-where the sum is over wheels and distinguished edges.
-The notation $W_{\Gamma,e}(P_{\epsilon<1}, K_\epsilon,
-I^{\rm \fg}[\epsilon])$ means we place the propagator at all edges besides the distinguished one, where we place $K_\epsilon$. 
-\end{lem}
+\section{Computing the deformation complex}\label{sec: hol trans}
 
-The only fields that propagate are the $\beta\gamma$ fields with values in $V$. 
-Since all vertices are trivalent we see that the anomaly cocycle is only a functional of the background fields $\sG$, see Figure \ref{fig:liewheel}.\footnote{We use squiggly arrows for elements in $\sG$ to be consistent with usual physics conventions for gauge fields.}
+There is a succinct way of expressing holomorphic translation invariance as the Lie algebra invariants of a certain {\em dg Lie algebra}.
+Denote by $\CC^d[1]$ the abelian $d$-dimensional graded Lie algebra in concentrated in degree $-1$ by the elements $\{\Bar{\eta}_i\}$.
+We want to consider deformations that are invariant for the action by the total {\em dg} Lie algebra $\CC^{2d|d} = \CC^{2d} \oplus \CC^d[1]$.
+The differential sends $\eta_i \mapsto \frac{\partial}{\partial \zbar_i}$.
+The space of holomorphically translation invariant local functionals are denoted by $\oloc(\sE_V)^{\CC^{2d|d}}$.
+The enveloping algebra of $\CC^{2d|d}$ is of the form
+\beqn
+U(\CC^{2d|d}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}{\partial \zbar_i}, \eta_i \right]
+\eeqn
+with differential induced from that in $\CC^{2d|d}$. 
+Note that this algebra is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators $\CC[\partial / \partial z_i] \xto{\simeq} U(\CC^{2d|d})$. 
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}[line width=.2mm, scale=1.5]
 
-%\pgfmathsetmacro{\ex}{0}
-%\pgfmathsetmacro{\ey}{1}
+In this section we specialize the functional $J$ to the space $Y = \CC^d$ and use it to completely characterize the $U(d)$-invariant, holomorphically translation invariant deformation complex.
 
-%\draw (\ex,\ey) ++(45:.8) arc (45:-45:.8);
-
-		\draw[fill=black] (0,0) circle (1cm);
-		%\draw[fill=red] (0,0) arc (145:215:1);
-		\draw[fill=white] (0,0) circle (0.99cm);
-		\draw[line width=0.35mm,red] ++(145:0.995) arc (145:215:0.995);
-		%\draw[red] (0,0) arc (30:60:3);
-
-		\draw[vector](145:2) -- (145:1);
-		\node at (145:2.3) {$\alpha^{(0)}$};
-			%\node at (145:0.85) {$v_0$};
-		\node at (60:0.75) {$P_{\epsilon<L}$};
-		\node at (-60:0.75) {$P_{\epsilon<L}$};
-		\draw[vector](215:2) -- (215:1cm);
-		\node at (215:2.3) {$\alpha^{(2)}$};
-			%\node at (215:0.85) {$v_{d}$};
-		\node[red] at (180:0.8) {$K_\epsilon$};
-		\draw[vector](0:2) -- (0:1);
-		\node at (0:2.3) {$\alpha^{(1)}$};
-			%\node at (35:0.85) {$v_{\alpha}$};
-		%\node at (0:0.8) {$P_{\epsilon<L}$};
-		%\node at (270:0.8) {$P_{\epsilon<L}$};
-	    	\clip (0,0) circle (1cm);
-\end{tikzpicture}
-\caption{The diagram representing the weight $W_{\Gamma, e}(P_{\epsilon<L}, K_\epsilon, I^\fg)$ in the case $d=2$. 
-On the black internal edges are we place the propagator $P_{\epsilon < L}$ of the $\beta\gamma$ system. 
-On the red edge labeled by $e$ we place the heat kernel $K_\epsilon$.
-The external edges are labeled by elements $\alpha^{(i)} \in \Omega^{0,*}_c(\CC^2)$.}
-\label{fig:liewheel}
-\end{center}
-\end{figure}
-
-In particular, there is no obstruction to having an {\em action} by $\sG$, only an obstruction to having an {\em inner action}. 
-Concretely, the external edges of any closed wheel occurring in the expansion of the anomaly must be labeled by $\sG$. 
-As an immediate consequence we have the following.
-
-\begin{lem}
-The effective family $\{I^{\fg}[L]\}$ defines a one-loop exact $\sG$-equivariant quantum field theory.
-In other words, it satisfies the $\sG$-equivariant quantum master equation modulo functionals purely of the background fields $\sG$. 
-\end{lem}
-
-It follows that the anomaly $\{\Theta[L]\}$ measures the obstruction to $\{I^\fg[L]\}$ to defining an {\em inner} action. 
-
-%\begin{lem} 
-%The one-loop effective family $\{I^\fg[L]\}$ 
-%\[
-%I^\fg [L] = \lim_{\epsilon \to 0} W(P_{\epsilon < L}, I^\fg) \mod \hbar^2
-%\]
-%is well-defined and satisfies the equivariant quantum master equation modulo $\cloc^*(\sG)[[\hbar]]$. 
-%\end{lem}
-%
-%Working modulo $\hbar^2$ Lemma \ref{lem: inner action} implies that the anomaly to $\{I^{\fg}[L]\}$ to satisfying the quantum master equation modulo $\hbar^2$ is an element 
-%\[
-%\Theta_V \in \hbar \cloc^*(\sG) .
-%\]
-%The next subsection is devoted to an explicit calculation of this anomaly using Feynman diagrams. 
-
-\subsubsection{The anomaly calculation}
-
-We now perform the main technical calculation of the anomaly cocycle.
-
-\begin{prop}\label{prop: inner anomaly}
-The $L\to 0$ limit of the anomaly cocycle $\Theta = \lim_{L \to 0} \Theta_V[L]  \in \cloc^*(\sG)$ is of the form
-\[
-\Theta_V = C \cdot J_{\CC^d}(\ch_{d+1}^\fg (V)),
-\]
-where $\ch_{d+1}^\fg(V) \in \Sym^{d+1}(\fg^*)^\fg$ and where $J_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg \to \cloc^*(\sG)$ is the map of Lemma \ref{prop j map} and where $C$ some constant only depending on the dimension $d$. 
+\begin{prop}\label{prop: local def}
+The map $J : \Omega^{d+1}_{cl}(B \fg) [d] \to \Def_{\CC^d \to B \fg}^{\rm cot}$ factors through the holomorphically translation invariant deformation complex:
+\beqn
+J : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\Def^{\rm cot}_{\CC^d \to B \fg}\right)^{\CC^{2d|d}} .
+\eeqn
+Furthermore, $J$ defines a quasi-isomorphism into the $U(d)$-invariant subcomplex of the right-hand side.
 \end{prop}
-
-To compute the anomaly we refer to the following result about the expression for the anomaly cocycle in terms of the Feynman diagram expansion.
-As a direct corollary of our general characterization of chiral anomalies, Lemma \ref{lem: chiral anomaly}, we have the following result.
-
-\begin{lem}\label{lem: g anomaly}
-The limit $\Theta_{V} := \lim_{L \to 0} \Theta_{V}[L]$ exists and 
-is an element of degree one in $\clie^*(\Vect,\Cloc^*(\fg_n^\CC))$. 
-Moreover, it is given by
-\[
-\Theta_V = \lim_{\epsilon \to 0} \sum_{\substack{\Gamma \in (d+1)\text{\rm -vertex wheels}\\ e \in {\rm Edge}(\Gamma)}} W_{\Gamma,e}(P_{\epsilon<1}, K_\epsilon,
-I^{\rm \fg}[\epsilon]),
-\]
-where the sum is over wheels $\Gamma$ with $(d+1)$ vertices and a distinguished inner edge $e$.
-\end{lem}
-
-%Part of the data of a free theory is a gauge fixing condition $Q^{GF}$. 
-%This is an operation on fields of cohomological degree $-1$ and enables us to fix the propagator uniquely. 
-%For the $\beta\gamma$ system on $\CC^d$ with values in the vector space $V$ the gauge fixing operator we choose is 
-%\[
-%Q^{GF} = \dbar^* \tensor \id_V = \pm \sum_i \frac{\partial}{\partial z_i} \frac{\partial}{\partial (\d \zbar_i)} \tensor \id_V .
-%\]
-
-%The propagator with UV-IR cutoff $\epsilon,L$ is equal to
-%\[
-%P_{\epsilon, L} (z, w) = \int_{t = \epsilon}^L \dbar^* K_t(z,w)\d t .
-%\]
-%Here, 
-%\[
-%K_t (z,w) = k_t(z,w) \Omega(z,w) (\id_V \tensor 1 + 1 \tensor \id_{V^*})
-%\]
-%where $k_t$ the heat kernel for the Dolbeault Laplacian $\dbar^* \dbar + \dbar \dbar^*$ acting on smooth functions on $\CC^d$, $\Omega(z,w)$ is a constant coefficient differential form on~$\CC^d_z \times \CC^d_w$ satisfying
-%\[
-%\int_{z \in \CC^d} \phi(z) \wedge \Omega(z,w) = \pm \phi(w),
-%\]
-%and $\id_V , \id_{V^*} \in \Sym^2(V \oplus V^*)$ represent the identity maps $V \to V$, $V^* \to V^*$. 
-%Explicitly, if we choose a basis $\{e_a\}$ for $V$ with dual basis $\{e_a^*\}$ we have the following formula for $K_t(z,w)$: 
-%\[
-%K_t(z,w) = \frac{1}{(4 \pi t)^d} e^{-|z-w|^2/ t} \left((\d^d z - \d^d w) \wedge \prod_{i} (\d \zbar_i - \d \Bar{w}_i) \right) \left(\sum_{a = 1}^{\dim V} (e_a \tensor e_a^* + e_a^* \tensor e_a) \right).
-%\]
-
-%Now, we are ready to apply Lemma \ref{lem anomaly} to compute the anomaly cocycle. 
-%The fact that the limit of $W(P_{\epsilon,L}, I^{\sL})$ as $\epsilon \to 0$ exists is technical and left in the appendix. 
-%We provide an explicit analysis of the sum of the Feynman weights corresponding to wheels.
-%We find that the sum reduces to evaluating the weight of a single wheel with $d+1$ vertices. 
-
-%Fix $k \geq 1$ to be the number of vertices of the wheel $\Gamma$. 
-%By differential form type reasons, the wheels with number of vertices $k \leq d$ vanish identically. 
-%To see this, note that the integral computing the Feynman weight is an integral over $\CC^{dk}$. 
-%Each propagator contributes a differential form of Dolbeault type $(d, d-1)$.
-%The heat kernel contributes a differential form of type $(d,d)$. 
-%Thus, in total the internal edges contribute a differential form of type 
-%\[
-%(kd, (k-1)(d-1) + d) = (kd, (k-1)d + 1).
-%\]
-%Now, t	he anomaly is a cocycle of $\sL$ of cohomological degree $+1$.
-%\brian{finish}
-%
-%The reason that the wheels of valency $k > d+1$ vanish is more subtle, and relies on analytic bounds of the integral computing the weight. 
-%We provide this argument in the appendix. 
-
-The lemma implies that we only need to consider the wheel with $d+1$ vertices. 
-Each trivalent vertex is labeled by both an analytic factor and Lie algebraic factor. 
-The Lie algebraic part of each vertex can be thought of as the defining map of the representation $\rho : \fg \to {\rm End}(V)$. 
-The diagrammitcs of the wheel amounts to taking the trace of the symmetric $(d+1)$st power of this Lie algebra factor. 
-Thus, the Lie algebraic factor of the weight of the wheel is the $(d+1)$st component of the character of the representation
-\[
-{\rm ch}_{d+1}^\fg(V) = \frac{1}{(d+1)!} {\rm Tr}\left(\rho(X)^{d+1}\right) \in \Sym^{d+1}(\fg^*) .
-\]
-
-To finish the calculation we must compute the analytic weight of the wheel with $d+1$ vertices. 
-Recall, our goal is to identify the anomaly $\Theta$ with the image of ${\rm ch}_{d+1}^\fg(V)$ under the map
-\[
-J : \Sym^{d+1}(\fg^*)^\fg \to \cloc^*(\Omega^{0,*}(\CC^d)\tensor \fg)
-\]
-that sends an element $\theta$ to the local functional $\int \theta(\alpha \partial \alpha \cdots \partial \alpha)$. 
-We have just seen that the Lie algebra factor in local functional representing the anomaly agrees with the $(d+1)$st Chern character. 
-Thus, to finish we must show the following.
-
-\begin{lem} 
-As a functional on the abelian dg Lie algebra $\Omega^{0,*}(\CC^d)$, the analytic factor of the weight $\lim_{L\to 0} \lim_{\epsilon \to 0} W_{\Gamma, e} (P_{\epsilon < L}, K_\epsilon, I^\fg)$ is equal to a multiple of the local functional
-\[
-\int \alpha \partial \alpha \cdots \partial \alpha \in \cloc^*(\Omega^{0,*}(\CC^d)) .
-\]
-\end{lem}
 
 \begin{proof}
-
-Let's fix some notation. 
-We enumerate the vertices by integers $a = 0,\ldots, d$. 
-Label the coordinate at the $i$th vertex by $z^{(a)} = (z_1^{(a)}, \ldots, z_d^{(a)})$. 
-The incoming edges of the wheel will be denoted by homogeneous Dolbeault forms 
-\[
-\alpha^{(a)} = \sum_{J} A^{(a)}_J \d \zbar_J^{(a)} \in \Omega_c^{0,*}(\CC^d) .
-\]
-where the sum is over the multiindex $J = (j_1,\ldots, j_k)$ where $j_a = 1,\ldots, d$ and $(0,k)$ is the homogenous Dolbeault form type. 
-For instance, if $\alpha$ is a $(0,2)$ form we would write
-\[
-\alpha = \sum_{j_1 < j_2} A_{(j_1,j_2)} \d \zbar_{j_1} \d\zbar_{j_2} .
-\]
-Denote the functional obtained as the $\epsilon \to 0$ weight of the wheel with $(d+1)$ vertices from Lemma \ref{lem: g anomaly} by $W_L$.
-The $L\to 0$ limit of $W_L$ is the local functional representing the one-loop anomaly $\Theta$. 
-
-The weight has the form
-\[
-W_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
-\]
-We introduce coordinates
-\begin{align*}
-w^{(0)} & = z^{(0)} \\
-w^{(a)} & = z^{(a)} - z^{(a-1)} \;\;\; 1 \leq a \leq d .
-\end{align*}
-The heat kernel and propagator part of the integral is of the form
-\[
-\begin{array}{ccl}
-\displaystyle
-K_\epsilon(w^{(0)},w^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (w^{(a-1)}, w^{(a)}) & = & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d}  \\ & & \displaystyle \times \d^d w^{(0)} \prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \d^d w^{(a)} \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right)
-\\ & & \displaystyle \times e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} .
-\end{array}
-\]
-Here, $M_{ab}$ is the $d \times d$ square matrix satisfying
-\[
-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)} = |\sum_{a = 1}^d w^{(a)} |^2 / \epsilon + \sum_{a = 1}^d |w^{(a)}|^2 / t_a .
-\]
-Note that
-\[
-\prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right) = \left( \sum_{i_1,\ldots i_d} \epsilon_{i_1\cdots i_d} \prod_{a=1}^d \Bar{w}^{(a)}_{i_a}\right) \prod_{a=1}^d \d^d \Bar{w}^{(a)} .
-\]
-In particular, only the $\d w_i^{(0)}$ components of $\alpha^{(0)} \cdots \alpha^{(d)}$ can contribute to the weight.
-
-For some compactly supported function $\Phi$ we can write the weight as
-\[
-\begin{array}{ccl}
-W (\alpha^{(0)}, \ldots, \alpha^{(d)}) & = & \lim_{\epsilon \to 0} \displaystyle \int_{\CC^{d(d+1)}} \left(\prod_{a = 0}^{d} \d^d w^{(a)} \d^d \Bar{w}^{(a)}\right) \Phi \\ & \times & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d} \sum_{i_1,\ldots, i_d} \epsilon_{i_1\cdots i_d} \Bar{w}_{i_1}^{(1)} \cdots \Bar{w}_{i_d}^{(d)} e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} 
-\end{array}
-\]
-
-Applying Wick's lemma in the variables $w^{(1)}, \ldots, w^{(d)}$, together with some elementary analytic bounds, we find that the weight above becomes to the following integral over $\CC^d$
-\[
-f(L) \int_{w^{(0)} \in \CC^d}  \d^d w^{(0)} \d^d \Bar{w}^{(0)} \sum_{i_1,\ldots, i_d} \epsilon_{i_1\cdots i_d}  
-\left(\frac{\partial}{\partial w_{i_1}^{(1)}} \cdots \frac{\partial}{\partial w_{i_d}^{(d)}} \Phi\right)|_{w^{(1)}=\cdots=w^{(d)} = 0} 
-\]
-where
-\[
-f(L) = \lim_{\epsilon \to 0} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\epsilon}{(\epsilon + t_1 + \cdots + t_d)^{d+1}} \d^d t .
-\]
-In fact, $f(L)$ is independent of $L$ and is equal to some nonzero constant $C \ne 0$.
-Finally, plugging in the forms $\alpha^{(0)}, \ldots, \alpha^{(d)}$, we observe that the integral over $w^{(0)} \in \CC^d$ simplifies to
-\[
-C \int_{\CC^d} \alpha^{(0)} \partial \alpha^{(1)} \cdots\partial \alpha^{(d)}
-\]
-as desired.
-\end{proof}
-
-This completes the proof of Proposition \ref{prop: inner anomaly}.
-
-\subsection{Identifying the local anomaly with a global characteristic class}
-
-In this section we finish the proof of our main result Theorem \ref{thm ggrr} by showing how our local calculation above implies the formula for the anomaly on a general compact affine manifold $X$.
-By an complex affine manifold, we mean a quotient 
-\[
-q : U \subset \CC^d \to X
-\]
-of an open subset $U \subset \CC^d$ by a free and proper action of a discrete subgroup of the affine group $U(d) \ltimes \CC^d$. 
-We consider affine manifolds that are also compact. 
-To deduce our main theorem we will show that the theory and the anomaly above also exhibit equivariance for the affine group on $\CC^d$, thus it will descend to any affine manifold.
-
-We have stated the main result for an arbitrary principal $G$-bundle $P$ on the affine manifold $X$. 
-Suppose the discrete subgroup $\Gamma \leq U(d) \ltimes \CC^d$ defines the affine manifold $q : U \to X = U / \Gamma$ as above. 
-Then, principal $G$-bundles on $X$ are equivalent to $\Gamma$-equivariant principal $G$-bundles on $U$. 
-
-Let $\sE$ be an arbitrary elliptic complex on $X$, and suppose the Lie algebra $\fh$ acts on $\sE$. 
-Since $X$ is compact, the cohomology $H^*(\sE(X))$ is finite dimensional.
-It therefore makes sense to define the character of the action of $\fh$ on $H^*(\sE(X))$.
-\beqn\label{superchar}
-\chi_\sE : \fh \to \CC \;\; , \;\; M \in \fh \mapsto {\rm STr}_{H^*(\sE(X))} (M) .
+To compute the translation invariant deformation complex we will invoke Corollary \ref{cor: hol trans invt def} from Section \ref{sec: hol trans}.
+Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
+Thus, in the notation of Section \ref{sec: hol theory} the bundle $V$ is simply the trivial bundle $\fg$.
+Thus, we see that the translation invariant deformation complex is quasi-isomorphic to the following cochain complex
+\beqn
+\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^{2d|d}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
 \eeqn
-Here, STr denotes the supertrace. 
-The character factors through the determinant of the representation.
-For the graded character above, we must use the superdeterminant which we denote by $\det (H^*(\sE(X)))$. 
-Free BV quantization gives a natural field theoretic interpretation of this determinant.
+We'd like to recast the right-hand side in a more geometric way. 
 
-\begin{prop}[\cite{CG2} Lemma 12.7.0.1] 
-Let $\sE$ be any elliptic complex on a compact manifold $X$ and let $T^*[-1] \sE$ be the corresponding free BV theory given by the shifted cotangent bundle. 
-Let $\Obs^\q_\sE$ be the factorization algebra of quantum observables of this theory.
-Then, there is an isomorphism
-\[
-H^* \left(\Obs^\q_{\sE}(X) \right) \cong \det H^*(\sE(X)) [n]
-\]
-where $n$ is the Euler characteristic of $\sE(X)$ modulo $2$. 
-\end{prop}
+Note that the the algebra $\CC\left[\frac{\partial}{\partial z_i}\right]$ is the enveloping algebra of the abelian Lie algebra $\CC^d = \CC\left\{\frac{\partial}{\partial z_i}\right\}$. 
+Thus, the complex we are computing is of the form
+\beqn
+\CC \cdot \d^d z \tensor^{\LL}_{U(\CC^d)} \cred^*(\fg[[z_1,\ldots,z_d]]) [d] .
+\eeqn
+Since $\CC \cdot \d^d z$ is the trivial module, this is precisely the Chevalley-Eilenberg cochain complex computing Lie algebra homology of $\CC^d$ with values in the module $\cred^*(\fg[[z_1,\ldots,z_d]])$:
+\beqn
+\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^d} \; \simeq  \; \clieu_*\left(\CC^d ; \cred^*(\fg[[z_1,\ldots,z_d]]) \d^d z\right) [d] .
+\eeqn
+We will keep $\d^d z$ in the notation since below we are interested in computing the $U(d)$-invariants, and it has non-trivial weight under the action of this group.
+
+To compute the cohomology of this complex, we will first describe the differential explicitly. 
+There are two components to the differential.
+The first is the ``internal" differential coming from the Lie algebra cohomology of $\fg [[z_1,\ldots,z_d]]$, we will write this as $\d_{\fg}$. 
+The second comes from the $\CC^d$-module structure on $\clie^*(\fg[[z_1,\ldots,z_n]])$ and is the differential computing the Lie algebra homology, which we denote $\d_{\CC^d}$. 
+We will employ a spectral sequence whose first term turns on the $\d_{\fg}$ differential.
+The next term turns on the differential $\d_{\CC^d}$.
+
+As a graded vector space, the cochain complex we are trying to compute has the form
+\beqn
+\Sym(\CC^d [1]) \tensor \cred^*\left(\fg[[z_1,\ldots,z_d]])\right) \d^d z [d] .
+\eeqn
+The spectral sequence is induced by the increasing filtration of $\Sym(\CC^d [1])$ by symmetric powers
+\beqn
+F^k = \Sym^{\leq k}(\CC^d[1]) \tensor \cred^*\left(\fg[[z_1,\ldots,z_d]])\right) \d^d z [d] .
+\eeqn
 
 \begin{rmk}
-In \cite{GwilliamHaugseng} they prove that an abstracted version of linear BV quantization behaves like a determinant over formal moduli problems.
-An immediate consequence is that given a classical theory with an action of a Lie algebra $\fg$, the BV quantization as we consider produces a line bundle over the moduli space $B \fg$. 
-Our calculation of the obstruction produces a calculation in terms of Feynman diagrams of the first Chern class of this line bundle. 
+In the examples we are most interested in (namely $\fg = \CC^n[-1]$ and $\fg = \fg_{X_{\dbar}}$) we can understand the spectral sequence we are using as a version of the Hodge-to-de Rham spectral sequence.
 \end{rmk}
- 
-Notice that the classical free theory $\sE_V$ is equivariant for the affine group $U(d) \ltimes \CC^d$.
-Thus, it defines a classical theory on any affine manifold $X$.
-This theory is free and of the form
-\[
-\sE_V (X) = T^*[-1] (\Omega^{0,*}(X , V))
-\]
-where $T^*[-1]$ denotes the shifted cotangent bundle.
-Thus, the global quantum observables satisfy
-\beqn\label{quantum obs}
-H^*(\Obs^\q_{V}(X)) = \det \left(H^*(X, \sO^{hol}) \tensor V \right)
+
+As above, we write the generators of $\CC^d$ by $\frac{\partial}{\partial z_i}$. 
+Also, note that the reduced Chevalley-Eilenberg complex has the form
+\beqn
+\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
 \eeqn
- 
-%Similarly, the functional $I^\fg$ is equivariant for the affine group, so that it also descents to a functional on $X$.
-%Thus, the Noether current $I^\fg$ defines a \brian{finish}
+where $z_i^\vee$ is the dual variable to $z_i$. 
 
-In Section \ref{sec: classical g equiv} we have showed how the classical theory $\sE_{V}$ has an an action by the local Lie algebra $\sG_X$.
-This arose from an action of $\sG(X) = \Omega^{0,*}(X, \fg)$ on the elliptic complex $\Omega^{0,*}(X, V)$. 
-At the level of cohomology we have an action of $H^*(\sG(X))$ on $H^*(\Omega^{0,*}(X, V))$ and hence a character $\chi_{V}$ as in Equation (\ref{superchar}) which is an element in $H^*_{red}(\sG(X))$. 
-
-The local Lie algebra cohomology of any local Lie algebra embeds inside its ordinary (reduced) Lie algebra cohomology of global sections $\cloc^*(\sL(X)) \subset \cred^*(\sL(X))$. 
-The character (\ref{superchar}) is an element in $H_{red}^*(\sL(X))$.
-As an immediate corollary of \cite{CG2} Theorem 12.6.0.1 we have the following relationship between the anomaly cocycle and the character.
-
-\begin{prop}\label{inner char}
-Suppose $\sL$ is a local Lie algebra that acts on the elliptic complex $\sE$ on a compact manifold $X$.
-Let $\Theta_\sE \in \cloc^*(\sL)$ be the local cocycle measuring the failure to satisfy the $\sL$-equivariant classical master equation (that is, the obstruction to having an inner action).
-Then, its global cohomology class satisfies $[\Theta_\sE (X)] = \chi_{\sE} \in \cred^*(\sL(X))$ where $\chi_\sE$ is the trace of the action of $H^*(\sL(X))$ on $H^*(\sE(X))$. 
-\end{prop}
-
-%\begin{proof}
-%A version of this is proved in Section 7 of \cite{GwilliamThesis}, but we will sketch the proof here.
-%\end{proof}
-
-For the case of $\sL = \sG_X$ we have an embedding of cochain complexes
-\[
-\cloc^*(\sG(X)) \hookrightarrow \cred^*(\sG(X)) = \cred^*(\Omega^{0,*}(X) \tensor \fg) .
-\]
-By Kodaira-Spencer theory have already seen that the global sections of the local Lie algebra $\sG(X)$ is a model for the formal neighborhood of the trivial $G$-bundle inside of $G$-bundles. 
-In particular, the $\sG(X)$-module of quantum observables defines a line bundle $\int_X \Obs^\q_{\sE_V}$ over this formal neighborhood.
-Its character as a $\sG(X)$-module is identified with the first Chern class of the corresponding line bundle $\chi_\sE(\Obs^\q_{V}(X)) = c_1(\int_X \Obs^\q_{V})$. 
-
-Now, notice that the one-loop quantization we constructed in the previous section, as well as the anomaly cocycle $\Theta_V \in \cloc^*(\sG_{\CC^d})$ are equivariant for the group $U(d) \ltimes \CC^d$. 
-Thus, they descend to the global sections of $\cloc^*(\sG_X)$ for any affine manifold $X$.
-Explicitly, if $\Gamma\subset U(d) \ltimes \CC^d$ is the discrete subgroup such that $X = U / \Gamma$ where $U \subset \CC^d$, then under the isomorphism 
-\[
-\cloc^*(\sG(X)) \cong \cloc^*(\sG(U))^\Gamma
-\]
-we have $\Theta_V(X) \leftrightarrow \Theta_V(U)$.
-
-Further, we have an identification
-\[
-\cred^*(\Omega^{0,*}(X) \tensor \fg) = \sO_{red}\left({\rm Bun}_G(X)^{\wedge}_{triv}\right) \cong  \Omega^1_{cl} \left({\rm Bun}_G(X)^{\wedge}_{triv}\right) 
-\]
-where we have used the equivalence of reduced functions and closed one-forms which makes sense on any formal moduli space.
-At the level of $H^1$ we have the composition composition
-\beqn\label{cohbung}
-\Sym^{d+1}(\fg^*)^\fg \xto{J^X} H^1_{\rm loc} (\sG(X)) \to H^1(\Omega^1_{cl}\left({\rm Bun}_G(X)^{\wedge}_{triv}\right) .
+Recall, we are only interested in the $U(d)$-invariant subcomplex of this deformation complex. 
+Sitting inside of $U(d)$ we have $S^1 \subset U(d)$ as multiples of the identity. 
+This induces an overall weight grading to the complex.
+The group $U(d)$ acts in the standard way on $\CC^d$.
+Thus, $z_i$ has weight $(+1)$ and both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have $S^1$-weight $(-1)$. 
+Moreover, the volume element $\d^d z$ has $S^1$ weight $d$.
+It follows that in order to have total $S^1$-weight that the total number of $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ must add up to $d$.
+Thus, as a graded vector space the invariant subcomplex has the following decomposition
+\beqn
+\bigoplus_k \Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z [d] .
 \eeqn
-As a corollary of Proposition \ref{inner char} and our calculation of the local anomaly cocycle we see that the image of $\ch_{d+1}^\fg(V)$ is equal to $[\Theta_V(X)] = [c_1(\int_X \Obs^\q_V)]$. 
-
-The same holds when we work around any holomorphic principal bundle $P$ on $X$, so that we have an embedding of cochain complexes
+It follows from Schur-Weyl that the space of $U(d)$ invariants of the $d$th tensor power of the fundamental representation $\CC^d$ is one-dimensional, spanned by the top exterior power. 
+Thus, when we pass to the $U(d)$-invariants, only the unique totally antisymmetric tensor involving $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ survives. 
+Thus, for each $k$, we have
 \[
-\cloc^*(\sAd(P)(X)) \hookrightarrow  \Omega^1_{cl} \left({\rm Bun}_G(X)^{\wedge}_{P}\right) . 
+\label{U(d) invariants}
+\left(\Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z\right) \cong \wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right) \clie^*\left(\fg , \Sym^{d-k}(\fg^\vee)\right) \d^d z .
 \]
-which determines a composition
-\beqn\label{cohbung}
-\Sym^{d+1}(\fg^*)^\fg \xto{J_P^X} H^1_{\rm loc} (\sAd(P)(X)) \to H^1(\Omega^1_{cl}\left({\rm Bun}_G(X)^{\wedge}_{P}\right) .
+Here, $\wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right)$ is just a copy of the determinant $U(d)$-representation, but we'd like to keep track of the appearances of the partial derivatives and $z_i^\vee$. 
+Note that for degree reasons, we must have $k \leq d$. 
+When $k = 0$ this complex is the (shifted) space of functions modulo constants on the formal moduli space $B\fg$, $\sO_{red}(B\fg)[d]$. 
+When $k \geq 1$ this the (shifted) space of $k$-forms on the formal moduli space $B\fg$, which we write as $\Omega^{k}(B \fg)[d+k]$.
+Thus, we see that before turning on the differential on the next page, our complex looks like
+\[
+\label{bg def complex1}
+\xymatrix{
+\ul{-2d} & \cdots & \ul{-d-1} & \ul{-d} \\
+\sO_{red}(B \fg) & \cdots & \Omega^{d-1} (B \fg) & \Omega^{d}(B \fg) .
+}
+\]
+We've omitted the extra factors for simplicity. 
+
+We now turn on the differential $\d_{\CC^d}$ coming from the Lie algebra homology of $\CC^d = \CC\left\{\frac{\partial}{\partial z_i}\right\}$ with values in the above module. 
+Since this Lie algebra is abelian the differential is completely determined by how the operators $\frac{\partial}{\partial z_i}$ act.
+We can understand this action explicitly as follows.
+Note that $\frac{\partial}{\partial z_i} z_j = \delta_{ij}$, thus we may as well think of $z_i^\vee$ as the element $\frac{\partial}{\partial z_i}$. 
+Consider the subspace corresponding to $k=d$ in Equation (\ref{U(d) invariants}):
+\beqn
+\frac{\partial}{\partial z_1} \cdots \frac{\partial}{\partial z_d} \cred^*(\fg) \d^d z .
+\eeqn 
+Then, if $x \in \fg^\vee [-1] \subset \cred^*(\fg)$ we observe that
+\beqn
+\d_{\CC^d} \left(\frac{\partial}{\partial z_1} \cdots \frac{\partial}{\partial z_d} \tensor f \tensor \d^d z \right) = \det (\partial_i, z_j^\vee) \tensor 1 \tensor x \tensor \d^d z \in  \wedge^{d-1}\left(\frac{\partial}{\partial z_i}\right) \wedge \CC \{z_i^\vee\} \clie^*\left(\fg , \fg^\vee \right) \d^d z.
 \eeqn
-Since every principal $G$-bundle $P$ on $X$ is trivial when we pull it back to $U\subset \CC^d$, the above local anomaly calculation proves that $[c_1(\int_X \Obs^\q_{P,V})] = C \ch_{d+1}^\fg (V)$ in this case as well.
-This completes the proof of Theorem \ref{thm ggrr}. 
+This follows from the fact that the action of $\frac{\partial}{\partial z_i}$ on $x = x \tensor 1 \in \fg^\vee \tensor \CC[z_i^\vee]$ is given by
+\beqn
+\frac{\partial}{\partial z_i} \cdot (x \tensor 1) = 1 \tensor x \tensor z_i^\vee \in \clie^*(\fg , \fg^\vee) z_i^\vee .
+\eeqn
+By the Leibniz rule we can extend this to get the formula for general elements $f \in \cred^*(\fg)$. 
+We find that getting rid of all the factors of $z_i$ we recover precisely the de Rham differential 
+\beqn
+\xymatrix{ 
+\cred^*(\fg) [2d] \ar@{=}[d] \ar[r]^-{\d_{\CC^d}} & \clie^*(\fg , \fg^\vee) [2d-1] \ar@{=}[d] \\
+\sO_{red}(B\fg) \ar[r]^-{\partial} & \Omega^1(B \fg) .
+}
+\eeqn
+A similar argument shows that $\d_{\CC^d}$ agrees with the de Rham differential on each $\Omega^k(B \fg)$. 
 
-\subsection{A vacuum module for the higher Kac-Moody algebras}
 
-The last part of this section we diverge to deduce a consequence of the quantum Noether theorem using our analysis above by exhibiting a module for the higher affine algebras from the previous section. 
-For convenience, we fix the trivial $\fg$-bundle $P = {\rm triv}$ so that $\sAd(P) = \sG_X$.
-
-On any manifold $X$, the quantum Noether theorem, Theorem 12.1.0.1 of \cite{CG2}, provides a map of factorization algebras
+We conclude that the $E_2$ page of this spectral sequence is quasi-isomorphic to the following truncated de Rham complex.
 \[
-\Phi_X : \UU_\alpha (\sG_X) \to \Obs^\q_{V} ,
+\label{bg def complex2}
+\xymatrix{
+\ul{-2d} & \ul{-2d+1} & \cdots & \ul{-d-1} & \ul{-d} \\
+\sO_{red}(B \fg) \ar[r]^-{\partial} & \Omega^1(B \fg) \ar[r] & \cdots \ar[r] & \Omega^{d-1} (B \fg) \ar[r]^-{\partial} & \Omega^{d}(B \fg) .
+}
 \]
-for some $\alpha \in H^1_{\rm loc}(\sG_X)$.
-The factorization algebra $\Obs^\q_V$ is the quantum observables of the $\beta\gamma$ system on $X$ with values in the $\fg$-module $V$. 
-This is a free field theory, thus the above map has the flavor of a {\em free field realization} of the Kac-Moody factorization algebra.
-In particular when $X = \CC^d$, or any affine manifold, the calculation above shows that there is a map of factorization algebras
+This is precisely a shifted version of the complex we had in (\ref{truncated de rham1}).
+We saw that it was quasi-isomorphic, through the de Rham differential, to $\Omega^{d+1}_{cl}[d]$. 
+This completes the proof.
+\end{proof}
+
+We can apply this general result to the case $\fg =\CC^n[-1]$.
+Doing this we have the following corollary.
+
+\begin{cor}\label{cor: defcor}
+Let $\Def_n$ be the deformation complex of the formal $\beta\gamma$ system with target $\hD^n$.
+There is a $(\Vect, \GL_n)$-equivariant quasi-isomorphism
+\beqn
+J : \hOmega^{d+1}_{n,cl} [d] \xto{\simeq} \left(\left(\Def^{\rm cot}_n\right)^{\CC^{2d|d}}\right)^{U(d)} \subset \Def_n .
+\eeqn
+\end{cor}
+
+This induces a quasi-isomorphism into the $(\Vect, \GL_n)$-equivariant deformation complex
 \[
-\Phi_{\CC^d} : \UU_{\ch_{d+1}(V)} (\sG_{\CC^d}) \to \Obs^\q_{V} .
+\label{j w map}
+J^{\rm W} : \clie^*(\Vect , \GL_n ; \hOmega^{d+1}_{n,cl}) \xto{\simeq} \left(\left(\Def^{\rm W, cot}_n\right)^{\CC^{2d|d}}\right)^{U(d)} \subset \Def_n^{\rm W} .
 \]
+Moreover, upon performing Gelfand-Kazhdan descent, it implies that on any complex manifold $X$ we can use $J$ to identify the deformation complex for the holomorphic $\sigma$-model of maps $\CC^d \to X$:
+\beqn
+J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to X} \right)^{\CC^{2d|d}}\right)^{U(d)} .
+\eeqn
 
-Next, consider the case $X = \CC^d \setminus  \{0\}$. 
-By functoriality of pushforwards, the quantum Noether theorem produces a map of one-dimensional factorization algebras
-\[
-\rho_* \Phi : \rho_* \UU_{\ch_{d+1}(V)} (\sG_{\CC^d \setminus \{0\}}) \to \rho_* \Obs^\q_{V} .
-\]
-We have exhibited a locally constant dense subfactorization algebra $\sF^{lc}_{1d}$ of $\rho_* \UU_\alpha (\sG_X)$ which is equivalent, as an $E_1$-algebra, to $U \Hat{\fg}_{d, \ch_{d+1}(V)}$. 
-Similarly, in Section \ref{sec: sphere ops} we have shown that there is a locally constant dense subfactorization algebra that is equivalent to the dg algebra $\sA_V$. 
-
-The map $\rho_* \Phi$ restricts to these dense subfactorization algebras and so defines a map of $E_1$ algebras
-\[
-\rho_* \Phi : U \Hat{\fg}_{d, \ch_{d+1}(V)}\to \sA_V .
-\]
-Also, in Section \ref{sec: disk module} we have shown how the disk operators $\sV_V$ form a module, through the factorization product, for the dg algebra $\sA_V$. 
-This is essentially the Fock module of the algebra $\sA_V$, thus we should view the above map $\rho_*\Phi$ as being a higher dimensional analog of the ``free field realization" for the higher dimensional affine algebras. 
-
-Further, by induction along the map $\rho_* \Phi$, we obtain the following.
-
-\begin{prop}
-The map $\rho_*\Phi$ endows the space $\sV_V$ with the structure of a module over the $E_1$-algebra $U \Hat{\fg}_{d, \ch_{d+1}(V)}$.
-Equivalently, $\sV_V$ is an $A_\infty$-module for $U \Hat{\fg}_{d, \ch_{d+1}(V)}$. 
-\end{prop}
-
-The module $\sV_V$ is the prototype for a higher dimensional version of the vacuum Verma module for ordinary affine algebras. 
-It is enticing to construct the higher excitation Verma modules as dg modules for the higher affine algebras we've considered in this thesis.
-We do not do that here, but hope to return to it in future work.
 
 \end{document}

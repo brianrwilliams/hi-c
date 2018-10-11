@@ -227,6 +227,8 @@ Restricted to each slice ${{\rm Hol}_d}_{/X}$, it determines the local Lie algeb
 We use $\sG$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
 \end{dfn}
 
+\owen{Should we call this $\sG_d$ or just the restriction to submanifolds of $\CC^d$?}
+
 \begin{rmk}
 It is not necessary to start with a complex Lie group: 
 the construction makes sense for a dg Lie algebra over $\CC$ of finite total dimension.
@@ -238,111 +240,6 @@ For any complex manifold $X$ we can restrict the functor $\sG^{sh}$ to the overc
 In this case, $\sG^{sh}_X$, or its compactly supported version $\sG_X$, comes from the local Lie algebra of Definition \ref{dfn: adjoint local} in the case of the trivial $G$-bundle on $X$. 
 In the case that $X = \CC^d$ we will denote the sheaves and cosheaves of the local Lie algebra by $\sG_d^{sh}, \sG_d$ respectively.
 \end{rmk}
-
-%In this paper, it is convenient for us to work with Lie algebras that are suitably coherent in the homotopical sense.
-%Recall, an $L_\infty$-algebra is a generalization of a dg Lie algebra where the Jacobi identity is only required to hold up to homotopy.
-%The data of an $L_\infty$ algebra is a graded vector space $V$ with, for each $k \geq 1$, a $k$-ary bracket
-%\[
-%\ell_k : V^{\tensor k} \to V[2-k]
-%\]
-%of cohomological degree $2-k$. 
-%These maps are required to satisfy a series of conditions, the first of which says $\ell_1^2 = 0$.
-%The next says that $\ell_2$ is a bracket satisfying the Jacobi identity up to a homotopy given by $\ell_3$.
-%An $L_\infty$ algebra $(V, \{\ell_n\})$ with $\ell_n = 0$ for $n \geq 3$ is an ordinary dg Lie algebra.
-%For a detailed definition see we refer the reader to \cite{StasheffDG, GetzlerLie}.
-%
-%\begin{rmk}
-%For a characteristic zero field $k$, the model categories of dg Lie algebras and $L_\infty$-algebras  over $k$ are Quillen equivalent. \brian{reference} \owen{Hinich}
-%(In particular, there is a functorial replacement of every $L_\infty$ algebra by a quasi-isomorphic dg Lie algebra.)
-%This Quillen equivalence then induces an equivalence of $\infty$-categories.
-%In practice, $L_\infty$ algebras provide a convenient, explicit way to work with Lie algebras in a homotopical fashion.
-%\end{rmk}
-%
-%We now hone in on the class of sheaves of $L_\infty$-algebras relevant for our purposes.
-%The following definition appears in Chapter 4 of \cite{CG2}. 
-%
-%\begin{dfn} 
-%A {\em local $L_\infty$ algebra} on a smooth manifold $X$ is
-%\begin{itemize}
-%\item[(i)] a $\ZZ$-graded vector bundle $L$ on $X$, with $L^n = 0$ for $n$ outside a finite range, and
-%\item[(ii)] for each positive integer $n$, a polydifferential operator in $n$ inputs
-%\[
-%\ell_n : \underbrace{\sL^{sh} \times \cdots \times \sL^{sh}}_{\text{$n$ times}} \to \sL[2-n]
-%\]
-%where $\sL^{sh}$ denotes the sheaf of smooth sections of~$L$,
-%\end{itemize}
-%such that the collection $\{\ell_n\}_{n \in \NN}$ satisfy the axioms of an $L_\infty$ algebra.
-%Thus, $\sL^{sh}$ is a sheaf of $L_\infty$ algebras. 
-%\end{dfn}
-%
-
-
-
-%As a potential source of confusion, we warn the reader than we typically refer to the local $L_\infty$ algebra $(L, \{\ell_n\})$ simply by $\sL$. 
-%Also, we will often use the term local {\em Lie} algebra, especially if $\sL$ is a precosheaf of dg Lie algebras and hence has trivial~$\ell_{n \geq 3}$.
-%
-%\subsubsection{Holomorphic principal bundles}
-%
-% 
-%\subsubsection{Deformations of holomorphic principal bundles}
-%
-%The dg Lie algebra $\sAd(P)^{sh}(X) = \Omega^{0,*}(X, \ad(P))$ appears naturally in the deformation theory of holomorphic $G$-bundles. 
-%By definition, the bundle $P \to X$ comes equipped with a $G$-equivariant $(0,1)$-connection $\dbar_P : C^\infty_P \to \Omega^{0,1}_P$. 
-%Consider two holomorphic structures $\dbar_P$ and $\dbar_P'$ on the same underlying complex principal bundle. 
-%By the fundamental property of connections we see that $\dbar_P - \dbar_P'$ defines a $(0,1)$ form with values in $\fg$:
-%\[
-%\alpha_{P,P'} = \dbar_P - \dbar_P' \in \Omega^{0,1}(P) \tensor \fg .
-%\]
-%This element is $G$-equivariant, so that it actually descends to an element $\alpha_{P,P'} \in \Omega^{0,1}(X, \ad(P))$. 
-%Furthermore, since $\dbar_P^2 = \dbar_P'^2 = 0$, we see that $\alpha_{P,P'}$ satisfies the following holomorphic version of the Maurer-Cartan equation
-%\[
-%\dbar \alpha_{P,P'} + \frac{1}{2} [\alpha_{P,P'}, \alpha_{P,P'}] = 0 .
-%\]
-%
-%Any other element $\alpha \in \Omega^{0,1}(X, \ad(P))$ satisfying the Maurer-Cartan equation determines a deformation of the holomorphic $G$-bundle $\dbar_P$.
-%Of course, two deformations $\alpha,\alpha'$ are equivalent if there exists a holomorphic gauge transformation $f \in \Gamma^{hol}(X, \ad(P))$ such that $\alpha' = [f, \alpha']$. 
-%Moreover, there may be obstructions to having such a deformation. 
-%This situation is exactly what a formal moduli problem, see Section \ref{sec: formal moduli}, is designed to describe.
-%
-%\owen{I don't know that we should include the stuff about formal moduli problems. Or it could be shrunk to a small remark that this Lie algebra determines a deformation theory.}
-%
-%We define the formal moduli problem ${\rm Def}_{P\to X}$ associated to the holomorphic principal $G$-bundle $P \to X$. 
-%As above, denote the fixed $(0,1)$-connection by $\dbar_P$ defining the complex structure of the holomorphic principal bundle. 
-%Define
-%\[
-%{\rm Def}_{P \to X} : {\rm dgArt}_\CC \to {\rm sSets}
-%\]
-%which sends a dg Artinian ring $(A, \fm)$ (again, see Section \ref{sec: formal moduli}) to the simplicial set $\Def_{P \to X}(A)$ whose $n$-simplices are
-%\[
-%{\rm Def}_{P \to X}(A) [n] = \left\{\alpha \in \left(\Omega^{0,*}(X , {\rm ad}(P)) \tensor \fm \tensor \Omega^*(\Delta^n)\right)^1  \;  | \; \dbar_P \alpha + \d_A \alpha + \d_{\Delta_n} \alpha + \frac{1}{2} [\alpha,\alpha] = 0\right\} .
-%\]
-%Here, $\d_A$ is the internal differential of $A$ and $\d_{\Delta_n}$ is the de Rham operator for differential forms on the $n$-simplex $\Delta^n$. 
-%
-%\begin{lem}
-%The functor $\Def_{P \to X} : A \mapsto \Def_{P \to X}(A)$ defines a formal moduli problem.
-%\end{lem} 
-%
-%We unpack the definition of this formal moduli problem.
-%Suppose first that $(A, \fm)$ is an ordinary Artinian algebra (not dg) concentrated in degree zero. 
-%Then, the set of zero simplices above is equal to
-%\beqn\label{zerosimplices}
-%\{\alpha \in \Omega^{0,1}(X , \ad(P)) \tensor \fm \; | \; \dbar_P \alpha + \frac{1}{2} [\alpha,\alpha] = 0 \} .
-%\eeqn
-%A $1$-simplex is an element $\alpha(t) + \beta(t) \d t \in \Omega^{0,*}(X, \ad(P)) \tensor \fm \tensor \Omega^*([0,1])$ where, for each $t$, $\alpha(t) \in \Omega^{0,1}(X , \ad(P))$ and $\beta(t) \in \Omega^{0,0}(X, \ad(P))$.
-%The Maurer-Cartan equation for the $1$-simplices is equivalent to the pair of equations
-%\begin{align*}
-%\dbar_P \alpha(t) + \frac{1}{2}[\alpha(t), \alpha(t)] & = 0 ,\\
-%\dbar_P \beta(t) + \frac{\partial}{\partial t} \alpha(t) + [\beta(t), \alpha(t)] & = 0 .
-%\end{align*}
-%The first equation says that $\alpha(t)$ determines a family of complex structures on the $G$-bundle $P \to X$ and.
-%The second equation says that holomorphically gauge equivalent deformations of complex structure are cochain homotopy equivalent. 
-%It follows from a result of Getzler \cite{GetzlerLie} that the space $\Def_{P \to X}(A)$ is homotopy equivalent to the homotopy quotient of (\ref{zerosimplices}) by the group associated to the nilpotent Lie algebra of gauge transformations $\Gamma^{hol}(X, \ad(P)) \tensor \fm$. 
-%
-%By construction, the formal moduli problem $\Def_{X \to P}$ is represented by the dg Lie algebra $\sAd(P)^{sh}(X)$ which is the sheaf of sections of the local Lie algebra $\sAd(P)$ we consider in this paper. 
-%Naturally, we expect the formal neighborhood of the derived moduli space of $G$-bundles defined in \cite{FHK} near $P$ to be equivalent to this formal moduli problem.
-%
-%Note that in the case of a Riemann surface $H^2 (X ; \ad(P)) = 0$ and deformations of holomorphic $G$-bundles always exist. 
-%In higher dimensions, however, there may be obstructions which is one reason why working with the full dg model for holomorphic gauge symmetries is essential. 
 
 \subsection{Current algebras as enveloping factorization algebras of local Lie algebras}
 
@@ -472,111 +369,6 @@ it sometimes also lifts to symmetries of a BV quantization.
 In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Cur^\q(\sL) \to \Obs^\q$ realizing quantum currents as quantum observables.
 Sometimes, however, the classical symmetries do not lift directly to quantum symmetries.
 We now turn to discussing the natural home for the obstructions to such lifts.
-
-
-
-%\begin{rmk}
-%The precosheaf of dg Lie algebras $\sL$ ``forgets'' to a cosheaf of cochain complexes by ignoring the bracket.
-%It does not form a cosheaf of dg Lie algebras because the coproduct of dg Lie algebras is not the direct sum of cochain complexes; the forgetful functor does not preserve all colimits.
-%On the other hand, the forgetful functor from dg Lie algebras to cochain complexes preserves sifted homotopy colimits (notably colimits over \v{C}ech diagrams)
-%It forms, however, a factorization algebra with values in dg Lie algebras,
-%since .
-%For those coming from the Beilinson-Drinfeld school, we remark that $\sL$ plays the role of a Lie$^*$ algebra.
-%\owen{Is that correct?}
-%\end{rmk}
-
-%
-%\owen{I'm inclined to remove almost all of this section. To show that we get a factorization algebra with values in Lie algebras, we need to use the nontrivial fact that the forgetful functor $Alg_O(C) \to C$ preserves {\em sifted} colimits, and so a prefactorization algebra with values in Lie algebras is a factorization algebra therein if it forgets to a factorization algebra.}
-% 
-%There is a rich theory of factorization algebras and factorization homology for which we only use a part of in this work. 
-%In addition to the foundational work of Beilinson-Drinfeld \cite{BD}, the modern theory has been developed extensively in the work of Ayala-Francis \cite{AFTopMan}, Lurie \cite{LurieHA}, and Costello-Gwilliam \cite{CG1,CG2}.
-%In this work, a factorization algebra is a symmetric monoidal functor from the category of opens on a fixed manifold, with monoidal product given by disjoint union, to the category of chain complexes, with monoidal product given by tensor product.
-%The general theory allows a factorization algebra to take values in an arbitrary symmetric monoidal $\infty$-category.
-%The concept of a factorization Lie algebra is perhaps not as well-known as an ordinary factorization algebra (valued in vector spaces, or chain complexes), but certainly falls under this general theory.
-%The notion of a factorization Lie algebra is a convenient one to connect the theory of local Lie algebras and factorization algebras.
-%The definitions we recall in this section can be found in \cite{CG1} and are certainly subsumed in \cite{LurieHA}. 
-%
-%\begin{dfn} 
-%Let $\sC^{\tensor}$ be a symmetric monoidal category and $X$ a space.
-%A {\em prefactorization algebra} on $X$ with values in $\sC$ is a functor of symmetric monoidal categories
-%\[
-%\sF : {\rm Disj}^{\sqcup}_X \to \sC^\tensor .
-%\]
-%A {\em strict factorization algebra} with values in $\sC$ is a prefactorization algebra $\sF$ such that: 
-%\begin{enumerate}
-%\item $\sF$ is a cosheaf with respect to the Weiss topology;
-%\item for any disjoint open sets $U, V \subset X$ the structure map $\sF(U) \tensor \sF(V) \to \sF(U \sqcup V)$ is an isomorphism.
-%\end{enumerate}
-%\end{dfn}
-%
-%There are two important symmetric monoidal categories we will be most interested in as the target of a factorization algebra.
-%The first is the category of chain complexes $\Ch^{\tensor}$ (over $\CC, \RR$) with symmetric monoidal product given by the tensor product.
-%The next is the category of dg Lie algebras $\dgLie^{\oplus}$ with symmetric monoidal structure given by the direct sum.
-%
-%In both of these categories there is the notion of a quasi-isomorphism, which allows us to weaken the above definition slightly.  
-%
-%\begin{dfn} 
-%Let $\sF$ be a prefactorization algebra on $X$ with values in $\sC = \Ch^{\tensor}$ or $\dgLie^{\oplus}$. 
-%Then, $\sF$ is a {\em homotopy factorization algebra} if
-%\begin{enumerate}
-%\item $\sF$ is a homotopy cosheaf with respect to the Weiss topology;
-%\item for any disjoint open sets $U, V \subset X$ the structure map $\sF(U) \tensor \sF(V) \to \sF(U \sqcup V)$ is a quasi-isomorphism.
-%\end{enumerate}
-%\end{dfn}
-%
-%%Not surprisingly, there is a version of the definition for homotopy factorization algebras with values in an arbitrary symmetric monoidal $\infty$-category, but we do not wish to dive into the general formalism here but refer to the source references \cite{AF1, LurieHA,..} for a complete treatment.
-%
-%For the remainder of this paper we will only discuss factorization algebras valued in these categories $\Ch^\tensor, \dgLie^{\oplus}$.
-%When we do not say otherwise, a {\em factorization algebra} will mean a homotopy factorization algebra with values in $\Ch$. 
-%Likewise, a {\em factorization Lie algebra} will mean a homotopy factorization algebra with values in $\dgLie$. 
-%Note that the direct sum is {\em not} the coproduct for Lie algebras, so a prefactorization Lie algebra is different than just a precosheaf of Lie algebras. 
-%
-%We have already encountered a modest extension of the category of dg Lie algebras to the category of $L_\infty$ algebras $\Lcat$ which will come up in our discussion below.
-%This category is also symmetric monoidal using the direct sum, and we will also refer to homotopy factorization algebras with values in $\Lcat$ as factorization Lie algebras.
-%
-%The primary appearance of factorization Lie algebras, for us, comes from local Lie algebras.
-% 
-%\begin{lem}
-%Suppose $(L, \{\ell_n\})$ is a local Lie algebra on $X$.
-%Then, the compactly supported sections $\sL$ has the structure of a factorization Lie algebra.
-%\end{lem}
-%\begin{proof}
-%%Since $\sL$ is the compactly supported sections of a graded vector bundle, it is a cosheaf. 
-%By the cosheaf property, we know that $\sL(U \sqcup V) \cong \sL(U) \oplus \sL(V)$. 
-%This is an isomorphism of $L_\infty$ algebras since any element of $\sL(U)$ commutes with $\sL(V)$ inside of $\sL(U \sqcup V)$. 
-%Similarly, if $\{U_i\}$ is a disjoint collection of opens in $X$ and $\sqcup_i U_i \subset W$, then we define the factorization structure map by
-%\[
-%\oplus_i \sL(U_i) \cong \sL(\sqcup_i U_i) \to \sL (W)
-%\]
-%where the second map is the structure map for the cosheaf. 
-%These structure maps exhibit $\sL$ as a prefactorization Lie algebra (i.e. a prefactorization algebra valued in the category of $L_\infty$ algebras). 
-%\end{proof}
-%
-%There is a functor from dg Lie algebras to cochain complexes 
-%\[
-%\clieu_* : \dgLie \to \Ch
-%\]
-%sending $(\fg, \d , [-,-])$ to the complex
-%\[
-%\clieu_* (\fg) = \left(\Sym(\fg[1]), \d + \d_{CE}\right) .
-%\]
-%Here, $\d$ denotes the extension of the differential on $\fg$ to the symmetric algebra by the Leibniz rule, and $\d_{CE}$ encodes the Lie bracket.
-%There is a completely similar functor from $L_\infty$ algebras to chain complexes that we denote by the same name.
-%
-%The functor $\clieu_*$ is symmetric monoidal with respect to the direct sum of Lie algebras and the tensor product of cochain complexes $\clieu_*(\fg \oplus \fh) = \clieu_*(\fg) \tensor \clieu_*(\fh)$. 
-%Since a factorization Lie algebra uses the direct sum monoidal structure, the following definition makes sense.
-%
-%\begin{dfn/lem}
-%Suppose $\sG$ is a factorization Lie algebra on a manifold $X$ then, $\clieu_*(\sG)$ has the structure of a factorization algebra (valued in cochain complexes with tensor product). 
-%\end{dfn/lem}
-%
-%We have already seen that every local Lie algebra gives rise to a factorization Lie algebra.
-%By the construction above, we obtain the following composition of functors.
-%\[
-%{\rm Lie}_X \to {\rm Fact}^{\rm Lie}_X \to {\rm Fact}_X
-%\]
-%Here ${\rm Lie}_X$ is the category of local Lie algebras on $X$.
-%If $\sL$ is a local Lie algebra we let $\UU(\sL)$ be the image under this composition, and call it the {\em enveloping factorization algebra} of $\sL$. 
 
 \subsection{Local cocycles and shifted extensions}
 
@@ -749,67 +541,54 @@ since $\theta$ is closed in~$\clies(\fg)$.
 
 As should be clear from the construction, everything here works over the site ${\rm Hol}_d$ of complex $d$-folds, and hence we use $\fj(\theta)$ to denote the local cocycle for the local Lie algebra $\sG$ on~${\rm Hol}_d$.
 
-There are two modest extensions of the construction. 
-\owen{You only write one, however, \dots What's the other?}
-First is to consider an arbitrary $G$-bundle $P$ on $X$. 
-When $\ad(P)$ is trivialized over an open set $U \subset X$,
-the formula for $\fj_X(\theta)$ makes sense on $\sAd(P)(U)$.
-This local expression for the cocycle is independent of the choice of coordinates,
-so we can glue over any sufficiently refined cover to obtain a global cocycle. 
+This construction works nicely for an arbitrary holomorphic $G$-bundle $P$ on $X$,
+because the cocycle is expressed in a coordinate-free fashion.
+To be explicit, on a coordinate patch $U_i \subset X$ with a choice of trivialization of the adjoint bundle $\ad(P)$,
+the formula for $\fj_X(\theta)$ makes sense.
+On an overlap $U_i \cap U_j$, the cocycles patch because $\fj_X(\theta)$ is independent of the choice of coordinates.
+Hence we can glue over any sufficiently refined cover to obtain a global cocycle. 
 Thus, we have a cochain map
 \[
 \fj_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
 \]
 given by the same formula as in~\eqref{j g formula}.
-\owen{Should we make this a definition?}
 
-%\subsubsection{Relation to Chern-Weil theory}
-%
-%\owen{I can't quite put my finger on what the main assertion is in this section. Is it relevant to anything else? Something along these lines might fit more naturally in the context of the anomaly section.}
-%
-%If $\fg$ is the Lie algebra of a group $G$, there is an interpretation of the space of extensions $\Sym^{d+1}(\fg^*)^\fg$ in terms of $G$.
-%Let $\Omega^j_G$ denote the sheaf of $j$-forms on $G$. 
-%
-%\begin{thm}{\cite{BottBG}}\label{prop: bott} Let $G$ be a Lie group (such as $\GL_n(\CC)$ or $U(n)$). 
-%Then, there is an isomorphism 
-%\[
-%H^i(G , \Omega^j_G) \cong H^{i-j}_c(G , {\rm Sym}^j (\fg^*)) .
-%\] 
-%Where the right-hand site denotes the continuous group cohomology.
-%\end{thm} 
-%
-%\begin{rmk}
-%The theorem above also holds integrally, as shown in \cite{Totaro}.
-%\end{rmk}
-%
-%The continuous group cohomology satisfies $H^k_c(G, \Sym^j(\fg^*)) = 0$ for $k > 0$ and $H^0_c(G, \Sym^j(\fg^*)) = \Sym^j(\fg^*)^G$.
-%Thus, the cohomology is supported along the diagonal and one has $H^{k}(G, \Omega^k_G) = \Sym^k(\fg^*)^G$. 
-%
-%This relationship is compatible with the classical construction of characteristic classes from invariant polynomials using Chern-Weil theory.
-%The Hodge-to-de Rham spectral sequence for the Lie group $G$ has $E_1$ page of the form $H^i(G, \Omega^j)$ and converges to the de Rham cohomology $H^*(BG)$. 
-%Since the cohomology is supported along the diagonal on the $E_1$ page there is a resulting map
-%\[
-%\Sym^j(\fg^*)^G \to H^*(B G) .
-%\]
-%This is the usual Chern-Weil map defining the universal characteristic classes for $G$-bundles.  
-%It is an isomorphism when $G$ is compact.
-%
-%\begin{rmk}
-%When $\fg$ is a an arbitrary dg Lie algebra, or more generally an $L_\infty$ algebra, we have encountered a version of $\fj_X(\theta)$ in Section \ref{sec: forms to local}. 
-%We showed that for any $L_\infty$ algebra there is a map of cochain complexes $J : \Omega^{d+1}_{cl}(B\fg) [d] \to \cloc^*(\sG_X)$.
-%The expression for $\fj_X$ in (\ref{j g formula}) is an explicit formula for this construction in the case that $\fg$ is an ordinary Lie algebra.
-%Indeed, when $\fg$ is an ordinary Lie algebra we have $H^{d+1} (\Omega^{d+1}_{cl}(B\fg)) = \Sym^{d+1}(\fg^*)^\fg$, so the construction in Section \ref{sec: forms to local} is a special case.
-%\end{rmk}
+\subsubsection{Another special class: the Nekrasov extensions}
+\label{sec: nekext}
 
-%Recall, that functions on the formal moduli space $B\fg$ associated to $\fg$ is given by $\sO(B\fg) = \clie^*(\fg)$. 
-%Similarly, the $k$-forms on $B\fg$ have a Lie algebraic expression:
-%\[
-%\Omega^k(B \fg) = \clie^*\left(\fg ; \Sym^k(\fg^*)[-k]\right)
-%\]
-%The space of {\em closed} $k$-forms is defined by the complex
-%\[
-%\Omega^k_{cl}(B \fg) = \Omega^k(B \fg) \xto{\partial} \Omega^{k+1}(B \fg) \xto \cdots
-%\]
+\owen{I gave the section this name because you said Nekrasov introduced these, or at least studied them heavily. We can adjust the name as you see fit.}
+
+Much of this paper focuses on local cocycles of type $\fj_X(\theta)$, where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+But there is another class of local cocycles that appear naturally when studying symmetries of holomorphic theories. 
+Unlike the cocycle $\fj_X(\theta)$, which only depend on the manifold $X$ through its dimension, 
+this class of cocycles depends on the geometry.
+
+Let $X$ be a complex manifold of dimension $d$ with a choice of $(k,k)$-form~$\eta$. 
+Choose a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
+This data determines a local cochain on~$\sG_X$ whose local functional~is:
+\[
+\begin{array}{cccc}
+\displaystyle \phi_{\theta, \eta} : & \sG(X)^{\tensor d + 1 - k} & \to & \CC \\
+\displaystyle & \alpha_0 \tensor\cdots \tensor \alpha_{d-k} & \mapsto & \displaystyle \int_X \eta \wedge \theta_{d+1-k}(\alpha_0, \partial\alpha_1,\ldots,\partial \alpha_{d-k})
+\end{array}.
+\]
+Such a cochain is a cocycle only if $\dbar \eta = 0$, because $\eta$ does not interact with the Lie structure. \owen{That's correct, right?}
+
+Note that a K\"{a}hler manifold always produces natural choices of $\eta$ by taking $\eta = \omega^{k}$, where $\omega$ is the symplectic form.
+In this way, K\"{a}hler geometry determines an important class of extensions.
+It would be interesting to explore what aspects of the geometry are reflected by these associated current algebras.
+\owen{How's that?}
+
+\begin{lem}\label{lem: cocycle KM}
+Fix $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$.
+If a form $\eta \in \Omega^{k,k}(X)$ satisfies $\dbar \eta = 0$ and $\partial \eta = 0$,
+then the local cohomology class $[\phi_{\theta,\omega}] \in H^1_{\rm loc}(\sG_X)$  depends only on the cohomology class $[\omega] \in H^{k}(X , \Omega^k_{cl})$.
+\end{lem}
+
+When $\eta = 1$, it trivially satisfies the conditions of the lemma. 
+In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
+
+\owen{Should we add a proof?}
 
 \subsection{The higher Kac-Moody factorization algebra}
 
@@ -918,28 +697,64 @@ we obtain an algebra (more precisely, a homotopy-coherent associative algebra) t
 \item by compactifying along a torus $(S^1)^d$, 
 we obtain an algebra over the little $d$-disks operad.
 \end{enumerate}
-In both cases these algebras behave like enveloping algebras of homotopy-coherent Lie algebras (in a sense we will spell out in detail below). 
-It is important to be aware that these algebras sit as dense subalgebra inside the algebraic structure produced by compactification;
-we will elaborate on this subtlety below.
+In both cases these algebras behave like enveloping algebras of homotopy-coherent Lie algebras (in a sense we will spell out in detail below), which allows for simpler descriptions of some phenomena. 
+It is important to be aware, however, that these algebras do not encode the full algebraic structure produced by the compactification; instead, they sit as dense subalgebras.
+We will elaborate on this subtlety below.
 
-To orient the reader, we quickly outline the key ideas.
-For the physically-minded, 
-we recall from the two-dimensional setting that it can be helpful to view the punctured plane as a cylinder,
+For factorization algebras, compactification is accomplished by the pushforward operation.
+Given a map $f: X \to Y$ of manifolds and a factorization algebra $\cF$ on $X$,
+its {\em pushforward} $f_* \cF$ is the factorization algebra on $Y$ where
+\[
+f_*\cF(U) = \cF(f^{-1}(U))
+\]
+for any open $U \subset Y$.
+The first example we treat arises from the radial projection map
+\[
+r: \CC^d \setminus \{0\} \to (0,\infty)
+\]
+sending $z$ to its length $|z|$. 
+The preimage of a point is simply a $2d-1$-sphere,
+so one can interpret the pushforward Kac-Moody factorization algebra $r_* \UU_\theta \cG_d$ as compactification along these spheres.
+Our first main result is that there is a locally constant factorization algebra $\cA$ along $(0,\infty)$ with a natural map
+\[
+\phi: \cA \to r_* \UU_\theta \cG_d
+\]
+that is dense from the point of view of the topological vector space structure.
+By a theorem of Lurie, locally constant factorization algebras on $\RR$ correspond to homotopy-coherent associative algebras,
+so that we can interpret $\phi$ as saying that the pushforward is approximated by an associative algebra, in this derived sense.
+We will show explicitly that this algebra is the $A_\infty$ algebra arising as the enveloping algebra of an $L_\infty$ algebra already introduced by Faonte-Hennion-Kapranov.
+
+For the physically-minded reader, 
+this process should be understood as a version of radial ordering.
+Recall from the two-dimensional setting that it can be helpful to view the punctured plane as a cylinder,
 and to use the radius as a kind of time parameter.
-Time ordering of operators is then replaced by radial ordering;
-concatenating nested annuli is the geometric source .
-Many computations can be nicely organized in this manner.
-From this perspective, the Hilbert space is associated to the origin in the plane 
+Time ordering of operators is then replaced by radial ordering.
+Many computations can be nicely organized in this manner,
+because a natural class of operators arises by using a Cauchy integral around the circle of a local operator.
+The same technique works in higher dimensions where one now computes residues along the $2d-1$-spheres.
+From this perspective, the natural Hilbert space is associated to the origin in the plane
 (more accurately to an arbitrarily small disk around the origin),
-as one can concatenate annuli 
+and this picture also extends to higher dimensions.
+Hence we obtain a kind of vacuum module for this higher dimensional generalization of the Kac-Moody algebras.
 
+Our second cluster of results uses compactification along the projection map
+\[
+\begin{array}{ccc}
+\CC^d \setminus \{\text{coordinate hyperplanes}\} & \to & (0,\infty)^d \\
+(z_1,\ldots,z_d) & \mapsto & (|z_1|,\ldots,|z_d|).
+\end{array}
+\]
+We construct a locally constant factorization algebra on $(0,\infty)^d$ that maps densely into the pushforward of the higher Kac-Moody algebra. 
+Lurie's theorem shows that locally constant factorization algebras on $\RR^d$ correspond to $E_d$ algebras,
+so we obtain a higher-dimensional analog of the spherical result.
+%The annular algebra $\sA$ that we just discussed in the complex one-dimensional case has a generalization to arbitrary dimensions.The higher dimensional versions of annuli we consider are given by open sets equal to neighborhoods of $(2d-1)$-spheres.
+%In this section we describe the higher dimensional version of this annular algebra for the Kac-Moody factorization algebra.
+%This amounts to specializing the factorization algebra to the complex manifold $X = \CC^d \setminus \{0\}$ and extracting the data of an $A_\infty$-algebra from the factorization product in the radial direction.
+%The reduction of the factorization algebra along $S^{2d-1} \subset \CC^d \setminus \{0\}$ produces a one-dimensional factorization algebra via pushing forward along the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$.
+%Embedded inside of this factorization algebra is a locally constant factorization algebra, which will define for us our $A_\infty$-algebra.
+%Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
 
-The annular algebra $\sA$ that we just discussed in the complex one-dimensional case has a generalization to arbitrary dimensions.The higher dimensional versions of annuli we consider are given by open sets equal to neighborhoods of $(2d-1)$-spheres.
-In this section we describe the higher dimensional version of this annular algebra for the Kac-Moody factorization algebra.
-This amounts to specializing the factorization algebra to the complex manifold $X = \CC^d \setminus \{0\}$ and extracting the data of an $A_\infty$-algebra from the factorization product in the radial direction.
-The reduction of the factorization algebra along $S^{2d-1} \subset \CC^d \setminus \{0\}$ produces a one-dimensional factorization algebra via pushing forward along the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$.
-Embedded inside of this factorization algebra is a locally constant factorization algebra, which will define for us our $A_\infty$-algebra.
-Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
+\owen{I want to move this into the next subsections}
 
 We will recognize this $A_\infty$-algebra as the universal enveloping algebra of an $L_\infty$ algebra which is obtained as a central extension of an algebraic version of the sphere algebra
 \beqn\label{mapping space}
@@ -997,7 +812,50 @@ We will show how to extract the data of an $E_d$-algebra from this configuration
 %\]
 %\end{thm}
 
-\subsection{Derived functions on punctured affine space}
+%\begin{dfn} Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
+%Let $\Hat{\fg}_{d,\theta}$ be the $L_\infty$ central extension
+%\[
+%\CC \to \Hat{\fg}_{d,\theta} \to A_d \tensor \fg
+%\]
+%determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
+%\[
+%\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
+%\]
+%where $a_i \tensor X_i \in A_d \tensor \fg$. 
+%\end{dfn}
+
+\subsection{Compactifying the higher Kac-Moody algebras along spheres}
+
+Our approach is modeled on the construction of the affine Kac-Moody Lie algebras and their associated vertex algebras from Section 5.5 of~\cite{CG1} and~\cite{OGthesis},
+so we review the main ideas to orient the reader.
+
+On the punctured plane $\CC^\star$, the sheaf $
+\sG_1 = \Omega^{0,*} \otimes \fg$ is quasi-isomorphic to the sheaf $\cO \otimes \fg$.
+The restriction maps of this sheaf tell us that for any open set $U$, there is a map of Lie algebras
+\[
+\cO(\CC^\star) \otimes \fg \to \cO(U) \otimes \fg,
+\]
+so that we get a map of Lie algebras
+\[
+\cO_{\rm alg}(\CC^\star) \otimes \fg = \fg[z,z^{-1}] \to  \cO(U) \otimes \fg
+\]
+because Laurent polynomials are well-defined on any open subset of the punctured plane.
+This {\em loop algebra} $L\fg = \fg[z,z^{-1}]$ admits interesting central extensions,
+known as the affine Kac-Moody Lie algebras.
+
+The enveloping factorization algebra $\UU\sG_1$
+annulus $A=\{r< |z|<R\}$
+There are two aspects to this construction:
+\begin{enumerate}
+\item finding a 
+\end{enumerate}
+
+%We consider the restriction of the factorization algebra $\UU_\theta (\sG)$ on $\CC^{d} \setminus \{0\}$ to the collection of open sets diffeomorphic to spherical shells.
+%This restriction has the structure of a one-dimensional factorization algebra corresponding to the iterated nesting of spherical shells. 
+%We show that there is a dense subfactorization algebra that is locally constant, hence corresponds to an $E_1$ algebra.
+%We conclude by identifying an $A_\infty$ model for this algebra as the universal enveloping algebra of a certain $L_\infty$ algebra, that agree with the higher dimensional affine algebras.
+
+\subsubsection{Derived functions on punctured affine space}
 
 The affine algebra associated to a Lie algebra $\fg$ together with an invariant pairing $\kappa$ is defined as a central extension of the loop algebra of $\fg$
 \[
@@ -1054,24 +912,7 @@ It is immediate that this cocycle has cohomological degree $+2$ and so determine
 \eeqn
 Our aim is to show how the Kac-Moody factorization algebra is related to this dg Lie algebra. 
 
-%\begin{dfn} Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
-%Let $\Hat{\fg}_{d,\theta}$ be the $L_\infty$ central extension
-%\[
-%\CC \to \Hat{\fg}_{d,\theta} \to A_d \tensor \fg
-%\]
-%determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
-%\[
-%\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
-%\]
-%where $a_i \tensor X_i \in A_d \tensor \fg$. 
-%\end{dfn}
-
-\subsection{Compactifying the higher Kac-Moody algebras along spheres}
-
-We consider the restriction of the factorization algebra $\UU_\theta (\sG)$ on $\CC^{d} \setminus \{0\}$ to the collection of open sets diffeomorphic to spherical shells.
-This restriction has the structure of a one-dimensional factorization algebra corresponding to the iterated nesting of spherical shells. 
-We show that there is a dense subfactorization algebra that is locally constant, hence corresponds to an $E_1$ algebra.
-We conclude by identifying an $A_\infty$ model for this algebra as the universal enveloping algebra of a certain $L_\infty$ algebra, that agree with the higher dimensional affine algebras.
+\subsubsection{}
 
 Introduce the radial projection map
 \[
@@ -1541,6 +1382,8 @@ Moreover, for fixed $\theta$ the cohomology class $[\phi_{\theta,\omega}] \in H^
 
 Note that when $\omega = 1$ it trivially satisfies the conditions of the lemma. 
 In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
+
+\owen{I moved everything above to Section~\ref{sec: nekext}.}
 
 This class of cocycles is related to the ordinary Kac-Moody factorization and vertex algebra on Riemann surfaces in a natural way.
 Consider the following two examples. 
