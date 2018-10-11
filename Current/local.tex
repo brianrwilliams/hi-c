@@ -142,22 +142,56 @@ We will show how to extract the data of an $E_d$-algebra from this configuration
 Our approach is modeled on the construction of the affine Kac-Moody Lie algebras and their associated vertex algebras from Section 5.5 of~\cite{CG1} and~\cite{OGthesis},
 so we review the main ideas to orient the reader.
 
-On the punctured plane $\CC^\star$, the sheaf $
-\sG_1 = \Omega^{0,*} \otimes \fg$ is quasi-isomorphic to the sheaf $\cO \otimes \fg$.
+On the punctured plane $\CC^*$, the sheaf $
+\sG_1^{sh} = \Omega^{0,*} \otimes \fg$ is quasi-isomorphic to the sheaf $\cO \otimes \fg$.
 The restriction maps of this sheaf tell us that for any open set $U$, there is a map of Lie algebras
 \[
-\cO(\CC^\star) \otimes \fg \to \cO(U) \otimes \fg,
+\cO(\CC^*) \otimes \fg \to \cO(U) \otimes \fg,
 \]
 so that we get a map of Lie algebras
 \[
-\cO_{\rm alg}(\CC^\star) \otimes \fg = \fg[z,z^{-1}] \to  \cO(U) \otimes \fg
+\cO_{\rm alg}(\CC^*) \otimes \fg = \fg[z,z^{-1}] \to  \cO(U) \otimes \fg
 \]
-because Laurent polynomials are well-defined on any open subset of the punctured plane.
+because Laurent polynomials $\CC[z,z^{-1}] = \cO_{\rm alg}(\CC^*)$ are well-defined on any open subset of the punctured plane.
 This {\em loop algebra} $L\fg = \fg[z,z^{-1}]$ admits interesting central extensions,
 known as the affine Kac-Moody Lie algebras.
+These extensions are labeled by elements of $\Sym^2(\fg^*)^\fg$, 
+which is compatible with our work in Section~\ref{sec: g j functional}.
 
-The enveloping factorization algebra $\UU\sG_1$
-annulus $A=\{r< |z|<R\}$
+To apply radial ordering to this sheaf---or rather, its associated current algebras---it is convenient to study the pushforward along the radial projection map $r(z) = |z|$.
+Note that the preimage of an interval $(a,b)$ is an annulus, so
+\[
+r_* \sG_1^{sh}((a,b)) = \sG_1^{sh}(\{a < |z| < b\})
+\]
+and hence we have a canonical map of Lie algebras
+\[
+\fg[z,z^{-1}] \to \cO(\{a < |z| < b\}) \otimes \fg \hookrightarrow r_* \sG_1^{sh}((a,b)).
+\]
+We can refine this situation by replacing the left hand side with the locally constant sheaf $\underline{\fg[z,z^{-1}]}$ to produce a map of sheaves $\underline{\fg[z,z^{-1}]} \to  r_* \sG_1^{sh}((a,b))$.
+The Poincar\'e lemma tells us that $\Omega^*$ is quasi-isomorphic to the locally constant sheaf $\underline{\CC}$,
+and so we can introduce a sheaf
+\[
+\mathtt{Lg}^{sh} = \Omega^* \otimes \fg[z,z^{-1}]
+\]
+that is a soft resolution of $\underline{\fg[z,z^{-1}]}$.
+There is then a map of sheaves of dg Lie algebras
+\[
+\mathtt{Lg}^{sh} \to r_* \sG_1^{sh}
+\]
+that sends $\alpha \otimes x\, z^n$ to $r^*\alpha \cdot z^n \otimes x$, with $x \in \fg$ and $\alpha$ a differential form on $(0,\infty)$.
+This map restricts nicely to compactly support sections $\mathtt{Lg} \to r_* \sG$.
+By taking Chevalley-Eilenberg chains on both sides, we obtain a map of factorization algebras
+\[
+\UU\mathtt{Lg} = \cliel(\mathtt{Lg}) \to \cliel(r_* \sG) = r_*\UU\sG.
+\]
+The left hand side encodes the associative algebra $U(L\fg)$, the enveloping algebra of $L\fg$,
+as can be seen by direct computation (see section 3.4 of \cite{CG1}) or by a general result of Knudsen~\cite{Knudsen}.
+The right hand side contains operators encoded by Cauchy integrals, 
+and it is possible to identify such as operator, up to exact terms, as the limit of a sequence of elements from~$U(L\fg)$.
+
+We extend this argument to the affine Kac-Moody Lie algebras by working with suitable extensions on $\mathtt{Lg}$.
+It is a deformation-theoretic argument, as we view the extensions as deforming the bracket.
+
 There are two aspects to this construction:
 \begin{enumerate}
 \item finding a 
