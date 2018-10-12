@@ -188,7 +188,7 @@ This map restricts nicely to compactly support sections $\mathtt{Lg} \to r_* \sG
 By taking Chevalley-Eilenberg chains on both sides, we obtain a map of factorization algebras
 \beqn
 \label{eqn:Uoflooptolinearcurrent}
-\UU\mathtt{Lg} = \cliel(\mathtt{Lg}) \to \cliel(r_* \sG) = r_*\UU\sG.
+\UU\mathtt{Lg} = \cliels(\mathtt{Lg}) \to \cliels(r_* \sG) = r_*\UU\sG.
 \eeqn
 The left hand side $\UU\mathtt{Lg}$ encodes the associative algebra $U(L\fg)$, the enveloping algebra of $L\fg$,
 as can be seen by direct computation (see section 3.4 of \cite{CG1}) or by a general result of Knudsen~\cite{Knudsen}.
@@ -470,7 +470,7 @@ The map
 is a map of precosheaves of dg Lie algebras.
 It determines a map of factorization algebras
 \[
-\cliel(\pi_{\Sph_d(\fg)}) : \UU\left(\Omega^{*}_{\RR_{>0}} \tensor \Sph_d(\fg)\right) \to r_*\left(\UU \sG \right) .
+\cliels(\pi_{\Sph_d(\fg)}) : \UU\left(\Omega^{*}_{\RR_{>0}} \tensor \Sph_d(\fg)\right) \to r_*\left(\UU \sG \right) .
 \]
 \end{prop}
 
@@ -704,5 +704,60 @@ U^{E_d} \left( \Hat{L^d \fg}_{\theta} \right) .
 
 %\subsection{The disk as a module}
 
-\subsection{Large $N$ limits}
+\subsection{The large $N$ limit}
+
+\def\cycls{{\rm Cyc}_*}
+\def\lqt{{\ell q t}}
+\def\colim{{\rm colim}}
+\def\sl{\mathfrak{sl}}
+
+We take a slight detour from the main course of this paper to remark on something special that happens for the case of $\gl_N$ as $N$ goes to infinity.
+The observations we make here are borrowed from unpublished work of the first author with Greg Ginot and Mahmoud Zeinalian,
+but they are closely related to prior work of Costello-Li \cite{} and Movshev-Schwarz~\cite{}.
+
+The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
+which yields a natural map
+\[
+\lqt(A) :\colim_{N}\, \cliels(\gl_N(A)) \cong \cliels(\gl_\infty(A)) \to \Sym(\cycls(A)[1])
+\]
+for any dg algebra $A$ over a field $k$ of characteristic~0.
+(It works even for $A_\infty$ algebras.)
+Naturality here means that it works over the category of dg algebras and maps of dg algebras.
+When restricted to the $\sl_\infty(k)$-invariants, we obtain a quasi-isomorphism
+\[
+\lqt(A) :\cliels(\gl_\infty(A))^{\sl_\infty(k)} \xto{\simeq} \Sym(\cycls(A)[1]),
+\]
+even when $A$ is nonunital. 
+(When $A$ is unital, the $\sl_\infty(k)$-invariants are quasi-isomorphic to the full Chevalley-Eilenberg chains,
+making for a very nice relationship.)
+
+By taking $A$ to be the cosheaf $\Omega^{0,*}_c$ on a complex manifold $X$,
+we obtain the following.
+
+\begin{cor}
+Let $\sG l_N$ denote the local Lie algebra $\Omega^{0,*} \otimes \gl_N$.
+For every $N$, there is a map of prefactorization algebras
+\[
+\lqt_N: \UU \sG l_N \to \Sym(\cycls(\Omega^{0,*}_c)[1])
+\]
+that factors through a map of prefactorization algebras
+\[
+\lqt: \UU \sG l_\infty \to \Sym(\cycls(\Omega^{0,*}_c)[1]).
+\]
+On any complex $d$-fold $X$, there is a quasi-isomorphism
+\[
+\lqt(X): \UU \sG l_\infty(X)^{\sl_\infty(\CC)} \to \Sym(\cycls(\Omega^{0,*}_c(X))[1]),
+\]
+and on closed $X$, there is a quasi-isomorphism
+\[
+\lqt(X): \UU \sG l_\infty(X) \to \Sym(\cycls(\Omega^{0,*}_c(X))[1]).
+\]
+\end{cor}
+
+
+
+
+
+
+
 
