@@ -46,15 +46,15 @@ Often times when we describe a local functional we will write down its value on 
 
 There is a succinct way of expressing holomorphic translation invariance as the Lie algebra invariants of a certain {\em dg Lie algebra}.
 Denote by $\CC^d[1]$ the abelian $d$-dimensional graded Lie algebra in concentrated in degree $-1$ by the elements $\{\Bar{\eta}_i\}$.
-We want to consider deformations that are invariant for the action by the total {\em dg} Lie algebra $\CC^{2d|d} = \CC^{2d} \oplus \CC^d[1]$.
+We want to consider deformations that are invariant for the action by the total {\em dg} Lie algebra $\CC^{d}_{\rm hol} = \CC^{2d} \oplus \CC^d[1]$.
 The differential sends $\eta_i \mapsto \frac{\partial}{\partial \zbar_i}$.
-The space of holomorphically translation invariant local functionals are denoted by $\oloc(\sE_V)^{\CC^{2d|d}}$.
-The enveloping algebra of $\CC^{2d|d}$ is of the form
+The space of holomorphically translation invariant local functionals are denoted by $\oloc(\sE_V)^{\CC^d_{\rm hol}}$.
+The enveloping algebra of $\CC^d_{\rm hol}$ is of the form
 \beqn
-U(\CC^{2d|d}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}{\partial \zbar_i}, \eta_i \right]
+U(\CC^{d}_{\rm hol}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}{\partial \zbar_i}, \eta_i \right]
 \eeqn
-with differential induced from that in $\CC^{2d|d}$. 
-Note that this algebra is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators $\CC[\partial / \partial z_i] \xto{\simeq} U(\CC^{2d|d})$. 
+with differential induced from that in $\CC^{d}_{\rm hol}$. 
+Note that this algebra is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators $\CC[\partial / \partial z_i] \xto{\simeq} U(\CC^{d}_{\rm hol})$. 
 
 
 In this section we specialize the functional $J$ to the space $Y = \CC^d$ and use it to completely characterize the $U(d)$-invariant, holomorphically translation invariant deformation complex.
@@ -62,7 +62,7 @@ In this section we specialize the functional $J$ to the space $Y = \CC^d$ and us
 \begin{prop}\label{prop: local def}
 The map $J : \Omega^{d+1}_{cl}(B \fg) [d] \to \Def_{\CC^d \to B \fg}^{\rm cot}$ factors through the holomorphically translation invariant deformation complex:
 \beqn
-J : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\Def^{\rm cot}_{\CC^d \to B \fg}\right)^{\CC^{2d|d}} .
+J : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\Def^{\rm cot}_{\CC^d \to B \fg}\right)^{\CC^{d}_{\rm hol}} .
 \eeqn
 Furthermore, $J$ defines a quasi-isomorphism into the $U(d)$-invariant subcomplex of the right-hand side.
 \end{prop}
@@ -73,7 +73,7 @@ Note that the deformation complex is simply the (reduced) local cochains on the 
 Thus, in the notation of Section \ref{sec: hol theory} the bundle $V$ is simply the trivial bundle $\fg$.
 Thus, we see that the translation invariant deformation complex is quasi-isomorphic to the following cochain complex
 \beqn
-\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^{2d|d}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
+\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
 \eeqn
 We'd like to recast the right-hand side in a more geometric way. 
 
@@ -194,16 +194,16 @@ Doing this we have the following corollary.
 Let $\Def_n$ be the deformation complex of the formal $\beta\gamma$ system with target $\hD^n$.
 There is a $(\Vect, \GL_n)$-equivariant quasi-isomorphism
 \beqn
-J : \hOmega^{d+1}_{n,cl} [d] \xto{\simeq} \left(\left(\Def^{\rm cot}_n\right)^{\CC^{2d|d}}\right)^{U(d)} \subset \Def_n .
+J : \hOmega^{d+1}_{n,cl} [d] \xto{\simeq} \left(\left(\Def^{\rm cot}_n\right)^{\CC^d_{\rm hol}}\right)^{U(d)} \subset \Def_n .
 \eeqn
 \end{cor}
 
 This induces a quasi-isomorphism into the $(\Vect, \GL_n)$-equivariant deformation complex
 \[
 \label{j w map}
-J^{\rm W} : \clie^*(\Vect , \GL_n ; \hOmega^{d+1}_{n,cl}) \xto{\simeq} \left(\left(\Def^{\rm W, cot}_n\right)^{\CC^{2d|d}}\right)^{U(d)} \subset \Def_n^{\rm W} .
+J^{\rm W} : \clie^*(\Vect , \GL_n ; \hOmega^{d+1}_{n,cl}) \xto{\simeq} \left(\left(\Def^{\rm W, cot}_n\right)^{\CC^d_{\rm hol}}\right)^{U(d)} \subset \Def_n^{\rm W} .
 \]
 Moreover, upon performing Gelfand-Kazhdan descent, it implies that on any complex manifold $X$ we can use $J$ to identify the deformation complex for the holomorphic $\sigma$-model of maps $\CC^d \to X$:
 \beqn
-J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to X} \right)^{\CC^{2d|d}}\right)^{U(d)} .
+J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to X} \right)^{\CC^d_{\rm hol}}\right)^{U(d)} .
 \eeqn

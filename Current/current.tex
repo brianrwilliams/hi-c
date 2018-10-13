@@ -89,6 +89,8 @@ whose differential is $\dbar_P$, and whose bracket is the pointwise operation ju
 
 \owen{We should add some remark about Atiyah algebras \dots We could also add a comment about the deformation-theoretic content of this dg Lie algebra.}
 
+\brian{I did a bit in my thesis, but it may be a hack job}
+
 This construction admits important variations.
 For example, we can move from working over a fixed manifold $X$ to working over a site.
 Let ${\rm Hol}_d$ denote the category whose objects are complex $d$-folds and whose morphisms are local biholomorphisms,\footnote{A biholomorphism is a bijective map $\phi: X \to Y$ such that both $\phi$ and $\phi^{-1}$ are holomorphic. A {\em local} biholomorphism means a map $\phi: X \to Y$ such that every point $x \in X$ has a neighborhood on which $\phi$ is a biholomorphism.}
@@ -110,7 +112,7 @@ Restricted to each slice ${{\rm Hol}_d}_{/X}$, it determines the local Lie algeb
 We use $\sG$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
 \end{dfn}
 
-\owen{Should we call this $\sG_d$ or just the restriction to submanifolds of $\CC^d$?}
+%\owen{Should we call this $\sG_d$ or just the restriction to submanifolds of $\CC^d$?}
 
 \begin{rmk}
 It is not necessary to start with a complex Lie group: 
@@ -127,7 +129,7 @@ In the case that $X = \CC^d$ we will denote the sheaves and cosheaves of the loc
 \subsection{Current algebras as enveloping factorization algebras of local Lie algebras}
 
 Local Lie algebras often appear as symmetries of classical field theories.
-For instance, as we will show in section \owen{add cross ref}, 
+For instance, as we will show in Section \ref{sec: charge}, 
 each finite-dimensional complex representation $V$ of a Lie algebra $\fg$
 determines a charged $\beta\gamma$-type system on a complex $d$-fold $X$ with choice of holomorphic principal bundle $\pi: P \to X$.
 Namely, the on-shell $\gamma$ fields are holomorphic sections for the associated bundle $P \times^G V \to X$, 
@@ -277,6 +279,7 @@ For a local Lie algebra, this $JL$ obtains the structure of a dg Lie algebra in 
 Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\clies(JL)$ in the category of left $D_X$-modules. 
 By taking the de Rham complex of this left $D_X$-module, we obtain the local cochains.
 \owen{I took the full de Rham complex, but if you prefer, we can just tensor with densities.}
+\brian{don't you have to use derived tensor product if you use full de Rham?}
 For a variety of reasons, it is useful to ignore the ``constants'' term and work with the reduced cochains.
 Hence we have the following definition.
 
@@ -436,15 +439,17 @@ Thus, we have a cochain map
 \]
 given by the same formula as in~\eqref{j g formula}.
 
-\subsubsection{Another special class: the Nekrasov extensions}
+\subsubsection{Another special class: the LMNS extensions}
 \label{sec: nekext}
-
-\owen{I gave the section this name because you said Nekrasov introduced these, or at least studied them heavily. We can adjust the name as you see fit.}
 
 Much of this paper focuses on local cocycles of type $\fj_X(\theta)$, where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
 But there is another class of local cocycles that appear naturally when studying symmetries of holomorphic theories. 
 Unlike the cocycle $\fj_X(\theta)$, which only depend on the manifold $X$ through its dimension, 
 this class of cocycles depends on the geometry.
+
+In complex dimension two, this class of cocycles has appeared in the work of Losev-Moore-Nekrasov-Shatashvili (LMNS) \cite{LMNS1,LMNS2,LMNS3} in their construction of a higher analog of the ``chiral WZW theory". 
+Though our approaches differ, we share their ambition to formulate a higher dimensional version of chiral CFT. 
+\brian{this sentence seems out of place.}
 
 Let $X$ be a complex manifold of dimension $d$ with a choice of $(k,k)$-form~$\eta$. 
 Choose a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
@@ -455,12 +460,11 @@ This data determines a local cochain on~$\sG_X$ whose local functional~is:
 \displaystyle & \alpha_0 \tensor\cdots \tensor \alpha_{d-k} & \mapsto & \displaystyle \int_X \eta \wedge \theta_{d+1-k}(\alpha_0, \partial\alpha_1,\ldots,\partial \alpha_{d-k})
 \end{array}.
 \]
-Such a cochain is a cocycle only if $\dbar \eta = 0$, because $\eta$ does not interact with the Lie structure. \owen{That's correct, right?}
+Such a cochain is a cocycle only if $\dbar \eta = 0$, because $\eta$ does not interact with the Lie structure.
 
 Note that a K\"{a}hler manifold always produces natural choices of $\eta$ by taking $\eta = \omega^{k}$, where $\omega$ is the symplectic form.
 In this way, K\"{a}hler geometry determines an important class of extensions.
 It would be interesting to explore what aspects of the geometry are reflected by these associated current algebras.
-\owen{How's that?}
 
 \begin{lem}\label{lem: cocycle KM}
 Fix $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$.
@@ -471,7 +475,7 @@ then the local cohomology class $[\phi_{\theta,\omega}] \in H^1_{\rm loc}(\sG_X)
 When $\eta = 1$, it trivially satisfies the conditions of the lemma. 
 In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
 
-\owen{Should we add a proof?}
+%\owen{Should we add a proof?}
 
 \subsection{The higher Kac-Moody factorization algebra}
 
@@ -525,7 +529,7 @@ Hence it is interesting to identify when the higher Kac-Moody factorization alge
 We now address this question.
 
 First, note that on the complex $d$-fold $X = \CC^d$, 
-the local Lie algebra $\sG_{\CC^d}$ is manifestly equivariant under translation.
+the local Lie algebra $\sG_{d}$ is manifestly equivariant under translation.
 
 It is important to recognize that this translation action is holomorphic in the sense that the infinitesimal action of the (complexified) vector fields $\partial/\partial \Bar{z}_i$ is homotopically trivial.
 Explicitly, consider the operator $\eta_i = \iota_{\partial/\partial \Bar{z}_i}$ on Dolbeault forms
@@ -535,13 +539,13 @@ note that
 [\dbar, \eta_i] = \partial/\partial \Bar{z}_i.
 \]
 Both the infinitesimal actions and this homotopical trivialization extend canonically to the Chevalley-Eilenberg chains of $\sG_{\CC^d}$ and hence to the enveloping factorization algebra and the current algebras.
-(For more discussion of these ideas see \owen{ref your paper as well as book}.)
+(For more discussion of these ideas see \cite{BWhol} and Chapter 10 of \cite{CG2}.)
 
 A succinct way to express this feature is to introduce a dg Lie algebra  
 \[
 \CC^d_{\rm hol} = \text{span}_\CC\{\partial/\partial z_1, \ldots, \partial/\partial z_d, \partial/\partial \Bar{z}_1,\ldots,\partial/\partial \Bar{z}_d, \eta_1,\ldots, \eta_d\}
 \]
-where the partial derivatives have degree 0 and the $\eta_i$ have degree -1,
+where the partial derivatives have degree 0 and the $\eta_i$ have degree $-1$,
 where the brackets are all trivial, 
 and where the differential behaves like $\dbar$ in the sense that the differential of $\eta_i$ is $\partial/\partial \Bar{z}_i$.
 We just argued in the preceding paragraph that $\sG_{\CC^d}$ and its current algebras are all strictly $\CC^d_{\rm hol}$-invariant. 
@@ -550,7 +554,7 @@ When studying shifted extensions of $\sG_{\CC^d}$,
 it then makes sense to consider local cocycles that are also translation invariant in this sense.
 Explicitly, we ask to work with cocycles~in
 \[
-\cloc^*(\sG_{\CC^d})^{\CC^d_{\rm hol}} \subset \cloc^*(\sG_{\CC^d}).
+\cloc^*(\sG_{d})^{\CC^d_{\rm hol}} \subset \cloc^*(\sG_{d}).
 \]
 Local cocycles here determine higher Kac-Moody algebras that are holomorphically translation invariant and hence yield ${\rm PDiscs}_d$-algebras.
 
@@ -558,10 +562,10 @@ The following result indicates tells us that we have already encountered all the
 
 \begin{prop}
 \label{prop: trans j}
-The map $\fj_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{\CC^d})$ factors through the  subcomplex of local cochains that are rotationally and holomorphically translation invariant.
+The map $\fj_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{d})$ factors through the  subcomplex of local cochains that are rotationally and holomorphically translation invariant.
 This map 
 \[
-\fj_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG({\CC^d}))^{\CC^{d}_{\rm hol}}\right)^{U(d)}
+\fj_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG_d))^{\CC^{d}_{\rm hol}}\right)^{U(d)}
 \]
 is a quasi-isomorphism.
 \end{prop}

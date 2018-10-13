@@ -256,8 +256,6 @@ It should be no surprise that we like to work with the Dolbeault complex,
 but there is also an explicit dg model $A_d$ for the algebraic version derived global sections due to Faonte-Hennion-Kapranov \cite{FHK} and based on the Jouanolou method for resolving singularities. 
 In fact, they provide a model for the algebraic $p$-forms as well.
 
-\owen{I rewrote the definition from your thesis' appendix to match what FHK actually write. Please double check.}
-
 \begin{dfn}
 Let $a_d$ denote the algebra  
 \[
@@ -367,12 +365,11 @@ For any $\theta \in \Sym^{d+1}(\fg^*)^\fg$, Faonte-Hennion-Kapranov define the c
 & a_0 \otimes \cdots \otimes a_d & \mapsto & \Res_{z=0} \theta(a_0,\partial a_1,\ldots,\partial a_d)
 \end{array}.
 \]
-\owen{I changed $\d$ (for de Rham) with $\partial$, since I think that's clearer. Tell me what you think.}
 This cocycle has cohomological degree $2$ and so determines an unshifted central extension of $A_d \tensor \fg$:
 \beqn\label{gdt}
 \CC \cdot K \to \Hat{\fg}_{d, \theta} \to A_d \tensor \fg .
 \eeqn
-\owen{You wrote dg Lie but I think it must be $L_\infty$, right?}
+%\owen{You wrote dg Lie but I think it must be $L_\infty$, right?}
 Our aim is now to show how the Kac-Moody factorization algebra is related to this $L_\infty$ algebra,
 which is a higher-dimensional version of the affine Kac-Moody Lie algebras. 
 
@@ -764,6 +761,11 @@ Where the cyclic quotient $A^{\otimes n}/C_n$ would appear for an ordinary algeb
 we take the $\Omega^{0,*}(X^n)/C_n$ and so on.
 \owen{I need to check that the $\Sym$ doesn't lead to issues \dots If we must, we can ignore the quasi-isomorphism and focus on the map just to cyclic homology.}
 \end{rmk}
+
+\brian{Would it also be a good idea to remark on the ``local cyclic cohomology"?
+I think that's even easier to compute in this case, and we could point to the extensions.
+I can put that in if you'd like.
+}
 
 This result has teeth because it is possible to compute the relevant cyclic homology.
 For simplicity, consider the case where $X$ is closed, 
