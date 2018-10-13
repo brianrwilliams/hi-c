@@ -311,7 +311,7 @@ Similarly, local cocycles provide shifted central extensions of local Lie algebr
 \begin{dfn}
 For a local Lie algebra $(L, \ell_1,\ell_2)$, a cocycle $\Theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
 \beqn\label{kext}
-0 \to \CC[k] \to \Hat{\sL}_\theta \to \sL \to 0
+0 \to \CC[k] \to \Hat{\sL}_\Theta \to \sL \to 0
 \eeqn
 of precosheaves of $L_\infty$ algebras, where the $L_\infty$ structure maps are defined by
 \[
@@ -484,12 +484,13 @@ Finally, we can introduce the central object of this paper.
 
 \begin{dfn}
 Let $X$ be a complex manifold of complex dimension $d$ equipped with a holomorphic principal $G$-bundle $P$.
-Let $\Theta$ be a degree 1 cocycle in $\cloc^*(\sAd(P))$. 
+Let $\Theta$ be a degree 1 cocycle in $\cloc^*(\sAd(P))$, 
+which determines a 1-shifted central extension $\sAd(P)_\Theta$.
 The {\em Kac-Moody factorization algebra on $X$ of type $\Theta$} is the twisted enveloping factorization algebra $\UU_\Theta (\sAd(P))$ that assigns
 \[
 \left(\Sym\left(\Omega^{0,*}_c(U, \ad(P))[1]\right) [K] , \dbar + \d_{CE} + \Theta\right) 
 \]
-to an open set $U \subset X$~is
+to an open set $U \subset X$.
 \end{dfn}
 
 \begin{rmk} 
@@ -502,7 +503,8 @@ The most important class of such higher Kac-Moody algebras makes sense over the 
 
 \begin{dfn}
 Let $\fg$ be an ordinary Lie algebra and let $\theta \in \Sym^{d+1}(\fg^*)^\fg$.  
-Let $\UU_\theta (\sG)$ denote the twisted enveloping factorization algebra $\UU_{\fj(\theta)} (\sG)$ for the local Lie algebra $\sG = \Omega^{0,*}_c \otimes \fg$ on the site ${\rm Hol}_d$ of complex $d$-folds.
+Let $\sG_{d,\fj(\theta)}$ denote the 1-shifted central extension of $\sG_d$ determined by the local cocycle $\fj(\theta)$.
+Let $\UU_\theta (\sG)$ denote the {\em $\theta$-twisted enveloping factorization algebra} $\UU_{\fj(\theta)} (\sG)$ for the local Lie algebra $\sG = \Omega^{0,*}_c \otimes \fg$ on the site ${\rm Hol}_d$ of complex $d$-folds.
 \end{dfn}
 
 In the case $d = 1$ the definition above agrees with the Kac-Moody factorization algebra on Riemann surfaces given in \cite{CG1}.
