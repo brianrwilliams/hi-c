@@ -257,8 +257,6 @@ It should be no surprise that we like to work with the Dolbeault complex,
 but there is also an explicit dg model $A_d$ for the algebraic version derived global sections due to Faonte-Hennion-Kapranov \cite{FHK} and based on the Jouanolou method for resolving singularities. 
 In fact, they provide a model for the algebraic $p$-forms as well.
 
-\owen{I rewrote the definition from your thesis' appendix to match what FHK actually write. Please double check.}
-
 \begin{dfn}
 Let $a_d$ denote the algebra  
 \[
@@ -373,7 +371,6 @@ This cocycle has cohomological degree $2$ and so determines an unshifted central
 \beqn\label{gdt}
 \CC \cdot K \to \Hat{\fg}_{d, \theta} \to A_d \tensor \fg .
 \eeqn
-\owen{You wrote dg Lie but I think it must be $L_\infty$, right?}
 Our aim is now to show how the Kac-Moody factorization algebra is related to this $L_\infty$ algebra,
 which is a higher-dimensional version of the affine Kac-Moody Lie algebras. 
 
@@ -727,7 +724,7 @@ The observations we make here are borrowed from unpublished work of the first au
 but they are closely related to prior work of Costello-Li \cite{} and Movshev-Schwarz~\cite{}.
 
 The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
-which yields a natural map \owen{ugly name so lets find a better one}
+which yields a natural map \owen{ugly notation so lets find a better one}
 \[
 \lqt(A) :\colim_{N}\, \cliels(\gl_N(A)) \cong \cliels(\gl_\infty(A)) \to \Sym(\cycls(A)[1])
 \]
@@ -776,6 +773,11 @@ we take the $\Omega^{0,*}(X^n)/C_n$ and so on.
 \owen{I need to check that the $\Sym$ doesn't lead to issues \dots If we must, we can ignore the quasi-isomorphism and focus on the map just to cyclic homology.}
 \end{rmk}
 
+\brian{Would it also be a good idea to remark on the ``local cyclic cohomology"?
+I think that's even easier to compute in this case, and we could point to the extensions.
+I can put that in if you'd like.
+}
+
 This result has teeth because it is possible to compute the relevant cyclic homology.
 For simplicity, consider the case where $X$ is closed, 
 so that we are working with the Dolbeault complex and hence are implicitly computing the cyclic homology of the structure sheaf $\cO$ on $X$.
@@ -805,37 +807,46 @@ As $\cycls$ is a functor on the category of dg algebras,
 we see that $\cycls(\Omega^{0,*}_c)$ is a precosheaf
 and hence $\cC = \Sym(\cycls(\Omega^{0,*}_c)[1])$ is also a precosheaf. 
 
-It remains to provide the the structure maps of the putative prefactorization algebra~$\cC$.
+It remains to provide the structure maps of the putative prefactorization algebra~$\cC$.
 We note that for two algebras $A$ and $B$,
 \[
 \cycls(A) \oplus \cycls(B) \simeq \cycls(A \times B)
 \] 
 by \owen{find convenient reference (use the two idempotents)}.
-Hence, for any pairwise disjoint opens $U_1,\ldots, U_n$ contained in a larger open $V$, 
+Hence, for the cosheaf $\Omega^{0,*}_c$ on pairwise disjoint opens $U_1,\ldots, U_n$,
 the isomorphism of dg algebras
 \[
 \Omega^{0,*}_c(U_1) \times \cdots \times \Omega^{0,*}_c(U_n) \cong \Omega^{0,*}_c(U_1 \sqcup \cdots \sqcup U_n),
 \]
-which is a structure map of the cosheaf $\Omega^{0,*}_c$,
 determines a quasi-isomorphism
 \beqn
 \label{eqn:cyccosheaf}
 \cycls(\Omega^{0,*}_c(U_1)) \oplus \cdots \oplus \cycls(\Omega^{0,*}_c(U_n)) \xto{\simeq} \cycls(\Omega^{0,*}_c(U_1 \sqcup \cdots \sqcup U_n)).
 \eeqn
-Applying $\Sym$ we obtain the needed multilinear map
-\[
+Now suppose these pairwise disjoint opens $U_1,\ldots, U_n$ sit inside a larger open $V$.
+We need to provide a multilinear structure map 
+\beqn
+\label{eqn: desiredmap}
 \cC(U_1) \times \cdots \times \cC(U_n) \to \cC(V)
-\]
-as the composite 
-\[
-\cC(U_1) \times \cdots \times \cC(U_n) \to \cC(U_1 \sqcup \cdots \sqcup U_n) \to \cC(V)
-\]
-where the first map is $\Sym$ applied to the map \eqref{eqn:cyccosheaf} 
-and the second map is $\Sym$ applied to
+\eeqn
+to describe $\cC$ as a prefactorization algebra.
+The inclusion $U_1 \sqcup \cdots \sqcup U_n \hookrightarrow V$ provides a map
 \[
 \cycls(\Omega^{0,*}_c(U_1 \sqcup \cdots \sqcup U_n)) \to \cycls(V),
 \]
-from the precosheaf $\cycls(\Omega^{0,*}_c)$ on the inclusion of opens $U_1 \sqcup \cdots \sqcup U_n \to V$.
+via the precosheaf $\cycls(\Omega^{0,*}_c)$,
+and so applying $\Sym$ gives us
+\beqn
+\label{eqn:map2}
+\cC(U_1 \sqcup \cdots \sqcup U_n) \to \cC(V).
+\eeqn
+Likewise, applying $\Sym$ to map \eqref{eqn:cyccosheaf} provides
+\[
+\cC(U_1) \times \cdots \times \cC(U_n) \to \cC(U_1 \sqcup \cdots \sqcup U_n).
+\]
+We thus obtain the desired map \eqref{eqn: desiredmap} as a composite.
+This construction is automatically associative for nested inclusions of pairwise disjoint opens,
+and so $\cC$ is a prefactorization algebra.
 \end{proof}
 
 
