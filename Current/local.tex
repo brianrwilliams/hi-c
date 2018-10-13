@@ -1,6 +1,7 @@
 \def\pAA{\mathring{\AA}}
 \def\Map{{\rm Map}}
 \def\Sph{{\rm Sph}}
+\def\jou{{\mathtt{j}}}
 
 \section{Local aspects of the higher Kac-Moody factorization algebras} 
 \label{sec: sphere ops}
@@ -316,7 +317,7 @@ A_d \simeq \RR\Gamma(\AA^{d \times}, \sO^{alg}) .
 Similarly, $(A_d^{p,*},\dbar) \simeq \RR \Gamma(\AA^{d\times}, \Omega^{p,alg})$.
 \item There is a dense map of commutative bigraded algebras
 \[
-j : A^{*,*}_d \to \Omega^{*,*}(\CC^d \setminus \{0\}) 
+\jou : A^{*,*}_d \to \Omega^{*,*}(\CC^d \setminus \{0\}) 
 \]
 sending $z_i$ to $z_i$, $z_i^*$ to $\Bar{z}_i$, and $\d z_i^*$ to $\d \zbar_i$, and the map intertwines with the $\dbar$ and $\partial$ differentials on both sides.
 \item There is a unique $\GL_n$-equivariant residue map
@@ -330,7 +331,7 @@ that satisfies
 for any $f (z) \in \CC[z_1,\ldots,z_d]$. 
 In particular, for any $\omega \in A^{d,d-1}_d$,
 \[
-{\rm Res}_{z=0} (\omega) = \oint_{S^{2d-1}} j(\omega)
+{\rm Res}_{z=0} (\omega) = \oint_{S^{2d-1}} \jou(\omega)
 \]
 where $S^{2d-1}$ is any sphere centered at the origin in $\CC^d$. 
 \end{enumerate}
@@ -368,7 +369,7 @@ For any $\theta \in \Sym^{d+1}(\fg^*)^\fg$, Faonte-Hennion-Kapranov define the c
 \end{array}.
 \]
 \owen{I changed $\d$ (for de Rham) with $\partial$, since I think that's clearer. Tell me what you think.}
-This cocycle has cohomological degree $2$ and so determines an unshifted central extension of $A_d \tensor \fg$:
+This cocycle has cohomological degree $2$ and so determines an unshifted central extension as $L_\infty$ algebras of~$A_d \tensor \fg$:
 \beqn\label{gdt}
 \CC \cdot K \to \Hat{\fg}_{d, \theta} \to A_d \tensor \fg .
 \eeqn
@@ -404,13 +405,13 @@ sending a form $\alpha$ to the $(0,*)$-component of its pullback $r^*\alpha$.
 This result is straightforward since the pullback $r^*$ denotes a map of dg algebras to $r_* \Omega^{*,*}$ and we are simply postcomposing with the canonical quotient map of dg algebras $\Omega^{*,*} \to \Omega^{0,*}$. 
 
 We also have a map of dg commutative algebras $A_d \to \Omega^{0,*}(U)$ for any open set $U \subset \pAA^d$,
-by postcomposing the map $j$ of proposition~\ref{prop: Ad} with the restriction map.
-We abusively denote the composite by $j$ as well.
+by postcomposing the map $\jou$ of proposition~\ref{prop: Ad} with the restriction map.
+We abusively denote the composite by $\jou$ as well.
 Thus we obtain a natural map of dg commutative algebras
 \[
 \pi_A: \Omega^* \otimes A_d \to r_* \Omega^{0,*}
 \]
-sending $\alpha \otimes \omega$ to $\pi(\alpha) \wedge j(\omega)$.
+sending $\alpha \otimes \omega$ to $\pi(\alpha) \wedge \jou(\omega)$.
 By tensoring with $\fg$, we obtain the following.
 
 \begin{cor}
@@ -478,6 +479,16 @@ The map of factorization algebras follows from applying the functor $\clieu_*(-)
 this construction commutes with push-forward by inspection. 
 
 \subsubsection{The case of non-zero level}
+
+Pick a $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+We wish to produce a map 
+\[
+\pi_\theta: \Omega^*_{\RR_{>0},c} \otimes \widehat{\fg}_{d,\theta} \to r_* \sG_\theta
+\]
+of precosheaves of $L_\infty$ algebras on $\RR_{>0}$,
+generalizing the map $\pi_{\Sph_d(\fg)}$ of Proposition~\ref{prop: fact lie}.
+Specializing the parameter $K$ to zero, we should recover that map.
+By applying $\clieu_*(-)$ to $\pi_\theta$, we will obtain the desired map of factorization algebras. 
 
 We now proceed to the proof of Theorem \label{thm sphere alg}. 
 The dg Lie algebra $\fg_{d,\theta}$ determines a dg associative algebra via its universal enveloping algebra $U(\fg_{d,\theta})$.
