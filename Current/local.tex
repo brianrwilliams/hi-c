@@ -484,21 +484,36 @@ and we would like to produce maps akin to those of Proposition~\ref{prop: fact l
 
 The simplest modification of the level zero situation is to introduce a central extension of 
 \[
-\mathtt{G} = \Omega^*_{\RR_{>0},c} \otimes \Sph_d(\fg)
+\mathtt{G}_d = \Omega^*_{\RR_{>0},c} \otimes \Sph_d(\fg)
 \] 
 as a precosheaf of $L_\infty$ algebras on $\RR_{>0}$,
 with the condition that this extension intertwines with the extension $r_*\sG_{d,\fj(\theta)}$ of~$r_* \sG_{d}$.
-This condition fixes the problem completely: 
-we need a map 
+In other words, we need a map 
 \[
 \xymatrix{
-0 \ar[r] & \CC \cdot K [-1]  \ar[d]^{=} \ar[r] & \mathtt{G}_{\Theta'} \ar[d]^{\Hat{\pi}} \ar[r] & \mathtt{G} \ar[d]^{\pi_{\Sph_d(\fg)}} \ar[r] & 0 \\
+0 \ar[r] & \CC \cdot K [-1]  \ar[d]^{=} \ar[r] & \mathtt{G}_{d,\Theta'} \ar[d]^{\Hat{\pi}} \ar[r] & \mathtt{G}_d \ar[d]^{\pi_{\Sph_d(\fg)}} \ar[r] & 0 \\
 0 \ar[r] & \CC \cdot K [-1] \ar[r] & r_*\sG_{d,\fj(\theta)} \ar[r] & r_* \sG_{d} \ar[r] & 0 .
 }
 \]
 of central extensions of $L_\infty$ algebras.
+This condition fixes the problem completely, 
+since for an open $U \subset \RR_{>0}$, the extension for $r_*\sG_{d,\fj(\theta)}$ is given by an integral
+\[
+\int_{r^{-1}(U)} \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) = \int_U \int_{S^{2d-1}} \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
+\]
+that can be factored into a double integral. 
+This formula indicates that we should make $\Theta'$ be given by the local cocycle whose value on elements $\phi_i \otimes a_i \in \Omega^*_c \otimes \Sph_d(\fg)$~is
+\begin{align*}
+\Theta'(\phi_0 \otimes a_0, \ldots, \phi_d \otimes a_d)
+&= \int_U \int_{S^{2d-1}} \theta(\pi(\phi_0) \wedge \jou(a_0),\partial (\pi(\phi_1) \wedge \jou(a_1)),\ldots,\partial(\pi(\phi_d) \wedge \jou(a_d))) \\
+%&= \theta_{FHK}(a_0,\ldots,a_d) \int_U \phi_1 \wedge \cdots \wedge \phi_d.
+\end{align*}
+In short, the cocycle $\theta_{FHK}$ tells us how to extend~$\mathtt{G}_d$.
 
-\begin{lem} The map $\Phi_2 : \sG_1'(I) \to \sG_2(I)$ is a map of dg Lie algebras. Moreover, it extends to a map of factorization Lie algebras $\Phi_2 : \sG_1' \to \sG_2$. 
+\owen{I feel my construction above seems too simple, as it seems to obviate the need for a computational proof. }
+
+\begin{lem} T
+The map $\Phi_2 : \sG_1'(I) \to \sG_2(I)$ is a map of dg Lie algebras. Moreover, it extends to a map of factorization Lie algebras $\Phi_2 : \sG_1' \to \sG_2$. 
 \end{lem}
 \begin{proof}
 Modulo the central element $\Phi_2$ reduces to the map $\Phi$, which we have already seen is a map of factorization Lie algebras in Proposition \ref{prop: fact lie}. Thus, to show that $\Phi_2$ is a map of factorization Lie algebras we need to show that it is compatible with the cocycles determing the respective central extensions. That is, we need to show that 
