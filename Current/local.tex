@@ -673,10 +673,12 @@ The tension is resolved by showing these cocycles are cohomologous.
 \begin{lem}
 There is a cochain $\eta$ for $\mathtt{G}_d$ such that
 \[
-\Theta_{push} = \int \Theta_{FHK} - \d \eta,
+\Theta_{push} = \int \Theta_{FHK} + \d \eta,
 \]
 where $\d$ here denotes the differential on the Lie algebra cochains of~$\mathtt{G}_d$.
 \end{lem}
+
+\owen{Check the sign on $\d\eta$ here.}
 
 \begin{proof}
 We note that the Lie algebra $\fg$ and the invariant polynomial $\theta$ play no substantive role in the problem.
@@ -836,6 +838,8 @@ which in fact provides a map
 of factorization algebras.
 \end{prop}
 
+\owen{Need to check I defined the map correctly.}
+
 \begin{proof}
 Note that for our $L_\infty$ algebras, the only nontrivial brackets are $\ell_1$, $\ell_2$, and $\ell_{d+1}$.
 We already know that the $n=1$ map intertwines with $\ell_1$ and $\ell_2$ brackets,
@@ -854,15 +858,19 @@ The enveloping $E_1$ algebra of $\fg^\bullet_{d,\theta}$ is dense inside the pus
 
 There is another direction that one may look to extend the notion of affine algebras to higher dimensions.
 The affine algebra is a central extension of the loop algebra on $\fg$. 
-Instead of looking at higher dimensional sphere algebras, one can consider higher {\em torus} algebras; or iterated loop algebras:
+Instead of looking at higher dimensional sphere algebras, one can consider higher {\em torus} algebras, i.e., iterated loop algebras:
 \[
 L^d \fg = \CC[z_1^{\pm}, \cdots, z_d^{\pm}] \tensor \fg .
 \]
-These iterated loop algebras are algebraic versions of the torus mapping space ${\rm Map}(S^1 \times \cdots \times S^1, \fg)$. 
-In this section we show what information the Kac-Moody vertex algebra implies about extensions of such iterated loop algebras.
+These iterated loop algebras are algebraic versions of the torus mapping space 
+\[
+{\rm Map}(S^1 \times \cdots \times S^1, \fg).
+\] 
+We now show what information the Kac-Moody factorization algebras imply about extensions of such iterated loop algebras.
 
-To do this we specialize the Kac-Moody factorization algebra to the complex manifold $(\CC^\times)^d$, which is homotopy equivalent to the topologists torus $(S^1)^{\times d}$.  
-We show, in a similar way as above, how to extract the structure of an $E_d$ algebra from considering the nesting of ``polyannuli" in $(\CC^\times)^d$.
+To do this, we study the Kac-Moody factorization algebras on the complex manifold $(\CC^\times)^d$, 
+which is an algebro-geometric version of the torus $(S^1)^{d}$.  
+As with the punctured affine space $\pAA^d$, we compactify by pushing forward to $(\RR_>0)^d$ via the how to extract the structure of an $E_d$ algebra from considering the nesting of ``polyannuli" in $(\CC^\times)^d$.
 These $E_d$-algebras are related to interesting extensions of the Lie algebra $L^d \fg$.
 
 When $d=1$, we have seen that the nesting of ordinary annuli give rise to the structure of an associative algebra. For $d > 1$, a polyannulus is a complex submanifold of the form ${\rm Ann}_1 \times \cdots \times {\rm Ann}_d \subset (\CC^\times)^d$ where each ${\rm Ann}_i \subset \CC^\times$ is an ordinary annulus. Equivalently, a polyannulus is the complement of a closed polydisk inside of a larger open polydisk. We will see how the nesting of annuli in each component gives rise to the structure of a locally constant factorization algebra in $d$ {\em real} dimensions, and hence defines an $E_d$ algebra. 
