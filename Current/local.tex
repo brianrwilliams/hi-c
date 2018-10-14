@@ -671,7 +671,11 @@ whereas the other cocycle mixes them.
 The tension is resolved by showing these cocycles are cohomologous.
 
 \begin{lem}
-There is a local cochain $\eta$ that cobounds the difference between these cocycles.
+There is a cochain $\eta$ for $\mathtt{G}_d$ such that
+\[
+\Theta_{push} = \int \Theta_{FHK} - \d \eta,
+\]
+where $\d$ here denotes the differential on the Lie algebra cochains of~$\mathtt{G}_d$.
 \end{lem}
 
 \begin{proof}
@@ -791,6 +795,12 @@ We now define
 %\[
 %\eta(\varphi_0a_0X_0,\ldots,\varphi_da_dX_d) = \sum_{i=1}^d \left(\int_I \varphi_0 \left(\iota_{E} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i} \cdots \varphi_d\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)  .
 %\]
+%
+%\begin{lem} One has $\d \eta = \Tilde{\theta}_1$, where $\d$ is the differential for the cochain complex $\cloc^*(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg))$. In particular, the factorization Lie algebras $\sG_1$ and $\sG_1'$ are quasi-isomorphic (as $L_\infty$ algebras). An explicit quasi-isomorphism is given by the $L_\infty$ map $\Phi_1 : \sG_1 \to \sG_1'$ that sends the central element $K$ to itself and an element $(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)$ to 
+%\[
+%(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) + \eta(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d)\cdot K \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)) \oplus \CC \cdot K .
+%\]
+%\end{lem}
 
 With this explicit cochain $\eta$ in hand, we can produce the desired map.
 
@@ -813,15 +823,32 @@ The $n =1$ map fits into the commuting diagram of short exact sequences
 0 \ar[r] & \CC \cdot K [-1] \ar[r] & r_*\sG_{d,\theta} \ar[r] & r_* \sG_{d} \ar[r] & 0 .
 }
 \]
-The $n=d+1$ map is 
+The $n=d+1$ map sends the $d+1$-tuple $(\phi_0 \otimes a_0, \ldots, \phi_d \otimes a_d)$ to
+\[
+\eta(\phi_0 \otimes a_0, \ldots, \phi_d \otimes a_d).
+\]
+
+This $L_\infty$ map is equivalent to giving a map of dg conilpotent cocommutative coalgebras on the Chevalley-Eilenberg chains of these $L_\infty$ algebras,
+which in fact provides a map
+\[
+\UU(\Tilde{\pi}_{\fg,d,\theta}): \UU(\Omega^*_c \otimes \Tilde{\fg}^\bullet_{d,\theta}) \to r_* \UU_\theta\sG_d
+\]
+of factorization algebras.
 \end{prop}
 
-\begin{lem} One has $\d \eta = \Tilde{\theta}_1$, where $\d$ is the differential for the cochain complex $\cloc^*(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg))$. In particular, the factorization Lie algebras $\sG_1$ and $\sG_1'$ are quasi-isomorphic (as $L_\infty$ algebras). An explicit quasi-isomorphism is given by the $L_\infty$ map $\Phi_1 : \sG_1 \to \sG_1'$ that sends the central element $K$ to itself and an element $(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)$ to 
-\[
-(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) + \eta(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d)\cdot K \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)) \oplus \CC \cdot K .
-\]
-\end{lem}
+\begin{proof}
+Note that for our $L_\infty$ algebras, the only nontrivial brackets are $\ell_1$, $\ell_2$, and $\ell_{d+1}$.
+We already know that the $n=1$ map intertwines with $\ell_1$ and $\ell_2$ brackets,
+as it does modulo the central extensions.
+We can thus set the maps for $n=2,\ldots, d$ to zero. 
+The first nontrivial issue arises at $n=d+1$, as the $n=1$ map does not intertwine the $\ell_{d+1}$ brackets.
+The defining property of $\eta$, however, ensures that $\Tilde{\pi}_{\fg,d,\theta}\<d+1\>$ corrects the failure.
+Hence we may set the maps for $n > d+1$ to zero as well.
+\end{proof}
 
+\begin{cor}
+The enveloping $E_1$ algebra of $\fg^\bullet_{d,\theta}$ is dense inside the pushforward $r_* \UU_\theta\sG_d$.
+\end{cor}
 
 \subsection{An $E_d$ algebra by compactifying along tori} 
 
