@@ -147,44 +147,44 @@ Thus, the statement implies that there is a quasi-isomorphism
 \Hoch_*\left(U(\fg[z,z^{-1}]), U(\fg[z,z^{-1}])_q \right) \simeq \Hoch(U \fg) . 
 \]
 
-\subsection{Variants of the higher Kac-Moody factorization algebras}
+\subsection{The Kac-Moody vertex algebra and dimensional reduction} 
 
 \owen{Find more specific title}
+\brian{How's this?}
 
-So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $\fj_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
-There is another class of local cocycles that appear when studying symmetries of holomorphic theories. 
-Unlike the cocycle $\fj_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
+%So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $\fj_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+%There is another class of local cocycles that appear when studying symmetries of holomorphic theories. 
+%Unlike the cocycle $\fj_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
+%
+%Let $X$ be a complex manifold of dimension $d$ and suppose $\omega$ is a $(k,k)$ form on $X$. 
+%Fix, in addition, a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
+%Then, we may consider the cochain on $\sG(X)$:
+%\[
+%\begin{array}{cccc}
+%\displaystyle \phi_{\theta, \omega} : & \sG(X)^{\tensor d + 1 - k} & \to & \CC \\
+%\displaystyle & \alpha_0 \tensor\cdots \tensor \alpha_{d-k} & \mapsto & \displaystyle \int_X \omega \wedge \theta_{d+1-k}(\alpha_0, \partial\alpha_1,\ldots,\partial \alpha_{d-k})
+%\end{array}
+%\]
+%It is clear that $\phi_{\theta,\omega}$ is a local cochain on $\sG(X)$. 
+%
+%\begin{lem}\label{lem: cocycle KM}
+%Let $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$ and suppose $\omega \in \Omega^{k,k}(X)$ satisfies $\dbar \omega = 0$ and $\partial \omega = 0$. 
+%Then, $\phi_{\theta, \omega} \in \cloc^*(\sG_X)$ is a local cocycle. 
+%Moreover, for fixed $\theta$ the cohomology class $[\phi_{\theta,\omega}] \in H^1_{\rm loc}(\sG_X)$ only depends on the cohomology class 
+%\[
+%[\omega] \in H^{k}(X , \Omega^k_{cl}) .
+%\]
+%\end{lem}
+%
+%Note that when $\omega = 1$ it trivially satisfies the conditions of the lemma. 
+%In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
 
-Let $X$ be a complex manifold of dimension $d$ and suppose $\omega$ is a $(k,k)$ form on $X$. 
-Fix, in addition, a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
-Then, we may consider the cochain on $\sG(X)$:
-\[
-\begin{array}{cccc}
-\displaystyle \phi_{\theta, \omega} : & \sG(X)^{\tensor d + 1 - k} & \to & \CC \\
-\displaystyle & \alpha_0 \tensor\cdots \tensor \alpha_{d-k} & \mapsto & \displaystyle \int_X \omega \wedge \theta_{d+1-k}(\alpha_0, \partial\alpha_1,\ldots,\partial \alpha_{d-k})
-\end{array}
-\]
-It is clear that $\phi_{\theta,\omega}$ is a local cochain on $\sG(X)$. 
+%\owen{I moved everything above to Section~\ref{sec: nekext}.}
 
-\begin{lem}\label{lem: cocycle KM}
-Let $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$ and suppose $\omega \in \Omega^{k,k}(X)$ satisfies $\dbar \omega = 0$ and $\partial \omega = 0$. 
-Then, $\phi_{\theta, \omega} \in \cloc^*(\sG_X)$ is a local cocycle. 
-Moreover, for fixed $\theta$ the cohomology class $[\phi_{\theta,\omega}] \in H^1_{\rm loc}(\sG_X)$ only depends on the cohomology class 
-\[
-[\omega] \in H^{k}(X , \Omega^k_{cl}) .
-\]
-\end{lem}
+We turn briefly to the variant of the Kac-Moody factorization algebra associated to the cocycles from Section ~\ref{sec: nekext}.
+This class of cocycles is related to the ordinary Kac-Moody vertex algebra on Riemann surfaces through dimensional reduction, as we will now show. 
 
-Note that when $\omega = 1$ it trivially satisfies the conditions of the lemma. 
-In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
-
-\owen{I moved everything above to Section~\ref{sec: nekext}.}
-
-This class of cocycles is related to the ordinary Kac-Moody factorization and vertex algebra on Riemann surfaces in a natural way.
-Consider the following two examples. 
-
-\begin{eg}
-We consider the complex manifold $X = \Sigma \times \PP^{d-1}$ where $\Sigma$ is a Riemann surface and $\PP^{d-1}$ is $(d-1)$-dimensional complex projective space.
+Consider the complex manifold $X = \Sigma \times \PP^{d-1}$ where $\Sigma$ is a Riemann surface and $\PP^{d-1}$ is $(d-1)$-dimensional complex projective space.
 Suppose that $\omega \in \Omega^{d-1,d-1}(\PP^{d-1})$ is the natural volume form, this clearly satisfies the conditions of Lemma \ref{lem: cocycle KM} and so determines a degree one cocycle $\phi_{\kappa, \omega} \in \cloc^*(\sG_{\Sigma \times \PP^{d-1}})$ where $\kappa$ is some $\fg$-invariant bilinear form $\kappa : \fg \times \fg \to \CC$. 
 We can then consider the twisted enveloping factorization algebra of $\sG_{\Sigma \times \PP^{d-1}}$ by the cocycle $\phi_{\kappa, \omega}$. 
 
@@ -232,10 +232,8 @@ We recognize this as the value of the Kac-Moody factorization algebra on $\Sigma
 It is immediate to see that identifications above are natural with respect to maps of opens, so that the factorization structure maps are the desired ones. 
 This completes the proof.
 \end{proof}
-\end{eg}
 
-\begin{eg}
-Fix two Riemann surfaces $\Sigma_1,\Sigma_2$ and let $\omega_1,\omega_2$ be the K\"{a}hler forms. 
+Now, suppose $\Sigma_1,\Sigma_2$ are Riemann surfaces and let $\omega_1,\omega_2$ be the K\"{a}hler forms. 
 Then, we can consider the two projections
 \[
 \begin{tikzcd}
@@ -251,8 +249,8 @@ According to the proposition above, for any symmetric invariant pairing $\kappa 
 on the local Lie algebra $\sG_{\Sigma_1\times \Sigma_2}$.
 A similar calculation as in the previous example implies that the pushforward factorization algebra $\pi_{i*}\UU_{\phi_{\kappa, \omega}}\sG$, $i=1,2$, is isomorphic to the two-dimensional Kac-Moody factorization algebra on the Riemann surface $\Sigma_i$ with level equal to the Euler characteristic $\chi(\Sigma_j)$, where $j \ne i$. 
 This result was alluded to in the work of Johansen in \cite{JohansenKM} where he showed that there exists a copy of the Kac-Moody chiral algebra inside the operators of a twist of the $\cN=1$ supersymmetric multiplet (both the gauge and matter multiplets, in fact) on the K\"{a}hler manifold $\Sigma_1 \times \Sigma_2$. 
-In the next section we will see how the {\em two-dimensional} Kac-Moody factorization algebra embeds inside the operators of a holomorphic theory on a complex surface. 
-This holomorphic theory is the twist (as we stated in the previous chapter) of the $\cN=1$ multiplet.
+In the Section \ref{sec: qft} we saw how the $d = 2$ Kac-Moody factorization algebra embeds inside the operators of a free holomorphic theory on a complex surface. 
+This holomorphic theory, the $\beta\gamma$ system, is the minimal twist of the $\cN=1$ chiral multiplet.
 Thus, we obtain an enhancement of Johansen's result to a two-dimensional current algebra.
-\end{eg}
+
 %\brian{relate to work of Nekrasov et al}

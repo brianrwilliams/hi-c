@@ -2,6 +2,8 @@
 \section{Local functionals}
 \label{appx:locfncl}
 
+\brian{I think we can get rid of this section}
+
 In our approach, the space of fields will always be equal to the space of smooth sections of a $\ZZ$-graded vector bundle $E\to X$ on a manifold $\sE = \Gamma(X, E)$. 
 The class of functionals $S : \sE \to \RR$ defining the classical theories we consider are required to be {\em local}, or given by the integral of a Lagrangian density. 
 We define this concept now.
@@ -207,3 +209,85 @@ Moreover, upon performing Gelfand-Kazhdan descent, it implies that on any comple
 \beqn
 J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to X} \right)^{\CC^d_{\rm hol}}\right)^{U(d)} .
 \eeqn
+
+\section{Normalizing the charge anomaly} \label{sec: feynman}
+
+In this section we conclude the proof of Proposition \ref{prop: bg anomaly} by an explicit calculation of the Feynman diagrams controlling the charge anomaly for the $\beta\gamma$ system on $\CC^d$. 
+
+\begin{lem} 
+As a functional on the abelian dg Lie algebra $\Omega^{0,*}(\CC^d)$, the analytic factor of the weight $\lim_{L\to 0} \lim_{\epsilon \to 0} W_{\Gamma, e} (P_{\epsilon < L}, K_\epsilon, I^\fg)$ is equal to a multiple of the local functional
+\[
+C \int \alpha \partial \alpha \cdots \partial \alpha \in \cloc^*(\Omega^{0,*}(\CC^d)) .
+\]
+\end{lem}
+
+\begin{proof}
+
+Let's fix some notation. 
+We enumerate the vertices by integers $a = 0,\ldots, d$. 
+Label the coordinate at the $i$th vertex by $z^{(a)} = (z_1^{(a)}, \ldots, z_d^{(a)})$. 
+The incoming edges of the wheel will be denoted by homogeneous Dolbeault forms 
+\[
+\alpha^{(a)} = \sum_{J} A^{(a)}_J \d \zbar_J^{(a)} \in \Omega_c^{0,*}(\CC^d) .
+\]
+where the sum is over the multiindex $J = (j_1,\ldots, j_k)$ where $j_a = 1,\ldots, d$ and $(0,k)$ is the homogenous Dolbeault form type. 
+For instance, if $\alpha$ is a $(0,2)$ form we would write
+\[
+\alpha = \sum_{j_1 < j_2} A_{(j_1,j_2)} \d \zbar_{j_1} \d\zbar_{j_2} .
+\]
+Denote the functional obtained as the $\epsilon \to 0$ weight of the wheel with $(d+1)$ vertices from Lemma \ref{lem: g anomaly} by $W_L$.
+The $L\to 0$ limit of $W_L$ is the local functional representing the one-loop anomaly $\Theta$. 
+
+The weight has the form
+\[
+W_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
+\]
+We introduce coordinates
+\begin{align*}
+w^{(0)} & = z^{(0)} \\
+w^{(a)} & = z^{(a)} - z^{(a-1)} \;\;\; 1 \leq a \leq d .
+\end{align*}
+The heat kernel and propagator part of the integral is of the form
+\[
+\begin{array}{ccl}
+\displaystyle
+K_\epsilon(w^{(0)},w^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (w^{(a-1)}, w^{(a)}) & = & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d}  \\ & & \displaystyle \times \d^d w^{(0)} \prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \d^d w^{(a)} \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right)
+\\ & & \displaystyle \times e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} .
+\end{array}
+\]
+Here, $M_{ab}$ is the $d \times d$ square matrix satisfying
+\[
+\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)} = |\sum_{a = 1}^d w^{(a)} |^2 / \epsilon + \sum_{a = 1}^d |w^{(a)}|^2 / t_a .
+\]
+Note that
+\[
+\prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right) = \left( \sum_{i_1,\ldots i_d} \epsilon_{i_1\cdots i_d} \prod_{a=1}^d \Bar{w}^{(a)}_{i_a}\right) \prod_{a=1}^d \d^d \Bar{w}^{(a)} .
+\]
+In particular, only the $\d w_i^{(0)}$ components of $\alpha^{(0)} \cdots \alpha^{(d)}$ can contribute to the weight.
+
+For some compactly supported function $\Phi$ we can write the weight as
+\[
+\begin{array}{ccl}
+W (\alpha^{(0)}, \ldots, \alpha^{(d)}) & = & \lim_{\epsilon \to 0} \displaystyle \int_{\CC^{d(d+1)}} \left(\prod_{a = 0}^{d} \d^d w^{(a)} \d^d \Bar{w}^{(a)}\right) \Phi \\ & \times & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d} \sum_{i_1,\ldots, i_d} \epsilon_{i_1\cdots i_d} \Bar{w}_{i_1}^{(1)} \cdots \Bar{w}_{i_d}^{(d)} e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} 
+\end{array}
+\]
+
+Applying Wick's lemma in the variables $w^{(1)}, \ldots, w^{(d)}$, together with some elementary analytic bounds, we find that the weight above becomes to the following integral over $\CC^d$
+\[
+f(L) \int_{w^{(0)} \in \CC^d}  \d^d w^{(0)} \d^d \Bar{w}^{(0)} \sum_{i_1,\ldots, i_d} \epsilon_{i_1\cdots i_d}  
+\left(\frac{\partial}{\partial w_{i_1}^{(1)}} \cdots \frac{\partial}{\partial w_{i_d}^{(d)}} \Phi\right)|_{w^{(1)}=\cdots=w^{(d)} = 0} 
+\]
+where
+\[
+f(L) = \lim_{\epsilon \to 0} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\epsilon}{(\epsilon + t_1 + \cdots + t_d)^{d+1}} \d^d t .
+\]
+In fact, $f(L)$ is independent of $L$ and is equal to some nonzero constant $C \ne 0$.
+Finally, plugging in the forms $\alpha^{(0)}, \ldots, \alpha^{(d)}$, we observe that the integral over $w^{(0)} \in \CC^d$ simplifies to
+\[
+C \int_{\CC^d} \alpha^{(0)} \partial \alpha^{(1)} \cdots\partial \alpha^{(d)}
+\]
+as desired.
+
+\brian{I'll stop being naughty and work out this constant tomorrow. It's a matter of fixing all my conventions from citations in my hol paper.}
+\end{proof}
+
