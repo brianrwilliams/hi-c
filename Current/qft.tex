@@ -388,7 +388,7 @@ We arrive at the following.
 \begin{prop}\label{prop: bg anomaly}
 The charge anomaly for quantizing the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is equal to
 \[
-\Theta_V = A  \fj (\ch_{d+1}^{\fg}(V)),
+\Theta_V = \frac{1}{(4 \pi)^d} \fj (\ch_{d+1}^{\fg}(V)),
 \]
 where $\fj$ is the isomorphism from Proposition \ref{prop: trans j}.
 \end{prop}
@@ -424,7 +424,7 @@ This follows from ellipticity of the Dolbeault complex.
 Consequently we can introduce the qausi-isomorphic subcomplex 
 \[
 \begin{tikzcd}    
-\Tilde{\Obs}^{\cl}_V(U) := \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) = \Obs_V^{\cl}(U)
+ \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
 \end{tikzcd}
 \]
 The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ still defines a factorization algebra on $\CC^d$, and we have a resulting quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
@@ -469,7 +469,7 @@ The quantum current algebra $\Cur^\q_{\hbar \Theta_V}$ is a factorization algebr
 It therefore makes sense to specialize the value of $\hbar$. 
 The convention we take is to specialize the value of $\hbar$ to be
 \[
-\hbar = (2\pi i)^d .
+\hbar = (4\pi)^d .
 \]
 
 From our calculation of the charge anomaly $\Theta_V$ above, once we specialize $\hbar$ we can realize the current algebra as an enveloping factorization algebra
@@ -478,7 +478,7 @@ From our calculation of the charge anomaly $\Theta_V$ above, once we specialize 
 \]
 Thus, as an immediate corollary of the above proposition, $J^\q$ specializes to a map of factorization algebras
 \beqn\label{free field}
-J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d} .
+J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d} .
 \eeqn
 We interpret this as a {\em free field realization} of the higher Kac-Moody factorization algebra. 
 Indeed, this is an embedding of the Kac-Moody into the factorization algebra of observables of the free theory described classically by the $\beta\gamma$-system. 
