@@ -865,26 +865,12 @@ These $E_d$-algebras are related to interesting extensions of the Lie algebra $L
 
 When $d=1$, we have seen that the nesting of ordinary annuli give rise to the structure of an associative algebra. For $d > 1$, a polyannulus is a complex submanifold of the form ${\rm Ann}_1 \times \cdots \times {\rm Ann}_d \subset (\CC^\times)^d$ where each ${\rm Ann}_i \subset \CC^\times$ is an ordinary annulus. Equivalently, a polyannulus is the complement of a closed polydisk inside of a larger open polydisk. We will see how the nesting of annuli in each component gives rise to the structure of a locally constant factorization algebra in $d$ {\em real} dimensions, and hence defines an $E_d$ algebra. 
 
-A result of Knudsen \cite{KnudsenEn}, which we recall below, states that every dg Lie algebra determines an $E_d$-algebra, for any $d>1$, called the universal $E_d$ enveloping algebra.
-To state the result precisely we need to be in the context of $\infty$-categories.
-
-\begin{thm}[\cite{KnudsenEn}] Let $\sC$ be a stable, $\CC$-linear, presentable, symmetric monoidal $\infty$-category.
-There is an adjunction
-\[
-U^{E^d} : {\rm LieAlg}(\sC) \leftrightarrows E_d{\rm Alg} (\sC): F
-\]
-such that for any object $X \in \sC$ one has ${\rm Free}_{E_d}(X) \simeq U^{E_d} {\rm Free}_{Lie}(\Sigma^{d-1} X)$. 
-\end{thm}
-
-We are most interested in the case $\sC$ is the category of chain complexes with tensor product $\Ch^{\tensor}$. 
-In this situation, the enveloping algebra $U^{E^d}$ agrees with the ordinary universal enveloping algebra when $d=1$.
-
-When the twisting cocycle defining the Kac-Moody factorization algebra is zero we will see that the $E_d$ algebra coming from the product of polyannuli is equivalent to $U^{E_d} (L^d \fg)$.
+When the twisting cocycle defining the Kac-Moody factorization algebra is zero we will see that the $E_d$ algebra coming from the product of polyannuli is equivalent to the $E_d$-enveloping algebra of the torus algebra $U^{E_d} (L^d \fg)$.
 When we turn on a twisting cocycle we will find the $E_d$-enveloping algebra of a central extension of the iterated loop algebra. 
 
 The Kac-Moody factorization algebra on the $d$-fold $(\CC^\times)^d$ determines a real $d$-dimensional factorization algebra by considering the radius in each complex direction. 
-This factorization algebra on $(\RR_{>0})^d$ is defined by the pushforward $\vec{r}_*\left(\sG_{\CC^{\times d}}\right)$, 
-where $\vec{r} : (\CC^\times)^d \to (\RR_{>0})^d$ is the projection $(z_1,\ldots,z_d) \mapsto (|z_1|, \cdots, |z_d|)$. 
+This factorization algebra on $(\RR_{>0})^d$ is defined by the pushforward $\vec{r}_*\left(\sG_d\right)$, 
+where $\vec{r} : (\CC^\times)^d \to (\RR_{>0})^d$ is the projection $(z_1,\ldots,z_d) \mapsto (|z_1|, \cdots, |z_d|)$ where we take the modulus in each component.
 
 On the Lie algebra side, it is an immediate calculation to see that the following formula defines a cocycle on $L^d \fg$ of degree $(d+1)$:
 \[
@@ -904,11 +890,12 @@ that appears in the theorem below.
 The following can be proved in exact analogy as the above result for sphere algebras and we omit the proof here.
 
 \begin{prop}
-Fix $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and let $\vec{r}_* \UU_\theta \sG_{(\CC^\times)^d}$ be the factorization algebra on $(\RR_{>0})^d$ obtained by reducing the Kac-Moody factorization algebra along the $d$-torus.
-There exists a dense $d$-dimensional subfactorization algebra $\sF^{lc}$ that is locally constant and is equivalent, as $E_d$-algebras, to
+Fix $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and let $\vec{r}_* \UU_\theta \sG_d$ be the factorization algebra on $(\RR_{>0})^d$ obtained by reducing the Kac-Moody factorization algebra on $(\CC^\times)^d$ along the real $d$-torus.
+The $E_d$-algebra 
 \[
-U^{E_d} \left( \Hat{L^d \fg}_{\theta} \right) .
+U^{E_d} \left( \Hat{L^d \fg}_{\theta} \right)
 \]
+embeds densely inside $\vec{r}_* \UU_\theta \sG_d$. 
 \end{prop}
 
 %\begin{thm} There is a dense injective map of factorization algebras on $\RR^d$: 
