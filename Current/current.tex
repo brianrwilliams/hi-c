@@ -253,7 +253,45 @@ When a local Lie algebra acts as symmetries of a classical field theory,
 it sometimes also lifts to symmetries of a BV quantization.
 In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Cur^\q(\sL) \to \Obs^\q$ realizing quantum currents as quantum observables.
 Sometimes, however, the classical symmetries do not lift directly to quantum symmetries.
-We now turn to discussing the natural home for the obstructions to such lifts.
+We turn to discussing the natural home for the obstructions to such lifts after a brief detour to offer a structural perspective on the enveloping construction.
+
+\subsubsection{A digression on the enveloping $E_n$ algebras}
+\label{sec:knudsen}
+
+\owen{I added this here because it feels natural and then we can refer to it easily later.}
+
+This construction $\UU(\sL)$ has a special feature when the local Lie algebra is obtained by taking the de Rham forms with values in a dg Lie algebra $\fg$, i.e., when $\sL = \Omega^*_c \otimes \fg$.
+In that case the enveloping factorization algebra is locally constant and, on the $d$-dimensional real manifold $\RR^d$, determines an $E_d$ algebra, also known as an algebra over the little $d$-disks operad, by a result of Lurie (see \owen{give precise citation}).
+This construction satisfies a universal property: 
+it is the $d$-dimensional generalization of the universal enveloping algebra of a Lie algebra.
+
+To state this result of Knudsen precisely, we need to be in the context of $\infty$-categories.
+
+\begin{thm}[\cite{KnudsenEn}] 
+Let $\sC$ be a stable, $\CC$-linear, presentable, symmetric monoidal $\infty$-category.
+There is an adjunction
+\[
+U^{E^d} : {\rm LieAlg}(\sC) \leftrightarrows E_d{\rm Alg} (\sC): F
+\]
+between Lie algebra objects in $\sC$ and $E_d$ algebra objects in $\sC$.
+This adjunction intertwines with the free-forget adjunctions from Lie/$E_d$ algebras in $\sC$ to $\sC$ 
+so that 
+\[
+{\rm Free}_{E_d}(X) \simeq U^{E_d} {\rm Free}_{Lie}(\Sigma^{d-1} X)
+\]
+for any object $X \in \sC$. 
+
+When $\sC$ is the $\infty$-category of chain complexes over a field of characteristic zero,
+the $E_d$ algebra $U^{E_d} \fg$ is modeled by the locally constant factorization algebra $\UU(\Omega^*_c \otimes \fg)$ on~$\RR^d$.
+\end{thm}
+
+This theorem is highly suggestive for us:
+our main class of examples is $\sG_d$ and $\UU \sG_d$,
+which replaces the de Rham complex with the Dolbeault complex.
+In other words, we anticipate that $\UU \sG_d$ should behave like a holomorphic version of an $E_d$ algebra
+and that it should be the canonical such algebra determined by a dg Lie algebra.
+We do not pursue this structural result in this paper,
+but it provides some intuition behind our constructions.
 
 \subsection{Local cocycles and shifted extensions}
 
@@ -315,10 +353,12 @@ For a local Lie algebra $(L, \ell_1,\ell_2)$, a cocycle $\Theta$ of degree $2+k$
 \eeqn
 of precosheaves of $L_\infty$ algebras, where the $L_\infty$ structure maps are defined by
 \[
-\Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \Theta(x_1,\ldots,x_n)).
+\Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \int \Theta(x_1,\ldots,x_n)).
 \]
 Here we set $\ell_n = 0$ for $n > 2$.
 \end{dfn}
+
+\owen{I think we must include the integral sign here!}
 
 As usual, cohomologous cocycles determine quasi-isomorphic extensions. 
 Much of the rest of the section is devoted to constructing and analyzing various cocycles and the resulting extensions.

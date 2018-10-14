@@ -482,7 +482,7 @@ Pick a $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
 This choice determines a higher Kac-Moody factorization algebra $\UU_\theta \sG_d$,
 and we would like to produce maps akin to those of Proposition~\ref{prop: fact lie}.
 
-The simplest modification of the level zero situation is to introduce a central extension of 
+The simplest modification of the level zero situation is to introduce a central extension of the precosheaf
 \[
 \mathtt{G}_d = \Omega^*_{\RR_{>0},c} \otimes \Sph_d(\fg)
 \] 
@@ -497,74 +497,89 @@ In other words, we need a map
 \]
 of central extensions of $L_\infty$ algebras.
 This condition fixes the problem completely, 
-since for an open $U \subset \RR_{>0}$, the extension for $r_*\sG_{d,\fj(\theta)}$ is given by an integral
+because we simply pull back the extension defining $r_*\sG_{d,\fj(\theta)}$.
+Let us extract an explicit description,
+which will be useful later.
+On an open $U \subset \RR_{>0}$, the extension for $r_*\sG_{d,\fj(\theta)}$ is given by an integral
 \[
 \int_{r^{-1}(U)} \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) = \int_U \int_{S^{2d-1}} \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
 \]
 that can be factored into a double integral. 
-This formula indicates that we should make $\Theta'$ be given by the local cocycle whose value on elements $\phi_i \otimes a_i \in \Omega^*_c \otimes \Sph_d(\fg)$~is
+This formula indicates that $\Theta'$ must be given by the cocycle whose value on elements $\phi_i \otimes a_i \in \Omega^*_c \otimes \Sph_d(\fg)$~is
 \begin{align*}
 \Theta'(\phi_0 \otimes a_0, \ldots, \phi_d \otimes a_d)
 &= \int_U \int_{S^{2d-1}} \theta(\pi(\phi_0) \wedge \jou(a_0),\partial (\pi(\phi_1) \wedge \jou(a_1)),\ldots,\partial(\pi(\phi_d) \wedge \jou(a_d))) \\
 %&= \theta_{FHK}(a_0,\ldots,a_d) \int_U \phi_1 \wedge \cdots \wedge \phi_d.
 \end{align*}
-In short, the cocycle $\theta_{FHK}$ tells us how to extend~$\mathtt{G}_d$.
+We thus obtain the following result.
 
-\owen{I feel my construction above seems too simple, as it seems to obviate the need for a computational proof. }
-
-\begin{lem} T
-The map $\Phi_2 : \sG_1'(I) \to \sG_2(I)$ is a map of dg Lie algebras. Moreover, it extends to a map of factorization Lie algebras $\Phi_2 : \sG_1' \to \sG_2$. 
+\begin{lem} 
+For $\theta \in \Sym^{d+1}(\fg^*)^\fg$,
+let $\mathtt{G}_{d,\theta}$ denote the precosheaf of $L_\infty$ algebras obtained by extending $\mathtt{G}_d$ by the cocycle
+\[
+(\phi_0 \otimes a_0, \ldots, \phi_d \otimes a_d) \mapsto \int_U \int_{S^{2d-1}} \theta(\pi(\phi_0) \wedge \jou(a_0),\partial (\pi(\phi_1) \wedge \jou(a_1)),\ldots,\partial(\pi(\phi_d) \wedge \jou(a_d))).
+\]
+By construction, there is a canonical map 
+\[
+\pi_{\Sph_d(\fg),\theta}: \mathtt{G}_{d,\theta} \to r_* \sG_{d,\fj(\theta)}
+\]
+of precosheaves of $L_\infty$ algebras on $\RR_{>0}$, 
+and hence there is a map of factorization algebras
+\[
+\UU(\pi_{\Sph_d(\fg),\theta}): \UU_{\theta} \mathtt{G}_d \to r_* \UU_\theta \sG_d.
+\]
 \end{lem}
-\begin{proof}
-Modulo the central element $\Phi_2$ reduces to the map $\Phi$, which we have already seen is a map of factorization Lie algebras in Proposition \ref{prop: fact lie}. Thus, to show that $\Phi_2$ is a map of factorization Lie algebras we need to show that it is compatible with the cocycles determing the respective central extensions. That is, we need to show that 
-\beqn\label{1vs2}
-\theta_1'(\varphi_0 a_0 X_0,\ldots,\varphi_d a_d X_d) = \theta_2(\Phi(\varphi_0 a_0X_0),\ldots,\Phi(\varphi_da_dX_d))
-\eeqn
-for all $\varphi_i a_i X_i \in \Omega^*_{c}(I) \tensor (A_d \tensor \fg)$. The cocycle $\theta_1'$ is only nonzero if one of the $\varphi_i$ inputs is a $1$-form. We evaluate the left-hand side on the $(d+1)$-tuple $(\varphi_0 \d r a_0X_0,\varphi_1 a_1 X_1,\ldots,\varphi_da_dX_d)$ where $\varphi_i \in C^\infty_c(I)$, $a_i \in A_d$, $X_i \in \fg$ for $i=0,\ldots,d$. The result is
-\beqnarray
-& &\label{calc1a} \left(\int_I \varphi_0 \cdots \varphi_d \d r\right) \left(\oint a_0 \partial a_1 \cdots \partial a_d\right) \theta(X_0,\ldots,X_d) \\
-& + & \label{calc1b} \frac{1}{2} \sum_{i=1}^{d} \left( \int_I \varphi_0 (E \cdot \varphi_i) \varphi_1\cdots \Hat{\varphi_i} \cdots \varphi_{d}\d r\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)
-\eeqnarray
-We wish to compare this to the right-hand side of Equation (\ref{1vs2}). Recall that $\Phi(\varphi_0 \d r a_0 X_0) = \varphi(r) \d r a_0(z) X_0$ and $\Phi(\varphi_i a_i X_i) = \varphi(r) a_i(z) X_i$. Plugging this into the explicit formula for the cocycle $\theta_2$ we see the right-hand side of (\ref{1vs2}) is 
-\beqn\label{calc2}
-\left(\int_{r^{-1}(I)} \varphi_0(r) \d r a_0(z) \partial(\varphi_1(r) a_1(z)) \cdots \partial(\varphi_d(r) a_d(z))\right) \theta(X_0,\ldots,X_d) .
-\eeqn
 
-We pick out the term in (\ref{calc2}) in which the $\partial$ operators only act on the elements $a_i(z)$, $i=1,\ldots, d$. This term is of the form
-\[
-\int_{r^{-1}(I)} \varphi_0(r) \cdots \varphi_d(r) \d r a_0(z) \partial(a_1(z)) \cdots \partial(a_d(z)) \theta(X_0,\ldots,X_d).
-\] 
-Separating variables we find that this is precisely the first term (\ref{calc1a}) in the expansion of the left-hand side of (\ref{1vs2}). 
-
-Now, note that we can rewrite the $\partial$-operator in terms of the radius $r$ as
-\begin{align*}
-\partial = \sum_{i=1}^d \d z_i \frac{\partial}{\partial z_i} = \sum_{i=1}^d \d z_i \zbar_i \frac{\partial}{\partial (r^2)} = \sum_{i=1}^d \d z_i \frac{r^2}{2 z_i} \frac{\partial}{\partial r} .
-\end{align*}
-
-The remaining terms in (\ref{calc2}) correspond to the expansion of
-\[
-\partial(\varphi_1(r) a_1(z)) \cdots \partial(\varphi_d(r) a_d(z)),
-\]
-using the Leibniz rule, for which the $\partial$ operators act on at least one of the functions $\varphi_1,\ldots,\varphi_d$. In fact, only terms in which $\partial$ acts on precisely one of the functions $\varphi_1,\ldots, \varphi_d$ will be nonzero. For instance, consider the term
-\beqn\label{term1}
-(\partial \varphi_1) a_1(z) (\partial \varphi_2) a_2(z) \partial(\varphi_3(z) a_3(z)) \cdots \partial(\varphi_d(z) a_d(z)).
-\eeqn
-Now, $\partial \varphi_i(r) = \omega \frac{\partial \varphi}{\partial r}$ where $\omega$ is the one-form $\sum_i (r^2 / 2 z_i) \d z_i$. Thus, (\ref{term1}) is equal to
-\[
-\left(\omega \frac{\partial \varphi_1}{\partial r} \right) a_1(z) \left(\omega \frac{\partial \varphi_2}{\partial r}  \right) a_2(z) \partial(\varphi_3(z) a_3(z)) \cdots \partial(\varphi_d(z) a_d(z),
-\]
-which is clearly zero as $\omega$ appears twice.
-
-We observe that terms in the expansion of (\ref{calc2}) for which $\partial$ acts on precisely one of the functions $\varphi_1,\ldots,\varphi_d$ can be written as
-\[
-\sum_{i=1}^d \int_{r^{-1}(I)} \varphi_0(r)\left(r \frac{\partial}{\partial r} \varphi_i(r)\right) \varphi_1(r) \cdots \Hat{\varphi_i(r)} \cdots \varphi_d(r) \d r \frac{r}{2 z_i} \d z_i a_0(z) a_i(z) \partial a_1(z) \cdots \Hat{\partial a_i(z)} \cdots \partial a_d(z) .
-\] 
-Finally, notice that the function $z_i / 2r$ is independent of the radius $r$. Thus, separating variables we find the integral can be written as
-\[
-\frac{1}{2} \sum_{i=1}^d \left(\int_{I} \varphi_0 \left(r \frac{\partial}{\partial r} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i } \cdots \varphi_d \d r\right) \left(\oint \frac{\d z_i}{z_i} a_0 a_i \partial a_2 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) .
-\]
-This is precisely equal to the second term (\ref{calc1b}) above. Hence, the cocycles are compatible and the proof is complete. 
-\end{proof}
+%\begin{proof}
+%Modulo the central element $\Phi_2$ reduces to the map $\Phi$, which we have already seen is a map of factorization Lie algebras in Proposition \ref{prop: fact lie}. Thus, to show that $\Phi_2$ is a map of factorization Lie algebras we need to show that it is compatible with the cocycles determing the respective central extensions. That is, we need to show that 
+%\beqn\label{1vs2}
+%\theta_1'(\varphi_0 a_0 X_0,\ldots,\varphi_d a_d X_d) = \theta_2(\Phi(\varphi_0 a_0X_0),\ldots,\Phi(\varphi_da_dX_d))
+%\eeqn
+%for all $\varphi_i a_i X_i \in \Omega^*_{c}(I) \tensor (A_d \tensor \fg)$. The cocycle $\theta_1'$ is only nonzero if one of the $\varphi_i$ inputs is a $1$-form. We evaluate the left-hand side on the $(d+1)$-tuple $(\varphi_0 \d r a_0X_0,\varphi_1 a_1 X_1,\ldots,\varphi_da_dX_d)$ where $\varphi_i \in C^\infty_c(I)$, $a_i \in A_d$, $X_i \in \fg$ for $i=0,\ldots,d$. The result is
+%\beqnarray
+%& &\label{calc1a} \left(\int_I \varphi_0 \cdots \varphi_d \d r\right) \left(\oint a_0 \partial a_1 \cdots \partial a_d\right) \theta(X_0,\ldots,X_d) \\
+%& + & \label{calc1b} \frac{1}{2} \sum_{i=1}^{d} \left( \int_I \varphi_0 (E \cdot \varphi_i) \varphi_1\cdots \Hat{\varphi_i} \cdots \varphi_{d}\d r\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)
+%\eeqnarray
+%We wish to compare this to the right-hand side of Equation (\ref{1vs2}). Recall that $\Phi(\varphi_0 \d r a_0 X_0) = \varphi(r) \d r a_0(z) X_0$ and $\Phi(\varphi_i a_i X_i) = \varphi(r) a_i(z) X_i$. Plugging this into the explicit formula for the cocycle $\theta_2$ we see the right-hand side of (\ref{1vs2}) is 
+%\beqn\label{calc2}
+%\left(\int_{r^{-1}(I)} \varphi_0(r) \d r a_0(z) \partial(\varphi_1(r) a_1(z)) \cdots \partial(\varphi_d(r) a_d(z))\right) \theta(X_0,\ldots,X_d) .
+%\eeqn
+%
+%We pick out the term in (\ref{calc2}) in which the $\partial$ operators only act on the elements $a_i(z)$, $i=1,\ldots, d$. This term is of the form
+%\[
+%\int_{r^{-1}(I)} \varphi_0(r) \cdots \varphi_d(r) \d r a_0(z) \partial(a_1(z)) \cdots \partial(a_d(z)) \theta(X_0,\ldots,X_d).
+%\] 
+%Separating variables we find that this is precisely the first term (\ref{calc1a}) in the expansion of the left-hand side of (\ref{1vs2}). 
+%
+%Now, note that we can rewrite the $\partial$-operator in terms of the radius $r$ as
+%\begin{align*}
+%\partial = \sum_{i=1}^d \d z_i \frac{\partial}{\partial z_i} = \sum_{i=1}^d \d z_i \zbar_i \frac{\partial}{\partial (r^2)} = \sum_{i=1}^d \d z_i \frac{r^2}{2 z_i} \frac{\partial}{\partial r} .
+%\end{align*}
+%
+%The remaining terms in (\ref{calc2}) correspond to the expansion of
+%\[
+%\partial(\varphi_1(r) a_1(z)) \cdots \partial(\varphi_d(r) a_d(z)),
+%\]
+%using the Leibniz rule, for which the $\partial$ operators act on at least one of the functions $\varphi_1,\ldots,\varphi_d$. In fact, only terms in which $\partial$ acts on precisely one of the functions $\varphi_1,\ldots, \varphi_d$ will be nonzero. For instance, consider the term
+%\beqn\label{term1}
+%(\partial \varphi_1) a_1(z) (\partial \varphi_2) a_2(z) \partial(\varphi_3(z) a_3(z)) \cdots \partial(\varphi_d(z) a_d(z)).
+%\eeqn
+%Now, $\partial \varphi_i(r) = \omega \frac{\partial \varphi}{\partial r}$ where $\omega$ is the one-form $\sum_i (r^2 / 2 z_i) \d z_i$. Thus, (\ref{term1}) is equal to
+%\[
+%\left(\omega \frac{\partial \varphi_1}{\partial r} \right) a_1(z) \left(\omega \frac{\partial \varphi_2}{\partial r}  \right) a_2(z) \partial(\varphi_3(z) a_3(z)) \cdots \partial(\varphi_d(z) a_d(z),
+%\]
+%which is clearly zero as $\omega$ appears twice.
+%
+%We observe that terms in the expansion of (\ref{calc2}) for which $\partial$ acts on precisely one of the functions $\varphi_1,\ldots,\varphi_d$ can be written as
+%\[
+%\sum_{i=1}^d \int_{r^{-1}(I)} \varphi_0(r)\left(r \frac{\partial}{\partial r} \varphi_i(r)\right) \varphi_1(r) \cdots \Hat{\varphi_i(r)} \cdots \varphi_d(r) \d r \frac{r}{2 z_i} \d z_i a_0(z) a_i(z) \partial a_1(z) \cdots \Hat{\partial a_i(z)} \cdots \partial a_d(z) .
+%\] 
+%Finally, notice that the function $z_i / 2r$ is independent of the radius $r$. Thus, separating variables we find the integral can be written as
+%\[
+%\frac{1}{2} \sum_{i=1}^d \left(\int_{I} \varphi_0 \left(r \frac{\partial}{\partial r} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i } \cdots \varphi_d \d r\right) \left(\oint \frac{\d z_i}{z_i} a_0 a_i \partial a_2 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) .
+%\]
+%This is precisely equal to the second term (\ref{calc1b}) above. Hence, the cocycles are compatible and the proof is complete. 
+%\end{proof}
 
 \subsection{A comparison with the work of Faonte-Hennion-Kapranov}
 
