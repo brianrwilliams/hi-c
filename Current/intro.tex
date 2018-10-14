@@ -4,16 +4,208 @@
 
 \owen{Obviously we'll write a new intro when we know what we want to accomplish in this paper.}
 
-In this chapter we investigate the symmetries that generic holomorphic quantum field theories possess.
-Our overarching goal is to develop tools for understanding such symmetries that provide a systematic generalization of methods used in chiral conformal field theory on Riemann surfaces, especially for the Kac-Moody and Virasoro vertex algebras \cite{IgorKM, KacVertex, BorcherdsVertex}. 
-We will utilize the tools of BV quantization and factorization algebras that have already heavily percolated this thesis.
-The primordial example of a holomorphic theory we consider is the holomorphic $\sigma$-model studied in the previous chapter. 
+The Kac-Moody vertex algebra, as developed in \cite{IgorKM, KacVertex, BorcherdsVertex}, is a foundational object in the study of... 
+In this work, we have two independent, yet related goals:
 
-We will focus on two main types of symmetries: holomorphic gauge symmetries and symmetries by holomorphic diffeomorphisms (or holomorphic reparametrizations). 
-An ordinary gauge symmetry is characterized as being local on the spacetime manifold. 
-Each of the types of symmetries we consider share this characteristic, but they also enjoy an additional structure: they are holomorphic (up to homotopy) on the spacetime manifold. 
-This means that they are specific to the type of theories we consider.
-Moreover, they store more information about the geometry of the underlying manifold as compared to the smooth version of such symmetries.
+\begin{enumerate}
+\item Provide analogs of the Kac-Moody vertex algebras  using factorization algebras defined on complex manifolds;
+\item Develop tools for understanding symmetries of {\em holomorphic field theory} in any dimension, that provide a systematic generalization of methods used in chiral conformal field theory on Riemann surfaces; 
+\end{enumerate}
+
+\brian{I've added stuff we had from a file a while ago, not sure how much of it now fits in the introduction.}
+These tools will use ideas and techniques from the Batalin-Vilkovisky formalism, as articulated by Costello, and factorization algebras, following \cite{CG1,CG2}.
+In this subsection, however, we will try to explain the key objects and constructions with a light touch,
+in a way that does not require familiarity with that formalism,
+merely comfort with basic complex geometry and ideas of quantum field theory.
+
+A running example is the following version of the $\beta\gamma$ system.
+
+Let $X$ be a complex $d$-dimensional manifold.
+Let $G$ be a complex algebraic group, such as $GL_n(\CC)$, 
+and let $P \to X$ be a holomorphic principal $G$-bundle.
+Fix a finite-dimensional $G$-representation $V$ and let $V^*$ denote the dual vector space with the natural induced $G$-action.
+Let $\cV \to X$ denote the holomorphic associated bundle $P \times^G V$, 
+and let $\cV^! \to X$ denote the holomorphic bundle $K_X \otimes \cV^*$,
+where $\cV^* \to X$ is the holomorphic associated bundle $P \times^G V^*$.
+Note that there is a natural fiberwise pairing
+\[
+\langle-,-\rangle: \cV \otimes \cV^! \to K_X
+\]
+arising from the evaluation pairing between $V$ and~$V^*$.
+
+The field theory involves fields $\gamma$, for a smooth section of $\cV$, and $\beta$, for a smooth section of $\Omega^{0,d-1} \tensor \sV^\vee$.
+Here, $\sV^\vee$ denotes the dual bundle. 
+The action functional is
+\[
+S(\beta,\gamma) = \int_X \langle \beta, \dbar \gamma \rangle,
+\]
+so that the equations of motion are
+\[
+\dbar \gamma = 0 = \dbar \beta.
+\]
+Thus, the classical theory is manifestly holomorphic: it picks out holomorphic sections of $\cV$ and $\cV^!$ as solutions.
+
+The theory also enjoys a natural symmetry with respect to $G$,
+arising from the $G$-action on $\cV$ and $\cV^!$.
+For instance, if $\dbar \gamma = 0$ and $g \in G$, then the section $g \gamma$ is also holomorphic.
+In fact, there is a local symmetry as well.
+Let ${\rm ad}(P) \to X$ denote the Lie algebra-valued bundle $P \times^G \fg \to X$ arising from the adjoint representation $\ad(G)$.
+Then a holomorphic section $f$ of $\ad(P)$ acts on a holomorphic section $\gamma$ of $\cV$,
+and 
+\[
+\dbar(f \gamma) =  (\dbar f) \gamma + f \dbar \gamma = 0,
+\]
+so that the sheaf of holomorphic sections of $\ad(P)$ encodes a class of local symmetries of this classical theory.
+
+\subsubsection{}
+
+If one takes a BV/BRST approach to field theory, as we will in this paper,
+then one works with a cohomological version of fields and symmetries.
+For instance, it is natural to view the classical fields as consisting of the graded vector space of Dolbeault forms
+\[
+\gamma \in \Omega^{0,*}(X,\cV) \quad \text{and} \quad \beta \in \Omega^{0,*}(X, \cV^!) \cong \Omega^{d,*}(X, \cV^*),
+\]
+but using the same action functional, extended in the natural way.
+As we are working with a free theory and hence have only a quadratic action,
+the equations of motion are linear and can be viewed as equipping the fields with the differential $\dbar$.
+In this sense, the sheaf $\cE$ of solutions to the equations of motion can be identified with the elliptic complex that assigns to an open set $U \subset X$, the complexe
+\[
+\cE(U) = \Omega^{0,*}(U,\cV) \oplus \Omega^{0,*}(U, \cV^!),
+\]
+with $\dbar$ as the differential.
+This dg approach is certainly appealing from the perspective of complex geometry,
+where one routinely works with the Dolbeault complex of a holomorphic bundle.
+
+It is natural then to encode the local symmetries in the same way.
+Let $\sAd(P)$ denote the Dolbeault complex of ${\rm ad}(P)$ viewed as a sheaf.
+That is, it assigns to the open set $U \subset X$, the dg Lie algebra 
+\[
+\sAd(P)(U) = \Omega^{0,*}(U,\ad(P))
+\]
+with differential $\dbar$ for this bundle.
+By construction, $\sAd(P)$ acts on $\cE$.
+In words, $\cE$ is a sheaf of dg modules for the sheaf of dg Lie algebra~$\sAd(P)$.
+
+\subsubsection{}
+
+So far, we have simply lifted the usual discussion of symmetries to a dg setting,
+using standard tools of complex geometry.
+We now introduce a novel maneuver that is characteristic of the BV/factorization package of~\cite{CG1,CG2}.
+
+The idea is to work with compactly supported sections of $\sAd(P)$, 
+i.e., to work with the precosheaf $\sAd(P)_c$ of dg Lie algebras that assigns to an open $U$,
+the dg Lie algebra
+\[
+\sAd(P)_c(U) = \Omega^{0,*}_c(U,\ad(P)).
+\]
+The terminology {\em precosheaf} encodes the fact that there is natural way to extend a section supported in $U$ to a larger open $V \supset U$ (namely, extend by zero),
+and so one has a functor $\sAd(P) \colon {\rm Opens}(X) \to {\rm Alg}_{\rm Lie}$.
+
+There are several related reasons to consider compact support.\footnote{In Section \ref{sec: fact} we extract factorization algebras from $\sAd(P)_c$,
+and then extract associative and vertex algebras of well-known interest.
+We postpone discussions within that framework till that section.}
+First, it is common in physics to consider compactly-supported modifications of a field.
+Recall the variational calculus, where one extracts the equations of motion by working with precisely such first-order perturbations.
+Hence, it is natural to focus on such symmetries as well.
+Second, one could ask how such compactly supported actions of $\sAd(P)$ affect observables.
+More specifically, one can ask about the charges of the theory with respect to this local symmetry.\footnote{We remark that it is precisely this relationship with traditional physical terminology of currents and charges that led de Rham to use {\em current} to mean a distributional section of the de Rham complex.}
+Third---and this reason will become clearer in a moment---the anomaly that appears when trying to quantize this symmetry are naturally local in $X$, and hence it is encoded by a kind of Lagrangian density $L$ on sections of $\sAd(P)$.
+Such a density only defines a functional on compactly supported sections,
+since when evaluated a noncompactly supported section $f$, the density $L(f)$ may be non-integrable.
+Thus $L$ determines a central extension of $\sAd(P)_c$ as a precosheaf of dg Lie algebras,
+but not as a sheaf.\footnote{We remark that to stick with sheaves, one must turn to quite sophisticated tools \cite{WittenGr,GetzlerGM,ManBeilSch} that can be tricky to interpret, much less generalize to higher dimension, whereas the cosheaf-theoretic version is quite mundane and easy to generalize, as we'll see.}
+
+\subsubsection{}
+
+Let us sketch how to make these reasons explicit.
+The first step is to understand how $\sAd(P)_c$ acts on the observables of this theory.
+
+Modulo functional analytic issues,
+we say that the observables of this classical theory are the commutative dg algebra
+\[
+(\Sym(\Omega^{0,*}(X,\cV)^* \oplus \Omega^{0,*}(X, \cV^!)^*), \dbar),
+\]
+i.e., the polynomial functions on $\cE(X)$.
+More accurately, we work with a commutative dg algebra essentially generated by the continuous linear functionals on $\cE(X)$, 
+which are compactly supported distributional sections of certain Dolbeault complexes ({\it aka} Dolbeault currents).
+We could replace $X$ by any open set $U \subset X$, 
+in which case the observables with support in $U$ arise from such distributions supported in $U$.
+We denote this commutative dg algebra by $\Obs^{cl}(U)$.
+Since observables on an open $U$ extend to observables on a larger open $V \supset U$,
+we recognize that $\Obs^{cl}$ forms a precosheaf.
+
+Manifestly, $\sAd(P)_c(U)$ acts on $\Obs^{cl}(U)$,
+by precomposing with its action on fields.
+Moreover, these actions are compatible with the extension maps of the precosheaves,
+so that $\Obs^{cl}$ is a module for $\sAd(P)_c$ in precosheaves of cochain complexes.
+This relationship already exhibits why one might choose to focus on $\sAd(P)_c$,
+as it naturally intertwines with the structure of the observables.
+
+But Noether's theorem provides a further reason,
+when understood in the context of the BV formalism.
+The idea is that $\Obs^{cl}$ has a Poisson bracket $\{-,-\}$ of degree 1
+(although there are some issues with distributions here that we suppress for the moment).
+Hence one can ask to realize the action of $\sAd(P)_c$ via the Poisson bracket.
+In other words, we ask to find a map of (precosheaves of) dg Lie algebras
+\[
+J \colon \sAd(P)_c \to \Obs^{cl}[-1]
+\]
+such that for any $f \in \sAd(P)_c(U)$ and $F \in \Obs^{cl}(U)$,
+we have
+\[
+f \cdot F = \{J(f),F\}.
+\]
+Such a map would realize every symmetry as given by an observable,
+much as in Hamiltonian mechanics.
+
+In this case, there is such a map:
+\[
+J(f)(\gamma,\beta) = \int_U \langle\beta, f \gamma\rangle.
+\]
+This functional is local, and it is natural to view it as describing the ``minimal coupling'' between our free $\beta\gamma$ system and a kind of gauge field implicit in $\sAd(P)$.
+\owen{This is a little misleading, given the nature of the forms, but I think it is fixable.}
+This construction thus shows again that it is natural to work with compactly supported sections of $\sAd(P)$,
+since it allows one to encode the Noether map in a natural way.
+We call $\sAd(P)_c$ the Lie algebra of {\em classical currents} as we have explained how, via $J$, we realize these symmetries as classical observables.
+
+\begin{rmk}
+We remark that it is not always possible to produce such a Noether map,
+but the obstruction always determines a central extension of $\sAd(P)_c$ as a precosheaf of dg Lie algebras,
+and one can then produce such a map to the classical observables.
+\end{rmk}
+
+\subsubsection{}
+
+In the BV formalism, quantization amounts to a deformation of the differential on $\Obs^{cl}$,
+where the deformation is required to satisfy certain properties.
+Two conditions are preeminent:
+\begin{itemize}
+\item the differential satisfies a {\em quantum master equation}, which ensures that $\Obs^q(U)[-1]$ is still a dg Lie algebra via the bracket,\footnote{Again, we are suppressing---for the moment important---issues about renormalization, which will play a key role when we get to the real work.} and
+\item it respects support of observables so that $\Obs^q$ is still a precosheaf.
+\end{itemize}
+The first condition is more or less what  BV quantization means, 
+whereas the second is a version of the locality of field theory.
+
+We can now ask whether the Noether map $J$ determines a map of precosheaves of dg Lie algebras from $\sAd(P)_c$ to $\Obs^q[-1]$.
+Since the Lie bracket has not changed on the observables, 
+the only question is where $J$ is a cochain map for the new differential $\d^q$
+If we write $\d^q = \d^{cl} + \hbar \Delta$,\footnote{By working with smeared observables, one really can work with the naive BV Laplacian $\Delta$. Otherwise, one must take a little more care.} then 
+\[
+[\d,J] = \hbar \Delta \circ J.
+\]
+Naively---i.e., ignoring renormalization issues---this term is the functional $ob$ on $\sAd(P)_c$ given 
+\[
+ob(f) = \int \langle f K_\Delta \rangle,
+\]
+where $K_\Delta$ is the integral kernel for the identity with respect to the pairing $\langle-,-\rangle$.
+(It encodes a version of the trace of $f$ over $\cE$.)
+This obstruction should resemble standard anomalies.
+\owen{Is that transition too abrupt? Should we provide an example?}
+
+This functional $ob$ is a cocycle in Lie algebra cohomology for $\sAd(P)$ and hence determines a central extension $\widehat{\sAd(P)}_c$ as precosheaves of dg Lie algebras.
+It is the Lie algebra of {\em quantum} currents, as there is a lift of $J$ to a map $J^q$ out of this extension to the quantum observables.
+
+
 
 Infinitesimally speaking, a symmetry is encoded by the action of a Lie algebra.
 For the holomorphic gauge symmetry this will become a sort of current algebra which is equivalent to holomorphic functions on the complex manifold with values in a Lie algebra.
@@ -35,49 +227,9 @@ For the case of conformal symmetry our work in \cite{BWVir} provides a factoriza
 In this chapter, we extend each of these objects to arbitrary complex dimensions.
 Our formulation lends itself to an explicit computation of the factorization homology along certain complex manifolds, for which we will focus on a class of examples called {\em Hopf manifolds}.
 
-Studying such local symmetries involves rich geometric input even at the classical level, but the skeptical mathematician may view this as a repackaging of already familiar objects in complex geometry.
-The main advantage of working with factorization algebra analogs of such symmetries is in their relationship to studying quantizations of field theories.
-A similar obstruction deformation theory for studying quantizations of classical field theories also allows us to study the problem of {\em quantizing} the action of a (local) Lie algebra on a theory.
-Moreover, we already know that factorization algebras describe the operator product expansion of the observables of a QFT.
-A formulation of Noether's theorem in Chapter 12 of \cite{CG2} makes the relationship between the associated factorization algebra corresponding to a symmetry and the factorization algebra of observables of the theory.
-
-Of course, quantizing a symmetry of a field theory may not always exist.
-In fact, this failure sheds light into subtle field theoretic phenomena of the underlying system. 
-For example, in the case of conformal symmetries of a conformal field theory, the failure is exactly measured by the {\em central charge} of the theory. 
-It is well established that the central charge is a very important invariant associated to a conformal field theory.
-At the Lie theoretic level, this failure is measured by a cocycle which in turn defines a central extension of the Lie algebra. 
-It is this central extension that acts on the theory. 
-
 For this reason, an essential aspect of studying the local symmetries of holomorphic field theories we mentioned above is to characterize the possible cocycles that give rise to central extensions. 
 As we have already mentioned, for vector fields in complex dimension one this is related to the central charge and the central extension of the Witt algebra (vector fields on the circle) known as the Virasoro Lie algebra.
 In the case of a current algebra associated to a Lie algebra, central extensions are related to the {\em level} and the corresponding central extensions are called affine algebras. 
-
-\begin{thm}\label{thm: chap3 1}
-The following is true about the local Lie algebras associated to holomorphic diffeomorphisms and holomorphic gauge symmetries.
-\begin{enumerate}
-\item Let $\fg$ be a Lie algebra and $\fg^X$ is associated current algebra defined on any complex manifold $X$. 
-There is an embedding of the cohomology $H^*_{Lie}(\fg , \Sym^{d+1} g^\vee [-d-1])$ inside of the local cohomology of $\fg^X$.
-\item There is an isomorphism between the local cohomology of holomorphic vector fields on any complex manifold $X$ of dimension $d$ and $H_{dR}^*(X) \tensor H^*_{GF}(\W_d)[2d]$, where  $H^*_{GF}(\W_d)$ is the Gelfand-Fuks cohomology of vector fields on the formal disk.
-\end{enumerate}
-\end{thm}
-
-The central extensions we are interested in come from classes of degree $+1$ of the above local Lie algebras.
-In the case of holomorphic vector fields the result above implies that all such extensions are parametrized by $H^{2d+1}(\W_d)$. 
-It is a classical result of Fuks \cite{Fuks} that this cohomology is isomorphic to $H^{2d+2}(BU(d))$. 
-In complex dimension one this cohomology is one dimensional corresponding to the class $c_1^2$. 
-In general, we obtain new classes, which are shown to agree with calculations in the physics 
-literature in dimensions four and six. 
-
-In general, any of these cohomology classes define factorization algebras by twisting the enveloping factorization algebra. 
-We especially focus on this construction in the case that the complex $d$-fold is equal to affine space $\CC^d$, or some natural open submanifolds thereof.
-In the case of the current algebra, our result is compatible with recent work of Kapranov et. al. in \cite{FHK} where they study higher dimensional versions of affine algebras, and their relationship to the (derived) moduli space of $G$-bundles in an analogous way that affine algebras are related to the moduli of bundles on curves via Kac-Moody uniformization.  
-Our second main result shows how to recover these higher affine algebras from our factorization algebra on punctured affine space $\CC^d \setminus\{0\}$, see Theorem \ref{thm sphere alg}.
-
-The extensions of part (1) of Theorem \ref{thm: chap3 1} are related to cohomology classes in the moduli of $G$-bundles on complex $d$-folds.
-We will show how techniques in equivariant BV quantization lead to natural families of QFTs defined over formal neighborhoods in the moduli space of $G$-bundles. 
-Our techniques allow us to study quantizations of such families, in particular there are anomalies to quantization. 
-An explicit analysis of Feynman diagrams leads to a computation of certain classes in the local cohomology which we relate to Chern classes of natural line bundles on ${\rm Bun}_G(X)$.
-This leads us to our next main result which is to prove a version of the Grothendieck-Riemann-Roch (GRR) theorem using the aforementioned methods of BV quantization, see Theorem \ref{thm ggrr}.
 
 %\begin{thm}
 %Let $V$ be a finite dimensional $\fg$-module and $X$ any compact affine complex manifold. 
