@@ -213,17 +213,27 @@ J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to
 \section{Normalizing the charge anomaly} \label{sec: feynman}
 
 In this section we conclude the proof of Proposition \ref{prop: bg anomaly} by an explicit calculation of the Feynman diagrams controlling the charge anomaly for the $\beta\gamma$ system on $\CC^d$. 
+We have already identified the algebraic piece of the anomaly with the $(d+1)$st component of the Chern character of the representation. 
+The only thing left to compute is the analytic factor. 
+We can therefore assume that we have an abelian Lie algebra, and simply compute the weight of the wheel $\Gamma$ with $(d+1)$-vertices where the external edges are labeled by elements $\alpha \in \Omega_c^{0,*}(\CC^d)$.
+After choosing a numeration of the internal edges $e = 0,\ldots d$, we can label the edges $e = 0,\ldots, d-1$ by the analytic propagator by $P^{an}_{\epsilon<L}$ and the label the edge $e = d$ by the analytic heat kernel $K_\epsilon^{an}$. 
+We recall the precise form of these kernels in the proof below. 
+The vertices are labeled by the trivalent functional $I^{an} (\alpha, \beta,\gamma) = \int \alpha \wedge \beta \wedge \gamma$ (there is no Lie bracket since the algebra is abelian). 
+Denote the resulting weight, which is a functional on the space $\Omega^{0,*}_c(\CC^d)$, by
+\[
+W^{an}_{\Gamma}(P_{\epsilon < L}, K_\epsilon, I^{an}) .
+\]
+The main computation left to do is the $\epsilon \to 0, L \to 0$ limit of this weight.
 
 \begin{lem} 
-As a functional on the abelian dg Lie algebra $\Omega^{0,*}(\CC^d)$, the analytic factor of the weight $\lim_{L\to 0} \lim_{\epsilon \to 0} W_{\Gamma, e} (P_{\epsilon < L}, K_\epsilon, I^\fg)$ is equal to a multiple of the local functional
+As a functional on the abelian dg Lie algebra $\Omega_c^{0,*}(\CC^d)$, one has
 \[
-C \int \alpha \partial \alpha \cdots \partial \alpha \in \cloc^*(\Omega^{0,*}(\CC^d)) .
+\lim_{L \to 0} \lim_{\epsilon \to 0} W^{an}_{\Gamma}(P_{\epsilon < L}, K_\epsilon, I^{an})(\alpha^{(0)},\ldots, \alpha^{(d)}) = \frac{1}{(4 \pi)^d} \frac{1}{(d+1)!} \int \alpha^{(0)} \partial \alpha^{(1)} \cdots \partial \alpha^{(d)}  .
 \]
 \end{lem}
 
 \begin{proof}
 
-Let's fix some notation. 
 We enumerate the vertices by integers $a = 0,\ldots, d$. 
 Label the coordinate at the $i$th vertex by $z^{(a)} = (z_1^{(a)}, \ldots, z_d^{(a)})$. 
 The incoming edges of the wheel will be denoted by homogeneous Dolbeault forms 
@@ -235,12 +245,12 @@ For instance, if $\alpha$ is a $(0,2)$ form we would write
 \[
 \alpha = \sum_{j_1 < j_2} A_{(j_1,j_2)} \d \zbar_{j_1} \d\zbar_{j_2} .
 \]
-Denote the functional obtained as the $\epsilon \to 0$ weight of the wheel with $(d+1)$ vertices from Lemma \ref{lem: g anomaly} by $W_L$.
-The $L\to 0$ limit of $W_L$ is the local functional representing the one-loop anomaly $\Theta$. 
+Denote by $W^{an}_L$ weight $\epsilon \to 0$ limit of the analytic weight of the wheel with $(d+1)$ vertices.
+The $L\to 0$ limit of $W^{an}_L$ is the local functional representing the one-loop anomaly $\Theta$. 
 
 The weight has the form
 \[
-W_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
+W^{an}_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
 \]
 We introduce coordinates
 \begin{align*}

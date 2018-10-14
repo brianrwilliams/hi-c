@@ -72,19 +72,29 @@ In this flat case the section $\beta$ has no dependence on $\gamma$.
 the gauge symmetry $\beta \to \beta + \dbar \beta'$, where $\beta' \in \Omega^{d,d-2} (X, V^\vee)$ has naturally been incorporated into our BRST complex (which only consists of a linear operator since the theory is free).
 \end{rmk}
 
-By our discussion above, once we include the full BV complex, the symmetry by the Lie algebra $C^\infty(X, \fg)$ now extends to a symmetry by the {\em dg Lie algebra} $\sG_d^{sh} = \Omega^{0,*}(X, \fg)$. 
-\brian{finish}
+By our discussion above, once we include the full BV complex, the symmetry by the Lie algebra $C^\infty(X, \fg)$ now extends to a symmetry by the {\em dg Lie algebra} $\sG_X^{sh} = \Omega^{0,*}(X, \fg)$. 
+The action by $\sG_X^{sh}$ extends to a natural action on the fields of the $\beta\gamma$ system in such a way that the shifted symplectic pairing is preserved. 
+We encode the action by an element $\alpha \in \sG_X^{sh}$ by a {\em local} Hamiltonian functional $I_\alpha^{\sG} \in \oloc(\sE_V)$. 
 
 \begin{dfn/lem}
-The $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ with values in $V$ is defined by the local functional
+The $\sG_X$-equivariant $\beta\gamma$ system on $X$ with values in $V$ is defined by the local functional
 \[
-I^{\sG}(\alpha, \beta, \gamma) = \int \<\beta, \alpha \cdot \gamma\>_V \in \oloc(\sE_V \oplus \sG_d[1]) .
+I^{\sG}(\alpha, \beta, \gamma) = \int \<\beta, \alpha \cdot \gamma\>_V \in \oloc(\sE_V \oplus \sG_X[1]) .
 \]
-This functional satisfies the $\sG_d$-equivariant classical master equation
+This functional satisfies the $\sG_X$-equivariant classical master equation
 \[
 (\dbar + \d_{\sG}) I^{\sG} + \frac{1}{2} \{I^{\sG}, I^{\sG}\} = 0 .
 \] 
 \end{dfn/lem}
+
+The classical master equation simply says that the Hamiltonian function $I^{\sG}$ defines a dg Lie algebra action on the theory $\sE_V$. 
+In particular, $I^{\sG}$ determines a map of sheaves of dg Lie algebras 
+\[
+I^{\sG} : \sG^{sh}_X \to \oloc(\sE_V)[-1],
+\] 
+where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-\}$. 
+
+For the remainder of the section we will restrict ourselves to the complex $d$-fold $X = \CC^d$. 
 
 \subsubsection{The $\beta\gamma$ factorization algebra}
 
@@ -99,7 +109,7 @@ It is the general philosophy of \cite{CG1,CG2} that the observables of a quantum
 
 For any theory, the factorization algebra of classical observables assigns to every open set $U$ the cochain complex of algebraic functions on the fields supported on $U$.  
 For the example of the $\beta\gamma$ system, the differential is just given by the $\dbar$ operator. 
-Concretely, the complex of classical observables\footnote{There is also the completed version where one uses $\prod$ in place of $\oplus$ when defining the symmetric algebra, but we will not use it here.} assigned to an open set $U$ is
+Concretely, the complex of classical observables\footnote{There is also the completed version where one uses $\prod$ in place of $\oplus$ when defining the symmetric algebra, but we will not use it here.} assigned to an open set $U \subset \CC^d$ is
 \[
 \Obs^{\cl}_V(U) = \left(\Sym \left(\Omega^{0,*}(U)^\vee \tensor V^\vee \oplus \Omega^{d,*}(U)^\vee \tensor V [-d+1]\right), \dbar\right) .
 \]
@@ -388,7 +398,7 @@ We arrive at the following.
 \begin{prop}\label{prop: bg anomaly}
 The charge anomaly for quantizing the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is equal to
 \[
-\Theta_V = A  \fj (\ch_{d+1}^{\fg}(V)),
+\Theta_V = \frac{1}{(4 \pi)^d} \fj (\ch_{d+1}^{\fg}(V)),
 \]
 where $\fj$ is the isomorphism from Proposition \ref{prop: trans j}.
 \end{prop}
@@ -424,7 +434,7 @@ This follows from ellipticity of the Dolbeault complex.
 Consequently we can introduce the qausi-isomorphic subcomplex 
 \[
 \begin{tikzcd}    
-\Tilde{\Obs}^{\cl}_V(U) := \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) = \Obs_V^{\cl}(U)
+ \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
 \end{tikzcd}
 \]
 The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ still defines a factorization algebra on $\CC^d$, and we have a resulting quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
@@ -469,7 +479,7 @@ The quantum current algebra $\Cur^\q_{\hbar \Theta_V}$ is a factorization algebr
 It therefore makes sense to specialize the value of $\hbar$. 
 The convention we take is to specialize the value of $\hbar$ to be
 \[
-\hbar = (2\pi i)^d .
+\hbar = (4\pi)^d .
 \]
 
 From our calculation of the charge anomaly $\Theta_V$ above, once we specialize $\hbar$ we can realize the current algebra as an enveloping factorization algebra
@@ -478,7 +488,7 @@ From our calculation of the charge anomaly $\Theta_V$ above, once we specialize 
 \]
 Thus, as an immediate corollary of the above proposition, $J^\q$ specializes to a map of factorization algebras
 \beqn\label{free field}
-J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d} .
+J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d} .
 \eeqn
 We interpret this as a {\em free field realization} of the higher Kac-Moody factorization algebra. 
 Indeed, this is an embedding of the Kac-Moody into the factorization algebra of observables of the free theory described classically by the $\beta\gamma$-system. 
