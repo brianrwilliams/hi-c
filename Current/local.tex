@@ -185,11 +185,11 @@ There is then a map of sheaves of dg Lie algebras
 \mathtt{Lg}^{sh} \to r_* \sG_1^{sh}
 \eeqn
 that sends $\alpha \otimes x\, z^n$ to $[r^*\alpha]_{0,*} \cdot z^n \otimes x$, with $x \in \fg$, $\alpha$ a differential form on $(0,\infty)$, and $[r^*\alpha]_{0,*}$ the $(0,*)$-component of the pulled back form.
-This map restricts nicely to compactly support sections $\mathtt{Lg} \to r_* \sG$.
+This map restricts nicely to compactly support sections $\mathtt{Lg} \to r_* \sG_1$.
 By taking Chevalley-Eilenberg chains on both sides, we obtain a map of factorization algebras
 \beqn
 \label{eqn:Uoflooptolinearcurrent}
-\UU\mathtt{Lg} = \cliels(\mathtt{Lg}) \to \cliels(r_* \sG) = r_*\UU\sG.
+\UU\mathtt{Lg} = \cliels(\mathtt{Lg}) \to \cliels(r_* \sG_1) = r_*\UU\sG_1.
 \eeqn
 The left hand side $\UU\mathtt{Lg}$ encodes the associative algebra $U(L\fg)$, the enveloping algebra of $L\fg$,
 as can be seen by direct computation (see section 3.4 of \cite{CG1}) or by a general result of Knudsen~\cite{Knudsen}.
@@ -353,7 +353,7 @@ and so we introduce an algebraic model for the sphere algebra.
 
 \begin{dfn}
 For a Lie algebra $\fg$, the {\em sphere algebra} in complex dimension $d$ is the dg Lie algebra~$A_d \otimes \fg$.
-\owen{Notation for this? ${\Sph}_d(\fg)$? $\SS^d \fg$? I think FHK use $\fg_d$.}
+Following \cite{FHK} we denote it by~$\fg^\bullet_d$.
 \end{dfn}
 
 There are natural central extensions of this sphere algebra as {em $L_\infty$ algebras},
@@ -369,9 +369,8 @@ For any $\theta \in \Sym^{d+1}(\fg^*)^\fg$, Faonte-Hennion-Kapranov define the c
 \owen{I changed $\d$ (for de Rham) with $\partial$, since I think that's clearer. Tell me what you think.}
 This cocycle has cohomological degree $2$ and so determines an unshifted central extension as $L_\infty$ algebras of~$A_d \tensor \fg$:
 \beqn\label{gdt}
-\CC \cdot K \to \Hat{\fg}_{d, \theta} \to A_d \tensor \fg .
+\CC \cdot K \to \widetilde{\fg}^\bullet_{d, \theta} \to A_d \tensor \fg .
 \eeqn
-\owen{Let's make sure we're consistent (or at least mention) the FHK notation for this.}
 Our aim is now to show how the Kac-Moody factorization algebra $\UU_\theta \sG_d$ is related to this $L_\infty$ algebra,
 which is a higher-dimensional version of the affine Kac-Moody Lie algebras. 
 
@@ -388,7 +387,7 @@ which is a higher-dimensional version of the affine Kac-Moody Lie algebras.
 \subsubsection{The case of zero level}
 
 Here we will consider the higher Kac-Moody factorization algebra on $\CC^d \setminus \{0\}$ ``at level zero," namely the factorization algebra $\UU(\sG_{\CC^d \setminus\{0\}})$.
-In this section we will omit $\CC^d \setminus \{0\}$ from the notation, and simply refer to the factorization algebra by $\UU(\sG)$. 
+In this section we will omit $\CC^d \setminus \{0\}$ from the notation, and simply refer to the factorization algebra by $\UU(\sG_d)$. 
 Our construction will follow the model case outlined in the introduction to this section.
 Recall that $r: \pAA^d \to (0,\infty)$ is the radial projection map that sends $(z_1,\ldots,z_d)$ to its length $\sqrt{z_1\zbar_1 + \cdots z_d \zbar_d}$.
 
@@ -415,12 +414,12 @@ By tensoring with $\fg$, we obtain the following.
 \begin{cor}
 There is a map of sheaves of dg Lie algebras on~$\RR_{>0}$
 \[
-\pi_{\Sph_d(\fg)}: \Omega^* \otimes \Sph_d(\fg) \to r_* (\Omega^{0,*}\otimes \fg) = r_*(\sG^{sh})
+\pi_{\fg^\bullet_d}: \Omega^* \otimes \fg^\bullet_d \to r_* (\Omega^{0,*}\otimes \fg) = r_*(\sG_d^{sh})
 \]
 sending $\alpha \otimes x$ to $\pi(\alpha) \otimes x$.
 \end{cor}
 
-Note that $\Omega^* \otimes \Sph_d(\fg) = \Omega^* \otimes A_d \otimes \fg$, so $\pi_{\Sph_d(\fg)}$ is simply $\pi_A \otimes \id_\fg$.
+Note that $\Omega^* \otimes \fg^\bullet_d = \Omega^* \otimes A_d \otimes \fg$, so $\pi_{\fg^\bullet_d}$ is simply $\pi_A \otimes \id_\fg$.
 
 This map preserves support and hence restricts to compactly-supported sections.
 In other words, we have a map between the associated cosheaves of complexes (and precosheaves of dg Lie algebras).
@@ -464,17 +463,27 @@ In summary, we have shown our key result.
 \label{prop: fact lie}
 The map
 \[
- \pi_{\Sph_d(\fg)}: \Omega^*_{\RR_{>0},c} \otimes \Sph_d(\fg) \to r_*\sG 
+\pi_{\fg^\bullet_d}: \Omega^*_{\RR_{>0},c} \otimes \fg^\bullet_d \to r_*\sG_d 
 \] 
 is a map of precosheaves of dg Lie algebras.
 It determines a map of factorization algebras
 \[
-\cliels(\pi_{\Sph_d(\fg)}) : \UU\left(\Omega^{*}_{\RR_{>0}} \tensor \Sph_d(\fg)\right) \to r_*\left(\UU \sG \right) .
+\cliels(\pi_{\fg^\bullet_d}) : \UU\left(\Omega^{*}_{\RR_{>0}} \tensor \fg^\bullet_d\right) \to r_*\left(\UU \sG_d \right) .
 \]
 \end{prop}
 
-The map of factorization algebras follows from applying the functor $\clieu_*(-)$ to the map $\pi_{\Sph_d(\fg)}$;
+The map of factorization algebras follows from applying the functor $\clieu_*(-)$ to the map $\pi_{\fg^\bullet_d}$;
 this construction commutes with push-forward by inspection. 
+
+Both maps are dense in every cohomological degree with respect to the natural topologies on these vector spaces,
+leading to the following observation.
+
+\owen{This phrasing isn't great. Can you think of something better?}
+
+\begin{cor}
+By Theorem \ref{thm:knudsen} of Knudsen, 
+the enveloping $E_1$ algebra of the sphere algebra $\fg^\bullet_d$ is dense within the pushforward $r_*\left(\UU \sG_d \right)$.
+\end{cor}
 
 \subsubsection{The case of non-zero level}
 
@@ -484,28 +493,28 @@ and we would like to produce maps akin to those of Proposition~\ref{prop: fact l
 
 The simplest modification of the level zero situation is to introduce a central extension of the precosheaf
 \[
-\mathtt{G}_d = \Omega^*_{\RR_{>0},c} \otimes \Sph_d(\fg)
+\mathtt{G}_d = \Omega^*_{\RR_{>0},c} \otimes \fg^\bullet_d
 \] 
 as a precosheaf of $L_\infty$ algebras on $\RR_{>0}$,
-with the condition that this extension intertwines with the extension $r_*\sG_{d,\fj(\theta)}$ of~$r_* \sG_{d}$.
+with the condition that this extension intertwines with the extension $r_*\sG_{d,\theta}$ of~$r_* \sG_{d}$.
 In other words, we need a map 
 \[
 \xymatrix{
-0 \ar[r] & \CC \cdot K [-1]  \ar[d]^{=} \ar[r] & \mathtt{G}_{d,\Theta'} \ar[d]^{\Hat{\pi}} \ar[r] & \mathtt{G}_d \ar[d]^{\pi_{\Sph_d(\fg)}} \ar[r] & 0 \\
-0 \ar[r] & \CC \cdot K [-1] \ar[r] & r_*\sG_{d,\fj(\theta)} \ar[r] & r_* \sG_{d} \ar[r] & 0 .
+0 \ar[r] & \CC \cdot K [-1]  \ar[d]^{=} \ar[r] & \mathtt{G}_{d,\Theta'} \ar[d]^{\Hat{\pi}} \ar[r] & \mathtt{G}_d \ar[d]^{\pi_{\fg^\bullet_d}} \ar[r] & 0 \\
+0 \ar[r] & \CC \cdot K [-1] \ar[r] & r_*\sG_{d,\theta} \ar[r] & r_* \sG_{d} \ar[r] & 0 .
 }
 \]
 of central extensions of $L_\infty$ algebras.
 This condition fixes the problem completely, 
-because we simply pull back the extension defining $r_*\sG_{d,\fj(\theta)}$.
+because we simply pull back the extension defining $r_*\sG_{d,\theta}$.
 Let us extract an explicit description,
 which will be useful later.
-On an open $U \subset \RR_{>0}$, the extension for $r_*\sG_{d,\fj(\theta)}$ is given by an integral
+On an open $U \subset \RR_{>0}$, the extension for $r_*\sG_{d,\theta}$ is given by an integral
 \[
 \int_{r^{-1}(U)} \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) = \int_U \int_{S^{2d-1}} \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
 \]
 that can be factored into a double integral. 
-This formula indicates that $\Theta'$ must be given by the cocycle whose value on elements $\phi_i \otimes a_i \in \Omega^*_c \otimes \Sph_d(\fg)$~is
+This formula indicates that $\Theta'$ must be given by the cocycle whose value on elements $\phi_i \otimes a_i \in \Omega^*_c \otimes \fg^\bullet_d$~is
 \begin{align*}
 \Theta'(\phi_0 \otimes a_0, \ldots, \phi_d \otimes a_d)
 &= \int_U \int_{S^{2d-1}} \theta(\pi(\phi_0) \wedge \jou(a_0),\partial (\pi(\phi_1) \wedge \jou(a_1)),\ldots,\partial(\pi(\phi_d) \wedge \jou(a_d))) \\
@@ -521,14 +530,23 @@ let $\mathtt{G}_{d,\theta}$ denote the precosheaf of $L_\infty$ algebras obtaine
 \]
 By construction, there is a canonical map 
 \[
-\pi_{\Sph_d(\fg),\theta}: \mathtt{G}_{d,\theta} \to r_* \sG_{d,\fj(\theta)}
+\pi_{\fg^\bullet_d,\theta}: \mathtt{G}_{d,\theta} \to r_* \sG_{d,\theta}
 \]
 of precosheaves of $L_\infty$ algebras on $\RR_{>0}$, 
 and hence there is a map of factorization algebras
 \[
-\UU(\pi_{\Sph_d(\fg),\theta}): \UU_{\theta} \mathtt{G}_d \to r_* \UU_\theta \sG_d.
+\UU(\pi_{\fg^\bullet_d,\theta}): \UU_{\theta} \mathtt{G}_d \to r_* \UU_\theta \sG_d.
 \]
 \end{lem}
+
+The maps remain degreewise dense, but now we are working with a twisted enveloping factorization algebra,
+which is slightly different in flavor than Knudsen's construction.
+The central parameter $K$ parametrizes, in fact, a family of $E_1$ algebras that specializes at $K=0$ to the enveloping $E_1$ algebra of the sphere algebra~$\fg^\bullet_d$.
+
+\begin{cor}
+There is a family of $E_1$ algebras over the affine line ${\rm Spec}(\CC[K])$ with the enveloping $E_1$ algebra of the sphere algebra $\fg^\bullet_d$ at the origin.
+This family is dense within the pushforward $r_*\left(\UU_\theta \sG_d \right)$.
+\end{cor}
 
 %\begin{proof}
 %Modulo the central element $\Phi_2$ reduces to the map $\Phi$, which we have already seen is a map of factorization Lie algebras in Proposition \ref{prop: fact lie}. Thus, to show that $\Phi_2$ is a map of factorization Lie algebras we need to show that it is compatible with the cocycles determing the respective central extensions. That is, we need to show that 
@@ -581,7 +599,63 @@ and hence there is a map of factorization algebras
 %This is precisely equal to the second term (\ref{calc1b}) above. Hence, the cocycles are compatible and the proof is complete. 
 %\end{proof}
 
-\subsection{A comparison with the work of Faonte-Hennion-Kapranov}
+\subsubsection{A comparison with the work of Faonte-Hennion-Kapranov}
+
+There is a variant of the preceding result that is particularly appealing in light of \cite{FHK},
+which is to provide a map of factorization algebras on the positive reals
+\[
+\UU(\Omega^*_c \otimes \Tilde{\fg}^\bullet_{d,\theta}) \to r_* \sG_{d,\theta},
+\] 
+where the source is the factorization algebra encoding the enveloping $E_1$ algebra of $\Tilde{\fg}^\bullet_{d,\theta}$.
+Specializing the central parameters to zero on both sides must recover the map $\pi_{\fg^\bullet_d}$ of Proposition~\ref{prop: fact lie}.
+Such a map has two connected consequences:
+\begin{enumerate}
+\item It shows that the higher current Lie algebras $\Tilde{\fg}^\bullet_{d,\theta}$ of \cite{FHK} ``control'' our twisted current factorization algebras $\sG_{d,\theta}$ in the same way that the affine Kac-Moody Lie algebras control their vertex algebras.
+\item It shows that our factorization algebras $\sG_{d,\theta}$ know the information encoded by the Lie algebras $\Tilde{\fg}^\bullet_{d,\theta}$ introduced in~\cite{FHK}.
+\end{enumerate}
+In short this map provides a conduit for transferring insights between derived algebraic geometry (as represented by the \cite{FHK} approach) and quantum field theory (as represented by ours).
+
+\owen{What do you think of the preceding and following?}
+
+\begin{rmk}
+Before embarking on the construction of the map,
+we remark that it was a pleasant surprise to come upon \cite{FHK} 
+and to find that they had explored terrain that we had approached from the direction exposed in this paper,
+i.e., the higher dimensional generalization of results from \cite{CG1}.
+Their Jouanolou model $A_d$ allowed us to sharpen our results into something more tractable and more obviously analogous to Laurent polynomials,
+and their discussion of the global derived geometry verified our guesses, 
+which were beyond our technical powers.
+As we will see in Section~\owen{add cross ref to large N section},
+their use of cyclic homology to obtain natural extensions resonated beautifully with some of our thoughts 
+and suggested a different vision, rooted in derived geometry, of the role of large $N$ limits.
+We thank Faonte, Hennion, and Kapranov for inspiring and enlightening conversations and correspondence on these subjects.
+\end{rmk}
+
+Constructing the map requires overcoming two issues.
+First, note that 
+\[
+\Tilde{\mathtt{G}}_{d,\theta} = \Omega^*_c \otimes \Tilde{\fg}^\bullet_{d,\theta}
+\]
+can be viewed as an extension
+\[
+\Omega^*_c \otimes \CC K[-1] \to \Tilde{\mathtt{G}}_{d,\theta} \to \mathtt{G}_d
+\]
+of precosheaves of $L_\infty$ algebras on $\RR_{>0}$.
+By contrast, $r_* \sG_{d,\theta}$ is an extension by the constant precosheaf $\CC K[-1]$.
+There is, however, a natural map of precosheaves
+\[
+\int: \Omega^*_c \to \CC
+\]
+to employ.
+Hence, the second issue looks more serious:
+the two cocycles at play seem different at first glance.
+We found that the cocycle for the pushforward is given~by
+\[
+\int_U \int_{S^{2d-1}} \theta(\pi(\phi_0) \wedge \jou(a_0),\partial (\pi(\phi_1) \wedge \jou(a_1)),\ldots,\partial(\pi(\phi_d) \wedge \jou(a_d)))
+\]
+for the image under $\pi_{\fg^\bullet_d}$ of elements $\phi_i \otimes a_i \in \Omega^*_c \otimes \fg^\bullet_d$.
+On the other hand, the FHK extension is given~by
+
 
 \owen{We just do something very quick here, and prepare the way for later discussions.}
 
@@ -590,7 +664,7 @@ We wish to produce a map
 \pi_\theta: \Omega^*_{\RR_{>0},c} \otimes \widehat{\fg}_{d,\theta} \to r_* \sG_\theta
 \]
 of precosheaves of $L_\infty$ algebras on $\RR_{>0}$,
-generalizing the map $\pi_{\Sph_d(\fg)}$ of Proposition~\ref{prop: fact lie}.
+generalizing the map $\pi_{\fg^\bullet_d}$ of Proposition~\ref{prop: fact lie}.
 Specializing the parameter $K$ to zero, we should recover that map.
 By applying $\clieu_*(-)$ to $\pi_\theta$, we will obtain the desired map of factorization algebras. 
 
