@@ -57,13 +57,17 @@
 
 \section{The holomorphic charge anomaly}
 
-In this section, we switch gears a bit to witness a natural occurrence of the Kac-Moody factorization algebra as a symmetry of a simple class of higher dimensional quantum field theories. 
+In this section, we switch gears a bit to propose a natural occurrence of the Kac-Moody factorization algebra as a symmetry of a simple class of higher dimensional quantum field theories. 
+This situation is analogous to the free field realization of the affine Kac-Moody algebra as a subalgebra of a sort of Weyl algebra on the loop space. 
+
+Our approach is through the general machinery of perturbative quantum field theory developed by Costello \cite{CosBook} and Costello-Gwilliam \cite{CG1,CG2}.
+We study the quantization of {\em free} field theory, which makes sense in any complex dimension.
+Classically, the theory depends on the data of a $G$-representation, and  how this 
 
 For any BV theory $\sE$, the BV operator $\{S,-\}$, which satisfies $\{S,-\}^2 =0$ by the ordinary classical master equation, together with the BV bracket $\{-,-\}$ equip the space of local functionals $\oloc(\sE)$ with the structure of a dg Lie algebra. 
 Another way to interpret the equivariant classical master equation is to view $I^{\sL}$ as an element in the dg Lie algebra $\oloc(\sE) \tensor \cloc^*(\sL)$.
 
 This section is mostly a cobbling together of know results above BV quantization for holomorphic theories found in the sources \cite{CG2, BWhol}. 
-
 
 %\subsection{The quantum master equation} 
 
@@ -149,7 +153,7 @@ However, since $\alpha$ is compactly supported on $U$, it makes sense to restric
 This is precisely the observable $J^{\cl}(\alpha)$. 
 \end{rmk}
 
-As always, the statement we are after pertains to the quantum situation. 
+As usual, the statement we are after pertains to the quantum situation. 
 Being a free field theory, the $\beta\gamma$ system admits a unique quantization and hence a factorization algebra $\Obs^{\q}_V$ of quantum observables (whose definition we recall below). 
 The natural question arises whether the symmetry by the dg Lie algebra $\sG_d$ persists upon quantization. 
 We are asking if we can lift $J^{\cl}$ to a ``quantum current" $J^{\q} : \Cur^\q(\sG_d) \to \Obs^\q_V$, where $\Cur^\q(\sG_d)$ is the factorization algebras of quantum currents defined in the introduction. 
@@ -428,7 +432,7 @@ In practice, the BV formalism suggests that the quantum observables arise by
 \item[(b)] deforming the differential to $\dbar +\hbar \Delta_L$, where $\Delta_L$ is the BV Laplacian.
 \end{enumerate}
 This actually defines a family of quantum observables, one for each length scale $L$. 
-A main idea of \cite{CG2} says that by considering the collection of observables at all length scales $L$ the observables $\Obs^\q_V$ still define a factorization algebra. 
+A main idea of \cite{CG2} says that by considering the collection of functionals at all length scales $L$, the observables $\Obs^\q_V$ still define a factorization algebra. 
 
 The fact that this works is quite subtle, since naively the differential $\Delta_L$ seems to have support on all of $\CC^d$, so it's not obvious how to define the corestriction maps of the factorization algebra. 
 In the case of free theories, such as the $\beta\gamma$ system, there is a way to circumvent this difficulty. 
@@ -504,16 +508,33 @@ J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (2\p
 \eeqn
 We interpret this as a {\em free field realization} of the higher Kac-Moody factorization algebra. 
 Indeed, this is an embedding of the Kac-Moody into the factorization algebra of observables of the free theory described classically by the $\beta\gamma$-system. 
-This is proved in 
 
 We obtain a more concrete result once we specialize to the sphere operators. 
-We have seen that sitting inside the sphere operators of 
-Recall that the sphere operators 
+To state this, we introduce a dg associative algebra closely related to the $\beta\gamma$ system. 
+Recall, the algebra $A_d$ which provides a dg model for functions on punctured affine space $\AA^d$.
+Consider the dg vector space
+\[
+A_d \tensor (V \oplus V^*[d-1])
+\]
+where $V$ is our $\fg$-representation. 
+The dual pairing between $V$ and $V^*$ combined with the higher residue defines a symplectic structure $\omega_V$ on this dg vector space via
+\[
+\omega_V(\alpha \tensor v, \beta \tensor v^*) = \<v, v^*\>_V \oint_{S^{2d-1}} \alpha \wedge \beta \d^d z .
+\]
+From this symplectic dg vector space, we define the dg Lie algebra $\sH_V$ as a central extension
+\[
+\CC \to \sH_V \to A_d \tensor (V \oplus V^*[d-1]) .
+\]
+The $2$-cocycle defining this extension is simply $\omega_V$. 
+Thus $\sH_V$ is the Heisenberg Lie algebra associated to the symplectic dg vector space. 
+
+If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody. 
+This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra of the Heisenberg $U(\sH_V)$.  
 
 \begin{cor} 
 The map (\ref{free field}) determines a map of $E_1$-algebras 
 \beqn\label{free field2}
-\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_V)
+\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_V) .
 \eeqn
 \end{cor}
 
