@@ -1,48 +1,4 @@
 \appendix
-\section{Local functionals}
-\label{appx:locfncl}
-
-\brian{I think we can get rid of this section}
-
-In our approach, the space of fields will always be equal to the space of smooth sections of a $\ZZ$-graded vector bundle $E\to X$ on a manifold $\sE = \Gamma(X, E)$. 
-The class of functionals $S : \sE \to \RR$ defining the classical theories we consider are required to be {\em local}, or given by the integral of a Lagrangian density. 
-We define this concept now.
-
-Let $D_X$ denote the sheaf of differential operators on $X$. 
-The $\infty$-jet bundle ${\rm Jet}(E)$ of a vector bundle $E$ is the vector bundle whose fiber over $x \in X$ is the space of formal germs at $x$ of sections of $E$. 
-It is a standard fact that ${\rm Jet}(E)$ is equipped with a flat connection giving its space of sections $J(E) = \Gamma(X, {\rm Jet}(E))$ the structure of a $D_X$-module.
-
-Above, we have defined the algebra of functions $\sO(\sE(X))$ on the space of sections $\sE(X)$.
-Similarly, let $\sO_{red}(\sE(X)) = \sO(\sE(X)) / \RR$ be the quotient by the constant polynomial functions. 
-The space $\sO_{red}(J(E))$ inherits a natural $D_X$-module structure from $J(E)$. 
-We refer to $\sO_{red}(J(E))$ as the space of {\em Lagrangians} on the vector bundle $E$. 
-Every element $F \in \sO_{red}(J(E))$ can be expanded as $F = \sum_n F_n$ where each $F_n$ is an element 
-\beqn
-F_n \in {\rm Hom}_{C^\infty_X} (J(E)^{\tensor n}, C^\infty_X)_{S_n} \cong {\rm PolyDiff}(\sE^{\tensor n}, C^\infty(X))_{S_n}
-\eeqn
-where the right-hand side is the space of polydifferential operators.
-The proof of the isomorphism on the right-hand side can be found in Chapter 5 of \cite{CostelloRenormalization}.
-
-A local functional is given by a Lagrangian densities modulo total derivatives.
-The mathematical definition is the following.
-
-\begin{dfn} \label{dfn: local fnl}
-Let $E$ be a graded vector bundle on $X$.
-Define the sheaf of {\em local functionals} on $X$ to be
-\beqn
-\oloc(\sE) = {\rm Dens}_X \tensor_{D_X} \sO_{red}(J(E)),
-\eeqn
-where we use the natural right $D_X$-module structure on densities.
-\end{dfn}
-
-Note that we always consider local functionals coming from Lagrangians modulo constants. 
-We will not be concerned with local functions associated to constant Lagrangians. 
-
-From the expression for functionals in Lemma \ref{lem: fnls} we see that integration defines an inclusion of sheaves
-\[\label{local inclusion}
-i : \oloc(\sE) \hookrightarrow \sO_{red}(\sE_c) .
-\]
-Often times when we describe a local functional we will write down its value on test compactly supported sections, then check that it is given by integrating a Lagrangian density, which amounts to lifting the functional along $i$. 
 
 \section{Computing the deformation complex}\label{sec: hol trans}
 

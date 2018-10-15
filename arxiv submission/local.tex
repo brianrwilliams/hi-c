@@ -598,8 +598,6 @@ There is a cochain $\eta$ for $\mathtt{G}_d$ such that
 where $\d$ here denotes the differential on the Lie algebra cochains of~$\mathtt{G}_d$.
 \end{lem}
 
-\owen{Check the sign on $\d\eta$ here.}
-
 \begin{proof}
 We note that the Lie algebra $\fg$ and the invariant polynomial $\theta$ play no substantive role in the problem.
 The issue here is about calculus.
@@ -624,106 +622,6 @@ We now define
 \owen{And now your explicit proof peters out. It looks like a direct computation now, but there's probably something short of writing the details that nonetheless explains where this formula comes from.}
 \end{proof}
 
-\owen{Hidden below is the raw material of your original approach.}
-%
-%We wish to produce a map 
-%\[
-%\pi_\theta: \Omega^*_{\RR_{>0},c} \otimes \widehat{\fg}_{d,\theta} \to r_* \sG_\theta
-%\]
-%of precosheaves of $L_\infty$ algebras on $\RR_{>0}$,
-%generalizing the map $\pi_{\fg, d}$ of Proposition~\ref{prop: fact lie}.
-%Specializing the parameter $K$ to zero, we should recover that map.
-%By applying $\clieu_*(-)$ to $\pi_\theta$, we will obtain the desired map of factorization algebras. 
-%
-%We now proceed to the proof of Theorem \label{thm sphere alg}. 
-%The dg Lie algebra $\fg_{d,\theta}$ determines a dg associative algebra via its universal enveloping algebra $U(\fg_{d,\theta})$.
-%This dg algebra determines a factorization algebra on the one-manifold $\RR_{>0}$ that assigns to every open interval $I \subset \RR_{>0}$ the dg vector space $U(A_d \tensor \fg)$. 
-%The factorization product is uniquely determined by the algebra structure. 
-%Henceforth, we denote this factorization algebra by $U(\fg_{d,\theta})^{fact}$.
-%
-%To prove the theorem we will construct a sequence of maps of factorization Lie algebras on $\RR_{>0}$:
-%\[
-%\xymatrix{
-%& \sG_1 \ar[dr]^-{\Phi_1} & & \sG_2 \\
-%\sG_0 \ar[ur]^-{\simeq}_{\Phi_0} & & \sG_1' \ar[ur]_{\Phi_2} & .
-%}
-%\]
-%The enveloping factorization of $\sG_0$ is equivalent to the factorization algebra $U (\Hat{\fg}_{d,\theta})^{fact}$. 
-%Moreover, the enveloping factorization of $\sG_2$ is the push-forward of of the higher Kac-Moody factorization algebra $r_* \UU \sG$. 
-%Hence, the desired map of factorization algebras is produced by applying the enveloping factorization functor to the above composition of factorization Lie algebras. 
-%
-%First, we introduce the factorization Lie algebra $\sG_0$. 
-%To an open set $I \subset \RR$, it assigns the dg Lie algebra $\sG_0(I) = \Omega^*_{c}(I) \tensor \Hat{\fg}_{d,\theta}$, where $\Hat{\fg}_{d,\theta}$ is the central extension from Equation (\ref{gdt}). The differential and Lie bracket are determined by the fact that we are tensoring a commutative dg algebra with a dg Lie algebra. A slight variant of Proposition 3.4.0.1 in \cite{CG1}, which shows that the one-dimensional enveloping factorization of an ordinary Lie algebra produces its ordinary universal enveloping algebra, shows that there is a quasi-isomorphism of factorization algebras on $\RR$,
-%\[
-%(U \Hat{\fg}_{d,\theta})^{fact} \xrightarrow{\simeq} {\rm C}^{\rm Lie}_*(\sG_0) .
-%\]
-%The factorization Lie algebra $\sG_0$ is a central extension of the factorization Lie algebra $\Omega^*_{\RR,c} \tensor (A_d \tensor \fg)$ by the trivial module $\Omega^*_c \oplus \CC \cdot K$. Indeed, the cocycle determining the central extension is given by
-%\[
-%\theta_0 (\varphi_0 \alpha_0,\ldots,\varphi_d \alpha_d) = (\varphi_0 \wedge \cdots \wedge \varphi_d) \theta_{A_d}(\alpha_1,\ldots,\alpha_d) .
-%\] 
-%The factorization Lie algebra $\Omega^*_{\RR,c} \tensor (A_d \tensor \fg)$ is the compactly supported sections of the local Lie algebra $\Omega^*_{\RR} \tensor (A_d \tensor \fg)$ and this cocycle determining the extension is a local cocycle. 
-%
-%Next, we define the factorization dg Lie algebra $\sG_1$ on $\RR$. This is also obtained as a central extension of the factorization Lie algebra $\Omega^{*}_{\RR,c} \tensor (A_d \tensor \fg)$: 
-%\[
-%0 \to \CC \cdot K [-1] \to \sG_1 \to \Omega^{*}_{\RR,c} \tensor (A_d \tensor \fg) \to 0
-%\]
-%determined by the following cocycle. For an open interval $I$ write $\varphi_i \in \Omega^*_c(I)$, $\alpha_i\in A_d \tensor \fg$. The cocycle is defined by
-%\beqn\label{cocycle 1}
-%\theta_1 (\varphi_0 \alpha_0, \ldots, \varphi_d \alpha_d) =  \left(\int_{I} \varphi_0 \wedge \cdots \varphi_d \right) \theta_{\rm FHK} (\alpha_0,\ldots,\alpha_d)
-%\eeqn
-%where $\theta_{\rm FHK}$ was defined in Equation \ref{fhk cocycle}.
-%
-%The functional $\theta_1$ determines a local cocycle in $\cloc^*\left(\Omega^*_\RR \tensor (A_d \tensor \fg)\right)$ of degree one. 
-%
-%\def\dR{{\rm dR}}
-%
-%We now define a map of factorization Lie algebras $\Phi_0 : \sG_0 \to \sG_1$. On and open set $I \subset \RR$, we define the map $\Phi_0(I) : \sG_0(I) \to \sG_1(I)$ by
-%\[
-%\Phi_0(I)(\varphi \alpha, \psi K) = \left(\varphi \alpha, \int \psi \cdot K\right) .
-%\]
-%For a fixed open set $I \subset \RR$, the map $\Phi_0$ fits into the commutative diagram of short exact sequences
-%\[
-%\xymatrix{
-%0 \ar[r] & \Omega^*_c(I) \tensor \CC \cdot K  \ar[d]^-{\int}_-{\simeq} \ar[r] & \sG_0(I) \ar[d]^-{\Phi_0(I)} \ar[r] & \Omega^*_c(I) \tensor (A_d \tensor \fg) \ar@{=}[d] \ar[r] & 0 \\
-%0 \ar[r] & \CC \cdot K [-1] \ar[r] & \sG_1(I) \ar[r] & \Omega^*_c(I) \tensor (A_d \tensor \fg) \ar[r] & 0 .
-%}
-%\]
-%To see that $\Phi_0(I)$ is a map of dg Lie algebras we simply observe that the cocycles determining the central extensions are related by $\theta_1 = \int \circ \; \theta_0$, where $\int : \Omega^*_c(I) \to \CC$ as in the diagram above. Since $\int$ is a quasi-isomorphism, the map $\Phi_0(I)$ is as well. It is clear that as we vary the interval $I$ we obtain a quasi-isomorphism of factorization Lie algebras $\Phi_0 : \sG_0 \xto{\simeq} \sG_1$. 
-%
-%%To verify that this is a map of factorization Lie algebras, it suffices to show that for each $I \subset \RR$, $\Phi_1$ determines a map of cocommutative coalgebras 
-%%\[
-%%\Phi_1 : {\rm C}^{\rm Lie}_*\left(\Omega^*_c(I) \tensor \Hat{\fg}_{d,\theta}\right) \to {\rm C}^{\rm Lie}_*(\sG_1(I)) .
-%%\] 
-%%Clearly, modulo the central element $K$ the Lie brackets are identical. Thus, we need to show that the cocycles determining the central extensions are compatible. Fix $I \subset \RR$ and suppose $\varphi_0,\ldots, \varphi_d \in \Omega^*_c(I)$, $\alpha_0,\ldots,\alpha_d \in A_d \tensor \fg$. Then, the cocycle in $\Omega^*_c(I) \tensor \Hat{\fg}_{d,\theta}$ is given by
-%
-%We now define the factorization dg Lie algebra $\sG_1'$. Like $\sG_0$ and $\sG_0$, it is a central extension of $\Omega^*_{\RR,c} \tensor (A_d \tensor \fg)$. The cocycle determining the central extension is defined by
-%\[
-%\theta_1' (\varphi_0 a_0 X_0, \ldots, \ldots, \varphi_d a_dX_d) = \theta_1(\varphi_0 a_0 X_0, \ldots, \ldots, \varphi_d a_dX_d) + \Tilde{\theta}_1(\varphi_0 a_0 X_0, \ldots, \ldots, \varphi_d a_dX_d) 
-%\]
-%where $\theta_1$ was defined in Equation (\ref{cocycle 1}). Before writing down the explicit formula for $\Tilde{\theta}_1$ we introduce some notation. Set
-%\begin{align*}
-%E & = r \frac{\partial}{\partial r} , \\
-%\d \vartheta & = \sum_i \frac{\d z_i}{z_i} .
-%\end{align*} 
-%We view $E$ as a vector field on $\RR_{>0}$ and $\d \vartheta$ as a $(1,0)$-form on $\CC^{d} \setminus 0$. Define the functional
-%\[
-%\Tilde{\theta}_1(\varphi_0 a_0 X_0,\ldots,\varphi_d a_d X_d) = \frac{1}{2} \sum_{i=1}^{d} \left( \int_I \varphi_0 (E \cdot \varphi_i) \varphi_1\cdots \Hat{\varphi_i} \cdots \varphi_{d}\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)  .
-%\]
-%The functional $\Tilde{\theta}$ defines a local functional in $\cloc^*\left(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg) \right)$ of cohomological degree one. One immediately checks that it is a cocycle. This completes the definition of the factorization Lie algebra $\sG_1'$. 
-%
-%The factorization Lie algebras $\sG_1$ and $\sG_1'$ are identical as precosheaves of vector spaces. In fact, if we put a filtration on $\sG_1$ and $\sG_1'$ where the central element $K$ has filtration degree one, then the associated graded factorization Lie algebras ${\rm Gr} \; \sG_1$ and ${\rm Gr} \; \sG_1'$ are also identified. The only difference in the Lie algebra structures comes from the deformation of the cocycle determining the extension of $\sG_1'$ given by $\Tilde{\theta}_1$. 
-%
-%In fact, we will show that $\Tilde{\theta}_1$ is actually an exact cocycle via the cobounding element $\eta \in \cloc^*\left(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg)\right)$ defined by
-%\[
-%\eta(\varphi_0a_0X_0,\ldots,\varphi_da_dX_d) = \sum_{i=1}^d \left(\int_I \varphi_0 \left(\iota_{E} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i} \cdots \varphi_d\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right) \theta(X_0,\ldots,X_d)  .
-%\]
-%
-%\begin{lem} One has $\d \eta = \Tilde{\theta}_1$, where $\d$ is the differential for the cochain complex $\cloc^*(\Omega^*_{\RR_{>0}} \tensor (A_d \tensor \fg))$. In particular, the factorization Lie algebras $\sG_1$ and $\sG_1'$ are quasi-isomorphic (as $L_\infty$ algebras). An explicit quasi-isomorphism is given by the $L_\infty$ map $\Phi_1 : \sG_1 \to \sG_1'$ that sends the central element $K$ to itself and an element $(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)$ to 
-%\[
-%(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d) + \eta(\varphi_0 a_0 X_0,\ldots, \varphi_d a_d X_d)\cdot K \in \Sym^{d+1}(\Omega^*_c \tensor (A_d \tensor \fg)) \oplus \CC \cdot K .
-%\]
-%\end{lem}
-
 With this explicit cochain $\eta$ in hand, we can produce the desired map.
 
 \begin{prop}
@@ -735,8 +633,7 @@ by which we mean there is a sequence of multilinear maps
 \[
 \Tilde{\pi}_{\fg,d,\theta}\<n\>: \prod_{i=1}^n \Omega^*_c \otimes \Tilde{\fg}^\bullet_{d,\theta} \to r_* \sG_{d,\theta},
 \]
-that have degree $2-n$ and are skew-symmetric and intertwine with the $L_\infty$ brackets on both sides.
-(\owen{Maybe give a precise description in paper or reference something?})
+that have degree $2-n$ and are skew-symmetric and intertwine with the $L_\infty$ brackets on both sides (cf. \cite{KonSoi, LodVal}).
 The terms $\Tilde{\pi}_{\fg,d,\theta}\<n\>$ vanish for $n \neq 1, d+1$.
 The $n =1$ map fits into the commuting diagram of short exact sequences
 \[
@@ -757,8 +654,6 @@ which in fact provides a map
 \]
 of factorization algebras.
 \end{prop}
-
-\owen{Need to check I defined the map correctly.}
 
 \begin{proof}
 Note that for our $L_\infty$ algebras, the only nontrivial brackets are $\ell_1$, $\ell_2$, and $\ell_{d+1}$.
@@ -861,8 +756,6 @@ which is the enveloping $E_d$ algebra of $L^d\fg$, by Knudsen's theorem.
 \end{cor}
 
 This map has dense image in each degree, and so we see that the enveloping $E_d$ algebra of the iterated loop algebra $L^d \fg$ ``controls'' the pushforward $\vec{r}_* \UU\sG_d$ in this sense.
-
-\owen{Is this remark ok?}
 
 \begin{rmk}
 When $d=1$ one can understand the radially ordered products of operators by evaluating these current factorization algebras on nested annuli.
