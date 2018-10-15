@@ -10,6 +10,12 @@ David Ayala and John Francis.
 \newblock Factorization homology of topological manifolds.
 \newblock {\em J. Topol.}, 8(4):1045--1084, 2015.
 
+\bibitem[BD04]{BD}
+Alexander Beilinson and Vladimir Drinfeld.
+\newblock {\em Chiral algebras}, volume~51 of {\em American Mathematical
+  Society Colloquium Publications}.
+\newblock American Mathematical Society, Providence, RI, 2004.
+
 \bibitem[Bor86]{BorcherdsVertex}
 Richard~E. Borcherds.
 \newblock Vertex algebras, {K}ac-{M}oody algebras, and the {M}onster.
@@ -26,11 +32,6 @@ Kevin Costello and Owen Gwilliam.
   volume~31 of {\em New Mathematical Monographs}.
 \newblock Cambridge University Press, Cambridge, 2017.
 
-\bibitem[CL]{CLbcov2}
-Kevin Costello and Si~Li.
-\newblock {Q}uantization of open-closed {B}{C}{O}{V} theory, {I}.
-\newblock Available at \url{https://arxiv.org/abs/1505.06703}.
-
 \bibitem[Cos11]{CosRenorm}
 Kevin Costello.
 \newblock {\em Renormalization and effective field theory}, volume 170 of {\em
@@ -43,6 +44,12 @@ Damien Calaque and Carlo~A. Rossi.
   geometry}.
 \newblock EMS Series of Lectures in Mathematics. European Mathematical Society
   (EMS), Z\"urich, 2011.
+
+\bibitem[DT06]{DragomirTomassini}
+Sorin Dragomir and Giuseppe Tomassini.
+\newblock {\em Differential geometry and analysis on {CR} manifolds}, volume
+  246 of {\em Progress in Mathematics}.
+\newblock Birkh\"auser Boston, Inc., Boston, MA, 2006.
 
 \bibitem[FHK]{FHK}
 Giovanni Faonte, Benjamin Hennion, and Mikhail Kapranov.
@@ -125,22 +132,11 @@ Mark~V. Losik.
 \newblock Diagonal cohomology of the {L}ie algebra of vector fields.
 \newblock {\em Differential Geom. Appl.}, 8(1):71--86, 1998.
 
-\bibitem[LQ84]{LQ}
-Jean-Louis Loday and Daniel Quillen.
-\newblock Cyclic homology and the {L}ie algebra homology of matrices.
-\newblock {\em Comment. Math. Helv.}, 59(4):569--591, 1984.
-
 \bibitem[Lur]{LurieHA}
 Jacob Lurie.
 \newblock Higher {A}lgebra.
 \newblock available at
   \url{http://www.math.harvard.edu/~lurie/papers/higheralgebra.pdf}.
-
-\bibitem[Tsy83]{Tsy}
-B.~L. Tsygan.
-\newblock Homology of matrix {L}ie algebras over rings and the {H}ochschild
-  homology.
-\newblock {\em Uspekhi Mat. Nauk}, 38(2(230)):217--218, 1983.
 
 \bibitem[Wil]{BWhol}
 Brian Williams.
