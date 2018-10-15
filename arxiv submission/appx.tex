@@ -206,7 +206,7 @@ The $L\to 0$ limit of $W^{an}_L$ is the local functional representing the one-lo
 
 The weight has the form
 \[
-W^{an}_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
+W^{an}_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
 \]
 We introduce coordinates
 \begin{align*}
@@ -245,15 +245,13 @@ f(L) \int_{w^{(0)} \in \CC^d}  \d^d w^{(0)} \d^d \Bar{w}^{(0)} \sum_{i_1,\ldots,
 \]
 where
 \[
-f(L) = \lim_{\epsilon \to 0} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\epsilon}{(\epsilon + t_1 + \cdots + t_d)^{d+1}} \d^d t .
+f(L) = \frac{1}{(4\pi)^2} \lim_{\epsilon \to 0} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\epsilon}{(\epsilon + t_1 + \cdots + t_d)^{d+1}} \d^d t .
 \]
-In fact, $f(L)$ is independent of $L$ and is equal to some nonzero constant $C \ne 0$.
+In fact, $f(L)$ is independent of $L$ and is equal to $\frac{1}{(d+1)!}$ after direct computation. 
 Finally, plugging in the forms $\alpha^{(0)}, \ldots, \alpha^{(d)}$, we observe that the integral over $w^{(0)} \in \CC^d$ simplifies to
 \[
-C \int_{\CC^d} \alpha^{(0)} \partial \alpha^{(1)} \cdots\partial \alpha^{(d)}
+\frac{1}{(4\pi)^2} \frac{1}{(d+1)!} \int_{\CC^d} \alpha^{(0)} \partial \alpha^{(1)} \cdots\partial \alpha^{(d)}
 \]
 as desired.
-
-\brian{I'll stop being naughty and work out this constant tomorrow. It's a matter of fixing all my conventions from citations in my hol paper.}
 \end{proof}
 
