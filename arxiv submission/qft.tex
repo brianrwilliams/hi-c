@@ -94,18 +94,11 @@ I^{\sG} : \sG^{sh}_X \to \oloc(\sE_V)[-1],
 \] 
 where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-\}$. 
 
-For the remainder of the section we will restrict ourselves to the complex $d$-fold $X = \CC^d$. 
+For the remainder of the section we will restrict ourselves to the complex $d$-fold $X =~\CC^d$. 
 
 \subsubsection{The $\beta\gamma$ factorization algebra}
 
 It is the general philosophy of \cite{CG1,CG2} that the observables of a quantum field theory form a factorization algebra on the underlying spacetime. 
-
-%In this section we describe the factorization algebra associated to the higher $\beta\gamma$ system on $\CC^d$ associated to any $\fg$-representation $V$. 
-
-%For any vector space $W$, we can consider the commutative algebra of algebraic and formal algebraic functions denoted respectively by
-%\[
-%\sO(W) = \Sym (W^\vee) = \bigoplus_{n \geq 0} (W^\vee)^{\tensor n}_{S_n} \;\;\; , \;\;\; \Hat{\sO}(W) = \Hat{\rm Sym}(W^\vee) %= \prod_{n \geq 0} (W^\vee)^{\tensor n}_{S_n} . 
-%\] 
 
 For any theory, the factorization algebra of classical observables assigns to every open set $U$ the cochain complex of algebraic functions on the fields supported on $U$.  
 For the example of the $\beta\gamma$ system, the differential is just given by the $\dbar$ operator. 
@@ -364,7 +357,8 @@ By Proposition \ref{prop: trans j} we see that $\Theta_V$ must be cohomological 
 where $\theta$ is some element of $\Sym^{d+1}(\fg^*)^\fg$.
 In the notation of Section \ref{??}, this is the cocycle $\fJ_d (\theta)$. 
 This cocycle factors in the following way:
-\beqn\label{composition}
+\beqn
+\label{composition}
 \begin{tikzcd}
 \left(\Omega^{0,*}_c(\CC^d) \tensor \fg\right)^{\tensor (d+1)} \ar[r,"\fa \fn"] & \left(\Omega^{0,*}_c(\CC^d) \tensor \fg\right) \tensor \left(\Omega^{1,*}_c(\CC^d)\tensor \fg\right)^{\tensor d} \ar[r, "\theta"] & \Omega^{d, *}_c(\CC^d) \ar[r, "\int"] & \CC . 
 \end{tikzcd}
@@ -378,9 +372,10 @@ The second map is given by extending the Lie algebraic functional $\theta : \fg^
 Lemma \ref{lem: obs} implies that the obstruction is given by the sum over Feynman weights associated to graphs of wheels of valency $(d+1)$.
 We can identify the algebraic component, corresponding to $\theta$ in the above composition (\ref{composition}), directly from the shape of this graph. 
 The propagator and heat kernel $P_{\epsilon<L}, K_\epsilon$ labeling the edges factor as
-\[
-P_{\epsilon<L} = P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right) \;\; , \;\; K_{\epsilon} = K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
-\]
+\begin{align*}
+P_{\epsilon<L} &= P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right),\\ 
+K_{\epsilon} &= K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
+\end{align*}
 where ${\rm id}_V, {\rm id}_{V^*}$ are the elements representing the identity maps which lie in $V \tensor V^*, V^* \tensor V$ respectively. 
 The analytic factors $P^{an}_{\epsilon<L},  K_{\epsilon}^{an}$ only depend on the dimension $d$. 
 
@@ -513,8 +508,8 @@ From this symplectic dg vector space, we define the dg Lie algebra $\sH_V$ as a 
 The $2$-cocycle defining this extension is simply $\omega_V$. 
 Thus, $\sH_V$ is the Heisenberg Lie algebra associated to the symplectic dg vector space. 
 
-If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody. 
-This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra of the Heisenberg Lie algebra $U(\sH_V)$.  
+If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody factorization algebras. 
+This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra $U(\sH_V)$ of the Heisenberg Lie algebra.  
 
 Upon compactification of the quantum Noether map along the sphere $S^{2d-1}$ we obtain the following. 
 
@@ -538,11 +533,11 @@ This symmetry persists upon quantization, since the BV Laplacian is also compati
 Thus, we can consider the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of the $U(d)$-eigenspaces. 
 
 Similarly, the Kac-Moody factorization algebra $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ is $U(d)$-equivariant. 
-The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section \ref{sec: spheres}. 
+The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section~\ref{sec: spheres}. 
 
 By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
 To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_V)$. 
-It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$-algebras. 
+It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$ algebras. 
 
 Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
 Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
