@@ -33,9 +33,9 @@
 \contentsline {subsection}{\tocsubsection {}{3.3}{The charge anomaly for $\beta \gamma $}}{40}{subsection.3.3}
 \contentsline {subsection}{\tocsubsection {}{3.4}{The quantum observables of the $\beta \gamma $ system}}{42}{subsection.3.4}
 \contentsline {subsection}{\tocsubsection {}{3.5}{Free field realization}}{43}{subsection.3.5}
-\contentsline {section}{\tocsection {}{4}{Some global aspects of the higher Kac-Moody factorization algebras}}{44}{section.4}
+\contentsline {section}{\tocsection {}{4}{Some global aspects of the higher Kac-Moody factorization algebras}}{45}{section.4}
 \contentsline {subsection}{\tocsubsection {}{4.1}{Hopf manifolds and twisted indices}}{45}{subsection.4.1}
 \contentsline {subsection}{\tocsubsection {}{4.2}{The Kac-Moody vertex algebra and compactification}}{48}{subsection.4.2}
-\contentsline {section}{\tocsection {Appendix}{A}{Computing the deformation complex}}{49}{appendix.A}
+\contentsline {section}{\tocsection {Appendix}{A}{Computing the deformation complex}}{50}{appendix.A}
 \contentsline {section}{\tocsection {Appendix}{B}{Normalizing the charge anomaly}}{53}{appendix.B}
-\contentsline {section}{\tocsection {Appendix}{}{References}}{55}{section*.6}
+\contentsline {section}{\tocsection {Appendix}{}{References}}{56}{section*.6}
