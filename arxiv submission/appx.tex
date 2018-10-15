@@ -14,24 +14,52 @@ U(\CC^{d}_{\rm hol}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}
 with differential induced from that in $\CC^{d}_{\rm hol}$. 
 Note that this algebra is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators $\CC[\partial / \partial z_i] \xto{\simeq} U(\CC^{d}_{\rm hol})$. 
 
+In this section we specialize the functional $J$ to the space $Y = \CC^d$ and use it to completely characterize the $U(d)$-invariant, holomorphically translation invariant local functionals on $\sG_d$. 
 
-In this section we specialize the functional $J$ to the space $Y = \CC^d$ and use it to completely characterize the $U(d)$-invariant, holomorphically translation invariant deformation complex.
+We proThe functions on a formal moduli stack $B \fg$ are given by the Chevalley-Eilenberg complex $\sO(B\fg) = \clie^*(\fg)$.
+By definition, the $k$-forms on a formal moduli stack $B\fg$ are defined by
+\[
+\Omega^k(B \fg) := \clie^*(\fg ; \Sym^k \fg^\vee [-k])
+\]
+where $\fg^\vee$ denotes the coadjoint module of $\fg$. 
+
+As a simple check, note that in the case $\fg = \CC^n [-1]$ the above complex reduces to
+\[
+\Omega^k(B \fg) = \CC[t_1,\ldots, t_n] \tensor \wedge^k(t_1^\vee, \cdots, t_n^\vee),
+\]
+where $t_i^\vee$ denotes the dual coordinate. 
+Everything is in cohomological degree zero.
+If we identify $t_i^\vee \leftrightarrow \d t_i$, this is the usual definition of the algebraic de Rham forms. 
+
+Let $\partial : \Omega^{k}(B\fg) \to \Omega^{k+1}(B\fg)$ be the de Rham operator for $B\fg$. 
+We use $\partial$ to denote the de Rham differential on $B \fg$. 
+This is because our two main examples of $B \fg$ will be the formal holomorphic disk $\hD^n$ or the formal moduli space associated to any complex manifold $X$. 
+In each of these cases, the differential above is the holomorphic Dolbeualt operator $\partial : \Omega^{k,hol} \to \Omega^{k+1,hol}$.
+The space of closed $k$-forms is
+\[
+\hOmega^{k}_{cl}(B \fg) = \left( \Omega^k(B\fg) \xto{\partial} \Omega^{k+1}(B \fg)[-1] \to \cdots \right).
+\]
+
 
 \begin{prop}\label{prop: local def}
-The map $J : \Omega^{d+1}_{cl}(B \fg) [d] \to \Def_{\CC^d \to B \fg}^{\rm cot}$ factors through the holomorphically translation invariant deformation complex:
+Let $\fg$ be an ordinary Lie algebra.
+The map $\fj : \Sym^{d+1} (\fg^*)^{\fg} [-1] \to \cloc^*(\sG_d)$ factors through the holomorphically translation invariant deformation complex:
 \beqn
-J : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\Def^{\rm cot}_{\CC^d \to B \fg}\right)^{\CC^{d}_{\rm hol}} .
+\fj : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\cloc^*(\sG_d)\right)^{\CC^{d}_{\rm hol}} .
 \eeqn
 Furthermore, $J$ defines a quasi-isomorphism into the $U(d)$-invariant subcomplex of the right-hand side.
+In particular, on $H^1(-)$, we obtain an isomorphism
+\[
+H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)^{U(d), \CC^{d}_{\rm hol}} .
+\] 
 \end{prop}
 
 \begin{proof}
-To compute the translation invariant deformation complex we will invoke Corollary \ref{cor: hol trans invt def} from Section \ref{sec: hol trans}.
+To compute the translation invariant deformation complex we will invoke Corollary 2.29 from \cite{BWhol}. 
 Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
-Thus, in the notation of Section \ref{sec: hol theory} the bundle $V$ is simply the trivial bundle $\fg$.
-Thus, we see that the translation invariant deformation complex is quasi-isomorphic to the following cochain complex
+Thus, we see that the translation invariant local cochain complex is quasi-isomorphic to the following
 \beqn
-\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
+\left(\cloc^*(\sG_d)\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
 \eeqn
 We'd like to recast the right-hand side in a more geometric way. 
 
@@ -42,7 +70,7 @@ Thus, the complex we are computing is of the form
 \eeqn
 Since $\CC \cdot \d^d z$ is the trivial module, this is precisely the Chevalley-Eilenberg cochain complex computing Lie algebra homology of $\CC^d$ with values in the module $\cred^*(\fg[[z_1,\ldots,z_d]])$:
 \beqn
-\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^d} \; \simeq  \; \clieu_*\left(\CC^d ; \cred^*(\fg[[z_1,\ldots,z_d]]) \d^d z\right) [d] .
+\clieu_*\left(\CC^d ; \cred^*(\fg[[z_1,\ldots,z_d]]) \d^d z\right) [d] .
 \eeqn
 We will keep $\d^d z$ in the notation since below we are interested in computing the $U(d)$-invariants, and it has non-trivial weight under the action of this group.
 
@@ -87,10 +115,10 @@ Thus, as a graded vector space the invariant subcomplex has the following decomp
 It follows from Schur-Weyl that the space of $U(d)$ invariants of the $d$th tensor power of the fundamental representation $\CC^d$ is one-dimensional, spanned by the top exterior power. 
 Thus, when we pass to the $U(d)$-invariants, only the unique totally antisymmetric tensor involving $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ survives. 
 Thus, for each $k$, we have
-\[
+\begin{align*}
 \label{U(d) invariants}
-\left(\Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z\right) \cong \wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right) \clie^*\left(\fg , \Sym^{d-k}(\fg^\vee)\right) \d^d z .
-\]
+\left(\Sym^k(\CC^d[1]) \tensor \right. & \left. \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z\right) \cong \\ & \wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right) \clie^*\left(\fg , \Sym^{d-k}(\fg^\vee)\right) \d^d z .
+\end{align*}
 Here, $\wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right)$ is just a copy of the determinant $U(d)$-representation, but we'd like to keep track of the appearances of the partial derivatives and $z_i^\vee$. 
 Note that for degree reasons, we must have $k \leq d$. 
 When $k = 0$ this complex is the (shifted) space of functions modulo constants on the formal moduli space $B\fg$, $\sO_{red}(B\fg)[d]$. 

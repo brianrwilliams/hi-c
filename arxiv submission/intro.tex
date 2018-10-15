@@ -1,14 +1,12 @@
-\section*{}
-
 \section*{Introduction}
 
 One can associate to any simple Lie algebra $\fg$ its affine algebra $\Hat{\fg}$. 
 This is a non-trivial central extension of the Lie algebra $\fg[z,z^{-1}]$ of Laurent polynomials valued in the Lie algebra. 
 The affine Lie algebra, and its cousin the Kac-Moody vertex algebra, are foundational objects in representation theory and conformal field theory. 
-The natural question arises, do there exists multivariable, or higher dimensional, generalizations of the affine Lie algebra and Kac-Moody vertex algebra? 
+The natural question arises: do there exists multivariable, or higher dimensional, generalizations of the affine Lie algebra and Kac-Moody vertex algebra? 
 
 In this work, we have two independent, yet related goals:
-
+ 
 \begin{enumerate}
 \item Use factorization algebras to study the (co)sheaf of Lie algebra valued currents on complex manifolds, and their relationship to higher affine algebras;
 \item Develop tools for understanding symmetries of {\em holomorphic field theory} in any dimension, that provide a systematic generalization of methods used in chiral conformal field theory on Riemann surfaces.
@@ -30,12 +28,10 @@ This structure can be thought of as a holomorphic analog of an algebra over the 
 It is the general philosophy of \cite{CG1,CG2} that every quantum field theory defines a factorization algebra of observables.
 This perspective allows us to realize the higher Kac-Moody algebra inside of familiar higher dimensional field theories. 
 Im complex dimension one, a vertex algebra is a gadget associated to any conformal field theory that completely determines the algebra of local operators.  
-More recently, even, vertex algebras have been extracted from more refined field theories, such as 
-More ambitiously, one can take advantage of
+More recently, even, vertex algebras have been extracted from higher dimensional field theories, such as $4$-dimensional gauge theories \cite{Beem1,Beem2}. 
+A future direction, which we do not undertake here, would be to use these higher dimensional vertex algebras as a more refined invariant of the QFT. 
 
-\brian{Say a word about higher SUGRA and role of KM. Compare to class S theories associated to vertex algebras.}
-
-\brian{This paper is a revised and enhanced version of some work that appeared in Chapter 4 of the second author's Ph.D. thesis \cite{BWthesis}.}
+Before embarking on our main results, we take some time to motivate higher dimensional current algebras from two different perspectives. 
 
 \subsection*{A view from geometry}
 
@@ -69,40 +65,6 @@ We deem this sheaf of dg Lie algebras, or rather its cosheaf version $\sG_X := \
 The Lie algebra homology, $\clieu_*\sG_X$, of this cosheaf determines the structure of a {\em factorization algebra} on the manifold $X$.
 It serves as a higher dimensional analog of the chiral enveloping algebra of $\fg$ introduced by Beilinson and Drinfeld \cite{BD}, and will or model for the higher dimensional Kac-Moody algebra. 
 We will see that there exists cocycles on this sheaf of dg Lie algebras which give rise to interesting extensions of the factorization algebra $\clieu_*\sG_X$.\\
-
-%\begin{thm}\label{thm sphere alg} The associative algebra $U(\Hat{\fg}_{d,\theta})$ determines a locally constant factorization algebra on the real one-manifold $\RR$ that we denote $U(\Hat{\fg}_{d,\theta})^{fact}$. 
-%Moreover, there is an injective dense map of factorization algebras on $\RR$:
-%\[
-%\Phi^{S^{2d-1}} : \left(U \Hat{\fg}_{d,\theta} \right)^{fact} \to r_*\left(\sF^{\CC^d \setminus \{0\}}_{\fg,\theta} \right)  .
-%\]
-%where the right-hand side is the push-forward of the Kac-Moody factorization algebra on $\CC^{d}\setminus \{0\}$ along the radial projection map.
-%\end{thm}
-
-%In the final part of this section we specialize to the manifold $X = (\CC \setminus \{0\})^d$. 
-%Note that when $d=1$ this is the same as the algebra above, but for $d>1$ this factorization algebra has a different flavor. 
-%We will show how to extract the data of an $E_d$-algebra from this configuration, and discuss its role in the theory of higher dimensional vertex algebras. 
-
-%In a similar way in Section \ref{sec: ...} we will see how the Kac-Moody factorization algebra on $(\CC \setminus \{0\})^d$ are related to extensions of higher loop Lie algebras
-%\[
-%L^d \fg = L ( \cdots (L \fg) \cdots ) = {\rm Map}(S^{1} \times S^1 , \fg).
-%\]
-
-%\[
-%\cA_{d, \fg,\theta} := \bigoplus_{k \in \ZZ} r_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) ^{(k)} \subset r_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) .
-%\]
-%\end{thm}
-
-%\begin{dfn} Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
-%Let $\Hat{\fg}_{d,\theta}$ be the $L_\infty$ central extension
-%\[
-%\CC \to \Hat{\fg}_{d,\theta} \to A_d \tensor \fg
-%\]
-%determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
-%\[
-%\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
-%\]
-%where $a_i \tensor X_i \in A_d \tensor \fg$. 
-%\end{dfn}
 
 \subsection*{A view from physics}
 
@@ -154,8 +116,6 @@ and
 \]
 so that the sheaf of holomorphic sections of $\ad(P)$ encodes a class of local symmetries of this classical theory.
 
-\subsubsection{}
-
 If one takes a BV/BRST approach to field theory, as we will in this paper,
 then one works with a cohomological version of fields and symmetries.
 For instance, it is natural to view the classical fields as consisting of the graded vector space of Dolbeault forms
@@ -183,8 +143,6 @@ with differential $\dbar$ for this bundle.
 By construction, $\sAd(P)$ acts on $\cE$.
 In words, $\cE$ is a sheaf of dg modules for the sheaf of dg Lie algebra~$\sAd(P)$.
 
-\subsubsection{}
-
 So far, we have simply lifted the usual discussion of symmetries to a dg setting,
 using standard tools of complex geometry.
 We now introduce a novel maneuver that is characteristic of the BV/factorization package of~\cite{CG1,CG2}.
@@ -198,9 +156,7 @@ the dg Lie algebra
 The terminology {\em precosheaf} encodes the fact that there is natural way to extend a section supported in $U$ to a larger open $V \supset U$ (namely, extend by zero),
 and so one has a functor $\sAd(P) \colon {\rm Opens}(X) \to {\rm Alg}_{\rm Lie}$.
 
-There are several related reasons to consider compact support.\footnote{In Section \ref{sec: fact} we extract factorization algebras from $\sAd(P)_c$,
-and then extract associative and vertex algebras of well-known interest.
-We postpone discussions within that framework till that section.}
+There are several related reasons to consider compact support.
 First, it is common in physics to consider compactly-supported modifications of a field.
 Recall the variational calculus, where one extracts the equations of motion by working with precisely such first-order perturbations.
 Hence, it is natural to focus on such symmetries as well.
@@ -211,8 +167,6 @@ Such a density only defines a functional on compactly supported sections,
 since when evaluated a noncompactly supported section $f$, the density $L(f)$ may be non-integrable.
 Thus $L$ determines a central extension of $\sAd(P)_c$ as a precosheaf of dg Lie algebras,
 but not as a sheaf.\footnote{We remark that to stick with sheaves, one must turn to quite sophisticated tools \cite{WittenGr,GetzlerGM,ManBeilSch} that can be tricky to interpret, much less generalize to higher dimension, whereas the cosheaf-theoretic version is quite mundane and easy to generalize, as we'll see.}
-
-\subsubsection{}
 
 Let us sketch how to make these reasons explicit.
 The first step is to understand how $\sAd(P)_c$ acts on the observables of this theory.
@@ -260,7 +214,6 @@ In this case, there is such a map:
 J(f)(\gamma,\beta) = \int_U \langle\beta, f \gamma\rangle.
 \]
 This functional is local, and it is natural to view it as describing the ``minimal coupling'' between our free $\beta\gamma$ system and a kind of gauge field implicit in $\sAd(P)$.
-%\owen{This is a little misleading, given the nature of the forms, but I think it is fixable.}
 This construction thus shows again that it is natural to work with compactly supported sections of $\sAd(P)$,
 since it allows one to encode the Noether map in a natural way.
 We call $\sAd(P)_c$ the Lie algebra of {\em classical currents} as we have explained how, via $J$, we realize these symmetries as classical observables.
@@ -270,8 +223,6 @@ We remark that it is not always possible to produce such a Noether map,
 but the obstruction always determines a central extension of $\sAd(P)_c$ as a precosheaf of dg Lie algebras,
 and one can then produce such a map to the classical observables.
 \end{rmk}
-
-\subsubsection{}
 
 In the BV formalism, quantization amounts to a deformation of the differential on $\Obs^{cl}$,
 where the deformation is required to satisfy certain properties.
@@ -297,7 +248,13 @@ ob(f) = \int \langle f K_\Delta \rangle,
 where $K_\Delta$ is the integral kernel for the identity with respect to the pairing $\langle-,-\rangle$.
 (It encodes a version of the trace of $f$ over $\cE$.)
 This obstruction should resemble standard anomalies.
-\owen{Is that transition too abrupt? Should we provide an example?}
 
 This functional $ob$ is a cocycle in Lie algebra cohomology for $\sAd(P)$ and hence determines a central extension $\widehat{\sAd(P)}_c$ as precosheaves of dg Lie algebras.
 It is the Lie algebra of {\em quantum} currents, as there is a lift of $J$ to a map $J^q$ out of this extension to the quantum observables.
+This cocycle will be precisely the one corresponding to the central extensions for the higher dimensional affine algebras. 
+
+\subsection*{Acknowledgements}
+This paper is a revised and enhanced version of some work that appeared in Chapter 4 of the second author's Ph.D. thesis \cite{BWthesis}. 
+The second author would therefore like to thank Northwestern University, where he received support as a graduate student whilst most of this work took place.
+In addition, the second author enjoyed support as a graduate student research fellow under Award DGE-1324585. 
+

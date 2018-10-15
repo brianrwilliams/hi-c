@@ -15,18 +15,18 @@
 \def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
 \def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
 
-\def\opp{{\rm op}}
-\def\Ch{{\rm Ch}}
-\def\dgLie{{\rm dgLie}}
-\def\Lcat{L_\infty{\rm Alg}}
-\def\Cur{{\rm Cur}}
-
+\newcommand{\changelocaltocdepth}[1]{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
+  \setcounter{tocdepth}{#1}%
+}
 
 \begin{document}
 \maketitle
 
+\changelocaltocdepth{-10}
 \input{intro}
 \tableofcontents
+\changelocaltocdepth{2}
 \input{current}
 \input{local}
 \input{qft}
@@ -34,6 +34,7 @@
 %\input{largeN}
 \input{appx}
 
+\changelocaltocdepth{-10}
 \bibliographystyle{alpha}
 %\bibliographystyle{spmpsci}  
 \bibliography{hic}
