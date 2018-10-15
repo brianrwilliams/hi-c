@@ -3,11 +3,8 @@
 This paper takes general definitions and constructions from \cite{CG1} and specializes them to the context of complex manifolds.
 In this subsection we will review some of the key ideas but refer to \cite{CG1} for foundational results.
 
-\owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
-
-\owen{The following appear later but I think it would fit more naturally here or in the intro}
-
-Let us recall the familiar complex one-dimensional case that we wish to extend. 
+\begin{rmk}
+It might help to bear in mind the one-dimensional case that we wish to extend. 
 Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
 Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
 There is a natural cocycle depending precisely on two inputs:
@@ -15,8 +12,8 @@ There is a natural cocycle depending precisely on two inputs:
 \theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
 \]
 where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
-In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization of $\sG_X$ via this cocycle recovers the Kac-Moody vertex algebra and the affine algebra extending $L\fg = \fg[z,z^{-1}]$.
-
+In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization algebra of $\sG_\Sigma$ for this cocycle recovers the Kac-Moody vertex algebra associated to the affine algebra extending~$L\fg = \fg[z,z^{-1}]$.
+\end{rmk}
 
 \subsection{Local Lie algebras}
 
@@ -78,10 +75,8 @@ let $\sAd(P)^{sh}$ denote the local Lie algebra whose sections are $\Omega^{0,*}
 whose differential is $\dbar_P$, and whose bracket is the pointwise operation just defined above.
 \end{dfn}
 
-\owen{We should add some remark about Atiyah algebras \dots We could also add a comment about the deformation-theoretic content of this dg Lie algebra.}
-\brian{We can say more than what I did below, but I wanted to get something down for now.}
-
-The dg Lie algebra $\sAd(P)^{sh}(X)$ controls formal deformations of the holomorphic principal $G$-bundle $P$. 
+This dg Lie algebra $\sAd(P)^{sh}(X)$ controls formal deformations of the holomorphic principal $G$-bundle $P$.
+(For a proof see Section 5 of \cite{FHK}.) 
 Indeed, given a Maurer-Cartan element $\alpha \in \sAd(P)^{sh}(X)^1 = \Omega^{0,1}(X, {\rm ad}(P))$ one considers the new complex structure defined by the connection $\dbar_P + \alpha$. 
 The Maurer-Cartan condition is equivalent to $(\dbar_P + \alpha)^2 = 0$. 
 
@@ -103,10 +98,8 @@ There is a natural functor
 \]
 which defines a sheaf of dg Lie algebras.
 Restricted to each slice ${{\rm Hol}_d}_{/X}$, it determines the local Lie algebra for the trivial principal bundle $G \times X \to X$, in the sense described above.
-We use $\sG$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
+We use $\sG_d$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
 \end{dfn}
-
-%\owen{Should we call this $\sG_d$ or just the restriction to submanifolds of $\CC^d$?}
 
 \begin{rmk}
 It is not necessary to start with a complex Lie group: 
@@ -202,7 +195,6 @@ The first two terms behave like a derivation of $\Sym(\fg[1])$,
 and the last term agrees with the shifted Poisson bracket.
 More accurately, to keep track of the $\hbar$-dependency in quantization,
 we introduce a kind of Rees construction.
-\owen{cross ref stuff with Rune and the other paper}
 
 \begin{dfn}
 \label{def: BD envelope}
@@ -251,8 +243,6 @@ We turn to discussing the natural home for the obstructions to such lifts after 
 
 \subsubsection{A digression on the enveloping $E_n$ algebras}
 \label{sec:knudsen}
-
-\owen{I added this here because it feels natural and then we can refer to it easily later.}
 
 This construction $\UU(\sL)$ has a special feature when the local Lie algebra is obtained by taking the de Rham forms with values in a dg Lie algebra $\fg$, i.e., when $\sL = \Omega^*_c \otimes \fg$.
 In that case the enveloping factorization algebra is locally constant and, on the $d$-dimensional real manifold $\RR^d$, determines an $E_d$ algebra, also known as an algebra over the little $d$-disks operad, by a result of Lurie (see Theorem 5.5.4.10 of \cite{LurieHA}).
@@ -311,8 +301,6 @@ In other words, it is a left $D_X$-module, where $D_X$ denotes the sheaf of smoo
 For a local Lie algebra, this $JL$ obtains the structure of a dg Lie algebra in left $D_X$-modules.
 Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\clies(JL)$ in the category of left $D_X$-modules. 
 By taking the de Rham complex of this left $D_X$-module, we obtain the local cochains.
-\owen{I took the full de Rham complex, but if you prefer, we can just tensor with densities.}
-\brian{don't you have to use derived tensor product if you use full de Rham?}
 For a variety of reasons, it is useful to ignore the ``constants'' term and work with the reduced cochains.
 Hence we have the following definition.
 
@@ -338,7 +326,7 @@ Explicitly, a $k$-cocycle $\Theta$ of degree $n$ on a dg Lie algebra $\fg$ deter
 \[
 \Hat{\ell}_k(x_1 + a_1, \ldots, x_k + a_k) = 0+ \Theta(x_1,x_2,\ldots, x_k).
 \]
-(See \owen{add ref} for further discussion. Note that $n=2$ for $k=2$ with ordinary Lie algebras.)
+(See \cite{KonSoi} for further discussion. Note that $n=2$ for $k=2$ with ordinary Lie algebras.)
 Similarly, local cocycles provide shifted central extensions of local Lie algebras.
 
 \begin{dfn}
@@ -552,8 +540,6 @@ we note that \cite{CG1} introduces a family of colored operads ${\rm PDiscs_d}$,
 that provide a holomorphic analog of the little $d$-disks operads~$E_d$.
 Concretely, this operad ${\rm PDiscs_d}$ encodes the idea of the operator product expansion, 
 where one now understands observables supported in small disks mapping into observables in large disks, rather than point-like observables.
-
-\owen{Should we hark back to Knudsen's theorem here? I feel like it might be possible to find a nice analog using PDisks.}
 
 In the case $d=1$, Theorem 5.3.3 of \cite{CG1} shows that a ${\rm PDiscs_1}$-algebra $\cA$ determines a vertex algebra $\VV(\cA)$ so long as $\cA$ is suitably equivariant under rotation .
 This construction $\VV$ is functorial.
