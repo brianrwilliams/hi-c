@@ -16,8 +16,10 @@ Note that this algebra is quasi-isomorphic to the algebra of constant coefficien
 
 In this section we specialize the functional $J$ to the space $Y = \CC^d$ and use it to completely characterize the $U(d)$-invariant, holomorphically translation invariant local functionals on $\sG_d$. 
 
-We proThe functions on a formal moduli stack $B \fg$ are given by the Chevalley-Eilenberg complex $\sO(B\fg) = \clie^*(\fg)$.
-By definition, the $k$-forms on a formal moduli stack $B\fg$ are defined by
+In this appendix, we identity the subcomplex of translation invariant local cochains with purely Lie algebraic data.
+To state the result, we introduce some notation.
+The functions on a formal space $B \fg$ are given by the Chevalley-Eilenberg complex $\sO(B\fg) = \clie^*(\fg)$.
+By definition, the $k$-forms on $B\fg$ are defined by
 \[
 \Omega^k(B \fg) := \clie^*(\fg ; \Sym^k \fg^\vee [-k])
 \]
@@ -32,14 +34,10 @@ Everything is in cohomological degree zero.
 If we identify $t_i^\vee \leftrightarrow \d t_i$, this is the usual definition of the algebraic de Rham forms. 
 
 Let $\partial : \Omega^{k}(B\fg) \to \Omega^{k+1}(B\fg)$ be the de Rham operator for $B\fg$. 
-We use $\partial$ to denote the de Rham differential on $B \fg$. 
-This is because our two main examples of $B \fg$ will be the formal holomorphic disk $\hD^n$ or the formal moduli space associated to any complex manifold $X$. 
-In each of these cases, the differential above is the holomorphic Dolbeualt operator $\partial : \Omega^{k,hol} \to \Omega^{k+1,hol}$.
 The space of closed $k$-forms is
 \[
-\hOmega^{k}_{cl}(B \fg) = \left( \Omega^k(B\fg) \xto{\partial} \Omega^{k+1}(B \fg)[-1] \to \cdots \right).
+\Omega^{k}_{cl}(B \fg) = \left( \Omega^k(B\fg) \xto{\partial} \Omega^{k+1}(B \fg)[-1] \to \cdots \right).
 \]
-
 
 \begin{prop}\label{prop: local def}
 Let $\fg$ be an ordinary Lie algebra.
@@ -168,31 +166,9 @@ We conclude that the $E_2$ page of this spectral sequence is quasi-isomorphic to
 \sO_{red}(B \fg) \ar[r]^-{\partial} & \Omega^1(B \fg) \ar[r] & \cdots \ar[r] & \Omega^{d-1} (B \fg) \ar[r]^-{\partial} & \Omega^{d}(B \fg) .
 }
 \]
-This is precisely a shifted version of the complex we had in (\ref{truncated de rham1}).
-We saw that it was quasi-isomorphic, through the de Rham differential, to $\Omega^{d+1}_{cl}[d]$. 
+This complex is quasi-isomorphic, through the de Rham differential, to $\Omega^{d+1}_{cl}[d]$. 
 This completes the proof.
 \end{proof}
-
-We can apply this general result to the case $\fg =\CC^n[-1]$.
-Doing this we have the following corollary.
-
-\begin{cor}\label{cor: defcor}
-Let $\Def_n$ be the deformation complex of the formal $\beta\gamma$ system with target $\hD^n$.
-There is a $(\Vect, \GL_n)$-equivariant quasi-isomorphism
-\beqn
-J : \hOmega^{d+1}_{n,cl} [d] \xto{\simeq} \left(\left(\Def^{\rm cot}_n\right)^{\CC^d_{\rm hol}}\right)^{U(d)} \subset \Def_n .
-\eeqn
-\end{cor}
-
-This induces a quasi-isomorphism into the $(\Vect, \GL_n)$-equivariant deformation complex
-\[
-\label{j w map}
-J^{\rm W} : \clie^*(\Vect , \GL_n ; \hOmega^{d+1}_{n,cl}) \xto{\simeq} \left(\left(\Def^{\rm W, cot}_n\right)^{\CC^d_{\rm hol}}\right)^{U(d)} \subset \Def_n^{\rm W} .
-\]
-Moreover, upon performing Gelfand-Kazhdan descent, it implies that on any complex manifold $X$ we can use $J$ to identify the deformation complex for the holomorphic $\sigma$-model of maps $\CC^d \to X$:
-\beqn
-J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to X} \right)^{\CC^d_{\rm hol}}\right)^{U(d)} .
-\eeqn
 
 \section{Normalizing the charge anomaly} \label{sec: feynman}
 
