@@ -1,28 +1,39 @@
 \BOOKMARK [1][-]{section*.2}{}{}% 1
-\BOOKMARK [1][-]{section.1}{1. Current algebras on complex manifolds}{}% 2
-\BOOKMARK [2][-]{subsection.1.1}{1.1. Local Lie algebras}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.2}{1.2. Current algebras as enveloping factorization algebras of local Lie algebras}{section.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.2.1}{1.2.1. A digression on the enveloping En algebras}{subsection.1.2}% 5
-\BOOKMARK [2][-]{subsection.1.3}{1.3. Local cocycles and shifted extensions}{section.1}% 6
-\BOOKMARK [3][-]{subsubsection.1.3.1}{1.3.1. Local cochains of a local Lie algebra}{subsection.1.3}% 7
-\BOOKMARK [3][-]{subsubsection.1.3.2}{1.3.2. Shifted extensions}{subsection.1.3}% 8
-\BOOKMARK [3][-]{subsubsection.1.3.3}{1.3.3. Twists of the current algebras}{subsection.1.3}% 9
-\BOOKMARK [3][-]{subsubsection.1.3.4}{1.3.4. A special class of cocycles: the j functional}{subsection.1.3}% 10
-\BOOKMARK [3][-]{subsubsection.1.3.5}{1.3.5. Another special class: the LMNS extensions}{subsection.1.3}% 11
-\BOOKMARK [2][-]{subsection.1.4}{1.4. The higher Kac-Moody factorization algebra}{section.1}% 12
-\BOOKMARK [3][-]{subsubsection.1.4.1}{1.4.1. Holomorphic translation invariance and higher dimensional vertex algebras}{subsection.1.4}% 13
-\BOOKMARK [1][-]{section.2}{2. Local aspects of the higher Kac-Moody factorization algebras}{}% 14
-\BOOKMARK [2][-]{subsection.2.1}{2.1. Compactifying the higher Kac-Moody algebras along spheres}{section.2}% 15
-\BOOKMARK [3][-]{subsubsection.2.1.1}{2.1.1. Derived functions on punctured affine space}{subsection.2.1}% 16
-\BOOKMARK [3][-]{subsubsection.2.1.2}{2.1.2. The sphere algebra of g}{subsection.2.1}% 17
-\BOOKMARK [3][-]{subsubsection.2.1.3}{2.1.3. The case of zero level}{subsection.2.1}% 18
-\BOOKMARK [3][-]{subsubsection.2.1.4}{2.1.4. The case of non-zero level}{subsection.2.1}% 19
-\BOOKMARK [3][-]{subsubsection.2.1.5}{2.1.5. A comparison with the work of Faonte-Hennion-Kapranov}{subsection.2.1}% 20
-\BOOKMARK [2][-]{subsection.2.2}{2.2. An Ed algebra by compactifying along tori}{section.2}% 21
-\BOOKMARK [1][-]{section.3}{3. Higher Kac-Moody factorization algebras as symmetries of field theories}{}% 22
-\BOOKMARK [1][-]{section.4}{4. Global aspects of the higher Kac-Moody factorization algebras}{}% 23
-\BOOKMARK [2][-]{subsection.4.1}{4.1. Hopf manifolds and twisted indices}{section.4}% 24
-\BOOKMARK [2][-]{subsection.4.2}{4.2. Variants of the higher Kac-Moody factorization algebras}{section.4}% 25
-\BOOKMARK [1][-]{section.5}{5. Large N limits}{}% 26
-\BOOKMARK [1][-]{appendix.A}{Appendix A. Local functionals}{}% 27
-\BOOKMARK [1][-]{appendix.B}{Appendix B. Computing the deformation complex}{}% 28
+\BOOKMARK [2][-]{subsubsection.0.0.1}{0.0.1. }{section*.2}% 2
+\BOOKMARK [3][-]{subsubsection.0.0.2}{0.0.2. }{subsubsection.0.0.1}% 3
+\BOOKMARK [3][-]{subsubsection.0.0.3}{0.0.3. }{subsubsection.0.0.1}% 4
+\BOOKMARK [3][-]{subsubsection.0.0.4}{0.0.4. }{subsubsection.0.0.1}% 5
+\BOOKMARK [1][-]{section.1}{1. Current algebras on complex manifolds}{}% 6
+\BOOKMARK [2][-]{subsection.1.1}{1.1. Local Lie algebras}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.2}{1.2. Current algebras as enveloping factorization algebras of local Lie algebras}{section.1}% 8
+\BOOKMARK [3][-]{subsubsection.1.2.1}{1.2.1. A digression on the enveloping En algebras}{subsection.1.2}% 9
+\BOOKMARK [2][-]{subsection.1.3}{1.3. Local cocycles and shifted extensions}{section.1}% 10
+\BOOKMARK [3][-]{subsubsection.1.3.1}{1.3.1. Local cochains of a local Lie algebra}{subsection.1.3}% 11
+\BOOKMARK [3][-]{subsubsection.1.3.2}{1.3.2. Shifted extensions}{subsection.1.3}% 12
+\BOOKMARK [3][-]{subsubsection.1.3.3}{1.3.3. Twists of the current algebras}{subsection.1.3}% 13
+\BOOKMARK [3][-]{subsubsection.1.3.4}{1.3.4. A special class of cocycles: the j functional}{subsection.1.3}% 14
+\BOOKMARK [3][-]{subsubsection.1.3.5}{1.3.5. Another special class: the LMNS extensions}{subsection.1.3}% 15
+\BOOKMARK [2][-]{subsection.1.4}{1.4. The higher Kac-Moody factorization algebra}{section.1}% 16
+\BOOKMARK [3][-]{subsubsection.1.4.1}{1.4.1. Holomorphic translation invariance and higher dimensional vertex algebras}{subsection.1.4}% 17
+\BOOKMARK [1][-]{section.2}{2. Local aspects of the higher Kac-Moody factorization algebras}{}% 18
+\BOOKMARK [2][-]{subsection.2.1}{2.1. Compactifying the higher Kac-Moody algebras along spheres}{section.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.1.1}{2.1.1. Derived functions on punctured affine space}{subsection.2.1}% 20
+\BOOKMARK [3][-]{subsubsection.2.1.2}{2.1.2. The sphere algebra of g}{subsection.2.1}% 21
+\BOOKMARK [3][-]{subsubsection.2.1.3}{2.1.3. The case of zero level}{subsection.2.1}% 22
+\BOOKMARK [3][-]{subsubsection.2.1.4}{2.1.4. The case of non-zero level}{subsection.2.1}% 23
+\BOOKMARK [3][-]{subsubsection.2.1.5}{2.1.5. A comparison with the work of Faonte-Hennion-Kapranov}{subsection.2.1}% 24
+\BOOKMARK [2][-]{subsection.2.2}{2.2. Compactifying along tori}{section.2}% 25
+\BOOKMARK [1][-]{section.3}{3. The holomorphic charge anomaly}{}% 26
+\BOOKMARK [2][-]{subsection.3.1}{3.1. Equivariant holomorphic matter}{section.3}% 27
+\BOOKMARK [3][-]{subsubsection.3.1.1}{3.1.1. The \040factorization algebra}{subsection.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.2}{3.2. The equivariant quantization}{section.3}% 29
+\BOOKMARK [2][-]{subsection.3.3}{3.3. The charge anomaly for }{section.3}% 30
+\BOOKMARK [2][-]{subsection.3.4}{3.4. The quantum observables of the \040system}{section.3}% 31
+\BOOKMARK [2][-]{subsection.3.5}{3.5. Free field realization}{section.3}% 32
+\BOOKMARK [1][-]{section.4}{4. Global aspects of the higher Kac-Moody factorization algebras}{}% 33
+\BOOKMARK [2][-]{subsection.4.1}{4.1. Hopf manifolds and twisted indices}{section.4}% 34
+\BOOKMARK [2][-]{subsection.4.2}{4.2. The Kac-Moody vertex algebra and dimensional reduction}{section.4}% 35
+\BOOKMARK [1][-]{section.5}{5. Large N limits}{}% 36
+\BOOKMARK [1][-]{appendix.A}{Appendix A. Local functionals}{}% 37
+\BOOKMARK [1][-]{appendix.B}{Appendix B. Computing the deformation complex}{}% 38
+\BOOKMARK [1][-]{appendix.C}{Appendix C. Normalizing the charge anomaly}{}% 39
