@@ -123,7 +123,7 @@ In the case that $X = \CC^d$ we will denote the sheaves and cosheaves of the loc
 \subsection{Current algebras as enveloping factorization algebras of local Lie algebras}
 
 Local Lie algebras often appear as symmetries of classical field theories.
-For instance, as we will show in Section \ref{sec: charge}, 
+For instance, as we will show in Section \ref{sec: qft}, 
 each finite-dimensional complex representation $V$ of a Lie algebra $\fg$
 determines a charged $\beta\gamma$-type system on a complex $d$-fold $X$ with choice of holomorphic principal bundle $\pi: P \to X$.
 Namely, the on-shell $\gamma$ fields are holomorphic sections for the associated bundle $P \times^G V \to X$, 
@@ -255,13 +255,13 @@ We turn to discussing the natural home for the obstructions to such lifts after 
 \owen{I added this here because it feels natural and then we can refer to it easily later.}
 
 This construction $\UU(\sL)$ has a special feature when the local Lie algebra is obtained by taking the de Rham forms with values in a dg Lie algebra $\fg$, i.e., when $\sL = \Omega^*_c \otimes \fg$.
-In that case the enveloping factorization algebra is locally constant and, on the $d$-dimensional real manifold $\RR^d$, determines an $E_d$ algebra, also known as an algebra over the little $d$-disks operad, by a result of Lurie (see \owen{give precise citation}).
+In that case the enveloping factorization algebra is locally constant and, on the $d$-dimensional real manifold $\RR^d$, determines an $E_d$ algebra, also known as an algebra over the little $d$-disks operad, by a result of Lurie (see Theorem 5.5.4.10 of \cite{LurieHA}).
 This construction satisfies a universal property: 
 it is the $d$-dimensional generalization of the universal enveloping algebra of a Lie algebra.
 
 To state this result of Knudsen precisely, we need to be in the context of $\infty$-categories.
 
-\begin{thm}[\cite{KnudsenEn}] 
+\begin{thm}[\cite{Knudsen}] 
 \label{thm:knudsen}
 Let $\sC$ be a stable, $\CC$-linear, presentable, symmetric monoidal $\infty$-category.
 There is an adjunction
@@ -483,7 +483,6 @@ this class of cocycles depends on the geometry.
 
 In complex dimension two, this class of cocycles has appeared in the work of Losev-Moore-Nekrasov-Shatashvili (LMNS) \cite{LMNS1,LMNS2,LMNS3} in their construction of a higher analog of the ``chiral WZW theory". 
 Though our approaches differ, we share their ambition to formulate a higher analogs of constructions and ideas in chiral CFT. 
-\brian{this sentence seems out of place.}
 
 Let $X$ be a complex manifold of dimension $d$ with a choice of $(k,k)$-form~$\eta$. 
 Choose a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
@@ -499,6 +498,7 @@ Such a cochain is a cocycle only if $\dbar \eta = 0$, because $\eta$ does not in
 Note that a K\"{a}hler manifold always produces natural choices of $\eta$ by taking $\eta = \omega^{k}$, where $\omega$ is the symplectic form.
 In this way, K\"{a}hler geometry determines an important class of extensions.
 It would be interesting to explore what aspects of the geometry are reflected by these associated current algebras.
+The following is a direct calculation.
 
 \begin{lem}\label{lem: cocycle KM}
 Fix $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$.
