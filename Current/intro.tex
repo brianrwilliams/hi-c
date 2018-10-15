@@ -4,17 +4,92 @@
 
 \owen{Obviously we'll write a new intro when we know what we want to accomplish in this paper.}
 
-The Kac-Moody vertex algebra, as developed in \cite{IgorKM, KacVertex, BorcherdsVertex}, is a foundational object in the study of... 
+One can associate to any simple Lie algebra $\fg$ its affine algebra $\Hat{\fg}$. 
+This is a non-trivial central extension of the Lie algebra of Laurent polynomials $\fg[z,z^{-1}]$ valued in the Lie algebra. 
+The affine Lie algebra, and its cousin the Kac-Moody vertex algebra, are foundational objects in representation theory and conformal field theory. 
+The natural question arises, do there exists multivariable, or higher dimensional, generalizations of the affine Lie algebra and Kac-Moody vertex algebra? 
+
 In this work, we have two independent, yet related goals:
 
 \begin{enumerate}
-\item Provide analogs of the Kac-Moody vertex algebras  using factorization algebras defined on complex manifolds;
+\item Use factorization algebras to study the sheaf/cosheaf of Lie algebra valued currents on complex manifolds, and their relationship to higher affine algebras;
 \item Develop tools for understanding symmetries of {\em holomorphic field theory} in any dimension, that provide a systematic generalization of methods used in chiral conformal field theory on Riemann surfaces; 
 \end{enumerate}
 
-\brian{I've added stuff we had from a file a while ago, not sure how much of it now fits in the introduction.}
-These tools will use ideas and techniques from the Batalin-Vilkovisky formalism, as articulated by Costello, and factorization algebras, following \cite{CG1,CG2}.
-In this subsection, however, we will try to explain the key objects and constructions with a light touch,
+The Kac-Moody vertex algebra, as developed in \cite{IgorKM, KacVertex, BorcherdsVertex}, \brian{chiral/fact POV}
+
+
+\noindent{\em A view from geometry}
+
+There is an embedding $\fg[z,z^{-1}] \hookrightarrow C^\infty(S^1) \tensor \fg = {\rm Map}(S^1, \fg)$, induced by the embedding of algebraic functions on punctured affine line inside of smooth functions on $S^1$. 
+Thus, a natural starting point for $d$-dimensional affine algebras is the ``sphere algebra" 
+\beqn\label{mapping space}
+{\rm Map}(S^{2d-1}, \fg) ,
+\eeqn
+where we view $S^{2d-1} \subset \CC^d \setminus \{0\}$. 
+
+When $d=1$, affine algebras are given by extensions $L\fg$ prescribed by a $2$-cocycle involving the algebraic residue pairing. 
+Note that this cocycle is {\em not} pulled back from any cocycle on $\sO^{alg}(\AA^1) \tensor \fg = \fg[z]$. 
+%Now, consider algebraic functions on the punctured $d$-dimensional affine space $\AA^{d \times}$.
+
+When $d > 1$, Hartog's theorem implies that the space of holomorphic functions on punctured affine space is the same as the space of holomorphic functions on affine space.
+The same holds for algebraic functions, so that $\sO^{alg}(\pAA^{d}) \tensor \fg = \sO^{alg}(\AA^d) \tensor \fg$. 
+In particular, the naive algebraic replacement $\sO^{alg}(\pAA^{d}) \tensor \fg$ of (\ref{mapping space}) has no interesting central extensions. 
+However, as opposed to the punctured line, the punctured affine space $\pAA^{s}$ has interesting higher cohomology. 
+
+The key idea is that we replace the commutative algebra $\sO^{alg}(\pAA^{d})$ by the derived space of sections $\RR \Gamma(\pAA^{d}, \sO)$. 
+This complex has interesting cohomology and leads to nontrivial extensions of the dg Lie algebra $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, or its Dolbeault model $\Omega^{0,*}(\pAA^d)$.
+Further, there is a tangential Dolbeault complex of the $(2d-1)$-sphere inside of the Dolbeault complex of $\CC^d \setminus \{0\}$:
+\[
+\Omega_b^{0,*}(S^{2d-1}) \subset \Omega^{0,*}(\pAA^d) .
+\]
+See \cite{DragomirTomassini} for details on the definition of $\Omega_b^{0,*}(S^{2d-1})$. 
+The degree zero part of $\Omega_b^{0,*}(S^{2d-1})$ is $C^\infty(S^{2d-1})$, and we can view it as a derived enhancement of the mapping space in (\ref{mapping space}). 
+The key fact is that the dg Lie algebra $\Omega^{0,*}(S^{2d-1}) \tensor \fg$ {\em does} have nontrivial central extensions. 
+
+Our starting point is to step back, and consider the full sheaf of $\fg$-valued Dolbeualt forms $\Omega^{0,*}(X, \fg)$ defined on any complex manifold $X$. 
+We deem this sheaf of dg Lie algebras, or rather its cosheaf version $\sG_X := \Omega^{0,*}_c(X, \fg)$, the {\em holomorphic $\fg$-valued currents} on $X$. 
+The Lie algebra homology, $\clieu_*\sG_X$, of this cosheaf determines the structure of a {\em factorization algebra} on the manifold $X$.
+It serves as a higher dimensional analog of the chiral enveloping algebra of $\fg$ introduced by Beilinson-Drinfeld \cite{BD}, and will or model for the higher dimensional Kac-Moody algebra. 
+
+%\begin{thm}\label{thm sphere alg} The associative algebra $U(\Hat{\fg}_{d,\theta})$ determines a locally constant factorization algebra on the real one-manifold $\RR$ that we denote $U(\Hat{\fg}_{d,\theta})^{fact}$. 
+%Moreover, there is an injective dense map of factorization algebras on $\RR$:
+%\[
+%\Phi^{S^{2d-1}} : \left(U \Hat{\fg}_{d,\theta} \right)^{fact} \to r_*\left(\sF^{\CC^d \setminus \{0\}}_{\fg,\theta} \right)  .
+%\]
+%where the right-hand side is the push-forward of the Kac-Moody factorization algebra on $\CC^{d}\setminus \{0\}$ along the radial projection map.
+%\end{thm}
+
+%In the final part of this section we specialize to the manifold $X = (\CC \setminus \{0\})^d$. 
+%Note that when $d=1$ this is the same as the algebra above, but for $d>1$ this factorization algebra has a different flavor. 
+%We will show how to extract the data of an $E_d$-algebra from this configuration, and discuss its role in the theory of higher dimensional vertex algebras. 
+
+%In a similar way in Section \ref{sec: ...} we will see how the Kac-Moody factorization algebra on $(\CC \setminus \{0\})^d$ are related to extensions of higher loop Lie algebras
+%\[
+%L^d \fg = L ( \cdots (L \fg) \cdots ) = {\rm Map}(S^{1} \times S^1 , \fg).
+%\]
+
+%\[
+%\cA_{d, \fg,\theta} := \bigoplus_{k \in \ZZ} r_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) ^{(k)} \subset r_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) .
+%\]
+%\end{thm}
+
+%\begin{dfn} Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
+%Let $\Hat{\fg}_{d,\theta}$ be the $L_\infty$ central extension
+%\[
+%\CC \to \Hat{\fg}_{d,\theta} \to A_d \tensor \fg
+%\]
+%determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
+%\[
+%\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
+%\]
+%where $a_i \tensor X_i \in A_d \tensor \fg$. 
+%\end{dfn}
+
+\noindent{\em A view from physics}
+
+In what follows, we use ideas and techniques from the Batalin-Vilkovisky formalism, as articulated by Costello, and factorization algebras, following \cite{CG1,CG2}.
+In this introduction, however, we will try to explain the key objects and constructions with a light touch,
 in a way that does not require familiarity with that formalism,
 merely comfort with basic complex geometry and ideas of quantum field theory.
 
