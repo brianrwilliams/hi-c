@@ -1,8 +1,8 @@
-\contentsline {section}{\tocsection {}{}{}}{1}{section*.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{0.0.1}{}}{4}{subsubsection.0.0.1}
-\contentsline {subsubsection}{\tocsubsubsection {}{0.0.2}{}}{4}{subsubsection.0.0.2}
-\contentsline {subsubsection}{\tocsubsubsection {}{0.0.3}{}}{5}{subsubsection.0.0.3}
-\contentsline {subsubsection}{\tocsubsubsection {}{0.0.4}{}}{6}{subsubsection.0.0.4}
+\contentsline {section}{\tocsection {}{}{}}{2}{section*.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{0.0.1}{}}{5}{subsubsection.0.0.1}
+\contentsline {subsubsection}{\tocsubsubsection {}{0.0.2}{}}{5}{subsubsection.0.0.2}
+\contentsline {subsubsection}{\tocsubsubsection {}{0.0.3}{}}{6}{subsubsection.0.0.3}
+\contentsline {subsubsection}{\tocsubsubsection {}{0.0.4}{}}{7}{subsubsection.0.0.4}
 \contentsline {section}{\tocsection {}{1}{Current algebras on complex manifolds}}{8}{section.1}
 \contentsline {subsection}{\tocsubsection {}{1.1}{Local Lie algebras}}{8}{subsection.1.1}
 \contentsline {subsection}{\tocsubsection {}{1.2}{Current algebras as enveloping factorization algebras of local Lie algebras}}{10}{subsection.1.2}
@@ -30,11 +30,10 @@
 \contentsline {subsection}{\tocsubsection {}{3.3}{The charge anomaly for $\beta \gamma $}}{39}{subsection.3.3}
 \contentsline {subsection}{\tocsubsection {}{3.4}{The quantum observables of the $\beta \gamma $ system}}{41}{subsection.3.4}
 \contentsline {subsection}{\tocsubsection {}{3.5}{Free field realization}}{42}{subsection.3.5}
-\contentsline {section}{\tocsection {}{4}{Global aspects of the higher Kac-Moody factorization algebras}}{43}{section.4}
+\contentsline {section}{\tocsection {}{4}{Global aspects of the higher Kac-Moody factorization algebras}}{44}{section.4}
 \contentsline {subsection}{\tocsubsection {}{4.1}{Hopf manifolds and twisted indices}}{44}{subsection.4.1}
-\contentsline {subsection}{\tocsubsection {}{4.2}{The Kac-Moody vertex algebra and compactification}}{47}{subsection.4.2}
-\contentsline {section}{\tocsection {}{5}{Large $N$ limits}}{48}{section.5}
-\contentsline {section}{\tocsection {Appendix}{A}{Local functionals}}{51}{appendix.A}
-\contentsline {section}{\tocsection {Appendix}{B}{Computing the deformation complex}}{52}{appendix.B}
+\contentsline {subsection}{\tocsubsection {}{4.2}{The Kac-Moody vertex algebra and compactification}}{48}{subsection.4.2}
+\contentsline {section}{\tocsection {}{5}{Large $N$ limits}}{49}{section.5}
+\contentsline {section}{\tocsection {Appendix}{A}{Local functionals}}{52}{appendix.A}
+\contentsline {section}{\tocsection {Appendix}{B}{Computing the deformation complex}}{53}{appendix.B}
 \contentsline {section}{\tocsection {Appendix}{C}{Normalizing the charge anomaly}}{56}{appendix.C}
-\contentsline {section}{\tocsection {Appendix}{}{References}}{58}{section*.3}

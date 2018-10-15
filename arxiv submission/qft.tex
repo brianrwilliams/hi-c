@@ -249,12 +249,13 @@ Then
 exists.
 \end{itemize}
 
-First, we justify claim (1).
-Recall that the weight is defined as a sum over {\em connected} graphs.
-An immediate consequence of the combinatorics involved in constructing the equivariant weight using the $\beta\gamma$ propagator \brian{finish}. 
+Claim (1) follows from direct combinatorial observation.
+Recall that the weight is defined as a sum over {\em connected} graphs. 
+The inner edges that we can label by the propagator $P_{\epsilon < L}$ only depend on the fields $\beta\gamma$. 
+Since there are only trivalent wheels, of the form $\int \beta [\alpha, \gamma]$, where $\alpha$ is a section in $\sG_d$, the connected diagrams must be wheels with trees sticking out of them. 
 
-
-
+Now, Theorem 3.4 of \cite{BWhol} applies to show that the $\epsilon \to 0$ limit of the weights is finite. 
+This proves claim (2). 
 \end{proof}
 
 As an immediate consequence of the proof, we see that only polynomial values of $\hbar$ occur in the expansion of $I^{\sG}[L]$. 
@@ -515,6 +516,8 @@ Thus, $\sH_V$ is the Heisenberg Lie algebra associated to the symplectic dg vect
 If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody. 
 This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra of the Heisenberg $U(\sH_V)$.  
 
+Upon compactification of the quantum Noether map along the sphere $S^{2d-1}$ we obtain the following. 
+
 \begin{cor} 
 The map (\ref{free field}) determines a map of $E_1$-algebras 
 \beqn\label{free field2}
@@ -522,13 +525,25 @@ The map (\ref{free field}) determines a map of $E_1$-algebras
 \eeqn
 \end{cor}
 
+We denote the restriction by $\oint_{S^{2d-1}}$ since the value of the pushforward factorization algebra along radial projection on open intervals coincides with the ``sphere observables".
+
 \begin{proof}
 Let $r : \CC^d \setminus 0 \to \RR_{>0}$ be the radial projection. 
 Consider the induced map
 \[
 r_* J^\q :  r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to  r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}  .
 \]
+The classical $\beta\gamma$ system on $\CC^d$ (and $\CC^d \setminus \{0\})$ is manifestly equivariant for the group $U(d)$ given by rotating the plane. 
+This symmetry persists upon quantization, since the BV Laplacian is also compatible with this action. 
+Thus, we can consider the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of the $U(d)$-eigenspaces. 
 
+Similarly, the Kac-Moody factorization algebra $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ is $U(d)$-equivariant. 
+The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section \ref{sec: spheres}. 
+
+By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
+To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_V)$. 
+It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$-algebras. 
+
+Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
+Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
 \end{proof}
-
-\brian{add a short proof. Need to see that the weight spaces for the $S^1$ action match up.}
