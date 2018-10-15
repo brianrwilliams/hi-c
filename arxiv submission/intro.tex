@@ -2,8 +2,6 @@
 
 %\chapter{Local symmetries of holomorphic theories}\label{chap: symmetries}
 
-\owen{Obviously we'll write a new intro when we know what we want to accomplish in this paper.}
-
 One can associate to any simple Lie algebra $\fg$ its affine algebra $\Hat{\fg}$. 
 This is a non-trivial central extension of the Lie algebra of Laurent polynomials $\fg[z,z^{-1}]$ valued in the Lie algebra. 
 The affine Lie algebra, and its cousin the Kac-Moody vertex algebra, are foundational objects in representation theory and conformal field theory. 
@@ -16,7 +14,20 @@ In this work, we have two independent, yet related goals:
 \item Develop tools for understanding symmetries of {\em holomorphic field theory} in any dimension, that provide a systematic generalization of methods used in chiral conformal field theory on Riemann surfaces; 
 \end{enumerate}
 
-The Kac-Moody vertex algebra, as developed in \cite{IgorKM, KacVertex, BorcherdsVertex}, \brian{chiral/fact POV}
+Concretely, for every complex dimension $d$ and to every Lie algebra, we define a factorization algebra defined on all $d$-dimensional complex manifolds. 
+There is also a version that works for an arbitrary principal bundle. 
+When $d=1$, it is shown in \cite{CG1}, that this factorization algebra recovers the ordinary affine algebra by restricting the factorization algebra to the punctured complex line $C^*$. 
+When $d > 1$, part of our main result is to show how the factorization algebra on $\CC^d \setminus \{0\}$ recovers a higher dimensional central extensions of $\fg$-valued functions on the punctured plane. 
+A model for these ``higher affine algebras" has recently appeared in work of Faonte-Hennion-Kapranov \cite{FHK}, and we will give a systematic relationship between our approaches. 
+
+By a standard procedure, there is a way of enhancing the affine algebra to a vertex algebra. 
+The so-called Kac-Moody vertex algebra, as developed in \cite{IgorKM, KacVertex, BorcherdsVertex}, is important in its own right to representation theory and conformal field theory. 
+Also in \cite{CG1}, it is shown how the holomorphic factorization algebra associated to a Lie algebra recovers this vertex algebra. 
+The key point is that the OPE is encoded by the factorization product between disks embedded in $\CC$. 
+Our proposed factorization algebra, then, provides a higher dimensional enhancement of this vertex algebra through the factorization product of balls in $\CC^d$. 
+This structure can be thought of as a holomorphic analog of an algebra over the operad of little $d$-disks.
+
+It is the general philosophy of \cite{CG1,CG2} that every quantum field theory defines a factorization algebra of observables...
 
 \brian{Say a word about higher SUGRA and role of KM. Compare to class S theories associated to vertex algebras.}
 
@@ -41,19 +52,20 @@ In particular, the naive algebraic replacement $\sO^{alg}(\pAA^{d}) \tensor \fg$
 However, as opposed to the punctured line, the punctured affine space $\pAA^{s}$ has interesting higher cohomology. 
 
 The key idea is that we replace the commutative algebra $\sO^{alg}(\pAA^{d})$ by the derived space of sections $\RR \Gamma(\pAA^{d}, \sO)$. 
-This complex has interesting cohomology and leads to nontrivial extensions of the dg Lie algebra $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, or its Dolbeault model $\Omega^{0,*}(\pAA^d)$.
+This complex has interesting cohomology and leads to nontrivial extensions of the dg Lie algebra $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, or its Dolbeault model $\Omega^{0,*}(\pAA^d) \tensor \fg$.
 Further, there is a tangential Dolbeault complex of the $(2d-1)$-sphere inside of the Dolbeault complex of $\CC^d \setminus \{0\}$:
 \[
 \Omega_b^{0,*}(S^{2d-1}) \subset \Omega^{0,*}(\pAA^d) .
 \]
 See \cite{DragomirTomassini} for details on the definition of $\Omega_b^{0,*}(S^{2d-1})$. 
 The degree zero part of $\Omega_b^{0,*}(S^{2d-1})$ is $C^\infty(S^{2d-1})$, and we can view it as a derived enhancement of the mapping space in (\ref{mapping space}). 
-The key fact is that the dg Lie algebra $\Omega^{0,*}(S^{2d-1}) \tensor \fg$ {\em does} have nontrivial central extensions. 
+The key fact is that the dg Lie algebra $\Omega^{0,*}_b(S^{2d-1}) \tensor \fg$ {\em does} have nontrivial central extensions. 
 
 Our starting point is to step back, and consider the full sheaf of $\fg$-valued Dolbeualt forms $\Omega^{0,*}(X, \fg)$ defined on any complex manifold $X$. 
 We deem this sheaf of dg Lie algebras, or rather its cosheaf version $\sG_X := \Omega^{0,*}_c(X, \fg)$, the {\em holomorphic $\fg$-valued currents} on $X$. 
 The Lie algebra homology, $\clieu_*\sG_X$, of this cosheaf determines the structure of a {\em factorization algebra} on the manifold $X$.
 It serves as a higher dimensional analog of the chiral enveloping algebra of $\fg$ introduced by Beilinson-Drinfeld \cite{BD}, and will or model for the higher dimensional Kac-Moody algebra. 
+We will see that there exists cocycles on this sheaf of dg Lie algebras which give rise to interesting extensions of the factorization algebra $\clieu_*\sG_X$.\\
 
 %\begin{thm}\label{thm sphere alg} The associative algebra $U(\Hat{\fg}_{d,\theta})$ determines a locally constant factorization algebra on the real one-manifold $\RR$ that we denote $U(\Hat{\fg}_{d,\theta})^{fact}$. 
 %Moreover, there is an injective dense map of factorization algebras on $\RR$:
@@ -91,15 +103,16 @@ It serves as a higher dimensional analog of the chiral enveloping algebra of $\f
 
 \noindent{\em A view from physics}
 
-In conformal field theory, the Kac-Moody algebra arises naturally as the symmetry of a system with an action by a group. 
-This appears in Kac-Moody uniformization, for instance, whereby the affine algebra 
+In conformal field theory, the Kac-Moody algebra generically appears as the symmetry of a system with an action by a group. 
+This appears in Kac-Moody uniformization, for instance, whereby the affine algebra describes infinitesimal symmetries of a principal $G$-bundle inside the moduli space of all $G$-bundles. 
+The higher Kac-Moody algebra we propose arises naturally as the symmetries of higher dimensional quantum field theories that have a {\em holomorphic} flavor. 
 
 Throughout this paper, we use ideas and techniques from the Batalin-Vilkovisky formalism, as articulated by Costello, and factorization algebras, following \cite{CG1,CG2}.
 In this introduction, however, we will try to explain the key objects and constructions with a light touch,
 in a way that does not require familiarity with that formalism,
 merely comfort with basic complex geometry and ideas of quantum field theory.
 
-A running example is the following version of the $\beta\gamma$ system.
+A running example is the following version of the $\beta\gamma$ system, that we will return to in detail in Section \ref{sec: qft}.
 
 Let $X$ be a complex $d$-dimensional manifold.
 Let $G$ be a complex algebraic group, such as $GL_n(\CC)$, 
@@ -173,7 +186,7 @@ So far, we have simply lifted the usual discussion of symmetries to a dg setting
 using standard tools of complex geometry.
 We now introduce a novel maneuver that is characteristic of the BV/factorization package of~\cite{CG1,CG2}.
 
-The idea is to work with compactly supported sections of $\sAd(P)$, 
+The idea is to work with {\em compactly supported} sections of $\sAd(P)$, 
 i.e., to work with the precosheaf $\sAd(P)_c$ of dg Lie algebras that assigns to an open $U$,
 the dg Lie algebra
 \[
@@ -244,7 +257,7 @@ In this case, there is such a map:
 J(f)(\gamma,\beta) = \int_U \langle\beta, f \gamma\rangle.
 \]
 This functional is local, and it is natural to view it as describing the ``minimal coupling'' between our free $\beta\gamma$ system and a kind of gauge field implicit in $\sAd(P)$.
-\owen{This is a little misleading, given the nature of the forms, but I think it is fixable.}
+%\owen{This is a little misleading, given the nature of the forms, but I think it is fixable.}
 This construction thus shows again that it is natural to work with compactly supported sections of $\sAd(P)$,
 since it allows one to encode the Noether map in a natural way.
 We call $\sAd(P)_c$ the Lie algebra of {\em classical currents} as we have explained how, via $J$, we realize these symmetries as classical observables.
@@ -285,39 +298,3 @@ This obstruction should resemble standard anomalies.
 
 This functional $ob$ is a cocycle in Lie algebra cohomology for $\sAd(P)$ and hence determines a central extension $\widehat{\sAd(P)}_c$ as precosheaves of dg Lie algebras.
 It is the Lie algebra of {\em quantum} currents, as there is a lift of $J$ to a map $J^q$ out of this extension to the quantum observables.
-
-
-
-Infinitesimally speaking, a symmetry is encoded by the action of a Lie algebra.
-For the holomorphic gauge symmetry this will become a sort of current algebra which is equivalent to holomorphic functions on the complex manifold with values in a Lie algebra.
-For the holomorphic diffeomorphisms this Lie algebra is that of holomorphic vector fields.
-Locality implies that this actually extends to a symmetry by a sheafy version of a Lie algebra. 
-The precise sheafy version we mean is called a {\em local Lie algebra}, which we will recall in the main body of the text. 
-To every local Lie algebra we can assign a factorization algebra through the so-called enveloping factorization algebra:
-\[
-\mathbb{U} : {\rm Lie}_X \to {\rm Fact}_X .
-\]
-Here, ${\rm Lie}_X$ is the category of local Lie algebras.
-By this construction, we see that the Lie algebra of symmetries of a theory define a factorization algebra on the manifold where the theory lives. 
-
-One compelling reason for constructing a factorization algebra model for Lie algebras encoding the symmetries of a theory is that it allows one to consider universal versions of such objects.
-There is a variation of the definition of a factorization algebra that lives, in some sense, on the entire category of manifolds (or complex manifolds). 
-Such a perspective has been developed in great generality by Ayala-Francis in \cite{AFTopMan}.
-In the case of the symmetry by a current algebra on Riemann surfaces a universal version of the Kac-Moody has been studied in \cite{CG1}.
-For the case of conformal symmetry our work in \cite{BWVir} provides a factorization algebra lift of the ordinary Virasoro vertex algebra that exists uniformly on the site of Riemann surfaces. 
-In this chapter, we extend each of these objects to arbitrary complex dimensions.
-Our formulation lends itself to an explicit computation of the factorization homology along certain complex manifolds, for which we will focus on a class of examples called {\em Hopf manifolds}.
-
-For this reason, an essential aspect of studying the local symmetries of holomorphic field theories we mentioned above is to characterize the possible cocycles that give rise to central extensions. 
-As we have already mentioned, for vector fields in complex dimension one this is related to the central charge and the central extension of the Witt algebra (vector fields on the circle) known as the Virasoro Lie algebra.
-In the case of a current algebra associated to a Lie algebra, central extensions are related to the {\em level} and the corresponding central extensions are called affine algebras. 
-
-%\begin{thm}
-%Let $V$ be a finite dimensional $\fg$-module and $X$ any compact affine complex manifold. 
-%There exists a BV quantization of the $\beta\gamma$-system on $X$ with values in $V$ that is equivariant for the local Lie algebra $\fg^X$. 
-%Moreover, the first Chern class of the line bundle on $B \fg^X$ defined by the factorization homology of the quantization is equal to
-%\[
-%c_1(\Obs^\q(X)) = C \ch_{d+1}(V) \in \Sym^{d+1}(\fg^\vee)^\fg 
-%\]
-%where $C$ is some nonzero number.
-%\end{thm}
