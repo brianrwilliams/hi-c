@@ -1,0 +1,303 @@
+\appendix
+\section{Local functionals}
+\label{appx:locfncl}
+
+\brian{I think we can get rid of this section}
+
+In our approach, the space of fields will always be equal to the space of smooth sections of a $\ZZ$-graded vector bundle $E\to X$ on a manifold $\sE = \Gamma(X, E)$. 
+The class of functionals $S : \sE \to \RR$ defining the classical theories we consider are required to be {\em local}, or given by the integral of a Lagrangian density. 
+We define this concept now.
+
+Let $D_X$ denote the sheaf of differential operators on $X$. 
+The $\infty$-jet bundle ${\rm Jet}(E)$ of a vector bundle $E$ is the vector bundle whose fiber over $x \in X$ is the space of formal germs at $x$ of sections of $E$. 
+It is a standard fact that ${\rm Jet}(E)$ is equipped with a flat connection giving its space of sections $J(E) = \Gamma(X, {\rm Jet}(E))$ the structure of a $D_X$-module.
+
+Above, we have defined the algebra of functions $\sO(\sE(X))$ on the space of sections $\sE(X)$.
+Similarly, let $\sO_{red}(\sE(X)) = \sO(\sE(X)) / \RR$ be the quotient by the constant polynomial functions. 
+The space $\sO_{red}(J(E))$ inherits a natural $D_X$-module structure from $J(E)$. 
+We refer to $\sO_{red}(J(E))$ as the space of {\em Lagrangians} on the vector bundle $E$. 
+Every element $F \in \sO_{red}(J(E))$ can be expanded as $F = \sum_n F_n$ where each $F_n$ is an element 
+\beqn
+F_n \in {\rm Hom}_{C^\infty_X} (J(E)^{\tensor n}, C^\infty_X)_{S_n} \cong {\rm PolyDiff}(\sE^{\tensor n}, C^\infty(X))_{S_n}
+\eeqn
+where the right-hand side is the space of polydifferential operators.
+The proof of the isomorphism on the right-hand side can be found in Chapter 5 of \cite{CostelloRenormalization}.
+
+A local functional is given by a Lagrangian densities modulo total derivatives.
+The mathematical definition is the following.
+
+\begin{dfn} \label{dfn: local fnl}
+Let $E$ be a graded vector bundle on $X$.
+Define the sheaf of {\em local functionals} on $X$ to be
+\beqn
+\oloc(\sE) = {\rm Dens}_X \tensor_{D_X} \sO_{red}(J(E)),
+\eeqn
+where we use the natural right $D_X$-module structure on densities.
+\end{dfn}
+
+Note that we always consider local functionals coming from Lagrangians modulo constants. 
+We will not be concerned with local functions associated to constant Lagrangians. 
+
+From the expression for functionals in Lemma \ref{lem: fnls} we see that integration defines an inclusion of sheaves
+\[\label{local inclusion}
+i : \oloc(\sE) \hookrightarrow \sO_{red}(\sE_c) .
+\]
+Often times when we describe a local functional we will write down its value on test compactly supported sections, then check that it is given by integrating a Lagrangian density, which amounts to lifting the functional along $i$. 
+
+\section{Computing the deformation complex}\label{sec: hol trans}
+
+There is a succinct way of expressing holomorphic translation invariance as the Lie algebra invariants of a certain {\em dg Lie algebra}.
+Denote by $\CC^d[1]$ the abelian $d$-dimensional graded Lie algebra in concentrated in degree $-1$ by the elements $\{\Bar{\eta}_i\}$.
+We want to consider deformations that are invariant for the action by the total {\em dg} Lie algebra $\CC^{d}_{\rm hol} = \CC^{2d} \oplus \CC^d[1]$.
+The differential sends $\eta_i \mapsto \frac{\partial}{\partial \zbar_i}$.
+The space of holomorphically translation invariant local functionals are denoted by $\oloc(\sE_V)^{\CC^d_{\rm hol}}$.
+The enveloping algebra of $\CC^d_{\rm hol}$ is of the form
+\beqn
+U(\CC^{d}_{\rm hol}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}{\partial \zbar_i}, \eta_i \right]
+\eeqn
+with differential induced from that in $\CC^{d}_{\rm hol}$. 
+Note that this algebra is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators $\CC[\partial / \partial z_i] \xto{\simeq} U(\CC^{d}_{\rm hol})$. 
+
+
+In this section we specialize the functional $J$ to the space $Y = \CC^d$ and use it to completely characterize the $U(d)$-invariant, holomorphically translation invariant deformation complex.
+
+\begin{prop}\label{prop: local def}
+The map $J : \Omega^{d+1}_{cl}(B \fg) [d] \to \Def_{\CC^d \to B \fg}^{\rm cot}$ factors through the holomorphically translation invariant deformation complex:
+\beqn
+J : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\Def^{\rm cot}_{\CC^d \to B \fg}\right)^{\CC^{d}_{\rm hol}} .
+\eeqn
+Furthermore, $J$ defines a quasi-isomorphism into the $U(d)$-invariant subcomplex of the right-hand side.
+\end{prop}
+
+\begin{proof}
+To compute the translation invariant deformation complex we will invoke Corollary \ref{cor: hol trans invt def} from Section \ref{sec: hol trans}.
+Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
+Thus, in the notation of Section \ref{sec: hol theory} the bundle $V$ is simply the trivial bundle $\fg$.
+Thus, we see that the translation invariant deformation complex is quasi-isomorphic to the following cochain complex
+\beqn
+\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
+\eeqn
+We'd like to recast the right-hand side in a more geometric way. 
+
+Note that the the algebra $\CC\left[\frac{\partial}{\partial z_i}\right]$ is the enveloping algebra of the abelian Lie algebra $\CC^d = \CC\left\{\frac{\partial}{\partial z_i}\right\}$. 
+Thus, the complex we are computing is of the form
+\beqn
+\CC \cdot \d^d z \tensor^{\LL}_{U(\CC^d)} \cred^*(\fg[[z_1,\ldots,z_d]]) [d] .
+\eeqn
+Since $\CC \cdot \d^d z$ is the trivial module, this is precisely the Chevalley-Eilenberg cochain complex computing Lie algebra homology of $\CC^d$ with values in the module $\cred^*(\fg[[z_1,\ldots,z_d]])$:
+\beqn
+\left(\Def^{\rm cot}_{Y \to B\fg}\right)^{\CC^d} \; \simeq  \; \clieu_*\left(\CC^d ; \cred^*(\fg[[z_1,\ldots,z_d]]) \d^d z\right) [d] .
+\eeqn
+We will keep $\d^d z$ in the notation since below we are interested in computing the $U(d)$-invariants, and it has non-trivial weight under the action of this group.
+
+To compute the cohomology of this complex, we will first describe the differential explicitly. 
+There are two components to the differential.
+The first is the ``internal" differential coming from the Lie algebra cohomology of $\fg [[z_1,\ldots,z_d]]$, we will write this as $\d_{\fg}$. 
+The second comes from the $\CC^d$-module structure on $\clie^*(\fg[[z_1,\ldots,z_n]])$ and is the differential computing the Lie algebra homology, which we denote $\d_{\CC^d}$. 
+We will employ a spectral sequence whose first term turns on the $\d_{\fg}$ differential.
+The next term turns on the differential $\d_{\CC^d}$.
+
+As a graded vector space, the cochain complex we are trying to compute has the form
+\beqn
+\Sym(\CC^d [1]) \tensor \cred^*\left(\fg[[z_1,\ldots,z_d]])\right) \d^d z [d] .
+\eeqn
+The spectral sequence is induced by the increasing filtration of $\Sym(\CC^d [1])$ by symmetric powers
+\beqn
+F^k = \Sym^{\leq k}(\CC^d[1]) \tensor \cred^*\left(\fg[[z_1,\ldots,z_d]])\right) \d^d z [d] .
+\eeqn
+
+\begin{rmk}
+In the examples we are most interested in (namely $\fg = \CC^n[-1]$ and $\fg = \fg_{X_{\dbar}}$) we can understand the spectral sequence we are using as a version of the Hodge-to-de Rham spectral sequence.
+\end{rmk}
+
+As above, we write the generators of $\CC^d$ by $\frac{\partial}{\partial z_i}$. 
+Also, note that the reduced Chevalley-Eilenberg complex has the form
+\beqn
+\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
+\eeqn
+where $z_i^\vee$ is the dual variable to $z_i$. 
+
+Recall, we are only interested in the $U(d)$-invariant subcomplex of this deformation complex. 
+Sitting inside of $U(d)$ we have $S^1 \subset U(d)$ as multiples of the identity. 
+This induces an overall weight grading to the complex.
+The group $U(d)$ acts in the standard way on $\CC^d$.
+Thus, $z_i$ has weight $(+1)$ and both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have $S^1$-weight $(-1)$. 
+Moreover, the volume element $\d^d z$ has $S^1$ weight $d$.
+It follows that in order to have total $S^1$-weight that the total number of $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ must add up to $d$.
+Thus, as a graded vector space the invariant subcomplex has the following decomposition
+\beqn
+\bigoplus_k \Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z [d] .
+\eeqn
+It follows from Schur-Weyl that the space of $U(d)$ invariants of the $d$th tensor power of the fundamental representation $\CC^d$ is one-dimensional, spanned by the top exterior power. 
+Thus, when we pass to the $U(d)$-invariants, only the unique totally antisymmetric tensor involving $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ survives. 
+Thus, for each $k$, we have
+\[
+\label{U(d) invariants}
+\left(\Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z\right) \cong \wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right) \clie^*\left(\fg , \Sym^{d-k}(\fg^\vee)\right) \d^d z .
+\]
+Here, $\wedge^{k}\left(\frac{\partial}{\partial z_i}\right) \wedge \wedge^{d-k}\left(z_i^\vee\right)$ is just a copy of the determinant $U(d)$-representation, but we'd like to keep track of the appearances of the partial derivatives and $z_i^\vee$. 
+Note that for degree reasons, we must have $k \leq d$. 
+When $k = 0$ this complex is the (shifted) space of functions modulo constants on the formal moduli space $B\fg$, $\sO_{red}(B\fg)[d]$. 
+When $k \geq 1$ this the (shifted) space of $k$-forms on the formal moduli space $B\fg$, which we write as $\Omega^{k}(B \fg)[d+k]$.
+Thus, we see that before turning on the differential on the next page, our complex looks like
+\[
+\label{bg def complex1}
+\xymatrix{
+\ul{-2d} & \cdots & \ul{-d-1} & \ul{-d} \\
+\sO_{red}(B \fg) & \cdots & \Omega^{d-1} (B \fg) & \Omega^{d}(B \fg) .
+}
+\]
+We've omitted the extra factors for simplicity. 
+
+We now turn on the differential $\d_{\CC^d}$ coming from the Lie algebra homology of $\CC^d = \CC\left\{\frac{\partial}{\partial z_i}\right\}$ with values in the above module. 
+Since this Lie algebra is abelian the differential is completely determined by how the operators $\frac{\partial}{\partial z_i}$ act.
+We can understand this action explicitly as follows.
+Note that $\frac{\partial}{\partial z_i} z_j = \delta_{ij}$, thus we may as well think of $z_i^\vee$ as the element $\frac{\partial}{\partial z_i}$. 
+Consider the subspace corresponding to $k=d$ in Equation (\ref{U(d) invariants}):
+\beqn
+\frac{\partial}{\partial z_1} \cdots \frac{\partial}{\partial z_d} \cred^*(\fg) \d^d z .
+\eeqn 
+Then, if $x \in \fg^\vee [-1] \subset \cred^*(\fg)$ we observe that
+\beqn
+\d_{\CC^d} \left(\frac{\partial}{\partial z_1} \cdots \frac{\partial}{\partial z_d} \tensor f \tensor \d^d z \right) = \det (\partial_i, z_j^\vee) \tensor 1 \tensor x \tensor \d^d z \in  \wedge^{d-1}\left(\frac{\partial}{\partial z_i}\right) \wedge \CC \{z_i^\vee\} \clie^*\left(\fg , \fg^\vee \right) \d^d z.
+\eeqn
+This follows from the fact that the action of $\frac{\partial}{\partial z_i}$ on $x = x \tensor 1 \in \fg^\vee \tensor \CC[z_i^\vee]$ is given by
+\beqn
+\frac{\partial}{\partial z_i} \cdot (x \tensor 1) = 1 \tensor x \tensor z_i^\vee \in \clie^*(\fg , \fg^\vee) z_i^\vee .
+\eeqn
+By the Leibniz rule we can extend this to get the formula for general elements $f \in \cred^*(\fg)$. 
+We find that getting rid of all the factors of $z_i$ we recover precisely the de Rham differential 
+\beqn
+\xymatrix{ 
+\cred^*(\fg) [2d] \ar@{=}[d] \ar[r]^-{\d_{\CC^d}} & \clie^*(\fg , \fg^\vee) [2d-1] \ar@{=}[d] \\
+\sO_{red}(B\fg) \ar[r]^-{\partial} & \Omega^1(B \fg) .
+}
+\eeqn
+A similar argument shows that $\d_{\CC^d}$ agrees with the de Rham differential on each $\Omega^k(B \fg)$. 
+
+
+We conclude that the $E_2$ page of this spectral sequence is quasi-isomorphic to the following truncated de Rham complex.
+\[
+\label{bg def complex2}
+\xymatrix{
+\ul{-2d} & \ul{-2d+1} & \cdots & \ul{-d-1} & \ul{-d} \\
+\sO_{red}(B \fg) \ar[r]^-{\partial} & \Omega^1(B \fg) \ar[r] & \cdots \ar[r] & \Omega^{d-1} (B \fg) \ar[r]^-{\partial} & \Omega^{d}(B \fg) .
+}
+\]
+This is precisely a shifted version of the complex we had in (\ref{truncated de rham1}).
+We saw that it was quasi-isomorphic, through the de Rham differential, to $\Omega^{d+1}_{cl}[d]$. 
+This completes the proof.
+\end{proof}
+
+We can apply this general result to the case $\fg =\CC^n[-1]$.
+Doing this we have the following corollary.
+
+\begin{cor}\label{cor: defcor}
+Let $\Def_n$ be the deformation complex of the formal $\beta\gamma$ system with target $\hD^n$.
+There is a $(\Vect, \GL_n)$-equivariant quasi-isomorphism
+\beqn
+J : \hOmega^{d+1}_{n,cl} [d] \xto{\simeq} \left(\left(\Def^{\rm cot}_n\right)^{\CC^d_{\rm hol}}\right)^{U(d)} \subset \Def_n .
+\eeqn
+\end{cor}
+
+This induces a quasi-isomorphism into the $(\Vect, \GL_n)$-equivariant deformation complex
+\[
+\label{j w map}
+J^{\rm W} : \clie^*(\Vect , \GL_n ; \hOmega^{d+1}_{n,cl}) \xto{\simeq} \left(\left(\Def^{\rm W, cot}_n\right)^{\CC^d_{\rm hol}}\right)^{U(d)} \subset \Def_n^{\rm W} .
+\]
+Moreover, upon performing Gelfand-Kazhdan descent, it implies that on any complex manifold $X$ we can use $J$ to identify the deformation complex for the holomorphic $\sigma$-model of maps $\CC^d \to X$:
+\beqn
+J^X : \Omega^{d+1}_{X,cl}[d] \xto{\simeq}  \left(\left(\Def^{\rm cot}_{\CC^d \to X} \right)^{\CC^d_{\rm hol}}\right)^{U(d)} .
+\eeqn
+
+\section{Normalizing the charge anomaly} \label{sec: feynman}
+
+In this section we conclude the proof of Proposition \ref{prop: bg anomaly} by an explicit calculation of the Feynman diagrams controlling the charge anomaly for the $\beta\gamma$ system on $\CC^d$. 
+We have already identified the algebraic piece of the anomaly with the $(d+1)$st component of the Chern character of the representation. 
+The only thing left to compute is the analytic factor. 
+We can therefore assume that we have an abelian Lie algebra, and simply compute the weight of the wheel $\Gamma$ with $(d+1)$-vertices where the external edges are labeled by elements $\alpha \in \Omega_c^{0,*}(\CC^d)$.
+After choosing a numeration of the internal edges $e = 0,\ldots d$, we can label the edges $e = 0,\ldots, d-1$ by the analytic propagator by $P^{an}_{\epsilon<L}$ and the label the edge $e = d$ by the analytic heat kernel $K_\epsilon^{an}$. 
+We recall the precise form of these kernels in the proof below. 
+The vertices are labeled by the trivalent functional $I^{an} (\alpha, \beta,\gamma) = \int \alpha \wedge \beta \wedge \gamma$ (there is no Lie bracket since the algebra is abelian). 
+Denote the resulting weight, which is a functional on the space $\Omega^{0,*}_c(\CC^d)$, by
+\[
+W^{an}_{\Gamma}(P_{\epsilon < L}, K_\epsilon, I^{an}) .
+\]
+The main computation left to do is the $\epsilon \to 0, L \to 0$ limit of this weight.
+
+\begin{lem} 
+As a functional on the abelian dg Lie algebra $\Omega_c^{0,*}(\CC^d)$, one has
+\[
+\lim_{L \to 0} \lim_{\epsilon \to 0} W^{an}_{\Gamma}(P_{\epsilon < L}, K_\epsilon, I^{an})(\alpha^{(0)},\ldots, \alpha^{(d)}) = \frac{1}{(4 \pi)^d} \frac{1}{(d+1)!} \int \alpha^{(0)} \partial \alpha^{(1)} \cdots \partial \alpha^{(d)}  .
+\]
+\end{lem}
+
+\begin{proof}
+
+We enumerate the vertices by integers $a = 0,\ldots, d$. 
+Label the coordinate at the $i$th vertex by $z^{(a)} = (z_1^{(a)}, \ldots, z_d^{(a)})$. 
+The incoming edges of the wheel will be denoted by homogeneous Dolbeault forms 
+\[
+\alpha^{(a)} = \sum_{J} A^{(a)}_J \d \zbar_J^{(a)} \in \Omega_c^{0,*}(\CC^d) .
+\]
+where the sum is over the multiindex $J = (j_1,\ldots, j_k)$ where $j_a = 1,\ldots, d$ and $(0,k)$ is the homogenous Dolbeault form type. 
+For instance, if $\alpha$ is a $(0,2)$ form we would write
+\[
+\alpha = \sum_{j_1 < j_2} A_{(j_1,j_2)} \d \zbar_{j_1} \d\zbar_{j_2} .
+\]
+Denote by $W^{an}_L$ weight $\epsilon \to 0$ limit of the analytic weight of the wheel with $(d+1)$ vertices.
+The $L\to 0$ limit of $W^{an}_L$ is the local functional representing the one-loop anomaly $\Theta$. 
+
+The weight has the form
+\[
+W^{an}_L(\alpha^{(0)},\ldots,\alpha^{(d)}) = \pm \lim_{\epsilon \to 0} \int_{\CC^{d(d+1)}} \left(\alpha^{(0)}(z^{(0)}) \cdots \alpha^{(d)}(z^{(d)}) \right) K_\epsilon(z^{(0)},z^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (z^{(a-1)}, z^{(a)}) .
+\]
+We introduce coordinates
+\begin{align*}
+w^{(0)} & = z^{(0)} \\
+w^{(a)} & = z^{(a)} - z^{(a-1)} \;\;\; 1 \leq a \leq d .
+\end{align*}
+The heat kernel and propagator part of the integral is of the form
+\[
+\begin{array}{ccl}
+\displaystyle
+K_\epsilon(w^{(0)},w^{(d)}) \prod_{a =1}^d P_{\epsilon,L} (w^{(a-1)}, w^{(a)}) & = & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d}  \\ & & \displaystyle \times \d^d w^{(0)} \prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \d^d w^{(a)} \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right)
+\\ & & \displaystyle \times e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} .
+\end{array}
+\]
+Here, $M_{ab}$ is the $d \times d$ square matrix satisfying
+\[
+\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)} = |\sum_{a = 1}^d w^{(a)} |^2 / \epsilon + \sum_{a = 1}^d |w^{(a)}|^2 / t_a .
+\]
+Note that
+\[
+\prod_{i=1}^d (\d \Bar{w}^{(1)}_i + \cdots + \d \Bar{w}^{(d)}_i) \prod_{a = 1}^d \left(\sum_{i = 1}^d \Bar{w}_i^{(a)} \prod_{j \ne i} \d \Bar{w}_{j}^{(a)}\right) = \left( \sum_{i_1,\ldots i_d} \epsilon_{i_1\cdots i_d} \prod_{a=1}^d \Bar{w}^{(a)}_{i_a}\right) \prod_{a=1}^d \d^d \Bar{w}^{(a)} .
+\]
+In particular, only the $\d w_i^{(0)}$ components of $\alpha^{(0)} \cdots \alpha^{(d)}$ can contribute to the weight.
+
+For some compactly supported function $\Phi$ we can write the weight as
+\[
+\begin{array}{ccl}
+W (\alpha^{(0)}, \ldots, \alpha^{(d)}) & = & \lim_{\epsilon \to 0} \displaystyle \int_{\CC^{d(d+1)}} \left(\prod_{a = 0}^{d} \d^d w^{(a)} \d^d \Bar{w}^{(a)}\right) \Phi \\ & \times & \displaystyle \frac{1}{(4 \pi \epsilon)^d} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\d t_1 \cdots \d t_d}{(4 \pi t_1)^d \cdots (4 \pi t_d)^d} \frac{1}{t_1\cdots t_d} \sum_{i_1,\ldots, i_d} \epsilon_{i_1\cdots i_d} \Bar{w}_{i_1}^{(1)} \cdots \Bar{w}_{i_d}^{(d)} e^{-\sum_{a,b = 1}^d M_{a b} w^{(a)} \cdot \Bar{w}^{(b)}} 
+\end{array}
+\]
+
+Applying Wick's lemma in the variables $w^{(1)}, \ldots, w^{(d)}$, together with some elementary analytic bounds, we find that the weight above becomes to the following integral over $\CC^d$
+\[
+f(L) \int_{w^{(0)} \in \CC^d}  \d^d w^{(0)} \d^d \Bar{w}^{(0)} \sum_{i_1,\ldots, i_d} \epsilon_{i_1\cdots i_d}  
+\left(\frac{\partial}{\partial w_{i_1}^{(1)}} \cdots \frac{\partial}{\partial w_{i_d}^{(d)}} \Phi\right)|_{w^{(1)}=\cdots=w^{(d)} = 0} 
+\]
+where
+\[
+f(L) = \lim_{\epsilon \to 0} \int_{t_1,\ldots,t_d = \epsilon}^L \frac{\epsilon}{(\epsilon + t_1 + \cdots + t_d)^{d+1}} \d^d t .
+\]
+In fact, $f(L)$ is independent of $L$ and is equal to some nonzero constant $C \ne 0$.
+Finally, plugging in the forms $\alpha^{(0)}, \ldots, \alpha^{(d)}$, we observe that the integral over $w^{(0)} \in \CC^d$ simplifies to
+\[
+C \int_{\CC^d} \alpha^{(0)} \partial \alpha^{(1)} \cdots\partial \alpha^{(d)}
+\]
+as desired.
+
+\brian{I'll stop being naughty and work out this constant tomorrow. It's a matter of fixing all my conventions from citations in my hol paper.}
+\end{proof}
+

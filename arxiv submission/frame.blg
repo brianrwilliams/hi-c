@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: frame.aux
+The style file: alpha.bst
+Database file #1: hic.bib
+Warning--I didn't find a database entry for "WittenGr"
+Warning--I didn't find a database entry for "GetzlerGM"
+Warning--I didn't find a database entry for "ManBeilSch"
+Warning--I didn't find a database entry for "CosBook"
+Warning--I didn't find a database entry for "[CG2]"
+Warning--I didn't find a database entry for "CostelloRenormalization"
+You've used 27 entries,
+            2543 wiz_defined-function locations,
+            765 strings with 8686 characters,
+and the built_in function-call counts, 9666 in all, are:
+= -- 991
+> -- 407
+< -- 20
++ -- 132
+- -- 130
+* -- 670
+:= -- 1627
+add.period$ -- 89
+call.type$ -- 27
+change.case$ -- 151
+chr.to.int$ -- 27
+cite$ -- 27
+duplicate$ -- 392
+empty$ -- 695
+format.name$ -- 171
+if$ -- 1939
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 26
+newline$ -- 142
+num.names$ -- 81
+pop$ -- 144
+preamble$ -- 1
+purify$ -- 183
+quote$ -- 0
+skip$ -- 298
+stack$ -- 0
+substring$ -- 548
+swap$ -- 46
+text.length$ -- 20
+text.prefix$ -- 14
+top$ -- 0
+type$ -- 192
+warning$ -- 0
+while$ -- 95
+width$ -- 30
+write$ -- 350
+(There were 6 warnings)
