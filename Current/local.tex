@@ -248,7 +248,7 @@ so we should view the cohomology in degree $d-1$ as providing the derived replac
 A similar result holds in analytic geometry, of course,
 so that we have a natural map
 \[
-\RR \Gamma(\pAA^d, \cO_{\rm alg}) \to \RR \Gamma(\pAA^d, \cO) \simeq \Omega^{0,*}(\pAA^d)
+\RR \Gamma(\pAA^d, \cO_{\rm alg}) \to \RR \Gamma(\pAA^d, \cO_{\rm an}) \simeq \Omega^{0,*}(\pAA^d)
 \]
 that replaces our inclusion of Laurent polynomials into the Dolbeault complex on~$\pAA^d$.
 
@@ -638,13 +638,13 @@ First, note that
 \]
 can be viewed as an extension
 \[
-\Omega^*_c \otimes \CC K[-1] \to \Tilde{\mathtt{G}}_{d,\theta} \to \mathtt{G}_d
+\Omega^*_c \otimes \CC \to \Tilde{\mathtt{G}}_{d,\theta} \to \mathtt{G}_d
 \]
 of precosheaves of $L_\infty$ algebras on $\RR_{>0}$.
 By contrast, $r_* \sG_{d,\theta}$ is an extension by the constant precosheaf $\CC K[-1]$.
 There is, however, a natural map of precosheaves
 \[
-\int: \Omega^*_c \to \CC
+\int: \Omega^*_c \to \CC[-1]
 \]
 to employ, since integration is well-defined on compactly-supported forms.
 This map indicates the shape of the underlying map of short exact sequences.
@@ -671,10 +671,12 @@ The tension is resolved by showing these cocycles are cohomologous.
 \begin{lem}
 There is a cochain $\eta$ for $\mathtt{G}_d$ such that
 \[
-\Theta_{push} = \int \Theta_{FHK} - \d \eta,
+\Theta_{push} = \int \Theta_{FHK} + \d \eta,
 \]
 where $\d$ here denotes the differential on the Lie algebra cochains of~$\mathtt{G}_d$.
 \end{lem}
+
+\owen{Check the sign on $\d\eta$ here.}
 
 \begin{proof}
 We note that the Lie algebra $\fg$ and the invariant polynomial $\theta$ play no substantive role in the problem.
@@ -834,6 +836,8 @@ which in fact provides a map
 of factorization algebras.
 \end{prop}
 
+\owen{Need to check I defined the map correctly.}
+
 \begin{proof}
 Note that for our $L_\infty$ algebras, the only nontrivial brackets are $\ell_1$, $\ell_2$, and $\ell_{d+1}$.
 We already know that the $n=1$ map intertwines with $\ell_1$ and $\ell_2$ brackets,
@@ -848,55 +852,133 @@ Hence we may set the maps for $n > d+1$ to zero as well.
 The enveloping $E_1$ algebra of $\fg^\bullet_{d,\theta}$ is dense inside the pushforward $r_* \UU_\theta\sG_d$.
 \end{cor}
 
-\subsection{An $E_d$ algebra by compactifying along tori} 
+\subsection{Compactifying along tori} 
 
 There is another direction that one may look to extend the notion of affine algebras to higher dimensions.
 The affine algebra is a central extension of the loop algebra on $\fg$. 
-Instead of looking at higher dimensional sphere algebras, one can consider higher {\em torus} algebras; or iterated loop algebras:
+Instead of looking at higher dimensional sphere algebras, one can consider higher {\em torus} algebras, i.e., iterated loop algebras:
 \[
 L^d \fg = \CC[z_1^{\pm}, \cdots, z_d^{\pm}] \tensor \fg .
 \]
-These iterated loop algebras are algebraic versions of the torus mapping space ${\rm Map}(S^1 \times \cdots \times S^1, \fg)$. 
-In this section we show what information the Kac-Moody vertex algebra implies about extensions of such iterated loop algebras.
-
-To do this we specialize the Kac-Moody factorization algebra to the complex manifold $(\CC^\times)^d$, which is homotopy equivalent to the topologists torus $(S^1)^{\times d}$.  
-We show, in a similar way as above, how to extract the structure of an $E_d$ algebra from considering the nesting of ``polyannuli" in $(\CC^\times)^d$.
-These $E_d$-algebras are related to interesting extensions of the Lie algebra $L^d \fg$.
-
-When $d=1$, we have seen that the nesting of ordinary annuli give rise to the structure of an associative algebra. For $d > 1$, a polyannulus is a complex submanifold of the form ${\rm Ann}_1 \times \cdots \times {\rm Ann}_d \subset (\CC^\times)^d$ where each ${\rm Ann}_i \subset \CC^\times$ is an ordinary annulus. Equivalently, a polyannulus is the complement of a closed polydisk inside of a larger open polydisk. We will see how the nesting of annuli in each component gives rise to the structure of a locally constant factorization algebra in $d$ {\em real} dimensions, and hence defines an $E_d$ algebra. 
-
-When the twisting cocycle defining the Kac-Moody factorization algebra is zero we will see that the $E_d$ algebra coming from the product of polyannuli is equivalent to the $E_d$-enveloping algebra of the torus algebra $U^{E_d} (L^d \fg)$.
-When we turn on a twisting cocycle we will find the $E_d$-enveloping algebra of a central extension of the iterated loop algebra. 
-
-The Kac-Moody factorization algebra on the $d$-fold $(\CC^\times)^d$ determines a real $d$-dimensional factorization algebra by considering the radius in each complex direction. 
-This factorization algebra on $(\RR_{>0})^d$ is defined by the pushforward $\vec{r}_*\left(\sG_d\right)$, 
-where $\vec{r} : (\CC^\times)^d \to (\RR_{>0})^d$ is the projection $(z_1,\ldots,z_d) \mapsto (|z_1|, \cdots, |z_d|)$ where we take the modulus in each component.
-
-On the Lie algebra side, it is an immediate calculation to see that the following formula defines a cocycle on $L^d \fg$ of degree $(d+1)$:
+These iterated loop algebras are algebraic versions of the torus mapping space 
 \[
-\begin{array}{cccl}
-\displaystyle L^d \theta : & (L^d \fg)^{\tensor d + 1} & \to & \CC \\
-\displaystyle & (f_0 \tensor X_0)\tensor \cdots \tensor (f_d \tensor X_d) & \mapsto & \displaystyle  \theta(X_0,\ldots,X_d)  \oint_{|z_1| = 1} \cdots \oint_{|z_d| = 1} f_0 \d f_1 \cdots \d f_d .
-\end{array}
+{\rm Map}(S^1 \times \cdots \times S^1, \fg).
+\] 
+We now explore what information the Kac-Moody factorization algebras encode about extensions of such iterated loop algebras.
+
+To do this, we study the Kac-Moody factorization algebras on the complex manifold $(\CC^\times)^d$, 
+which is an algebro-geometric version of the torus $(S^1)^{d}$.  
+As with the punctured affine space $\pAA^d$, we compactify by pushing forward to $(\RR_>0)^d$ along a radial projection map
+\[
+\begin{array}{cccc}
+\vec{r} : & (\CC^\times)^d & \to & (\RR_{>0})^d\\
+& (z_1,\ldots,z_d) & \mapsto & (|z_1|, \cdots, |z_d|)
+\end{array}.
 \]
-Here $f_i \tensor X_i \in L^d \fg = \CC[z_1^{\pm}, \cdots, z_d^{\pm}] \tensor \fg$. 
-The above is just an iterated version of the usual residue pairing.
-This cocycle determines a shifted Lie algebra extension of the iterated loop algebra
+The preimage of a point $(r_1,\ldots,r_d)$ is a $d$-fold product of circles, and
+the preimage of an open $d$-cube is a polyannulus---a $d$-fold product of annuli.
+Observe that on a polyannulus $U$, the underived and derived algebras of functions coincide,
+\[
+\Gamma(U, \cO) \overset{\simeq}{\hookrightarrow} \RR\Gamma(U,\cO),
+\]
+as $U$ is a Stein manifold because it is a product of Stein manifolds.
+Similarly, the scheme $(\AA^1 \setminus \{0\})^d$ is affine and so its structure sheaf has no higher cohomology:
+\[
+\RR\Gamma((\AA^1 \setminus \{0\})^d,\cO) \simeq \CC[z_1, z_1^{-1}, \ldots, z_d,z_d^{-1}].
+\]
+Note that the iterated loop algebras $L^d \fg$ appear precisely by tensoring $\fg$ with functions on this product of punctured affine lines.
+Thus, in contrast to $\pAA^d$, we seem to be able to work in an underived setting.
+
+This impression is misleading, however, in the sense that it ignores some additional algebraic structure that naturally appears at the level of current algebras:
+there is an $E_d$ algebra that sits densely inside the pushforward~$\vec{r}_* \sG_d$.
+
+\begin{lem}
+There is a map 
+\[
+\rho_{d}: \Omega^*  \to \vec{r}_* \Omega^{0,*}
+\]
+of sheaves of dg commutative algebras on $(\RR_{>0})^d$ sending a form $\alpha$ to the projection of the pulled back $\vec{r}^* \alpha$ onto its $(0,*)$-components.
+\end{lem}
+
+As algebraic functions sit inside holomorphic functions and hence inside the Dolbeault complex,
+there is a map of dg commutative algebras
+\[
+\CC[z_1, z_1^{-1}, \ldots, z_d,z_d^{-1}] \to \Omega^{0,*}(U)
+\]
+for any open $U \subset (\CC\setminus\{0\})^d$.
+There is thus a map 
+\[
+\rho_{d}': \Omega^* \otimes \CC[z_1, z_1^{-1}, \ldots, z_d,z_d^{-1} \to \vec{r}_* \Omega^{0,*}
+\]
+of dg commutative algebras.
+We tensor with $\fg$ to obtain the following result.
+
+\begin{lem}
+There is a map
+\[
+\rho_{d,\fg}: \Omega^* \otimes L^d\fg \to \vec{r}_* \sG_d^{sh}
+\]
+of sheaves of dg Lie algebras on $(\RR_{>0})^d$ sending an element $\alpha \otimes x$ to $\rho_d(\alpha) \otimes x$.s
+As this map preserves support, it restricts to a map  
+\[
+\rho_{d,\fg}: \Omega^*_c \otimes L^d\fg \to \vec{r}_* \sG_d
+\]
+of precosheaves of dg Lie algebras on~$(\RR_{>0})^d$.
+\end{lem}
+
+By taking Chevalley-Eilenberg chains, we obtain a statement at the level of factorization algebras.
+
+\begin{cor}
+There is a map
+\[
+\UU(\rho_{d,\fg}): \UU(\Omega^*_c \otimes \fg) \to \vec{r}_* \UU\sG_d
+\]
+of factorization algebras on $(\RR_{>0})^d$.
+As the source is locally constant, it corresponds to an $E_d$ algebra, 
+which is the enveloping $E_d$ algebra of $L^d\fg$, by Knudsen's theorem.
+\end{cor}
+
+This map has dense image in each degree, and so we see that the enveloping $E_d$ algebra of the iterated loop algebra $L^d \fg$ ``controls'' the pushforward $\vec{r}_* \UU\sG_d$ in this sense.
+
+\owen{Is this remark ok?}
+
+\begin{rmk}
+When $d=1$ one can understand the radially ordered products of operators by evaluating these current factorization algebras on nested annuli.
+For $d >1$ one can read likewise understand interesting phenomena about operator products by evaluating these current factorization algebras these polyannuli.
+In particular, the connection with $E_d$ algebra indicates that there is a (possibly nontrivial) $1-d$-shifted Poisson bracket between operators, even at the level of cohomology.
+\end{rmk}
+
+%via the how to extract the structure of an $E_d$ algebra from considering the nesting of ``polyannuli" in $(\CC^\times)^d$.
+%These $E_d$-algebras are related to interesting extensions of the Lie algebra~$L^d \fg$.
+%
+%When $d=1$, we have seen that the nesting of ordinary annuli give rise to the structure of an associative algebra. For $d > 1$, a polyannulus is a complex submanifold of the form ${\rm Ann}_1 \times \cdots \times {\rm Ann}_d \subset (\CC^\times)^d$ where each ${\rm Ann}_i \subset \CC^\times$ is an ordinary annulus. Equivalently, a polyannulus is the complement of a closed polydisk inside of a larger open polydisk. We will see how the nesting of annuli in each component gives rise to the structure of a locally constant factorization algebra in $d$ {\em real} dimensions, and hence defines an $E_d$ algebra. 
+
+In the case of the extended Lie algebras $\sG_{d,\theta}$, we note that one can pull back the extension along the map $\rho_{d,\fg}$ to determine an extension of $\Omega^*_c \otimes L^d\fg$ as a precosheaf of $L_\infty$ algebras.
+One can view this extension as extending $L^d\fg$ as an $L_\infty$ algebra:
 \[
 \CC[d-1] \to \Hat{L^d \fg}_\theta \to L^d \fg,
 \]
-that appears in the theorem below. 
+It is essentially immediate from the definitions that the cocycle~is
+\[
+L^d \theta(f_0 \tensor x_0)\tensor \cdots \tensor (f_d \tensor x_d) = \theta(x_0,\ldots,x_d)  \oint_{|z_1| = 1} \cdots \oint_{|z_d| = 1} f_0 \d f_1 \cdots \d f_d
+\]
+where $f_i \in \CC[z_1^{\pm 1}, \ldots, z_d^{\pm 1}]$ and $x_i \in \fg$.
+This formula is just an iterated version of the usual residue pairing.
 
-The following can be proved in exact analogy as the above result for sphere algebras and we omit the proof here.
+This extension then determines a twist of the enveloping $E_d$ algebra, as well.
+By techniques analogous to what we did in comparing with \cite{FHK},
+one can show the following.
 
 \begin{prop}
-Fix $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and let $\vec{r}_* \UU_\theta \sG_d$ be the factorization algebra on $(\RR_{>0})^d$ obtained by reducing the Kac-Moody factorization algebra on $(\CC^\times)^d$ along the real $d$-torus.
-The $E_d$-algebra 
+For $\theta \in \Sym^{d+1}(\fg^*)^\fg$,
+there is a map of factorization algebras
 \[
-U^{E_d} \left( \Hat{L^d \fg}_{\theta} \right)
+\rho_{d,\fg,\theta}: \UU(\Omega^*_c \otimes \Hat{L^d \fg}_\theta) \to \rho_* \UU_\theta \sG_d
 \]
-thought of as a factorization algebra on $(\RR_{>0})^d$ embeds densely inside $\vec{r}_* \UU_\theta \sG_d$. 
+that has dense image in each degree.
 \end{prop}
+
+In this sense the enveloping $E_d$ algebra of $\Hat{L^d \fg}_\theta$ controls the twisted enveloping factorization algebra.
 
 %\begin{thm} There is a dense injective map of factorization algebras on $\RR^d$: 
 %\[
