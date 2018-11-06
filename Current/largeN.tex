@@ -1,4 +1,4 @@
-\section{Large $N$ limits}
+\section{Large $N$ limits} \label{sec: largeN}
 
 
 \def\cycls{{\rm Cyc}_*}
@@ -8,7 +8,7 @@
 
 We take a slight detour from the main course of this paper to remark on something special that happens for the case of $\gl_N$ as $N$ goes to infinity.
 The observations we make here are borrowed from unpublished work of the first author with Greg Ginot and Mahmoud Zeinalian,
-but they are closely related to prior work of Costello-Li \cite{} and Movshev-Schwarz~\cite{}.
+but they are closely related to prior work of Costello-Li \cite{CLbcov2} and Movshev-Schwarz~\cite{} \brian{Not sure which ref you mean}.
 
 The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
 which yields a natural map \owen{ugly notation so lets find a better one}
@@ -138,4 +138,59 @@ This construction is automatically associative for nested inclusions of pairwise
 and so $\cC$ is a prefactorization algebra.
 \end{proof}
 
+\subsection{Local cyclic cohomology}
 
+The concept of a local Lie algebra is the starting point for our definition of the chiral enveloping algebra and current algebra. 
+There is a similar notion obtained by replacing a (dg) Lie algebra with a (dg) associative algebra.
+
+\begin{dfn}
+A {\em local algebra} on a smooth manifold $X$ is:
+\begin{enumerate}
+\item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote $\sA^{sh}$;
+\item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
+\item[(iii)] a degree zero bidifferential operator $\cdot : \sA^{sh} \times \sA^{sh} \to \sA^{sh}$
+\end{enumerate}
+such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of dg associative algebras.
+\end{dfn}
+
+As usual, we abusively refer to a local algebra $(\sA^{sh}, \d, \cdot)$ by $\sA$.
+On a complex manifold, the basic example for us of a local algebra is the Dolbeault complex $\Omega^{0,*}_X$. 
+Of course, this is a commutative local algebra. 
+
+For local algebras, there is an appropriate notion of cohomology respecting the locality. 
+To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a local algebra. 
+The $\infty$-jet bundle of $A$ is denoted by $JA$.
+Then, $JA$ defines an associative dg algebra in the category of $D_X$-modules. 
+Further, its Hochschild complex $\Hoch^*(JA)$ also has the structure of a $D_X$-module. 
+We use this observation in the definition below. 
+
+\def\Hoch{{\rm Hoch}}
+\def\Hochloc{{\rm Hoch}_{\rm loc}}
+\def\Cyc{{\rm Cyc}}
+\def\Cycloc{{\rm Cyc}_{\rm loc}}
+
+\begin{dfn}
+The {\em local Hochschild cohomology complex}  of a local algebra $\sA$ on $X$ is 
+\[
+\Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*(JA) .
+\] 
+This sheaf of cochain complexes has global sections that we denote by $\Hochloc^*(\sA(X))$.
+\end{dfn}
+
+Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA)$ as follows.
+It is a polynomial functional on $\sA$ that is a finite sum of functionals of the form
+\[
+\alpha_1 \tensor \cdots \alpha_k \mapsto \int_X \omega_X \wedge D_1(\alpha_1) \cdots D_k(\alpha_k)
+\]
+where $D_i$ is a differential operator from $\sA$ to $C^\infty(X)$ and $\omega_X$ is a volume form on $X$. 
+
+\brian{do cyclic definition $\Cycloc^*(\sA)$.}
+
+\begin{lem}
+Let $X$ be a complex manifold.
+The functional $\Theta^\infty_X$ on $\Omega^{0,*}_X$ defined by
+\[
+\Theta^\infty_X : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \int_X \alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d
+\]
+defines a degree zero cocycle in $\Cycloc^*(\Omega^{0,*}_X)$. 
+\end{lem}
