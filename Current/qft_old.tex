@@ -3,7 +3,7 @@
 In this section, we switch gears a bit to propose a natural occurrence of the Kac-Moody factorization algebra as a symmetry of a simple class of higher dimensional quantum field theories. 
 This situation is analogous to the free field realization of the affine Kac-Moody algebra as a subalgebra of differential operators on the loop space. 
 
-Our approach is through the general machinery of perturbative quantum field theory developed by Costello \cite{CosRenorm} and Costello-Gwilliam \cite{CG1,CG2}.
+Our approach is through the general machinery of perturbative quantum field theory developed by Costello \cite{CosBook} and Costello-Gwilliam \cite{CG1,CG2}.
 We study the quantization of a particular {\em free} field theory, which makes sense in any complex dimension.
 Classically, the theory depends on the data of a $G$-representation, and the holomorphic nature of the theory allows us to lift this to a symmetry for the classical current algebra $\Cur^{\cl}(\sG_X)$ at ``zero level". 
 We find that upon quantization, the symmetry is broken, but in a way that we can measure by an explicit anomaly, or cocycle. 
@@ -18,7 +18,7 @@ This leads to a symmetry of the theory via the quantum current algebra $\Cur^{\q
 %
 %Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
 
-\subsection{Charged holomorphic matter}
+\subsection{Equivariant holomorphic matter}
 
 We introduce a classical field theory in the BV formalism that one may think of as higher dimensional ``matter" in a holomorphic setting. 
 When the complex dimension is $d = 1$, this returns the chiral $\beta\gamma$ system from ordinary conformal field theory. 
@@ -94,11 +94,18 @@ I^{\sG} : \sG^{sh}_X \to \oloc(\sE_V)[-1],
 \] 
 where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-\}$. 
 
-For the remainder of the section we will restrict ourselves to the complex $d$-fold $X =~\CC^d$. 
+For the remainder of the section we will restrict ourselves to the complex $d$-fold $X = \CC^d$. 
 
 \subsubsection{The $\beta\gamma$ factorization algebra}
 
 It is the general philosophy of \cite{CG1,CG2} that the observables of a quantum field theory form a factorization algebra on the underlying spacetime. 
+
+%In this section we describe the factorization algebra associated to the higher $\beta\gamma$ system on $\CC^d$ associated to any $\fg$-representation $V$. 
+
+%For any vector space $W$, we can consider the commutative algebra of algebraic and formal algebraic functions denoted respectively by
+%\[
+%\sO(W) = \Sym (W^\vee) = \bigoplus_{n \geq 0} (W^\vee)^{\tensor n}_{S_n} \;\;\; , \;\;\; \Hat{\sO}(W) = \Hat{\rm Sym}(W^\vee) %= \prod_{n \geq 0} (W^\vee)^{\tensor n}_{S_n} . 
+%\] 
 
 For any theory, the factorization algebra of classical observables assigns to every open set $U$ the cochain complex of algebraic functions on the fields supported on $U$.  
 For the example of the $\beta\gamma$ system, the differential is just given by the $\dbar$ operator. 
@@ -112,9 +119,9 @@ It follows from the general results of Chapter 6 of \cite{CG2} that this assignm
 Upon taking global sections, the functional $I^{\sG}$ defines a map of dg Lie algebras $I^{\sG} : \sG_d(\CC^d) \to \Obs^{\cl}_V(\CC^d)$.
 We have seen that $\Obs_V^{\cl}$ is a factorization algebra equipped with a $P_0$-structure. 
 In the introduction, we also discussed how a local Lie algebra determines a $P_0$-factorization algebra via its classical current algebra. 
-The classical Noether's theorem, as proved in Theorem 11.0.1.1 of \cite{CG2}, says that $I^{\sG}$ determines a map between these factorization algebras. 
+The classical Noether's theorem, as proved in Chapter 11 of \cite{CG2}, says that $I^{\sG}$ determines a map between these factorization algebras. 
 
-\begin{prop}[\cite{CG2}](Classical Noether's Theorem)
+\begin{prop}{\cite{[CG2]}} (Classical Noether's Theorem)
 The assignment that sends an element $\alpha \in \Omega^{0,*}_c(U, \fg)$ to the observable
 \[
 \gamma \tensor \beta \in \Omega^{0,*}(U, V) \tensor \Omega^{d,*}(U, V^*) \mapsto \int_U \<\beta, \alpha \cdot \gamma\>_V
@@ -242,13 +249,12 @@ Then
 exists.
 \end{itemize}
 
-Claim (1) follows from direct combinatorial observation.
-Recall that the weight is defined as a sum over {\em connected} graphs. 
-The inner edges that we can label by the propagator $P_{\epsilon < L}$ only depend on the fields $\beta\gamma$. 
-Since there are only trivalent wheels, of the form $\int \beta [\alpha, \gamma]$, where $\alpha$ is a section in $\sG_d$, the connected diagrams must be wheels with trees sticking out of them. 
+First, we justify claim (1).
+Recall that the weight is defined as a sum over {\em connected} graphs.
+An immediate consequence of the combinatorics involved in constructing the equivariant weight using the $\beta\gamma$ propagator \brian{finish}. 
 
-Now, Theorem 3.4 of \cite{BWhol} applies to show that the $\epsilon \to 0$ limit of the weights is finite. 
-This proves claim (2). 
+
+
 \end{proof}
 
 As an immediate consequence of the proof, we see that only polynomial values of $\hbar$ occur in the expansion of $I^{\sG}[L]$. 
@@ -355,10 +361,9 @@ By Proposition \ref{prop: trans j} we see that $\Theta_V$ must be cohomological 
 (\alpha_0, \ldots, \alpha_d) \mapsto \int_{\CC^d} \theta(\alpha_0 \wedge \partial \alpha_1 \wedge \cdots \wedge \partial \alpha_d) 
 \]
 where $\theta$ is some element of $\Sym^{d+1}(\fg^*)^\fg$.
-In the notation of Section \ref{sec: current}, this is the cocycle $\fJ_d (\theta)$. 
+In the notation of Section \ref{??}, this is the cocycle $\fJ_d (\theta)$. 
 This cocycle factors in the following way:
-\beqn
-\label{composition}
+\beqn\label{composition}
 \begin{tikzcd}
 \left(\Omega^{0,*}_c(\CC^d) \tensor \fg\right)^{\tensor (d+1)} \ar[r,"\fa \fn"] & \left(\Omega^{0,*}_c(\CC^d) \tensor \fg\right) \tensor \left(\Omega^{1,*}_c(\CC^d)\tensor \fg\right)^{\tensor d} \ar[r, "\theta"] & \Omega^{d, *}_c(\CC^d) \ar[r, "\int"] & \CC . 
 \end{tikzcd}
@@ -372,10 +377,9 @@ The second map is given by extending the Lie algebraic functional $\theta : \fg^
 Lemma \ref{lem: obs} implies that the obstruction is given by the sum over Feynman weights associated to graphs of wheels of valency $(d+1)$.
 We can identify the algebraic component, corresponding to $\theta$ in the above composition (\ref{composition}), directly from the shape of this graph. 
 The propagator and heat kernel $P_{\epsilon<L}, K_\epsilon$ labeling the edges factor as
-\begin{align*}
-P_{\epsilon<L} &= P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right),\\ 
-K_{\epsilon} &= K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
-\end{align*}
+\[
+P_{\epsilon<L} = P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right) \;\; , \;\; K_{\epsilon} = K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
+\]
 where ${\rm id}_V, {\rm id}_{V^*}$ are the elements representing the identity maps which lie in $V \tensor V^*, V^* \tensor V$ respectively. 
 The analytic factors $P^{an}_{\epsilon<L},  K_{\epsilon}^{an}$ only depend on the dimension $d$. 
 
@@ -487,7 +491,7 @@ Thus, as an immediate corollary of the above proposition, $J^\q$ specializes to 
 J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d} .
 \eeqn
 We interpret this as a {\em free field realization} of the higher Kac-Moody factorization algebra. 
-Indeed, this is an embedding of the Kac-Moody algebra into the factorization algebra of observables of the free theory described classically by the $\beta\gamma$ system. 
+Indeed, this is an embedding of the Kac-Moody into the factorization algebra of observables of the free theory described classically by the $\beta\gamma$-system. 
 
 We obtain a more concrete result once we specialize to the sphere operators. 
 To state this, we introduce a dg associative algebra closely related to the $\beta\gamma$ system. 
@@ -508,10 +512,8 @@ From this symplectic dg vector space, we define the dg Lie algebra $\sH_V$ as a 
 The $2$-cocycle defining this extension is simply $\omega_V$. 
 Thus, $\sH_V$ is the Heisenberg Lie algebra associated to the symplectic dg vector space. 
 
-If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody factorization algebras. 
-This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra $U(\sH_V)$ of the Heisenberg Lie algebra.  
-
-Upon compactification of the quantum Noether map along the sphere $S^{2d-1}$ we obtain the following. 
+If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody. 
+This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra of the Heisenberg $U(\sH_V)$.  
 
 \begin{cor} 
 The map (\ref{free field}) determines a map of $E_1$-algebras 
@@ -520,25 +522,4 @@ The map (\ref{free field}) determines a map of $E_1$-algebras
 \eeqn
 \end{cor}
 
-We denote the restriction by $\oint_{S^{2d-1}}$ since the value of the pushforward factorization algebra along radial projection on open intervals coincides with the ``sphere observables".
-
-\begin{proof}
-Let $r : \CC^d \setminus 0 \to \RR_{>0}$ be the radial projection. 
-Consider the induced map
-\[
-r_* J^\q :  r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to  r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}  .
-\]
-The classical $\beta\gamma$ system on $\CC^d$ (and $\CC^d \setminus \{0\})$ is manifestly equivariant for the group $U(d)$ given by rotating the plane. 
-This symmetry persists upon quantization, since the BV Laplacian is also compatible with this action. 
-Thus, we can consider the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of the $U(d)$-eigenspaces. 
-
-Similarly, the Kac-Moody factorization algebra $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ is $U(d)$-equivariant. 
-The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section~\ref{sec: spheres}. 
-
-By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
-To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_V)$. 
-It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$ algebras. 
-
-Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
-Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
-\end{proof}
+\brian{add a short proof. Need to see that the weight spaces for the $S^1$ action match up.}
