@@ -3,11 +3,8 @@
 This paper takes general definitions and constructions from \cite{CG1} and specializes them to the context of complex manifolds.
 In this subsection we will review some of the key ideas but refer to \cite{CG1} for foundational results.
 
-\owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
-
-\owen{The following appear later but I think it would fit more naturally here or in the intro}
-
-Let us recall the familiar complex one-dimensional case that we wish to extend. 
+\begin{rmk}
+It might help to bear in mind the one-dimensional case that we wish to extend. 
 Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
 Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
 There is a natural cocycle depending precisely on two inputs:
@@ -15,7 +12,10 @@ There is a natural cocycle depending precisely on two inputs:
 \theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
 \]
 where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
-In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization of $\sG_X$ via this cocycle recovers the Kac-Moody vertex algebra and the affine algebra extending $L\fg = \fg[z,z^{-1}]$.
+In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization algebra of $\sG_\Sigma$ for this cocycle recovers the Kac-Moody vertex algebra associated to the affine algebra extending~$L\fg = \fg[z,z^{-1}]$.
+\end{rmk}
+
+\owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
 
 
 \subsection{Local Lie algebras}
@@ -34,15 +34,15 @@ A {\em local Lie algebra} on a smooth manifold $X$ is
 \ell_2 : \sL^{sh} \times \sL^{sh} \to \sL^{sh}
 \]
 \end{itemize}
-such that $\ell_1^2 = 0$, $\ell_1$ is a differential operator, and $\ell_2$ is a bidifferential operator,
+such that $\ell_1^2 = 0$, $\ell_1$ is a differential operator, $\ell_2$ is a bidifferential operator,
 \[
 \ell_1(\ell_2(x,y)) = \ell_2(\ell_1(x), y) + (-1)^{|x|} \ell_2(x, \ell_1(y))
 \]
-and
+and the graded Jacobi identity holds
 \[
-JACOBI
+(-1)^{|x||z|} [x,[y,z]] + (-1)^{|x||y|} }[y, [z,x]] + (-1)^{|y||z|} [z,[x,y]] = 0
 \]
-for any sections $x,y,z$ of $\sL^{sh}$.
+for any sections $x,y,z$ of $\sL^{sh}$ of degree $|x|, |y|, |z|$, respectively. 
 We call $\ell_1$ the {\em differential} and $\ell_2$ the {\em bracket}.
 \end{dfn}
 

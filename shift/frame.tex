@@ -1,0 +1,92 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros,slashed}
+
+\linespread{1.25}
+
+\def\sAd{\sA{\rm d}}
+
+\usepackage[final]{pdfpages}
+
+\setcounter{tocdepth}{2}
+
+\title{something about levels}
+
+\author{Brian Williams}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
+
+\newcommand{\changelocaltocdepth}[1]{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
+  \setcounter{tocdepth}{#1}%
+}
+
+\begin{document}
+\maketitle
+
+%\changelocaltocdepth{-10}
+%\input{intro}
+%\tableofcontents
+%\changelocaltocdepth{2}
+%\input{current}
+%\input{local}
+%\input{qft}
+%\input{global}
+%%\input{largeN}
+%\input{appx}
+
+\section{Vacuum modules}
+
+\begin{dfn}
+Let $d > 1$, and consider the dg algebra $A_d$. 
+Define the $A_d$-module of {\em positive modes}
+\[
+A_{d,+} = H^{d-1}(A_d) .
+\] 
+Note that there is a natural map of dg $A_d$-modules $A_{d} \to A_{d,+}[-d+1]$. 
+Define the dg ideal of {\em negative modes}
+\[
+A_{d,-} = \ker\left(A_d \to A_{d,+}[-d+1]\right) .
+\]
+\end{dfn}
+
+\begin{rmk} 
+We are modeling our terminology on the usual definition of positive and negative modes for Laurent polynomials in one-variable $A_1 = \CC[z,z^{-1}]$ via
+\[
+A_{1,+} = \CC[z] \subset \CC[z,z^{-1}]  \;\;\; {\rm and} \;\;\;  A_{2,-} = z^{-1} \CC[z^{-1}] \subset \CC[z,z^{-1}]
+\]
+respectively. 
+\end{rmk}
+
+\def\Vac{{\rm Vac}}
+
+\begin{dfn}
+Fix an element $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and let $k \in \CC$.
+The {\em vacuum module} $\Vac_{(\theta,k)}$ associated to the pair $(\theta, k)$ is the induced $\fg_{d, \theta}$-module
+\[
+{\rm Ind}_{U(A_{d,+} \tensor \fg)[K]}^{U(\fg_{d, \theta})} (\CC_{K=k}) = U(\fg_{d,\theta}) \tensor_{U(A_{d,+} \tensor \fg)[K]} \CC_{K=k} .
+\] 
+When $\theta$ is understood, we refer to this as the {\em level $k$} vacuum module. 
+\end{dfn}
+
+There is a variant of this definition that makes sense for a fixed $\theta$ and no specification of $k$. 
+It is defined by
+\[
+{\rm Vac}_\theta = U(\fg_{d,\theta}) \tensor_{U(A_{d,+} \tensor \fg)[K]} \CC[K] .
+\]
+This is a $U(\fg_{d,\theta})$-module in the category of $\CC[K]$-modules. 
+\subsection{}
+\brian{Let $V$ be the disk module of $\UU_\theta(\sG)$.}
+
+\begin{prop}
+The factorization product endows $V_\theta$ with the structure of a $U(\fg_{d,\theta})$-module.
+Moreover, it is equivalent to the $\theta$-vacuum module $V_\theta \simeq {\rm Vac}_{\theta}$. 
+\end{prop}
+
+\changelocaltocdepth{-10}
+\bibliographystyle{alpha}
+%\bibliographystyle{spmpsci}  
+\bibliography{hic}
+
+\end{document}
