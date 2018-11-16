@@ -40,7 +40,7 @@ such that $\ell_1^2 = 0$, $\ell_1$ is a differential operator, $\ell_2$ is a bid
 \]
 and the graded Jacobi identity holds
 \[
-(-1)^{|x||z|} [x,[y,z]] + (-1)^{|x||y|} }[y, [z,x]] + (-1)^{|y||z|} [z,[x,y]] = 0
+(-1)^{|x||z|} \ell_2(x,\ell_2(y,z)) + (-1)^{|x||y|} \ell_2(y, \ell_2(z,x)) + (-1)^{|y||z|} \ell_2(z,(x,y)) = 0,
 \]
 for any sections $x,y,z$ of $\sL^{sh}$ of degree $|x|, |y|, |z|$, respectively. 
 We call $\ell_1$ the {\em differential} and $\ell_2$ the {\em bracket}.
@@ -549,7 +549,7 @@ There, it is shown that this factorization algebra, restricted to the complex ma
 (See Section 5 of Chapter 5.)
 Thus, we think of the object $\UU_\Theta(\sAd(P))$ as a higher dimensional version of the Kac-Moody vertex algebra.
 
-\subsubsection{Holomorphic translation invariance and higher dimensional vertex algebras}
+\subsubsection{Holomorphic translation invariance and higher dimensional vertex algebras} \label{sec: hol trans main}
 
 To put some teeth into the previous paragraph,
 we note that \cite{CG1} introduces a family of colored operads ${\rm PDiscs_d}$, the little $d$-dimensional polydiscs operads,
@@ -605,11 +605,10 @@ The following result indicates tells us that we have already encountered all the
 \begin{prop}
 \label{prop: trans j}
 The map $\fj_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{d})$ factors through the  subcomplex of local cochains that are rotationally and holomorphically translation invariant.
-This map 
+Moreover, it determines an isomorphism on $H^1$:
 \[
-\fj_{\CC^d} : \Sym^{d+1}(\fg^*)^\fg [-1] \xto{\simeq} \left(\cloc^*(\sG_d))^{\CC^{d}_{\rm hol}}\right)^{U(d)}
+H^1(\fj_{\CC^d}) : \Sym^{d+1}(\fg^*)^\fg \xto{\cong} H^1 \left(\cloc^*(\sG_d))^{\CC^{d}_{\rm hol}}\right)^{U(d)} .
 \]
-is a quasi-isomorphism.
 \end{prop}
 
 As the proof is rather lengthy, we provide it in Appendix~\ref{sec: hol trans}.

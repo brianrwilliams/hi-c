@@ -61,24 +61,25 @@ In this section, we switch gears a bit to propose a natural occurrence of the Ka
 This situation is analogous to the free field realization of the affine Kac-Moody algebra as a subalgebra of a sort of Weyl algebra on the loop space. 
 
 Our approach is through the general machinery of perturbative quantum field theory developed by Costello \cite{CosBook} and Costello-Gwilliam \cite{CG1,CG2}.
-We study the quantization of {\em free} field theory, which makes sense in any complex dimension.
-Classically, the theory depends on the data of a $G$-representation, and  how this 
-
-For any BV theory $\sE$, the BV operator $\{S,-\}$, which satisfies $\{S,-\}^2 =0$ by the ordinary classical master equation, together with the BV bracket $\{-,-\}$ equip the space of local functionals $\oloc(\sE)$ with the structure of a dg Lie algebra. 
-Another way to interpret the equivariant classical master equation is to view $I^{\sL}$ as an element in the dg Lie algebra $\oloc(\sE) \tensor \cloc^*(\sL)$.
-
-This section is mostly a cobbling together of know results above BV quantization for holomorphic theories found in the sources \cite{CG2, BWhol}. 
-
-%\subsection{The quantum master equation} 
-
-Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
+We study the quantization of a particular {\em free} field theory, which makes sense in any complex dimension.
+Classically, the theory depends on the data of a $G$-representation, and the holomorphic nature of the theory allows us to lift this to a symmetry for the classical current algebra $\Cur^{\cl}(\sG_X)$ at ``zero level". 
+We find that upon quantization, the symmetry is broken, but in a way that we can measure by an explicit anomaly, or cocycle. 
+This leads to a symmetry of the theory via the quantum current algebra $\Cur^{\q}(\sG_X)$ twisted by this cocycle.  
+ 
+%For any BV theory $\sE$, the BV operator $\{S,-\}$, which satisfies $\{S,-\}^2 =0$ by the ordinary classical master equation, together with the BV bracket $\{-,-\}$ equip the space of local functionals $\oloc(\sE)$ with the structure of a dg Lie algebra. 
+%Another way to interpret the equivariant classical master equation is to view $I^{\sL}$ as an element in the dg Lie algebra $\oloc(\sE) \tensor \cloc^*(\sL)$.
+%
+%This section is mostly a cobbling together of know results above BV quantization for holomorphic theories found in the sources \cite{CG2, BWhol}. 
+%
+%%\subsection{The quantum master equation} 
+%
+%Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
 
 \subsection{Equivariant holomorphic matter}
 
 We introduce a classical field theory in the BV formalism that one may think of as higher dimensional ``matter" in a holomorphic setting. 
-When the complex dimension is one this returns the chiral $\beta\gamma$ system from ordinary conformal field theory. 
-In higher dimensions one can also realize this theory as a certain twist of supersymmetric matter. 
-First, we motivate in terms of ordinary fields and \brian{not sure}. 
+When the complex dimension is $d = 1$, this returns the chiral $\beta\gamma$ system from ordinary conformal field theory. 
+In dimensions $2$ and $4$, this theory is equal a minimal twist of supersymmetric matter. 
 
 To start, we fix a finite dimensional $\fg$-module $V$ and an integer $d > 0$.
 The classical fields of the complex $d$-dimensional theory consist of a map
@@ -93,11 +94,43 @@ S(\gamma,\beta) = \int \<\beta, \dbar\gamma\>_V
 where $\<-,-\>_V$ denotes the natural pairing between $V$ and its dual. 
 The classical equations of motion of this theory consist of those $(\gamma,\beta)$ that are holomorphic, namely $\dbar \beta = \dbar \gamma = 0$. 
 
-The gauge symmetry we consider comes from the $\fg$-action on $V$. 
+The symmetry we consider comes from the $\fg$-action on $V$. 
 This extends, in a natural way, to an action of the gauge Lie algebra $C^\infty(\CC^d, \fg)$ on the fields (\ref{gammafield}): an element $X(z,\zbar) \in C^\infty(X,\fg)$ acts simply by $X(z,\zbar) \cdot \gamma(z,\zbar)$ where the dot indicates product of functions and the $\fg$-module structure on $V$. 
 The condition that this action be compatible with the action functional (\ref{actionfnl}) says precisely that $X(z,\zbar)$ must be holomorphic: $\dbar X(z,\zbar) = 0$. 
 
-When $d=1$ to formulate this theory in the BV formalism we simply...\brian{finish}
+Notice that the original action functional (\ref{actionfnl}) has an internal symmetry via the gauge transformation
+\[
+\beta \mapsto \beta + \dbar \beta' 
+\]
+where $\beta' \in \Omega^{d,d-2} (X, V^*)$. 
+Thus, it is natural to include the space $\Omega^{d,d-2} (X, V^\vee)$ as the ghosts of the BRST formulation of this theory. 
+Moreover, there are ghosts for ghosts $\beta'' \in \Omega^{d,d-3}(X , V^\vee)$, and so on.
+Together with all of the antifields and antighosts, the full theory comprises of two copies of the Dolbeualt complex.
+The precise definition is the following.
+
+\begin{dfn}
+The {\em classical $\beta\gamma$ system} on the complex manifold $X$, in the BV formalism, has space of fields
+\[
+\sE_V = \Omega^{0,*}(X , V) \oplus \Omega^{d,*}(X , V^*)[d-1],
+\]
+with the linear BRST operator given by $Q = \dbar$.
+We will write fields as $(\gamma,\beta)$ to match with the notation above.
+The $(-1)$-shifted symplectic pairing is given by integration along $X$ combined with the evaluation pairing between $V$ and its dual: $(\gamma, \beta) \mapsto \int_X \<\gamma, \beta\>_V$. 
+The action functional for this free theory is thus
+\[
+S_V (\beta,\gamma) = \int_X \<\beta, \dbar \gamma\>_{V} .
+\]
+\end{dfn}
+
+\begin{rmk}
+As usual, the notation $[d-1]$ means we shift that copy of the fields down by $d-1$. 
+Note that the elements in degree zero, where the physical fields live, are precisely maps $\gamma : Y \to V$ and sections $\beta \in\Omega^{d,d-1} (X ; V^\vee)$, just as in the description above. 
+In this flat case the section $\beta$ has no dependence on $\gamma$.
+the gauge symmetry $\beta \to \beta + \dbar \beta'$, where $\beta' \in \Omega^{d,d-2} (X, V^\vee)$ has naturally been incorporated into our BRST complex (which only consists of a linear operator since the theory is free).
+\end{rmk}
+
+By our discussion above, once we include the full BV complex, the symmetry by the Lie algebra $C^\infty(X, \fg)$ now extends to a symmetry by the {\em dg Lie algebra} $\sG_d^{sh} = \Omega^{0,*}(X, \fg)$. 
+\brian{finish}
 
 \begin{dfn/lem}
 The $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ with values in $V$ is defined by the local functional
@@ -419,9 +452,7 @@ where $\fj$ is the isomorphism from Proposition \ref{prop: trans j}.
 
 \subsection{The quantum observables of the $\beta\gamma$ system}
 
-\subsubsection{The quantum observables}
-
-Before deducing the main consequence of the anomaly calculation, we turn to the quantum observables of the $\beta\gamma$ system. 
+Before deducing the main consequence of the anomaly calculation, we introduce the quantum observables of the $\beta\gamma$ system. 
 The quantum observables $\Obs^{\q}_V$ define a quantization of the classical observables in the sense that there is an isomorphism
 \[
 \Obs^{\cl}_V \cong \Obs^\q_V \tensor_{\CC[\hbar]} \CC_{\hbar = 0} .
@@ -537,9 +568,6 @@ The map (\ref{free field}) determines a map of $E_1$-algebras
 \oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_V) .
 \eeqn
 \end{cor}
-
-
-\subsubsection{}
 
 %\begin{cor}
 %There is a map of factorization algebras on $\CC^d$, $\Phi^\q : \UU_{\# \ch_{d+1}(\fg^{ad})}(\fg^{\CC^d}) \to \Obs^\q_V$ 
