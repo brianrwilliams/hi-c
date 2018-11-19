@@ -13,7 +13,7 @@ but they are closely related to prior work of Costello-Li \cite{CLbcov2} and Mov
 The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
 which yields a natural map \owen{ugly notation so lets find a better one}
 \[
-\lqt(A) :\colim_{N}\, \cliels(\gl_N(A)) \cong \cliels(\gl_\infty(A)) \to \Sym(\cycls(A)[1])
+\lqt(A) : \underset{N \to \infty}{\colim} \, \cliels(\gl_N(A)) \cong \cliels(\gl_\infty(A)) \to \Sym(\cycls(A)[1])
 \]
 for any dg algebra $A$ over a field $k$ of characteristic~0.
 (It works even for $A_\infty$ algebras.)
@@ -148,11 +148,16 @@ A {\em local algebra} on a smooth manifold $X$ is:
 such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of dg associative algebras.
 \end{dfn}
 
-As usual, we abusively refer to a local algebra $(\sA^{sh}, \d, \cdot)$ by $\sA$.
+As usual, we abusively refer to a local algebra $(\sA^{sh}, \d, \cdot)$ simply by $\sA$.
 On a complex manifold, the basic example for us of a local algebra is the Dolbeault complex $\Omega^{0,*}_X$. 
 Of course, this is a commutative local algebra. 
+For a noncommutative example, one can take the sheaf of holomorphic differential operators, and take its Dolbeault resolution. 
 
-For local algebras, there is an appropriate notion of cohomology respecting the locality. 
+There is a forgetful functor from local algebras to local Lie algebras. 
+In particular, given any local algebra $\sA$ and local Lie algebra $\sL$ we obtain a new local Lie algebra $\sL \tensor \sA$.
+The underlying vector bundle is simply $L \tensor A$. 
+
+For local algebras, there is an appropriate notion of cohomology respecting the locality, analogous to local Lie algebra cohomology. 
 To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a local algebra. 
 The $\infty$-jet bundle of $A$ is denoted by $JA$.
 Then, $JA$ defines an associative dg algebra in the category of $D_X$-modules. 
@@ -164,10 +169,10 @@ We use this observation in the definition below.
 \def\Cyc{{\rm Cyc}}
 \def\Cycloc{{\rm Cyc}_{\rm loc}}
 
-\begin{dfn}
+\begin{dfn}\label{dfn: hochloc}
 The {\em local Hochschild cohomology complex}  of a local algebra $\sA$ on $X$ is 
 \[
-\Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*(JA) .
+\Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*_{red} (JA) .
 \] 
 This sheaf of cochain complexes has global sections that we denote by $\Hochloc^*(\sA(X))$.
 \end{dfn}
@@ -179,13 +184,90 @@ It is a polynomial functional on $\sA$ that is a finite sum of functionals of th
 \]
 where $D_i$ is a differential operator from $\sA$ to $C^\infty(X)$ and $\omega_X$ is a volume form on $X$. 
 
-\brian{do cyclic definition $\Cycloc^*(\sA)$.}
+There is also a cyclic version of the Hochschild cohomology. 
+The dg $D$-module of reduced Hochschild cochains on $JA$ is of the form
+\[
+\Hoch_{red}^* (JA) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) .
+\]
+For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$. 
+There is a resulting action of the group $S_n$ on each graded piece of the reduced Hochschild complex $\Hoch_{red}^* (JA)$.
+We obtain the termwise quotient $D$-module by
+\[
+\Cyc_{red}^* (JA) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) / C_n .
+\]
+The Hochschild differential restricts to this subspace to yield a dg $D$-module. 
+
+We repeat Definition \ref{dfn: hochloc} for the cyclic version of local cohomology of a local algebra $\sA$. 
+
+\begin{dfn}\label{dfn: cycloc}
+The {\em local cyclic cohomology complex}  of a local algebra $\sA$ on $X$ is 
+\[
+\Cycloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Cyc^*_{red} (JA) .
+\] 
+This sheaf of cochain complexes has global sections that we denote by $\Cycloc^*(\sA(X))$.
+\end{dfn}
+
+As we've mentioned, the most relevant local algebra for us will be the Dolbeault complex $\Omega^{0,*}_X$ defined on a complex manifold. 
+On this local Lie algebra is a natural degree zero cocycle in local cyclic cohomology.
+The reader may observe its very similar form to its counterpart in local Lie algebra cohomology introduced in Section \ref{sec: current}. 
 
 \begin{lem}
-Let $X$ be a complex manifold.
-The functional $\Theta^\infty_X$ on $\Omega^{0,*}_X$ defined by
+Fix a complex dimension $d$. 
+The functional $\Theta^\infty_d$ on $\Omega^{0,*}$ defined by
 \[
-\Theta^\infty_X : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \int_X \alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d
+\Theta^\infty_d : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d
 \]
-defines a degree zero cocycle in $\Cycloc^*(\Omega^{0,*}_X)$. 
+is a degree zero cocycle in $\Cycloc^*(\Omega^{0,*})$. 
 \end{lem}
+\begin{proof}
+\end{proof}
+
+We refer to $\Theta^\infty_d$ as a `universal' cocycle in the sense that it only depends on the complex dimension and not on any Lie algebraic data. 
+
+\brian{Cite Kevin and Si's work here.}
+
+\begin{prop}
+Let $\sA$ be a local algebra.
+For every $N > 0$, there is a map of sheaves
+\[
+\lqt_N^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_N \tensor \sA) 
+\] 
+that factors through a map of sheaves
+\[
+\lqt^* : \Cycloc^*(\sA)[-1] \to \lim_{N \to \infty} \cloc^*(\gl_\infty \tensor \sA)  .
+\]
+%\[
+%\lqt : \Hat{\Sym}^{>0} \left(\Cycloc^*(\sA)[-1]\right) \to \cloc^*(\gl_\infty \tensor \sA)  
+%\]
+\end{prop}
+
+\brian{Check my shifts. We could state their result about PV fields using HKR, but I don't know if that buys us anything too amazing at this point.}
+
+This result gives us a way to construct degree one cocycles for the local Lie algebra $\fgl_N \tensor \Omega^{0,*} = \sG l_{N}$. 
+Indeed, it tells us that the `universal' degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ pulls back to a degree one cocycle 
+\[
+\lqt^*_N(\Theta_d^\infty) \in \cloc^*(\sG l_N)
+\]
+for each $N > 0$. 
+
+In fact, this procedure produces a particular class of cocycles for $\sG l_{N}$ that we have already met. 
+Note that for each $N$ and $k$, the functional $\theta_{k,N} : A \mapsto {\rm tr}_{\fgl_N} (A^k)$ defines a homogenous degree $k$ polynomial on $\fgl_N$. 
+In this way, we obtain $\fgl_N$-invariant elements
+\[
+\theta_{k,N} \in \Sym^{k}(\fgl_N^*)^{\fgl_N} .
+\]
+
+\begin{lem}
+For every $N$, the image of $\Theta^\infty$ under the Loday-Quillen-Tsygan map $\lqt_N^*(\Theta_d^\infty)$ is cohomologous to the cocycle
+\[
+\fj(\theta_{d+1, N}) \in \cloc^*(\sG l_N)
+\]
+where $\fj$ is as in Definition \ref{dfn: j}
+\end{lem}
+
+\brian{There is a statement about the hol trans invariant cyclic cochains.
+Namely that it's one dimensional generated by the higher residue.
+This is complementary to FHK and is compatible with out calculation in the appendix under the LQT map. 
+Should I include a remark about this?
+}
+

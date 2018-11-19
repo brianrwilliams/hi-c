@@ -2,11 +2,13 @@
 
 \section{Computing the deformation complex}\label{sec: hol trans}
 
-There is a succinct way of expressing holomorphic translation invariance as the Lie algebra invariants of a certain {\em dg Lie algebra}.
+In this appendix we compute the holomorphically translation invariant Lie algebra cohomology of the local Lie algebra $\sG_d = \Omega^{0,*}_c \tensor \fg$ on $\CC^d$. 
+
+We have already encountered the local cohomology cochain complex $\cloc^*(\sG_d)$.
+There is a succinct way of expressing holomorphic translation invariance as the Lie algebra invariants by a certain {\em dg Lie algebra}.
 Denote by $\CC^d[1]$ the abelian $d$-dimensional graded Lie algebra in concentrated in degree $-1$ by the elements $\{\Bar{\eta}_i\}$.
 We want to consider deformations that are invariant for the action by the total {\em dg} Lie algebra $\CC^{d}_{\rm hol} = \CC^{2d} \oplus \CC^d[1]$.
 The differential sends $\eta_i \mapsto \frac{\partial}{\partial \zbar_i}$.
-The space of holomorphically translation invariant local functionals are denoted by $\oloc(\sE_V)^{\CC^d_{\rm hol}}$.
 The enveloping algebra of $\CC^d_{\rm hol}$ is of the form
 \beqn
 U(\CC^{d}_{\rm hol}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}{\partial \zbar_i}, \eta_i \right]
@@ -14,17 +16,23 @@ U(\CC^{d}_{\rm hol}) = \CC \left[\frac{\partial}{\partial z_i},  \frac{\partial}
 with differential induced from that in $\CC^{d}_{\rm hol}$. 
 Note that this algebra is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators $\CC[\partial / \partial z_i] \xto{\simeq} U(\CC^{d}_{\rm hol})$. 
 
-In this appendix, we consider the specialization of the functional $\fj$ to affine space $\CC^d$, as in Section \ref{sec: hol trans main}, and use it to completely characterize the degree one $U(d)$-invariant, holomorphically translation invariant local functionals on $\sG_d$. 
+The space of holomorphically translation invariant local functionals will be denoted by $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$.
+
+We are interested the specialization of the map $\fj$, from Section \ref{sec: hol trans main}, to affine space $\CC^d$.
+We will use this map to completely characterize the degree one $U(d)$-invariant, holomorphically translation invariant local functionals on $\sG_d$. 
 
 The degree one result will follow from a more general result that we will prove at the cochain level.
 To formulate this, we introduce some notation.
-We will think of the classifying space of the Lie algebra as a formal moduli problem. 
-By definition, the functions on $B \fg$ are given by the Chevalley-Eilenberg complex $\sO(B\fg) = \clie^*(\fg)$.
-The $k$-forms on $B\fg$ are defined by
+Fix a Lie algebra $\fg$. 
+The dg commutative algebra given by the Chevalley-Elienberg complex $\clie^*(\fg)$ can formally be thought of as functions on the formal moduli problem $B \fg$:
 \[
-\Omega^k(B \fg) := \clie^*(\fg ; \Sym^k \fg^\vee [-k])
+\sO(B \fg) = \clie^*(\fg) .
 \]
-where $\fg^\vee$ denotes the coadjoint module of $\fg$. 
+In the same line of thought, we define the $k$-forms on $B\fg$ by
+\[
+\Omega^k(B \fg) := \clie^*(\fg ; \Sym^k \fg^\vee [-k]) .
+\]
+Here, $\fg^\vee$ denotes the coadjoint module of $\fg$. 
 
 As a simple check, note that in the case $\fg = \CC^n [-1]$ the above complex reduces to
 \[
@@ -32,7 +40,7 @@ As a simple check, note that in the case $\fg = \CC^n [-1]$ the above complex re
 \]
 where $t_i^\vee$ denotes the dual coordinate. 
 Everything is in cohomological degree zero.
-If we identify $t_i^\vee \leftrightarrow \d t_i$, this is the usual definition of the algebraic de Rham forms on affine space.
+If we identify $t_i^\vee \leftrightarrow \d t_i$, this is the usual definition of the algebraic de Rham forms on affine space $B \CC^{n}[-1] = \CC^n.$
 
 Let $\partial : \Omega^{k}(B\fg) \to \Omega^{k+1}(B\fg)$ be the de Rham operator for $B\fg$. 
 The space of closed $k$-forms is defined by
@@ -54,13 +62,12 @@ For type reasons, we observe that $\fj$ actually descends to a map from the coch
 \]
 
 \begin{prop}\label{prop: local def}
-Let $\fg$ be an ordinary Lie algebra.
 The map $\fj$ factors through the holomorphically translation invariant deformation complex:
 \beqn
 \fj : \Omega^{d+1}_{cl}(B \fg) [d] \to \left(\cloc^*(\sG_d)\right)^{\CC^{d}_{\rm hol}} .
 \eeqn
 Furthermore, $\fj$ defines a quasi-isomorphism into the $U(d)$-invariant subcomplex of the right-hand side.
-In particular, on $H^1(-)$, we obtain an isomorphism
+In particular, if $\fg$ is an ordinary (non dg) Lie algebra, on $H^1(-)$ we obtain an isomorphism
 \[
 H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)^{U(d), \CC^{d}_{\rm hol}} .
 \] 
