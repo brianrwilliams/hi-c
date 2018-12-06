@@ -122,49 +122,52 @@ where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-
 If we post-compose with the map $\oloc(\sE_V)[-1] \to \Der_{\rm loc}(\sE_V)$ that sends a functional $f$ to the Hamiltonian vector field $\{f,-\}$,
 then we find the composite is precisely the action of $\sG^{sh}_X$ on fields already specified.
 
-\owen{I think we should promote this paragraph to a "nota bene" or something.} For the remainder of the section we will restrict ourselves to the complex $d$-fold $X =~\CC^d$. 
+\owen{I think we should promote this paragraph to a "nota bene" or something.} 
+
+\noindent {\bf Note:} For the remainder of the section we will restrict ourselves to the space $X =~\CC^d$. 
 
 \subsubsection{The $\beta\gamma$ factorization algebra}
 
-It is the general philosophy of \cite{CG1,CG2} that the observables of a quantum field theory form a factorization algebra on the underlying spacetime. 
+It is the central result of \cite{CG1,CG2} that the observables of a quantum field theory form a factorization algebra on the underlying spacetime. 
 
-For any theory, the factorization algebra of classical observables assigns to every open set $U$ the cochain complex of algebraic functions on the fields supported on $U$.  
-For the example of the $\beta\gamma$ system, the differential is just given by the $\dbar$ operator. 
-Concretely, the complex of classical observables\footnote{There is also the completed version where one uses $\prod$ in place of $\oplus$ when defining the symmetric algebra, but we will not use it here.} assigned to an open set $U \subset \CC^d$ is
+For any theory, the factorization algebra of classical observables assigns to every open set $U$, the cochain complex of polynomial functions on the fields that only depend on the behavior of the fields in $U$.
+(In other words, each function must have support in $U$.)  
+For the $\beta\gamma$ system, the complex of classical observables\footnote{We work here with polynomial functions but it is possible to work with formal power series instead, which is typically necessary for interacting theories. We use $\Sym$ to denote polynomials and $\widehat{\Sym}$ to denote the completion, which are formal power series.} assigned to an open set $U \subset \CC^d$~is
 \[
 \Obs^{\cl}_V(U) = \left(\Sym \left(\Omega^{0,*}(U)^\vee \tensor V^\vee \oplus \Omega^{d,*}(U)^\vee \tensor V [-d+1]\right), \dbar\right) .
 \]
-As usual, we use the completed tensor product when defining the symmetric products. 
+As discussed following Definition~\ref{dfn: classical currents}, we use the completed tensor product when defining the symmetric products. 
 It follows from the general results of Chapter 6 of \cite{CG2} that this assignment defines a factorization algebra on $\CC^d$. 
 
-Upon taking global sections, the functional $I^{\sG}$ defines a map of dg Lie algebras $I^{\sG} : \sG_d(\CC^d) \to \Obs^{\cl}_V(\CC^d)$.
-We have seen that $\Obs_V^{\cl}$ is a factorization algebra equipped with a $P_0$-structure. 
-In the introduction, we also discussed how a local Lie algebra determines a $P_0$-factorization algebra via its classical current algebra. 
-The classical Noether's theorem, as proved in Theorem 11.0.1.1 of \cite{CG2}, says that $I^{\sG}$ determines a map between these factorization algebras. 
+The functional $I^{\sG}$ defines a map of dg Lie algebras $I^{\sG} : \sG_d(\CC^d) \to \Obs^{\cl}_V(\CC^d)$.
+(Note  that we have switched here from $\sG^{sh}_d$ to $\sG_d$, and hence are working with compactly supported $\alpha$.)
+Thanks to the shifted symplectic pairing on the fields, 
+the factorization algebra $\Obs_V^{\cl}$ is equipped with a 1-shifted Poisson bracket and hence a $P_0$-structure. 
+In Section \ref{sec: envelopes} we also discussed how a local Lie algebra determines a $P_0$-factorization algebra via its classical current algebra. 
+The classical Noether's theorem, as proved in Theorem 11.0.1.1 of \cite{CG2}, then implies that $I^{\sG}$ determines a map between these factorization algebras. 
 
 \begin{prop}[\cite{CG2}](Classical Noether's Theorem)
 The assignment that sends an element $\alpha \in \Omega^{0,*}_c(U, \fg)$ to the observable
 \[
 \gamma \tensor \beta \in \Omega^{0,*}(U, V) \tensor \Omega^{d,*}(U, V^*) \mapsto \int_U \<\beta, \alpha \cdot \gamma\>_V
 \]
-determines a map of $P_0$-factorization algebras on $\CC^d$
+determines a map of $P_0$-factorization algebras 
 \[
-J^{\cl} : \Cur^{\cl} (\sG_d) \to \Obs^{\cl}_V .
+J^{\cl} : \Cur^{\cl} (\sG_d) \to \Obs^{\cl}_V 
 \]
+on the manifold $\CC^d$.
 \end{prop}
 
-\begin{rmk}
-The formula for $J^{\cl}$ is identical to that of the local functional $I^\fg(\alpha)$ defining the action of $\sG_d$ on the $\beta\gamma$ system.
-Ordinarily, a local functional does not determine an observable on an open set since the integral may not exist.
-However, since $\alpha$ is compactly supported on $U$, it makes sense to restrict $I^\sG (\alpha)$ to an observable on $U$. 
-This is precisely the observable $J^{\cl}(\alpha)$. 
-\end{rmk}
+This formula for $J^{\cl}$ is identical to that of the local functional $I^\fg(\alpha)$ defining the action of $\sG_d$ on the $\beta\gamma$ system.
+Note an important point here: if $\alpha$ is not compactly supported, then $I^\fg(\alpha)$ is not a functional on arbitrary fields because the density $\<\beta, \alpha \cdot \gamma\>_V$ may not be integrable.
+In general, a local functional need not determine an observable on an open set since the integral may not exist.
+When $\alpha$ is compactly supported on $U$, however, then $I^\sG (\alpha)$ does determine an observable on $U$, namely the observable~$J^{\cl}(\alpha)$. 
 
-As usual, the statement we are after pertains to the quantum situation. 
-Being a free field theory, the $\beta\gamma$ system admits a unique quantization and hence a factorization algebra $\Obs^{\q}_V$ of quantum observables (whose definition we recall below). 
+The challenge is to extend this relationship to the quantum situation. 
+Being a free field theory, the $\beta\gamma$ system admits a natural quantization and hence a factorization algebra $\Obs^{\q}_V$ of quantum observables (whose definition we recall below). 
 The natural question arises whether the symmetry by the dg Lie algebra $\sG_d$ persists upon quantization. 
-We are asking if we can lift $J^{\cl}$ to a ``quantum current" $J^{\q} : \Cur^\q(\sG_d) \to \Obs^\q_V$, where $\Cur^\q(\sG_d)$ is the factorization algebras of quantum currents defined in the introduction. 
-The existence of this map of factorization algebras is controlled by the equivariant quantum master equation, which we now turn to.
+We are asking if we can lift $J^{\cl}$ to a ``quantum current" $J^{\q} : \Cur^\q(\sG_d) \to \Obs^\q_V$, where $\Cur^\q(\sG_d)$ is the factorization algebras of quantum currents of Definition~\ref{dfn: quantum currents}. 
+The existence of this map of factorization algebras is controlled by the equivariant quantum master equation, to which we now turn.
 
 \subsection{The equivariant quantization}
 
