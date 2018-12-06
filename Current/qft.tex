@@ -42,8 +42,10 @@ The classical equations of motion of this theory are
 and hence pick out pairs $(\gamma,\beta)$ that are holomorphic. 
 
 The symmetry we consider comes from the $\fg$-action on $V$. 
-It extends, in a natural way, to an action of the ``gauged'' Lie algebra $C^\infty(\CC^d, \fg)$ on the fields (\ref{gammafield}): an element $x(z,\zbar) \in C^\infty(X,\fg)$ acts simply by $x(z,\zbar) \cdot \gamma(z,\zbar)$ where the dot indicates the pointwise action via the $\fg$-module structure on $V$. 
-This Lie algebra action is compatible with the action functional (\ref{actionfnl})---preserves solutions to the equations of motion---precisely when $x(z,\zbar)$ is holomorphic: $\dbar x(z,\zbar) = 0$. 
+It extends, in a natural way, to an action of the ``gauged'' Lie algebra $C^\infty(X, \fg)$ on the $\gamma$ fields: an element $x(z,\zbar) \in C^\infty(X,\fg)$ acts simply by $x(z,\zbar) \cdot \gamma(z,\zbar)$ where the dot indicates the pointwise action via the $\fg$-module structure on $V$. 
+There is a dual action on the $\beta$ fields.
+This Lie algebra action is compatible with the action functional (\ref{actionfnl})---that is, it preserves solutions to the equations of motion---precisely when $x(z,\zbar)$ is holomorphic: $\dbar x(z,\zbar) = 0$. 
+In other words, the natural Lie algebra of symmetries is $\cO_X \otimes \fg$, the holomorphic functions on $X$ with values in~$\fg$.
 
 \owen{I've occasionally put physics terms in quotation marks. Tell me if this is ridiculous.}
 
@@ -64,7 +66,7 @@ In the BV formalism the {\em classical $\beta\gamma$ system} on the complex mani
 \]
 with the linear BRST operator given by $Q = \dbar$.
 We will write fields as pairs $(\gamma,\beta)$ to match with the notation above.
-There is a $(-1)$-shifted skew-symmetric nondegenerate pairing is given by integration along $X$ combined with the evaluation pairing between $V$ and its dual: 
+There is a $(-1)$-shifted symplectic pairing is given by integration along $X$ combined with the evaluation pairing between $V$ and its dual: 
 \[
 \<\gamma, \beta\> = \int_X \<\gamma, \beta\>_V.
 \] 
@@ -79,17 +81,29 @@ As usual in homological algebra, the notation $[d-1]$ means we shift that copy o
 Note that the elements in degree zero (i.e., the ``physical'' fields) are precisely maps $\gamma : X \to V$ and sections $\beta \in\Omega^{d,d-1} (X ; V^\vee)$, just as in the initial description of the theory. 
 The gauge symmetry $\beta \to \beta + \dbar \beta'$ has naturally been incorporated into our BRST complex (which only consists of a linear operator since the theory is free).
 We note that the pairing only makes sense when at least one of the inputs is compactly-supported or $X$ is closed;
-but, as usual
+but, as usual in physics, it is the Lagrangian density that is important, rather than the putative functional it determines.
 \end{rmk}
 
-In this flat case the section $\beta$ has no dependence on $\gamma$.
+\owen{I modified the remarks to discuss technical features of the definition (first remark) and then to indicate your systematic generalization (next).}
 
-By our discussion above, once we include the full BV complex, the symmetry by the Lie algebra $C^\infty(X, \fg)$ now extends to a symmetry by the {\em dg Lie algebra} $\sG_X^{sh} = \Omega^{0,*}(X, \fg)$. 
+\begin{rmk}
+This theory is a special case of a nonlinear $\sigma$-model, where the linear target $V$ is replaced by an arbitrary complex manifold $Y$.
+When $d=1$ this theory is known as the (classical) curved $\beta\gamma$ system and has received extensive examination \owen{add citations};
+when a quantization exists, the associated factorization algebra of quantum observables encodes the vertex algebra known as chiral differential operators of $Y$.
+The second author's thesis \owen{cite} examines the theories when $d>1$ and uncovers a systematic generalization of chiral differential operators.
+\end{rmk}
+
+In parallel with our discussion above, once we include the full BV complex, 
+it is natural to encode the symmetry $\cO_X \otimes \fg$ by the action of  the {\em dg Lie algebra} $\sG_X^{sh} = \Omega^{0,*}(X, \fg)$. 
 The action by $\sG_X^{sh}$ extends to a natural action on the fields of the $\beta\gamma$ system in such a way that the shifted symplectic pairing is preserved. 
-We encode the action by an element $\alpha \in \sG_X^{sh}$ by a {\em local} Hamiltonian functional $I_\alpha^{\sG} \in \oloc(\sE_V)$. 
+In other words, $\alpha$ determines a symplectic vector field on the space of fields.
+
+This vector field is actually a Hamiltonian vector field, 
+and we will encode it by an element $\alpha \in \sG_X^{sh}$ by a {\em local} functional $I_\alpha^{\sG} \in \oloc(\sE_V)$. 
+It is a standard computation in the BV formalism to verify the following.
 
 \begin{dfn/lem}
-The $\sG_X$-equivariant $\beta\gamma$ system on $X$ with values in $V$ is defined by the local functional
+The {\em $\sG_X$-equivariant $\beta\gamma$ system} on $X$ with values in $V$ is defined by the local functional
 \[
 I^{\sG}(\alpha, \beta, \gamma) = \int \<\beta, \alpha \cdot \gamma\>_V \in \oloc(\sE_V \oplus \sG_X[1]) .
 \]
@@ -99,14 +113,16 @@ This functional satisfies the $\sG_X$-equivariant classical master equation
 \] 
 \end{dfn/lem}
 
-The classical master equation simply says that the Hamiltonian function $I^{\sG}$ defines a dg Lie algebra action on the theory $\sE_V$. 
+The classical master equation encodes the claim that the function $I^{\sG}$ defines a dg Lie algebra action on the theory $\sE_V$. 
 In particular, $I^{\sG}$ determines a map of sheaves of dg Lie algebras 
 \[
 I^{\sG} : \sG^{sh}_X \to \oloc(\sE_V)[-1],
 \] 
 where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-\}$. 
+If we post-compose with the map $\oloc(\sE_V)[-1] \to \Der_{\rm loc}(\sE_V)$ that sends a functional $f$ to the Hamiltonian vector field $\{f,-\}$,
+then we find the composite is precisely the action of $\sG^{sh}_X$ on fields already specified.
 
-For the remainder of the section we will restrict ourselves to the complex $d$-fold $X =~\CC^d$. 
+\owen{I think we should promote this paragraph to a "nota bene" or something.} For the remainder of the section we will restrict ourselves to the complex $d$-fold $X =~\CC^d$. 
 
 \subsubsection{The $\beta\gamma$ factorization algebra}
 
