@@ -246,7 +246,7 @@ W(P_{L < L'} , -) : \sO(\sE) [[\hbar]] \to \sO(\sE)[[\hbar]]
 \eeqn
 defined as a sum of weights of graphs 
 \[
-W (P_{L<L'}, I) = \sum_{\Gamma} W_{\Gamma}(P_{L<L'}, I)$. 
+W (P_{L<L'}, I) = \sum_{\Gamma} W_{\Gamma}(P_{L<L'}, I). 
 \]
 Here, $\Gamma$ denotes a graph, and the weight $W_\Gamma$ associated to $\Gamma$ is defined as follows.
 One labels the vertices of valence $k$ by the $k$th homogenous component of the functional $I$. 
@@ -350,21 +350,21 @@ This element measures the failure of $I^{\sG}[L]$ to satisfy the scale $L$ equiv
 
 \subsection{The charge anomaly for $\beta\gamma$}
 
-To calculate the anomaly to solving the $\sG_d$-equivariant master equation we utilize a general result about the quantum master equation for holomorphic field theories formulated in \cite{BWhol}. 
+To calculate this anomaly, we utilize a general result about the quantum master equation for holomorphic field theories formulated in \cite{BWhol}. 
 In general, since the effective field theory defining the prequantization $\{I^{\sG}[L]\}$ is given by a Feynman diagram expansion, the anomaly to solving the quantum master equation is also given by a potentially complicated sum of diagrams. 
 As an immediate corollary of Proposition 4.4 of \cite{BWhol} for holomorphic theories on $\CC^d$, we find that only a simple class of diagrams appear in the anomaly. 
 
 \begin{lem}\label{lem: obs}
-Let $\Theta_V[L]$ be the $\sG_d$-{\em equivariant charge anomaly} for the $\beta\gamma$ system with values in $V$.
-Then, $\Theta_V := \lim_{L \to 0} \Theta_V[L]$ exists, and is a local cocycle 
-\[
-\Theta_V \in \cloc^*(\sG_d) .
-\]
-Furthermore, $\Theta$ is computed by the following limit
+Let $\Theta_V[L]$ be the $\sG_d$-equivariant charge anomaly for the $\beta\gamma$ system with values in $V$.
+Then 
+\begin{itemize}
+\item[(1)] the limit $\Theta_V = \lim_{L \to 0} \Theta_V[L]$ exists and is a {\em local} cocycle so that $\Theta_V \in \cloc^*(\sG_d)$.
+\item[(2)] $\Theta$ is computed by the following limit
 \[
 \hbar \Theta_V = \frac{1}{2} \lim_{L \to 0} \lim_{\epsilon \to 0} \sum_{\Gamma \in {\rm Wheel}_{d+1} \; , e} W_{\Gamma, e}(P_{\epsilon <L}, K_\epsilon, I^{\sG}) ,
 \] 
-where the sum is over all wheels of valency $(d+1)$ and internal edges $e$. 
+where the sum is over all wheels of valency $(d+1)$ with a distinguished internal edge~$e$, and the weight puts $K_\epsilon$ on $e$ but the propagator on all other internal edges. 
+\end{itemize}
 \end{lem}
 
 \begin{figure}
@@ -406,21 +406,33 @@ The external edges are labeled by elements $\alpha^{(i)} \in \Omega^{0,*}_c(\CC^
 \end{center}
 \end{figure}
 
-\begin{rmk}
-If $\Gamma$ is a graph with a distinguished edge $e$ and $A,B$ are elements of the tensor square of fields $A, B \in \sE \tensor \sE$, we let $W_{\Gamma,e}(A,B, I)$ denotes the weight of the graph where we place $B$ at the internal edge labeled $e$ and $A$ on the remaining internal edges.
-\end{rmk}
+%\begin{rmk}
+%If $\Gamma$ is a graph with a distinguished edge $e$ and $A,B$ are elements of the tensor square of fields $A, B \in \sE \tensor \sE$, we let $W_{\Gamma,e}(A,B, I)$ denotes the weight of the graph where we place $B$ at the internal edge labeled $e$ and $A$ on the remaining internal edges.
+%\end{rmk}
 
-In the remainder of this section we will characterize this anomaly algebraically, using the identification of Proposition \ref{prop: trans j}. 
-Actually, it is immediate based on symmetry arguments what the obstruction is up to a scalar multiple. 
+This description of the local anomaly may seem obscure because it uses Feynman diagrams.
+It admits, however, a very elegant algebraic characterization, using the identification of Proposition~\ref{prop: trans j}. 
 
-First, we note that the element $\Theta_V \in \cloc^*(\sG_d)$ lifts to the invariant subspace of $U(d)$-invariant, holomorphic translation invariant local cocycles.
-This follows from the fact that both the functional $I^{\sG}$ and propagator $P_{\epsilon<L}$ are $U(d)$-invariant, holomorphic translation invariant.
-By Proposition \ref{prop: trans j} we see that $\Theta_V$ must be cohomological to a cocycle of the form
+\begin{prop}\label{prop: bg anomaly}
+The charge anomaly for quantizing the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is equal to
+\[
+\Theta_V = \frac{1}{(2\pi i)^d} \fj (\ch_{d+1}^{\fg}(V)),
+\]
+where $\fj$ is the isomorphism from Proposition \ref{prop: trans j}.
+\end{prop}
+
+Based on our analysis of the local Lie algebra cohomology of $\sG_d$, 
+it is clear that the obstruction must have this form, up to a scalar multiple. 
+But we provide a more detailed proof.
+
+\begin{proof}
+First, we note that the element $\Theta_V \in \cloc^*(\sG_d)$ sits in the subspace of $U(d)$-invariant, holomorphic translation invariant local cocycles because both the functional $I^{\sG}$ and propagator $P_{\epsilon<L}$ are $U(d)$-invariant, holomorphic translation invariant.
+By Proposition \ref{prop: trans j} we see that $\Theta_V$ must be cohomologous to a cocycle of the form
 \[
 (\alpha_0, \ldots, \alpha_d) \mapsto \int_{\CC^d} \theta(\alpha_0 \wedge \partial \alpha_1 \wedge \cdots \wedge \partial \alpha_d) 
 \]
 where $\theta$ is some element of $\Sym^{d+1}(\fg^*)^\fg$.
-In the notation of Section \ref{sec: current}, this is the cocycle $\fJ_d (\theta)$. 
+To use the notation of Section~\ref{sec: current}, it is some element $\fJ_d (\theta)$. 
 This cocycle factors in the following way:
 \beqn
 \label{composition}
@@ -429,20 +441,22 @@ This cocycle factors in the following way:
 \end{tikzcd}
 \eeqn
 The first map is $\fa \fn : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \alpha_0 \tensor \partial \alpha_1 \tensor \cdots \tensor \partial \alpha_d$.
-The second map is given by extending the Lie algebraic functional $\theta : \fg^{\tensor (d+1)} \to \CC$ to the Dolbeault complex in the obvious way:
+The second map is given by extending the Lie algebraic functional $\theta : \fg^{\tensor (d+1)} \to \CC$ to the $\Omega^{0,*}(\CC^d) \otimes \fg$ by linearity over the Dolbeault forms:
 \[
-\theta \left(\alpha_0 \tensor (\alpha_1 \tensor \cdots \tensor \alpha_d\right) = \alpha_0 \wedge \theta(\alpha_1 \wedge \cdots \wedge \alpha_d) \in \Omega^{d,*}_c(\CC^d).
+\underline{\theta} \left(\alpha_0 \tensor \alpha_1 \tensor \cdots \tensor \alpha_d\right) = \alpha_0 \wedge \theta(\alpha_1 \wedge \cdots \wedge \alpha_d) \in \Omega^{d,*}_c(\CC^d).
 \]
+\owen{I'm puzzled by this formula. Doesn' t $ \alpha_0$ have a $\fg$-term?}
 
 Lemma \ref{lem: obs} implies that the obstruction is given by the sum over Feynman weights associated to graphs of wheels of valency $(d+1)$.
 We can identify the algebraic component, corresponding to $\theta$ in the above composition (\ref{composition}), directly from the shape of this graph. 
-The propagator and heat kernel $P_{\epsilon<L}, K_\epsilon$ labeling the edges factor as
-\begin{align*}
-P_{\epsilon<L} &= P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right),\\ 
-K_{\epsilon} &= K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
-\end{align*}
-where ${\rm id}_V, {\rm id}_{V^*}$ are the elements representing the identity maps which lie in $V \tensor V^*, V^* \tensor V$ respectively. 
-The analytic factors $P^{an}_{\epsilon<L},  K_{\epsilon}^{an}$ only depend on the dimension $d$, and we recall their explicit form in Appendix \ref{sec: feynman}. . 
+The propagator $P_{\epsilon<L}$ and heat kernel $K_\epsilon$ factor as
+\[
+P_{\epsilon<L} = P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
+\quad\quad\text{and}\quad\quad 
+K_{\epsilon} = K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right),
+\]
+where ${\rm id}_V, {\rm id}_{V^*}$ are the elements in $V \tensor V^*, V^* \tensor V$ representing the respective identity maps. 
+The analytic factors $P^{an}_{\epsilon<L},  K_{\epsilon}^{an}$ only depend on the dimension $d$, and we recall their explicit form in Appendix~\ref{sec: feynman}. 
 
 Each trivalent vertex of the wheel is also labeled by both an analytic factor and Lie algebraic factor. 
 The Lie algebraic part of each vertex can be thought of as the defining map of the representation $\rho : \fg \to {\rm End}(V)$. 
@@ -454,15 +468,8 @@ Thus, the Lie algebraic factor of the weight of the wheel is the $(d+1)$st compo
 
 By these symmetry arguments, we know that the anomaly will be of the form $\Theta = A \fj (\ch_{d+1}^{\fg}(V))$ for some number $A \in \CC$.
 In Appendix \ref{sec: feynman}, we perform an explicit calculation of this constant $A$, which depend on the specific form of the analytic propagator and heat kernel. 
-We arrive at the following.
+\end{proof}
 
-\begin{prop}\label{prop: bg anomaly}
-The charge anomaly for quantizing the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is equal to
-\[
-\Theta_V = \frac{1}{(2\pi i)^d} \fj (\ch_{d+1}^{\fg}(V)),
-\]
-where $\fj$ is the isomorphism from Proposition \ref{prop: trans j}.
-\end{prop}
 
 \subsection{The quantum observables of the $\beta\gamma$ system}
 
