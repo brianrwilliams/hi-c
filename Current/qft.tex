@@ -122,6 +122,14 @@ where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-
 If we post-compose with the map $\oloc(\sE_V)[-1] \to \Der_{\rm loc}(\sE_V)$ that sends a functional $f$ to the Hamiltonian vector field $\{f,-\}$,
 then we find the composite is precisely the action of $\sG^{sh}_X$ on fields already specified.
 
+We view the sum 
+\[
+S(\beta,\gamma) + I^{\sG}(\alpha, \beta, \gamma)
+\] 
+as the action functional of a field theory in which the $\alpha$ fields parametrize a family of field theories,
+i.e., provide a family of backgrounds for the $\beta\gamma$ system.
+We call it the equivariant classical action functional.
+
 \owen{I think we should promote this paragraph to a "nota bene" or something.} 
 
 \noindent {\bf Note:} For the remainder of the section we will restrict ourselves to the space $X =~\CC^d$. 
@@ -158,7 +166,8 @@ J^{\cl} : \Cur^{\cl} (\sG_d) \to \Obs^{\cl}_V
 on the manifold $\CC^d$.
 \end{prop}
 
-This formula for $J^{\cl}$ is identical to that of the local functional $I^\fg(\alpha)$ defining the action of $\sG_d$ on the $\beta\gamma$ system.
+This formula for $J^{\cl}$ is identical to that of the local functional $I^\fg(\alpha)$ defining the action of $\sG_d$ on the $\beta\gamma$ system,
+but it is only defined for compactly supported sections $\alpha$.
 Note an important point here: if $\alpha$ is not compactly supported, then $I^\fg(\alpha)$ is not a functional on arbitrary fields because the density $\<\beta, \alpha \cdot \gamma\>_V$ may not be integrable.
 In general, a local functional need not determine an observable on an open set since the integral may not exist.
 When $\alpha$ is compactly supported on $U$, however, then $I^\sG (\alpha)$ does determine an observable on $U$, namely the observable~$J^{\cl}(\alpha)$. 
@@ -173,26 +182,29 @@ The existence of this map of factorization algebras is controlled by the equivar
 
 The approach to quantum field theory we use follows Costello's theory of renormalization and the Batalin-Vilkovisky formalism developed in \cite{CosRenorm}.
 The formalism dictates that in order to define a quantization, it suffices to define the theory at each energy (or length) scale and to ask that these descriptions be compatible as we vary the scale.
-Concretely, this compatibility is through the {\em renormalization group (RG) flow} and is encoded by an operator $W(P_{\epsilon < L}, -)$ acting on the space of functionals. 
+Concretely, this compatibility is through an exact {\em renormalization group (RG) flow} and is encoded by an operator $W(P_{\epsilon < L}, -)$ acting on the space of functionals. 
 The functional $W(P_{\epsilon < L},-)$ is defined as a sum over weights of graphs which is how Feynman diagrams appear in Costello's formalism.
 A theory that is compatible with the RG flow is called a ``prequantization". 
 In order to obtain a quantization, one must solve the quantum master equation (QME). 
 For us, the quantum master equation encodes the failure of lifting the classical $\sG_d$-symmetry to one on the prequantization.
 
-The quantization we work with follows Costello's general approach very closely, with the slight caveat that we are working equivariantly, and so some of the fields are actually background fields. 
+The quantization we work with follows Costello's approach quite closely, 
+but we will use a sophisticated version where some of the fields are ``background'' fields and hence are not integrated over.
+This allows us to study the equivariant theory we just introduced.
+(This version is discussed in more depth in \cite{CG2}.) 
 The two main ingredients to construct the weight are the propagator $P_{\epsilon < L}$ and the classical interaction $I^{\sG}$. 
-The propagator only depends on the underlying free theory, that is, the higher dimensional $\beta\gamma$ system. 
-For the general definition, we refer the reader to can be found in Section 10 of \cite{CG2}.
+The propagator only depends on the underlying free theory, that is, the higher-dimensional $\beta\gamma$ system. 
 As above, the interaction describes how the linear currents $\sG_d$ act on the free theory. 
 
-The construction of $P_{\epsilon<L}$, which makes sense for a wide class theories of this holomorphic flavor, can be found in Section 3.2 of \cite{BWhol}.
+The construction of $P_{\epsilon<L}$, which makes sense for a wide class theories of this holomorphic flavor, can be found in Section 3.2 of~\cite{BWhol}.
 For us, it is important to know that $P_{\epsilon<L}$ satisfies the following properties:
 
 \begin{enumerate}
-\item[(1)] For $0 < \epsilon < L < \infty$ the propagator is a symmetric element
+\item[(1)] For $0 < \epsilon < L < \infty$ the propagator 
 \[
-P_{\epsilon < L} \in \sE_V \Hat{\tensor} \sE_V .
+P_{\epsilon < L} \in \sE_V \Hat{\tensor} \sE_V 
 \]
+is a symmetric under the $\ZZ/2$-action.
 Moreover, $P_{0 < \infty} = \lim_{\epsilon \to 0}\lim_{L \to \infty}$ is a symmetric element of the distributional completion $\Bar{\sE}_V \Hat{\tensor} \Bar{\sE}_V$. 
 
 \item[(2)] 
@@ -200,11 +212,11 @@ The propagator lies in the subspace
 \[
 \Omega^{d,*}(\CC^d \times \CC^d, V \tensor V^*) \oplus \Omega^{d,*}(\CC^d \times \CC^d, V^* \tensor V) \subset \sE_V \Hat{\tensor} \sE_V .
 \]
-If we coordinatize $(z,w) \in \CC^d \times \CC^d$, the propagator has the form
+If we use coordinates $(z,w) \in \CC^d \times \CC^d$, the propagator has the form
 \beqn
 P_{\epsilon<L} = P^{an}_{\epsilon<L}(z,w) \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
 \eeqn
-where ${\rm id}_V, {\rm id}_{V^*}$ are the elements representing the identity maps which lie in $V \tensor V^*, V^* \tensor V$ respectively. 
+where ${\rm id}_V, {\rm id}_{V^*}$ are the elements in $V \tensor V^*, V^* \tensor V$ that represent identity maps. 
 Moreover, $P^{an}_{0 < \infty} (z,w)$ is the Green's function for the Hodge Laplacian $\triangle_{\rm Hodge}$ on $\CC^d$:
 \[
 \triangle_{\rm Hodge} P^{an}_{0<\infty} (z,w) = \delta (z-w) .
@@ -214,7 +226,7 @@ Moreover, $P^{an}_{0 < \infty} (z,w)$ is the Green's function for the Hodge Lapl
 \[
 \triangle_{\rm Hodge} K_t + \frac{\partial}{\partial t} K_t = 0 .
 \]
-Then, $P_{\epsilon < L}$ provides a $\dbar$-homotopy between $K_\epsilon$ and $K_L$:
+Thus, $P_{\epsilon < L}$ provides a $\dbar$-homotopy between $K_\epsilon$ and $K_L$:
 \[
 \dbar P_{\epsilon < L} = K_{t=L} - K_{t=\epsilon} .
 \]
@@ -225,14 +237,17 @@ Then, $P_{\epsilon < L}$ provides a $\dbar$-homotopy between $K_\epsilon$ and $K
 %We will recall some key aspects that will be useful for our purposes. 
 %The main condition is a compatibility between the functionals $I[L]$ as one changes the length scale; this is referred to as {\em homotopy renormalization group (RG) flow}.
 
-To define the quantization, we must recall the definition of a weight of a Feynman diagram adjusted to this equivariant context.
-To simplify our discussion, we introduce the notation $\sO(\sG_d[1])$ to mean the underlying graded vector space of $\clie^*(\sG_d)$, so the symmetric algebra on the dual of $\sG_d$. 
+To define the quantization, we recall the definition of a weight of a Feynman diagram adjusted to this equivariant context.
+To simplify our discussion, we introduce the notation $\sO(\sG_d[1])$ to mean the underlying graded vector space of $\clie^*(\sG_d)$, which is the \owen{completed} symmetric algebra on the dual of~$\sG_d$. 
 
 For the free $\beta\gamma$ system, the homotopy RG flow from scale $L>0$ to $L'>0$ is an invertible linear map 
 \beqn\label{weight1}
 W(P_{L < L'} , -) : \sO(\sE) [[\hbar]] \to \sO(\sE)[[\hbar]]
 \eeqn
-defined as a sum over weights of graphs $W (P_{L<L'}, I) = \sum_{\Gamma} W_{\Gamma}(P_{L<L'}, I)$. 
+defined as a sum of weights of graphs 
+\[
+W (P_{L<L'}, I) = \sum_{\Gamma} W_{\Gamma}(P_{L<L'}, I)$. 
+\]
 Here, $\Gamma$ denotes a graph, and the weight $W_\Gamma$ associated to $\Gamma$ is defined as follows.
 One labels the vertices of valence $k$ by the $k$th homogenous component of the functional $I$. 
 The edges of the graph are labeled by the propagator $P_{L<L'}$.
@@ -242,7 +257,7 @@ Formally, we can write the weight as
 e^{W(P_{\epsilon <L}, I)} = e^{\hbar \partial_{P_{\epsilon <L}}} e^{I / \hbar}
 \]
 where $\partial_P$ denotes contraction with $P$. 
-For a more precise definition see Chapter 2 of \cite{CosRenorm}.
+(For a complete definition, see Chapter 2 of~\cite{CosRenorm}.)
 
 To define the equivariant version, we extend (\ref{weight1}) to a $\sO(\sG_d[1])$-linear map
 \[
@@ -250,17 +265,21 @@ W^{\sG} (P_{L < L'} , -) : \sO(\sE \oplus \sG_d[1]) [[\hbar]] \to \sO(\sE \oplus
 \]
 
 \begin{dfn/lem}
-The {\em prequantization} of the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is defined by the family of functionals $\{I^{\sG}[L]\}_{L > 0}$, where
+A {\em prequantization} of the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is defined by the family of functionals $\{I^{\sG}[L]\}_{L > 0}$, where
 \beqn\label{prequant}
 I^{\sG} [L] = \lim_{\epsilon \to 0} W^{\sG} (P_{\epsilon<L} , I^{\sG}) .
 \eeqn 
-This family satisfies homotopy RG flow and solves the quantum master equation modulo $\cloc^*(\sG_d)$. 
+This family satisfies homotopy RG flow and solves the quantum master equation modulo~$\cloc^*(\sG_d)$. 
 \end{dfn/lem}
 
-\begin{proof}
-The non-trivial claim to justify here is why the $\epsilon \to 0$ limit of $W^{\sG} (P_{\epsilon<L} , I^{\sG})$ exists. 
-This follows from the following two claims:
+\owen{I suppose we need to explain that very last bit but I'm not sure where it is optimal to discuss the scale $L$ BV Laplacian etc and why we work modulo that algebra \dots We also should explain the argument about the QME.}
 
+\owen{Looking later, it seems like maybe we should defer the QME comment for a few paragraphs.}
+
+\begin{proof}
+The key claim to justify is why the $\epsilon \to 0$ limit of $W^{\sG} (P_{\epsilon<L} , I^{\sG})$ exists,
+since it implies immediately that we have a family of actions satisfying homotopy RG flow. 
+This key claim follows from the following two intermediate results:
 \begin{itemize}
 \item[(1)] 
 Only one-loop graphs appear in the weight expansion $W^{\sG} (P_{\epsilon < L}, I^{\sG})$. 
@@ -273,20 +292,32 @@ Then
 exists.
 \end{itemize}
 
-Claim (1) follows from direct combinatorial observation.
-Recall that the weight is defined as a sum over {\em connected} graphs. 
-The inner edges that we can label by the propagator $P_{\epsilon < L}$ only depend on the fields $\beta\gamma$. 
-Since there are only trivalent wheels, of the form $\int \beta [\alpha, \gamma]$, where $\alpha$ is a section in $\sG_d$, the connected diagrams must be wheels with trees sticking out of them. 
+Claim (1) is a direct combinatorial observation.
+\owen{We should replicate Figure 1 here to show the combinatorics.}
+Recall that the weight is defined as a sum over {\em connected} graphs,
+and only two types of graphs appear: 
+\begin{itemize}
+\item trees with a $\gamma$ leg, a $\beta$ leg, and arbitrarily many $\alpha$ legs or
+\item trivalent wheels with just $\alpha$ legs.
+\end{itemize}
+To see this, note that the inner edges that ared labeled by the propagator $P_{\epsilon < L}$, which only depends on the fields $\beta$ and $\gamma$. 
+The trivalent vertex has the form $\int \beta [\alpha, \gamma]$.
+If one connects two vertices, one is left with a single $\gamma$ leg and a single $\beta$ leg but two $\alpha$ legs.
+Similarly, if one connects $n$ vertices, one is left  with a single $\gamma$ leg and a single $\beta$ leg but $n$ $\alpha$ legs.
+If one uses a propagator to connect $\gamma$ and $\beta$ leg, one has a wheel with $n$ $\alpha$ legs,
+and no more propagators can be attached.
 
-Now, Theorem 3.4 of \cite{BWhol} applies to show that the $\epsilon \to 0$ limit of the weights is finite. 
-This proves claim (2). 
+Claim (2) follows from Theorem 3.4 of \cite{BWhol}, which shows that the $\epsilon \to 0$ limit of the weights is finite. 
 \end{proof}
 
-As an immediate consequence of the proof, we see that only polynomial values of $\hbar$ occur in the expansion of $I^{\sG}[L]$. 
+As an immediate consequence of the proof, we see that only polynomial values of $\hbar$ occur in the expansion of $I^{\sG}[L]$, indeed the answer is linear in $\hbar$. 
 This fact will be used later on when we make sense of the ``free field realization" of the Kac-Moody granted by this equivariant quantization. 
 
 \begin{cor}
-For each $L > 0$, the functional $I^{\sG}[L]$ lies in the subspace $\sO(\sE \oplus \sG_d[1]) [\hbar] \subset \sO(\sE \oplus \sG_d[1]) [[\hbar]]$. 
+For each $L > 0$, the functional $I^{\sG}[L]$ lies in the subspace 
+\[
+\sO(\sE \oplus \sG_d[1]) \oplus \hbar \sO(\sE \oplus \sG_d[1]) \subset \sO(\sE \oplus \sG_d[1]) [[\hbar]].
+\] 
 \end{cor}
 
 To define the quantum master equation, we must introduce the BV Laplacian $\Delta_L$ and the scale $L$ BV bracket $\{-,-\}_L$. 
@@ -295,24 +326,27 @@ Similarly, $\{-,-\}_L$ is a bilinear operator on $\sO(\sE_V)$ defined by
 \[
 \{I,J\}_L = \Delta_L(IJ) - (\Delta_L I)J - (-1)^{|I|} I \Delta_L J .
 \] 
-There are equivariant version of each of these operators given by extending via $\sO(\sG_d[1])$-linearity.
+There are equivariant versions of each of these operators given by extending $\sO(\sG_d[1])$-linearly.
 For instance, the BV Laplacian is a degree one operator of the form
 \[
 \Delta_L : \sO(\sE \oplus \sG_d[1]) \to \sO(\sE \oplus \sG_d[1]) .
 \]
-We say a functional $J \in \sO(\sE_V \oplus \sG_d[1])$ satisfies the scale $L$, $\sG_d$-{\em equivariant quantum master equation} if
+A functional $J \in \sO(\sE_V \oplus \sG_d[1])$ satisfies the $\sG_d$-{\em equivariant scale $L$ quantum master equation} (QME) if
 \[
 (\dbar + \d_{\sG}) J+ \frac{1}{2} \{J, J\}_L + \hbar \Delta_L J = 0 .
 \]
+\owen{Do we want that modulo constants in $\CC$ or in  $C^*(\sG)$?}
 The main object of study in this section is the failure for the quantization $I^{\sG}[L]$ to satisfy this equivariant QME. 
 
 \begin{dfn}
-The scale $L$, $\sG_d$-{\em equivariant charge anomaly} is
+The $\sG_d$-{\em equivariant charge anomaly} at scale $L$~is
 \[
 \hbar \Theta_V [L] = (\dbar + \d_{\sG}) I^{\sG} [L] + \frac{1}{2} \{I^{\sG}[L], I^{\sG}\}_L + \hbar \Delta I^{\sG}[L] .
 \]
-As above, $\d_{\sG}$ denotes the Chevalley-Eilenberg differential $\clie^*(\sG_d) = \left(\sO(\sG_d[1]), \d_{\sG}\right)$. 
+The notation $\d_{\sG}$ means the Chevalley-Eilenberg differential $\clie^*(\sG_d) = \left(\sO(\sG_d[1]), \d_{\sG}\right)$. 
 \end{dfn}
+
+This element measures the failure of $I^{\sG}[L]$ to satisfy the scale $L$ equivariant QME.
 
 \subsection{The charge anomaly for $\beta\gamma$}
 
