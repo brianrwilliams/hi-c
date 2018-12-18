@@ -28,10 +28,13 @@ making for a very nice relationship.
 Note that it is potentially problematic to use strict invariants with a particular model for derived coinvariants of a Lie algebra,
 namely Chevalley-Eilenberg chains.)
 
+\subsection{A factorization algebra enhancement of LQT}
+
 By taking $A$ to be the cosheaf $\Omega^{0,*}_c$ on a complex manifold $X$,
-we obtain the following, whose proof is deferred to the end of this section.
+we obtain the following, whose proof is given below. 
 
 \begin{prop}
+\label{prop: cycfact}
 Let $\sG l_N$ denote the local Lie algebra $\Omega^{0,*} \otimes \gl_N$.
 For every $N$, there is a map of prefactorization algebras
 \[
@@ -210,9 +213,9 @@ The {\em local cyclic cohomology complex}  of a local algebra $\sA$ on $X$ is
 This sheaf of cochain complexes has global sections that we denote by $\Cycloc^*(\sA(X))$.
 \end{dfn}
 
-As we've mentioned, the most relevant local algebra for us will be the Dolbeault complex $\Omega^{0,*}_X$ defined on a complex manifold. 
-On this local Lie algebra is a natural degree zero cocycle in local cyclic cohomology.
-The reader may observe its very similar form to its counterpart in local Lie algebra cohomology introduced in Section \ref{sec: current}. 
+As we've mentioned, the most relevant local algebra for us will be the Dolbeault complex $\Omega^{0,*}_X$ defined on an arbitrary complex manifold. 
+For this local Lie algebra, there is a natural degree zero cocycle in local cyclic cohomology.
+The reader may observe its very similar form to its counterpart in local Lie algebra cohomology introduced in Section \ref{sec: localcocycle}. 
 
 \begin{lem}
 \label{lem: univ}
@@ -236,10 +239,20 @@ The left hand side is a total derivative, hence vanishes in the local cochain co
 \end{proof}
 
 We refer to $\Theta^\infty_d$ as a `universal' cocycle in the sense that it only depends on the complex dimension and not on any Lie algebraic data. 
+It determines a ``twist" of the prefactorization algebra 
+\[
+\Sym(\cycls(\Omega^{0,*}_c)[1])
+\]
+of Proposition \ref{prop: cycfact} by a $\CC[K]$-linear deformation of the differential $\dbar + \d_{\rm Hoch}$ to
+\[
+\dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d ,
+\] 
+where $K$ is some formal variable. 
 
-\brian{Cite Kevin and Si's work here.}
+We turn to the relationship between cyclic cocycles for a local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N \tensor \sA$ and $\gl_\infty \tensor \sA$.
 
 \begin{prop}
+\label{prop: cycloc}
 Let $\sA$ be a local algebra.
 For every $N > 0$, there is a map of sheaves
 \[
@@ -254,9 +267,16 @@ that factors through a map of sheaves
 %\]
 \end{prop}
 
-\brian{Check my shifts. We could state their result about PV fields using HKR, but I don't know if that buys us anything too amazing at this point.}
+\brian{Check my shifts.}
+%\brian{We could state their result about PV fields using HKR, but I don't know if that buys us anything too amazing at this point.}
 
-This result gives us a way to construct degree one cocycles for the local Lie algebra $\fgl_N \tensor \Omega^{0,*} = \sG l_{N}$. 
+\begin{rmk}
+A version of this result has been proved in \cite{CL1} for the case $\sA = \Omega^{0,*}(X)$ where $X$ is a Calabi-Yau manifold.
+They interpret local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of admissible deformations for holomorphic Chern-Simons on $X$. 
+They identify the cyclic side with the space of fields for Kodaira-Spencer gravity \cite{BCOV} on $X$.
+\end{rmk}
+
+Proposition \ref{prop: cycloc} gives us a way to construct degree one cocycles for the local Lie algebra $\fgl_N \tensor \Omega^{0,*} = \sG l_{N}$. 
 Indeed, the inclusion $\fgl_N \hookrightarrow \fgl_\infty$ induces a map of cochain complexes 
 \[
 \cloc^*(\gl_\infty \tensor \sA) \to \cloc^*(\gl_N \tensor \sA)
@@ -278,7 +298,7 @@ In this way, we obtain $\fgl_N$-invariant elements
 \begin{lem}
 For every $N$, the image of $\Theta_d^\infty$ under the Loday-Quillen-Tsygan map $\lqt_N^*(\Theta_d^\infty)$ is equal to the cocycle
 \[
-\fj(\theta_{d+1, N}) \in \cloc^*(\sG l_N),
+\fj(\theta_{d+1, N}) \in \cloc^*(\sG l_N)
 \]
 where $\fj$ is as in Definition \ref{dfn: j}
 \end{lem}
@@ -304,17 +324,17 @@ which maps a $(n+1)$-tuple $A_0\tensor \cdots \tensor A_d$ to
 where $(A_k)_{ij} \in A$ denotes the $ij$ matrix entry.
 
 The map on local functionals is essentially this ordinary (dual) Loday-Quillen-Tsygan map applied to the $\infty$-jets of the commutative algebra $\Omega^{0,*}$. 
-Since $\Omega^{0,*}$ is commutative, the generalized trace is simply the trace of the product so that for any $\varphi \in \Cycloc^*(\Omega^{0,*})$ of homogenous degree $n$, one has
-\[
-\lqt_N^*(\varphi) (\alpha_0,\ldots,\alpha_n) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \cdots \wedge \alpha_d) . 
-\]
+Since $\Omega^{0,*}$ is commutative, the generalized trace is simply the trace of the product.
+%so that for any $\varphi \in \Cycloc^*(\Omega^{0,*})$ of homogenous degree $n$, one has
+%\[
+%\lqt_N^*(\varphi) (\alpha_0,\ldots,\alpha_n) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \cdots \wedge \alpha_d) . 
+%\]
 %\[
 %\begin{array}{ccccc}
 %{\rm tr} & : & {\rm Mat}_N(\Omega^{0,*})^{\tensor (n+1)} & \to & (\Omega^{0,*})^{\tensor (n+1)} \\
 %& & \alpha_0 \tensor \cdots \alpha_d
 %\end{array}
 %\]
-
 We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as the local Lie algebra cocycle
 
 \begin{align*}
@@ -323,9 +343,41 @@ We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as 
 which is precisely $\fj(\theta_{d+1,N})$. 
 \end{proof}
 
+As an immediate corollary, we obtain a twisted version of Proposition \ref{prop: cycfact}.
+Indeed, the compatibility of the cyclic cocycle $\Theta^\infty_d$ and $\fj(\theta_{d+1,N})$ implies that there is a map of prefactorization algebras
+\[
+\UU_{\fj(\theta_{d+1,N})} (\gl_N) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right) .
+\]
+%\[
+%\UU_{\fj(\theta_{d+1,\infty})} (\gl_\infty) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right)
+%\]
+
 \brian{There is a statement about the hol trans invariant cyclic cochains.
 Namely that it's one dimensional generated by the higher residue.
 This is complementary to FHK and is compatible with out calculation in the appendix under the LQT map. 
 Should I include a remark about this?
 }
+
+\subsection{A noncommutative example}
+
+Suppose $(X,\omega)$ is a holomorphic symplectic manifold, and let $\{-,-\}_\omega$ be the Poisson bracket on holomorphic functions. 
+This bracket extends to one on the Dolbeault complex $\Omega^{0,*}(X)$. 
+For any $N$, we then obtain the dg Lie algebra
+\[
+\sL(X,\omega) = \left(\Omega^{0,*}(X) \tensor \fgl_N , \{-,-\}_\omega\right) .
+\]
+This is clearly a local Lie algebra. 
+
+Now, suppose $\star_\epsilon$ is a formal holomorphic deformation quantization of $(X,\omega)$. 
+This associative product on $\sO^{hol}(X)[[\epsilon]]$ extends to one on the Dolbeault complex giving
+\[
+\sA(X,\star_{\epsilon}) = (\Omega^{0,*}(X)[[\epsilon]], \star_{\epsilon})
+\]
+the structure of a dg associative algebra. 
+In fact, it is a local algebra. 
+Furthermore, for each $N$ the dg Lie algebra 
+\[
+\sA(X, \star_{\epsilon}) \tensor \fgl_N
+\]
+is a deformation of the local Lie algebra $\sL(X,\omega)$. 
 
