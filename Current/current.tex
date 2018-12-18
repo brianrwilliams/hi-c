@@ -446,9 +446,9 @@ We now analyze each term separately.
 
 Observe that for any collection of $\alpha_i \in \sG$, we have
 \begin{align*}
-\dbar(\theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) 
-&= \theta(\dbar\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) \pm \theta(\alpha_0,\dbar \partial \alpha_1,\ldots,\partial \alpha_d) \pm \cdots \pm \theta(\alpha_0,\partial \alpha_1,\ldots,\dbar\partial \alpha_d)\\
-&= \sum_{i = 0}^d \pm \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
+\dbar(\fj_X(\theta)(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) 
+&= \fj_X(\theta)(\dbar\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) \pm \fj_X(\theta)(\alpha_0,\dbar \partial \alpha_1,\ldots,\partial \alpha_d) \pm \cdots \\ & \;\;\;\; \cdots \pm \fj_X(\theta)(\alpha_0,\partial \alpha_1,\ldots,\dbar\partial \alpha_d)\\
+&= (\dbar \fj_X(\theta))(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
 \end{align*}
 because $\dbar$ is a derivation and $\theta$ wedges the form components.
 (It is easy to see this assertion when one works with inputs like in equation \eqref{jthetafactored}.)
@@ -459,10 +459,10 @@ This fact is equivalent to $\dbar \fj_X(\theta) = 0$ in local cochains.
 Similarly, observe that for any collection of $\alpha_i \in \sG$, we have
 \begin{align*}
 (\d_\fg \fj_X(\theta))(\alpha_0, \alpha_1,\ldots, \alpha_d)
-&= (\d_\fg\theta)(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) \\
+&= (\d_\fg\fj_X(\theta))(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) \\
 &= 0
 \end{align*}
-since $\theta$ is closed in~$\clies(\fg)$.
+since $\theta$ is closed for the Chevalley-Eilenberg differential for $\fg$. 
 \end{proof}
 
 As should be clear from the construction, everything here works over the site ${\rm Hol}_d$ of complex $d$-folds, and hence we use $\fj(\theta)$ to denote the local cocycle for the local Lie algebra $\sG$ on~${\rm Hol}_d$.

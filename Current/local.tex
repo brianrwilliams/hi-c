@@ -1,5 +1,3 @@
-
-
 \section{Local aspects of the higher Kac-Moody factorization algebras} 
 \label{sec: sphere ops}
 
@@ -70,6 +68,7 @@ so we obtain a higher-dimensional analog of the spherical result.
 %Furthermore, we show how the factorization product of disks with higher dimensional annuli provide the structure a ($A_\infty$-)module on the value of the factorization algebra on the disk.
 
 \owen{I want to move this hidden stuff into the next subsections or into the introduction to the paper.}
+\brian{We've now put this in the introduction.}
 
 %We will recognize this $A_\infty$-algebra as the universal enveloping algebra of an $L_\infty$ algebra which is obtained as a central extension of an algebraic version of the sphere algebra
 %\beqn\label{mapping space}
@@ -140,6 +139,7 @@ so we obtain a higher-dimensional analog of the spherical result.
 %%\end{dfn}
 
 \subsection{Compactifying the higher Kac-Moody algebras along spheres}
+\label{sec: spheres}
 
 Our approach is modeled on the construction of the affine Kac-Moody Lie algebras and their associated vertex algebras from Section 5.5 of~\cite{CG1} and~\cite{GwThesis},
 so we review the main ideas to orient the reader.
@@ -596,6 +596,7 @@ This family is dense within the pushforward $r_*\left(\UU_\theta \sG_d \right)$.
 %\end{proof}
 
 \subsubsection{A comparison with the work of Faonte-Hennion-Kapranov}
+\label{sec:FHK}
 
 There is a variant of the preceding result that is particularly appealing in light of \cite{FHK},
 which is to provide a map of factorization algebras on the positive reals
@@ -607,7 +608,8 @@ Specializing the central parameters to zero on both sides must recover the map $
 Such a map has two connected consequences:
 \begin{enumerate}
 \item It shows that the higher current Lie algebras $\Tilde{\fg}^\bullet_{d,\theta}$ of \cite{FHK} ``control'' our twisted current factorization algebras $\sG_{d,\theta}$ in the same way that the affine Kac-Moody Lie algebras control their vertex algebras.
-\item It shows that our factorization algebras $\sG_{d,\theta}$ know the information encoded by the Lie algebras $\Tilde{\fg}^\bullet_{d,\theta}$ introduced in~\cite{FHK}.
+\item It shows that our factorization algebras $\sG_{d,\theta}$ know the information encoded by the Lie algebras $\Tilde{\fg}^\bullet_{d,\theta}$.
+% introduced in~\cite{FHK}.
 \end{enumerate}
 In short this map provides a conduit for transferring insights between derived algebraic geometry (as represented by the \cite{FHK} approach) and quantum field theory (as represented by ours).
 
@@ -622,9 +624,9 @@ which were beyond our technical powers.
 Although we had found the same extensions, 
 our explanations were based on finding an explicit generalization of the $d=1$ formula,
 with confirmation arising from Feynman diagram computations.
-By contrast,  \cite{FHK} gave a beautiful structural explanation via cyclic homology,
+By contrast, Faonte, Hennion, and Kapranov give a beautiful structural explanation via cyclic homology,
 which resonates with our physical view of large $N$ limits
-(As we will )see in Section~\ref{sec: largeN}.
+We come back to this structure in more detail in Section~\ref{sec: largeN}.
 We thank Faonte, Hennion, and Kapranov for inspiring and enlightening conversations and correspondence on these subjects.
 \end{rmk}
 
@@ -696,7 +698,7 @@ We now define
 \[
 \eta(\varphi_0 a_0,\ldots,\varphi_da_d) = \sum_{i=1}^d \left(\int_U \varphi_0 \left(\iota_{E} \varphi_i \right) \varphi_1 \cdots \Hat{\varphi_i} \cdots \varphi_d\right)\left(\oint \left(a_0 a_i \d \vartheta\right) \partial a_1 \cdots \Hat{\partial a_i} \cdots \partial a_d \right)  .
 \]
-\owen{And now your explicit proof peters out. It looks like a direct computation now, but there's probably something short of writing the details that nonetheless explains where this formula comes from.}
+It is a straightforward exercise in integration by parts and the bigrading of Dolbeault forms to verify that $\eta$ cobounds the difference of the cocycles.
 \end{proof}
 
 \owen{Hidden below is the raw material of your original approach.}
@@ -810,8 +812,7 @@ by which we mean there is a sequence of multilinear maps
 \[
 \Tilde{\pi}_{\fg,d,\theta}\<n\>: \prod_{i=1}^n \Omega^*_c \otimes \Tilde{\fg}^\bullet_{d,\theta} \to r_* \sG_{d,\theta},
 \]
-that have degree $2-n$ and are skew-symmetric and intertwine with the $L_\infty$ brackets on both sides.
-(\owen{Maybe give a precise description in paper or reference something?})
+that have degree $2-n$ and are skew-symmetric and intertwine with the $L_\infty$ brackets on both sides (cf. \cite{KonSoi, LodVal}).
 The terms $\Tilde{\pi}_{\fg,d,\theta}\<n\>$ vanish for $n \neq 1, d+1$.
 The $n =1$ map fits into the commuting diagram of short exact sequences
 \[
@@ -832,8 +833,6 @@ which in fact provides a map
 \]
 of factorization algebras.
 \end{prop}
-
-\owen{Need to check I defined the map correctly.}
 
 \begin{proof}
 Note that for our $L_\infty$ algebras, the only nontrivial brackets are $\ell_1$, $\ell_2$, and $\ell_{d+1}$.
@@ -937,8 +936,6 @@ which is the enveloping $E_d$ algebra of $L^d\fg$, by Knudsen's theorem.
 
 This map has dense image in each degree, and so we see that the enveloping $E_d$ algebra of the iterated loop algebra $L^d \fg$ ``controls'' the pushforward $\vec{r}_* \UU\sG_d$ in this sense.
 
-\owen{Is this remark ok?}
-
 \begin{rmk}
 When $d=1$ one can understand the radially ordered products of operators by evaluating these current factorization algebras on nested annuli.
 For $d >1$ one can read likewise understand interesting phenomena about operator products by evaluating these current factorization algebras these polyannuli.
@@ -953,7 +950,7 @@ In particular, the connection with $E_d$ algebra indicates that there is a (poss
 In the case of the extended Lie algebras $\sG_{d,\theta}$, we note that one can pull back the extension along the map $\rho_{d,\fg}$ to determine an extension of $\Omega^*_c \otimes L^d\fg$ as a precosheaf of $L_\infty$ algebras.
 One can view this extension as extending $L^d\fg$ as an $L_\infty$ algebra:
 \[
-\CC[d-1] \to \Hat{L^d \fg}_\theta \to L^d \fg,
+\CC[d-1] \to \Tilde{L^d \fg}_\theta \to L^d \fg,
 \]
 It is essentially immediate from the definitions that the cocycle~is
 \[
@@ -970,12 +967,12 @@ one can show the following.
 For $\theta \in \Sym^{d+1}(\fg^*)^\fg$,
 there is a map of factorization algebras
 \[
-\rho_{d,\fg,\theta}: \UU(\Omega^*_c \otimes \Hat{L^d \fg}_\theta) \to \rho_* \UU_\theta \sG_d
+\rho_{d,\fg,\theta}: \UU(\Omega^*_c \otimes \Tilde{L^d \fg}_\theta) \to \rho_* \UU_\theta \sG_d
 \]
 that has dense image in each degree.
 \end{prop}
 
-In this sense the enveloping $E_d$ algebra of $\Hat{L^d \fg}_\theta$ controls the twisted enveloping factorization algebra.
+In this sense the enveloping $E_d$ algebra of $\Tilde{L^d \fg}_\theta$ controls the twisted enveloping factorization algebra.
 
 %\begin{thm} There is a dense injective map of factorization algebras on $\RR^d$: 
 %\[

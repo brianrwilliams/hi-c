@@ -65,7 +65,7 @@ we take the $\Omega^{0,*}(X^n)/C_n$ and so on.
 This result has teeth because it is possible to compute the relevant cyclic homology.
 For simplicity, consider the case where $X$ is closed, 
 so that we are working with the Dolbeault complex and hence are implicitly computing the cyclic homology of the structure sheaf $\cO$ on $X$.
-Standard results \owen{e.g., Thm 3.4.12 of Loday} then imply that
+A standard result, see for instance Theorem 3.4.12 of \cite{LodayCyclic}, then implies that
 \[
 H^*(\cycls(\Omega^{0,*}(X))) \cong \bigoplus_{n \geq 0} \left( H^*(X, \Omega^n_{hol}/\partial \Omega^{n-1}_{hol}) \oplus \bigoplus_{k > 0} H^{n-2k}_{dR}(X) \right)[-n]
 \]
@@ -135,11 +135,11 @@ and so $\cC$ is a prefactorization algebra.
 
 \subsection{Local cyclic cohomology}
 
-The concept of a local Lie algebra is the starting point for our definition of the chiral enveloping algebra and current algebra. 
-There is a similar notion obtained by replacing a (dg) Lie algebra with a (dg) associative algebra.
+The concept of a local Lie algebra is the starting point for our definition of the factorization enveloping algebra and current algebra. 
+We obtain a similar notion by replacing a (dg) Lie algebra with a (dg) associative algebra.
 
 \begin{dfn}
-A {\em local algebra} on a smooth manifold $X$ is:
+A {\em local dg algebra} on a smooth manifold $X$ is:
 \begin{enumerate}
 \item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote $\sA^{sh}$;
 \item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
@@ -156,6 +156,9 @@ For a noncommutative example, one can take the sheaf of holomorphic differential
 There is a forgetful functor from local algebras to local Lie algebras. 
 In particular, given any local algebra $\sA$ and local Lie algebra $\sL$ we obtain a new local Lie algebra $\sL \tensor \sA$.
 The underlying vector bundle is simply $L \tensor A$. 
+
+We now move on to discuss twisted versions of the relationship between cyclic homology and the Kac-Moody factorization algebra for $\fgl_\infty$. 
+For this, we need a local notion of a cyclic cocycle. 
 
 For local algebras, there is an appropriate notion of cohomology respecting the locality, analogous to local Lie algebra cohomology. 
 To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a local algebra. 
@@ -212,6 +215,7 @@ On this local Lie algebra is a natural degree zero cocycle in local cyclic cohom
 The reader may observe its very similar form to its counterpart in local Lie algebra cohomology introduced in Section \ref{sec: current}. 
 
 \begin{lem}
+\label{lem: univ}
 Fix a complex dimension $d$. 
 The functional $\Theta^\infty_d$ on $\Omega^{0,*}$ defined by
 \[
@@ -220,6 +224,15 @@ The functional $\Theta^\infty_d$ on $\Omega^{0,*}$ defined by
 is a degree zero cocycle in $\Cycloc^*(\Omega^{0,*})$. 
 \end{lem}
 \begin{proof}
+The proof is very similar to that of Proposition \ref{prop j map}. 
+Note that the differential on local cochains consists of two terms: the $\dbar$ operator and the ordinary Hochschild differential. 
+It follows from graded commutativity of the wedge product that the cochain is cyclic and closed for the Hochschild differential. 
+To see that it is closed for the other piece of the differential, observe that
+\[
+\dbar \Theta^\infty_d(\alpha_0,\cdots,\alpha_d) = \Theta^\infty_d(\dbar \alpha_0, \alpha_1,\ldots,\alpha_d) \pm \Theta_d^\infty(\alpha_0, \dbar \alpha_1,\ldots \alpha_d) \pm \cdots \pm \Theta_d^\infty(\alpha_0, \alpha_1,\ldots \dbar \alpha_d) .
+\]
+The right hand side is the cocycle $\Theta_d^\infty$ evaluated on the derivation $\dbar$ applied to the element $\alpha_0 \tensor \cdots \tensor \alpha_d$. 
+The left hand side is a total derivative, hence vanishes in the local cochain complex. 
 \end{proof}
 
 We refer to $\Theta^\infty_d$ as a `universal' cocycle in the sense that it only depends on the complex dimension and not on any Lie algebraic data. 
@@ -234,7 +247,7 @@ For every $N > 0$, there is a map of sheaves
 \] 
 that factors through a map of sheaves
 \[
-\lqt^* : \Cycloc^*(\sA)[-1] \to \lim_{N \to \infty} \cloc^*(\gl_\infty \tensor \sA)  .
+\lqt^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_\infty \tensor \sA) = \lim_{N \to \infty} \cloc^*(\gl_\infty \tensor \sA)  .
 \]
 %\[
 %\lqt : \Hat{\Sym}^{>0} \left(\Cycloc^*(\sA)[-1]\right) \to \cloc^*(\gl_\infty \tensor \sA)  
@@ -244,13 +257,18 @@ that factors through a map of sheaves
 \brian{Check my shifts. We could state their result about PV fields using HKR, but I don't know if that buys us anything too amazing at this point.}
 
 This result gives us a way to construct degree one cocycles for the local Lie algebra $\fgl_N \tensor \Omega^{0,*} = \sG l_{N}$. 
-Indeed, it tells us that the `universal' degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ pulls back to a degree one cocycle 
+Indeed, the inclusion $\fgl_N \hookrightarrow \fgl_\infty$ induces a map of cochain complexes 
+\[
+\cloc^*(\gl_\infty \tensor \sA) \to \cloc^*(\gl_N \tensor \sA)
+\]
+by pull back. 
+The universal degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ from Lemma \ref{lem: univ} thus determines a degree one cocycle 
 \[
 \lqt^*_N(\Theta_d^\infty) \in \cloc^*(\sG l_N)
 \]
 for each $N > 0$. 
 
-In fact, this procedure produces a particular class of cocycles for $\sG l_{N}$ that we have already met. 
+In fact, this procedure produces the particular class of cocycles for $\sG l_{N}$ that we have already met. 
 Note that for each $N$ and $k$, the functional $\theta_{k,N} : A \mapsto {\rm tr}_{\fgl_N} (A^k)$ defines a homogenous degree $k$ polynomial on $\fgl_N$. 
 In this way, we obtain $\fgl_N$-invariant elements
 \[
