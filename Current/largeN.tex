@@ -141,7 +141,7 @@ and so $\cC$ is a prefactorization algebra.
 The concept of a local Lie algebra is the starting point for our definition of the factorization enveloping algebra and current algebra. 
 We obtain a similar notion by replacing a (dg) Lie algebra with a (dg) associative algebra.
 
-\begin{dfn}
+\begin{dfn}\label{def: localalg}
 A {\em local dg algebra} on a smooth manifold $X$ is:
 \begin{enumerate}
 \item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote $\sA^{sh}$;
@@ -346,7 +346,7 @@ which is precisely $\fj(\theta_{d+1,N})$.
 As an immediate corollary, we obtain a twisted version of Proposition \ref{prop: cycfact}.
 Indeed, the compatibility of the cyclic cocycle $\Theta^\infty_d$ and $\fj(\theta_{d+1,N})$ implies that there is a map of prefactorization algebras
 \[
-\UU_{\fj(\theta_{d+1,N})} (\gl_N) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right) .
+\UU_{\fj(\theta_{d+1,N})} (\sG l_N) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right) .
 \]
 %\[
 %\UU_{\fj(\theta_{d+1,\infty})} (\gl_\infty) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right)
@@ -360,24 +360,111 @@ Should I include a remark about this?
 
 \subsection{A noncommutative example}
 
-Suppose $(X,\omega)$ is a holomorphic symplectic manifold, and let $\{-,-\}_\omega$ be the Poisson bracket on holomorphic functions. 
-This bracket extends to one on the Dolbeault complex $\Omega^{0,*}(X)$. 
-For any $N$, we then obtain the dg Lie algebra
-\[
-\sL(X,\omega) = \left(\Omega^{0,*}(X) \tensor \fgl_N , \{-,-\}_\omega\right) .
-\]
-This is clearly a local Lie algebra. 
+%Suppose $(X,\omega)$ is a holomorphic symplectic manifold, and let $\{-,-\}_\omega$ be the Poisson bracket on holomorphic functions. 
+%This bracket extends to one on the Dolbeault complex $\Omega^{0,*}(X)$. 
+%For any $N$, we then obtain the dg Lie algebra
+%\[
+%\sL(X,\omega) = \left(\Omega^{0,*}(X) \tensor \fgl_N , \{-,-\}_\omega\right) .
+%\]
+%This is clearly a local Lie algebra. 
 
-Now, suppose $\star_\epsilon$ is a formal holomorphic deformation quantization of $(X,\omega)$. 
+The main objects that have appeared in this section so far are the cyclic chains and cochains of the commutative dg algebra $\Omega^{0,*}(X)$. 
+In this subsection, we display a variant of the above examples where we introduce some noncommutativity into the local algebra. 
+The primary interest in this class of examples is that we expect them to appear as a symmetries of reductions of supergravity and $M$-theory. 
+A program for studying the superstring through the lens of holomorphic field theory has been initiated and developed in the papers of Costello and Li in \brian{finish} \cite{...}.
+We hope to return to studying \brian{finish}, but for now we hope this example elucidates the flexibility of our constructions. 
+
+Again, suppose $X$ is a complex manifold. 
+As above, for each $N$ we can consider the corresponding local Lie algebra $\sG l_N$ on $X$, or its limit $\sG l_\infty$. 
+
+If $X$ is additionally holomorphic symplectic, we obtain a deformation of this family of local Lie algebras. 
+Suppose that $\star_\epsilon$ is a formal holomorphic deformation quantization of $(X,\omega)$. 
+This is an $\epsilon$-dependent associative product on holomorphic functions 
+\[
+\star_\epsilon : \sO^{hol}(X) \times \sO^{hol}(X) \to \sO^{hol}(X)[[\epsilon]]
+\]
+where, term-by-term in $\epsilon$, the product is given by a holomorphic bidifferential operator. 
 This associative product on $\sO^{hol}(X)[[\epsilon]]$ extends to one on the Dolbeault complex giving
 \[
-\sA(X,\star_{\epsilon}) = (\Omega^{0,*}(X)[[\epsilon]], \star_{\epsilon})
+\sA = (\Omega^{0,*}(X)[[\epsilon]], \star_{\epsilon})
 \]
 the structure of a dg associative algebra. 
-In fact, it is a local algebra. 
-Furthermore, for each $N$ the dg Lie algebra 
+In fact, $\sA$ is essentially a local algebra in the sense of Definition \ref{def: localalg}. 
+The only subtlety is that $\sA$ is not given by the sections of a finite rank vector bundle.
+However, it is a pro-local algebra in the sense that it can be expressed as a limit of local algebras
 \[
-\sA(X, \star_{\epsilon}) \tensor \fgl_N
+\sA = \lim_{k \to \infty} \sA / \epsilon^{k+1} 
+\] 
+where $\sA / \epsilon^{k+1}$ is the local algebra given by sections of the finite rank vector bundle $\left(\Wedge^* T^{0,1*}\right) \tensor \ul{\CC[\epsilon]/\epsilon^{k+1}} = \left(\Wedge^* T^{0,1*}\right)^{\oplus k}$.
+The algebra structure on $\sA / \epsilon^{k+1}$ is given by the reduction of $\star_{\epsilon}$ modulo $\epsilon^{k+1}$. 
+
+For each $N$, the local Lie algebra 
+\[
+\sA \tensor \fgl_N
 \]
-is a deformation of the local Lie algebra $\sL(X,\omega)$. 
+reduces modulo $\epsilon$ to the local Lie algebra $\sG l_N = \Omega^{0,*}_X \tensor \gl_N$.
+In other words, $\sA \tensor \fgl_N$ is a deformation of $\sG l_N$. 
+
+In this context, there are two (untwisted) factorization algebras on $X$ of interest. 
+The first is the usual Kac-Moody factorization algebra obtained as a factorization enveloping algebra of the local Lie algebra $\sA \tensor \fgl_N$:
+\[
+\UU(\sA \tensor \fgl_N) = {\rm C}^{\rm Lie}_*(\sA \tensor \gl_N)
+\]
+or its limit $\UU(\sA \tensor \fgl_\infty)$.
+The second is the symmetric algebra of the (shift of the) cyclic chains of the compactly supported sections of the local algebra $\sA$
+\[
+{\rm Sym}(\cycls(\sA_c)[1]) .
+\]
+The appearance of these factorization algebras is completely analogous to the setting of Proposition \ref{prop: cycfact}.
+In fact, there is a Loday-Quillen-Tsygan map
+\[
+\lqt_N: \UU (\sA \tensor \fgl_N) \to \Sym(\cycls(\sA_c)[1])
+\]
+which factors through a map $\UU (\sA \tensor \fgl_\infty) \to \Sym(\cycls(\sA_c)[1])$. 
+The proof of these facts is completely similar to that of Proposition \ref{prop: cycfact}. 
+
+For symmetries of a quantum field theory we have seen numerous times that a twisted version of the factorization algebras must be introduced. 
+Our current methods do not give any workable description of the full cohomology of the local local Lie algebra $\sA \tensor \fgl_N$ for finite $N$.
+With the aid of the Loday-Quillen-Tsygan map, however, we can describe a piece of the cohomology arising from the $N\to \infty$ limit in the following way. 
+
+Setting $\epsilon = 0$, the sheaf $\sA^{sh} / \epsilon$ is quasi-isomorphic to the sheaf of holomorphic functions $\sO^{hol}_X$. 
+The Hochschild-Kostant-Rosenberg theorem states that there is a quasi-isomorphism of sheaves
+\[
+\cycls (\sO^{hol}_X) \simeq \left(t^{-1} \Omega^{-*,hol}_X [t^{-1}] [-2], t \partial\right) .
+\]
+Here, $\Omega^{-*,hol}_X$ denotes the sheaf of negatively graded holomorphic de Rham forms and $\partial$ is the holomorphic de Rham operator. 
+Moreover, $t$ is a formal parameter of cohomological degree $2$. 
+Putting all this together, we see that
+\[
+t^{-k-1} \Omega^{l,hol}_X \subset t^{-1} \Omega^{-*,hol}_X [t^{-1}] [-2]
+\]
+sits in degree $-2k - l$ inside the complex on the right hand side. 
+
+When we turn on the $\epsilon$-dependent deformation this complex in turn gets deformed. 
+Indeed, there is a quasi-isomorphism of sheaves
+\[
+\cycls (\sA) \simeq \left(t^{-1} \Omega^{-*,hol}_X [t^{-1}] [[\epsilon]] [-2], t \partial + \epsilon L_\pi \right) 
+\] 
+where $L_\pi$ denotes the Lie derivative with respect to the Poisson tensor $\pi$ corresponding to the symplectic form. 
+This piece of the differential appears in a more familiar complex, namely the complex 
+\[
+\left(\Omega^{-*}(X), \sL_\pi\right)
+\]
+computing the Poisson homology of $X$
+Since $X$ is actually symplectic, this Poisson homology is one-dimensional concentrated in the lowest degree. 
+That is, there is a quasi-isomorphism $\left(\Omega^{-*}(X), \sL_\pi\right) \simeq \CC [d]$. 
+The generator for this cohomology is given by the holomorphic volume form $\omega^{d/2} \in \Omega^{d,hol}(X)$ determined by the holomorphic symplectic form. 
+Combining this with the HKR description of the cyclic homology, we find that there is a quasi-isomorphism of sheaves
+\[
+\cycls (\sA) = \ul{t^{-1} \CC[t^{-1}] [[\epsilon]]}_X [-2]  .
+\]
+The right hand side is the constant sheaf with fiber $t^{-1} \CC[t^{-1}] [[\epsilon]] [-2]$.  
+
+\begin{lem}
+There is a quasi-isomorphism of sheaves
+\[
+\Cycloc^*(\sA) \simeq \ul{\CC [t] [[\epsilon]]}_{X} [2d]
+\]
+\end{lem}
+
 
