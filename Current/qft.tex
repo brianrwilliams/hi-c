@@ -154,7 +154,8 @@ the factorization algebra $\Obs_V^{\cl}$ is equipped with a 1-shifted Poisson br
 In Section \ref{sec: envelopes} we also discussed how a local Lie algebra determines a $P_0$-factorization algebra via its classical current algebra. 
 The classical Noether's theorem, as proved in Theorem 11.0.1.1 of \cite{CG2}, then implies that $I^{\sG}$ determines a map between these factorization algebras. 
 
-\begin{prop}[\cite{CG2}](Classical Noether's Theorem)
+\begin{prop}[\cite{CG2}, Classical Noether's Theorem]
+\label{prop:CNT}
 The assignment that sends an element $\alpha \in \Omega^{0,*}_c(U, \fg)$ to the observable
 \[
 \gamma \tensor \beta \in \Omega^{0,*}(U, V) \tensor \Omega^{d,*}(U, V^*) \mapsto \int_U \<\beta, \alpha \cdot \gamma\>_V
@@ -524,23 +525,27 @@ and so we have a quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}
 %The second approach is what we will explain here, as it is the one that extends to the equivariant setting.
 
 \begin{dfn}
-The quantum observables supported on $U \subset \CC^d$ is the cochain complex
+The {\em smoothed quantum observables} supported on $U \subset \CC^d$ is the cochain complex
 \[
 \Tilde{\Obs}^\q_V(U) = \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar + \hbar \Delta\right) .
 \]
 \end{dfn}
 
-By Theorem 5.3.10 of \cite{GwThesis} the assignment $U \mapsto \Obs^\q_V(U)$ defines a factorization algebra on $\CC^d$. 
-Just as in the classical case, there is an induced quasi-isomorphism of factorization algebras $\Tilde{\Obs}^\q_{V} \xto{\simeq} \Obs^\q_V$. 
-This is proved in Lemma 11.24 of \cite{GGW}. 
+By Theorem 5.3.10 of \cite{GwThesis}, the assignment $U \mapsto \Obs^\q_V(U)$ defines a factorization algebra on $\CC^d$. 
+Just as in the classical case, there is an induced quasi-isomorphism of factorization algebras $\Tilde{\Obs}^\q_{V} \xto{\simeq} \Obs^\q_V$,
+as shown in the proof of Lemma 11.24 in~\cite{GGW}. 
+Hence this smoothed version $\Tilde{\Obs}^\q_{V}$ agrees with the construction $\Obs^\q_V$ of~\cite{CG2}.
 
 \subsection{Free field realization}
 
-We now appeal to a general result about lifting the classical Noether map from the current algebra $\Cur^{\cl}(\sG_d)$ to the factorization algebra of quantum observables. 
-This factorization enhancement of the quantum Noether theorem is Theorem 12.1.0.2 \cite{CG2}.
-The general situation for which the result is stated is for an action of a local Lie algebra $\sL$ on a classical theory. 
-The factorization enhancement of the quantum Noether theorem says that if $\Theta$ is the obstruction to solving the the $\sL$-equivariant quantum master equation, then we have a map from the {\em twisted} quantum current algebra $\Cur^\q_{\Theta}(\sL)$ to the observables of the quantum theory. 
-Thus, applied to our situation, we have the following consequence of our Feynman diagram calculation above. 
+Proposition~\ref{prop:CNT} provides a factorization version of the classical Noether construction: 
+there is a map of factorization algebras from the current algebra $\Cur^{\cl}(\sG_d)$ to the factorization algebra of classical observables $\Obs^\cl_V$.
+It is natural to ask whether this map lifts along the ``dequantization'' map $\Obs^\q_V \to \Obs^\cl_V$, or
+in other words, whether quantization preserves the symmetries.
+Theorem 12.1.0.2 \cite{CG2} provides a general result about lifting classical Noether maps.
+It says that if $\Theta$ is the obstruction to solving the the $\sL$-equivariant quantum master equation, 
+then there is a map from the {\em twisted} quantum current algebra $\Cur^\q_{\Theta}(\sL)$ to the observables of the quantum theory. 
+Thus, applied to our situation, it provides the following consequence of our Feynman diagram calculation above. 
 
 \begin{prop}
 Let $\hbar \Theta_V$ be the obstruction to satisfying the $\sG_d$-equivariant quantum master equation. 
@@ -557,27 +562,29 @@ that fits into the diagram of factorization algebras
 \]
 \end{prop}
 
-The quantum current algebra $\Cur^\q_{\hbar \Theta_V}$ is a factorization algebra on $\CC^d$ taking values in $\CC[\hbar]$. 
-It therefore makes sense to specialize the value of $\hbar$. 
-The convention we take is to specialize the value of $\hbar$ to be
+The quantum current algebra $\Cur^\q_{\hbar \Theta_V}$ is a $\CC[\hbar]$-linear factorization algebra on $\CC^d$. 
+It therefore makes sense to specialize the value of $\hbar$;
+our convention is to take
 \[
 \hbar = (2 \pi i)^d .
 \]
-
-From our calculation of the charge anomaly $\Theta_V$ above, once we specialize $\hbar$ we can realize the current algebra as an enveloping factorization algebra
+From our calculation of the charge anomaly $\Theta_V$ above, once we specialize $\hbar$, we can realize the current algebra as an enveloping factorization algebra
 \[
 \left. \Cur^\q_{\hbar \Theta_V} (\sG_d) \right|_{\hbar = (2\pi i)^d} \cong \UU_{\ch_{d+1}^\fg(V)} (\sG_d) .
 \]
 Thus, as an immediate corollary of the above proposition, $J^\q$ specializes to a map of factorization algebras
 \beqn\label{free field}
-J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d} .
+J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d} .
 \eeqn
-We interpret this as a {\em free field realization} of the higher Kac-Moody factorization algebra. 
-Indeed, this is an embedding of the Kac-Moody algebra into the factorization algebra of observables of the free theory described classically by the $\beta\gamma$ system. 
+\owen{I changed $4\pi$ to $2\pi i$ on the RHS. Hope that's OK!}
+We interpret this result as a {\em free field realization} of the higher Kac-Moody factorization algebra: 
+the map embeds the higher Kac-Moody algebra into the quantum observables of a free theory, namely the $\beta\gamma$ system. 
 
-We obtain a more concrete result once we specialize to the sphere operators. 
-To state this, we introduce a dg associative algebra closely related to the $\beta\gamma$ system. 
-Recall, the algebra $A_d$ which provides a dg model for functions on punctured affine space $\AA^d$.
+This formulation may seem abstract because it uses factorization algebras,
+but we obtain a more concrete result once we specialize to the sphere operators. 
+It realizes a representation of $\Tilde{\fg}^\bullet_{d,\theta}$ inside a Weyl algebra determined by  the $\beta\gamma$ system.
+
+Recall from Section~\ref{sec:functionsofpunctureddspace} the algebra $A_d$ that provides a dg model for functions on punctured affine space $\AA^d$.
 Consider the dg vector space
 \[
 A_d \tensor (V \oplus V^*[d-1])
@@ -585,14 +592,25 @@ A_d \tensor (V \oplus V^*[d-1])
 where $V$ is our $\fg$-representation. 
 The dual pairing between $V$ and $V^*$ combined with the higher residue defines a symplectic structure $\omega_V$ on this dg vector space via
 \[
-\omega_V(\alpha \tensor v, \beta \tensor v^*) = \<v, v^*\>_V \oint_{S^{2d-1}} \alpha \wedge \beta \d^d z .
+\omega_V(\alpha \tensor v, \beta \tensor v^*) = \<v, v^*\>_V \oint_{S^{2d-1}} \alpha \wedge \beta\, \d^d z .
 \]
-From this symplectic dg vector space, we define the dg Lie algebra $\sH_V$ as a central extension
+This structure leads to the following dg version of the usual canonical quantization story.
+
+\begin{dfn}
+The {\em Heisenberg dg Lie algebra} $\sH_V$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
 \[
-\CC \to \sH_V \to A_d \tensor (V \oplus V^*[d-1]) .
+\CC \to \sH_V \to A_d \tensor (V \oplus V^*[d-1]) 
 \]
-The $2$-cocycle defining this extension is simply $\omega_V$. 
-Thus, $\sH_V$ is the Heisenberg Lie algebra associated to the symplectic dg vector space. 
+determined by the $2$-cocycle $\omega_V$. 
+Explicitly, the nontrivial bracket is
+\[
+[\alpha \otimes v, \beta \otimes v^*] = \<v, v^*\>_V \oint_{S^{2d-1}} \alpha \wedge \beta\, \d^d z,
+\]
+where $v \in V$ and $v^* \in V^*[d-1]$.
+\end{dfn}
+
+The universal enveloping algebra $U(\sH_V)$ is naturally encoded by the locally constant factorization algebra on $\RR$ 
+the enveloping factorization algebra of $\sH_V$
 
 If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody factorization algebras. 
 This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra $U(\sH_V)$ of the Heisenberg Lie algebra.  
