@@ -339,7 +339,7 @@ A functional $J \in \sO(\sE_V \oplus \sG_d[1])$ satisfies the $\sG_d$-{\em equiv
 The main object of study in this section is the failure for the quantization $I^{\sG}[L]$ to satisfy this equivariant QME. 
 
 \begin{dfn}
-The $\sG_d$-{\em equivariant charge anomaly} at scale $L$~is
+The $\sG_d$-{\em equivariant charge anomaly} at scale $L$, denoted $ \Theta_V [L]$, is defined~by
 \[
 \hbar \Theta_V [L] = (\dbar + \d_{\sG}) I^{\sG} [L] + \frac{1}{2} \{I^{\sG}[L], I^{\sG}\}_L + \hbar \Delta I^{\sG}[L] .
 \]
@@ -355,11 +355,11 @@ In general, since the effective field theory defining the prequantization $\{I^{
 As an immediate corollary of Proposition 4.4 of \cite{BWhol} for holomorphic theories on $\CC^d$, we find that only a simple class of diagrams appear in the anomaly. 
 
 \begin{lem}\label{lem: obs}
-Let $\Theta_V[L]$ be the $\sG_d$-equivariant charge anomaly for the $\beta\gamma$ system with values in $V$.
+Let $\Theta_V[L]$ be the $\sG_d$-equivariant charge anomaly for the $\beta\gamma$ system with values in~$V$.
 Then 
 \begin{itemize}
 \item[(1)] the limit $\Theta_V = \lim_{L \to 0} \Theta_V[L]$ exists and is a {\em local} cocycle so that $\Theta_V \in \cloc^*(\sG_d)$.
-\item[(2)] $\Theta$ is computed by the following limit
+\item[(2)] This element $\Theta$ is computed by the following limit
 \[
 \hbar \Theta_V = \frac{1}{2} \lim_{L \to 0} \lim_{\epsilon \to 0} \sum_{\Gamma \in {\rm Wheel}_{d+1} \; , e} W_{\Gamma, e}(P_{\epsilon <L}, K_\epsilon, I^{\sG}) ,
 \] 
@@ -418,8 +418,16 @@ The charge anomaly for quantizing the $\sG_d$-equivariant $\beta\gamma$ system o
 \[
 \Theta_V = \frac{1}{(2\pi i)^d} \fj (\ch_{d+1}^{\fg}(V)),
 \]
-where $\fj$ is the isomorphism from Proposition \ref{prop: trans j}.
+where $\fj$ is the isomorphism from Proposition~\ref{prop: trans j}.
 \end{prop}
+
+Let us unravel $\Theta_V$ in even more explicit terms:
+for $\alpha_0$, \dots, $\alpha_d$ compactly-supported, $\fg$-valued Dolbeault forms,
+\[
+\Theta_V(\alpha_0, \ldots, \alpha_d) = \frac{1}{(2\pi i)^d} \int_{\CC^d} \Tr_V(\rho(\alpha_0) (\rho(\partial\alpha_1) \cdots \rho(\partial \alpha_d))
+\]
+where $\rho: \fg \to \End(V)$ denotes the action of $\fg$ on~$V$.
+\owen{Maybe add some comment about how this resembles ABJ?}
 
 Based on our analysis of the local Lie algebra cohomology of $\sG_d$, 
 it is clear that the obstruction must have this form, up to a scalar multiple. 
@@ -474,38 +482,44 @@ In Appendix \ref{sec: feynman}, we perform an explicit calculation of this const
 \subsection{The quantum observables of the $\beta\gamma$ system}
 
 Before deducing the main consequence of the anomaly calculation, we introduce the quantum observables of the $\beta\gamma$ system. 
-The quantum observables $\Obs^{\q}_V$ define a quantization of the classical observables in the sense that there is an isomorphism
+The quantum observables $\Obs^{\q}_V$ define a quantization of the classical observables in the sense that
+as $\hbar \to 0$, they degenerate to $\Obs^\cl_V$.
+More precisely, 
 \[
-\Obs^{\cl}_V \cong \Obs^\q_V \tensor_{\CC[\hbar]} \CC_{\hbar = 0} .
+\Obs^{\cl}_V \cong \Obs^\q_V \tensor_{\CC[\hbar]} \CC[\hbar]/(\hbar).
 \]
-In practice, the BV formalism suggests that the quantum observables arise by 
+In practice, the Costello's version of the BV formalism suggests that the quantum observables arise by 
 \begin{enumerate}
 \item[(a)] tensoring the underlying graded vector space of $\Obs^\cl_n$ with $\CC[[\hbar]]$ and
 \item[(b)] deforming the differential to $\dbar +\hbar \Delta_L$, where $\Delta_L$ is the BV Laplacian.
 \end{enumerate}
-This actually defines a family of quantum observables, one for each length scale $L$. 
+This construction actually defines a family of quantum observables, one for each length scale $L$. 
 A main idea of \cite{CG2} says that by considering the collection of functionals at all length scales $L$, the observables $\Obs^\q_V$ still define a factorization algebra. 
 
-The fact that this works is quite subtle, since naively the differential $\Delta_L$ seems to have support on all of $\CC^d$, so it's not obvious how to define the corestriction maps of the factorization algebra. 
+The fact that this works is quite subtle, since naively the differential $\Delta_L$ seems to have support on all of $\CC^d$, so it is not obvious how to define the corestriction maps of the factorization algebra. 
 In the case of free theories, such as the $\beta\gamma$ system, there is a way to circumvent this difficulty. 
-One can work with a smaller class of observables --- such as those arising from smooth functionals, not distributional ones.
-Then, one can make sense of the limit $\Delta = \lim_{L \to 0} \Delta_L$, and just use this single BV Laplacian. 
-This approach is developed in detail for the free $\beta\gamma$ system on $\CC$ in Chapter 5, Section 3 of \cite{CG1}. 
-The case for $\CC^d$ is similar. 
+One can work with an {\it a priori} smaller class of observables, namely those arising from smooth functionals, not distributional ones.
+(A physicist might say we used ``smeared'' observables.)
+The limit $\Delta = \lim_{L \to 0} \Delta_L$ then makes sense, and we just use this BV Laplacian and work at scale~0. 
+This approach is developed in detail for the free $\beta\gamma$ system on $\CC$ in Chapter 5, Section 3 of~\cite{CG1}. 
+The case for $\CC^d$ is essentially identical. 
+This approach yields a factorization algebra~$\Tilde{\Obs}^\q_V$, as we now explain.
 
-A classical result of Atiyah-Bott, Proposition 6.1 in \cite{AB}, implies that for any complex manifold $U$ the subcomplex
+As shown in~\cite{CG1},
+a classical result of Atiyah and Bott~\cite{AB} can be extended to show that for any complex manifold $U$, 
+the inclusion
 \[
-\Omega^{p,*}_c(U) \subset \Bar{\Omega}^{p,*}(U)
+\Omega^{p,*}_c(U) \subset \Bar{\Omega}^{p,*}_c(U)
 \]
-is quasi-isomorphic to the full complex of distributional forms. 
-This follows from ellipticity of the Dolbeault complex.
-Consequently we can introduce the qausi-isomorphic subcomplex 
+of compactly-supported smooth Dolbeault forms into compactly-supported smooth distributional Dolbeault forms is a quasi-isomorphism. 
+Consequently we can introduce the quasi-isomorphic subcomplex 
 \[
 \begin{tikzcd}    
  \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
 \end{tikzcd}
 \]
-The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ still defines a factorization algebra on $\CC^d$, and we have a resulting quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
+The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ defines a factorization algebra on $\CC^d$, 
+and so we have a quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
 
 %The second approach is what we will explain here, as it is the one that extends to the equivariant setting.
 
