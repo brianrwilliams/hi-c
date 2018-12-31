@@ -609,13 +609,16 @@ Explicitly, the nontrivial bracket is
 where $v \in V$ and $v^* \in V^*[d-1]$.
 \end{dfn}
 
-The universal enveloping algebra $U(\sH_V)$ is naturally encoded by the locally constant factorization algebra on $\RR$ 
-the enveloping factorization algebra of $\sH_V$
-
-If we restrict the factorization algebra $\Obs^\q_{V}$ to spheres $S^{2d-1}$, we obtain a locally constant factorization algebra, analogous to the case of the spherical algebra of the Kac-Moody factorization algebras. 
-This locally constant factorization algebra is equivalent, as $E_1$-algebras, to the dg associative algebra obtained as the enveloping algebra $U(\sH_V)$ of the Heisenberg Lie algebra.  
-
-Upon compactification of the quantum Noether map along the sphere $S^{2d-1}$ we obtain the following. 
+The universal enveloping algebra $U(\sH_V)$ is a dg Weyl algebra,
+a version of differential operators on the mapping space $\Map(S^{2d-1},V)$.
+By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_V)$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_V)$,
+a locally constant factorization algebra on $\RR$.
+Following our approach in Section~\ref{sec: sphere ops},
+one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_V)$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+Upon compactification along the sphere $S^{2d-1}$, 
+the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_V)$.
+\owen{Is that true?}
+Hence we obtain the following.
 
 \begin{cor} 
 The map (\ref{free field}) determines a map of $E_1$-algebras 
@@ -624,22 +627,22 @@ The map (\ref{free field}) determines a map of $E_1$-algebras
 \eeqn
 \end{cor}
 
-We denote the restriction by $\oint_{S^{2d-1}}$ since the value of the pushforward factorization algebra along radial projection on open intervals coincides with the ``sphere observables".
+\owen{Let's write an explicit formula.}
 
 \begin{proof}
 Let $r : \CC^d \setminus 0 \to \RR_{>0}$ be the radial projection. 
 Consider the induced map
 \[
-r_* J^\q :  r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to  r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}  .
+r_* J^\q :  r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to  r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}  .
 \]
 The classical $\beta\gamma$ system on $\CC^d$ (and $\CC^d \setminus \{0\})$ is manifestly equivariant for the group $U(d)$ given by rotating the plane. 
 This symmetry persists upon quantization, since the BV Laplacian is also compatible with this action. 
-Thus, we can consider the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of the $U(d)$-eigenspaces. 
+Thus, we can consider the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of the $U(d)$-eigenspaces. 
 
 Similarly, the Kac-Moody factorization algebra $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ is $U(d)$-equivariant. 
 The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section~\ref{sec: spheres}. 
 
-By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (4\pi)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
+By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
 To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_V)$. 
 It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$ algebras. 
 
