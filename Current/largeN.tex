@@ -224,9 +224,9 @@ This sheaf of cochain complexes has global sections that we denote by~$\Hochloc^
 Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA)$ as follows.
 It is a polynomial functional \owen{you took product, so I think we mean "power series"} on $\sA$ that is a finite sum of functionals of the form
 \[
-\alpha_1 \tensor \cdots \alpha_k \mapsto \int_X \omega_X \, D_1(\alpha_1) \cdots D_k(\alpha_k)
+\alpha_1 \tensor \cdots \otimes \alpha_k \mapsto \int_X  D_1(\alpha_1) \cdots D_k(\alpha_k) \, \omega_X
 \]
-where $\omega_X$ is a volume form on $X$ and each $D_i$ is a differential operator from $\sA$ to~$C^\infty(X)$. 
+where each $D_i$ is a differential operator from $\sA$ to~$C^\infty(X)$ and $\omega_X$ is a smooth top form on~$X$. 
 
 There is also a cyclic version of the above. 
 For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$,
@@ -246,21 +246,24 @@ The {\em local cyclic cochains} of a local algebra $\sA$ on $X$ is
 This sheaf of cochain complexes has global sections that we denote by~$\Cycloc^*(\sA(X))$.
 \end{dfn}
 
-As we have mentioned, the most relevant local algebra for us will be the Dolbeault complex $\Omega^{0,*}_X$ defined on an arbitrary complex manifold. 
+The reader will observe its similarity to its counterpart in local Lie algebra cohomology introduced in Section~\ref{sec: localcocycle}. 
+
+To make things concrete, 
+consider the most relevant local algebra for us: the Dolbeault complex $\Omega^{0,*}_X$ on a complex manifold $X$. 
 For this local Lie algebra, there is a natural degree zero cocycle in local cyclic cohomology.
-The reader may observe its very similar form to its counterpart in local Lie algebra cohomology introduced in Section \ref{sec: localcocycle}. 
 
 \begin{lem}
 \label{lem: univ}
-Fix a complex dimension $d$. 
-The functional $\Theta^\infty_d$ on $\Omega^{0,*}$ defined by
+In complex dimension $d$, 
+the functional on $\Omega^{0,*}$ defined by
 \[
-\Theta^\infty_d : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d
+\Theta^\infty_d (\alpha_0 \tensor \cdots \tensor \alpha_d) = \alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d
 \]
 is a degree zero cocycle in $\Cycloc^*(\Omega^{0,*})$. 
 \end{lem}
+
 \begin{proof}
-The proof is very similar to that of Proposition \ref{prop j map}. 
+The proof is similar to that of Proposition \ref{prop j map}. 
 Note that the differential on local cochains consists of two terms: the $\dbar$ operator and the ordinary Hochschild differential. 
 It follows from graded commutativity of the wedge product that the cochain is cyclic and closed for the Hochschild differential. 
 To see that it is closed for the other piece of the differential, observe that
@@ -268,35 +271,24 @@ To see that it is closed for the other piece of the differential, observe that
 \dbar \Theta^\infty_d(\alpha_0,\cdots,\alpha_d) = \Theta^\infty_d(\dbar \alpha_0, \alpha_1,\ldots,\alpha_d) \pm \Theta_d^\infty(\alpha_0, \dbar \alpha_1,\ldots \alpha_d) \pm \cdots \pm \Theta_d^\infty(\alpha_0, \alpha_1,\ldots \dbar \alpha_d) .
 \]
 The right hand side is the cocycle $\Theta_d^\infty$ evaluated on the derivation $\dbar$ applied to the element $\alpha_0 \tensor \cdots \tensor \alpha_d$. 
-The left hand side is a total derivative, hence vanishes in the local cochain complex. 
+The left hand side is a total derivative and hence vanishes in the local cochain complex. 
 \end{proof}
 
-We refer to $\Theta^\infty_d$ as a `universal' cocycle in the sense that it only depends on the complex dimension and not on any Lie algebraic data. 
-It determines a ``twist" of the prefactorization algebra 
-\[
-\Sym(\cycls(\Omega^{0,*}_c)[1])
-\]
-of Proposition \ref{prop: cycfact} by a $\CC[K]$-linear deformation of the differential $\dbar + \d_{\rm Hoch}$ to
-\[
-\dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d ,
-\] 
-where $K$ is some formal variable. 
-
-We turn to the relationship between cyclic cocycles for a local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N \tensor \sA$ and $\gl_\infty \tensor \sA$.
+We now turn to the relationship between cyclic cocycles for a local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N( \sA)$ and~$\gl_\infty (\sA)$.
 
 \begin{prop}
 \label{prop: cycloc}
 Let $\sA$ be a local algebra.
-For every $N > 0$, there is a map of sheaves
+For every positive integer $N$, there is a map of sheaves
 \[
-\lqt_N^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_N \tensor \sA) 
+\lqt_N^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_N( \sA)) 
 \] 
 that factors through a map of sheaves
 \[
-\lqt^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_\infty \tensor \sA) = \lim_{N \to \infty} \cloc^*(\gl_\infty \tensor \sA)  .
+\lqt^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_\infty( \sA)) = \lim_{N \to \infty} \cloc^*(\gl_N( \sA))  .
 \]
 %\[
-%\lqt : \Hat{\Sym}^{>0} \left(\Cycloc^*(\sA)[-1]\right) \to \cloc^*(\gl_\infty \tensor \sA)  
+%\lqt : \Hat{\Sym}^{>0} \left(\Cycloc^*(\sA)[-1]\right) \to \cloc^*(\gl_\infty( \sA))  
 %\]
 \end{prop}
 
@@ -312,7 +304,7 @@ They identify the cyclic side with the space of fields for Kodaira-Spencer gravi
 Proposition \ref{prop: cycloc} gives us a way to construct degree one cocycles for the local Lie algebra $\fgl_N \tensor \Omega^{0,*} = \sG l_{N}$. 
 Indeed, the inclusion $\fgl_N \hookrightarrow \fgl_\infty$ induces a map of cochain complexes 
 \[
-\cloc^*(\gl_\infty \tensor \sA) \to \cloc^*(\gl_N \tensor \sA)
+\cloc^*(\gl_\infty( \sA)) \to \cloc^*(\gl_N( \sA))
 \]
 by pull back. 
 The universal degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ from Lemma \ref{lem: univ} thus determines a degree one cocycle 
@@ -335,6 +327,10 @@ For every $N$, the image of $\Theta_d^\infty$ under the Loday-Quillen-Tsygan map
 \]
 where $\fj$ is as in Definition \ref{dfn: j}
 \end{lem}
+
+In a sense $\Theta^\infty_d$ is the ``universal'' cocycle --- in that it only depends on the complex dimension and not on any Lie algebraic data --- that determines the most important local cocycles we have encountered before.
+
+\owen{We really ought to point out that if $\fg$ acts on a finite dimensional space $V$, then we have a map $\rho: \fg \to \gl(V)$, and that the chiral anomaly is the pullback along $\rho$ of the restriction of $\Theta^\infty_d$.} 
 
 \begin{proof}
 Let $A$ be any algebra and consider the Lie algebra $\fgl_N(A)$ and the limit $\gl_\infty(A) = {\rm colim} \; \fgl (A)$. 
@@ -375,6 +371,49 @@ We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as 
 \end{align*}
 which is precisely $\fj(\theta_{d+1,N})$. 
 \end{proof}
+
+\subsection{Putting it all together}
+
+The cocycle $\Theta_d^\infty$ determines a ``twist" of the prefactorization algebra $\Sym(\cycls(\Omega^{0,*}_c)[1])$
+of Proposition~\ref{prop: cycfact},
+just as the local Lie algebra cocycles give twists of the enveloping factorization algebra.
+We introduce some terminology and notation to reduce the notational overhead in articulating this construction.
+
+\def\CCyc{{\CC}{\rm yc}}
+
+\begin{dfn}
+For a local algebra $\sA$ on a manifold $X$, its {\em cycling prefactorization algebra} $\CCyc(\sA)$ assigns to an open $U \subset X$, the cochain complex $\Sym(\Cyc_*(\sA(U)[1])$,
+with structure maps determined by the functorialities of $\sA$, $\Cyc_*$, and~$\Sym$.
+\end{dfn}
+
+The proof of Proposition~\ref{prop: cycfact} shows that $\CCyc(\Omega^{0,*})$ is a prefactorization algebra,
+and this proof carries over verbatim to an arbitrary local algebra.
+
+It is easy now to twist this construction.
+
+\begin{dfn}
+Let $\Theta$ be a degree 0 local cocycle for a local algebra $\sA$. 
+Let $K$ denote a degree zero parameter so that $\CC[K]$ is a polynomial algebra concentrated in degree zero.
+The {\em twisted cycling prefactorization algebra} $\CCyc_\Theta(\sA)$ assigns to an open $U \subset X$, the cochain complex
+\begin{align*}
+\CCyc_\Theta(\sA)(U) & = \left(\Sym(\Cyc_*(\sA(U)[1] \oplus \CC \cdot K), \d_{\Cyc_*(\sA)} + K \cdot \Theta\right) \\
+& = \left(\Sym(\Cyc_*(\sA(U)[1][K] , \d_{\Cyc_*(\sA)} + K \cdot \Theta\right),
+\end{align*}
+where $ \d_{\Cyc_*(\sA)}$ denotes the differential on the untwisted cycling prefactorization algebra and $\Theta$ is the operator extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ to the symmetric coalgebra as a graded coderivation.
+This twisted cycling prefactorization algebra is module for the commutative ring~$\CC[K]$,
+and so specializing the value of $K$ determines nontrivial modifications of~$\CCyc(\sA)$. 
+\end{dfn}
+
+Using the local cyclic cocycle $\Theta^\infty_d$, we obtain the example of central interest to us.
+
+\begin{dfn}
+The {\em twisted cycling prefactorization algebra} $\CCyc_{\Theta_d^\infty}(\Omega^{0,*})$ 
+is the $\CC[K]$-linear deformation of the differential $\dbar + \d_{\rm Hoch}$ on $\CCyc(\Omega^{0,*})$ to
+\[
+\dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d.
+\] 
+\end{dfn}
+
 
 As an immediate corollary, we obtain a twisted version of Proposition \ref{prop: cycfact}.
 Indeed, the compatibility of the cyclic cocycle $\Theta^\infty_d$ and $\fj(\theta_{d+1,N})$ implies that there is a map of prefactorization algebras
