@@ -262,6 +262,8 @@ the functional on $\Omega^{0,*}$ defined by
 is a degree zero cocycle in $\Cycloc^*(\Omega^{0,*})$. 
 \end{lem}
 
+This cocycle is ``universal'' in the sense that it only depends on dimension.
+
 \begin{proof}
 The proof is similar to that of Proposition \ref{prop j map}. 
 Note that the differential on local cochains consists of two terms: the $\dbar$ operator and the ordinary Hochschild differential. 
@@ -275,6 +277,8 @@ The left hand side is a total derivative and hence vanishes in the local cochain
 \end{proof}
 
 We now turn to the relationship between cyclic cocycles for a local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N( \sA)$ and~$\gl_\infty (\sA)$.
+The Loday-Quillen-Tsygan theorem implies the following,
+since the map $\lqt$ is natural and hence respects locality everywhere.
 
 \begin{prop}
 \label{prop: cycloc}
@@ -287,45 +291,36 @@ that factors through a map of sheaves
 \[
 \lqt^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_\infty( \sA)) = \lim_{N \to \infty} \cloc^*(\gl_N( \sA))  .
 \]
-%\[
-%\lqt : \Hat{\Sym}^{>0} \left(\Cycloc^*(\sA)[-1]\right) \to \cloc^*(\gl_\infty( \sA))  
-%\]
 \end{prop}
 
-\brian{Check my shifts.}
-%\brian{We could state their result about PV fields using HKR, but I don't know if that buys us anything too amazing at this point.}
-
 \begin{rmk}
-A version of this result has been proved in \cite{CL1} for the case $\sA = \Omega^{0,*}(X)$ where $X$ is a Calabi-Yau manifold.
-They interpret local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of admissible deformations for holomorphic Chern-Simons on $X$. 
-They identify the cyclic side with the space of fields for Kodaira-Spencer gravity \cite{BCOV} on $X$.
+\owen{Modestly edited. Please read:}
+A version of this result was given in \cite{CL1} for $\sA = \Omega^{0,*}(X)$, 
+where $X$ is a Calabi-Yau manifold.
+They interpret local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of ``admissible'' deformations for holomorphic Chern-Simons theory on $X$,
+and they identify the cyclic side in terms of Kodaira-Spencer gravity on~$X$.
 \end{rmk}
 
-Proposition \ref{prop: cycloc} gives us a way to construct degree one cocycles for the local Lie algebra $\fgl_N \tensor \Omega^{0,*} = \sG l_{N}$. 
-Indeed, the inclusion $\fgl_N \hookrightarrow \fgl_\infty$ induces a map of cochain complexes 
-\[
-\cloc^*(\gl_\infty( \sA)) \to \cloc^*(\gl_N( \sA))
-\]
-by pull back. 
-The universal degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ from Lemma \ref{lem: univ} thus determines a degree one cocycle 
+Proposition \ref{prop: cycloc} sends a degree zero local cyclic cocycle to a degree one local Lie algebra cocycles for $\fgl_N(\sA)$.
+Of particular interest is the case $\sG l_{N} = \fgl_N \tensor \Omega^{0,*}$. 
+The degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ from Lemma~\ref{lem: univ} thus determines a degree one cocycle 
 \[
 \lqt^*_N(\Theta_d^\infty) \in \cloc^*(\sG l_N)
 \]
 for each $N > 0$. 
+In fact, we have already met this class of cocycles for~$\sG l_{N}$. 
 
-In fact, this procedure produces the particular class of cocycles for $\sG l_{N}$ that we have already met. 
-Note that for each $N$ and $k$, the functional $\theta_{k,N} : A \mapsto {\rm tr}_{\fgl_N} (A^k)$ defines a homogenous degree $k$ polynomial on $\fgl_N$. 
-In this way, we obtain $\fgl_N$-invariant elements
-\[
-\theta_{k,N} \in \Sym^{k}(\fgl_N^*)^{\fgl_N} .
-\]
+\begin{dfn}
+For each $N$ and $k$, the functional $\theta_{k,N}(A) = {\rm tr}_{\fgl_N} (A^k)$ defines a homogenous degree $k$ polynomial on $\fgl_N$ that is $\fgl_N$-invariant.
+\end{dfn}
 
 \begin{lem}
-For every $N$, the image of $\Theta_d^\infty$ under the Loday-Quillen-Tsygan map $\lqt_N^*(\Theta_d^\infty)$ is equal to the cocycle
+\label{lem:pullbackofthetainfinity}
+For every $N$, 
 \[
-\fj(\theta_{d+1, N}) \in \cloc^*(\sG l_N)
+\lqt_N^*(\Theta_d^\infty) = \fj(\theta_{d+1, N})
 \]
-where $\fj$ is as in Definition \ref{dfn: j}
+where $\fj$ from Definition~\ref{dfn: j}.
 \end{lem}
 
 In a sense $\Theta^\infty_d$ is the ``universal'' cocycle --- in that it only depends on the complex dimension and not on any Lie algebraic data --- that determines the most important local cocycles we have encountered before.
@@ -333,12 +328,13 @@ In a sense $\Theta^\infty_d$ is the ``universal'' cocycle --- in that it only de
 \owen{We really ought to point out that if $\fg$ acts on a finite dimensional space $V$, then we have a map $\rho: \fg \to \gl(V)$, and that the chiral anomaly is the pullback along $\rho$ of the restriction of $\Theta^\infty_d$.} 
 
 \begin{proof}
-Let $A$ be any algebra and consider the Lie algebra $\fgl_N(A)$ and the limit $\gl_\infty(A) = {\rm colim} \; \fgl (A)$. 
+\owen{I don't understand why you work at the level of homology and whether you are working now with a (non dg) algebra $A$.}
+Let $A$ be any algebra and consider the Lie algebra $\fgl_N(A)$ and the colimit $\gl_\infty(A) = {\rm colim} \; \fgl (A)$. 
 At the level of homology, the ordinary Loday-Quillen-Tsygan map is of the form
 \[
 \begin{array}{ccc}
 H_{n+1}^{\rm Lie}(\fgl_N(A)) & \to & HC_{n}(A) \\
-X_0 \wedge \cdots \wedge X_n & \mapsto & \sum_{\sigma \in S_n} (-1)^{\sigma} {\rm tr} \left(X_0 \tensor X_{\sigma(1)} \tensor\cdots \tensor X_{\sigma(n)} \right) 
+X_0 \wedge \cdots \wedge X_n & \mapsto & \sum_{\sigma \in S_n} (-1)^{\sigma} {\rm tr} \left(X_0 \tensor X_{\sigma(1)} \tensor\cdots \tensor X_{\sigma(n)} \right), 
 \end{array}
 \] 
 which induces a dual map in cohomology $HC^n(A) \to H^{n+1}_{\rm Lie}(\fgl_N(A))$. 
@@ -346,11 +342,11 @@ Here, ${\rm tr}$ denotes the generalized trace map
 \[
 {\rm tr} : {\rm Mat}_N(A)^{\tensor(n+1)} \to A^{\tensor (n+1)} 
 \]
-which maps a $(n+1)$-tuple $A_0\tensor \cdots \tensor A_d$ to 
+that maps an $(n+1)$-tuple $X_0\tensor \cdots \tensor X_d$ to 
 \[
-\sum_{i_0,\ldots,i_n} (A_0)_{i_0 i_1} \tensor (A_1)_{i_1i_2} \tensor \cdots \tensor (A_n)_{i_n i_0}
+\sum_{i_0,\ldots,i_n} (X_0)_{i_0 i_1} \tensor (X_1)_{i_1i_2} \tensor \cdots \tensor (X_n)_{i_n i_0}
 \]
-where $(A_k)_{ij} \in A$ denotes the $ij$ matrix entry.
+where $(X_k)_{ij} \in A$ denotes the $ij$ matrix entry of~$X_k$.
 
 The map on local functionals is essentially this ordinary (dual) Loday-Quillen-Tsygan map applied to the $\infty$-jets of the commutative algebra $\Omega^{0,*}$. 
 Since $\Omega^{0,*}$ is commutative, the generalized trace is simply the trace of the product.
@@ -365,12 +361,19 @@ Since $\Omega^{0,*}$ is commutative, the generalized trace is simply the trace o
 %\end{array}
 %\]
 We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as the local Lie algebra cocycle
-
 \begin{align*}
-\ell q t_N^*(\Theta_d^\infty)\left(\alpha_0, \cdots, \alpha_d) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d\right)
+\ell q t_N^*(\Theta_d^\infty)\left(\alpha_0, \cdots, \alpha_d) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \partial \alpha_1\wedge \cdots \wedge \partial \alpha_d\right),
 \end{align*}
 which is precisely $\fj(\theta_{d+1,N})$. 
 \end{proof}
+
+\brian{There is a statement about the hol trans invariant cyclic cochains.
+Namely that it's one dimensional generated by the higher residue.
+This is complementary to FHK and is compatible with out calculation in the appendix under the LQT map. 
+Should I include a remark about this?
+}
+
+\owen{Yes, please! We should add a brief discussion of how this relates to FHK, of course.}
 
 \subsection{Putting it all together}
 
@@ -409,26 +412,24 @@ Using the local cyclic cocycle $\Theta^\infty_d$, we obtain the example of centr
 \begin{dfn}
 The {\em twisted cycling prefactorization algebra} $\CCyc_{\Theta_d^\infty}(\Omega^{0,*})$ 
 is the $\CC[K]$-linear deformation of the differential $\dbar + \d_{\rm Hoch}$ on $\CCyc(\Omega^{0,*})$ to
-\[
-\dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d.
-\] 
+$\dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d.$ 
 \end{dfn}
 
+In conjunction with Lemma~\ref{lem:pullbackofthetainfinity}, 
+we have shown the following.
 
-As an immediate corollary, we obtain a twisted version of Proposition \ref{prop: cycfact}.
-Indeed, the compatibility of the cyclic cocycle $\Theta^\infty_d$ and $\fj(\theta_{d+1,N})$ implies that there is a map of prefactorization algebras
+\begin{prop}
+There is a map of prefactorization algebras
 \[
-\UU_{\fj(\theta_{d+1,N})} (\sG l_N) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right) .
+\UU_{\fj(\theta_{d+1,N})} (\sG l_N) \to \CCyc_{\Theta_d^\infty}(\Omega^{0,*})
 \]
-%\[
-%\UU_{\fj(\theta_{d+1,\infty})} (\gl_\infty) \to \left(\Sym(\cycls(\Omega^{0,*}_c)[1])[K], \dbar + \d_{\rm Hoch} + K \cdot \Theta^\infty_d \right)
-%\]
+for each positive integer $N$, and these commute with  
+\[
+\UU_{\fj(\theta_{d+1,N})} (\sG l_N) \to \UU_{\fj(\theta_{d+1,N+1})} (\sG l_N),
+\]
+the canonical inclusions arising from $\gl_N \hookrightarrow \gl_{N+1}$.
+\end{prop}
 
-\brian{There is a statement about the hol trans invariant cyclic cochains.
-Namely that it's one dimensional generated by the higher residue.
-This is complementary to FHK and is compatible with out calculation in the appendix under the LQT map. 
-Should I include a remark about this?
-}
 
 \subsection{A noncommutative example}
 
