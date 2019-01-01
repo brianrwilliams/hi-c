@@ -6,9 +6,17 @@
 \def\colim{{\rm colim}}
 \def\sl{\mathfrak{sl}}
 
-We take a slight detour from the main course of this paper to remark on something special that happens for the case of $\gl_N$ as $N$ goes to infinity.
-The observations we make here are borrowed from unpublished work of the first author with Greg Ginot and Mahmoud Zeinalian,
-but they are closely related to prior work of Costello-Li \cite{CLbcov2} and Movshev-Schwarz~\cite{} \brian{Not sure which ref you mean}.
+We take a detour from the main course of this paper to remark on what happens for the case of $\gl_N$ as $N$ goes to infinity.
+There are two facets: 
+\begin{itemize}
+\item a limiting prefactorization algebra emerges that depends in a subtle way on the complex geometry of the underlying complex $d$-fold, and
+\item the most important local cocycles are seen to arise from cyclic cohomology.
+\end{itemize}
+These large $N$ phenomena have a different flavor than large $N$ limits of gauge theories,
+but admit some close connections that we hope to pursue in the future.
+The first facet relies on observations borrowed from unpublished work of the first author with Greg Ginot and Mahmoud Zeinalian,
+but inspired by prior work of Costello-Li \cite{CLbcov2} and Movshev-Schwarz~\cite{MovSch}.
+The second is a direct generalization \cite{CLbcov2} whose results match, in a satisfying way, the output of~\cite{FHK}.
 
 The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
 which yields a natural map \owen{ugly notation so lets find a better one}
@@ -138,13 +146,20 @@ and so $\cC$ is a prefactorization algebra.
 
 \subsection{Local cyclic cohomology}
 
-The concept of a local Lie algebra is the starting point for our definition of the factorization enveloping algebra and current algebra. 
-We obtain a similar notion by replacing a (dg) Lie algebra with a (dg) associative algebra.
+Our goal in this section is to develop {\em twisted} versions of the relationship between cyclic homology and the Kac-Moody factorization algebra for $\fgl_\infty$,
+much like the twisted enveloping factorization algebras of Section~\ref{sec: localcocycle}. 
+To do this, we need a local notion of a cyclic cocycle. 
+Our approach is modeled on the work we undertook earlier in this paper,
+where we used the concept of a local Lie algebra earlier as a natural setting for currents. 
+In practice, we replace a (dg) Lie algebra with a (dg) associative algebra and replace Lie algebra cochains with cyclic cochains, 
+always keeping locality in place.
+
+\owen{Let me register my complaint that {\it local} here is extremely abusive to conventional mathematical terminology. A local algebra, in the usual sense, is one with a unique maximal ideal.}
 
 \begin{dfn}\label{def: localalg}
-A {\em local dg algebra} on a smooth manifold $X$ is:
+A {\em local dg algebra} on a smooth manifold $X$~is:
 \begin{enumerate}
-\item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote $\sA^{sh}$;
+\item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote~$\sA^{sh}$;
 \item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
 \item[(iii)] a degree zero bidifferential operator $\cdot : \sA^{sh} \times \sA^{sh} \to \sA^{sh}$
 \end{enumerate}
@@ -152,68 +167,86 @@ such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of
 \end{dfn}
 
 As usual, we abusively refer to a local algebra $(\sA^{sh}, \d, \cdot)$ simply by $\sA$.
-On a complex manifold, the basic example for us of a local algebra is the Dolbeault complex $\Omega^{0,*}_X$. 
-Of course, this is a commutative local algebra. 
-For a noncommutative example, one can take the sheaf of holomorphic differential operators, and take its Dolbeault resolution. 
+\owen{Don't we use $\sA$ for the precosheaf of compactly supported sections?}
+On a complex manifold, the basic example for us is the Dolbeault complex $\Omega^{0,*}_X$.
+This example is, of course, commutative. 
+For a noncommutative example, start with the sheaf of holomorphic differential operators and take its Dolbeault resolution. 
+\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
 
-There is a forgetful functor from local algebras to local Lie algebras. 
-In particular, given any local algebra $\sA$ and local Lie algebra $\sL$ we obtain a new local Lie algebra $\sL \tensor \sA$.
-The underlying vector bundle is simply $L \tensor A$. 
+There is a forgetful functor from local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
+In particular, given any local algebra $\sA$ and local Lie algebra $\sL$, 
+we obtain a new local Lie algebra $\sL \tensor_{C^\infty} \sA$.
+The underlying vector bundle is simply~$L \tensor A$. 
+\owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
 
-We now move on to discuss twisted versions of the relationship between cyclic homology and the Kac-Moody factorization algebra for $\fgl_\infty$. 
-For this, we need a local notion of a cyclic cocycle. 
-
-For local algebras, there is an appropriate notion of cohomology respecting the locality, analogous to local Lie algebra cohomology. 
+For local algebras, there is an appropriate notion of cohomology respecting the locality, 
+analogous to local Lie algebra cohomology. 
 To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a local algebra. 
-The $\infty$-jet bundle of $A$ is denoted by $JA$.
-Then, $JA$ defines an associative dg algebra in the category of $D_X$-modules. 
-Further, its Hochschild complex $\Hoch^*(JA)$ also has the structure of a $D_X$-module. 
-We use this observation in the definition below. 
+The $\infty$-jet bundle $JA$ of $A$ is a graded left $D_X$-module via the canonical Grothendieck connection on $\infty$-jets,
+as is true for any graded vector bundle,
+but it has additional structure as well.
+Because the differential and product on $A$ are differential operators, 
+they intertwine with the $D_X$-module structure on $JA$.
+Hence $JA$ is also a dg associative algebra in the category of dg $D_X$-modules,
+using the symmetric monoidal product~$- \otimes_{C^\infty_X} -$. 
+
+\owen{I'm not so happy with how I wrote things below. I found what was there a bit confusing, because it meant something different by Hochschild cochains than many people mean.}
+
+In this symmetric monoidal dg category, 
+one can mimic many standard constructions from homological algebra.
+For our current purposes, we are interested in cyclic cohomology,
+and hence as a first step, in $\Hoch^*(R,R^*)$, the Hochschild cohomology of an algebra $R$ with coefficients in its linear dual $R^*$.
+The usual formulas apply verbatim in the dg category of dg $D_X$-modules.
+Hence, the dg $D$-module of Hochschild cochains on $JA$~is 
+\[
+\Hoch^* (JA, JA^*) = \prod_{n \geq 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X)[-n]
+\]
+with the usual Hochschild differential.
+(We note that the superscript $\otimes n$ means $\otimes_{C^\infty_X}$ iterated $n$ times.)
+\owen{Let's discuss notation there.}
+The {\em reduced} Hochschild cochains is the product without the $n=0$ component. 
 
 \def\Hoch{{\rm Hoch}}
 \def\Hochloc{{\rm Hoch}_{\rm loc}}
 \def\Cyc{{\rm Cyc}}
 \def\Cycloc{{\rm Cyc}_{\rm loc}}
 
+\owen{Let's discuss notation there.}
+
 \begin{dfn}\label{dfn: hochloc}
-The {\em local Hochschild cohomology complex}  of a local algebra $\sA$ on $X$ is 
+The {\em local Hochschild cochains} of a local algebra $\sA$ on $X$~is 
 \[
 \Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*_{red} (JA) .
 \] 
-This sheaf of cochain complexes has global sections that we denote by $\Hochloc^*(\sA(X))$.
+This sheaf of cochain complexes has global sections that we denote by~$\Hochloc^*(\sA(X))$.
 \end{dfn}
 
 Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA)$ as follows.
-It is a polynomial functional on $\sA$ that is a finite sum of functionals of the form
+It is a polynomial functional \owen{you took product, so I think we mean "power series"} on $\sA$ that is a finite sum of functionals of the form
 \[
-\alpha_1 \tensor \cdots \alpha_k \mapsto \int_X \omega_X \wedge D_1(\alpha_1) \cdots D_k(\alpha_k)
+\alpha_1 \tensor \cdots \alpha_k \mapsto \int_X \omega_X \, D_1(\alpha_1) \cdots D_k(\alpha_k)
 \]
-where $D_i$ is a differential operator from $\sA$ to $C^\infty(X)$ and $\omega_X$ is a volume form on $X$. 
+where $\omega_X$ is a volume form on $X$ and each $D_i$ is a differential operator from $\sA$ to~$C^\infty(X)$. 
 
-There is also a cyclic version of the Hochschild cohomology. 
-The dg $D$-module of reduced Hochschild cochains on $JA$ is of the form
-\[
-\Hoch_{red}^* (JA) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) .
-\]
-For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$. 
-There is a resulting action of the group $S_n$ on each graded piece of the reduced Hochschild complex $\Hoch_{red}^* (JA)$.
-We obtain the termwise quotient $D$-module by
+There is also a cyclic version of the above. 
+For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$,
+and hence on the $n$th component of the reduced Hochschild complex $\Hoch_{red}^* (JA)$.
+Taking the termwise quotient $D_X$-module, we obtain the {\em reduced cyclic cochains}
 \[
 \Cyc_{red}^* (JA) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) / C_n .
 \]
-The Hochschild differential restricts to this subspace to yield a dg $D$-module. 
-
-We repeat Definition \ref{dfn: hochloc} for the cyclic version of local cohomology of a local algebra $\sA$. 
+The Hochschild differential restricts to this subspace to yield a dg $D_X$-module. 
+We mimic Definition~\ref{dfn: hochloc} for the local version of cyclic cohomology of a local algebra~$\sA$. 
 
 \begin{dfn}\label{dfn: cycloc}
-The {\em local cyclic cohomology complex}  of a local algebra $\sA$ on $X$ is 
+The {\em local cyclic cochains} of a local algebra $\sA$ on $X$ is 
 \[
 \Cycloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Cyc^*_{red} (JA) .
 \] 
-This sheaf of cochain complexes has global sections that we denote by $\Cycloc^*(\sA(X))$.
+This sheaf of cochain complexes has global sections that we denote by~$\Cycloc^*(\sA(X))$.
 \end{dfn}
 
-As we've mentioned, the most relevant local algebra for us will be the Dolbeault complex $\Omega^{0,*}_X$ defined on an arbitrary complex manifold. 
+As we have mentioned, the most relevant local algebra for us will be the Dolbeault complex $\Omega^{0,*}_X$ defined on an arbitrary complex manifold. 
 For this local Lie algebra, there is a natural degree zero cocycle in local cyclic cohomology.
 The reader may observe its very similar form to its counterpart in local Lie algebra cohomology introduced in Section \ref{sec: localcocycle}. 
 
