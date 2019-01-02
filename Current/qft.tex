@@ -597,9 +597,9 @@ The dual pairing between $V$ and $V^*$ combined with the higher residue defines 
 This structure leads to the following dg version of the usual canonical quantization story.
 
 \begin{dfn}
-The {\em Heisenberg dg Lie algebra} $\sH_V$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
+The {\em Heisenberg dg Lie algebra} $\sH_{d,V}$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
 \[
-\CC \to \sH_V \to A_d \tensor (V \oplus V^*[d-1]) 
+\CC \to \sH_{d,V} \to A_d \tensor (V \oplus V^*[d-1]) 
 \]
 determined by the $2$-cocycle $\omega_V$. 
 Explicitly, the nontrivial bracket is
@@ -609,21 +609,21 @@ Explicitly, the nontrivial bracket is
 where $v \in V$ and $v^* \in V^*[d-1]$.
 \end{dfn}
 
-The universal enveloping algebra $U(\sH_V)$ is a dg Weyl algebra,
+The universal enveloping algebra $U(\sH_{d,V})$ is a dg Weyl algebra,
 a version of differential operators on the mapping space $\Map(S^{2d-1},V)$.
-By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_V)$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_V)$,
+By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
 a locally constant factorization algebra on $\RR$.
 Following our approach in Section~\ref{sec: sphere ops},
-one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_V)$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
 Upon compactification along the sphere $S^{2d-1}$, 
-the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_V)$.
+the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_{d,V})$.
 \owen{Is that true?}
 Hence we obtain the following.
 
 \begin{cor} 
 The map (\ref{free field}) determines a map of $E_1$-algebras 
 \beqn\label{free field2}
-\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_V) .
+\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) .
 \eeqn
 \end{cor}
 
@@ -643,8 +643,8 @@ Similarly, the Kac-Moody factorization algebra $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ 
 The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section~\ref{sec: spheres}. 
 
 By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
-To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_V)$. 
-It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$ algebras. 
+To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_{d,V})$. 
+It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_{d,V})$ as $E_1$ algebras. 
 
 Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
 Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
