@@ -18,13 +18,12 @@ This failure leads to a symmetry of the quantum theory via the quantum current a
 %
 %Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
 
-\subsection{Charged holomorphic matter}
+\subsection{Holomorphic boson system}
 
-\owen{Why matter? Isn't matter usually fermionic?}
-
-We introduce a classical field theory in the BV formalism that one may think of as higher dimensional ``matter" in a holomorphic setting. 
-When the complex dimension is $d = 1$, our theory is the chiral $\beta\gamma$ system known from ordinary conformal field theory. 
-In dimensions $2$ and $4$, this theory is a minimal twist of supersymmetric matter. 
+We introduce a classical field theory on any complex manifold $X$ in the BV formalism whose equations of motion, in part, include holomorphic functions on $X$.
+When the complex dimension is $d = 1$, our theory is identical to the chiral $\beta\gamma$ system which is a bosonic version of the familiar $bc$ system in conformal field theory. 
+In dimensions $d=2$ and $d=3$, this class of theories is still of physical importance.
+They are equivalent to minimal twists of supersymmetric matter multiplets. 
 
 To start, we fix a finite dimensional $\fg$-module $V$ and an integer $d > 0$.
 There are two fields, a field $\gamma : \CC^d \to V$, given by a smooth function into $V$, and
@@ -46,8 +45,6 @@ It extends, in a natural way, to an action of the ``gauged'' Lie algebra $C^\inf
 There is a dual action on the $\beta$ fields.
 This Lie algebra action is compatible with the action functional (\ref{actionfnl})---that is, it preserves solutions to the equations of motion---precisely when $x(z,\zbar)$ is holomorphic: $\dbar x(z,\zbar) = 0$. 
 In other words, the natural Lie algebra of symmetries is $\cO_X \otimes \fg$, the holomorphic functions on $X$ with values in~$\fg$.
-
-\owen{I've occasionally put physics terms in quotation marks. Tell me if this is ridiculous.}
 
 Notice that the original action functional (\ref{actionfnl}) has an ``internal symmetry'' via the gauge transformation
 \[
@@ -88,9 +85,9 @@ but, as usual in physics, it is the Lagrangian density that is important, rather
 
 \begin{rmk}
 This theory is a special case of a nonlinear $\sigma$-model, where the linear target $V$ is replaced by an arbitrary complex manifold $Y$.
-When $d=1$ this theory is known as the (classical) curved $\beta\gamma$ system and has received extensive examination \owen{add citations};
+When $d=1$ this theory is known as the (classical) curved $\beta\gamma$ system and has received extensive examination \cite{WittenCDO, WG2, Nek, GGW};
 when a quantization exists, the associated factorization algebra of quantum observables encodes the vertex algebra known as chiral differential operators of $Y$.
-The second author's thesis \owen{cite} examines the theories when $d>1$ and uncovers a systematic generalization of chiral differential operators.
+The second author's thesis \cite{BWthesis} examines the theories when $d>1$ and uncovers a systematic generalization of chiral differential operators.
 \end{rmk}
 
 In parallel with our discussion above, once we include the full BV complex, 
@@ -270,12 +267,18 @@ A {\em prequantization} of the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^
 \beqn\label{prequant}
 I^{\sG} [L] = \lim_{\epsilon \to 0} W^{\sG} (P_{\epsilon<L} , I^{\sG}) .
 \eeqn 
-This family satisfies homotopy RG flow and solves the quantum master equation modulo~$\cloc^*(\sG_d)$. 
+This family satisfies homotopy RG flow: for all $L < L'$ one has the identity
+\[
+I[L'] = W(P_{L<L'}, I[L]) .
+\]
+%and solves the quantum master equation modulo~$\cloc^*(\sG_d)$. 
 \end{dfn/lem}
 
 \owen{I suppose we need to explain that very last bit but I'm not sure where it is optimal to discuss the scale $L$ BV Laplacian etc and why we work modulo that algebra \dots We also should explain the argument about the QME.}
 
 \owen{Looking later, it seems like maybe we should defer the QME comment for a few paragraphs.}
+
+\brian{how's that?}
 
 \begin{proof}
 The key claim to justify is why the $\epsilon \to 0$ limit of $W^{\sG} (P_{\epsilon<L} , I^{\sG})$ exists,
@@ -308,7 +311,7 @@ Similarly, if one connects $n$ vertices, one is left  with a single $\gamma$ leg
 If one uses a propagator to connect $\gamma$ and $\beta$ leg, one has a wheel with $n$ $\alpha$ legs,
 and no more propagators can be attached.
 
-Claim (2) follows from Theorem 3.4 of \cite{BWhol}, which shows that the $\epsilon \to 0$ limit of the weights is finite. 
+Claim (2) follows from Theorem 3.4 of \cite{BWhol}, which asserts that the $\epsilon \to 0$ limit of the weights is finite. 
 \end{proof}
 
 As an immediate consequence of the proof, we see that only polynomial values of $\hbar$ occur in the expansion of $I^{\sG}[L]$, indeed the answer is linear in $\hbar$. 
@@ -336,18 +339,27 @@ A functional $J \in \sO(\sE_V \oplus \sG_d[1])$ satisfies the $\sG_d$-{\em equiv
 \[
 (\dbar + \d_{\sG}) J+ \frac{1}{2} \{J, J\}_L + \hbar \Delta_L J = 0 .
 \]
-\owen{Do we want that modulo constants in $\CC$ or in  $C^*(\sG)$?}
-The main object of study in this section is the failure for the quantization $I^{\sG}[L]$ to satisfy this equivariant QME. 
+
+The main object of study in this section is the {\em failure} for the quantization $I^{\sG}[L]$ to satisfy the equivariant QME. 
 
 \begin{dfn}
 The $\sG_d$-{\em equivariant charge anomaly} at scale $L$, denoted $ \Theta_V [L]$, is defined~by
 \[
 \hbar \Theta_V [L] = (\dbar + \d_{\sG}) I^{\sG} [L] + \frac{1}{2} \{I^{\sG}[L], I^{\sG}\}_L + \hbar \Delta I^{\sG}[L] .
 \]
-The notation $\d_{\sG}$ means the Chevalley-Eilenberg differential $\clie^*(\sG_d) = \left(\sO(\sG_d[1]), \d_{\sG}\right)$. 
+The operator $\d_{\sG}$ is the Chevalley-Eilenberg differential $\clie^*(\sG_d) = \left(\sO(\sG_d[1]), \d_{\sG}\right)$. 
 \end{dfn}
 
-This element measures the failure of $I^{\sG}[L]$ to satisfy the scale $L$ equivariant QME.
+\owen{Do we want that modulo constants in $\CC$ or in  $C^*(\sG)$?}
+\brian{It automatically solves QME mod $C^*(\sG)$. I've added a remark below, let me know if it's helpful.}
+
+\begin{rmk}
+Since the underlying non-equivariant BV theory $\sE_V$ is free, there are no terms in the Feynman graph expansion of $I^\sG$ beyond tree level that have external edges labeled by $\sE_V$. 
+For this reason, the QME is automatically solved modulo the space of functionals $\clie^*(\sG) \subset \sO(\sE \oplus \sG_d[1])$.
+This is why the obstruction defined above is only a function of the local Lie algebra $\sG_d$. 
+\end{rmk}
+
+%This element measures the failure of $I^{\sG}[L]$ to satisfy the scale $L$ equivariant QME.
 
 \subsection{The charge anomaly for $\beta\gamma$}
 
@@ -450,11 +462,11 @@ This cocycle factors in the following way:
 \end{tikzcd}
 \eeqn
 The first map is $\fa \fn : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \alpha_0 \tensor \partial \alpha_1 \tensor \cdots \tensor \partial \alpha_d$.
-The second map is given by extending the Lie algebraic functional $\theta : \fg^{\tensor (d+1)} \to \CC$ to the $\Omega^{0,*}(\CC^d) \otimes \fg$ by linearity over the Dolbeault forms:
-\[
-\underline{\theta} \left(\alpha_0 \tensor \alpha_1 \tensor \cdots \tensor \alpha_d\right) = \alpha_0 \wedge \theta(\alpha_1 \wedge \cdots \wedge \alpha_d) \in \Omega^{d,*}_c(\CC^d).
-\]
-\owen{I'm puzzled by this formula. Doesn' t $ \alpha_0$ have a $\fg$-term?}
+The second map applies the function $\theta : \fg^{\tensor (d+1)} \to \CC$ to the Lie algebra factor and takes the wedge product of the differential forms. 
+%$\Omega^{0,*}(\CC^d) \otimes \fg$ by linearity over the Dolbeault forms:
+%\[
+%\underline{\theta} \left(\alpha_0 \tensor \alpha_1 \tensor \cdots \tensor \alpha_d\right) = \alpha_0 \wedge \theta(\alpha_1 \wedge \cdots \wedge \alpha_d) \in \Omega^{d,*}_c(\CC^d).
+%\]
 
 Lemma \ref{lem: obs} implies that the obstruction is given by the sum over Feynman weights associated to graphs of wheels of valency $(d+1)$.
 We can identify the algebraic component, corresponding to $\theta$ in the above composition (\ref{composition}), directly from the shape of this graph. 
