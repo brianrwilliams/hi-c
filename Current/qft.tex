@@ -267,18 +267,12 @@ A {\em prequantization} of the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^
 \beqn\label{prequant}
 I^{\sG} [L] = \lim_{\epsilon \to 0} W^{\sG} (P_{\epsilon<L} , I^{\sG}) .
 \eeqn 
-This family satisfies homotopy RG flow: for all $L < L'$ one has the identity
+This family satisfies homotopy RG flow:  
 \[
 I[L'] = W(P_{L<L'}, I[L]) .
 \]
-%and solves the quantum master equation modulo~$\cloc^*(\sG_d)$. 
+for all $L < L'$.
 \end{dfn/lem}
-
-\owen{I suppose we need to explain that very last bit but I'm not sure where it is optimal to discuss the scale $L$ BV Laplacian etc and why we work modulo that algebra \dots We also should explain the argument about the QME.}
-
-\owen{Looking later, it seems like maybe we should defer the QME comment for a few paragraphs.}
-
-\brian{how's that?}
 
 \begin{proof}
 The key claim to justify is why the $\epsilon \to 0$ limit of $W^{\sG} (P_{\epsilon<L} , I^{\sG})$ exists,
@@ -350,16 +344,18 @@ The $\sG_d$-{\em equivariant charge anomaly} at scale $L$, denoted $ \Theta_V [L
 The operator $\d_{\sG}$ is the Chevalley-Eilenberg differential $\clie^*(\sG_d) = \left(\sO(\sG_d[1]), \d_{\sG}\right)$. 
 \end{dfn}
 
-\owen{Do we want that modulo constants in $\CC$ or in  $C^*(\sG)$?}
-\brian{It automatically solves QME mod $C^*(\sG)$. I've added a remark below, let me know if it's helpful.}
 
 \begin{rmk}
-Since the underlying non-equivariant BV theory $\sE_V$ is free, there are no terms in the Feynman graph expansion of $I^\sG$ beyond tree level that have external edges labeled by $\sE_V$. 
-For this reason, the QME is automatically solved modulo the space of functionals $\clie^*(\sG_d) \subset \sO(\sE \oplus \sG_d[1])$.
-This is why the obstruction defined above is only a function of the local Lie algebra $\sG_d$. 
+Since the underlying non-equivariant BV theory $\sE_V$ is free, 
+in the Feynman graph expansion of $I^\sG$,
+{\em none} of the external edges of any 1-loop term are labeled by $\sE_V$. 
+In other words, the $\hbar$ contribution is a function only of the $\alpha$ fields (i.e., the symmetries).
+Similarly, the obstruction to solving the QME is only a function of the local Lie algebra~$\sG_d$.
+For this reason, the QME is automatically solved modulo the space of functionals $\clie^*(\sG_d) \subset \sO(\sE \oplus \sG_d[1])$,
+if we view those as the relevant ``constants.''
+We are interested, however, in making the action of $\sG_d$ ``inner'' (in the terminology of \cite{CG2}).
+in which case this obstruction term is relevant.
 \end{rmk}
-
-%This element measures the failure of $I^{\sG}[L]$ to satisfy the scale $L$ equivariant QME.
 
 \subsection{The charge anomaly for $\beta\gamma$}
 
@@ -525,12 +521,20 @@ the inclusion
 \Omega^{p,*}_c(U) \subset \Bar{\Omega}^{p,*}_c(U)
 \]
 of compactly-supported smooth Dolbeault forms into compactly-supported smooth distributional Dolbeault forms is a quasi-isomorphism. 
-Consequently we can introduce the quasi-isomorphic subcomplex 
+Consequently we introduce the subcomplex 
 \[
-\begin{tikzcd}    
- \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
-\end{tikzcd}
+\Tilde{\Obs}^{\cl}_V(U) =  \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right)
 \]
+of 
+\[
+\Obs_V^{\cl}(U) = \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right).
+\]
+The Atiyah-Bott lemma ensures that the inclusion $\Tilde{\Obs}^{\cl}_V(U) \hookrightarrow \Obs_V^{\cl}(U)$ is a quasi-isomorphism.
+%\[
+%\begin{tikzcd}    
+% \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
+%\end{tikzcd}
+%\]
 The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ defines a factorization algebra on $\CC^d$, 
 and so we have a quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
 
@@ -543,7 +547,7 @@ The {\em smoothed quantum observables} supported on $U \subset \CC^d$ is the coc
 \]
 \end{dfn}
 
-By Theorem 5.3.10 of \cite{GwThesis}, the assignment $U \mapsto \Obs^\q_V(U)$ defines a factorization algebra on $\CC^d$. 
+By Theorem 5.3.10 of \cite{GwThesis}, the assignment $U \mapsto \Tilde{\Obs}^\q_V(U)$ defines a factorization algebra on $\CC^d$. 
 Just as in the classical case, there is an induced quasi-isomorphism of factorization algebras $\Tilde{\Obs}^\q_{V} \xto{\simeq} \Obs^\q_V$,
 as shown in the proof of Lemma 11.24 in~\cite{GGW}. 
 Hence this smoothed version $\Tilde{\Obs}^\q_{V}$ agrees with the construction $\Obs^\q_V$ of~\cite{CG2}.
@@ -609,9 +613,9 @@ The dual pairing between $V$ and $V^*$ combined with the higher residue defines 
 This structure leads to the following dg version of the usual canonical quantization story.
 
 \begin{dfn}
-The {\em Heisenberg dg Lie algebra} $\sH_V$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
+The {\em Heisenberg dg Lie algebra} $\sH_{d,V}$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
 \[
-\CC \to \sH_V \to A_d \tensor (V \oplus V^*[d-1]) 
+\CC \to \sH_{d,V} \to A_d \tensor (V \oplus V^*[d-1]) 
 \]
 determined by the $2$-cocycle $\omega_V$. 
 Explicitly, the nontrivial bracket is
@@ -621,25 +625,23 @@ Explicitly, the nontrivial bracket is
 where $v \in V$ and $v^* \in V^*[d-1]$.
 \end{dfn}
 
-The universal enveloping algebra $U(\sH_V)$ is a dg Weyl algebra,
+The universal enveloping algebra $U(\sH_{d,V})$ is a dg Weyl algebra,
 a version of differential operators on the mapping space $\Map(S^{2d-1},V)$.
-By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_V)$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_V)$,
+By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
 a locally constant factorization algebra on $\RR$.
 Following our approach in Section~\ref{sec: sphere ops},
-one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_V)$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
 Upon compactification along the sphere $S^{2d-1}$, 
-the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_V)$.
-\owen{Is that true?}
-Hence we obtain the following.
+the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_{d,V})$,
+as we now show.
+(Explicit formulas follow the proof.)
 
 \begin{cor} 
 The map (\ref{free field}) determines a map of $E_1$-algebras 
 \beqn\label{free field2}
-\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_V) .
+\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) .
 \eeqn
 \end{cor}
-
-\owen{Let's write an explicit formula.}
 
 \begin{proof}
 Let $r : \CC^d \setminus 0 \to \RR_{>0}$ be the radial projection. 
@@ -647,17 +649,29 @@ Consider the induced map
 \[
 r_* J^\q :  r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to  r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}  .
 \]
-The classical $\beta\gamma$ system on $\CC^d$ (and $\CC^d \setminus \{0\})$ is manifestly equivariant for the group $U(d)$ given by rotating the plane. 
-This symmetry persists upon quantization, since the BV Laplacian is also compatible with this action. 
-Thus, we can consider the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of the $U(d)$-eigenspaces. 
+Sitting inside the domain and codomain are locally constant subfactorization algebras that encode the enveloping algebras of $\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}$ and $\sH_{d,V}$, respectively.
+We need to understand how the map $r_* J^\q$ intertwines these subalgebras.
 
-Similarly, the Kac-Moody factorization algebra $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ is $U(d)$-equivariant. 
-The subfactorization algebra given by the $U(d)$-invariants is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d$ is as in Section~\ref{sec: spheres}. 
+The key is to use the action of $U(d)$ by rotating $\CC^d$.
+The classical $\beta\gamma$ system on $\CC^d$ (and $\CC^d \setminus \{0\})$ is manifestly equivariant under this rotation action, as is the classical current algebra.
+The map $J^\cl$ preserves this action, and hence $_* J^\cl$ is $U(d)$-equivariant.
+This equivariance persists upon quantization, since the BV Laplacian is also compatible with this action. 
+Thus, $U(d)$-eigenspaces are preserved.
 
-By an argument completely analogous to the Kac-Moody case, one checks that the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of $U(d)$-eigenspaces is locally constant.
-To an interval $I \subset \RR_{>0}$, the subfactorization algebra assigns a dg vector space isomorphic to $U(\sH_V)$. 
-It is shown in Chapter 3 of \cite{BWthesis} that this locally constant factorization algebra is equivalent to $U(\sH_V)$ as $E_1$ algebras. 
+On the Kac-Moody side, recall that there is subfactorization algebra of $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ given by the sum of the $U(d)$-eigenspaces. 
+\owen{Am I interpreting you correctly?}
+It is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d = \Omega^*_{\RR_{>0},c} \otimes \fg^\bullet_d$, as in Section~\ref{sec: spheres}.
+
+On the observables side, the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of $U(d)$-eigenspaces is also locally constant on $\RR$,
+and it is 
+\[
+\UU_\omega (\Omega^*_{\RR_{>0},c} \otimes (V \oplus V^*[d-1)).
+\]
+Analogously to the Kac-Moody case, it is straightforward to see that this factorization algebra is equivalent to $U(\sH_{d,V})$ as $E_1$ algebras.
+(A detailed proof is available in Chapter 3 of~\cite{BWthesis}).
 
 Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
 Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
 \end{proof}
+
+\owen{Still need to insert formulas but it will be quick now!}
