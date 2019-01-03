@@ -5,15 +5,18 @@ and hence the global sections---the factorization homology---can contain quite i
 For instance, in the case of a one-dimensional locally constant factorization algebra, the global sections along a circle encodes the Hochschild homology of the corresponding associative algebra. 
 In the complex one-dimensional situation, the factorization homology along Riemann surfaces is closely related to the conformal blocks of the associated vertex algebra. 
 
-In this section, we choose to direct our attention to a class of complex manifolds called {\em Hopf manifolds},
+In the first part of this section, we direct our attention to a class of complex manifolds called {\em Hopf manifolds},
 whose underlying smooth manifold has the form $S^1 \times S^{2d-1}$.
-One reason for choosing this family of manifolds is that the factorization homology serves as a natural home for characters of representations of the sphere algebra $\Tilde{\fg}_{d,\theta}^\bullet$ and the partition function of the higher dimensional $\beta\gamma$-system. 
+One reason for choosing this family of manifolds is that the factorization homology serves as a natural home for characters of representations of the sphere algebra $\Tilde{\fg}_{d,\theta}^\bullet$
+In more physical terms, the factorization homology is related to the partition function of $\sG$-equivariant holomorphic field theories, such as the higher dimensional $\beta\gamma$-system.
 Indeed, the answer admits a concise description in terms of Hochschild homology, see Proposition \ref{prop: hopf}. 
-After this, we return to the LMNS variants of the twisted Kac-Moody factorization algebra that exist on complex $d$-folds.
+\brian{more on index/character}
+
+After this, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
 
 \subsection{Hopf manifolds and twisted indices}
 
-We focus on a family of complex manifolds defined by Hopf \cite{Hopf} in every complex dimension $d$. 
+We focus on a family of complex manifolds defined by Hopf \cite{Hopf} which exist in every complex dimension $d$. 
 
 \begin{dfn}
 Fix an integer $d \geq 1$. 
@@ -108,11 +111,11 @@ The twisted case is similar.
 Let $\theta$ be a nontrivial degree $(d+1)$ invariant polynomial on $\fg$. 
 Then, the factorization homology is equal to
 \[
-\int_X \UU_\theta (\sG_X) = \left(\Sym(\Omega^{0,*}(X) \tensor \fg)[K] , \dbar + \d_{CE} + \d_\theta\right) .
+\int_X \UU_\theta (\sG_X) = \left(\Sym(\Omega^{0,*}(X) \tensor \fg)[K] , \dbar + \d_{CE} + K \cdot \d_\theta\right) .
 \]
 Applying our model for the Dolbeault cohomoloogy, we obtain a quasi-isomorphism of the global sections with the cochain complex
 \beqn\label{twisted hopf}
-\left(\Sym(\fg[\delta])[K] ,  \d_{CE} + \d_\theta \right) .
+\left(\Sym(\fg[\delta])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
 \eeqn
 We note that $\d_\theta$ is identically zero on $\Sym(\fg[\delta])$. 
 Indeed, for degree reasons, at least one of the inputs must be from $\fg \hookrightarrow \fg[\delta] = \fg \oplus \fg[-1]$, which consists of constant functions on $X$ with values in the Lie algebra $\fg$. 
@@ -122,14 +125,12 @@ Thus (\ref{twisted hopf}) just becomes the Chevalley-Eilenberg complex with valu
 By the same argument as in the untwisted case, we conclude that in this case the factorization homology is quasi-isomorphic to $\Hoch_*(U \fg)[K]$ as desired.
 \end{proof}
 
-There is an interesting consequence of this calculation to the Hochschild homology for the $A_\infty$ algebra $U(\Tilde{\fg}^\bullet_{d,\theta})$.
-It is easiest to state this when $X$ is a Hopf manifold of the form $(\CC^d \setminus \{0\}) / q^\ZZ$ for a single $q =q_1=\cdots=q_d \in D(0,1)^\times$ where the quotient is by the relation $(z_1,\ldots,z_d) \sim (q^\ZZ z_1,\ldots,q^\ZZ)$.
-Let $p_q :  \CC^d \setminus \{0\} \to X$ be the quotient map.
-Consider the following diagram
+We deduce a consequence of this calculation for the Hochschild homology of the $A_\infty$ algebra $U(\Tilde{\fg}^\bullet_{d,\theta})$.
+Let $p_{\bf q} :  \CC^d \setminus \{0\} \to X$ be the quotient map and consider the following diagram
 \[
 \xymatrix{
-\CC^d \setminus \{0\} \ar[r]^-{p_q} \ar[d]^-{\rho} & X \ar[d]^{\Bar{\rho}} \\
-\RR_{>0} \ar[r]^-{\Bar{p}_q} & S^1
+\CC^d \setminus \{0\} \ar[r]^-{p_{\bf q}} \ar[d]^-{\rho} & X \ar[d]^{\Bar{\rho}} \\
+\RR_{>0} \ar[r]^-{\Bar{p}_{\bf q}} & S^1
 }
 \]
 Here, $\rho$ is the radial projection map and $\Bar{\rho}$ is the induced map defined by the quotient.
@@ -138,18 +139,17 @@ In turn, this determines an action of $\ZZ$ on pushforward factorization algebra
 We have seen that there is a dense locally constant subfactorization algebra on $\RR_{>0}$ of the pushforward that is equivalent as an $E_1$ algebra to $U(\Hat{\fg}_{d,\theta})$.
 A consequence of excision for factorization homology, see Lemma 3.18 \cite{AFTopMan}, implies that there is a quasi-isomorphism
 \[
-\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), q) \simeq \int_{S^1} \Bar{\rho}_* \UU_\alpha(\sG_X),
+\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \int_{S^1} \Bar{\rho}_* \UU_\alpha(\sG_X),
 \]
 where the right-hand side is the Hochschild homology of the algebra $U \Hat{\fg}_{d,\theta}$ with coefficients in the bimodule $U \Hat{\fg}_{d, \theta}$ with the ordinary left-module structure and right-module structure given by twisting the ordinary action by the automorphism corresponding to the element $1 \in \ZZ$ on the algebra.
 
-Moreover, by the push-forward for factorization homology, Proposition 3.23 \cite{AFTopMan}, there is an equivalence
+Now, since the factorization homology computes the global sections of the factorization algebra we have a quasi-isomorphism
 \[
 \int_{S^1} \Bar{\rho}_* \UU_\alpha(\sG_X) \xto{\simeq} \int_X \UU_{\alpha} (\sG_X) .
 \]
-
-We have just shown that the factorization homology of $\sG_X$ is equal to the Hochschild homology of $U\fg$ so that
+It follows that there is a quasi-isomorphism of Hochschild homologies
 \beqn\label{hoch1}
-\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), q) \simeq \Hoch_* (U\fg)[K] .
+\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \Hoch_* (U\fg)[K] .
 \eeqn
 This statement is purely algebraic as the dependence on the manifold for which the Kac-Moody factorization algebra lives has dropped out.
 

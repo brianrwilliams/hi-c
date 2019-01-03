@@ -39,6 +39,7 @@ In practice, we replace a (dg) Lie algebra with a (dg) associative algebra and r
 always keeping locality in place.
 
 \owen{Let me register my complaint that {\it local} here is extremely abusive to conventional mathematical terminology. A local algebra, in the usual sense, is one with a unique maximal ideal.}
+\brian{I'm stumped. Some other bad ideas ``associative-$\star$ algebra on $X$" (c.f. Lie-$\star$ algebras, but $\star$ algebras are also something totally different), ``locally defined algebra on $X$"... }
 
 \begin{dfn}\label{def: localalg}
 A {\em local dg algebra} on a smooth manifold $X$~is:
@@ -47,21 +48,32 @@ A {\em local dg algebra} on a smooth manifold $X$~is:
 \item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
 \item[(iii)] a degree zero bidifferential operator $\cdot : \sA^{sh} \times \sA^{sh} \to \sA^{sh}$
 \end{enumerate}
-such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of dg associative algebras.
+such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of associative dg algebras.
 \end{dfn}
 
-As usual, we abusively refer to a local algebra $(\sA^{sh}, \d, \cdot)$ simply by $\sA$.
+We reserve the notation $\sA$ for the cosheaf of compactly supported sections of the bundle $A \to X$.
+By the assumptions, this is a cosheaf of dg associative algebras. 
+We will abusively refer to a local algebra $(A, \d, \cdot)$ simply by its cosheaf $\sA$.
 \owen{Don't we use $\sA$ for the precosheaf of compactly supported sections?}
+\brian{How's that sound?} 
+
+\begin{eg}
+The sheaf of smooth functions provides a trivial example of a local algebra on any manifold. 
 On a complex manifold, the basic example for us is the Dolbeault complex $\Omega^{0,*}_X$.
-This example is, of course, commutative. 
-For a noncommutative example, start with the sheaf of holomorphic differential operators and take its Dolbeault resolution. 
-\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
+This example is, of course, also commutative. 
+\end{eg}
+
+Any bundle of finite dimensional associative (dg) algebras defines a local algebra where the structure maps are differential operators of order zero. 
+
+%For a noncommutative example, start with the sheaf of holomorphic differential operators and take its Dolbeault resolution.
+%\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
 
 There is a forgetful functor from local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
 In particular, given any local algebra $\sA$ and local Lie algebra $\sL$, 
 we obtain a new local Lie algebra $\sL \tensor_{C^\infty} \sA$.
 The underlying vector bundle is simply~$L \tensor A$. 
 \owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
+\brian{You're right. What should we say then? Tensoring $\sA$ with a bundle of Lie algebras is a local Lie algebra? I guess that's all we use.}
 
 For local algebras, there is an appropriate notion of cohomology respecting the locality, 
 analogous to local Lie algebra cohomology. 
@@ -75,6 +87,9 @@ Hence $JA$ is also a dg associative algebra in the category of dg $D_X$-modules,
 using the symmetric monoidal product~$- \otimes_{C^\infty_X} -$. 
 
 \owen{I'm not so happy with how I wrote things below. I found what was there a bit confusing, because it meant something different by Hochschild cochains than many people mean.}
+\brian{What you wrote is the dual to hochschild homology of $JA$, which is the thing we want.
+I agree it's not the hochschild cochains of the algebra with trivial coefficients (which might be what you think could be confusing), but you're clear about that.} 
+
 
 In this symmetric monoidal dg category, 
 one can mimic many standard constructions from homological algebra.
@@ -106,13 +121,13 @@ This sheaf of cochain complexes has global sections that we denote by~$\Hochloc^
 \end{dfn}
 
 Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA)$ as follows.
-It is a polynomial functional \owen{you took product, so I think we mean "power series"} on $\sA$ that is a finite sum of functionals of the form
+It is a power series on $\sA$ that is a sum of functionals of the form
 \[
 \alpha_1 \tensor \cdots \otimes \alpha_k \mapsto \int_X  D_1(\alpha_1) \cdots D_k(\alpha_k) \, \omega_X
 \]
 where each $D_i$ is a differential operator from $\sA$ to~$C^\infty(X)$ and $\omega_X$ is a smooth top form on~$X$. 
 
-There is also a cyclic version of the above. 
+We now turn to a cyclic version of the above. 
 For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$,
 and hence on the $n$th component of the reduced Hochschild complex $\Hoch_{red}^* (JA)$.
 Taking the termwise quotient $D_X$-module, we obtain the {\em reduced cyclic cochains}
@@ -180,7 +195,6 @@ that factors through a map of sheaves
 \end{prop}
 
 \begin{rmk}
-\owen{Modestly edited. Please read:}
 A version of this result was given in \cite{CL1} for $\sA = \Omega^{0,*}(X)$, 
 where $X$ is a Calabi-Yau manifold.
 They interpret local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of ``admissible'' deformations for holomorphic Chern-Simons theory on $X$,
@@ -212,6 +226,7 @@ where $\fj$ from Definition~\ref{dfn: j}.
 In a sense $\Theta^\infty_d$ is the ``universal'' cocycle --- in that it only depends on the complex dimension and not on any Lie algebraic data --- that determines the most important local cocycles we have encountered before.
 
 \owen{We really ought to point out that if $\fg$ acts on a finite dimensional space $V$, then we have a map $\rho: \fg \to \gl(V)$, and that the chiral anomaly is the pullback along $\rho$ of the restriction of $\Theta^\infty_d$.} 
+\brian{I was going to say this for beta-gamma, but in your email you seem to have a stronger way to phrase it, so maybe I'll let you try that first.}
 
 \begin{proof}
 \owen{I don't understand why you work at the level of homology and whether you are working now with a (non dg) algebra $A$.}
@@ -253,6 +268,8 @@ We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as 
 which is precisely $\fj(\theta_{d+1,N})$. 
 \end{proof}
 
+\subsection{Holomorphic translation invariant cohomology}
+
 \brian{There is a statement about the hol trans invariant cyclic cochains.
 Namely that it's one dimensional generated by the higher residue.
 This is complementary to FHK and is compatible with out calculation in the appendix under the LQT map. 
@@ -260,3 +277,69 @@ Should I include a remark about this?
 }
 
 \owen{Yes, please! We should add a brief discussion of how this relates to FHK, of course.}
+
+\begin{prop}
+%There is a unique, up to scale, $U(d)$-invariant, holomorphic translation invariant, degree zero local cohomology class in the local cyclic cohomology of $\Omega^{0,*}(\CC^d)$.
+The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
+Thus
+\[
+H^0\left(\Cycloc^*(\Omega^{0,*}(\CC^d))^{\CC^d_{hol}, U(d)} \right) \cong \CC .
+\] 
+\end{prop}
+
+\begin{proof}
+The calculation is similar to that of the holomorphic translation invariant local Lie algebra cohomology of $\sG_d$ given in Appendix \ref{sec: hol trans}. 
+We list the steps of the calculation first, and we will justify them below. 
+\begin{enumerate}
+\item[(1)] There is an identification of the holomorphic translation invariant deformation complex 
+\beqn\label{step1}
+\Cycloc^*(\Omega^{0,*}(\CC^d)) \simeq \CC \cdot \d^d z \tensor^{\mathbb{L}}_{\CC[\partial_{z_i}]} {\rm Cyc}_{red}^*(\CC[[z_1,\ldots,z_d]])[d] .
+\eeqn
+Notice the overall shift down by the dimension $d$. 
+\item[(2)] We can recast the right-hand side as the Lie algebra homology of the $d$-dimensional abelian Lie algebra $\CC^d = {\rm span}\left\{\partial_{z_i}\right\}$ with coefficients in the module 
+
+\noindent$\Cyc_{red}^*(\CC[[z_1,\ldots,z_d]]) \d^d z [d]$:
+\[
+\CC \cdot \d^d z \tensor^{\mathbb{L}}_{\CC[\partial_{z_i}]} {\rm Cyc}_{red}^*(\CC[[z_1,\ldots,z_d]])[d] \cong {\rm C}^{\rm Lie}_*\left(\CC^d ; \Cyc_{red}^*(\CC[[z_1,\ldots,z_d]]) \d^d z \right)[d] .
+\] 
+\item[(3)] The $U(d)$-invariant subcomplex is quasi-isomorphic to $\left(\CC[t] / \CC\right) [2d]$, where $t$ is a formal variable of degree $+2$. 
+From this, the claim follows. 
+\end{enumerate}
+
+Step (1) follows from a result completely analogous to Corollary 2.29 in \cite{BWthesis} for local Lie algebra cohomology. 
+The commutative algebra $\CC[\partial_{z_i}]$ is equal to the enveloping algebra of the abelian Lie algebra $\CC^d = {\rm span} \{\partial_{z_i}\}$. 
+Hence, the right hand side of Equation (\ref{step1}) is precisely the Lie algebra homology in step (2). 
+
+We now justify Step (3). 
+First, we apply the Hochschild-Kostant-Roesenberg theorem to the cyclic homology of the ring $\CC[[z_1,\ldots,z_d]]$.
+It asserts a quasi-isomorphism 
+\[
+{\rm Cyc}_*(\CC[[z_1,\ldots,z_d]]) \simeq \left(\CC[[z_i]][\d z_i] [t^{-1}], t \d_{dR}\right)
+\]
+where the $\d z_i$ have degree $-1$ and $t$ is a formal parameter of degree $+2$ (note that the operator $t \d_{dR}$ is of degree $+1$). 
+The formal Poincar\'{e} lemma applied to $\hD^d$ then implies a quasi-isomorphism
+\[
+{\rm Cyc}_*(\CC[[z_1,\ldots,z_d]]) \simeq \CC [t^{-1}] .
+\]
+Thus, the holomorphic invariant subcomplex is quasi-isomorphic to
+\beqn\label{step3}
+\clieu_*(\CC^d ; (\CC [t] / \CC) \cdot \d^d z) [d] .
+\eeqn
+Here, we have identified the dual of $\CC[t^{-1}]$ with $\CC[t]$ and quotiented out by the constant term since we are taking reduced cohomology. 
+Notice that $(\CC [t] / \CC) \cdot \d^d z$ has a trivial $\CC^d$-action. 
+
+We have yet to take $U(d)$-invariants. 
+The complex (\ref{step3}) is equal to
+\[
+\Sym^* \left(\CC^d[1]\right) \tensor (\CC [t] / \CC) \cdot \d^d z) [d] .
+\]
+A $U(d)$-invariant element must be proportional to the factor $\partial_{z_1} \cdots \partial_{z_d} \in \Sym^d(\CC^d[1])$.
+Hence, the $U(d)$-invariant subcomplex is
+\[
+\CC \cdot (\partial_{z_1} \cdots \partial_{z_d}) \tensor (\CC [t] / \CC) \cdot \d^d z) [2d] = \left(\CC[t] / \CC\right) [2d]
+\] 
+as desired. 
+The class of $\Theta^\infty_d$ corresponds to the element $t^{d}$ in this presentation. 
+\end{proof}
+
+\brian{I still need to compare to FHK}
