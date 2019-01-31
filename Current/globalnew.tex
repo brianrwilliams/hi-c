@@ -14,7 +14,7 @@ Indeed, the answer admits a concise description in terms of Hochschild homology,
 
 After this, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
 
-\subsection{Hopf manifolds and twisted indices}
+\subsection{Hopf manifolds and twisted characters}
 
 We focus on a family of complex manifolds defined by Hopf \cite{Hopf} which exist in every complex dimension $d$. 
 By definition, a Hopf manifold of dimension $d$ is a complex manifold homeomorphic to $S^{2d-1} \times S^1$. 
@@ -58,7 +58,7 @@ Our first result is a computation of the global sections of this factorization a
 Let $X_{\bf q}$ be a Hopf manifold and suppose $\theta \in \Sym^{d+1}(\fg^*)^\fg$ is any $\fg$-invariant polynomial of degree $(d+1)$. 
 Then, there is a quasi-isomorphism of $\CC[K]$-modules
 \[
-\int_{X_{\bf q}} \UU_\theta (\sG_{X_{\bf q}}) \xto{\simeq} \Hoch_*(U \fg)[K] .
+\UU_\theta (\sG) (X_{\bf q}) \xto{\simeq} \Hoch_*(U \fg)[K] .
 \]
 \end{prop}
 \begin{proof}
@@ -66,7 +66,7 @@ Write $X = X_{\bf q}$.
 We first consider the untwisted case, $\theta = 0$, where the statement reduces to $\int_X \UU (\sG_X) \simeq \Hoch_*(U \fg)$.
 The factorization homology on the left hand side is computed by
 \[
-\int_X \UU(\sG_X) = \clieu_*(\Omega^{0,*}(X) \tensor \fg) .
+\UU_\theta (\sG) (X) = \clieu_*(\Omega^{0,*}(X) \tensor \fg) .
 \]
 Our goal is to compute the Lie algebra homology of the dg Lie algebra $\Omega^{0,*}(X) \tensor \fg$.  
 
@@ -78,13 +78,14 @@ H^*\left(\Omega^{*,*}(X), \dbar\right) \cong \CC[\epsilon,\delta]
 where $\epsilon$ has bidegree $(0,1)$ and $\delta$ has bidegree $(d,d-1)$. 
 
 \begin{rmk}
-The basic idea of this isomorphism is that $X$ can be realized as the total space of a holomorphic principal $T^2 = S^1 \times S^1$- bundle over $\CC P^{d-1}$. 
+The basic idea behind this isomorphism is that $X$ can be realized as the total space of a holomorphic principal $T^2 = S^1 \times S^1$- bundle over $\CC P^{d-1}$. 
 Topologically, this fibration is the product of the Hopf fibration with the circle. 
 The model we cited comes from studying the Borel spectral sequence for this holomorphic principal bundle.
 \end{rmk}
 
 We fix a quasi-isomorphism at the cochain level by considering the orthogonal projection onto the harmonic forms. 
-Let $\Delta_{\dbar} = [\dbar,\dbar^*]$ and denote by $\sH^{*,*}_{\dbar}(X)$ the bigraded vector space of forms annihilated by $\Delta_{\dbar}$. 
+Fixing any Hermitian metric on $X$ we can consider the Dolbeualt Laplacian $\Delta_{\dbar} = [\dbar,\dbar^*]$ where $\dbar^*$ is the adjoint of $\dbar$.
+Denote by $\sH^{*,*}_{\dbar}(X)$ the bigraded vector space of forms annihilated by $\Delta_{\dbar}$. 
 Then, by the isomorphism (\ref{hopfiso}) we see that orthogonal projection determines a quasi-isomorphism
 \beqn\label{hopfquasi}
 \pi_{\sH}^{0,*} : \left(\Omega^{0,*}(X), \dbar \right) \xto{\simeq} \sH^{0,*}_{\dbar}(X) \cong \CC[\epsilon]
@@ -106,7 +107,7 @@ This $(0,1)$ form is $\ZZ$-invariant, and hence descends along the map $p_{\bf q
 Applying Chevalley-Eilenberg chains, we obtain the following quasi-isomorphism for the global sections of the untwisted Kac-Moody factorization algebra:
 \beqn\label{hopfquasi3}
 \begin{tikzcd}
-\displaystyle \int_X \UU(\sG_X) = \clieu_*(\Omega^{0,*}(X , \fg)) \ar[r,"\pi^{0,*}_{\sH}", "\simeq"'] &\clieu_*(\CC[\epsilon] \tensor \fg) .
+\displaystyle \UU_\theta (\sG) (X) = \clieu_*(\Omega^{0,*}(X , \fg)) \ar[r,"\pi^{0,*}_{\sH}", "\simeq"'] &\clieu_*(\CC[\epsilon] \tensor \fg) .
 \end{tikzcd}
 \eeqn
 Now, we can express $\clieu_*(\CC[\epsilon] \tensor \fg) = \clieu_*(\fg \oplus \fg[-1]) = \clieu_*(\fg, \Sym (\fg^{ad}))$, where $\Sym(\fg^{ad})$ is the symmetric product of the adjoint representation of $\fg$. 
@@ -122,14 +123,14 @@ See, for instance, Theorem 3.3.2 of \cite{LodayCyclic}.
 Applied to the bimodule $M = U\fg$ itself we obtain a quasi-isomorphism 
 
 \noindent$\clieu_*(\fg , U\fg^{ad}) \xto{\simeq} {\rm Hoch}(U\fg)$.
-The right hand side is defined as the Hochschild homology of $U\fg$ with values in $U\fg$ equipped with the standard bimodule structure. 
-Composing with the quasi-isomorphism (\ref{hopfquasi3}) we obtain a quasi-isomorphism $\int_X \UU(\sG_X) \xto{\simeq} \Hoch(U\fg)$ as desired.
+The right hand side is the Hochschild homology of $U\fg$ with values in $U\fg$ equipped with the standard bimodule structure. 
+Composing with the quasi-isomorphism (\ref{hopfquasi3}) we obtain a quasi-isomorphism $\UU(\sG)(X) \xto{\simeq} \Hoch(U\fg)$ as desired.
 
 The twisted case is similar. 
 Let $\theta$ be a nontrivial degree $(d+1)$ invariant polynomial on $\fg$. 
 Then, the factorization homology is equal to
 \[
-\int_X \UU_\theta (\sG_X) = \left(\Sym(\Omega^{0,*}(X) \tensor \fg)[K] , \dbar + \d_{CE} + K \cdot \d_\theta\right) .
+\UU_\theta (\sG)(X) = \left(\Sym(\Omega^{0,*}(X) \tensor \fg)[K] , \dbar + \d_{CE} + K \cdot \d_\theta\right) .
 \]
 Applying our model for the Dolbeault cohomoloogy, we obtain a quasi-isomorphism of the global sections with the cochain complex
 \beqn\label{twisted hopf}
@@ -158,13 +159,13 @@ In turn, this determines an action of $\ZZ$ on pushforward factorization algebra
 We have seen that there is a dense locally constant subfactorization algebra on $\RR_{>0}$ of the pushforward factorization algebra that is equivalent as an $A_\infty$ algebra to $U(\Tilde{\fg}^\bullet_{d,\theta})$.
 A consequence of excision for factorization homology, see Lemma 3.18 \cite{AFTopMan}, implies that there is a quasi-isomorphism
 \[
-\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \int_{S^1} \Bar{r}_* \UU_\alpha(\sG_X),
+\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \Bar{r}_* \UU_\alpha(\sG_X) (S^1) ,
 \]
 The left-hand side is the Hochschild homology of the $A_\infty$ algebra $U \Tilde{\fg}_{d,\theta}^\bullet$ with coefficients in the bimodule $U \Tilde{\fg}_{d, \theta}^\bullet$ with the ordinary left-module structure and right-module structure given by twisting the ordinary action by the automorphism corresponding to the element $1 \in \ZZ$ on the algebra.
 
 Now, since the factorization homology computes the global sections of the factorization algebra we have a quasi-isomorphism
 \[
-\int_{S^1} \Bar{\rho}_* \UU_\alpha(\sG_X) \xto{\simeq} \int_X \UU_{\alpha} (\sG_X) .
+\Bar{\rho}_* \UU_\alpha(\sG_X) (S^1) \xto{\simeq} \UU_{\alpha} (\sG)(X) .
 \]
 It follows that there is a quasi-isomorphism of Hochschild homologies
 \beqn\label{hoch1}
@@ -172,18 +173,18 @@ It follows that there is a quasi-isomorphism of Hochschild homologies
 \eeqn
 Peculiarly, this statement is purely algebraic as the dependence on the manifold for which the Kac-Moody factorization algebra lives has dropped out.
 
-\subsection{Coupling to a free theory}
+\subsection{Coupling to a free theory and a character}
 
 \def\Cl{{\rm Cl}}
 
-We now study a class of free theories on Hopf manifolds that have a symmetry by the local Lie algebra $\sG_X$. 
+We turn to a class of free field theories on Hopf manifolds that have a symmetry by the local Lie algebra $\sG_X$. 
 Similarly to Section \ref{sec: qft}, we study this situation by coupling the local Lie algebra $\sG_X$ to the free theory.
-Our main result in this section is an interpretation of this coupling at the {\em quantum level} as a certain trace \brian{fix}. 
+Our main result in this section is an interpretation of this coupling at the {\em quantum level} as a character of $\fg$, see Proposition \ref{prop: twistedchar}. 
 
-There are two main differences between the theory we consider here and the one we considered in Section \ref{sec: qft}.
+There are two main differences between the theory we consider here and the one considered in Section \ref{sec: qft}.
 First, in this section we are working on a closed $d$-fold, namely the Hopf surface $X = X_{\bf q}$. 
-Although there is still a factorization algebra of observables on $X$, the main statement we extract in this section deals with the global sections of this factorization algebra.
-The theory actually makes sense on any complex manifold, but the result we state at the end of this section Proposition \ref{??} is specific to the case of a Hopf manifold. 
+Although there is still a factorization algebra of observables on $X$, the main statement we extract in this section entails the global sections of this factorization algebra.
+The theory actually makes sense on any complex manifold, but the result we state at the end of this section is specific to the case of a Hopf manifold. 
 
 Secondly, the theory we consider here is a free theory of {\em fermions}. 
 Thus, we will work with super vector spaces and super cochain complexes.
@@ -207,11 +208,11 @@ with the linear BRST operator given by $Q = \dbar$.
 We will write fields as pairs $(c,b)$. 
 There is a $(-1)$-shifted symplectic pairing is given by integration along $X$ combined with the evaluation pairing between $W$ and its dual: 
 \[
-\<c, b\> = \int_X \<c, b\>_{W}.
+\<c,b\> = \int_X \<c, b\>_{W}.
 \] 
 The action functional for this free theory is thus
 \[
-S_{bc} (c,b) = \int_X \<c, \dbar b\>_{W} .
+S_{bc} (c,b) = \int_X \<b , \dbar c\>_{W} .
 \]
 \end{dfn}
 
@@ -222,7 +223,11 @@ The only difference is that we allow for values in a super vector space $W$, as 
 When $d=1$ this theory is the usual $bc$ system (valued in $W$) from conformal field theory.
 \end{rmk}
 
-Before moving on to studying $\sG_X$-equivariance, we characterize the global observables of the $bc$ system with values in $W$ evaluated on Hopf manifolds. 
+Being a free theory, there is a natural BV quantization defined for any $X$.
+Its definition is completely similar to that given above in Definition \ref{dfn: qobs} for the $\beta\gamma$ system. 
+We denote the resulting factorization algebra of quantum observables by $\Obs^\q_{bc}$. 
+
+Before moving on to studying $\sG_X$-equivariance of this factorization algebra, we characterize the global observables of the $bc$ system with values in $W$ evaluated on Hopf manifolds. 
 To state the result we introduce the following definition whose bosonic version is familiar. 
 
 \begin{dfn}
@@ -234,7 +239,7 @@ Define the central extension of super Lie algebras
 given by the $2$-cocycle defined by the natural pairing between $W$ and its dual. 
 The $\hbar$-dependent {\em Weyl algebra} associated to $W$ is
 \[
-\Weyl_\hbar(W \oplus W^*) = U({\rm Heis}_\hbar(W \oplus W^*)) .
+\Weyl_\hbar(W \oplus W^*) := U({\rm Heis}_\hbar(W \oplus W^*)) .
 \]
 \end{dfn}
 
@@ -247,7 +252,7 @@ When $W = \Pi(V)$ is purely fermionic, $\Weyl_\hbar(\Pi(V) \oplus \Pi(V^*))$ is 
 Let $X$ be a Hopf manifold and consider the observables of the higher $bc$ system on $X$ valued in the super vector space $W$. 
 There is a natural quasi-isomorphism
 \[
-\Obs^q_{bc}(X) \xto{\simeq} {\rm Hoch}_*(\Weyl_\hbar(W \oplus W^*)) .
+\Obs^\q_{bc}(X) \xto{\simeq} {\rm Hoch}_*(\Weyl_\hbar(W \oplus W^*)) .
 \]
 \end{lem}
 \begin{proof}
@@ -263,22 +268,21 @@ where
 \]
 is an abelian dg Lie algebra and the cocycle defining the extension is
 \[
-\sL \times \sL \to \CC \cdot \hbar [-1] \;\; , \;\; (\gamma, \beta) \mapsto \hbar \int_X \<\gamma, \beta\>_W .
+\sL \times \sL \to \CC \cdot \hbar [-1] \;\; , \;\; (c, b) \mapsto \hbar \int_X \<c, b\>_W .
 \] 
-Note that this cocycle always has even parity in the $\ZZ/2$ grading.  
 As a cochain complex $\Hat{\sL} = \sL \oplus \CC\cdot \hbar [-1]$. 
 
 We can identify this dg Lie algebra with a smaller dg Lie algebra.
-The quaso-isomorphism (\ref{hopfquasi}) determines a quasi-isomorphism of dg Lie algebras
+Pick a Hermitian metric, as we did in the proof of Proposition \ref{prop: hopf}.
+The quasi-isomorphism (\ref{hopfquasi}) determines a quasi-isomorphism of dg Lie algebras
 \begin{align}\label{hopfquasi2}
 \Hat{\sL} \xto{\simeq} & \delta \CC[\epsilon] \tensor W^* [d-1] \oplus \CC[\epsilon] \tensor W \oplus \CC \cdot \hbar [-1] \\ & = (W^* \oplus W) [\epsilon] \oplus \CC \cdot \hbar [-1] .
 \end{align}
 In the second equality, we recall that $\delta$ is of degree $d-1$ and $\epsilon$ is of degree $+1$.
-The only nonzero bracket for the dg Lie algebra on the right hand side is of the form
+The non-degenerate pairing for the dg Lie algebra on the right hand side is determined by
 \[
-[f(\epsilon) \tensor w^* , g(\epsilon) \tensor w] = \<w^*, w\> \int_{\epsilon} f (\epsilon) g(\epsilon) \d \epsilon
+[1 \tensor w^* , \epsilon \tensor w] = \<w^*, w\> .
 \]
-where $\int_{\epsilon} \d \epsilon$ denotes Berezin integration. 
 
 A standard result about free BV theories asserts a quasi-isomorphism
 \[
@@ -297,7 +301,7 @@ In this case, the lemma implies that there is a quasi-isomorphism
 \Obs^q_{bc}(X) \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar(V \oplus V^*)) 
 \]
 where $\Cl_\hbar(V \oplus V^*)$ denotes the $\hbar$-dependent Clifford algebra. 
-In this, case there is a slick description of the Hochschild homology. 
+In this case, there is a slick description of the Hochschild homology. 
 
 If we choose a basis $\{v_i\}$ of $V$, and dual basis $\{v_i^*\}$ of $V^*$, then there is a homomorphism 
 \[
@@ -310,16 +314,46 @@ It is a standard fact that the Clifford algebra is Morita trivial \brian{ref}, s
 Hence, $\int_{Ber}$ is a quasi-isomorphism. 
 
 After inverting $\hbar$, invoking Lemma \ref{lem: hopfcliff} we obtain a composition of quasi-isomorphisms 
-\[
+\beqn\label{hopfcliffquasi}
 \Obs^\q_{bc} (X) [\hbar^{-1}] \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar (V \oplus V^*)) \xto{\simeq}\CC[\hbar,\hbar^{-1}] .
-\]
+\eeqn
+The first quasi-isomorphism is the one from Lemma \ref{lem: hopfcliff}, and the second is Berezin integration. 
 
-Thus, $\fc(X)$ must be a 
+\subsubsection{Quantum equivariance}
+
+We focus our attention on the $bc$ system on a Hopf manifold $X$ with values in the odd vector space $W = \Pi(V)$ where $V$ is an ordinary (bosonic) $\fg$-represenation. 
+The objective is to extract a character on the observables of the $bc$ system from the $\sG_X$-equivariant quantization. 
+By the same formalism as in Section \ref{sec: qft} the equivariant quantization determines a quantum Noether map
 \[
-H^*(\Obs^{\q}_{eq}(X_{\bf q})) \xto{e^{I^\q / \hbar}} H^*_{\rm Lie}(\sG(X_{\bf q})) \tensor H^*(\Obs^\q_{bc} (X_{\bf q})) \xto{\cong} H^*(\fg, \Sym(\fg^*)) ((\hbar))
+J_X^\q : \UU_{\Theta_X} (\sG)(X) [\hbar^{-1}]  \to \Obs^\q_{bc}(X) [\hbar^{-1}] ,
 \]
+where $\Theta_X$ is the obstruction to solving the $\sG_X$-equivariant quantization. 
+We will not need to explicit form of the obstruction in what immediately follows, but we discuss it in more detail in Section \ref{sec: hopfobs} below. 
 
-\subsubsection{A remark on the anomaly}
+Combining the quasi-isomorphisms of Lemma \ref{prop: hopf} and Equation (\ref{hopfcliffquasi}), we obtain a commutative diagram
+\[
+\begin{tikzcd}
+\UU_{\Theta_X} (\sG)(X) [\hbar^{-1}]  \ar[r, "J_X^\q"] \ar[d, "\simeq"] & \Obs^\q_{bc}(X) [\hbar^{-1}] \ar[d, "\simeq"] \\
+\Hoch_*(U \fg) [\hbar^{-1}] \ar[r,dotted,"{\rm ch}_{X,V}"] & \CC[\hbar,\hbar^{-1}] .
+\end{tikzcd}
+\] 
+The dotted map exists since the quantum Noether map preserves the projection onto the harmonic forms from which both quasi-isomorphisms are constructed.
+At the level of $H^0$ we obtain the following.
+
+\begin{prop}\label{prop: twistedchar}
+The $\sG_X$-equivariant quantization of the $bc$ system on $X$ valued in the $\fg$-representation $\Pi(V)$ determines a map 
+\[
+{\rm ch}_{X,V} : HH_0(U \fg) = \Sym(\fg)^{\fg} [\hbar^{-1}] \to \CC[\hbar,\hbar^{-1}] .
+\] 
+This map is natural in the module $V$.
+\end{prop}
+
+%Thus, $\fc(X)$ must be a 
+%\[
+%H^*(\Obs^{\q}_{eq}(X_{\bf q})) \xto{e^{I^\q / \hbar}} H^*_{\rm Lie}(\sG(X_{\bf q})) \tensor H^*(\Obs^\q_{bc} (X_{\bf q})) \xto{\cong} H^*(\fg, \Sym(\fg^*)) ((\hbar))
+%\]
+
+\subsubsection{A remark on the anomaly}\label{sec: hopfobs}
 
 Just like in the flat case in Section \ref{sec: qft}, we study the $\sG_X$-equivariant quantization of the $bc$ system when $X$ is a Hopf manifold.
 Since the $bc$ system is {\em free} a quantization always exists, and the anomaly $\Theta_X$ to solving the $\sG_X$-equivariant QME parametrizes the central extension of $\sG_X$ that acts on the quantum theory. 
@@ -340,7 +374,7 @@ where $\fc(X) \in \Omega^*(X)$ and $\Tilde{\fj}$ is a functional of the form
 \[
 \Tilde{\fj} : \Sym(\sG_X[1]) \to \Omega^*(X) .
 \]
-
+\brian{finish}
 To summarize, we have argued that the local class representing the extension of $\sG_X$ acting on the quantization of the $bc$ system on any Hopf manifold must be of a multiple of $\fj_X(\ch_{d+1}^\fg(V))$. 
 
 \subsection{The Kac-Moody vertex algebra and compactification} 
