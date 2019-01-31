@@ -84,7 +84,7 @@ The model we cited comes from studying the Borel spectral sequence for this holo
 \end{rmk}
 
 We fix a quasi-isomorphism at the cochain level by considering the orthogonal projection onto the harmonic forms. 
-Fixing any Hermitian metric on $X$ we can consider the Dolbeualt Laplacian $\Delta_{\dbar} = [\dbar,\dbar^*]$ where $\dbar^*$ is the adjoint of $\dbar$.
+For any Hermitian metric on $X$ we can consider the Dolbeualt Laplacian $\Delta_{\dbar} = [\dbar,\dbar^*]$ where $\dbar^*$ is the adjoint of $\dbar$.
 Denote by $\sH^{*,*}_{\dbar}(X)$ the bigraded vector space of forms annihilated by $\Delta_{\dbar}$. 
 Then, by the isomorphism (\ref{hopfiso}) we see that orthogonal projection determines a quasi-isomorphism
 \beqn\label{hopfquasi}
@@ -343,7 +343,7 @@ At the level of $H^0$ we obtain the following.
 \begin{prop}\label{prop: twistedchar}
 The $\sG_X$-equivariant quantization of the $bc$ system on $X$ valued in the $\fg$-representation $\Pi(V)$ determines a map 
 \[
-{\rm ch}_{X,V} : HH_0(U \fg) = \Sym(\fg)^{\fg} [\hbar^{-1}] \to \CC[\hbar,\hbar^{-1}] .
+{\rm ch}_{X,V} : HH_0(U \fg)[\hbar^{-1}] = \Sym(\fg)^{\fg} [\hbar^{-1}] \to \CC[\hbar,\hbar^{-1}] .
 \] 
 This map is natural in the module $V$.
 \end{prop}
@@ -355,18 +355,23 @@ This map is natural in the module $V$.
 
 \subsubsection{A remark on the anomaly}\label{sec: hopfobs}
 
-Just like in the flat case in Section \ref{sec: qft}, we study the $\sG_X$-equivariant quantization of the $bc$ system when $X$ is a Hopf manifold.
-Since the $bc$ system is {\em free} a quantization always exists, and the anomaly $\Theta_X$ to solving the $\sG_X$-equivariant QME parametrizes the central extension of $\sG_X$ that acts on the quantum theory. 
-That is, analogously to the flat case, we know that there exists a $\Theta_X \in \hbar H^1_{\rm loc}(\sG_X)[[\hbar]]$ and a quantum Noether map
+As we saw above, the $bc$ system on any manifold $X$ is {\em free}, and the anomaly $\Theta_X$ to solving the $\sG_X$-equivariant QME parametrizes the central extension of $\sG_X$ that acts on the quantum theory.
+
+%That is, analogously to the flat case, we know that there exists a $\Theta_X \in \hbar H^1_{\rm loc}(\sG_X)[[\hbar]]$ and a quantum Noether map
+%\[
+%J^\q : \UU_{\Theta_X} (\sG_X) \to \Obs^{\q}_{bc}(X) .
+%\] 
+
+We stress that for {\em any} complex $d$-fold $X$ we can consider the higher $bc$ system on $X$ with values in the $g$-representation $\Pi(V)$. 
+Furthermore, this theory is natural in the complex manifold $X$, in the sense that given any local biholomorphim of complex $d$-folds $f : X \to X'$ we can pull back the $bc$ system on $X'$ to the $bc$ system on $X$. 
+That is to say, we can consider the ``universal" $bc$ system as a functor
 \[
-J^\q : \UU_{\Theta_X} (\sG_X) \to \Obs^{\q}_{bc}(X) .
-\] 
+\sE_{bc} : {\rm Hol}_d \to (-1){\rm SympVect}
+\]
+where $(-1){\rm SympVect}$ is the category of $(-1)$-shifted symplectic dg vector spaces. 
+Since $\sG : {\rm Hol}_d \to {\rm dgLie}$, $X \mapsto \Omega^{0,*}(X, \fg)$ is also such a functor, we can consider the ``universal" equivariant $bc$ system of $\sG$ acting on $\sE_{bc}$. 
 
-Let's consider a more general situation.
-Fix a $\fg$-module $V$.
-For {\em any} complex $d$-fold $X$, we can consider the higher $bc$ system on $X$ with values in $\Pi(V)$. 
-
-We can represent the anomaly $\Theta_X$ as a local functional of the form
+We can represent the anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME as a local functional of the form
 \[
 \int_X \fc(X) \wedge \Tilde{\fj}(\alpha)
 \]
@@ -374,8 +379,19 @@ where $\fc(X) \in \Omega^*(X)$ and $\Tilde{\fj}$ is a functional of the form
 \[
 \Tilde{\fj} : \Sym(\sG_X[1]) \to \Omega^*(X) .
 \]
-\brian{finish}
+Universality puts restrictions on the differential forms that can appear in the one-loop anomaly. 
+Indeed, since $\Theta_X$ must also be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of $X$. 
+
+For a Hopf manifold $X$, the Chern classes $c_i(X)$ vanish when $i=1,\ldots,d-1$ for degree reasons. 
+Also, if we consider a local biholomorphism of the form $\CC^d \hookrightarrow X$, we see that the anomaly $\Theta_X$ gets pulled back to the anomaly on $\CC^d$ that we computed in Section \ref{sec: qft}. 
+Thus, for $X$ a Hopf manifold we see that the anomaly $\Theta_X$ must be proportional to a functional of the form
+\[
+\int_X \theta(\alpha \wedge \partial \alpha \wedge \cdots \wedge \partial \alpha)
+\]
+where $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and $\alpha \in \sG_X$. 
+
 To summarize, we have argued that the local class representing the extension of $\sG_X$ acting on the quantization of the $bc$ system on any Hopf manifold must be of a multiple of $\fj_X(\ch_{d+1}^\fg(V))$. 
+To actually compute this class we need some more machinery that we hope to develop in future work. 
 
 \subsection{The Kac-Moody vertex algebra and compactification} 
 
