@@ -169,6 +169,7 @@ but it is only defined for compactly supported sections $\alpha$.
 Note an important point here: if $\alpha$ is not compactly supported, then $I^\fg(\alpha)$ is not a functional on arbitrary fields because the density $\<\beta, \alpha \cdot \gamma\>_V$ may not be integrable.
 In general, a local functional need not determine an observable on an open set since the integral may not exist.
 When $\alpha$ is compactly supported on $U$, however, then $I^\sG (\alpha)$ does determine an observable on $U$, namely the observable~$J^{\cl}(\alpha)$. 
+We also want to note that the map $J^{\cl}$ is quadratic.
 
 The challenge is to extend this relationship to the quantum situation. 
 Being a free field theory, the $\beta\gamma$ system admits a natural quantization and hence a factorization algebra $\Obs^{\q}_V$ of quantum observables (whose definition we recall below). 
@@ -215,9 +216,9 @@ If we use coordinates $(z,w) \in \CC^d \times \CC^d$, the propagator has the for
 P_{\epsilon<L} = P^{an}_{\epsilon<L}(z,w) \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
 \eeqn
 where ${\rm id}_V, {\rm id}_{V^*}$ are the elements in $V \tensor V^*, V^* \tensor V$ that represent identity maps. 
-Moreover, $P^{an}_{0 < \infty} (z,w)$ is the Green's function for the Hodge Laplacian $\triangle_{\rm Hodge}$ on $\CC^d$:
+Moreover, $P^{an}_{0 < \infty} (z,w)$ is the Green's function for the operator $\dbar$ on $\CC^d$:
 \[
-\triangle_{\rm Hodge} P^{an}_{0<\infty} (z,w) = \delta (z-w) .
+\dbar P^{an}_{0<\infty} (z,w) = \delta (z-w) .
 \]
 
 \item[(3)] Let $K_t \in C^\infty((0,\infty)_t) \tensor \sE_V \Hat{\tensor} \sE_V$ be the heat kernel for the Hodge Laplacian
@@ -540,7 +541,7 @@ and so we have a quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}
 
 %The second approach is what we will explain here, as it is the one that extends to the equivariant setting.
 
-\begin{dfn}
+\begin{dfn}\label{dfn: qobs}
 The {\em smoothed quantum observables} supported on $U \subset \CC^d$ is the cochain complex
 \[
 \Tilde{\Obs}^\q_V(U) = \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar + \hbar \Delta\right) .
@@ -615,31 +616,116 @@ This structure leads to the following dg version of the usual canonical quantiza
 \begin{dfn}
 The {\em Heisenberg dg Lie algebra} $\sH_{d,V}$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
 \[
-\CC \to \sH_{d,V} \to A_d \tensor (V \oplus V^*[d-1]) 
+\CC \to \sH_{d,V} \to A_d \tensor (V^*[d-1] \oplus V) 
 \]
 determined by the $2$-cocycle $\omega_V$. 
 Explicitly, the nontrivial bracket is
 \[
-[\alpha \otimes v, \beta \otimes v^*] = \<v, v^*\>_V \oint_{S^{2d-1}} \alpha \wedge \beta\, \d^d z,
+[c, b] =  \oint_{S^{2d-1}} \<a \wedge b\>_V \d^d z,
 \]
-where $v \in V$ and $v^* \in V^*[d-1]$.
+where $\<c \wedge b\>_V$ refers to taking the wedge product in $A_d$ together with the pairing between $V$ and its dual. 
 \end{dfn}
 
-The universal enveloping algebra $U(\sH_{d,V})$ is a dg Weyl algebra,
-a version of differential operators on the mapping space $\Map(S^{2d-1},V)$.
+The universal enveloping algebra $U(\sH_{d,V})$ is a dg version of the Weyl algebra.
+We think of this algebra as an algebraic replacement of differential operators on the mapping space $\Map(S^{2d-1},V)$.
+
+For calculations, it is useful for us present this algebra in terms of residues over the sphere $S^{2d-1}$. 
+This is completely analogous to the usual description of modes of a vertex algebra in terms of ordinary residues.
+The higher residue determines a pairing
+\[
+\begin{array}{cccc}
+ A_d \tensor A_d & \to &  \CC \\
+ a \tensor b & \mapsto & \oint_{S^{2d-1}} a \wedge b \wedge \d^d z .
+ \end{array}
+\]
+and gives an isomorphism $A_d \cong A_d^\vee [-d + 1]$. 
+This isomorphism allows us to identify, for instance, an element $a \in A_d \tensor V^*[d-1]$ with the functional 
+\[
+\begin{array}{cccc}
+\oint_{S^{2d-1}} a  : & A_d \tensor V & \to & \CC \\
+& a & \mapsto & \oint_{S^{2d-1}} \<a \wedge c\>_V \wedge \d^d z .
+\end{array}
+\]
+\begin{rmk}
+Using this convention, it is instructive to think of the commutator in $U(\sH_V)$ as given by contractions with the propagator $P = P_{0 < \infty}$ restricted to $A_d \subset \Omega^{0,*}(\CC^d)$. 
+For instance, when $d=2$ the propagator is given by
+\[
+P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V}
+\]
+The propagator is a $(0,1)$-form on $\CC^d \setminus 0$ with values in $V^* \tensor V$ and satisfies $\d^2 z \dbar P = \delta_{\CC^d} (z) \id_V$. 
+We view $\id_V$ as an element of $V^* \tensor V$. 
+Notice this differs from our convention before where we included the holomorphic top form in $P$. 
+We have absorbed this into the definition of the pairing defining $\sH_V$. 
+%\[
+%P \in (A_d \tensor V^*[d-1]) \Hat{\tensor} (A_d \tensor V) = (A_d \Hat{\tensor} A_d) \tensor (V^* \tensor V) [d-1] .
+%\] 
+%This is simply the Green's function for the Hodge Laplacian restricted to the space 
+%\[
+%A_d \Hat{\tensor} A_d \subset \Omega^{0,*}(\CC^d \setminus 0) \Hat{\tensor} \Omega^{0,*}(\CC^d \setminus 0) = \Omega^{0,*}((\CC^d \setminus 0) \times (\CC^d \setminus 0))
+%\]
+%tensored with the identity on $V$ viewed as an element in $V^* \tensor V$. 
+%For instance, when $d = 1$, so that $A_1 = \CC[z,z^{-1}]$ we have
+%\[
+%P = \frac{1}{z-w} \id_V
+%\]
+To simplify notations, let $P(z) = p(z) \id_V$ where $p(z)$ is the differential form part of the propagator above. 
+Since $\d^2 z \dbar p(z)$ is the $\delta$-function on $\CC^d \setminus 0$ one has the residue formula
+\[
+\oint_{S^{2d-1}} p(z) \d^2 z = 1 .
+\]
+Thus, $p(z)$ is the $\delta$-function for the $(2d-1)$-sphere.
+
+To give some context for Corollary \ref{cor: free} below we do an example of such a calculation in $U(\sH_V)$. 
+The vector space $V$ is a $\fg$-representation, hence it makes sense to consider the two quadratic elements 
+\[
+\oint_{S^3} \<b, (a \cdot c)\>_V \;\;\; , \;\;\; \oint_{S^3}\<b, (a'\cdot c)\>_V \;\; \in \;\; U (\sH_V)
+\]
+where $a,a' \in A_2 \tensor \fg$. 
+The bracket
+\[
+\left[\oint_{z \in S^{3}} \<b , a \cdot c \>_V , \oint_{w \in S^{3}} \<b , a' \cdot c\>_V \right]
+%\oint_{z \in S^{3}} \oint_{w \in S^{3}} \<a \tensor b ,{\rm Cas}_{V} \cdot \omega_{BM}(z,w)\> .
+\]
+splits into two terms.
+The first term involves a single contraction of the propagator $P = p \cdot \id_V$ and has the form
+\[
+\oint_{z \in S^3} \oint_{w \in S^3}  p(z-w) \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \cdot c(w,\wbar)\>_V  .
+\]
+By the residue formula we see that this simplifies to
+\[
+\oint_{S^3} \<b, [a,a'] \cdot c\>_V .
+\] 
+The next term involves a {\em double} contraction and hence has integrand proportional to $p(z-w)^2$. 
+Actually, this term vanishes identically since $p(z-w)$ is a $(0,1)$-form. 
+Thus, the double contraction does not appear when $d=2$.
+
+Note that this is strikingly different from the $d=1$ case, where the double contraction produces the term equal proportional to the level of the affine Kac-Moody. 
+This raises the natural question as to how the (strict) dg Weyl algebra sees the $L_\infty$ Kac-Moody extension determined by $\ch_{d+1}(V)$. 
+We address this in Proposition \ref{prop: ainfinity} below. 
+\end{rmk}
+
 By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
 a locally constant factorization algebra on $\RR$.
 Following our approach in Section~\ref{sec: sphere ops},
 one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+The formula looks very similar to the identifications above in terms of residues. 
+
+For instance, if $I \subset \RR$ is an interval, an element in the linear component $$\rho \tensor a \in \Omega^*_c(I) \tensor \left(A_d \tensor V^*[d-1]\right)$$ is assigned the linear observable 
+\[
+\begin{array}{cccc}
+\Omega^{0,*}(r^{-1}(I)) \tensor V & \to & \CC \\
+\gamma & \mapsto & \int_{r^{-1}(I)} \rho(r) \<a(z,\zbar), \gamma(z,\zbar)\> \d^d z .
+\end{array}
+\] 
 Upon compactification along the sphere $S^{2d-1}$, 
 the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_{d,V})$,
 as we now show.
 (Explicit formulas follow the proof.)
 
-\begin{cor} 
+\begin{cor} \label{cor: free}
 The map (\ref{free field}) determines a map of $E_1$-algebras 
 \beqn\label{free field2}
-\oint_{S^{2d-1}} J^\q : U\left(\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) .
+\oint_{S^{2d-1}} J^\q : U\left(\Tilde{\fg}^{\bullet}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) .
 \eeqn
 \end{cor}
 
@@ -675,3 +761,42 @@ Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and 
 \end{proof}
 
 \owen{Still need to insert formulas but it will be quick now!}
+
+\subsubsection{}
+The map $\oint_{S^{2d-1}} J^\q$ of $E_1$ algebras can be described using the following explicit $A_\infty$ model.
+In the case $d=1$, this map of $E_1$ algebras can be taken to be a strict map of associative algebras, and it recovers the free field realization of the Kac-Moody algebra \cite{FrenkelFree}.
+We focus on the case $d=2$ for concreteness, though the formulas for any $d$ are similar. 
+
+The target of the map $\oint_{S^3} J^\q : U\left(\Tilde{\fg}_{2, \ch_3(V)}\right) \to U(\sH_{2})$ is the enveloping algebra of a strict dg Lie algebra, therefore it is a strict dg associative algebra. 
+On the other hand, $\sA_2 := U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)$ is the enveloping algebra of an $L_\infty$ algebra, so it has nonzero higher multiplications
+\[
+m_k : \sA_2^{\tensor k} \to \sA_2 .
+\] 
+Since the $L_\infty$ algebra $\Tilde{\fg}_{2, \ch_3(V)}$ only has nonzero $\ell_1 = \dbar, \ell_2 = [-.-]$ and $\ell_3$, the multiplications for $A_\infty$ algebra $\sA_2$ satisfy $m_k = 0$ for $k > 2$. 
+
+\begin{prop}\label{prop: ainfinty}
+Let $\sA_2 = U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)$.
+An $A_\infty$ model for the map (\ref{free field2}) of $E_1$-algebras, in the case $d=2$, is given by the sequence of maps $(\sJ_k)_{k = 1,2,\ldots}$,
+\[
+\sJ_k : \sA_2^{\tensor k} \to U(\sH_V),
+\]
+where $\sJ_k = 0$ for $k > 2$ and $\sJ_1$, $\sJ_2$ are defined by
+\[
+\sJ_1 (\alpha) = \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
+\]
+and 
+\[
+\sJ_2 (\alpha, \alpha') = \oint_{S^3} \<\dbar^* \beta, [\alpha, \alpha'] \cdot \gamma\>_V .
+\] 
+\end{prop}
+
+\begin{proof}
+$a,a',a'' \in A_d \tensor \fg$. 
+\begin{align*}
+\oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = \left(\sJ_2(a, [a',a''] + \;{\rm permuations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
+& = \left( \oint_{S^3} \<\beta, [a, \dbar^*[a',a'']]\>_V + \; {\rm permutations} \right) \\ & \;\;\; + \left(\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\beta, [a', \dbar^* a'']\>_V\right] + \; {\rm permutations}\right) 
+\end{align*}
+The terms labeled ``permuations" are like terms with the $a,a',a''$ permuted (with appropriate signs). 
+\end{proof}
+
+
