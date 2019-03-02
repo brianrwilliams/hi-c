@@ -738,13 +738,13 @@ Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and 
 The remaining part of this section is devoted to exhibiting an explicit $A_\infty$-model for the map of $E_1$ algebras in the statement above.
 
 \begin{eg}\label{eg: contract}
-As an example of the implication of Corollary \ref{cor: free} we exhibit a calculation in $U(\sH_{d,V})$. 
+As an example of the implication of Corollary \ref{cor: free} we exhibit a calculation in $U(\sH_{2,V})$. 
 The vector space $V$ is a $\fg$-representation, hence it makes sense to consider the two quadratic elements 
 \[
 \oint_{S^3} \<b, (a \cdot c)\>_V \;\;\; , \;\;\; \oint_{S^3}\<b, (a'\cdot c)\>_V \;\; \in \;\; U (\sH_{d,V})
 \]
 where $a,a' \in A_2 \tensor \fg$. 
-According to the definition of the associative algebra structure on the Heisenberg algebra, the bracket
+By the definition of the associative algebra structure, the bracket
 \beqn\label{bracket}
 \left[\oint_{z \in S^{3}} \<b , a \cdot c \>_V , \oint_{w \in S^{3}} \<b , a' \cdot c\>_V \right]
 %\oint_{z \in S^{3}} \oint_{w \in S^{3}} \<a \tensor b ,{\rm Cas}_{V} \cdot \omega_{BM}(z,w)\> .
@@ -769,10 +769,11 @@ There is potentially another term in the expansion of (\ref{bracket}) involving 
 Actually, this term vanishes identically since $p(z-w)$ is a $(0,1)$-form. 
 Thus, the double contraction does not appear when $d=2$.
 Again, this is different from the $d=1$ case, where the double contraction produces the term equal proportional to the level of the affine Kac-Moody. 
-We will see how the central term also appears as from a higher $A_\infty$ morphism. 
+We will see how the central term also appears from a higher $A_\infty$ morphism. 
 \end{eg}
 
 \subsubsection{}
+
 The map $\oint_{S^{2d-1}} J^\q$ of $E_1$ algebras can be described using the following explicit $A_\infty$ model.
 In the case $d=1$, this map of $E_1$ algebras can be taken to be a strict map of associative algebras, and it recovers the free field realization of the Kac-Moody algebra \cite{FrenkelFree}.
 We focus on the case $d=2$ for concreteness, though the formulas for any $d$ are similar. 
@@ -809,11 +810,11 @@ This boils down to checking the following $A_\infty$ relation.
 For $a,a',a'' \in A_d \tensor \fg$ we must show
 \beqn
 \begin{array}{lll}
-\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permuations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
+\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permutations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
 & = & \displaystyle \label{dbarstar} \left( \oint_{S^3} \<\dbar^*\beta, [a, [a',a'']]\>_V + \; {\rm permutations} \right) \\ & & \displaystyle + \left(\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right] + \; {\rm permutations}\right) 
 \end{array}
 \eeqn
-The terms labeled ``permuations" are like terms with the $a,a',a''$ permuted (with appropriate signs). 
+A term labeled ``permutations'' is identical to the other term inside parentheses, but with the inputs $a,a',a''$ permuted (with appropriate signs). 
 
 In the very last line, we have commutators of the form  
 \[
@@ -830,7 +831,6 @@ The second type of term involves a double contraction and contributes terms of t
 \[
 \oint_{z \in S^3} \oint_{w \in S^3} \Tr_V(a \wedge a' \wedge a'') p(z-w) \dbar^* p(z-w)  .
 \] 
-
 \end{proof}
 
 
