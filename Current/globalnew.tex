@@ -185,16 +185,31 @@ Composing with the quasi-isomorphism (\ref{hopfquasi3}) we obtain a quasi-isomor
 
 The twisted case is similar. 
 Let $\theta$ be a nontrivial degree $(d+1)$ invariant polynomial on $\fg$. 
-Then, the factorization homology is equal to
+The factorization homology is then 
 \[
 \UU_\theta (\sG)(X) = \left(\Sym(\Omega^{0,*}(X) \tensor \fg)[K] , \dbar + \d_{CE} + K \cdot \d_\theta\right) .
 \]
-Applying our model for the Dolbeault cohomoloogy, we obtain a quasi-isomorphism of the global sections with the cochain complex
+\owen{I changed the argument here since I didn't follow the existing one, which seemed to need homological perturbation lemma.}
+Note that if we use the filtration by symmetric powers (as an algebra over $\CC[K]$),
+the first page is given by cohomology with respect to $\dbar$,
+and so it is
 \beqn\label{twisted hopf}
-\left(\Sym(\fg[\delta])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
+\left(\Sym(\fg[\alpha])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
 \eeqn
-We note that $\d_\theta$ is identically zero on $\Sym(\fg[\delta])$. 
-Indeed, for degree reasons, at least one of the inputs must be from $\fg \hookrightarrow \fg[\delta] = \fg \oplus \fg[-1]$, which consists of constant functions on $X$ with values in the Lie algebra $\fg$. 
+Moreover, $\d_\theta$ is identically zero on $\Sym(\fg[\alpha])$, so it cannot affect later pages of the spectral sequence. 
+Hence the sequence collapses after $\d_{CE}$ is applied.
+That is, 
+\[
+H^*(\UU_\theta (\sG)(X)) \cong H^{\rm Lie}_*(\fg[\alpha])[K] \cong H^{\rm Lie}_*(\fg, U\fg^{ad})[K].
+\]
+
+\owen{I think something a little more careful needs to be done below to get the q-iso.}
+Applying our model for the Dolbeault cohomology, we obtain a quasi-isomorphism of the global sections with the cochain complex
+\beqn\label{twisted hopf}
+\left(\Sym(\fg[\alpha])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
+\eeqn
+
+Indeed, for degree reasons, at least one of the inputs must be from $\fg \hookrightarrow \fg[\alpha] = \fg \oplus \fg[-1]$, which consists of constant functions on $X$ with values in the Lie algebra $\fg$. 
 In the formula for the local cocycle from Proposition \ref{prop j map} associated to $\theta$ it is clear that if any one of the inputs is $\Delta_{\dbar}$-harmonic then the cocycle vanishes identically. 
 Indeed, one can integrate by parts to put it in the form $\int \partial \alpha \cdots \partial \alpha$, which is the integral of a total derivative, hence zero since $X$ has no boundary.
 Thus (\ref{twisted hopf}) just becomes the Chevalley-Eilenberg complex with values in the trivial module $\CC[K]$. 
