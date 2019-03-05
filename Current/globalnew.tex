@@ -8,14 +8,20 @@ In the complex one-dimensional situation, the factorization homology along Riema
 In the first part of this section, we direct our attention to a class of complex manifolds called {\em Hopf manifolds},
 whose underlying smooth manifold has the form $S^1 \times S^{2d-1}$.
 They provide a natural generalization of elliptic curves, and hence to generalizations of interesting phenomena from chiral CFT in complex dimension one.
-In particular, the factorization homology on Hopf manifolds serves as a natural home for characters of representations of the sphere algebra $\Tilde{\fg}_{d,\theta}^\bullet$.
-In more physical terms, the factorization homology is related to the partition function of $\sG$-equivariant holomorphic field theories, such as the higher dimensional $\beta\gamma$ and $bc$ systems.
-Indeed, the answer admits a concise description in terms of Hochschild homology, see Proposition~\ref{prop: hopf}. 
+In particular, the factorization homology on Hopf manifolds serves as a natural home for characters of representations of the sphere algebra~$\Tilde{\fg}_{d,\theta}^\bullet$.
+We demonstrate that by identifying the factorization homology with the Hochschild homology of~$\Tilde{\fg}_{d,\theta}^\bullet$.
+
+In the next section, we provide examples of such characters using field theory.
+In physical terms, the factorization homology is related to the partition function of $\sG$-equivariant holomorphic field theories, such as the higher dimensional $\beta\gamma$ and $bc$ systems.
+We compute the partition functions on these Hopf manifolds, which are close cousins to superconformal indices, 
+and give a concise description in terms of Hochschild homology, in Proposition~\ref{prop: hopf}. 
 \brian{more on index/character}
 
-After treating Hopf manifolds, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
+Finally, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
 
 \subsection{Hopf manifolds and Hochschild homology}
+
+\owen{add comment}
 
 \subsubsection{Overview of Hopf manifolds}
 
@@ -84,7 +90,8 @@ For the Hopf manifold, however, life is particularly simple.
 
 \begin{lem}[Example 4.72, \cite{Tanre}]
 For $X_{\bf q}$ a Hopf manifold,
-the Dolbeault cohomology coincides with the de Rham cohomology, and the complex $\CC[a, b, \alpha, \beta], \delta)$ is a de Rham model and hence is quasi-isomorphic to the de Rham complex.
+the Dolbeault cohomology coincides with the de Rham cohomology.
+Moreover, the complex $(\CC[a, b, \alpha, \beta], \delta)$ is also a de Rham model and hence is quasi-isomorphic to the de Rham complex.
 \end{lem}
 
 Our primary interest, however, is in the $(0,*)$-forms.
@@ -155,7 +162,7 @@ Indeed, any Hermitian metric on $X$ determines an adjoint $\dbar^*$ to $\dbar$ a
 Denote by $\sH^{0,*}_{\dbar}(X)$ the graded vector space of forms annihilated by $\Delta_{\dbar}$. 
 In light of lemma~\ref{lem:tanre}, the orthogonal projection determines a quasi-isomorphism
 \beqn\label{hopfquasi}
-\pi_{\sH}^{0,*} : \left(\Omega^{*,*}(X), \dbar \right) \xto{\simeq} \sH^{0,*}_{\dbar}(X) \cong \CC[\alpha].
+\pi_{\sH}^{0,*} : \left(\Omega^{0,*}(X), \dbar \right) \xto{\simeq} \sH^{0,*}_{\dbar}(X) \cong \CC[\alpha].
 \eeqn
 Tensoring with $\fg$, we obtain a quasi-isomorphism 
 \[
@@ -290,6 +297,7 @@ Thus, we will work with super vector spaces and super cochain complexes.
 These lead to minor modifications to the approach of Section~\ref{sec: qft}, 
 but yields a statement that is easiest to understand.
 
+\owen{Maybe better to mention (or mention as well) the Konishi anomaly?}
 Before delving into the details, 
 we note for physicists that we develop here a holomorphic version of the Adler-Bardeen-Jackiw anomaly,
 as we are studying fermionic matter fields coupled to a background holomorphic gauge field.
