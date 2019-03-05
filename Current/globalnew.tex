@@ -15,7 +15,7 @@ Indeed, the answer admits a concise description in terms of Hochschild homology,
 
 After treating Hopf manifolds, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
 
-\subsection{Hopf manifolds and twisted characters}
+\subsection{Hopf manifolds and Hochschild homology}
 
 \subsubsection{Overview of Hopf manifolds}
 
@@ -75,7 +75,7 @@ Topologically, this fibration is the product of a circle with the Hopf fibration
 Each torus fiber can be equipped with the complex structure of some elliptic curve, so that the fibration is holomorphic with respect to the natural complex structures on $X_{\bf q}$ and~$\CC\PP^{d-1}$.
 Both projective space and an elliptic curve are K\"ahler and hence admit small models, 
 following~\cite{DGMS}.
-As the Hopf manifold is a fibration, one obtains a model for its de Rham complex by twistubg the differential on the tensor product of those models.
+As the Hopf manifold is a fibration, one obtains a model for its de Rham complex by twisting the differential on the tensor product of those models.
 The lemma above specifies the relevant twisting.
 
 The complex $\Omega^{0, *}(X_{\bf q})$ is the quotient of $\Omega^{*, *}(X_{\bf q})$ by the dg ideal $\Omega^{\geq 1, *}(X_{\bf q})$,
@@ -139,21 +139,19 @@ The factorization homology on the left hand side is computed by
 \]
 Our goal is to compute the Lie algebra homology of the dg Lie algebra $\Omega^{0,*}(X) \tensor \fg$.  
 
-By lemma \ref{lem:tanre} there is an isomorphism of bigraded vector spaces
-\beqn\label{hopfiso}
-H^*\left(\Omega^{*,*}(X), \dbar\right) \cong \CC[\alpha,b]
-\eeqn
-where $\alpha$ has bidegree $(0,1)$ and $b$ has bidegree~$(d,d-1)$. 
-
-
-We fix a quasi-isomorphism at the cochain level by considering the orthogonal projection onto the harmonic forms. 
-For any Hermitian metric on $X$ we can consider the Dolbeault Laplacian $\Delta_{\dbar} = [\dbar,\dbar^*]$ where $\dbar^*$ is the adjoint of $\dbar$.
-Denote by $\sH^{*,*}_{\dbar}(X)$ the bigraded vector space of forms annihilated by $\Delta_{\dbar}$. 
-Then, by the isomorphism (\ref{hopfiso}) we see that orthogonal projection determines a quasi-isomorphism
+We know that $H^{0,*}(X) \cong \CC[\alpha]$ where $\alpha$ has degree 1, by the arguments above.
+Hodge theory will let us produce a quasi-isomorphism $(\Omega^{0,*}(X), \dbar) \to \CC[\alpha]$.
+Indeed, any Hermitian metric on $X$ determines an adjoint $\dbar^*$ to $\dbar$ and hence a Dolbeault Laplacian $\Delta_{\dbar} = [\dbar,\dbar^*]$.
+Denote by $\sH^{0,*}_{\dbar}(X)$ the graded vector space of forms annihilated by $\Delta_{\dbar}$. 
+In light of lemma~\ref{lem:tanre}, the orthogonal projection determines a quasi-isomorphism
 \beqn\label{hopfquasi}
-\pi_{\sH}^{0,*} : \left(\Omega^{0,*}(X), \dbar \right) \xto{\simeq} \sH^{0,*}_{\dbar}(X) \cong \CC[\epsilon]
+\pi_{\sH}^{0,*} : \left(\Omega^{*,*}(X), \dbar \right) \xto{\simeq} \sH^{0,*}_{\dbar}(X) \cong \CC[\alpha].
 \eeqn
-where $\epsilon$ has degree $+1$. 
+Tensoring with $\fg$, we obtain a quasi-isomorphism 
+\[
+\pi_{\sH}^{0,*} \otimes \id_\fg :\sG (X) \to \fg[\alpha]
+\]
+of dg Lie algebras, where the target has trivial differential.
 
 %Here, we view $\CC[\epsilon,\delta]$ as a cochain complex with zero differential. 
 
@@ -161,11 +159,15 @@ where $\epsilon$ has degree $+1$.
 Applying Chevalley-Eilenberg chains, we obtain the following quasi-isomorphism for the global sections of the untwisted Kac-Moody factorization algebra:
 \beqn\label{hopfquasi3}
 \begin{tikzcd}
-\displaystyle \UU_\theta (\sG) (X) = \clieu_*(\Omega^{0,*}(X , \fg)) \ar[r,"\pi^{0,*}_{\sH}", "\simeq"'] &\clieu_*(\CC[\epsilon] \tensor \fg) .
+\displaystyle \UU\sG (X) = \clieu_*(\Omega^{0,*}(X , \fg)) \ar[r,"\simeq"] &\clieu_*(\CC[\epsilon] \tensor \fg) .
 \end{tikzcd}
 \eeqn
-Now, we can express $\clieu_*(\CC[\epsilon] \tensor \fg) = \clieu_*(\fg \oplus \fg[-1]) = \clieu_*(\fg, \Sym (\fg^{ad}))$, where $\Sym(\fg^{ad})$ is the symmetric product of the adjoint representation of $\fg$. 
-By Poincar\'{e}-Birkoff-Witt there is an isomorphism of vector spaces $\Sym(\fg) = U \fg$, so we can write this as $\clieu_*(\fg, U \fg^{ad})$.
+Unpacking the right hand side, we have
+\[
+\clieu_*(\CC[\alpha] \tensor \fg) = \clieu_*(\fg \oplus \fg[-1]) = \clieu_*(\fg, \Sym (\fg^{ad})),
+\] 
+where $\Sym(\fg^{ad})$ is the symmetric product of the adjoint representation of $\fg$. 
+By the Poincar\'{e}-Birkoff-Witt theorem, there is an isomorphism of vector spaces $\Sym(\fg) \cong U \fg$, so we can write view this cochain complex as~$\clieu_*(\fg, U \fg^{ad})$.
 
 Any $U(\fg)$-bimodule $M$ is automatically a module for the Lie algebra $\fg$ by the formula $x \cdot m = xm - mx$ where $x \in \fg$ and $m \in M$.
 Moreover, for any such bimodule there is a quasi-isomorphism of cochain complexes 
@@ -173,12 +175,13 @@ Moreover, for any such bimodule there is a quasi-isomorphism of cochain complexe
 \clieu_*(\fg, M) \xto{\simeq} {\rm Hoch}_*(U\fg, M) 
 \]
 which is induced from the inclusion of $\fg \hookrightarrow U \fg$. 
-See, for instance, Theorem 3.3.2 of \cite{LodayCyclic}.
+(See, for instance, Theorem 3.3.2 of~\cite{LodayCyclic}.)
 Applied to the bimodule $M = U\fg$ itself we obtain a quasi-isomorphism 
-
-\noindent$\clieu_*(\fg , U\fg^{ad}) \xto{\simeq} {\rm Hoch}(U\fg)$.
+\[
+\clieu_*(\fg , U\fg^{ad}) \xto{\simeq} {\rm Hoch}(U\fg).
+\]
 The right hand side is the Hochschild homology of $U\fg$ with values in $U\fg$ equipped with the standard bimodule structure. 
-Composing with the quasi-isomorphism (\ref{hopfquasi3}) we obtain a quasi-isomorphism $\UU(\sG)(X) \xto{\simeq} \Hoch(U\fg)$ as desired.
+Composing with the quasi-isomorphism (\ref{hopfquasi3}) we obtain a quasi-isomorphism $\UU\sG(X) \xto{\simeq} \Hoch(U\fg)$, as desired.
 
 The twisted case is similar. 
 Let $\theta$ be a nontrivial degree $(d+1)$ invariant polynomial on $\fg$. 
