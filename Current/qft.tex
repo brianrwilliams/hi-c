@@ -633,6 +633,13 @@ where $\<c \wedge b\>_V$ refers to taking the wedge product in $A_d$ together wi
 The universal enveloping algebra $U(\sH_{d,V})$ is a dg version of the Weyl algebra.
 We think of this algebra as an algebraic replacement of differential operators on the mapping space $\Map(S^{2d-1},V)$.
 
+The algebra $U(\sH_{d,V})$ is our algebraic replacement for the $E_1$ algebra associated to the pushforward factorization algebras $r_* \Obs^\q_{V}$. 
+Indeed, just as in the case of the current algebra, there is a map of $E_1$ algebras
+\[
+U(\sH_{d,V}) \hookrightarrow r_* \Obs^\q_{V}|_{\hbar = (2 \pi i)^d}
+\]
+that is dense at the level of cohomology. 
+
 For calculations, it is useful for us present this algebra in terms of residues over the sphere $S^{2d-1}$. 
 This is completely analogous to the usual description of modes of a vertex algebra in terms of ordinary residues.
 The higher residue determines a pairing
@@ -742,7 +749,7 @@ The remaining part of this section is devoted to exhibiting an explicit $A_\inft
 As an example of the implication of Corollary \ref{cor: free} we exhibit a calculation in $U(\sH_{2,V})$. 
 The vector space $V$ is a $\fg$-representation, hence it makes sense to consider the two quadratic elements 
 \[
-\oint_{S^3} \<b, (a \cdot c)\>_V \;\;\; , \;\;\; \oint_{S^3}\<b, (a'\cdot c)\>_V \;\; \in \;\; U (\sH_{d,V})
+\oint_{S^3} \d^2 z \<b, (a \cdot c)\>_V \;\;\; , \;\;\; \oint_{S^3} \d^2 z \<b, (a'\cdot c)\>_V \;\; \in \;\; U (\sH_{d,V})
 \]
 where $a,a' \in A_2 \tensor \fg$. 
 By the definition of the associative algebra structure, the bracket
@@ -758,9 +765,10 @@ The first term involves a single contraction of the propagator $P = p \cdot \id_
 Let $\eta(z,\zbar;w,\wbar) = \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \cdot c(w,\wbar)\>_V$.
 Since $\d^2 w \dbar p(z-w) = \delta(z-w)$, we can write 
 \[
-\oint_{w \in S^3} \d^2 w p(z-w) \eta(z,\zbar;w,\wbar) = \eta(z,\zbar;z,\zbar)- \int_{w \in D} \d^2 w p(z-w) \dbar_w \eta(z,\zbar;w,\wbar)
+\oint_{w \in S^3} \d^2 w p(z-w) \eta(z,\zbar;w,\wbar) = \eta(z,\zbar;z,\zbar)- \int_{N_{\epsilon}} \d^2 w p(z-w) \rho(w,\wbar) \dbar_w \eta(z,\zbar;w,\wbar) .
 \] 
-where $\dbar_w$ is the $\dbar$-operator in the $w$-coordinate. 
+Here, $N_\epsilon$ is a neighborhood of the $3$-sphere inside of $\CC^2$ and $\rho(w,\wbar)$ is a compactly supported function that is identically $1$ near the inner boundary of the neighborhood and identically zero near the outer boundary.
+
 The second term in the above expression spoils the compatibility of the bracket in $A_2 \tensor \fg$ and the commutator in the Heisenberg algebra.
 This is precisely because our differential forms may not be holomorphic.
 This is to be contrasted with the $d=1$ case where the model $A_1 = \CC[z,z^{-1}]$ consists of holomorphic Laurent polynomials, and the Lie brackets agree on the nose. 
@@ -787,51 +795,79 @@ m_k : \sA_2^{\tensor k} \to \sA_2 .
 Since the $L_\infty$ algebra $\Tilde{\fg}_{2, \ch_3(V)}$ only has nonzero $\ell_1 = \dbar, \ell_2 = [-.-]$ and $\ell_3$, the multiplications for $A_\infty$ algebra $\sA_2$ satisfy $m_k = 0$ for $k > 2$. 
 
 \begin{prop}\label{prop: ainfinty}
-Let $\sA_2 = U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)$.
 An $A_\infty$ model for the map (\ref{free field2}) of $E_1$-algebras, in the case $d=2$, is given by the sequence of maps $(\sJ_k)_{k = 1,2,\ldots}$,
 \[
 \sJ_k : \sA_2^{\tensor k} \to U(\sH_V),
 \]
 where $\sJ_k = 0$ for $k > 2$ and $\sJ_1$, $\sJ_2$ are defined by
 \[
-\sJ_1 (\alpha) = \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
+\sJ_1 (\alpha) : (\beta,\gamma) \mapsto \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
 \]
 and 
 \[
-\sJ_2 (\alpha, \alpha') = \oint_{S^3} \<\dbar^* \beta, [\alpha, \alpha'] \cdot \gamma\>_V .
+\sJ_2 (\alpha, \alpha') : (\beta,\gamma) \mapsto \oint_{z \in S^3} \int_{w \in N_{\epsilon}}  \<\beta(z), [\alpha(z),\alpha'(z)] \gamma(w) \>_V \rho(w) p(z-w) .
 \] 
+where $N_\epsilon$ is some neighborhood of $S^3$ and $\rho$ is a compactly supported function as in Example \ref{eg: contract}.
 \end{prop}
 
 \begin{proof}
-We have already seen in Example \ref{eg: contract} that the $1$-ary map $\sJ_1$ fails to be compatible with the $2$-bracket on $\Tilde{\fg}^\bullet_{\ch_3}$, which we see is corrected by the $2$-ary map $\sJ_2$. 
-Indeed
+We have already seen in Example \ref{eg: contract} that the $1$-ary map $\sJ_1$ fails to be compatible with the commutator.
+We see that this failure is precisely corrected by the $2$-ary map $\sJ_2$:
+\[
+\dbar \sJ_2(\alpha, \alpha') \pm \sJ_2(\dbar \alpha, \alpha') \pm \sJ_2(\alpha, \dbar \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')] .
+\] 
+To see this, suppose for simplicity that $\alpha,\alpha'$ are holomorphic.
+Then, it suffices to show that $\dbar \sJ_2(\alpha, \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')]$.
+We have seen in Example \ref{eg: contract}, that the right-hand side is equal to
+\[
+\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \rho(w) p(z-w)
+\]
+This is precisely the functional $\dbar \sJ_2(\alpha,\alpha')$. 
 
 It remains to show how $\sJ_2$ is compatible with the $L_\infty$ extension. 
 This boils down to checking the following $A_\infty$ relation.
-For $a,a',a'' \in A_d \tensor \fg$ we must show
-\beqn
-\begin{array}{lll}
-\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permutations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
-& = & \displaystyle \label{dbarstar} \left( \oint_{S^3} \<\dbar^*\beta, [a, [a',a'']]\>_V + \; {\rm permutations} \right) \\ & & \displaystyle + \left(\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right] + \; {\rm permutations}\right) 
-\end{array}
+For $\alpha,\alpha',\alpha'' \in A_d \tensor \fg$:
+\beqn\label{relationsb}
+\oint_{S^3} \Tr_V \left(\alpha\wedge \partial \alpha' \wedge \partial \alpha''\right) = \displaystyle \left(\sJ_2(\alpha, [\alpha',\alpha'']) + \;{\rm permutations}) \right) + \left(\left[\sJ_1(\alpha), \sJ_2(\alpha',\alpha'') \right] + \; {\rm permutations} \right)
 \eeqn
-A term labeled ``permutations'' is identical to the other term inside parentheses, but with the inputs $a,a',a''$ permuted (with appropriate signs). 
 
-In the very last line, we have commutators of the form  
+There are two types of terms present in the expansion of the commutator in the second term in parentheses on the right-hand side of the equation above. 
+First, there are the single contractions of the propagator, which contributes terms of the form
 \[
-\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right]  .
+\oint_{z \in S^3} \d^2 z \int_{w \in N_{\epsilon}} \d^2 w  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \rho(w) p(z-w) 
 \]
-In general, there will be two types of terms in the expansion of this commutator. 
-One involves a single contraction with the propagator $P$ and contributes terms of the form
+These single contraction terms precisely cancel the first term in parentheses in Equation~(\ref{relationsb}). 
+
+The second type of term involves a double contraction of the propagator. 
+This will contribute terms of the form
 \[
-\oint_{S^3} \<\dbar^* \beta, [a,[a',a'']]\>
+\oint_{z \in S^3} \int_{w \in N_\epsilon} \oint_{u \in S^3} \Tr_V(\alpha(z) \wedge \alpha'(w) \wedge \alpha''(w)) \rho(w) p(z-w) p(z-u) p(w-u) .
 \]
-plus permutations. 
-These will cancel terms in the second line of Equation (\ref{dbarstar}). 
-The second type of term involves a double contraction and contributes terms of the form
-\[
-\oint_{z \in S^3} \oint_{w \in S^3} \Tr_V(a \wedge a' \wedge a'') p(z-w) \dbar^* p(z-w)  .
-\] 
+We note the similarities of this term and the weight of the $3$-vertex wheel appearing the calculation of the anomaly to satisfying the equivariant quantum master equation. 
+In fact, similar manipulations as in Appendix \ref{sec: feynman} show that this equals the left-hand side of \ref{relationsb}, and hence the $A_\infty$-relation is satisfied.
+%\beqn
+%\begin{array}{lll}
+%\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permutations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
+%& = & \displaystyle \label{dbarstar} \left( \oint_{S^3} \<\dbar^*\beta, [a, [a',a'']]\>_V + \; {\rm permutations} \right) \\ & & \displaystyle + \left(\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right] + \; {\rm permutations}\right) 
+%\end{array}
+%\eeqn
+%A term labeled ``permutations'' is identical to the other term inside parentheses, but with the inputs $a,a',a''$ permuted (with appropriate signs). 
+%
+%In the very last line, we have commutators of the form  
+%\[
+%\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right]  .
+%\]
+%In general, there will be two types of terms in the expansion of this commutator. 
+%One involves a single contraction with the propagator $P$ and contributes terms of the form
+%\[
+%\oint_{S^3} \<\dbar^* \beta, [a,[a',a'']]\>
+%\]
+%plus permutations. 
+%These will cancel terms in the second line of Equation (\ref{dbarstar}). 
+%The second type of term involves a double contraction and contributes terms of the form
+%\[
+%\oint_{z \in S^3} \oint_{w \in S^3} \Tr_V(a \wedge a' \wedge a'') p(z-w) \dbar^* p(z-w)  .
+%\] 
 \end{proof}
 
 
