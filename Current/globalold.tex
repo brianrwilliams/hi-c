@@ -1,0 +1,384 @@
+ \section{Some global aspects of the higher Kac-Moody factorization algebras}
+
+A compelling aspect of factorization algebras is that they are local-to-global objects,
+and hence the global sections---the factorization homology---can contain quite interesting information.
+For instance, in the case of a one-dimensional locally constant factorization algebra, the global sections along a circle encodes the Hochschild homology of the corresponding associative algebra. 
+In the complex one-dimensional situation, the factorization homology along Riemann surfaces is closely related to the conformal blocks of the associated vertex algebra. 
+
+In the first part of this section, we direct our attention to a class of complex manifolds called {\em Hopf manifolds},
+whose underlying smooth manifold has the form $S^1 \times S^{2d-1}$.
+One reason for choosing this family of manifolds is that the factorization homology serves as a natural home for characters of representations of the sphere algebra $\Tilde{\fg}_{d,\theta}^\bullet$
+In more physical terms, the factorization homology is related to the partition function of $\sG$-equivariant holomorphic field theories, such as the higher dimensional $\beta\gamma$-system.
+Indeed, the answer admits a concise description in terms of Hochschild homology, see Proposition \ref{prop: hopf}. 
+\brian{more on index/character}
+
+After this, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
+
+\subsection{Hopf manifolds and twisted indices}
+
+We focus on a family of complex manifolds defined by Hopf \cite{Hopf} which exist in every complex dimension $d$. 
+By definition, a Hopf manifold of dimension $d$ is a complex manifold homeomorphic to $S^{2d-1} \times S^1$. 
+We will focus on a particular class of Hopf manifolds that admit the following explicit presentation. 
+
+\begin{dfn}
+Fix an integer $d \geq 1$. 
+Let $q_i \in D(0,1)^{\times}$, $1 \leq i \leq d$, be nonzero complex numbers of modulus $|q_i| <1$. 
+The $d$-dimensional {\em Hopf manifold of type} ${\bf q} = (q_1,\ldots,q_d)$ is the following quotient of punctured affine space $\CC^d \setminus \{0\}$ by the infinite cyclic group:
+\[
+X_{\bf q} = \left. \left(\CC^d \setminus \{0\}\right) \right/ \left( (z_1,\ldots,z_d) \sim (q_1^{2\pi i \ZZ} z_1, \ldots,q_d^{2 \pi i \ZZ} z_d) \right) .
+\]
+\end{dfn}
+
+We will denote the obvious quotient map by $p_{\bf q} : \CC^d \setminus \{0\} \to X_{\bf q}$. 
+It is easy to see that the manifolds we consider are indeed Hopf manifolds, that is, $X_{\bf q} \cong S^{2d-1} \times S^1$ as smooth manifolds.
+%Note that $X_{f}$ is compact for any $f$. 
+
+\begin{rmk}
+In the case $d=1$, all Hopf surfaces of the type we consider are equivalent to elliptic curves.
+For $d>1$, it is an exercise (see Chapter 2 of \cite{KodairaDef}) to show that $X_{\bf q}$ is diffeomorphic to $S^{2d-1} \times S^1$ for any choice of $(q_1,\ldots,q_n)$. 
+In particular, when $d > 1$, $H^{2}_{dR} (X_{\bf q}) = 0$.
+So, Hopf manifolds are {\em not} K\"{a}hler in complex dimensions bigger than one. 
+\end{rmk}
+
+%For any $d$ and tuple $(q_1,\ldots, q_d)$ as above, we see that as a smooth manifold there is a diffeomorphism $X_{\bf q} \cong S^{2d-1} \times S^1$. 
+%Indeed, the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$ defines a smooth $S^{2d-1}$-fibration over $\RR_{>0}$. 
+%Passing to the quotient, we obtain an $S^{2d - 1}$-fibration 
+%\[
+%X_{\bf q} \to \left. \RR_{>0} \right/ \left(r \sim \lambda^{\ZZ} \cdot r \right) \cong S^1 .
+%\]
+%Here, $\lambda = (|q_1|^2 + \cdots + |q_d|^2)^{1/2} > 0$. 
+%Since there are no non-trivial $S^{2d-1}$ fibrations over $S^1$ we obtain $X_{\bf q} = S^{2d-1} \times S^1$ as smooth manifolds. 
+
+For any choice of ${\bf q} = (q_1,\ldots,q_d)$, we have the local Lie algebra $\sG_{X_{\bf q}} = \Omega^{0,*}(X_{\bf q}, \fg)$, and the corresponding Kac-Moody factorization algebra obtained by the enveloping factorization algebra $\UU(\sG_{X_{\bf q}})$.
+A choice of invariant polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$ defines a $\CC[K]$-linear twisted factorization enveloping algebra $\UU_{\theta}(\sG_{X_{\bf q}})$.  
+Our first result is a computation of the global sections of this factorization algebra.  
+
+\begin{prop}
+\label{prop: hopf}
+Let $X_{\bf q}$ be a Hopf manifold and suppose $\theta \in \Sym^{d+1}(\fg^*)^\fg$ is any $\fg$-invariant polynomial of degree $(d+1)$. 
+Then, there is a quasi-isomorphism of $\CC[K]$-modules
+\[
+\int_{X_{\bf q}} \UU_\theta (\sG_{X_{\bf q}}) \xto{\simeq} \Hoch_*(U \fg)[K] .
+\]
+\end{prop}
+\begin{proof}
+Write $X = X_{\bf q}$. 
+We first consider the untwisted case, $\theta = 0$, where the statement reduces to $\int_X \UU (\sG_X) \simeq \Hoch_*(U \fg)$.
+The factorization homology on the left hand side is computed by
+\[
+\int_X \UU(\sG_X) = \clieu_*(\Omega^{0,*}(X) \tensor \fg) .
+\]
+Our goal is to compute the Lie algebra homology of the dg Lie algebra $\Omega^{0,*}(X) \tensor \fg$.  
+
+There is an explicit model for the Dolbeault cohomology of the Hopf manifold $X$ that we will appeal to. 
+In Example 4.63 of \cite{Tanre}, it is shown that there is a isomorphism of bigraded vector spaces
+\beqn\label{hopfiso}
+H^*\left(\Omega^{*,*}(X), \dbar\right) \cong \CC[\epsilon,\delta]
+\eeqn
+where $\epsilon$ has bidegree $(0,1)$ and $\delta$ has bidegree $(d,d-1)$. 
+
+\begin{rmk}
+The basic idea of this isomorphism is that $X$ can be realized as the total space of a holomorphic principal $T^2 = S^1 \times S^1$- bundle over $\CC P^{d-1}$. 
+The model comes from studying the Borel spectral sequence for this holomorphic principal bundle.
+\end{rmk}
+
+We fix a quasi-isomorphism at the cochain level by considering the orthogonal projection onto the harmonic forms. 
+Let $\Delta_{\dbar} = [\dbar,\dbar^*]$ and denote by $\sH^{*,*}_{\dbar}(X)$ the bigraded vector space of forms annihilated by $\Delta_{\dbar}$. 
+Then, by the isomorphism (\ref{hopfiso}) we see that orthogonal projection determines a quasi-isomorphism
+\beqn\label{hopfquasi}
+\pi_{\sH}^{0,*} : \left(\Omega^{0,*}(X), \dbar \right) \xto{\simeq} \sH^{0,*}_{\dbar}(X) \cong \CC[\epsilon]
+\eeqn
+where $\epsilon$ has degree $+1$. 
+
+%Here, we view $\CC[\epsilon,\delta]$ as a cochain complex with zero differential. 
+
+\begin{eg}
+When ${\bf q} = (q,\ldots,q)$ where $|q| < 1$, we can write down an explicit Dolbeault representative for $\epsilon$. 
+%In fact, we have written down a preferred presentation for the cohomology ring of $X$ given by $H^{0,*}(X) = \CC[\delta]$ where $|\delta| = 1$.
+Consider the following $(0,1)$-form on $\CC^d \setminus \{0\}$
+\[
+\dbar (\log |z|^2) = \sum_i \frac{z_i\d \zbar_i}{|z|^2} .
+\]
+This $(0,1)$ form is $\ZZ$-invariant, and hence descends along the map $p_{\bf q} : \CC^d \setminus 0 \to X$ to define a $(0,1)$-form on $X$ that is, up to a scalar factor, a representative for $\epsilon$. 
+\end{eg}
+
+Applying Chevalley-Eilenberg chains, we obtain the following quasi-isomorphism for the global sections of the untwisted Kac-Moody factorization algebra:
+\beqn\label{hopfquasi3}
+\begin{tikzcd}
+\displaystyle \int_X \UU(\sG_X) = \clieu_*(\Omega^{0,*}(X , \fg)) \ar[r,"\pi^{0,*}_{\sH}", "\simeq"'] &\clieu_*(\CC[\epsilon] \tensor \fg) .
+\end{tikzcd}
+\eeqn
+Now, we can express $\clieu_*(\CC[\epsilon] \tensor \fg) = \clieu_*(\fg \oplus \fg[-1]) = \clieu_*(\fg, \Sym (\fg^{ad}))$, where $\Sym(\fg^{ad})$ is the symmetric product of the adjoint representation of $\fg$. 
+By Poincar\'{e}-Birkoff-Witt there is an isomorphism of vector spaces $\Sym(\fg) = U \fg$, so we can write this as $\clieu_*(\fg, U \fg^{ad})$.
+
+Any $U(\fg)$-bimodule $M$ is automatically a module for the Lie algebra $\fg$ by the formula $x \cdot m = xm - mx$ where $x \in \fg$ and $m \in M$.
+Moreover, for any such bimodule there is a quasi-isomorphism of cochain complexes 
+\[
+\clieu_*(\fg, M) \xto{\simeq} {\rm Hoch}_*(U\fg, M) 
+\]
+which is induced from the inclusion of $\fg \hookrightarrow U \fg$. 
+See, for instance, Theorem 3.3.2 of \cite{LodayCyclic}.
+Applied to the bimodule $M = U\fg$ itself we obtain a quasi-isomorphism 
+
+\noindent$\clieu_*(\fg , U\fg^{ad}) \xto{\simeq} {\rm Hoch}(U\fg)$.
+The right hand side is defined as the Hochschild homology of $U\fg$ with values in $U\fg$ equipped with the standard bimodule structure. 
+Composing with the quasi-isomorphism (\ref{hopfquasi3}) we obtain a quasi-isomorphism $\int_X \UU(\sG_X) \xto{\simeq} \Hoch(U\fg)$ as desired.
+
+The twisted case is similar. 
+Let $\theta$ be a nontrivial degree $(d+1)$ invariant polynomial on $\fg$. 
+Then, the factorization homology is equal to
+\[
+\int_X \UU_\theta (\sG_X) = \left(\Sym(\Omega^{0,*}(X) \tensor \fg)[K] , \dbar + \d_{CE} + K \cdot \d_\theta\right) .
+\]
+Applying our model for the Dolbeault cohomoloogy, we obtain a quasi-isomorphism of the global sections with the cochain complex
+\beqn\label{twisted hopf}
+\left(\Sym(\fg[\delta])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
+\eeqn
+We note that $\d_\theta$ is identically zero on $\Sym(\fg[\delta])$. 
+Indeed, for degree reasons, at least one of the inputs must be from $\fg \hookrightarrow \fg[\delta] = \fg \oplus \fg[-1]$, which consists of constant functions on $X$ with values in the Lie algebra $\fg$. 
+In the formula for the local cocycle from Proposition \ref{prop j map} associated to $\theta$ it is clear that if any one of the inputs is $\Delta_{\dbar}$-harmonic then the cocycle vanishes identically. 
+Indeed, one can integrate by parts to put it in the form $\int \partial \alpha \cdots \partial \alpha$, which is the integral of a total derivative, hence zero since $X$ has no boundary.
+Thus (\ref{twisted hopf}) just becomes the Chevalley-Eilenberg complex with values in the trivial module $\CC[K]$. 
+By the same argument as in the untwisted case, we conclude that in this case the factorization homology is quasi-isomorphic to $\Hoch_*(U \fg)[K]$, as desired.
+\end{proof}
+
+\subsubsection{Twisted Hochschild homology}
+We deduce a consequence of this calculation for the Hochschild homology of the $A_\infty$ algebra $U(\Tilde{\fg}^\bullet_{d,\theta})$.
+Let $p_{\bf q} :  \CC^d \setminus \{0\} \to X$ be the quotient map and consider the following diagram
+\[
+\xymatrix{
+\CC^d \setminus \{0\} \ar[r]^-{p_{\bf q}} \ar[d]^-{r} & X \ar[d]^{\Bar{r}} \\
+\RR_{>0} \ar[r]^-{\Bar{p}_{\bf q}} & S^1
+}
+\]
+Here, $r$ is the radial projection map and $\Bar{r}$ is the induced map on the quotient.
+The action of $\ZZ$ on $\CC^d \setminus\{0\}$ gives $\sG_{\CC^d \setminus \{0\}}$ the structure of a $\ZZ$-equivariant factorization algebra. 
+In turn, this determines an action of $\ZZ$ on pushforward factorization algebra $r_* \sG_{\CC^d \setminus \{0\}}$.
+We have seen that there is a dense locally constant subfactorization algebra on $\RR_{>0}$ of the pushforward factorization algebra that is equivalent as an $A_\infty$ algebra to $U(\Tilde{\fg}^\bullet_{d,\theta})$.
+A consequence of excision for factorization homology, see Lemma 3.18 \cite{AFTopMan}, implies that there is a quasi-isomorphism
+\[
+\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \int_{S^1} \Bar{r}_* \UU_\alpha(\sG_X),
+\]
+The left-hand side is the Hochschild homology of the $A_\infty$ algebra $U \Tilde{\fg}_{d,\theta}^\bullet$ with coefficients in the bimodule $U \Tilde{\fg}_{d, \theta}^\bullet$ with the ordinary left-module structure and right-module structure given by twisting the ordinary action by the automorphism corresponding to the element $1 \in \ZZ$ on the algebra.
+
+Now, since the factorization homology computes the global sections of the factorization algebra we have a quasi-isomorphism
+\[
+\int_{S^1} \Bar{\rho}_* \UU_\alpha(\sG_X) \xto{\simeq} \int_X \UU_{\alpha} (\sG_X) .
+\]
+It follows that there is a quasi-isomorphism of Hochschild homologies
+\beqn\label{hoch1}
+\Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \Hoch_* (U\fg)[K] .
+\eeqn
+Peculiarly, this statement is purely algebraic as the dependence on the manifold for which the Kac-Moody factorization algebra lives has dropped out.
+
+\subsection{Coupling to a free theory}
+
+\def\Cl{{\rm Cl}}
+
+\begin{lem}
+Let $X$ be a Hopf manifold and consider the observables of the higher $bc$ system on $X$ valued in the super vector space $W$. 
+There is a natural quasi-isomorphism
+\[
+\Obs^q_{bc}(X) \xto{\simeq} {\rm Hoch}_*(\Weyl_\hbar(W \oplus W^*)) .
+\]
+\end{lem}
+\begin{proof}
+
+The observables of any free BV theory can be modeled as the Lie algebra chains of a certain dg Lie algebra. 
+For the higher $bc$ system valued in $W$, the dg Lie algebra is a (shifted) central extension of the form
+\[
+\CC \cdot \hbar [-1] \to \Hat{\sL} \to \sL
+\]
+where
+\[
+\sL = \Omega^{d,*}(X, W^*)[d-1] \oplus \Omega^{0,*}(X, W)
+\]
+is an abelian dg Lie algebra and the cocycle defining the extension is
+\[
+\sL \times \sL \to \CC \cdot \hbar [-1] \;\; , \;\; (\gamma, \beta) \mapsto \hbar \int_X \<\gamma, \beta\>_W .
+\] 
+Note that this cocycle always has even parity in the $\ZZ/2$ grading.  
+As a cochain complex $\Hat{\sL} = \sL \oplus \CC\cdot \hbar [-1]$. 
+
+We can identify this dg Lie algebra with a smaller dg Lie algebra.
+The quaso-isomorphism (\ref{hopfquasi}) determines a quasi-isomorphism of dg Lie algebras
+\begin{align}\label{hopfquasi2}
+\Hat{\sL} \xto{\simeq} & \delta \CC[\epsilon] \tensor W^* [d-1] \oplus \CC[\epsilon] \tensor W \oplus \CC \cdot \hbar [-1] \\ & = (W^* \oplus W) [\epsilon] \oplus \CC \cdot \hbar [-1] .
+\end{align}
+In the second equality, we recall that $\delta$ is of degree $d-1$ and $\epsilon$ is of degree $+1$.
+The only nonzero bracket for the dg Lie algebra on the right hand side is of the form
+\[
+[f(\epsilon) \tensor w^* , g(\epsilon) \tensor w] = \<w^*, w\> \int_{\epsilon} f (\epsilon) g(\epsilon) \d \epsilon
+\]
+where $\int_{\epsilon} \d \epsilon$ denotes Berezin integration. 
+
+A standard result about free BV theories asserts a quasi-isomorphism
+\[
+\Obs^{\q}_{bc} (X) \xto{\simeq} \clieu_*(\Hat{\sL}) .
+\] 
+Applying chains to the quasi-isomorphism (\ref{hopfquasi2}) and post-composing, we obtain a quasi-isomorphism
+\[
+\Obs^\q_{bc} (X) \xto{\simeq} \clieu_*(\Weyl_\hbar((W^* \oplus W) [\epsilon])) .
+\] 
+The lemma now follows from the HKR quasi-isomorphism. 
+\end{proof}
+
+\[
+H^*(\Obs^{\q}_{eq}(X_{\bf q})) \xto{e^{I^\q / \hbar}} H^*_{\rm Lie}(\sG(X_{\bf q})) \tensor H^*(\Obs^\q_{bc} (X_{\bf q})) \xto{\cong} H^*(\fg, \Sym(\fg^*)) ((\hbar))
+\]
+
+\subsubsection{The character of a vertex algebra module}
+
+This calculation of the factorization homology has a familiar interpretation for the case $d=1$, where $\theta$ is an invariant bilinear form. 
+Then, $\Tilde{\fg}^\bullet_{d,\theta}$ is the affine Kac-Moody extension $\Hat{\fg}$ of the loop algebra $L\fg = \fg [z,z^{-1}]$. 
+
+The character of any $\fg$-representation takes values in the Hochschild homology of the enveloping algebra $U(\fg)$. 
+For infinite dimensional Lie algebras, like $\Hat{\fg}$, one defines a $q$-version of the character of a representation.
+We focus on representations that arise as modules for the corresponding Kac-Moody vertex algebra $V_{k}(\fg)$. 
+%Typical representations arise as modules for the Kac-Moody vertex algebra.  
+As in the finite dimensional case, there is an algebraic interpretation of the character of such a module. 
+
+The action of $\ZZ$ on $L\fg$ rotates the loop parameter: for $z^n \tensor \fg \in L \fg = \CC[z,z^{-1}] \tensor \fg$ the action is generated by $z^n \tensor \fg \mapsto q^n z^n \tensor \fg$. 
+The central term is invariant. 
+
+This defines a bimodule structure of the algebra $U(\Hat{\fg})$ on itself as follows.
+It is the ordinary one on the left and on the right it is given by twisting by the automorphism corresponding to the generator $1 \in \ZZ$. 
+We denote this bimodule by $U(\Hat{\fg})_{q}$.
+
+Formula (\ref{hoch1}) implies that there is a quasi-isomorphism of complexes
+\[
+\Hoch_*\left(U(\Hat{\fg}), U(\Hat{\fg})_q \right) \simeq \Hoch(U \fg) ,
+\]
+where we identify the left hand side with $\Hoch(U(\Hat{\fg}), q)$ in the notation above. 
+
+A classic result of Zhu \cite{Zhu} states that under mild hypotheses the category of representations of a vertex algebra is equivalent to the category of representations of a certain finite dimensional algebra, called its {\em Zhu algebra}. 
+In the case of the Kac-Moody vertex algebra, the Zhu algebra is precisely $U\fg$. 
+\brian{This is consistent...}
+
+The variable $q$ parametrizes of the moduli of elliptic curves.
+For each $q$, we define the Kac-Moody factorization algebra on the corresponding elliptic curve $E_q$ and consider its factorization homology, which we have just shown is equal to some twisted Hochschild complex.
+In this way, the twisted Hochschild homology defines a bundle on the moduli space of elliptic curves whose fiber over $q$ is $\Hoch_*\left(U(\Hat{\fg}), U(\Hat{\fg})_q \right)$. 
+The character of a module for the Kac-Moody algebra defines a section of this bundle. 
+By our calculation, we see that this bundle is actually trivializable with fiber $\Hoch(U \fg)$.
+Thus, we can recognize the character as a {\em function} on the moduli space, which formally defines an element in $\Hoch(U \fg) [[q]]$. 
+
+\subsubsection{Characters in higher dimensions}
+
+There is a completely analogous story where the elliptic curve is replaced by a Hopf manifold of arbitrary dimension. 
+We see that we can interpret the character of a module for $\Hat{\fg}_{d,\theta}$ as a function on the moduli space of Hopf manifolds with values in the Hochschild homology of $\fg$. 
+
+Let $M$ be a $\Hat{\fg}_{d,\theta}$-module.
+Suppose, in addition, it has a compatible action by the abelian Lie algebra spanned by $z_1 \partial_{z_1},\ldots,z_d \partial_{z_d}$, such that $z_i \partial_{z_i}$ has integral eigenvalues. 
+%(For example, $M = U(\fg[z_1,\ldots,z_d])$, where $\fg$ acts on itself by the adjoint and the central term acts by zero.)
+Then, we can define its ${\bf q}$-character by the formula
+\[
+\ch_{\bf q}(M) = \sum_{\alpha_1,\ldots,\alpha_d \geq 0} \ch_{\fg} (M_{\alpha_1,\ldots,\alpha_d}) q_1^{\alpha_1}\cdots q_d^{\alpha_d} .
+\]
+Here, $M_{\alpha_1,\ldots,\alpha_d}$ is the subspace of $M$ where $z_i \partial_{z_i}$ acts by $\alpha_i$. 
+
+The variables $q_1,\ldots,q_d$ describe the moduli of Hopf manifolds of dimension $d$. 
+
+\subsection{The Kac-Moody vertex algebra and compactification} 
+
+%So far we have mostly restricted ourselves to studying the Kac-Moody factorization algebra corresponding to local cocycles of type $\fj_X(\theta)$ where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+%There is another class of local cocycles that appear when studying symmetries of holomorphic theories. 
+%Unlike the cocycle $\fj_X(\theta)$, which in some sense did not depend on the manifold $X$, this class of cocycles is more dependent on the manifold for which the current algebra lives.
+%
+%Let $X$ be a complex manifold of dimension $d$ and suppose $\omega$ is a $(k,k)$ form on $X$. 
+%Fix, in addition, a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
+%Then, we may consider the cochain on $\sG(X)$:
+%\[
+%\begin{array}{cccc}
+%\displaystyle \phi_{\theta, \omega} : & \sG(X)^{\tensor d + 1 - k} & \to & \CC \\
+%\displaystyle & \alpha_0 \tensor\cdots \tensor \alpha_{d-k} & \mapsto & \displaystyle \int_X \omega \wedge \theta_{d+1-k}(\alpha_0, \partial\alpha_1,\ldots,\partial \alpha_{d-k})
+%\end{array}
+%\]
+%It is clear that $\phi_{\theta,\omega}$ is a local cochain on $\sG(X)$. 
+%
+%\begin{lem}\label{lem: cocycle KM}
+%Let $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$ and suppose $\omega \in \Omega^{k,k}(X)$ satisfies $\dbar \omega = 0$ and $\partial \omega = 0$. 
+%Then, $\phi_{\theta, \omega} \in \cloc^*(\sG_X)$ is a local cocycle. 
+%Moreover, for fixed $\theta$ the cohomology class $[\phi_{\theta,\omega}] \in H^1_{\rm loc}(\sG_X)$ only depends on the cohomology class 
+%\[
+%[\omega] \in H^{k}(X , \Omega^k_{cl}) .
+%\]
+%\end{lem}
+%
+%Note that when $\omega = 1$ it trivially satisfies the conditions of the lemma. 
+%In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
+
+%\owen{I moved everything above to Section~\ref{sec: nekext}.}
+
+We turn briefly to the variant of the Kac-Moody factorization algebra associated to the cocycles from Section ~\ref{sec: nekext}.
+This class of cocycles is related to the ordinary Kac-Moody vertex algebra on Riemann surfaces through dimensional reduction, as we will now show. 
+
+Consider the complex manifold $X = \Sigma \times \PP^{d-1}$ where $\Sigma$ is a Riemann surface and $\PP^{d-1}$ is $(d-1)$-dimensional complex projective space.
+Suppose that $\omega \in \Omega^{d-1,d-1}(\PP^{d-1})$ is the natural volume form, this clearly satisfies the conditions of Lemma \ref{lem: cocycle KM} and so determines a degree one cocycle $\phi_{\kappa, \omega} \in \cloc^*(\sG_{\Sigma \times \PP^{d-1}})$ where $\kappa$ is some $\fg$-invariant bilinear form $\kappa : \fg \times \fg \to \CC$. 
+We can then consider the twisted enveloping factorization algebra of $\sG_{\Sigma \times \PP^{d-1}}$ by the cocycle $\phi_{\kappa, \omega}$. 
+
+Recall that if $p : X \to Y$ and $\sF$ is a factorization algebra on $X$, then the pushforward $p_* \sF$ on $Y$ is defined on opens by $p_* \sF : U \subset Y \mapsto \sF(p^{-1} U)$. 
+
+\begin{prop}
+Let $\pi : \Sigma \times \PP^{d-1} \to \Sigma$ be the projection. 
+Then, there is a quasi-isomorphism between the following two factorization algebras on $\Sigma$:
+\begin{enumerate}
+\item $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \times \PP^{d-1}}\right)$, the pushforward along $\pi$ of the Kac-Moody factorization algebra on $\Sigma \times \PP^{d-1}$ of type $\phi_{\kappa,\omega}$;
+\item $\UU_{{\rm vol}(\omega) \kappa} (\sG_\Sigma)$, the Kac-Moody factorization algebra on $\Sigma$ associated to the invariant pairing ${\rm vol}(\omega) \cdot \kappa$. 
+\end{enumerate}
+\end{prop}
+
+The twisted enveloping factorization on the right-hand side is the familiar Kac-Moody factorization alegbra on Riemann surfaces associated to a multiple of the pairing $\kappa$.
+The twisting ${\rm vol}(\omega) \kappa$ corresponds to a cocycle of the type in the previous section 
+\[
+J({\rm vol}(\omega) \kappa) = {\rm vol}(\omega) \int_\Sigma \kappa(\alpha, \partial \beta)
+\]
+where ${\rm vol}(\omega) = \int_{\PP^{d-1}} \omega$. 
+
+\begin{proof}
+Suppose that $U \subset \Sigma$ is open. 
+Then, the factorization algebra $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \times \PP^{d-1}}\right)$ assigns to $U$ the cochain complex
+\beqn\label{KMPn}
+\left(\Sym \left(\Omega^{0,*} (U \times \PP^{d-1})\right)[1] [K], \dbar + K \phi_{\kappa, \omega}|_{U \times \PP^{d-1}} \right),
+\eeqn
+where $\phi_{\kappa, \omega}|_{U \times \PP^{d-1}}$ is the restriction of the cocycle to the open set $U \times \PP^{d-1}$. 
+Since projective space is Dolbeault formal its Dolbeault complex is quasi-isomorphic to its cohomology.
+Thus, we have
+\[
+\Omega^{0,*} (U \times \PP^{d-1}) = \Omega^{0,*}(U) \tensor \Omega^{0,*}(\PP^{d-1}) \simeq \Omega^{0,*}(U) \tensor H^*(\PP^{d-1}, \sO) \cong \Omega^{0,*}(U) .
+\]
+Under this quasi-isomorphism, the restricted cocycle has the form
+\[
+\phi_{\kappa,\omega}|_{U \times \PP^{d-1}} (\alpha \tensor 1, \beta \tensor 1) = \int_{U} \kappa(\alpha, \partial \beta) \int_{\PP^{n-1}} \omega 
+\]
+where $\alpha,\beta \in \Omega^{0,*} (U)$ and $1$ denotes the unit constant function on $\PP^{d-1}$. 
+This is precisely the value of the local functional ${\rm vol}(\omega) J_\Sigma (\kappa)$ on the open set $U \subset \Sigma$. 
+Thus, the cochain complex (\ref{KMPn}) is quasi-isomorphic to 
+\beqn
+\left(\Sym \left(\Omega^{0,*} (U) \right)[1] [K], \dbar + K {\rm vol}(\omega) J_\Sigma (\kappa) \right) .
+\eeqn
+We recognize this as the value of the Kac-Moody factorization algebra on $\Sigma$ of type ${\rm vol}(\omega) J_\Sigma (\kappa)$.
+It is immediate to see that identifications above are natural with respect to maps of opens, so that the factorization structure maps are the desired ones. 
+This completes the proof.
+\end{proof}
+
+Now, suppose $\Sigma_1,\Sigma_2$ are Riemann surfaces and let $\omega_1,\omega_2$ be the K\"{a}hler forms. 
+Then, we can consider the two projections
+\[
+\begin{tikzcd}
+& \Sigma_1 \times \Sigma_2 \arrow[dl,"\pi_1"'] \arrow[dr,"\pi_2"] & \\
+\Sigma_1 & & \Sigma_2
+\end{tikzcd}
+\]
+Consider the following closed $(1,1)$ form $\omega = \pi_1^* \omega_1 + \pi_2^* \omega_2 \in \Omega^{1,1}(\Sigma_1 \times \Sigma_2)$. 
+According to the proposition above, for any symmetric invariant pairing $\kappa \in \Sym^2 (\fg^*)^\fg$ this form determines a bilinear local functional
+\[
+\phi_{\kappa,\omega}(\alpha) = \int_{\Sigma_1 \times \Sigma_2} \omega \wedge \kappa(\alpha, \partial \alpha) 
+\]
+on the local Lie algebra $\sG_{\Sigma_1\times \Sigma_2}$.
+A similar calculation as in the previous example implies that the pushforward factorization algebra $\pi_{i*}\UU_{\phi_{\kappa, \omega}}\sG$, $i=1,2$, is isomorphic to the two-dimensional Kac-Moody factorization algebra on the Riemann surface $\Sigma_i$ with level equal to the Euler characteristic $\chi(\Sigma_j)$, where $j \ne i$. 
+This result was alluded to in the work of Johansen in \cite{JohansenKM} where he showed that there exists a copy of the Kac-Moody chiral algebra inside the operators of a twist of the $\cN=1$ supersymmetric multiplet (both the gauge and matter multiplets, in fact) on the K\"{a}hler manifold $\Sigma_1 \times \Sigma_2$. 
+In the Section \ref{sec: qft} we saw how the $d = 2$ Kac-Moody factorization algebra embeds inside the operators of a free holomorphic theory on a complex surface. 
+This holomorphic theory, the $\beta\gamma$ system, is the minimal twist of the $\cN=1$ chiral multiplet.
+Thus, we obtain an enhancement of Johansen's result to a two-dimensional current algebra.
+
+%\brian{relate to work of Nekrasov et al}
