@@ -21,7 +21,7 @@ Finally, we return to the LMNS variants of the twisted higher Kac-Moody factoriz
 
 \subsection{Hopf manifolds and Hochschild homology}
 
-\owen{add comment}
+\owen{Add opening: in particular explain (for physicists) that Hochschild homology is the home of all trace maps (and so of characters).}
 
 \subsubsection{Overview of Hopf manifolds}
 
@@ -145,6 +145,8 @@ we see that the cohomology is spanned by $b$ in bidegree $(d,d-1)$ and $b \alpha
 
 For any choice of ${\bf q} = (q_1,\ldots,q_d)$, we have the local Lie algebra $\sG_{X_{\bf q}} = \Omega^{0,*}(X_{\bf q}, \fg)$, and the corresponding Kac-Moody factorization algebra obtained by the enveloping factorization algebra $\UU\sG_{X_{\bf q}}$.
 A choice of invariant polynomial $\theta \in \Sym^{d+1}(\fg^*)^\fg$ defines a $\CC[K]$-linear twisted factorization enveloping algebra $\UU_{\theta}(\sG_{X_{\bf q}})$.  
+To reduce clutter, we will drop the subscript $X_{\bf q}$ from $\sG_{X_{\bf q}})$, as our construction is uniform in~${\bf q}$.
+
 Our first result is a computation of the global sections of this factorization algebra.  
 
 \begin{prop}
@@ -152,9 +154,26 @@ Our first result is a computation of the global sections of this factorization a
 Let $X_{\bf q}$ be a Hopf manifold and let $\theta \in \Sym^{d+1}(\fg^*)^\fg$ be an $\fg$-invariant polynomial of degree $(d+1)$. 
 There is a quasi-isomorphism of $\CC[K]$-modules
 \[
-\UU_\theta (\sG) (X_{\bf q}) \xto{\simeq} \Hoch_*(U \fg)[K] .
+\UU_\theta \sG (X_{\bf q}) \xto{\simeq} \Hoch_*(U \fg)[K] .
 \]
 \end{prop}
+
+\owen{I'm drafting a remark on how to understand this result. Perhaps it should go as the intro to this section.}
+
+\begin{rmk}
+A character on $\fg$ is a conjugation-invariant function of $\fg$, and so an element of $\Sym(\fg^*)^\fg$.
+It thus determines a linear functional on the Hochschild homology group 
+\[
+{\rm HH}_0(U\fg) = U\fg/[U\fg,U\fg] \cong \Sym(\fg)_\fg.
+\]
+This map then says that any local current (i.e., holomorphic symmetry) determines a $K$-dependent family of elements of ${\rm HH}_0(U\fg)$, i.e., a kind of cocharacter.
+A careful examination of the proof will show that in the $\theta$-twisted case, 
+the map can be computed in the style of Wick contractions, except that $\theta$ determines contractions of $d+1$-tuples of inputs.
+(When $d=1$, one recovers the Wick-like flavor of the usual Kac-Moody algebras.)
+Another interesting feature of this map is its ${\bf q}$-dependence,
+so that varying over the moduli of Hopf manifolds, we obtain a ${\bf q}$-cocharacter formula.
+In the next subsection, we pair these maps with the characters determined by holomorphic free field theories.
+\end{rmk}
 
 \begin{proof}
 Fix ${\bf q}$ and write simply $X$ for $X_{\bf q}$ and $\sG$ for $\sG_X$. 
@@ -190,19 +209,22 @@ In fact, by ellipticity, the orthogonal projection extends to a deformation retr
      \draw (M.south east) ..controls +(1,-.5) and +(1,.5) .. node {$\scriptstyle \eta$} (M.north east);
   \end{tikzpicture}\end{equation*}
 The map $\iota$ is the inclusion of harmonic forms. 
-The operator $\eta$ is constructed from the Green's function $p(z,w) \in \Omega^{d,*}(X \times X)$ of the $\dbar$ operator on $X$ which satisfies 
+The operator $\eta$ is constructed from the Green's function $p(z,w) \in \Omega^{d,*}(X \times X)$ of the $\dbar$ operator on $X$, 
+which satisfies 
 \[
 \dbar_w p(z,w) = \omega_{diag}
 \]
 where $\omega_{diag}$ is the volume form along the diagonal in $X \times X$. 
 The homotopy $\eta$ is defined by
 \[
-(\eta \alpha)(z) = \int_{w \in X} p(z,w) \alpha(w) .
+(\eta \mu)(z) = \int_{w \in X} p(z,w) \mu(w)
 \]
-It satisfies the homotopy retraction condition
+where $\mu$ is a $(0,*)$-form on~$X$.
+This data satisfies the homotopy retraction condition
 \[
-\iota \circ \pi - \id_{\sG} = \dbar \eta +\eta \dbar = [\dbar,\eta]  .
+\iota \circ \pi - \id_{\sG} = \dbar \eta +\eta \dbar = [\dbar,\eta],
 \]
+and hence ensures that we know precisely how $\sG(X)$ retracts onto its cohomology~$\fg[\alpha]$.
 \end{rmk}
 
 
@@ -220,7 +242,7 @@ Unpacking the right hand side, we have
 \clieu_*(\CC[\alpha] \tensor \fg) = \clieu_*(\fg \oplus \fg[-1]) = \clieu_*(\fg, \Sym (\fg^{ad})),
 \] 
 where $\Sym(\fg^{ad})$ is the symmetric product of the adjoint representation of $\fg$. 
-By the Poincar\'{e}-Birkoff-Witt theorem, there is an isomorphism of vector spaces $\Sym(\fg) \cong U \fg$, so we can write view this cochain complex as~$\clieu_*(\fg, U \fg^{ad})$.
+By the Poincar\'{e}-Birkoff-Witt theorem, there is an isomorphism of vector spaces $\Sym(\fg) \cong U \fg$, so we can interpret this cochain complex as~$\clieu_*(\fg, U \fg^{ad})$.
 
 Any $U(\fg)$-bimodule $M$ is automatically a module for the Lie algebra $\fg$ by the formula $x \cdot m = xm - mx$ where $x \in \fg$ and $m \in M$.
 Moreover, for any such bimodule there is a quasi-isomorphism of cochain complexes 
@@ -251,27 +273,27 @@ For more details on this result, see Section 2.5 of \cite{OwenThesis}.
 In the untwisted case, upon tensoring with $\CC[K]$, Remark \ref{rmk: hpl1} implies that we have a deformation retraction of cochain complexes
 \begin{equation*}\tag{$\ast$}
   \begin{tikzpicture}[baseline=(L.base),anchor=base,->,auto,swap]
-     \path node (L) {$\clieu_*(\fg[\alpha])[K]$} ++(3,0) node (M) {$\clieu_*(\sG (X))[K]$} 
+     \path node (L) {$\clieu_*(\fg[\alpha])[K]$} ++(4,0) node (M) {$\clieu_*(\sG (X))[K]$} 
      (M.mid) +(0,.075) coordinate (raise) +(0,-.075) coordinate (lower);
      \draw (L.east |- lower) to node {$\scriptstyle \iota$} (M.west |- lower);
      \draw (M.west |- raise) to node {$\scriptstyle \pi_{\sH}^{0,*} $} (L.east |- raise);
      \draw (M.south east) ..controls +(1,-.5) and +(1,.5) .. node {$\scriptstyle \eta$} (M.north east);
   \end{tikzpicture}\end{equation*}
-  
-To obtain the twisted complex, we turn on the deformation $K \cdot \d_\theta$ on the left-hand side. 
+To obtain the twisted complex, we turn on the deformation $K \, \d_\theta$ on the left-hand side. 
 The homological perturbation lemma provides formulas for the resulting deformations of the projection, inclusion, and homotopy maps.
-Explicitly, these formulas involve the formal inverse to the operator $\id_{\sG} - K \d_\theta \eta$ defined by
+Explicitly, these formulas involve the formal inverse to the operator $\id_{\sG} - K \,\d_\theta \circ \eta$ defined by
 \[
-(\id_{\sG} - K \d_\theta \eta)^{-1} = \sum_{n \geq 0} \frac{K^n}{n!} (\d_\theta \eta)^n  .
+(\id_{\sG} - K \d_\theta \eta)^{-1} = \sum_{n \geq 0} \frac{K^n}{n!} (\d_\theta \circ \eta)^n  .
 \] 
-Note that acting on a particular element in the symmetric algebra~$\Sym(\Omega^{0,*}(\Omega^{0,*}(X) \tensor \fg[1])$ this formula is well-defined since only finitely many terms appear in the sum. 
+Note that acting on any element in the symmetric algebra~$\Sym(\Omega^{0,*}(\Omega^{0,*}(X) \tensor \fg[1])$, this formula is well-defined since only finitely many terms in the series act nontrivially.
+(To see this, observe that $\d_\theta$ lowers symmetric power and $\eta$ preserves it, so any polynomial will eventually be annihilated.)
 
 With this operator in hand, we define the maps
 \begin{eqnarray*}
 \widetilde{\pi}^{0,*}_{\sH} & = & \pi + K \cdot \pi \circ (\id_{\sG} - K \d_\theta \eta)^{-1} \circ \d_\theta \circ \eta, \\
 \widetilde{\eta} & = & \eta + K \cdot \eta \circ (\id_{\sG} - K \d_\theta \eta)^{-1} \circ \d_\theta \circ \eta .
 \end{eqnarray*}
-Note that modulo $K$ these reduce to the original maps above. 
+Note that modulo $K$, these reduce to the original maps above. 
 The inclusion map $\iota$ and the differential on $\clieu_*(\fg[\alpha])$ do not get deformed in our situation because the perturbed piece of the differential $\d_{\theta}$ vanishes identically on the harmonic forms. 
 The homological perturbation lemma implies that the resulting diagram
 \begin{equation*}\tag{$\ast$}
@@ -284,34 +306,6 @@ The homological perturbation lemma implies that the resulting diagram
   \end{tikzpicture}\end{equation*}
 is a deformation retraction of cochain complexes. 
 With the quasi-isomorphism $\Tilde{\pi}^{0,*}_\sH$ in hand, the result of the proposition now follows from the same argument as in the untwisted case. 
-
-\brian{I've commented out the old argument below}
-
-%\owen{I changed the argument here since I didn't follow the existing one, which seemed to need homological perturbation lemma.}
-%Note that if we use the filtration by symmetric powers (as an algebra over $\CC[K]$),
-%the first page is given by cohomology with respect to $\dbar$,
-%and so it is
-%\beqn\label{twisted hopf}
-%\left(\Sym(\fg[\alpha])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
-%\eeqn
-%Moreover, $\d_\theta$ is identically zero on $\Sym(\fg[\alpha])$, so it cannot affect later pages of the spectral sequence. 
-%Hence the sequence collapses after $\d_{CE}$ is applied.
-%That is, 
-%\[
-%H^*(\UU_\theta (\sG)(X)) \cong H^{\rm Lie}_*(\fg[\alpha])[K] \cong H^{\rm Lie}_*(\fg, U\fg^{ad})[K].
-%\]
-%
-%\owen{I think something a little more careful needs to be done below to get the q-iso.}
-%Applying our model for the Dolbeault cohomology, we obtain a quasi-isomorphism of the global sections with the cochain complex
-%\beqn\label{twisted hopf}
-%\left(\Sym(\fg[\alpha])[K] ,  \d_{CE} + K \cdot \d_\theta \right) .
-%\eeqn
-%
-%Indeed, for degree reasons, at least one of the inputs must be from $\fg \hookrightarrow \fg[\alpha] = \fg \oplus \fg[-1]$, which consists of constant functions on $X$ with values in the Lie algebra $\fg$. 
-%In the formula for the local cocycle from Proposition \ref{prop j map} associated to $\theta$ it is clear that if any one of the inputs is $\Delta_{\dbar}$-harmonic then the cocycle vanishes identically. 
-%Indeed, one can integrate by parts to put it in the form $\int \partial \alpha \cdots \partial \alpha$, which is the integral of a total derivative, hence zero since $X$ has no boundary.
-%Thus (\ref{twisted hopf}) just becomes the Chevalley-Eilenberg complex with values in the trivial module $\CC[K]$. 
-%By the same argument as in the untwisted case, we conclude that in this case the factorization homology is quasi-isomorphic to $\Hoch_*(U \fg)[K]$, as desired.
 \end{proof}
 
 \subsubsection{Twisted Hochschild homology}
@@ -359,7 +353,7 @@ It follows that there is a quasi-isomorphism of Hochschild homologies
 Peculiarly, this statement is purely algebraic as the dependence on the manifold for which the Kac-Moody factorization algebra lives has dropped out.
 \owen{I think this is misleading. The map depends on ${\bf q}$.}
 
-\subsection{Coupling to a free theory and a character}
+\subsection{Coupling to a free theory and character formulas}
 
 \def\Cl{{\rm Cl}}
 
@@ -378,14 +372,17 @@ Thus, we will work with super vector spaces and super cochain complexes.
 These lead to minor modifications to the approach of Section~\ref{sec: qft}, 
 but yields a statement that is easiest to understand.
 
-\owen{Maybe better to mention (or mention as well) the Konishi anomaly?}
+\owen{What do you think?}
 Before delving into the details, 
 we note for physicists that we develop here a holomorphic version of the Adler-Bardeen-Jackiw anomaly,
 as we are studying fermionic matter fields coupled to a background holomorphic gauge field.
+(See \cite{Rabinovich} for the traditional ABJ anomaly as seen within this Costello formalism.)
+A more exact comparison is with the Konishi anomaly, 
+as these holomorphic theories sometimes arise as twists of supersymmetric theories.
 By computing global sections on Hopf manifolds,
 we recover analogues of the superconformal indices,
 since a Hopf manifold has $S^1 \times S^{2d-1}$ as its underlying manifold.
-(See \cite{Rabinowich} for the traditional ABJ anomaly as seen within this Costello formalism.)
+
 
 \begin{rmk}
 As a matter of convention, if $V$ is a super vector space, we denote by $\Pi(V)$ the super vector space obtained by reversing the parity. 
@@ -527,7 +524,7 @@ A standard result about free BV theories (see section 4.2 of \cite{CG1}) provide
 \[
 \Obs^{\q}_{bc} (X) \xto{\simeq} \clieu_*(\Hat{\sL}),
 \] 
-and so we have the claim.
+and so we have the claim, by composing all these quasi-isomorphisms.
 \end{proof}
 
 We are most interested in the case that $W = \Pi(V)$, where $V$ is an ordinary (bosonic) vector space. 
@@ -536,22 +533,23 @@ In this case, the lemma implies that there is a quasi-isomorphism
 \Obs^q_{bc}(X) \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar(V \oplus V^*)) 
 \]
 where $\Cl_\hbar(V \oplus V^*)$ denotes the $\hbar$-dependent Clifford algebra. 
-In this case, there is a slick description of the Hochschild homology. 
+In this case, there is a lovely simplification of the Hochschild homology. 
 
 If we choose a basis $\{v_i\}$ of $V$, and dual basis $\{v_i^*\}$ of $V^*$, then there is a homomorphism 
 \[
 \int_{Ber} : {\rm Hoch}_* (\Cl (V \oplus V^*)) \to \CC 
 \]
 determined by picking off the coefficient of the element $v_1 \cdots v_{\dim(V)} v_1^* \cdots v^*_{\dim(V)}$ in the Hochschild complex. 
-In other words, this is precisely the Berezin integral that projects onto the ``top fermion.'' 
+In other words, this map is precisely the Berezin integral that projects onto the ``top fermion.'' 
 
 It is a standard fact that the Clifford algebra is Morita trivial \cite{KasselCliff}, so that ${\rm Hoch}_*(\Cl(V \oplus V^*)) \simeq {\rm Hoch}_* (\CC) \cong \CC$.
 Hence, $\int_{Ber}$ is a quasi-isomorphism. 
 
-After inverting $\hbar$ and invoking Lemma \ref{lem: hopfcliff} we obtain a composition of quasi-isomorphisms 
+After inverting $\hbar$ and invoking Lemma \ref{lem: hopfcliff}, we obtain a composition of quasi-isomorphisms 
 \beqn\label{hopfcliffquasi}
-\Obs^\q_{bc} (X) [\hbar^{-1}] \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar (V \oplus V^*)) \xto{\simeq}\CC[\hbar,\hbar^{-1}] .
+\Obs^\q_{bc} (X) [\hbar^{-1}] \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar (V \oplus V^*)[\hbar^{-1}]) \xto{\simeq}\CC[\hbar,\hbar^{-1}] .
 \eeqn
+\owen{I inverted $\hbar$ for the Clifford algebra too, so we can invoke Morita triviality.}
 The first quasi-isomorphism is the one from Lemma \ref{lem: hopfcliff}, and the second is Berezin integration. 
 We summarize our computations as follows.
 
@@ -567,14 +565,15 @@ This map encodes the ``expected value'' of a observables for this system.
 
 \subsubsection{Quantum equivariance}
 
-We focus our attention on the $bc$ system on a Hopf manifold $X$ with values in the odd vector space $W = \Pi(V)$ where $V$ is an ordinary (bosonic) $\fg$-represenation. 
+We now give our fermionic fields charge, by equipping the odd vector space $W = \Pi(V)$ with the structure of a  $\fg$-representation. 
 The objective is to extract a character on the observables of the $bc$ system from the $\sG_X$-equivariant quantization. 
-By the same formalism as in Section \ref{sec: qft} the equivariant quantization determines a quantum Noether map
+By the same formalism as in Section~\ref{sec: qft}, the equivariant quantization determines a quantum Noether map
 \[
-J_X^\q : \UU_{\Theta_X} (\sG)(X) [\hbar^{-1}]  \to \Obs^\q_{bc}(X) [\hbar^{-1}] ,
+J_X^\q : \UU_{\Theta_X}\sG(X) [\hbar^{-1}]  \to \Obs^\q_{bc}(X) [\hbar^{-1}] ,
 \]
 where $\Theta_X$ is the obstruction to solving the $\sG_X$-equivariant quantization. 
-We will not need to explicit form of the obstruction in what immediately follows, but we discuss it in more detail in Section \ref{sec: hopfobs} below. 
+\owen{Should we be using $\Cur^\q$ here rather than $\UU$?}
+The explicit form of the obstruction is irrelevant in what immediately follows, but we discuss it in more detail in Section~\ref{sec: hopfobs} below. 
 
 Combining the quasi-isomorphisms of Lemma \ref{prop: hopf} and Equation (\ref{hopfcliffquasi}), we obtain a commutative diagram
 \[
@@ -589,13 +588,14 @@ At the level of $H^0$ we obtain the following.
 \begin{prop}\label{prop: twistedchar}
 The $\sG_X$-equivariant quantization of the $bc$ system on $X$ valued in the $\fg$-representation $\Pi(V)$ determines a map 
 \[
-{\rm ch}_{X,V} : HH_0(U \fg)[\hbar^{-1}] = \Sym(\fg)^{\fg} [\hbar^{-1}] \to \CC[\hbar,\hbar^{-1}] .
+{\rm ch}_{X,V} : {\rm HH}_0(U \fg)[\hbar^{-1}] = \Sym(\fg)_{\fg} [\hbar^{-1}] \to \CC[\hbar,\hbar^{-1}] .
 \] 
 This map is natural in the representation~$V$.
 \end{prop}
 
 \owen{What do you think about the following addition?}
-In other words, we have a ``character'' of the representation that depends on the Hopf manifold~$X$.
+As discussed earlier, a character of $\fg$ is a linear functional on ${\rm HH}_0(U \fg)$,
+so we have produced an $\hbar$-dependent character from each Hopf manifold~$X$ and finite-dimensional $\fg$-representation~$V$.
 Although we will not pursue an explicit formula here, 
 this character ${\rm ch}_{X,V}$ varies in a beautiful way over the moduli space of Hopf manifolds,
 so that one can obtain $q$-character formulas.
@@ -607,7 +607,7 @@ so that one can obtain $q$-character formulas.
 
 \subsubsection{A remark on the anomaly}\label{sec: hopfobs}
 
-As we saw above, the $bc$ system on any manifold $X$ is {\em free}, and the anomaly $\Theta_X$ to solving the $\sG_X$-equivariant QME parametrizes the central extension of $\sG_X$ that acts on the quantum theory.
+The $bc$ system on any manifold $X$ is {\em free}, and the anomaly $\Theta_X$ to solving the $\sG_X$-equivariant QME parametrizes the central extension of $\sG_X$ that acts on the quantum theory.
 
 %That is, analogously to the flat case, we know that there exists a $\Theta_X \in \hbar H^1_{\rm loc}(\sG_X)[[\hbar]]$ and a quantum Noether map
 %\[
@@ -615,52 +615,57 @@ As we saw above, the $bc$ system on any manifold $X$ is {\em free}, and the anom
 %\] 
 
 We stress that for {\em any} complex $d$-fold $X$ we can consider the higher $bc$ system on $X$ with values in the $g$-representation $\Pi(V)$. 
-Furthermore, this theory is natural in the complex manifold $X$, in the sense that given any local biholomorphim of complex $d$-folds $f : X \to X'$ we can pull back the $bc$ system on $X'$ to the $bc$ system on $X$. 
-That is to say, we can consider the ``universal" $bc$ system as a functor
+Furthermore, this theory is natural in the complex manifold $X$, in the sense that given any local biholomorphism of complex $d$-folds $f : X \to X'$, 
+we can pull back the $bc$ system on $X'$ to the $bc$ system on $X$. 
+In short, we can consider the ``universal'' $bc$ system as a functor
 \[
-\sE_{bc} : {\rm Hol}_d \to (-1){\rm SympVect}
+\sE_{bc} : {\rm Hol}_d \to 1-{\rm PoisVect}
 \]
-where $(-1){\rm SympVect}$ is the category of $(-1)$-shifted symplectic dg vector spaces. 
-Since $\sG : {\rm Hol}_d \to {\rm dgLie}$, $X \mapsto \Omega^{0,*}(X, \fg)$ is also such a functor, we can consider the ``universal" equivariant $bc$ system of $\sG$ acting on $\sE_{bc}$. 
+where $(-1){\rm SympVect}$ is an $\infty$-category of dg vector spaces with 1-shifted skew-symmetric invariant pairing. 
+Since $\sG$ also determines a functor $\sG: {\rm Hol}_d \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the ``universal'' equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
 
-We can represent the anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME as a local functional of the form
+The anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME is encoded by a local functional of the form
 \[
-\int_X \fc(X) \wedge \Tilde{\fj}(\alpha)
+I_{\Theta_X}(\fc(X))=\int_X \fc(X) \wedge \Tilde{\fj}(\alpha),
 \]
-where $\fc(X) \in \Omega^*(X)$ and $\Tilde{\fj}$ is a functional of the form
+where $\fc(X) \in \Omega^*(X)$ and where $\Tilde{\fj}$ is a map
 \[
 \Tilde{\fj} : \Sym(\sG_X[1]) \to \Omega^*(X) .
 \]
 Universality puts restrictions on the differential forms that can appear in the one-loop anomaly. 
-Indeed, since $\Theta_X$ must also be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of $X$. 
+Indeed, since $\Theta_X$ must also be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of~$X$. 
 
 For a Hopf manifold $X$, the Chern classes $c_i(X)$ vanish when $i=1,\ldots,d-1$ for degree reasons. 
-Also, if we consider a local biholomorphism of the form $\CC^d \hookrightarrow X$, we see that the anomaly $\Theta_X$ gets pulled back to the anomaly on $\CC^d$ that we computed in Section \ref{sec: qft}. 
-Thus, for $X$ a Hopf manifold we see that the anomaly $\Theta_X$ must be proportional to a functional of the form
+Also, if we consider a local biholomorphism of the form $\CC^d \hookrightarrow X$, we see that the anomaly $\Theta_X$ must pull back to the anomaly on $\CC^d$ computed in Section~\ref{sec: qft}. 
+Thus, for $X$ a Hopf manifold, the anomaly $\Theta_X$ must be proportional to a functional of the form
 \[
 \int_X \theta(\alpha \wedge \partial \alpha \wedge \cdots \wedge \partial \alpha)
 \]
 where $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and $\alpha \in \sG_X$. 
+In other words, we know the anomaly up to a scalar factor, which depends in some way on the representation~$V$.
+\owen{Is that last sentence (which I added) accurate?}
 
 To summarize, we have argued that the local class representing the extension of $\sG_X$ acting on the quantization of the $bc$ system on any Hopf manifold must be of a multiple of $\fj_X(\ch_{d+1}^\fg(V))$. 
-To actually compute this class we need some more machinery that we hope to develop in future work. 
+To fully identify this class, we need machinery that we hope to develop in future work. 
 
 \subsection{The Kac-Moody vertex algebra and compactification} 
 
 We turn briefly to the variant of the Kac-Moody factorization algebra associated to the cocycles from Section ~\ref{sec: nekext}.
-This class of cocycles is related to the ordinary Kac-Moody vertex algebra on Riemann surfaces through dimensional reduction, as we will now show. 
+This class of cocycles is related to the ordinary Kac-Moody vertex algebra on Riemann surfaces through compactification, as we now show. 
 
-Consider the complex manifold $X = \Sigma \times \PP^{d-1}$ where $\Sigma$ is a Riemann surface and $\PP^{d-1}$ is $(d-1)$-dimensional complex projective space.
-Suppose that $\omega \in \Omega^{d-1,d-1}(\PP^{d-1})$ is the natural volume form, this clearly satisfies the conditions of Lemma \ref{lem: cocycle KM} and so determines a degree one cocycle $\phi_{\kappa, \omega} \in \cloc^*(\sG_{\Sigma \times \PP^{d-1}})$ where $\kappa$ is some $\fg$-invariant bilinear form $\kappa : \fg \times \fg \to \CC$. 
-We can then consider the twisted enveloping factorization algebra of $\sG_{\Sigma \times \PP^{d-1}}$ by the cocycle $\phi_{\kappa, \omega}$. 
+Consider the complex manifold $X = \Sigma \times \PP^{d-1}$, 
+where $\Sigma$ is a Riemann surface and $\PP^{d-1}$ is $(d-1)$-dimensional complex projective space.
+Let $\omega \in \Omega^{d-1,d-1}(\PP^{d-1})$ be the natural volume form, 
+which clearly satisfies the conditions of Lemma~\ref{lem: cocycle KM} and so determines a degree one cocycle $\phi_{\kappa, \omega} \in \cloc^*(\sG_{\Sigma \times \PP^{d-1}})$ after a choice of $\fg$-invariant bilinear form $\kappa : \fg \times \fg \to \CC$. 
+Consider then the twisted enveloping factorization algebra of $\sG_{\Sigma \times \PP^{d-1}}$ by the cocycle~$\phi_{\kappa, \omega}$. 
 
 Recall that if $p : X \to Y$ and $\sF$ is a factorization algebra on $X$, then the pushforward $p_* \sF$ on $Y$ is defined on opens by $p_* \sF : U \subset Y \mapsto \sF(p^{-1} U)$. 
 
 \begin{prop}
 Let $\pi : \Sigma \times \PP^{d-1} \to \Sigma$ be the projection. 
-Then, there is a quasi-isomorphism between the following two factorization algebras on $\Sigma$:
+There is a quasi-isomorphism between the following two factorization algebras on $\Sigma$:
 \begin{enumerate}
-\item $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \times \PP^{d-1}}\right)$, the pushforward along $\pi$ of the Kac-Moody factorization algebra on $\Sigma \times \PP^{d-1}$ of type $\phi_{\kappa,\omega}$;
+\item $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \times \PP^{d-1}}\right)$, the pushforward along $\pi$ of the Kac-Moody factorization algebra on $\Sigma \times \PP^{d-1}$ of type $\phi_{\kappa,\omega}$, and
 \item $\UU_{{\rm vol}(\omega) \kappa} (\sG_\Sigma)$, the Kac-Moody factorization algebra on $\Sigma$ associated to the invariant pairing ${\rm vol}(\omega) \cdot \kappa$. 
 \end{enumerate}
 \end{prop}
@@ -673,49 +678,50 @@ J({\rm vol}(\omega) \kappa) = {\rm vol}(\omega) \int_\Sigma \kappa(\alpha, \part
 where ${\rm vol}(\omega) = \int_{\PP^{d-1}} \omega$. 
 
 \begin{proof}
-Suppose that $U \subset \Sigma$ is open. 
-Then, the factorization algebra $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \times \PP^{d-1}}\right)$ assigns to $U$ the cochain complex
+Let $U \subset \Sigma$ be an open subset. 
+The factorization algebra $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \times \PP^{d-1}}\right)$ assigns to $U$, the cochain complex
 \beqn\label{KMPn}
 \left(\Sym \left(\Omega^{0,*} (U \times \PP^{d-1})\right)[1] [K], \dbar + K \phi_{\kappa, \omega}|_{U \times \PP^{d-1}} \right),
 \eeqn
 where $\phi_{\kappa, \omega}|_{U \times \PP^{d-1}}$ is the restriction of the cocycle to the open set $U \times \PP^{d-1}$. 
-Since projective space is Dolbeault formal its Dolbeault complex is quasi-isomorphic to its cohomology.
-Thus, we have
+Projective space is Dolbeault formal: its Dolbeault complex is quasi-isomorphic to its cohomology.
+Thus, we have \owen{You can't use ordinary tensor product in that first (untrue) equality \dots}
 \[
 \Omega^{0,*} (U \times \PP^{d-1}) = \Omega^{0,*}(U) \tensor \Omega^{0,*}(\PP^{d-1}) \simeq \Omega^{0,*}(U) \tensor H^*(\PP^{d-1}, \sO) \cong \Omega^{0,*}(U) .
 \]
 Under this quasi-isomorphism, the restricted cocycle has the form
 \[
-\phi_{\kappa,\omega}|_{U \times \PP^{d-1}} (\alpha \tensor 1, \beta \tensor 1) = \int_{U} \kappa(\alpha, \partial \beta) \int_{\PP^{n-1}} \omega 
+\phi_{\kappa,\omega}\Big|_{U \times \PP^{d-1}} (\alpha \tensor 1, \beta \tensor 1) = \int_{U} \kappa(\alpha, \partial \beta) \int_{\PP^{n-1}} \omega 
 \]
 where $\alpha,\beta \in \Omega^{0,*} (U)$ and $1$ denotes the unit constant function on $\PP^{d-1}$. 
-This is precisely the value of the local functional ${\rm vol}(\omega) J_\Sigma (\kappa)$ on the open set $U \subset \Sigma$. 
+But the right hand side is precisely the value of the local functional ${\rm vol}(\omega) J_\Sigma (\kappa)$ on the open set $U \subset \Sigma$. 
 Thus, the cochain complex (\ref{KMPn}) is quasi-isomorphic to 
 \beqn
 \left(\Sym \left(\Omega^{0,*} (U) \right)[1] [K], \dbar + K {\rm vol}(\omega) J_\Sigma (\kappa) \right) .
 \eeqn
-We recognize this as the value of the Kac-Moody factorization algebra on $\Sigma$ of type ${\rm vol}(\omega) J_\Sigma (\kappa)$.
-It is immediate to see that identifications above are natural with respect to maps of opens, so that the factorization structure maps are the desired ones. 
-This completes the proof.
+We recognize this complex as the value of the Kac-Moody factorization algebra on $\Sigma$ of type ${\rm vol}(\omega) J_\Sigma (\kappa)$.
+It is immediate to see that identifications above are natural with respect to maps of opens, so that the factorization structure maps are the desired ones,
+completing the proof. 
 \end{proof}
 
-Now, suppose $\Sigma_1,\Sigma_2$ are Riemann surfaces and let $\omega_1,\omega_2$ be the K\"{a}hler forms. 
-Then, we can consider the two projections
+Now, pick Riemann surfaces $\Sigma_1,\Sigma_2$ and let $\omega_1,\omega_2$ be their K\"{a}hler forms. 
+Consider the two projections
 \[
 \begin{tikzcd}
 & \Sigma_1 \times \Sigma_2 \arrow[dl,"\pi_1"'] \arrow[dr,"\pi_2"] & \\
 \Sigma_1 & & \Sigma_2
 \end{tikzcd}
 \]
-Consider the following closed $(1,1)$ form $\omega = \pi_1^* \omega_1 + \pi_2^* \omega_2 \in \Omega^{1,1}(\Sigma_1 \times \Sigma_2)$. 
+Consider the closed $(1,1)$-form $\omega = \pi_1^* \omega_1 + \pi_2^* \omega_2 \in \Omega^{1,1}(\Sigma_1 \times \Sigma_2)$. 
 According to the proposition above, for any symmetric invariant pairing $\kappa \in \Sym^2 (\fg^*)^\fg$ this form determines a bilinear local functional
 \[
 \phi_{\kappa,\omega}(\alpha) = \int_{\Sigma_1 \times \Sigma_2} \omega \wedge \kappa(\alpha, \partial \alpha) 
 \]
 on the local Lie algebra $\sG_{\Sigma_1\times \Sigma_2}$.
-A similar calculation as in the previous example implies that the pushforward factorization algebra $\pi_{i*}\UU_{\phi_{\kappa, \omega}}\sG$, $i=1,2$, is isomorphic to the two-dimensional Kac-Moody factorization algebra on the Riemann surface $\Sigma_i$ with level equal to the Euler characteristic $\chi(\Sigma_j)$, where $j \ne i$. 
-This result was alluded to in the work of Johansen in \cite{JohansenKM} where he showed that there exists a copy of the Kac-Moody chiral algebra inside the operators of a twist of the $\cN=1$ supersymmetric multiplet (both the gauge and matter multiplets, in fact) on the K\"{a}hler manifold $\Sigma_1 \times \Sigma_2$. 
-In the Section \ref{sec: qft} we saw how the $d = 2$ Kac-Moody factorization algebra embeds inside the operators of a free holomorphic theory on a complex surface. 
+A similar calculation as in the previous example implies that the pushforward factorization algebra $\pi_{i*}\UU_{\phi_{\kappa, \omega}}\sG$, $i=1,2$, is isomorphic to the two-dimensional \owen{what does 2d mean here?} Kac-Moody factorization algebra on the Riemann surface $\Sigma_i$ with level equal to the Euler characteristic $\chi(\Sigma_j)$, where $j \ne i$. 
+This result was alluded to \owen{where precisely?} in the work of Johansen in \cite{JohansenKM}, 
+where he showed that there exists a copy of the Kac-Moody chiral algebra inside the operators of a twist of the $\cN=1$ supersymmetric multiplet (both the gauge and matter multiplets, in fact) on the K\"{a}hler manifold $\Sigma_1 \times \Sigma_2$. 
+In Section~\ref{sec: qft} we saw how the $d = 2$ Kac-Moody factorization algebra embeds inside the operators of a free holomorphic theory on a complex surface. 
 This holomorphic theory, the $\beta\gamma$ system, is the minimal twist of the $\cN=1$ chiral multiplet.
 Thus, we obtain an enhancement of Johansen's result to a two-dimensional current algebra.
 
