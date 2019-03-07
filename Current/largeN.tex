@@ -370,38 +370,37 @@ The primary interest in this class of examples is that we expect them to appear 
 A program for studying the superstring through the lens of holomorphic field theory has been initiated and developed in the papers of Costello and Li in \brian{finish} \cite{...}.
 We hope to return to studying \brian{finish}, but for now we hope this example elucidates the flexibility of our constructions. 
 
-As usual, suppose $X$ is a complex manifold. 
-As above, for each $N$ we can consider the corresponding local Lie algebra $\sG l_N$ on $X$, or its limit $\sG l_\infty$. 
+As usual, suppose $X$ is a complex manifold, and as above, consider the local Lie algebra $\sG l_N = \Omega^{0,*}(X) \tensor \fg$ on $X$ for every $N > 0$. 
 
-If $X$ is additionally holomorphic symplectic, we obtain a deformation of this family of local Lie algebras. 
+If $X$ is additionally holomorphic symplectic, we obtain a deformation of this family of local Lie algebras described in the following way. 
 Suppose that $\star_\epsilon$ is a formal holomorphic deformation quantization of $(X,\omega)$. 
 This is an $\epsilon$-dependent associative product on holomorphic functions 
 \[
 \star_\epsilon : \sO^{hol}(X) \times \sO^{hol}(X) \to \sO^{hol}(X)[[\epsilon]]
 \]
 where, term-by-term in $\epsilon$, the product is given by a holomorphic bidifferential operator. 
-This associative product on $\sO^{hol}(X)[[\epsilon]]$ extends to one on the Dolbeault complex giving
+This associative product on $\sO^{hol}(X)[[\epsilon]]$ extends to one on the Dolbeault complex, giving
 \[
-\sA_\epsilon = (\Omega^{0,*}(X)[[\epsilon]], \star_{\epsilon})
+\sA_\epsilon := (\Omega^{0,*}(X)[[\epsilon]], \star_{\epsilon})
 \]
 the structure of a dg associative algebra. 
 In fact, $\sA_\epsilon$ is essentially a local algebra in the sense of Definition \ref{def: localalg}. 
 The only subtlety is that $\sA_\epsilon$ is not given by the sections of a finite rank vector bundle.
 However, it is a pro-local algebra in the sense that it can be expressed as a limit of local algebras
 \[
-\sA_\epsilon = \lim_{k \to \infty} \sA_\epsilon / \epsilon^{k+1} 
+\sA_\epsilon = \lim_{k \to \infty} \sA_\epsilon / \epsilon^{k+1} .
 \] 
-where $\sA_\epsilon / \epsilon^{k+1}$ is the local algebra given by sections of the finite rank vector bundle $\left(\Wedge^* T^{0,1*}\right) \tensor \ul{\CC[\epsilon]/\epsilon^{k+1}} = \left(\Wedge^* T^{0,1*}\right)^{\oplus k}$.
-The algebra structure on $\sA_\epsilon / \epsilon^{k+1}$ is given by the reduction of $\star_{\epsilon}$ modulo $\epsilon^{k+1}$. 
+%where $\sA_\epsilon / \epsilon^{k+1}$ is the local algebra given by sections of the finite rank vector bundle $\left(\Wedge^* T^{0,1*}\right) \tensor \ul{\CC[\epsilon]/\epsilon^{k+1}} = \left(\Wedge^* T^{0,1*}\right)^{\oplus k}$.
+%The algebra structure on $\sA_\epsilon / \epsilon^{k+1}$ is given by the reduction of $\star_{\epsilon}$ modulo $\epsilon^{k+1}$. 
 
 For each $N$, the local Lie algebra 
 \[
 \sA_\epsilon \tensor \fgl_N
 \]
 reduces modulo $\epsilon$ to the local Lie algebra $\sG l_N = \Omega^{0,*}_X \tensor \gl_N$.
-In other words, $\sA_\epsilon \tensor \fgl_N$ is a deformation of $\sG l_N$. 
+%In other words, $\sA_\epsilon \tensor \fgl_N$ is a deformation of $\sG l_N$. 
 
-\subsubsection{A free field realization}
+\subsubsection{Classical Noether current}
 
 Just like in the case of the ordinary current algebra associated to $\sG l_N$, we can contemplate a free field realization of $\sA_\epsilon \tensor \fgl_N$.
 The simplest way to do this is to consider the analogue of the $\beta\gamma$ system in this noncommutative context. 
@@ -417,6 +416,7 @@ and action
 S(\beta,\gamma) = \int_X \Tr_V(\beta \star_{\epsilon} \dbar \gamma)
 \]
 By trace we mean the usual map $\Tr_V : \End(V) = V \tensor V^* \to \CC$. 
+We will refer to this as the ``non-commutative $\beta\gamma$ system" on $X$.
 
 Locally, on $\CC^d$, the $\star_{\epsilon}$-product has the form
 \[
@@ -439,6 +439,20 @@ I (\alpha, \beta,\gamma) = \int \Tr_{V}(\beta \wedge (\alpha \star \gamma))
 \]
 where $\alpha \in \sA_\epsilon \tensor \fgl_N$.
 By $\alpha \star_\epsilon \gamma$ we mean the algebra action of $\sA_\epsilon \tensor \fgl_N$ on $\sA_\epsilon \tensor V$. 
+
+\begin{lem}
+This Noether current determines a map of factorization algebras on $(X,\omega)$
+\[
+\UU(\sA_\epsilon \tensor \fgl_N) \to \Obs^{\cl}_{V,\epsilon}
+\]
+where $\Obs^{\cl}_{V,\epsilon}$ is the factorization algebra of classical observables of the non-commutative $\beta\gamma$ system.
+Modulo $\epsilon$, this reduces to the map of factorization algebras in Proposition \ref{prop:CNT}.
+\end{lem}
+
+\subsubsection{Equivariant quantization}
+
+We are in a very similar situation as the classical $\sG_X$-equivariant $\beta\gamma$ system studied in Section \ref{sec: qft}.
+We can employ the same Feynman diagrammatic methods to contemplate quantum equivariance in the noncommutative case.
 
 
 
