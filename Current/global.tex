@@ -619,10 +619,11 @@ Furthermore, this theory is natural in the complex manifold $X$, in the sense th
 we can pull back the $bc$ system on $X'$ to the $bc$ system on $X$. 
 In short, we can consider the ``universal'' $bc$ system as a functor
 \[
-\sE_{bc} : {\rm Hol}_d \to 1-{\rm PoisVect}
+\sE_{bc} : {\rm Hol}_d^{op} \to -1-{\rm PoisVect}
 \]
-where $(-1){\rm SympVect}$ is an $\infty$-category of dg vector spaces with 1-shifted skew-symmetric invariant pairing. 
-Since $\sG$ also determines a functor $\sG: {\rm Hol}_d \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the ``universal'' equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
+where $(-1){\rm PoisVect}$ is an $\infty$-category of dg vector spaces with 1-shifted skew-symmetric invariant pairing. 
+\owen{what's above is not true, strictly speaking, since if $X$ is not compact, the pairing is ill-defined! It's fixable but I can't think of a really brief fix right at the moment}
+Since $\sG$ also determines a functor $\sG: {\rm Hol}_d^{op} \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the ``universal'' equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
 
 The anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME is encoded by a local functional of the form
 \[
