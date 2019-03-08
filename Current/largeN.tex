@@ -6,8 +6,8 @@
 \def\colim{{\rm colim}}
 \def\sl{\mathfrak{sl}}
 
-We take a detour from the main course of this paper to examine the case of $\gl_N$ as $N$ goes to infinity,
-providing a clean explanation for the nature of the most important local cocycles.
+We take a detour from the main course of this paper to examine the case that the ordinary Lie algebra underlying the current algebra is $\gl_N$, and study the behavior as $N$ goes to infinity.
+This provides a clean explanation for the nature of the most important local cocycles that we have studied throughout this work.
 
 The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
 which yields a natural map \owen{ugly notation so lets find a better one}
@@ -37,9 +37,6 @@ where we used the concept of a local Lie algebra earlier as a natural setting fo
 In practice, we replace a (dg) Lie algebra with a (dg) associative algebra and replace Lie algebra cochains with cyclic cochains, 
 always keeping locality in place.
 
-\owen{Let me register my complaint that {\it local} here is extremely abusive to conventional mathematical terminology. A local algebra, in the usual sense, is one with a unique maximal ideal.}
-\brian{I'm stumped. Some other bad ideas ``associative-$\star$ algebra on $X$" (c.f. Lie-$\star$ algebras, but $\star$ algebras are also something totally different), ``locally defined algebra on $X$"... }
-
 \begin{dfn}\label{def: localalg}
 A {\em local dg algebra} on a smooth manifold $X$~is:
 \begin{enumerate}
@@ -50,11 +47,17 @@ A {\em local dg algebra} on a smooth manifold $X$~is:
 such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of associative dg algebras.
 \end{dfn}
 
+\begin{rmk}
+It's perhaps abusive to use the term ``local algebra" here, since in the conventional mathematical sense a local algebra refers to an ordinary algebra with a unique maximal ideal. 
+We choose the terminology in analogy with the concept of a local Lie algebra on a manifold. 
+We will always refer to our objects as ``local algebras on $X$" to avoid the potential confusion. 
+\end{rmk}
+
+\owen{Let me register my complaint that {\it local} here is extremely abusive to conventional mathematical terminology. A local algebra, in the usual sense, is one with a unique maximal ideal.}
+
 We reserve the notation $\sA$ for the cosheaf of compactly supported sections of the bundle $A \to X$.
 By the assumptions, this is a cosheaf of dg associative algebras. 
 We will abusively refer to a local algebra $(A, \d, \cdot)$ simply by its cosheaf $\sA$.
-\owen{Don't we use $\sA$ for the precosheaf of compactly supported sections?}
-\brian{How's that sound?} 
 
 \begin{eg}
 The sheaf of smooth functions provides a trivial example of a local algebra on any manifold. 
@@ -68,11 +71,20 @@ Any bundle of finite dimensional associative (dg) algebras defines a local algeb
 %\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
 
 There is a forgetful functor from local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
-In particular, given any local algebra $\sA$ and local Lie algebra $\sL$, 
-we obtain a new local Lie algebra $\sL \tensor_{C^\infty} \sA$.
-The underlying vector bundle is simply~$L \tensor A$. 
-\owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
-\brian{You're right. What should we say then? Tensoring $\sA$ with a bundle of Lie algebras is a local Lie algebra? I guess that's all we use.}
+Thus, every local algebra is a local Lie algebra (with same underlying bundle). 
+
+%Now, if $\sA$ is a local algebra on $\sL$ is a local Lie algebra we can consider the vector bundle $A \tensor L$. 
+%The sheaf of smooth sections of this bundle is $\sL \tensor_{C^\infty_X} \sA$.
+%In general, the Lie bracket on $\sL$ will not endow $A \tenso L$ with the structure of a local Lie algebra, since the bracket may not be $C^\infty$-linear. 
+%But, we have the following.
+%
+%\begin{lem}
+%Suppose $\sA$ is a local algebra and $\sL$ is a local Lie algebra such that the bracket $[-,-]_\sL$ is a degree zero differential operator. 
+%Then $[-,-]_{\sL}$ endows $\sA \tensor \sL$ with the structure of a local Lie algebra. 
+%\end{lem} 
+%
+%\owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
+%\brian{You're right. What should we say then? Tensoring $\sA$ with a bundle of Lie algebras is a local Lie algebra? I guess that's all we use.}
 
 For local algebras, there is an appropriate notion of cohomology respecting the locality, 
 analogous to local Lie algebra cohomology. 
@@ -85,9 +97,9 @@ they intertwine with the $D_X$-module structure on $JA$.
 Hence $JA$ is also a dg associative algebra in the category of dg $D_X$-modules,
 using the symmetric monoidal product~$- \otimes_{C^\infty_X} -$. 
 
-\owen{I'm not so happy with how I wrote things below. I found what was there a bit confusing, because it meant something different by Hochschild cochains than many people mean.}
-\brian{What you wrote is the dual to hochschild homology of $JA$, which is the thing we want.
-I agree it's not the hochschild cochains of the algebra with trivial coefficients (which might be what you think could be confusing), but you're clear about that.} 
+%\owen{I'm not so happy with how I wrote things below. I found what was there a bit confusing, because it meant something different by Hochschild cochains than many people mean.}
+%\brian{What you wrote is the dual to hochschild homology of $JA$, which is the thing we want.
+%I agree it's not the hochschild cochains of the algebra with trivial coefficients (which might be what you think could be confusing), but you're clear about that.} 
 
 
 In this symmetric monoidal dg category, 
@@ -97,11 +109,11 @@ and hence as a first step, in $\Hoch^*(R,R^*)$, the Hochschild cohomology of an 
 The usual formulas apply verbatim in the dg category of dg $D_X$-modules.
 Hence, the dg $D$-module of Hochschild cochains on $JA$~is 
 \[
-\Hoch^* (JA, JA^*) = \prod_{n \geq 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X)[-n]
+\Hoch^* (JA, JA^\vee) = \prod_{n \geq 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X)[-n]
 \]
 with the usual Hochschild differential.
 (We note that the superscript $\otimes n$ means $\otimes_{C^\infty_X}$ iterated $n$ times.)
-\owen{Let's discuss notation there.}
+
 The {\em reduced} Hochschild cochains is the product without the $n=0$ component. 
 
 \def\Hoch{{\rm Hoch}}
@@ -109,42 +121,39 @@ The {\em reduced} Hochschild cochains is the product without the $n=0$ component
 \def\Cyc{{\rm Cyc}}
 \def\Cycloc{{\rm Cyc}_{\rm loc}}
 
-\owen{Let's discuss notation there.}
-
 \begin{dfn}\label{dfn: hochloc}
-The {\em local Hochschild cochains} of a local algebra $\sA$ on $X$~is 
+The {\em local Hochschild cochains} of a local algebra $\sA$ on $X$~is the sheaf
 \[
-\Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*_{red} (JA) .
+\Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*_{red} (JA, JA^\vee) .
 \] 
-This sheaf of cochain complexes has global sections that we denote by~$\Hochloc^*(\sA(X))$.
+We denote the global sections of this sheaf of cochain complexes by~$\Hochloc^*(\sA(X))$.
 \end{dfn}
 
-Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA)$ as follows.
-It is a power series on $\sA$ that is a sum of functionals of the form
+The reader will observe its similarity to its counterpart in local Lie algebra cohomology introduced in Section~\ref{sec: localcocycle}. 
+Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA(X))$ as follows.
+It is a power series on $\sA(X)$ that is a sum of functionals of the form
 \[
 \alpha_1 \tensor \cdots \otimes \alpha_k \mapsto \int_X  D_1(\alpha_1) \cdots D_k(\alpha_k) \, \omega_X
 \]
 where each $D_i$ is a differential operator from $\sA$ to~$C^\infty(X)$ and $\omega_X$ is a smooth top form on~$X$. 
 
-We now turn to a cyclic version of the above. 
+There is a cyclic version of this cohomology.
 For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$,
-and hence on the $n$th component of the reduced Hochschild complex $\Hoch_{red}^* (JA)$.
+and hence on the $n$th component of the reduced Hochschild complex $\Hoch_{red}^* (JA, JA^\vee)$.
 Taking the termwise quotient $D_X$-module, we obtain the {\em reduced cyclic cochains}
 \[
-\Cyc_{red}^* (JA) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) / C_n .
+\Cyc_{red}^* (JA, JA^\vee) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) / C_n .
 \]
 The Hochschild differential restricts to this subspace to yield a dg $D_X$-module. 
 We mimic Definition~\ref{dfn: hochloc} for the local version of cyclic cohomology of a local algebra~$\sA$. 
 
 \begin{dfn}\label{dfn: cycloc}
-The {\em local cyclic cochains} of a local algebra $\sA$ on $X$ is 
+The {\em local cyclic cochains} of a local algebra $\sA$ on $X$ is the sheaf
 \[
 \Cycloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Cyc^*_{red} (JA) .
 \] 
-This sheaf of cochain complexes has global sections that we denote by~$\Cycloc^*(\sA(X))$.
+We denote the global sections of this sheaf of cochain complexes by~$\Cycloc^*(\sA(X))$.
 \end{dfn}
-
-The reader will observe its similarity to its counterpart in local Lie algebra cohomology introduced in Section~\ref{sec: localcocycle}. 
 
 To make things concrete, 
 consider the most relevant local algebra for us: the Dolbeault complex $\Omega^{0,*}_X$ on a complex manifold $X$. 
@@ -269,13 +278,8 @@ which is precisely $\fj(\theta_{d+1,N})$.
 
 \subsection{Holomorphic translation invariant cohomology}
 
-\brian{There is a statement about the hol trans invariant cyclic cochains.
-Namely that it's one dimensional generated by the higher residue.
-This is complementary to FHK and is compatible with out calculation in the appendix under the LQT map. 
-Should I include a remark about this?
-}
-
-\owen{Yes, please! We should add a brief discussion of how this relates to FHK, of course.}
+We turn our attention to local cyclic cocycles defined on affine space $\CC^d$ that are both translation invariant and $U(d)$-invariant. 
+We show that up to homotopy there is a unique such cyclic cocycle on the local algebra  $\Omega^{0,*}(\CC^d)$ given by $\Theta^\infty_d$. 
 
 \begin{prop}
 %There is a unique, up to scale, $U(d)$-invariant, holomorphic translation invariant, degree zero local cohomology class in the local cyclic cohomology of $\Omega^{0,*}(\CC^d)$.
@@ -341,4 +345,115 @@ as desired.
 The class of $\Theta^\infty_d$ corresponds to the element $t^{d}$ in this presentation. 
 \end{proof}
 
-\brian{I still need to compare to FHK}
+Consider the dg algebra $A_d$ that we have used as an algebraic model for the Dolbeault complex of punctured affine space $\Omega^{0,*}(\CC^d \setminus 0)$. 
+In Theorem 2.3.5 of \cite{FHK}, they show that there is a unique $U(d)$-invariant class in the cyclic cohomology of $A_d$ in degree one given by the functional
+\[
+a_0 \tensor \cdots \tensor a_d \mapsto \oint a_0 \wedge \partial a_1 \cdots \wedge \partial a_d .
+\]
+Up to our conventional degree shifts, we are seeing the analogous uniqueness result at the level of local functionals. 
+
+
+\subsection{A noncommutative example}
+
+%Suppose $(X,\omega)$ is a holomorphic symplectic manifold, and let $\{-,-\}_\omega$ be the Poisson bracket on holomorphic functions. 
+%This bracket extends to one on the Dolbeault complex $\Omega^{0,*}(X)$. 
+%For any $N$, we then obtain the dg Lie algebra
+%\[
+%\sL(X,\omega) = \left(\Omega^{0,*}(X) \tensor \fgl_N , \{-,-\}_\omega\right) .
+%\]
+%This is clearly a local Lie algebra. 
+
+The main objects that have appeared in this section so far are the cyclic chains and cochains of the commutative dg algebra $\Omega^{0,*}(X)$. 
+In this subsection, we display a variant of the above examples where we introduce some noncommutativity into the local algebra. 
+The primary interest in this class of examples is that we expect them to appear as a symmetries of reductions of supergravity and $M$-theory. 
+A program for studying the superstring through the lens of holomorphic field theory has been initiated and developed in the papers of Costello and Li in \brian{finish} \cite{...}.
+We hope to return to studying \brian{finish}, but for now we hope this example elucidates the flexibility of our constructions. 
+
+As usual, suppose $X$ is a complex manifold, and as above, consider the local Lie algebra $\sG l_N = \Omega^{0,*}(X) \tensor \fg$ on $X$ for every $N > 0$. 
+
+If $X$ is additionally holomorphic symplectic, we obtain a deformation of this family of local Lie algebras described in the following way. 
+Suppose that $\star_\epsilon$ is a formal holomorphic deformation quantization of $(X,\omega)$. 
+This is an $\epsilon$-dependent associative product on holomorphic functions 
+\[
+\star_\epsilon : \sO^{hol}(X) \times \sO^{hol}(X) \to \sO^{hol}(X)[[\epsilon]]
+\]
+where, term-by-term in $\epsilon$, the product is given by a holomorphic bidifferential operator. 
+This associative product on $\sO^{hol}(X)[[\epsilon]]$ extends to one on the Dolbeault complex, giving
+\[
+\sA_\epsilon := (\Omega^{0,*}(X)[[\epsilon]], \star_{\epsilon})
+\]
+the structure of a dg associative algebra. 
+In fact, $\sA_\epsilon$ is essentially a local algebra in the sense of Definition \ref{def: localalg}. 
+The only subtlety is that $\sA_\epsilon$ is not given by the sections of a finite rank vector bundle.
+However, it is a pro-local algebra in the sense that it can be expressed as a limit of local algebras
+\[
+\sA_\epsilon = \lim_{k \to \infty} \sA_\epsilon / \epsilon^{k+1} .
+\] 
+%where $\sA_\epsilon / \epsilon^{k+1}$ is the local algebra given by sections of the finite rank vector bundle $\left(\Wedge^* T^{0,1*}\right) \tensor \ul{\CC[\epsilon]/\epsilon^{k+1}} = \left(\Wedge^* T^{0,1*}\right)^{\oplus k}$.
+%The algebra structure on $\sA_\epsilon / \epsilon^{k+1}$ is given by the reduction of $\star_{\epsilon}$ modulo $\epsilon^{k+1}$. 
+
+For each $N$, the local Lie algebra 
+\[
+\sA_\epsilon \tensor \fgl_N
+\]
+reduces modulo $\epsilon$ to the local Lie algebra $\sG l_N = \Omega^{0,*}_X \tensor \gl_N$.
+%In other words, $\sA_\epsilon \tensor \fgl_N$ is a deformation of $\sG l_N$. 
+
+\subsubsection{Classical Noether current}
+
+Just like in the case of the ordinary current algebra associated to $\sG l_N$, we can contemplate a free field realization of $\sA_\epsilon \tensor \fgl_N$.
+The simplest way to do this is to consider the analogue of the $\beta\gamma$ system in this noncommutative context. 
+The $\beta\gamma$ system was built from the Dolbeault complex on the complex manifold $X$. 
+The non-commutative variant is obtained by replacing the Dolbeault complex with the dg algebra $\sA_\epsilon$. 
+
+Precisely, the theory has fields 
+\[
+(\gamma, \beta) \in \sA_\epsilon \tensor V \oplus \sA_\epsilon \tensor V^* [d-1] 
+\]
+and action 
+\[
+S(\beta,\gamma) = \int_X \Tr_V(\beta \star_{\epsilon} \dbar \gamma)
+\]
+By trace we mean the usual map $\Tr_V : \End(V) = V \tensor V^* \to \CC$. 
+We will refer to this as the ``non-commutative $\beta\gamma$ system" on $X$.
+
+Locally, on $\CC^d$, the $\star_{\epsilon}$-product has the form
+\[
+f \star_{\epsilon} g = fg + \epsilon \varepsilon_{ij} \frac{\partial f}{\partial z_i} \frac{\partial g}{\partial z_j} + \cdots
+\]
+From this, we see that $\beta \star_{\epsilon} \dbar \gamma$ and $\beta \dbar \gamma$ differ by a total derivative. 
+Thus, locally, this non-commutative $\beta\gamma$ system is equivalent to the usual one (up to adjoining the formal parameter $\epsilon$).
+
+It appears that adding the non-commutative deformation does not deform the free holomorphic field theory. 
+Once we consider symmetries, however, we see a deformation of the usual free field realization. 
+
+Let us fix an identification of $V$ with $\CC^N$ for some $N \geq 1$. 
+As in the usual case, there is a symmetry of this system by the current algebra built from the ordinary local Lie algebra $\sG l_N$. 
+This does not use the symplectic structure on $X$. 
+However, once we turn on the non-commutative deformation, we see that the $\beta\gamma$ system has a symmetry by the deformed current algebra built from $\sA_\epsilon \tensor \fgl_N$. 
+
+Indeed, there is a Noether current in this setup given by
+\[
+I (\alpha, \beta,\gamma) = \int \Tr_{V}(\beta \wedge (\alpha \star \gamma)) 
+\]
+where $\alpha \in \sA_\epsilon \tensor \fgl_N$.
+By $\alpha \star_\epsilon \gamma$ we mean the algebra action of $\sA_\epsilon \tensor \fgl_N$ on $\sA_\epsilon \tensor V$. 
+
+\begin{lem}
+This Noether current determines a map of factorization algebras on $(X,\omega)$
+\[
+\UU(\sA_\epsilon \tensor \fgl_N) \to \Obs^{\cl}_{V,\epsilon}
+\]
+where $\Obs^{\cl}_{V,\epsilon}$ is the factorization algebra of classical observables of the non-commutative $\beta\gamma$ system.
+Modulo $\epsilon$, this reduces to the map of factorization algebras in Proposition \ref{prop:CNT}.
+\end{lem}
+
+\subsubsection{Equivariant quantization}
+
+We are in a very similar situation as the classical $\sG_X$-equivariant $\beta\gamma$ system studied in Section \ref{sec: qft}.
+We can employ the same Feynman diagrammatic methods to contemplate quantum equivariance in the noncommutative case.
+
+
+
+
+
