@@ -119,6 +119,10 @@ Note that this result contains Proposition~\ref{prop: trans j}.
 
 \owen{Why do we take the detour through $\CC^{d}_{\rm hol}$ if we just end up working with the invariants for $\CC\{\partial/\partial z_i\}$?}
 
+\brian{It's in formula \ref{holtransinvt}. 
+I want to say that were taking the invariants of the actual space of local functionals with respect to some (dg) Lie algebra.  
+Of course, in holomorphic situations its natural to throw away anti-holomorphic factors, but this dg Lie algebra allows us to do that in a systematic way.}
+
 In brief, the proof involves two central ideas.
 The first is that the translation-invariant local functionals ought to be built from translation-invariant differential operators and translation-invariant measures,
 and such functionals are thus pinned down by their behavior at one point.
@@ -198,7 +202,7 @@ We've omitted the extra factors for simplicity.
 To compute the translation invariant deformation complex we will invoke Corollary 2.29 from \cite{BWhol}. 
 Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
 Thus, we see that the translation invariant local cochain complex is quasi-isomorphic to the following
-\beqn
+\beqn\label{holtransinvt}
 \left(\cloc^*(\sG_d)\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
 \eeqn
 We'd like to recast the right-hand side in a more geometric way. 
