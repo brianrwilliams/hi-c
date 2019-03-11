@@ -100,19 +100,18 @@ from Section \ref{sec: hol trans main} to a cochain map
 \beqn\label{fj1}
 \fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
 \eeqn
-That we will no describe. 
+That we now describe. 
 
-Let 
+Consider the map of cochain complexes
 \[
 \CC[1] \to \Omega^*(B \fg)
 \]
-denote the coaugmented de Rham complex.
-Here, we are viewing $\CC$ as sitting inside the complex $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
-It is acyclic by definition. 
+where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
+The totalization of this map of complexes is acyclic. 
 
 Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
 \[
-\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow \left(\CC[1] \to \Omega^*(B \fg)\right)  .
+\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
 \]
 Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
 \[
@@ -178,9 +177,9 @@ A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
 To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
 but we want to consider such Lagrangian densities up to total derivatives,
 i.e., modulo integration by parts.
-This relation is cleanly encoded as the relative tensor product
+This relation is cleanly encoded as the relative (derived) tensor product
 \[
-\CC \, \d^d z \tensor_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
+\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
 \]
 \owen{Should we bother to justify this?}
 There is then a simple answer for which such elements are $U(d)$-invariant.
