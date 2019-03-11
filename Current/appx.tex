@@ -97,13 +97,50 @@ Before stating the main result of this appendix, we note that there is a natural
 \fj : \Sym^{d+1} (\fg^*)^{\fg} [-1] \to \cloc^*(\sG_d)
 \]
 from Section \ref{sec: hol trans main} to a cochain map
+\beqn\label{fj1}
+\fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
+\eeqn
+That we will no describe. 
+
+Let 
 \[
-\widetilde{\fj} : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
+\CC[1] \to \Omega^*(B \fg)
 \]
+denote the coaugmented de Rham complex.
+Here, we are viewing $\CC$ as sitting inside the complex $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
+It is acyclic by definition. 
+
+Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
+\[
+\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow \left(\CC[1] \to \Omega^*(B \fg)\right)  .
+\]
+Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
+\[
+\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
+\] 
+Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
+
+The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
+\[
+\widetilde{\fj} : \Omega^{\leq d}(B \fg) \to \cloc^*(\sG_d) .
+\] 
+This map is zero on the graded pieces $\Omega^k (B \fg)$ for $k < d$. 
+Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\widetilde{\fj}(\eta)$ by 
+\[
+\widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
+\]
+Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
+We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
+The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
+
+Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
+Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
+
+
 \owen{We should explain what it is, at least briefly.}
 
 \begin{prop}\label{prop: local def}
-The map $\widetilde{\fj}$ factors through the subcomplex of invariants under rotation and holomorphic translation:
+The map $\fj$ factors through the subcomplex of invariants under rotation and holomorphic translation:
 \beqn
 \fj : \Omega^{d+1}_{cl}(B \fg) [d] \to \cloc^*(\sG_d)^{U(d) \ltimes \CC^d_{\rm hol}}.
 \eeqn
