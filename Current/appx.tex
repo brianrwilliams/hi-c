@@ -97,13 +97,49 @@ Before stating the main result of this appendix, we note that there is a natural
 \fj : \Sym^{d+1} (\fg^*)^{\fg} [-1] \to \cloc^*(\sG_d)
 \]
 from Section \ref{sec: hol trans main} to a cochain map
+\beqn\label{fj1}
+\fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
+\eeqn
+That we now describe. 
+
+Consider the map of cochain complexes
 \[
-\widetilde{\fj} : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
+\CC[1] \to \Omega^*(B \fg)
 \]
+where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
+The totalization of this map of complexes is acyclic. 
+
+Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
+\[
+\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
+\]
+Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
+\[
+\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
+\] 
+Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
+
+The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
+\[
+\widetilde{\fj} : \Omega^{\leq d}(B \fg) \to \cloc^*(\sG_d) .
+\] 
+This map is zero on the graded pieces $\Omega^k (B \fg)$ for $k < d$. 
+Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\widetilde{\fj}(\eta)$ by 
+\[
+\widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
+\]
+Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
+We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
+The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
+
+Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
+Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
+
+
 \owen{We should explain what it is, at least briefly.}
 
 \begin{prop}\label{prop: local def}
-The map $\widetilde{\fj}$ factors through the subcomplex of invariants under rotation and holomorphic translation:
+The map $\fj$ factors through the subcomplex of invariants under rotation and holomorphic translation:
 \beqn
 \fj : \Omega^{d+1}_{cl}(B \fg) [d] \to \cloc^*(\sG_d)^{U(d) \ltimes \CC^d_{\rm hol}}.
 \eeqn
@@ -118,6 +154,10 @@ Note that this result contains Proposition~\ref{prop: trans j}.
 \owen{As it was written, I'm confused about the proof of this proposition. We need to discuss.}
 
 \owen{Why do we take the detour through $\CC^{d}_{\rm hol}$ if we just end up working with the invariants for $\CC\{\partial/\partial z_i\}$?}
+
+\brian{It's in formula \ref{holtransinvt}. 
+I want to say that were taking the invariants of the actual space of local functionals with respect to some (dg) Lie algebra.  
+Of course, in holomorphic situations its natural to throw away anti-holomorphic factors, but this dg Lie algebra allows us to do that in a systematic way.}
 
 In brief, the proof involves two central ideas.
 The first is that the translation-invariant local functionals ought to be built from translation-invariant differential operators and translation-invariant measures,
@@ -137,9 +177,9 @@ A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
 To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
 but we want to consider such Lagrangian densities up to total derivatives,
 i.e., modulo integration by parts.
-This relation is cleanly encoded as the relative tensor product
+This relation is cleanly encoded as the relative (derived) tensor product
 \[
-\CC \, \d^d z \tensor_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
+\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
 \]
 \owen{Should we bother to justify this?}
 There is then a simple answer for which such elements are $U(d)$-invariant.
@@ -198,7 +238,7 @@ We've omitted the extra factors for simplicity.
 To compute the translation invariant deformation complex we will invoke Corollary 2.29 from \cite{BWhol}. 
 Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
 Thus, we see that the translation invariant local cochain complex is quasi-isomorphic to the following
-\beqn
+\beqn\label{holtransinvt}
 \left(\cloc^*(\sG_d)\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
 \eeqn
 We'd like to recast the right-hand side in a more geometric way. 

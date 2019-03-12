@@ -38,7 +38,7 @@ In practice, we replace a (dg) Lie algebra with a (dg) associative algebra and r
 always keeping locality in place.
 
 \begin{dfn}\label{def: localalg}
-A {\em local dg algebra} on a smooth manifold $X$~is:
+A {\em $C^\infty$ local dg algebra} on a smooth manifold $X$~is:
 \begin{enumerate}
 \item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote~$\sA^{sh}$;
 \item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
@@ -49,11 +49,8 @@ such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of
 
 \begin{rmk}
 It's perhaps abusive to use the term ``local algebra" here, since in the conventional mathematical sense a local algebra refers to an ordinary algebra with a unique maximal ideal. 
-We choose the terminology in analogy with the concept of a local Lie algebra on a manifold. 
-We will always refer to our objects as ``local algebras on $X$" to avoid the potential confusion. 
+We choose the terminology in analogy with the concept of a local Lie algebra on a manifold and to stress the difference with the usual definition we've added $C^\infty$. 
 \end{rmk}
-
-\owen{Let me register my complaint that {\it local} here is extremely abusive to conventional mathematical terminology. A local algebra, in the usual sense, is one with a unique maximal ideal.}
 
 We reserve the notation $\sA$ for the cosheaf of compactly supported sections of the bundle $A \to X$.
 By the assumptions, this is a cosheaf of dg associative algebras. 
@@ -233,21 +230,29 @@ where $\fj$ from Definition~\ref{dfn: j}.
 
 In a sense $\Theta^\infty_d$ is the ``universal'' cocycle --- in that it only depends on the complex dimension and not on any Lie algebraic data --- that determines the most important local cocycles we have encountered before.
 
-\owen{We really ought to point out that if $\fg$ acts on a finite dimensional space $V$, then we have a map $\rho: \fg \to \gl(V)$, and that the chiral anomaly is the pullback along $\rho$ of the restriction of $\Theta^\infty_d$.} 
-\brian{I was going to say this for beta-gamma, but in your email you seem to have a stronger way to phrase it, so maybe I'll let you try that first.}
+This universality is perhaps most apparent when we view cocycles as anomalies to solving the quantum master equation. 
+For concreteness, consider the $\beta\gamma$ system with values in $V$ as in Section \ref{sec: qft}.
+This theory is natural in the vector space $V$ in the sense that if $V \to W$ is a map of vector spaces, then there is an induced map of theories from the theory based on $V$ to the theory based on $W$.\footnote{This means, for instance, that there is an induced map between the spaces of solutions to the equations of motion.}
+Formal aspects of BV quantization implies that anomalies to solving the QME get pulled back along such maps between theories. 
 
-\begin{proof}
-\owen{I don't understand why you work at the level of homology and whether you are working now with a (non dg) algebra $A$.}
-Let $A$ be any algebra and consider the Lie algebra $\fgl_N(A)$ and the colimit $\gl_\infty(A) = {\rm colim} \; \fgl (A)$. 
+If we choose an identification $V \cong \CC^N$, this implies the the anomaly to solving the $\gl_N = \gl(V)$-equivariant QME is pulled back from the anomaly to solving the $\gl_\infty$-equivariant QME. 
+For the $\beta\gamma$ system on $\CC^d$ with values in $\CC^\infty = \cup_{N > 0} \CC^N$, the anomaly to solving the $\gl_\infty$-equivariant QME is precisely the class $\Theta_{d}^\infty$. 
+
+This is consistent with our calculations in Section \ref{sec: qft} and this Lemma \ref{lem:pullbackofthetainfinity}. 
+Indeed, if $V$ is additionally a $\fg$-representation, we can further pull-back the anomaly along the map of theories induced by the defining map $\rho : \fg \to \fgl(V)$ of the representation. 
+
+\begin{proof}(of Lemma \ref{lem:pullbackofthetainfinity})
+Let $A$ be a dg algebra.
+Consider the Lie algebra $\fgl_N(A)$ and the colimit $\gl_\infty(A) = {\rm colim} \; \fgl (A)$. 
 At the level of homology, the ordinary Loday-Quillen-Tsygan map is of the form
 \[
-\begin{array}{ccc}
-H_{n+1}^{\rm Lie}(\fgl_N(A)) & \to & HC_{n}(A) \\
+\begin{array}{ccl}
+\clieu_{*+1}(\fgl_N(A)) & \to & {\rm Cyc}_{*}(A) \\
 X_0 \wedge \cdots \wedge X_n & \mapsto & \sum_{\sigma \in S_n} (-1)^{\sigma} {\rm tr} \left(X_0 \tensor X_{\sigma(1)} \tensor\cdots \tensor X_{\sigma(n)} \right), 
 \end{array}
 \] 
-which induces a dual map in cohomology $HC^n(A) \to H^{n+1}_{\rm Lie}(\fgl_N(A))$. 
-Here, ${\rm tr}$ denotes the generalized trace map
+which induces a dual map in cohomology ${\rm Cyc}^*(A, A^\vee) \to \clie^{*+1}(\fgl_N(A))$. 
+In the formula, we have used the generalized trace map
 \[
 {\rm tr} : {\rm Mat}_N(A)^{\tensor(n+1)} \to A^{\tensor (n+1)} 
 \]
@@ -286,9 +291,11 @@ We show that up to homotopy there is a unique such cyclic cocycle on the local a
 The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
 Thus
 \[
-H^0\left(\Cycloc^*(\Omega^{0,*}(\CC^d))^{\CC^d_{hol}} \right)^{U(d)} \cong \CC .
+H^0\left(\Cycloc^*(\Omega^{0,*}(\CC^d))^{U(d) \ltimes \CC^d_{hol}} \right) \cong \CC .
 \] 
 \end{prop}
+
+For a definition of the notation used in the proposition we refer to Appendix \ref{sec: hol trans}.
 
 \begin{proof}
 The calculation is similar to that of the holomorphic translation invariant local Lie algebra cohomology of $\sG_d$ given in Appendix \ref{sec: hol trans}. 
