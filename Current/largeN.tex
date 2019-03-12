@@ -286,7 +286,7 @@ which is precisely $\fj(\theta_{d+1,N})$.
 We turn our attention to local cyclic cocycles defined on affine space $\CC^d$ that are both translation invariant and $U(d)$-invariant. 
 We show that up to homotopy there is a unique such cyclic cocycle on the local algebra  $\Omega^{0,*}(\CC^d)$ given by $\Theta^\infty_d$. 
 
-\begin{prop}
+\begin{prop}\label{prop: cyctrans}
 %There is a unique, up to scale, $U(d)$-invariant, holomorphic translation invariant, degree zero local cohomology class in the local cyclic cohomology of $\Omega^{0,*}(\CC^d)$.
 The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
 Thus
@@ -442,7 +442,7 @@ We can make sense of this rigorously by considering our theory as one defined ov
 In other words, we have defined a family of field theories over the formal disk with coordinate $\epsilon$. 
 \end{rmk}
 
-\begin{lem}
+\begin{lem}\label{lem: nonbg}
 Locally on $\CC^d$, the non-commutative $\beta\gamma$ system with values in $V$ is equivalent to the ordinary $\beta\gamma$ system with values in $V$ (considered as a trivial family over the formal disk with coordinate $\epsilon$). 
 \end{lem}
 
@@ -464,7 +464,7 @@ However, once we turn on the non-commutative deformation, we see that the $\beta
 
 Indeed, there is a Noether current in this setup given by
 \[
-I_{\epsilon,N} (\alpha, \beta,\gamma) = \int \Tr_{V}(\beta \wedge (\alpha \star \gamma)) 
+I_{\epsilon,N} (\alpha, \beta,\gamma) = \int \Tr_{V}(\beta \wedge (\alpha \star_{\epsilon} \gamma)) 
 \]
 where $\alpha \in \gl_N(\sA_{\epsilon})$.
 By $\alpha \star_\epsilon \gamma$ we mean the algebra action of $\gl_N(\sA_{\epsilon})$ on $\sA_\epsilon \tensor V$. 
@@ -480,14 +480,69 @@ Modulo $\epsilon$, this reduces to the map of factorization algebras in Proposit
 
 \subsubsection{Equivariant quantization}
 
-Let's turn to the quantization of this classical symmetry, where the situation is similar to the $\sG_X$-equivariant $\beta\gamma$ system studied in Section \ref{sec: qft}.
-We can employ analogous Feynman diagrammatic methods to contemplate quantum equivariance in the noncommutative case.
+Since the noncommutative $\beta\gamma$ system is still free, there exists a unique quantization $\Obs^\q_{\epsilon, N}$ as a factorization algebra on $X$ for each $N$. 
+
+Let's turn to the quantization of the classical $\fgl_N(\sA_\epsilon)$ symmetry, where the situation is similar to the $\sG_X$-equivariant $\beta\gamma$ system studied in Section \ref{sec: qft}.
+Although the global case is interesting, we will restrict ourselves to the simplified local situation where 
+\[
+X = \CC^d = \CC^{2n}
+\] 
+and $\omega$ is the standard symplectic form. 
+We can employ analogous Feynman diagrammatic methods to contemplate quantum equivariance in the noncommutative context.
 
 We ask that the Noether current $I_{\epsilon,N}$ solves the $\fgl_N(\sA_{\epsilon})$-equivariant quantum master equation.
 Locally, on $\CC^d$, the obstruction to satisfying the QME is given by the following local cocycle 
 \beqn\label{noncommobs}
 \int \Tr_{\fgl_N} (\alpha \star_{\epsilon} \partial \alpha \star_{\epsilon} \cdots \star_{\epsilon} \partial \alpha) \in \cloc^*(\fgl_N(\sA_\epsilon)) .
 \eeqn
+In the ordinary commutative case, we were able to characterize this anomaly as being determined by an element in $\Sym^{d+1}(\fg^\vee)$.
+For the noncommutative situation, we do not have a direct way of identifying this local cocycle.
 
+We arrive at an explicit characterization by taking the large $N$ limit, where we are able to identify this anomaly algebraically. 
+Indeed, we have the Loday-Quillen-Tsygan map for local functionals
+\[
+\lqt^* : \Cycloc^*(\sA_\epsilon)[-1] \to \cloc^*(\gl_\infty(\sA_\epsilon)) = \lim_{N \to \infty} \cloc^*(\gl_N( \sA))  .
+\]
+Thus, the large $N$ anomaly must come from a class in $\Cycloc^*(\sA_\epsilon)$ of cohomological degree zero. 
 
+By a similar proof as in Proposition \ref{prop: cyctrans}, one can show that the cohomology of the translation invariant subcomplex of $\Cycloc^*(\sA_\epsilon)$ is equal to (a shift of) the cyclic cohomology of the formal Weyl algebra
+\[
+\Cyc^*(\Hat{A}_{2n}, \Hat{A}_{2n}^\vee) [2n]
+\]
+where $\Hat{A}_{2n}$ is the formal Weyl algebra on generators $\{x_1,\ldots, x_n, y_1,\ldots y_n\}$ satisfying the commutation relation
+\[
+[x_i, y_j] = \epsilon \delta_{ij} .
+\] 
+This cyclic cohomology is studied in depth in \cite{Willwacher}, where it is shown that there is {\em unique} nontrivial class in the cyclic cohomology
+\[
+\Theta_{\epsilon}^\infty \in HC^{2n} (\Hat{A}_{2n}, \Hat{A}_{2n}^\vee) .
+\]
+For us, a multiple of this class represents the anomaly to the equivariant quantization the noncommutative $\beta\gamma$ system. 
 
+We can now use the universal nature of this class to characterize anomalies at finite $N$ to obtain the following quantum Noether map. 
+
+\begin{prop}
+The $\fgl_N(\sA_\epsilon)$-equivariant quantization determines a map of factorization algebras on $\CC^d = \CC^{2n}$: 
+\[
+\UU_{a \Theta_{\epsilon, N}} (\fgl_N(\sA_\epsilon)) \to \Obs^\q_{\epsilon, N}
+\]
+where $a \Theta_{\epsilon, N} \in H^1_{loc}(\fgl_N(\sA_{\epsilon}))$ is scalar multiple the class obtained from the universal cyclic cocycle $\Theta_{\epsilon}^\infty$ under the Loday-Quillen-Tsygan map
+\[
+\lqt^* : \Cycloc^*(\sA_\epsilon)[-1] \to \cloc^*(\gl_N( \sA))  .
+\]
+\end{prop}
+
+\begin{rmk}
+In order to nail down the constant $a$ would require a tedious, albeit seemingly straightforward, Feynman diagram analysis akin to Section \ref{sec: qft}. 
+\end{rmk}
+
+By Lemma \ref{lem: nonbg}, we see that on $\CC^{2n}$ the factorization algebra of the noncommutative $\beta\gamma$ system $\Obs^\q_{\epsilon, N}$ is actually isomorphic to the factorization algebra
+\[
+\Obs^\q_{\CC^{N}} \tensor_{\CC} \CC[[\epsilon]]
+\]
+where $\Obs^\q_{\CC^{N}}$ is the ordinary $\beta\gamma$ system of maps $\CC^{2n} \to \CC^N$. 
+Thus, as an immediate corollary, we see that the quantum Noether map is of the form
+\[
+\UU_{a \Theta_{\epsilon, N}} (\fgl_N(\sA_\epsilon)) \to \Obs^\q_{\CC^{N}} \tensor_{\CC} \CC[[\epsilon]] .
+\]
+This means that inside the $\beta\gamma$ system we have {\em two} different free field realizations: (1) the one from Section \ref{sec: qft} where we realized the ordinary current algebra at some central extension in $\Obs^\q_{\CC^{N}}$, and (2) the one we have just exhibited, which realizes a central extension of the algebra $\fgl_N(\sA_{\epsilon})$. 
