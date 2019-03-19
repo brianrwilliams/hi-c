@@ -38,7 +38,7 @@ In practice, we replace a (dg) Lie algebra with a (dg) associative algebra and r
 always keeping locality in place.
 
 \begin{dfn}\label{def: localalg}
-A {\em $C^\infty$ local dg algebra} on a smooth manifold $X$~is:
+A {\em $C^\infty$-local dg algebra} on a smooth manifold $X$~is:
 \begin{enumerate}
 \item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote~$\sA^{sh}$;
 \item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
@@ -49,26 +49,26 @@ such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of
 
 \begin{rmk}
 It's perhaps abusive to use the term ``local algebra" here, since in the conventional mathematical sense a local algebra refers to an ordinary algebra with a unique maximal ideal. 
-We choose the terminology in analogy with the concept of a local Lie algebra on a manifold and to stress the difference with the usual definition we've added $C^\infty$. 
+We choose the terminology in analogy with the concept of a local Lie algebra on a manifold but stress the difference with the usual commutative algebra definition by adding the adjective~$C^\infty$. 
 \end{rmk}
 
 We reserve the notation $\sA$ for the cosheaf of compactly supported sections of the bundle $A \to X$.
 By the assumptions, this is a cosheaf of dg associative algebras. 
-We will abusively refer to a local algebra $(A, \d, \cdot)$ simply by its cosheaf $\sA$.
+We will abusively refer to a $C^\infty$-local algebra $(A, \d, \cdot)$ simply by its cosheaf $\sA$.
 
 \begin{eg}
-The sheaf of smooth functions provides a trivial example of a local algebra on any manifold. 
+The sheaf of smooth functions provides a trivial example of a $C^\infty$-local algebra on any manifold. 
 On a complex manifold, the basic example for us is the Dolbeault complex $\Omega^{0,*}_X$.
 This example is, of course, also commutative. 
 \end{eg}
 
-Any bundle of finite dimensional associative (dg) algebras defines a local algebra where the structure maps are differential operators of order zero. 
+Any bundle of finite dimensional associative (dg) algebras defines a $C^\infty$-local algebra where the structure maps are differential operators of order zero. 
 
 %For a noncommutative example, start with the sheaf of holomorphic differential operators and take its Dolbeault resolution.
 %\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
 
-There is a forgetful functor from local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
-Thus, every local algebra is a local Lie algebra (with same underlying bundle). 
+There is a forgetful functor from $C^\infty$-local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
+Thus, every $C^\infty$-local algebra is a local Lie algebra (with same underlying bundle). 
 
 %Now, if $\sA$ is a local algebra on $\sL$ is a local Lie algebra we can consider the vector bundle $A \tensor L$. 
 %The sheaf of smooth sections of this bundle is $\sL \tensor_{C^\infty_X} \sA$.
@@ -83,9 +83,9 @@ Thus, every local algebra is a local Lie algebra (with same underlying bundle).
 %\owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
 %\brian{You're right. What should we say then? Tensoring $\sA$ with a bundle of Lie algebras is a local Lie algebra? I guess that's all we use.}
 
-For local algebras, there is an appropriate notion of cohomology respecting the locality, 
+For $C^\infty$-local algebras, there is an appropriate notion of cohomology respecting the locality, 
 analogous to local Lie algebra cohomology. 
-To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a local algebra. 
+To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a $C^\infty$-local algebra. 
 The $\infty$-jet bundle $JA$ of $A$ is a graded left $D_X$-module via the canonical Grothendieck connection on $\infty$-jets,
 as is true for any graded vector bundle,
 but it has additional structure as well.
@@ -119,7 +119,7 @@ The {\em reduced} Hochschild cochains is the product without the $n=0$ component
 \def\Cycloc{{\rm Cyc}_{\rm loc}}
 
 \begin{dfn}\label{dfn: hochloc}
-The {\em local Hochschild cochains} of a local algebra $\sA$ on $X$~is the sheaf
+The {\em $C^\infty$-local Hochschild cochains} of a $C^\infty$-local algebra $\sA$ on $X$~is the sheaf
 \[
 \Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*_{red} (JA, JA^\vee) .
 \] 
@@ -142,10 +142,10 @@ Taking the termwise quotient $D_X$-module, we obtain the {\em reduced cyclic coc
 \Cyc_{red}^* (JA, JA^\vee) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) / C_n .
 \]
 The Hochschild differential restricts to this subspace to yield a dg $D_X$-module. 
-We mimic Definition~\ref{dfn: hochloc} for the local version of cyclic cohomology of a local algebra~$\sA$. 
+We mimic Definition~\ref{dfn: hochloc} for the $C^\infty$-local version of cyclic cohomology of a $C^\infty$-local algebra~$\sA$. 
 
 \begin{dfn}\label{dfn: cycloc}
-The {\em local cyclic cochains} of a local algebra $\sA$ on $X$ is the sheaf
+The {\em $C^\infty$-local cyclic cochains} of a $C^\infty$-local algebra $\sA$ on $X$ is the sheaf
 \[
 \Cycloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Cyc^*_{red} (JA) .
 \] 
@@ -153,8 +153,8 @@ We denote the global sections of this sheaf of cochain complexes by~$\Cycloc^*(\
 \end{dfn}
 
 To make things concrete, 
-consider the most relevant local algebra for us: the Dolbeault complex $\Omega^{0,*}_X$ on a complex manifold $X$. 
-For this local Lie algebra, there is a natural degree zero cocycle in local cyclic cohomology.
+consider the most relevant $C^\infty$-local algebra for us: the Dolbeault complex $\Omega^{0,*}_X$ on a complex manifold $X$. 
+For this $C^\infty$-local Lie algebra, there is a natural degree zero cocycle in $C^\infty$-local cyclic cohomology.
 
 \begin{lem}
 \label{lem: univ}
@@ -170,25 +170,25 @@ This cocycle is ``universal'' in the sense that it only depends on dimension.
 
 \begin{proof}
 The proof is similar to that of Proposition \ref{prop j map}. 
-Note that the differential on local cochains consists of two terms: the $\dbar$ operator and the ordinary Hochschild differential. 
+Note that the differential on $C^\infty$-local cochains consists of two terms: the $\dbar$ operator and the ordinary Hochschild differential. 
 It follows from graded commutativity of the wedge product that the cochain is cyclic and closed for the Hochschild differential. 
 To see that it is closed for the other piece of the differential, observe that
 \[
 \dbar \Theta^\infty_d(\alpha_0,\cdots,\alpha_d) = \Theta^\infty_d(\dbar \alpha_0, \alpha_1,\ldots,\alpha_d) \pm \Theta_d^\infty(\alpha_0, \dbar \alpha_1,\ldots \alpha_d) \pm \cdots \pm \Theta_d^\infty(\alpha_0, \alpha_1,\ldots \dbar \alpha_d) .
 \]
 The right hand side is the cocycle $\Theta_d^\infty$ evaluated on the derivation $\dbar$ applied to the element $\alpha_0 \tensor \cdots \tensor \alpha_d$. 
-The left hand side is a total derivative and hence vanishes in the local cochain complex. 
+The left hand side is a total derivative and hence vanishes in the $C^\infty$-local cochain complex. 
 \end{proof}
 
 \subsection{Local Loday-Quillen-Tsygan theorem and the chiral anomaly}
 
-We now turn to the relationship between cyclic cocycles for a local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N( \sA)$ and~$\gl_\infty (\sA)$.
+We now turn to the relationship between cyclic cocycles for a $C^\infty$-local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N( \sA)$ and~$\gl_\infty (\sA)$.
 The Loday-Quillen-Tsygan theorem implies the following,
 since the map $\lqt$ is natural and hence respects locality everywhere.
 
 \begin{prop}
 \label{prop: cycloc}
-Let $\sA$ be a local algebra.
+Let $\sA$ be a $C^\infty$-local algebra.
 For every positive integer $N$, there is a map of sheaves
 \[
 \lqt_N^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_N( \sA)) 
@@ -202,11 +202,11 @@ that factors through a map of sheaves
 \begin{rmk}
 A version of this result was given in \cite{CL1} for $\sA = \Omega^{0,*}(X)$, 
 where $X$ is a Calabi-Yau manifold.
-They interpret local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of ``admissible'' deformations for holomorphic Chern-Simons theory on $X$,
+They interpret $C^\infty$-local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of ``admissible'' deformations for holomorphic Chern-Simons theory on $X$,
 and they identify the cyclic side in terms of Kodaira-Spencer gravity on~$X$.
 \end{rmk}
 
-Proposition \ref{prop: cycloc} sends a degree zero local cyclic cocycle to a degree one local Lie algebra cocycles for $\fgl_N(\sA)$.
+Proposition \ref{prop: cycloc} sends a degree zero $C^\infty$-local cyclic cocycle to a degree one local Lie algebra cocycles for $\fgl_N(\sA)$.
 Of particular interest is the case $\sG l_{N} = \fgl_N \tensor \Omega^{0,*}$. 
 The degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ from Lemma~\ref{lem: univ} thus determines a degree one cocycle 
 \[
@@ -283,12 +283,12 @@ which is precisely $\fj(\theta_{d+1,N})$.
 
 \subsection{Holomorphic translation invariant cohomology}
 
-We turn our attention to local cyclic cocycles defined on affine space $\CC^d$ that are both translation invariant and $U(d)$-invariant. 
-We show that up to homotopy there is a unique such cyclic cocycle on the local algebra  $\Omega^{0,*}(\CC^d)$ given by $\Theta^\infty_d$. 
+We turn our attention to $C^\infty$-local cyclic cocycles defined on affine space $\CC^d$ that are both translation invariant and $U(d)$-invariant. 
+We show that up to homotopy there is a unique such cyclic cocycle on the $C^\infty$-local algebra  $\Omega^{0,*}(\CC^d)$ given by $\Theta^\infty_d$. 
 
 \begin{prop}\label{prop: cyctrans}
 %There is a unique, up to scale, $U(d)$-invariant, holomorphic translation invariant, degree zero local cohomology class in the local cyclic cohomology of $\Omega^{0,*}(\CC^d)$.
-The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
+The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, $C^\infty$-local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
 Thus
 \[
 H^0\left(\Cycloc^*(\Omega^{0,*}(\CC^d))^{U(d) \ltimes \CC^d_{hol}} \right) \cong \CC .
@@ -398,9 +398,9 @@ Define the sheaf of associative dg algebras
 where the differential is the usual $\dbar$ operator, and $\star_{\epsilon}$ is the Moyal product induced from the deformation quantization.
 \end{dfn}
 
-In fact, $\sA_\epsilon$ is essentially a local algebra in the sense of Definition \ref{def: localalg}. 
+In fact, $\sA_\epsilon$ is essentially a $C^\infty$-local algebra in the sense of Definition~\ref{def: localalg}. 
 The only subtlety is that $\sA_\epsilon$ is not given by the sections of a finite rank vector bundle.
-However, it is a pro-local algebra in the sense that it can be expressed as a limit of local algebras
+However, it is a pro-$C^\infty$-local algebra in the sense that it can be expressed as a limit of $C^\infty$-local algebras
 \[
 \sA_\epsilon = \lim_{k \to \infty} \sA_\epsilon / \epsilon^{k+1} .
 \] 
