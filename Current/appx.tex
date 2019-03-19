@@ -98,26 +98,31 @@ Before stating the main result of this appendix, we note that there is a natural
 \]
 from Section \ref{sec: hol trans main} to a cochain map
 \beqn\label{fj1}
-\fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
+\fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  
 \eeqn
-That we now describe. 
+that we now describe. 
+\owen{What do you mean here by "closed" forms? What you wrote below suggests you had something strict in mind (the actual de Rham closed forms) ... a lot of what's below seems like a detour. I'm not sure we need all this discussion to say the key fact.}
 
-Consider the map of cochain complexes
-\[
-\CC[1] \to \Omega^*(B \fg)
-\]
-where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
-The totalization of this map of complexes is acyclic. 
+\owen{I commented out much of the description below, which seemed irrelevant to the construction.}
 
-Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
-\[
-\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
-\]
-Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
-\[
-\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
-\] 
-Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
+%Consider the map of cochain complexes
+%\[
+%\CC[1] \to \Omega^*(B \fg)
+%\]
+%where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
+%The totalization of this map of complexes is acyclic. 
+%
+%Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
+%\[
+%\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
+%\]
+%Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
+%\[
+%\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
+%\] 
+%Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
+
+\owen{The behavior of $\widetilde{\fj}$ on $d+k$-forms is not described. Is that $k < d$ a typo? I }
 
 The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
 \[
@@ -129,10 +134,13 @@ Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\wi
 \widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
 \]
 Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
+\owen{I'm not sure this makes sense as written: you're ignoring all the stuff that comes from the $\clie^*(\fg)$ direction. Why should $\eta$ have the form you're asserting?}
 We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
 The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
+\owen{Do you mean we integrate over $X$ or that we just drop all other degrees?}
 
 Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
+\owen{No, we don't. We work with the de Rham complex of the Lagrangian densities.}
 Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
 
 
@@ -145,7 +153,7 @@ The map $\fj$ factors through the subcomplex of invariants under rotation and ho
 \eeqn
 In particular, if $\fg$ is an ordinary Lie algebra (i.e., concentrated in degree zero), then we obtain an isomorphism
 \[
-H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)^{U(d), \CC^{d}_{\rm hol}} .
+H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)^{U(d) \ltimes \CC^d_{\rm hol}}.
 \] 
 \end{prop}
 
@@ -164,6 +172,42 @@ The first is that the translation-invariant local functionals ought to be built 
 and such functionals are thus pinned down by their behavior at one point.
 The second is that rotation invariance then drastically cuts down the remaining possibilities.
 Indeed, as the proposition indicates, the only freedom is concentrated in the dependence on the Lie algebra $\fg$ and not on the spatial directions along~$\CC^d$.
+
+\begin{lem}
+The subcomplex $\cloc^*(\sG_d)^{\CC^d}$ of elements invariant under translation along $\CC^d$ is isomorphic to 
+\[
+\cred^*(\fg[[z_1,\ldots,z_n, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_n]]),
+\]
+the reduced Lie algebra cochains on the dg Lie algebra $\fg[[z_1,\ldots,z_n, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_n]]$ whose differential is~$\dbar$.
+\end{lem}
+
+That dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$.
+
+\begin{proof}
+Here we are just noting a simple fact: 
+our bundle $\fg \times \CC^d \to \CC^d$ is trivial,
+and hence the jet bundle inherits a trivialization.
+The trivialization is explicitly given by using the linear coordinate system arising from identifying the manifold with the vector space $\CC^d$;
+it gives a natural basis for differential operators and hence for jets.
+Translation-invariant sections are thus determined by their value at a single point,
+which we can take to be the origin.
+The fiber of the jet bundle at the origin can be seen as Dolbeault forms on the formal $d$-dimensional disk with values in $\fg$.
+As $\cloc^*$ is a version of reduced Lie algebra cochains, we obtain the claim.
+\end{proof}
+
+We would now like to trivialize homotopically the action of the antiholomorphic derivatives.
+On the formal $d$-dimensional disk, there is a natural trivialization (by contraction with the vector fields $\partial_{\zbar_i}$),
+which also makes sense on $\CC^d$ globally.
+\owen{I'm writing quickly ... need to check that. It now doesn't sound quite right.}
+The strict invariants for the extended Lie algebra $\CC^d_{\rm hol}$ are thus expressions that have no dependence on the antiholomorphic coordinates~$\zbar_i$.
+
+\begin{lem}
+The $\CC^d_{\rm hol}$-invariant subcomplex $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$ is isomorphic to 
+\[
+\cred^*(\fg[[z_1,\ldots,z_n]]),
+\]
+the reduced Lie algebra cochains of the Lie algebra~$\fg[[z_1,\ldots,z_n]]$.
+\end{lem}
 
 In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
 so it is convenient to isolate some of these results as lemmas.
