@@ -640,77 +640,22 @@ U(\sH_{d,V}) \hookrightarrow r_* \Obs^\q_{V}|_{\hbar = (2 \pi i)^d}
 \]
 that is dense at the level of cohomology. 
 
-For calculations, it is useful for us present this algebra in terms of residues over the sphere $S^{2d-1}$. 
-This is completely analogous to the usual description of modes of a vertex algebra in terms of ordinary residues.
-The higher residue determines a pairing
-\[
-\begin{array}{ccl}
- A_d \tensor A_d & \to &  \CC \\
- a \tensor b & \mapsto & \oint_{S^{2d-1}} a \wedge b \wedge \d^d z .
- \end{array}
-\]
-and gives an isomorphism $A_d \cong A_d^\vee [-d + 1]$. 
-This isomorphism allows us to identify, for instance, an element $a \in A_d \tensor V^*[d-1]$ with the functional 
-\[
-\begin{array}{cccl}
-\oint_{S^{2d-1}} a  : & A_d \tensor V & \to & \CC \\
-& a & \mapsto & \oint_{S^{2d-1}} \<a \wedge c\>_V \wedge \d^d z .
-\end{array}
-\]
-\begin{rmk}
-Using this convention, it is instructive to think of the commutator in $U(\sH_{d,V})$ as given by contractions with the propagator $P = P_{0 < \infty}$ restricted to $A_d \subset \Omega^{0,*}(\CC^d)$. 
-For instance, when $d=2$ the propagator is given by
-\[
-P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V} .
-\]
-The propagator is a $(0,1)$-form on $\CC^d \setminus 0$ with values in $V^* \tensor V$ and satisfies $\d^2 z \dbar P = \delta_{\CC^d} (z) \id_V$, where $\delta_{\CC^d}$ is the $\delta$-distribution on $\CC^d$. 
-We view $\id_V$ as an element of $V^* \tensor V$. 
-%Notice this differs from our convention before where we included the holomorphic top form in $P$. 
-%We have absorbed this into the definition of the pairing defining $\sH_V$. 
-%\[
-%P \in (A_d \tensor V^*[d-1]) \Hat{\tensor} (A_d \tensor V) = (A_d \Hat{\tensor} A_d) \tensor (V^* \tensor V) [d-1] .
-%\] 
-%This is simply the Green's function for the Hodge Laplacian restricted to the space 
-%\[
-%A_d \Hat{\tensor} A_d \subset \Omega^{0,*}(\CC^d \setminus 0) \Hat{\tensor} \Omega^{0,*}(\CC^d \setminus 0) = \Omega^{0,*}((\CC^d \setminus 0) \times (\CC^d \setminus 0))
-%\]
-%tensored with the identity on $V$ viewed as an element in $V^* \tensor V$. 
-%For instance, when $d = 1$, so that $A_1 = \CC[z,z^{-1}]$ we have
-%\[
-%P = \frac{1}{z-w} \id_V
-%\]
-To simplify notations, let $P(z) = p(z) \tensor \id_V$ where $p(z)$ is the differential form part of the propagator above. 
-Since $\d^2 z \dbar p(z)$ is the $\delta$-function on $\CC^d \setminus 0$ one has the residue formula
-\[
-\oint_{S^{2d-1}} p(z) \d^2 z = 1 .
-\]
-Thus, $p(z)$ is the $\delta$-function for the $(2d-1)$-sphere.
-\end{rmk}
-
-By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
-a locally constant factorization algebra on $\RR$.
-Following our approach in Section~\ref{sec: sphere ops},
-one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
-The formula looks very similar to the identifications above in terms of residues. 
-
-For instance, if $I \subset \RR$ is an interval, an element in the linear component $$\rho \tensor a \in \Omega^*_c(I) \tensor \left(A_d \tensor V^*[d-1]\right)$$ is assigned the linear observable 
-\[
-\begin{array}{cccc}
-\Omega^{0,*}(r^{-1}(I)) \tensor V & \to & \CC \\
-\gamma & \mapsto & \int_{r^{-1}(I)} \rho(r) \<a(z,\zbar), \gamma(z,\zbar)\> \d^d z .
-\end{array}
-\] 
-Upon compactification along the sphere $S^{2d-1}$, 
-the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_{d,V})$,
-as we now show.
-(Explicit formulas follow the proof.)
+In consequence we can extract a more concrete version of free field realization.
 
 \begin{cor} \label{cor: free}
-The map (\ref{free field}) determines a map of $E_1$-algebras 
+The map (\ref{free field}) determines a map 
 \beqn\label{free field2}
-\oint_{S^{2d-1}} J^\q : U\left(\Tilde{\fg}^{\bullet}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) .
+\oint_{S^{2d-1}} J^\q : U\left(\Tilde{\fg}^{\bullet}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) 
 \eeqn
+of $E_1$-algebras.
 \end{cor}
+
+This theorem says that there is a homotopy-coherent map between two explicit algebras,
+but does not spell it out formulaically.
+For $d=1$ both the algebras are concentrated in degree zero and so there is no room for homological subtleties:
+the map is the well-known map from the affine Kac-Moody Lie algebra to the Weyl algebra of formal loops
+\owen{insert something explicit here.}
+In the next subsection we give explicit formulas in the case~$d=2$.
 
 \begin{proof}
 Let $r : \CC^d \setminus 0 \to \RR_{>0}$ be the radial projection. 
@@ -742,6 +687,86 @@ Analogously to the Kac-Moody case, it is straightforward to see that this factor
 Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
 Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
 \end{proof}
+
+\subsubsection{Explicit formulas for two-dimensional free field realization}
+
+We want to show that these results are not just abstract statements but lead to explicit, useful formulas.
+One can analyze this higher free field realization with bare hands.
+To keep things concrete, we will work out all the details only in the case $d=2$, but our methods work without difficulty (beyond careful bookkeeping) in arbitrary dimension.
+
+Let us examine first where the desired map (\ref{free field}) comes from.
+By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
+a locally constant factorization algebra on $\RR$.
+Following our approach in Section~\ref{sec: sphere ops},
+one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+Hence the map of factorization algebras on punctured affine space pushes forward to the map between the pushforward factorization algebras.
+We now want to see how this map behaves on the dense, locally constant sub-factorization algebras.
+
+For calculations, it is useful for us present our algebras in terms of residues over the sphere $S^{2d-1}$. 
+This presentation is completely analogous to the mode expansions in a vertex algebra via ordinary residues.
+The higher residue determines a pairing $(-,-)_{\oint}: A_d \tensor A_d \to   \CC$ with
+\[
+(a, b)_{\oint} = \oint_{S^{2d-1}} a \wedge b \wedge \d^d z ,
+\]
+and hence determines a map $A_d \to A_d^\vee [-d + 1]$ that sends an element $a$ to the linear functional $b \mapsto (a, b)_{\oint}$.
+This construction makes sense after tensoring with a vector space $V$,
+so an element $\alpha \in A_d \otimes V^*$ determines a functional 
+\[
+\begin{array}{cccl}
+\oint_{S^{2d-1}} a  : & A_d \tensor V & \to & \CC \\
+& a & \mapsto & \oint_{S^{2d-1}} \<a \wedge c\>_V \wedge \d^d z .
+\end{array}
+\]
+Setting $d=1$, the reader will recognize standard manipulations with the usual residue formula.
+
+In terms of this convention, the commutator in $U(\sH_{d,V})$ can be described by contractions with the propagator $P = P_{0 < \infty}$ for $\Omega^{0,*}(\CC^d)$ restricted to the subcomplex $A_d$. 
+The propagator is a distributional $(0,1)$-form on $\CC^d \times \CC^d$ with values in $V^* \tensor V$, 
+and it satisfies $\d^2 z \dbar P = \delta_{{\rm diag}} (z) \id_V$, where $\delta_{{\rm diag}}$ is the $\delta$-distribution along the diagonal $\CC^d$ in $\CC^{2d}$. 
+We view $\id_V$ as an element of $V^* \tensor V$. 
+We note that $P$ is smooth away from the diagonal; 
+its singularities lie only along the diagonal.
+%Notice this differs from our convention before where we included the holomorphic top form in $P$. 
+%We have absorbed this into the definition of the pairing defining $\sH_V$. 
+%\[
+%P \in (A_d \tensor V^*[d-1]) \Hat{\tensor} (A_d \tensor V) = (A_d \Hat{\tensor} A_d) \tensor (V^* \tensor V) [d-1] .
+%\] 
+%This is simply the Green's function for the Hodge Laplacian restricted to the space 
+%\[
+%A_d \Hat{\tensor} A_d \subset \Omega^{0,*}(\CC^d \setminus 0) \Hat{\tensor} \Omega^{0,*}(\CC^d \setminus 0) = \Omega^{0,*}((\CC^d \setminus 0) \times (\CC^d \setminus 0))
+%\]
+%tensored with the identity on $V$ viewed as an element in $V^* \tensor V$. 
+%For instance, when $d = 1$, so that $A_1 = \CC[z,z^{-1}]$ we have
+%\[
+%P = \frac{1}{z-w} \id_V
+%\]
+The analytic and the algebraic factors decouple, 
+so to simplify notations, let $P(z) = p(z) \tensor \id_V$, 
+where $p(z)$ is the differential form part of the propagator above. 
+Since $\d^d z \dbar p(z)$ is the $\delta$-function on $\CC^d \setminus 0$,
+one has the residue formula
+\[
+\oint_{S^{2d-1}} p(z) \d^d z = 1 .
+\]
+Thus, $p(z)$ is the $\delta$-function for the $(2d-1)$-sphere.
+
+For instance, when $d=2$ the propagator is given by
+\[
+P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V} 
+\]
+a formula we will use shortly.
+
+
+For instance, if $I \subset \RR$ is an interval, an element in the linear component $$\rho \tensor a \in \Omega^*_c(I) \tensor \left(A_d \tensor V^*[d-1]\right)$$ is assigned the linear observable 
+\[
+\begin{array}{cccc}
+\Omega^{0,*}(r^{-1}(I)) \tensor V & \to & \CC \\
+\gamma & \mapsto & \int_{r^{-1}(I)} \rho(r) \<a(z,\zbar), \gamma(z,\zbar)\> \d^d z .
+\end{array}
+\] 
+Upon compactification along the sphere $S^{2d-1}$, 
+the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_{d,V})$,
+as we now show.
+(Explicit formulas follow the proof.)
 
 The remaining part of this section is devoted to exhibiting an explicit $A_\infty$-model for the map of $E_1$ algebras in the statement above.
 
