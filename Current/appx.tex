@@ -176,22 +176,31 @@ Indeed, as the proposition indicates, the only freedom is concentrated in the de
 \begin{lem}
 The subcomplex $\cloc^*(\sG_d)^{\CC^d}$ of elements invariant under translation along $\CC^d$ is isomorphic to 
 \[
-\cred^*(\fg[[z_1,\ldots,z_n, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_n]]),
+(\Omega^*(\CC^d))^{\CC^d} \otimes \cred^*(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]])[d],
 \]
-the reduced Lie algebra cochains on the dg Lie algebra $\fg[[z_1,\ldots,z_n, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_n]]$ whose differential is~$\dbar$.
+where the dg Lie algebra $\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_d]]$ has differential~$\dbar$.
 \end{lem}
 
-That dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$.
+That dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$,
+which we interpret at the fiber at the origin of the jet bundle of~$\sG_d$.
+Note the overall downward shift by degree~$d$.
+%Somewhat abusively, we are using the $z_i$ and $\zbar_i$ for both coordinates on $\CC^d$ and in the jet direction.
 
 \begin{proof}
 Here we are just noting a simple fact: 
-our bundle $\fg \times \CC^d \to \CC^d$ is trivial,
+for any trivial bundle on $\CC^d$, 
+translation-invariant sections are thus determined by their value at a single point,
+which we can take to be the origin.
+
+Each bundle $\Lambda^k T_\CC^* \to \CC^d$, whose sections are complex-valued $k$-forms, admits a natural trivialization by the frame arising from the choice of linear coordinates. 
+For instance, the complexified cotangent bundle $T^*_\CC \to \CC^d$ has the frame $\{\d z_1,\ldots,\d z_d, \d \zbar_1,\ldots,\d \zbar_d\}$; for other $k$, take wedge powers of that frame. 
+The bundle $\fg \times \CC^d \to \CC^d$ is likewise trivial,
 and hence the jet bundle inherits a trivialization.
 The trivialization is explicitly given by using the linear coordinate system arising from identifying the manifold with the vector space $\CC^d$;
 it gives a natural basis for differential operators and hence for jets.
-Translation-invariant sections are thus determined by their value at a single point,
-which we can take to be the origin.
-The fiber of the jet bundle at the origin can be seen as Dolbeault forms on the formal $d$-dimensional disk with values in $\fg$.
+
+Putting these observations together, 
+the fiber at the origin of the jet bundle for $\sG_d$ can be seen as Dolbeault forms on the formal $d$-dimensional disk with values in $\fg$.
 As $\cloc^*$ is a version of reduced Lie algebra cochains, we obtain the claim.
 \end{proof}
 
@@ -204,35 +213,33 @@ The strict invariants for the extended Lie algebra $\CC^d_{\rm hol}$ are thus ex
 \begin{lem}
 The $\CC^d_{\rm hol}$-invariant subcomplex $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$ is isomorphic to 
 \[
-\cred^*(\fg[[z_1,\ldots,z_n]]),
+\CC[\d z_1,\ldots, \d z_d] \otimes \cred^*(\fg[[z_1,\ldots,z_n]]),
 \]
 the reduced Lie algebra cochains of the Lie algebra~$\fg[[z_1,\ldots,z_n]]$.
 \end{lem}
 
-In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
-so it is convenient to isolate some of these results as lemmas.
-We begin by describing the situation on a formal $d$-dimensional disk with formal coordinates $z_1,\ldots, z_d$.
-In this case $\sG_d$ has the form $\fg[[z_1,\ldots,z_n]]$, and 
-\beqn
-\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
-\eeqn
-where $z_i^\vee$ denotes the dual variable to $z_i$. 
-A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
-To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
-but we want to consider such Lagrangian densities up to total derivatives,
-i.e., modulo integration by parts.
-This relation is cleanly encoded as the relative (derived) tensor product
-\[
-\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
-\]
-\owen{Should we bother to justify this?}
-There is then a simple answer for which such elements are $U(d)$-invariant.
+%In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
+%so it is convenient to isolate some of these results as lemmas.
+%We begin by describing the situation on a formal $d$-dimensional disk with formal coordinates $z_1,\ldots, z_d$.
+%In this case $\sG_d$ has the form $\fg[[z_1,\ldots,z_n]]$, and 
+%\beqn
+%\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
+%\eeqn
+%where $z_i^\vee$ denotes the dual variable to $z_i$. 
+%A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
+%To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
+%but we want to consider such Lagrangian densities up to total derivatives,
+%i.e., modulo integration by parts.
+%This relation is cleanly encoded as the relative (derived) tensor product
+%\[
+%\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
+%\]
+%\owen{Should we bother to justify this?}
+There is then a simple answer for which such elements are $U(d)$-invariant,
+thanks to Schur-Weyl duality.
 
 \begin{lem}
-The $U(d)$-invariant subcomplex 
-\[
-\left( \CC \, \d^d z \tensor_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]) \right)^{U(d)}
-\]
+The $U(d)$-invariant subcomplex of the $\CC^d_{hol}$-invariant subcomplex 
 is canonically isomorphic to the reduced de Rham forms
 \[
 \Omega^\sharp_{\rm red}(B\fg) = \sO_{red}(B \fg) \oplus \Omega^{1} (B \fg)[-1] \oplus \cdots \oplus \Omega^{d}(B \fg)[-d]. 
@@ -245,9 +252,8 @@ but the $k$-forms are put in their ``usual'' place
 By $\sO_{red}(B \fg)$ we mean that we quotient out the copy $\Sym^0(\fg^\vee)$ of the constants from~$\clie^*(\fg)$.
 
 \begin{proof}[Proof of lemma]
-Sitting inside of $U(d)$, there is a copy of $U(1)$ as multiples of the identity.
-\owen{Note that I use $U(1)$ for the group, rather than $S^1$, which is most obviously a space.} 
-This group equips the complex with a weight grading, as follows.
+Sitting inside of $U(d)$ is its center, a copy of $U(1)$ as multiples of the identity.
+This group equips the $\CC^d_{hol}$-invariant subcomplex with a weight grading, as follows.
 The group $U(d)$ acts in the defining way on $\CC^d$,
 so each $z_i$ has weight $1$ while both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have weight~$-1$. 
 The volume element $\d^d z$ has weight $d$.
