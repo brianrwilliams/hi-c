@@ -176,14 +176,19 @@ Indeed, as the proposition indicates, the only freedom is concentrated in the de
 \begin{lem}
 The subcomplex $\cloc^*(\sG_d)^{\CC^d}$ of elements invariant under translation along $\CC^d$ is isomorphic to 
 \[
-(\Omega^*(\CC^d))^{\CC^d} \otimes \cred^*(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]])[d],
+(\Omega^*(\CC^d))^{\CC^d}[d] \otimes \cred^*(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]]),
 \]
 where the dg Lie algebra $\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_d]]$ has differential~$\dbar$.
 \end{lem}
 
-That dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$,
-which we interpret at the fiber at the origin of the jet bundle of~$\sG_d$.
 Note the overall downward shift by degree~$d$.
+The translation-invariant differential forms are
+\[
+\CC[\d z_1,\ldots, \d z_d, \d \zbar_1,\ldots, \d \zbar_d].
+\] 
+The dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$,
+which we interpret at the fiber at the origin of the jet bundle of~$\sG_d$.
+
 %Somewhat abusively, we are using the $z_i$ and $\zbar_i$ for both coordinates on $\CC^d$ and in the jet direction.
 
 \begin{proof}
@@ -213,10 +218,13 @@ The strict invariants for the extended Lie algebra $\CC^d_{\rm hol}$ are thus ex
 \begin{lem}
 The $\CC^d_{\rm hol}$-invariant subcomplex $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$ is isomorphic to 
 \[
-\CC[\d z_1,\ldots, \d z_d] \otimes \cred^*(\fg[[z_1,\ldots,z_n]]),
+\CC[\d z_1,\ldots, \d z_d][d] \otimes \cred^*(\fg[[z_1,\ldots,z_n]]),
 \]
 the reduced Lie algebra cochains of the Lie algebra~$\fg[[z_1,\ldots,z_n]]$.
 \end{lem}
+
+Here $\CC[\d z_1,\ldots, \d z_d][d]$ forms the translation-invariant {\em holomorphic} differential forms, 
+shifted down by degree~$d$.
 
 %In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
 %so it is convenient to isolate some of these results as lemmas.
@@ -235,8 +243,8 @@ the reduced Lie algebra cochains of the Lie algebra~$\fg[[z_1,\ldots,z_n]]$.
 %\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
 %\]
 %\owen{Should we bother to justify this?}
-There is then a simple answer for which such elements are $U(d)$-invariant,
-thanks to Schur-Weyl duality.
+Thanks to Schur-Weyl duality, there is then a simple answer for which such elements are $U(d)$-invariant.
+\owen{Looking at what you wrote, I think this lemma isn't correct as stated (I wrote it, of course). We're supposed to be ignoring here some differential, I guess, but the full story picks out a truncated de Rham complex of~$B\fg$.}
 
 \begin{lem}
 The $U(d)$-invariant subcomplex of the $\CC^d_{hol}$-invariant subcomplex 
@@ -251,16 +259,18 @@ but the $k$-forms are put in their ``usual'' place
 (i.e., in our motivating example, the $k$-forms would sit in degree $k$).
 By $\sO_{red}(B \fg)$ we mean that we quotient out the copy $\Sym^0(\fg^\vee)$ of the constants from~$\clie^*(\fg)$.
 
-\begin{proof}[Proof of lemma]
+\begin{proof}
 Sitting inside of $U(d)$ is its center, a copy of $U(1)$ as multiples of the identity.
 This group equips the $\CC^d_{hol}$-invariant subcomplex with a weight grading, as follows.
 The group $U(d)$ acts in the defining way on $\CC^d$,
-so each $z_i$ has weight $1$ while both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have weight~$-1$. 
-The volume element $\d^d z$ has weight $d$.
-It follows that in order to have total weight zero, a monomial in these terms must have its total number of $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ add up to $d$.
-Thus, as a graded vector space, the invariant subcomplex decomposes
+so each coordinate $z_i$ has weight $1$, 
+while both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have weight~$-1$. 
+Each $k$-form has weight $k$; for instance, the volume element $\d^d z$ has weight~$d$.
+
+It follows that in order to have total weight zero, a monomial in these terms must have its total number of $\frac{\partial}{\partial z_i}$, $z_i^\vee$, and $\d z_i$ add up to zero.
+Thus, as a graded vector space, the invariant subcomplex decomposes as a direct sum
 \beqn
-\bigoplus_{k \geq 1} \Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z [d] .
+\CC[d] \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) .
 \eeqn
 It follows from Schur-Weyl that the space of $U(d)$ invariants of the $d$th tensor power of the fundamental representation $\CC^d$ is one-dimensional, spanned by the top exterior power. 
 Thus, when we pass to the $U(d)$-invariants, only the unique totally antisymmetric tensor involving $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ survives. 
