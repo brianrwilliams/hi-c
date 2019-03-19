@@ -98,26 +98,31 @@ Before stating the main result of this appendix, we note that there is a natural
 \]
 from Section \ref{sec: hol trans main} to a cochain map
 \beqn\label{fj1}
-\fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  .
+\fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  
 \eeqn
-That we now describe. 
+that we now describe. 
+\owen{What do you mean here by "closed" forms? What you wrote below suggests you had something strict in mind (the actual de Rham closed forms) ... a lot of what's below seems like a detour. I'm not sure we need all this discussion to say the key fact.}
 
-Consider the map of cochain complexes
-\[
-\CC[1] \to \Omega^*(B \fg)
-\]
-where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
-The totalization of this map of complexes is acyclic. 
+\owen{I commented out much of the description below, which seemed irrelevant to the construction.}
 
-Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
-\[
-\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
-\]
-Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
-\[
-\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
-\] 
-Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
+%Consider the map of cochain complexes
+%\[
+%\CC[1] \to \Omega^*(B \fg)
+%\]
+%where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
+%The totalization of this map of complexes is acyclic. 
+%
+%Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
+%\[
+%\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
+%\]
+%Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
+%\[
+%\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
+%\] 
+%Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
+
+\owen{The behavior of $\widetilde{\fj}$ on $d+k$-forms is not described. Is that $k < d$ a typo? I }
 
 The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
 \[
@@ -129,10 +134,13 @@ Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\wi
 \widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
 \]
 Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
+\owen{I'm not sure this makes sense as written: you're ignoring all the stuff that comes from the $\clie^*(\fg)$ direction. Why should $\eta$ have the form you're asserting?}
 We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
 The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
+\owen{Do you mean we integrate over $X$ or that we just drop all other degrees?}
 
 Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
+\owen{No, we don't. We work with the de Rham complex of the Lagrangian densities.}
 Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
 
 
@@ -145,7 +153,7 @@ The map $\fj$ factors through the subcomplex of invariants under rotation and ho
 \eeqn
 In particular, if $\fg$ is an ordinary Lie algebra (i.e., concentrated in degree zero), then we obtain an isomorphism
 \[
-H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)^{U(d), \CC^{d}_{\rm hol}} .
+H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)^{U(d) \ltimes \CC^d_{\rm hol}}.
 \] 
 \end{prop}
 
@@ -165,30 +173,81 @@ and such functionals are thus pinned down by their behavior at one point.
 The second is that rotation invariance then drastically cuts down the remaining possibilities.
 Indeed, as the proposition indicates, the only freedom is concentrated in the dependence on the Lie algebra $\fg$ and not on the spatial directions along~$\CC^d$.
 
-In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
-so it is convenient to isolate some of these results as lemmas.
-We begin by describing the situation on a formal $d$-dimensional disk with formal coordinates $z_1,\ldots, z_d$.
-In this case $\sG_d$ has the form $\fg[[z_1,\ldots,z_n]]$, and 
-\beqn
-\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
-\eeqn
-where $z_i^\vee$ denotes the dual variable to $z_i$. 
-A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
-To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
-but we want to consider such Lagrangian densities up to total derivatives,
-i.e., modulo integration by parts.
-This relation is cleanly encoded as the relative (derived) tensor product
+\begin{lem}
+The subcomplex $\cloc^*(\sG_d)^{\CC^d}$ of elements invariant under translation along $\CC^d$ is isomorphic to 
 \[
-\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
+(\Omega^*(\CC^d))^{\CC^d}[d] \otimes \cred^*(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]]),
 \]
-\owen{Should we bother to justify this?}
-There is then a simple answer for which such elements are $U(d)$-invariant.
+where the dg Lie algebra $\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_d]]$ has differential~$\dbar$.
+\end{lem}
+
+Note the overall downward shift by degree~$d$.
+The translation-invariant differential forms are
+\[
+\CC[\d z_1,\ldots, \d z_d, \d \zbar_1,\ldots, \d \zbar_d].
+\] 
+The dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$,
+which we interpret at the fiber at the origin of the jet bundle of~$\sG_d$.
+
+%Somewhat abusively, we are using the $z_i$ and $\zbar_i$ for both coordinates on $\CC^d$ and in the jet direction.
+
+\begin{proof}
+Here we are just noting a simple fact: 
+for any trivial bundle on $\CC^d$, 
+translation-invariant sections are thus determined by their value at a single point,
+which we can take to be the origin.
+
+Each bundle $\Lambda^k T_\CC^* \to \CC^d$, whose sections are complex-valued $k$-forms, admits a natural trivialization by the frame arising from the choice of linear coordinates. 
+For instance, the complexified cotangent bundle $T^*_\CC \to \CC^d$ has the frame $\{\d z_1,\ldots,\d z_d, \d \zbar_1,\ldots,\d \zbar_d\}$; for other $k$, take wedge powers of that frame. 
+The bundle $\fg \times \CC^d \to \CC^d$ is likewise trivial,
+and hence the jet bundle inherits a trivialization.
+The trivialization is explicitly given by using the linear coordinate system arising from identifying the manifold with the vector space $\CC^d$;
+it gives a natural basis for differential operators and hence for jets.
+
+Putting these observations together, 
+the fiber at the origin of the jet bundle for $\sG_d$ can be seen as Dolbeault forms on the formal $d$-dimensional disk with values in $\fg$.
+As $\cloc^*$ is a version of reduced Lie algebra cochains, we obtain the claim.
+\end{proof}
+
+We would now like to trivialize homotopically the action of the antiholomorphic derivatives.
+On the formal $d$-dimensional disk, there is a natural trivialization (by contraction with the vector fields $\partial_{\zbar_i}$),
+which also makes sense on $\CC^d$ globally.
+\owen{I'm writing quickly ... need to check that. It now doesn't sound quite right.}
+The strict invariants for the extended Lie algebra $\CC^d_{\rm hol}$ are thus expressions that have no dependence on the antiholomorphic coordinates~$\zbar_i$.
 
 \begin{lem}
-The $U(d)$-invariant subcomplex 
+The $\CC^d_{\rm hol}$-invariant subcomplex $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$ is isomorphic to 
 \[
-\left( \CC \, \d^d z \tensor_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]) \right)^{U(d)}
+\CC[\d z_1,\ldots, \d z_d][d] \otimes \cred^*(\fg[[z_1,\ldots,z_n]]),
 \]
+the reduced Lie algebra cochains of the Lie algebra~$\fg[[z_1,\ldots,z_n]]$.
+\end{lem}
+
+Here $\CC[\d z_1,\ldots, \d z_d][d]$ forms the translation-invariant {\em holomorphic} differential forms, 
+shifted down by degree~$d$.
+
+%In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
+%so it is convenient to isolate some of these results as lemmas.
+%We begin by describing the situation on a formal $d$-dimensional disk with formal coordinates $z_1,\ldots, z_d$.
+%In this case $\sG_d$ has the form $\fg[[z_1,\ldots,z_n]]$, and 
+%\beqn
+%\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
+%\eeqn
+%where $z_i^\vee$ denotes the dual variable to $z_i$. 
+%A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
+%To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
+%but we want to consider such Lagrangian densities up to total derivatives,
+%i.e., modulo integration by parts.
+%This relation is cleanly encoded as the relative (derived) tensor product
+%\[
+%\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
+%\]
+%\owen{Should we bother to justify this?}
+Thanks to Schur-Weyl duality, there is then a simple answer for which such elements are $U(d)$-invariant.
+\owen{Looking at what you wrote, I think this lemma isn't correct as stated (I wrote it, of course). We're supposed to be ignoring here some differential, I guess, but the full story picks out a truncated de Rham complex of~$B\fg$.}
+
+\begin{lem}
+The $U(d)$-invariant subcomplex of the $\CC^d_{hol}$-invariant subcomplex 
 is canonically isomorphic to the reduced de Rham forms
 \[
 \Omega^\sharp_{\rm red}(B\fg) = \sO_{red}(B \fg) \oplus \Omega^{1} (B \fg)[-1] \oplus \cdots \oplus \Omega^{d}(B \fg)[-d]. 
@@ -200,17 +259,18 @@ but the $k$-forms are put in their ``usual'' place
 (i.e., in our motivating example, the $k$-forms would sit in degree $k$).
 By $\sO_{red}(B \fg)$ we mean that we quotient out the copy $\Sym^0(\fg^\vee)$ of the constants from~$\clie^*(\fg)$.
 
-\begin{proof}[Proof of lemma]
-Sitting inside of $U(d)$, there is a copy of $U(1)$ as multiples of the identity.
-\owen{Note that I use $U(1)$ for the group, rather than $S^1$, which is most obviously a space.} 
-This group equips the complex with a weight grading, as follows.
+\begin{proof}
+Sitting inside of $U(d)$ is its center, a copy of $U(1)$ as multiples of the identity.
+This group equips the $\CC^d_{hol}$-invariant subcomplex with a weight grading, as follows.
 The group $U(d)$ acts in the defining way on $\CC^d$,
-so each $z_i$ has weight $1$ while both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have weight~$-1$. 
-The volume element $\d^d z$ has weight $d$.
-It follows that in order to have total weight zero, a monomial in these terms must have its total number of $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ add up to $d$.
-Thus, as a graded vector space, the invariant subcomplex decomposes
+so each coordinate $z_i$ has weight $1$, 
+while both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have weight~$-1$. 
+Each $k$-form has weight $k$; for instance, the volume element $\d^d z$ has weight~$d$.
+
+It follows that in order to have total weight zero, a monomial in these terms must have its total number of $\frac{\partial}{\partial z_i}$, $z_i^\vee$, and $\d z_i$ add up to zero.
+Thus, as a graded vector space, the invariant subcomplex decomposes as a direct sum
 \beqn
-\bigoplus_{k \geq 1} \Sym^k(\CC^d[1]) \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) \d^d z [d] .
+\CC[d] \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) .
 \eeqn
 It follows from Schur-Weyl that the space of $U(d)$ invariants of the $d$th tensor power of the fundamental representation $\CC^d$ is one-dimensional, spanned by the top exterior power. 
 Thus, when we pass to the $U(d)$-invariants, only the unique totally antisymmetric tensor involving $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ survives. 
