@@ -625,7 +625,7 @@ The {\em Heisenberg dg Lie algebra} $\sH_{d,V}$ of this symplectic dg vector spa
 determined by the $2$-cocycle $\omega_V$. 
 Explicitly, the nontrivial bracket is
 \[
-[c, b] =  \oint_{S^{2d-1}} \<c \wedge b\>_V \d^d z,
+[c, b] =  \oint_{S^{2d-1}} \<c \wedge b\>_V\, \d^d z,
 \]
 where $\<c \wedge b\>_V$ refers to taking the wedge product in $A_d$ together with the pairing between $V$ and its dual. 
 \end{dfn}
@@ -640,7 +640,7 @@ U(\sH_{d,V}) \hookrightarrow r_* \Obs^\q_{V}|_{\hbar = (2 \pi i)^d}
 \]
 that is dense at the level of cohomology. 
 
-In consequence we can extract a more concrete version of free field realization.
+In consequence there is a more concrete version of free field realization.
 
 \begin{cor} \label{cor: free}
 The map (\ref{free field}) determines a map 
@@ -653,8 +653,8 @@ of $E_1$-algebras.
 This theorem says that there is a homotopy-coherent map between two explicit algebras,
 but does not spell it out formulaically.
 For $d=1$ both the algebras are concentrated in degree zero and so there is no room for homological subtleties:
-the map is the well-known map from the affine Kac-Moody Lie algebra to the Weyl algebra of formal loops
-\owen{insert something explicit here.}
+the map is the well-known map from the affine Kac-Moody Lie algebra to the Weyl algebra of formal loops~\cite{FrenkelFree}.
+\owen{Let's be even more precise if we can.}
 In the next subsection we give explicit formulas in the case~$d=2$.
 
 \begin{proof}
@@ -694,17 +694,18 @@ We want to show that these results are not just abstract statements but lead to 
 One can analyze this higher free field realization with bare hands.
 To keep things concrete, we will work out all the details only in the case $d=2$, but our methods work without difficulty (beyond careful bookkeeping) in arbitrary dimension.
 
-Let us examine first where the desired map (\ref{free field}) comes from.
-By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
-a locally constant factorization algebra on $\RR$.
-Following our approach in Section~\ref{sec: sphere ops},
-one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
-Hence the map of factorization algebras on punctured affine space pushes forward to the map between the pushforward factorization algebras.
-We now want to see how this map behaves on the dense, locally constant sub-factorization algebras.
+%Let us examine first where the desired map (\ref{free field}) comes from.
+%By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
+%a locally constant factorization algebra on $\RR$.
+%Following our approach in Section~\ref{sec: sphere ops},
+%one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+%Hence the map of factorization algebras on punctured affine space pushes forward to the map between the pushforward factorization algebras.
+%We now want to see how this map behaves on the dense, locally constant sub-factorization algebras.
 
 For calculations, it is useful for us present our algebras in terms of residues over the sphere $S^{2d-1}$. 
 This presentation is completely analogous to the mode expansions in a vertex algebra via ordinary residues.
-The higher residue determines a pairing $(-,-)_{\oint}: A_d \tensor A_d \to   \CC$ with
+
+Recall that the higher residue determines a pairing $(-,-)_{\oint}: A_d \tensor A_d \to   \CC$ with
 \[
 (a, b)_{\oint} = \oint_{S^{2d-1}} a \wedge b \wedge \d^d z ,
 \]
@@ -720,8 +721,9 @@ so an element $\alpha \in A_d \otimes V^*$ determines a functional
 Setting $d=1$, the reader will recognize standard manipulations with the usual residue formula.
 
 In terms of this convention, the commutator in $U(\sH_{d,V})$ can be described by contractions with the propagator $P = P_{0 < \infty}$ for $\Omega^{0,*}(\CC^d)$ restricted to the subcomplex $A_d$. 
+\owen{I think this is the crux of the matter}
 The propagator is a distributional $(0,1)$-form on $\CC^d \times \CC^d$ with values in $V^* \tensor V$, 
-and it satisfies $\d^2 z \dbar P = \delta_{{\rm diag}} (z) \id_V$, where $\delta_{{\rm diag}}$ is the $\delta$-distribution along the diagonal $\CC^d$ in $\CC^{2d}$. 
+and it satisfies $\d^2 z\, \dbar P = \delta_{{\rm diag}} (z) \id_V$, where $\delta_{{\rm diag}}$ is the $\delta$-distribution along the diagonal $\CC^d$ in $\CC^{2d}$. 
 We view $\id_V$ as an element of $V^* \tensor V$. 
 We note that $P$ is smooth away from the diagonal; 
 its singularities lie only along the diagonal.
@@ -742,61 +744,58 @@ its singularities lie only along the diagonal.
 The analytic and the algebraic factors decouple, 
 so to simplify notations, let $P(z) = p(z) \tensor \id_V$, 
 where $p(z)$ is the differential form part of the propagator above. 
-Since $\d^d z \dbar p(z)$ is the $\delta$-function on $\CC^d \setminus 0$,
+Since $\d^d z \, \dbar p(z)$ is the $\delta$-function on $\CC^d \setminus 0$,
 one has the residue formula
 \[
 \oint_{S^{2d-1}} p(z) \d^d z = 1 .
 \]
 Thus, $p(z)$ is the $\delta$-function for the $(2d-1)$-sphere.
 
-For instance, when $d=2$ the propagator is given by
+We can now describe explicitly a simple linear operator in $U(\sH_{d,V})$ via residues.   
+Let $I \subset \RR_{>0}$ be an interval. 
+An element in the linear component 
 \[
-P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V} 
-\]
-a formula we will use shortly.
-
-
-For instance, if $I \subset \RR$ is an interval, an element in the linear component $$\rho \tensor a \in \Omega^*_c(I) \tensor \left(A_d \tensor V^*[d-1]\right)$$ is assigned the linear observable 
-\[
-\begin{array}{cccc}
-\Omega^{0,*}(r^{-1}(I)) \tensor V & \to & \CC \\
-\gamma & \mapsto & \int_{r^{-1}(I)} \rho(r) \<a(z,\zbar), \gamma(z,\zbar)\> \d^d z .
-\end{array}
+\rho \tensor a \in \Omega^*_c(I) \tensor \left(A_d \tensor V^*[d-1]\right)
 \] 
-Upon compactification along the sphere $S^{2d-1}$, 
-the quantum Noether map factors through~$\UU(\Omega^*_c \otimes \sH_{d,V})$,
-as we now show.
-(Explicit formulas follow the proof.)
-
-The remaining part of this section is devoted to exhibiting an explicit $A_\infty$-model for the map of $E_1$ algebras in the statement above.
-
-\begin{eg}\label{eg: contract}
-As an example of the implication of Corollary \ref{cor: free} we exhibit a calculation in $U(\sH_{2,V})$. 
-The vector space $V$ is a $\fg$-representation, hence it makes sense to consider the two quadratic elements 
+determines the linear observable 
 \[
-\oint_{S^3} \d^2 z \<b, (a \cdot c)\>_V \;\;\; , \;\;\; \oint_{S^3} \d^2 z \<b, (a'\cdot c)\>_V \;\; \in \;\; U (\sH_{d,V})
+\cO_{\rho \otimes a}(\gamma) = \int_{r^{-1}(I)} \rho(r) \<a(z,\zbar), \gamma(z,\zbar)\> \,\d^d z 
+\] 
+where $\gamma \in \Omega^{0,*}(r^{-1}I) \otimes V$ is a field on the shell~$r^{-1} I$.
+In this way, one can generate, in fact, a generating collection of linear operators for the whole enveloping algebra.
+
+Let us now examine what we can say in the case~$d=2$.
+The propagator is then given by
+\[
+P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V} .
+\]
+The vector space $V$ is a $\fg$-representation, 
+Consider the two quadratic observables in $U (\sH_{d,V})$ given~by
+\[
+\oint_{S^3} \d^2 z\, \<b, (a \cdot c)\>_V \quad \text{ and } \quad \oint_{S^3} \d^2 z\, \<b, (a'\cdot c)\>_V 
 \]
 where $a,a' \in A_2 \tensor \fg$. 
-By the definition of the associative algebra structure, the bracket
+By the definition of the associative product, the bracket
 \beqn\label{bracket}
 \left[\oint_{z \in S^{3}} \<b , a \cdot c \>_V , \oint_{w \in S^{3}} \<b , a' \cdot c\>_V \right]
 %\oint_{z \in S^{3}} \oint_{w \in S^{3}} \<a \tensor b ,{\rm Cas}_{V} \cdot \omega_{BM}(z,w)\> .
 \eeqn
 splits into two terms.
+\owen{We don't really explain this. }
 The first term involves a single contraction of the propagator $P = p \cdot \id_V$ and has the form
 \[
-\oint_{z \in S^3} \d^2 z \oint_{w \in S^3} \d^2 w p(z-w) \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \cdot c(w,\wbar)\>_V  .
+\oint_{z \in S^3} \d^2 z\, \oint_{w \in S^3} \d^2 w\, p(z-w) \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \, c(w,\wbar)\>_V  .
 \]
 Let $\eta(z,\zbar;w,\wbar) = \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \cdot c(w,\wbar)\>_V$.
-Since $\d^2 w \dbar p(z-w) = \delta(z-w)$, we can write 
+Since $\d^2 w\, \dbar p(z-w) = \delta(z-w)$, we can write 
 \[
-\oint_{w \in S^3} \d^2 w p(z-w) \eta(z,\zbar;w,\wbar) = \eta(z,\zbar;z,\zbar)- \int_{N_{\epsilon}} \d^2 w p(z-w) \rho(w,\wbar) \dbar_w \eta(z,\zbar;w,\wbar) .
+\oint_{w \in S^3} \d^2 w\, p(z-w) \eta(z,\zbar;w,\wbar) = \eta(z,\zbar;z,\zbar)- \int_{N_{\epsilon}} \d^2 w\, p(z-w) \rho(w,\wbar) \dbar_w \eta(z,\zbar;w,\wbar) .
 \] 
 Here, $N_\epsilon$ is a neighborhood of the $3$-sphere inside of $\CC^2$ and $\rho(w,\wbar)$ is a compactly supported function that is identically $1$ near the inner boundary of the neighborhood and identically zero near the outer boundary.
 
 The second term in the above expression spoils the compatibility of the bracket in $A_2 \tensor \fg$ and the commutator in the Heisenberg algebra.
-This is precisely because our differential forms may not be holomorphic.
-This is to be contrasted with the $d=1$ case where the model $A_1 = \CC[z,z^{-1}]$ consists of holomorphic Laurent polynomials, and the Lie brackets agree on the nose. 
+It arises precisely because our differential forms may not be holomorphic.
+By contrast, in the $d=1$ case, the model $A_1 = \CC[z,z^{-1}]$ consists of holomorphic Laurent polynomials, and so the Lie brackets agree on the nose. 
 The failure of this bracket is corrected by an $A_\infty$ morphism, as we will see in the section below.
 
 There is potentially another term in the expansion of (\ref{bracket}) involving a {\em double} contraction and hence has integrand proportional to $p(z-w)^2$. 
@@ -804,13 +803,6 @@ Actually, this term vanishes identically since $p(z-w)$ is a $(0,1)$-form.
 Thus, the double contraction does not appear when $d=2$.
 Again, this is different from the $d=1$ case, where the double contraction produces the term equal proportional to the level of the affine Kac-Moody. 
 We will see how the central term also appears from a higher $A_\infty$ morphism. 
-\end{eg}
-
-\subsubsection{}
-
-The map $\oint_{S^{2d-1}} J^\q$ of $E_1$ algebras can be described using the following explicit $A_\infty$ model.
-In the case $d=1$, this map of $E_1$ algebras can be taken to be a strict map of associative algebras, and it recovers the free field realization of the Kac-Moody algebra \cite{FrenkelFree}.
-We focus on the case $d=2$ for concreteness, though the formulas for any $d$ are similar. 
 
 The target of the map $\oint_{S^3} J^\q : U\left(\Tilde{\fg}_{2, \ch_3(V)}\right) \to U(\sH_{2})$ is the enveloping algebra of a strict dg Lie algebra, therefore it is a strict dg associative algebra. 
 On the other hand, $\sA_2 := U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)$ is the enveloping algebra of an $L_\infty$ algebra, so it has nonzero higher multiplications
@@ -845,7 +837,7 @@ To see this, suppose for simplicity that $\alpha,\alpha'$ are holomorphic.
 Then, it suffices to show that $\dbar \sJ_2(\alpha, \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')]$.
 We have seen in Example \ref{eg: contract}, that the right-hand side is equal to
 \[
-\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \rho(w) p(z-w)
+\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \rho(w) p(z-w)
 \]
 This is precisely the functional $\dbar \sJ_2(\alpha,\alpha')$. 
 
@@ -859,7 +851,7 @@ For $\alpha,\alpha',\alpha'' \in A_d \tensor \fg$:
 There are two types of terms present in the expansion of the commutator in the second term in parentheses on the right-hand side of the equation above. 
 First, there are the single contractions of the propagator, which contributes terms of the form
 \[
-\oint_{z \in S^3} \d^2 z \int_{w \in N_{\epsilon}} \d^2 w  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \rho(w) p(z-w) 
+\oint_{z \in S^3} \d^2 z\, \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \rho(w) p(z-w) 
 \]
 These single contraction terms precisely cancel the first term in parentheses in Equation~(\ref{relationsb}). 
 
