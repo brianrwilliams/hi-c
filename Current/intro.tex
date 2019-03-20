@@ -240,25 +240,41 @@ Thus, a natural starting point for $d$-dimensional affine algebras is the ``sphe
 where we view $S^{2d-1} \subset \CC^d \setminus \{0\}$. 
 
 When $d=1$, affine algebras are given by extensions $L\fg$ prescribed by a $2$-cocycle involving the algebraic residue pairing. 
-Note that this cocycle is {\em not} pulled back from any cocycle on $\sO^{alg}(\AA^1) \tensor \fg = \fg[z]$. 
+Note that this cocycle is {\em not} pulled back from any cocycle on $\sO_{\rm alg}(\AA^1) \tensor \fg = \fg[z]$. 
 %Now, consider algebraic functions on the punctured $d$-dimensional affine space $\AA^{d \times}$.
 
 When $d > 1$, Hartog's theorem implies that the space of holomorphic functions on punctured affine space is the same as the space of holomorphic functions on affine space.
-The same holds for algebraic functions, so that $\sO^{alg}(\pAA^{d}) \tensor \fg = \sO^{alg}(\AA^d) \tensor \fg$. 
-In particular, the naive algebraic replacement $\sO^{alg}(\pAA^{d}) \tensor \fg$ of (\ref{mapping space}) has no interesting central extensions. 
-However, as opposed to the punctured line, the punctured affine space $\pAA^{s}$ has interesting higher cohomology. 
+The same holds for algebraic functions, so that $\sO_{\rm alg}(\pAA^{d}) \tensor \fg = \sO_{\rm alg}(\AA^d) \tensor \fg$. 
+In particular, the naive generalization $\sO_{\rm alg}(\pAA^{d}) \tensor \fg$ of (\ref{mapping space}) has no interesting central extensions. 
+However, in contrast with the punctured line, the punctured affine space $\pAA^{d}$ has interesting higher cohomology. 
 
 The key idea is to replace the commutative algebra $\cO_{\rm alg}(\pAA^{d})$ by the derived space of functions $\RR \Gamma(\pAA^{d}, \sO_{\rm alg})$. 
 This complex has interesting cohomology and leads to nontrivial extensions of the Lie algebra object $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, as well as its Dolbeault model $\Omega^{0,*}(\pAA^d) \tensor \fg$.
 Faonte-Hennion-Kapranov \cite{FHK} have provided a systematic exploration of this situation.
 
-Our starting point is to step back, and consider the full sheaf of $\fg$-valued Dolbeault forms $\Omega^{0,*}(X, \fg)$ defined on any complex manifold $X$. 
-We deem this sheaf of dg Lie algebras, or rather its cosheaf version $\sG_X := \Omega^{0,*}_c(X, \fg)$, the {\em holomorphic $\fg$-valued currents} on~$X$. 
-We devote Section~\ref{sec:FHK} to relating our construction to that in~\cite{FHK}.
-The Lie algebra homology, $\clieu_*\sG_X$, of this cosheaf determines the structure of a {\em factorization algebra} on the manifold $X$.
-It serves as a higher dimensional analog of the chiral enveloping algebra of $\fg$ introduced by Beilinson and Drinfeld \cite{BD}, and will or model for the higher dimensional Kac-Moody algebra. 
-We will see that there exists cocycles on this sheaf of dg Lie algebras which give rise to interesting extensions of the factorization algebra~$\clieu_*\sG_X$.
+Our starting point is to work in the style of complex differential geometry and use the sheaf of $\fg$-valued Dolbeault forms $\Omega^{0,*}(X, \fg)$, defined on any complex manifold $X$. 
+We deem this sheaf of dg Lie algebras---or rather its cosheaf version $\sG_X = \Omega^{0,*}_c(X, \fg)$---the {\em holomorphic $\fg$-valued currents} on~$X$. 
+We will see that there exists cocycls on this sheaf of dg Lie algebras that give rise to interesting extensions of the factorization algebra~$\clieu_*\sG_X$,
+which serve as our model for a higher dimensional Kac-Moody algebra. 
+Section~\ref{sec:FHK} is devoted to relating our construction to that in~\cite{FHK}.
 
+A novel facet of this paper is that we enhance this Lie algebraic object to a {\em factorization algebra} on the manifold~$X$
+by working with whe Lie algebra chains $\clieu_*\sG_X$ of this cosheaf.
+It serves as a higher dimensional analog of the chiral enveloping algebra of $\fg$ introduced by Beilinson and Drinfeld \cite{BD}, 
+and it yields a higher dimensional generalization of the vertex algebra of a Kac-Moody algebra. 
+
+Analogs of important objects over Riemann surfaces arise from this new construction.
+First, we obtain a version of bundles of conformal blocks:
+factorization algebras are local-to-global objects, and one can take the global sections
+(sometimes called the factorization or chiral homology).
+In this paper we explicitly examine the factorization homology on Hopf manifolds,
+which provide a systematic generalization of elliptic curves 
+in the sense that their underlying manifolds are diffeomorphic to $S^1 \times S^{2d-1}$.
+Due to the appearance $S^1$, one finds connections with traces.
+As one might hope, these Hopf manifolds form moduli and so one can obtain, in principle, generalizations of $q$-character formulas.
+(Giving explicit formulas is deferred to a future work.)
+
+\owen{Something about determinant lines}
 
 %The key idea is that we replace the commutative algebra $\sO^{alg}(\pAA^{d})$ by the derived space of sections $\RR \Gamma(\pAA^{d}, \sO)$. 
 %This complex has interesting cohomology and leads to nontrivial extensions of the dg Lie algebra $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, or its Dolbeault model $\Omega^{0,*}(\pAA^d)$.
