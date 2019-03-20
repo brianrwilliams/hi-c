@@ -6,6 +6,8 @@ In this appendix we prove Proposition~\ref{prop: trans j}.
 That is, we compute the holomorphically translation invariant component of $H_{\rm loc}(\sG_d)$, 
 the Lie algebra cohomology of the local Lie algebra $\sG_d = \Omega^{0,*}_c \tensor \fg$ on~$\CC^d$. 
 
+\subsection{Holomorphic translation invariance}
+
 We have already discussed the local cohomology cochain complex $\cloc^*(\sG_d)$ in Section~\ref{sec:cloc}.
 To pick out the subcomplex of holomorphically translation invariant elements,
 we introduce yet another dg Lie algebra $\CC^{d}_{\rm hol}$ whose invariants are precisely this subcomplex.
@@ -36,6 +38,8 @@ that is a quasi-isomorphism.
 
 In other words, $U(\CC^{d}_{\rm hol})$ is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators on~$\CC^d$. 
 
+\subsection{Language to phrase the main result}
+
 We now turn to the main objects of interest here.
 
 \begin{dfn}
@@ -45,7 +49,6 @@ Let
 \cloc^*(\sG_d)^{U(d) \ltimes \CC^d_{\rm hol}}
 \]
 denote the subcomplex of elements that are invariant under both translation by $\CC^d_{\rm hol}$ and rotation by the unitary group~$U(d)$.
-\owen{Check which semi-direct product.}
 \end{dfn}
 
 We are interested in the map $\fj$, from Section~\ref{sec: hol trans main}, for the affine space $\CC^d$.
@@ -53,6 +56,8 @@ We will use this map to completely characterize the degree one $U(d)$-invariant,
 
 The degree one result will follow from a stronger, general result on the cochain level.
 To formulate it, we introduce some notation.
+
+\subsubsection{De Rham forms for dg Lie algebras}
 
 Let $\cL$ denote an arbitrary dg Lie algebra. 
 Interpret the dg commutative algebra given by the Chevalley-Eilenberg cochains $\clie^*(\cL)$ as functions on a formal moduli space~$B \cL$:
@@ -64,12 +69,6 @@ In the same line of thought, define the $k$-forms on $B\cL$~by
 \Omega^k(B \cL) := \clie^*(\cL ; \Sym^k(\cL^\vee [-1])) .
 \]
 Here, $\cL^\vee$ denotes the coadjoint representation of~$\cL$. 
-Furthermore, let $\partial : \Omega^{k}(B\cL) \to \Omega^{k+1}(B\cL)$ denote the de Rham operator for $B\cL$. 
-The space of {\em closed} $k$-forms is defined by the totalization of the double complex
-\[
-\Omega^{k}_{cl}(B \cL) = {\rm Tot}\left( \Omega^k(B\cL) \xto{\partial} \Omega^{k+1}(B \cL)[-1] \to \cdots \right).
-\]
-Note that there is a canonical truncation map $\Omega^{k}_{cl}(B \cL) \to \Omega^{k}(B \cL)$ that provides the ``underlying'' $k$-form of any closed $k$-form.
 
 \begin{eg}
 A simple example gives evidence that this interpretation is not so far-fetched.
@@ -92,18 +91,73 @@ Everything is in cohomological degree zero.
 Manifestly everything agrees with the usual constructions of algebraic de Rham forms.
 \end{eg}
 
+
+Let $\partial : \Omega^{k}(B\cL) \to \Omega^{k+1}(B\cL)$ denote the de Rham operator for $B\cL$. 
+The space of {\em closed} $k$-forms is defined by the totalization of the double complex
+\[
+\Omega^{k}_{cl}(B \cL) = {\rm Tot}\left( \Omega^k(B\cL) \xto{\partial} \Omega^{k+1}(B \cL)[-1] \to \cdots \right).
+\]
+The case where $k=0$ is the usual de Rham complex, which we will denote by~$DR(B\cL)$.
+%Note that there is a canonical truncation map $\Omega^{k}_{cl}(B \cL) \to \Omega^{k}(B \cL)$ that provides the ``underlying'' $k$-form of any closed $k$-form.
+
+The constant functions on $B\fg$ can be appended to obtain a complex
+\[
+DR_{\rm aug}(B\cL) = {\rm Tot}\left( \CC[1] \to \Omega^0(B\cL) \xto{\partial} \Omega^{1}(B \cL)[-1] \to \cdots \right),
+\]
+which is acyclic.
+(Consider the spectral sequence for the underlying double complex where one uses the de Rham differential first. The Poincar\'e lemma ensures the cohomology vanishes on this page.)
+The inclusion map $\Omega^{k}_{cl}(B \cL) \to DR_{\rm aug}(B\cL)$ has quotient given by the opposite truncation
+\[
+ {\rm Tot}\left( \CC[1] \to \Omega^0(B\cL) \xto{\partial} \cdots \xto{\partial} \Omega^{k-1}(B \cL)\right).
+\]
+We denote it by~$\tau_{< k} DR_{\rm aug}(B \cL)$. 
+The de Rham differential $\partial: \Omega^{k-1}(B \cL) \to \Omega^{k}(B \cL)$ determines a cochain map
+\[
+\tau_{< k} DR_{\rm aug}(B \cL) \xto{\partial} \Omega^{k}_{cl}(B \cL),
+\]
+whose cone is the augmented de Rham complex.
+This observation implies that the map determines a quasi-isomorphism from the truncation to the closed $k$-forms.
+
+\subsubsection{Improving $\fj$}
+
 Before stating the main result of this appendix, we note that there is a natural enhancement of the cochain map
 \[
 \fj : \Sym^{d+1} (\fg^*)^{\fg} [-1] \to \cloc^*(\sG_d)
 \]
-from Section \ref{sec: hol trans main} to a cochain map
+from Section~\ref{sec: hol trans main} to a cochain map
 \beqn\label{fj1}
 \fj : \Omega^{d+1}_{cl} (B \fg) [d] \to \cloc^*(\sG_d)  
 \eeqn
 that we now describe. 
-\owen{What do you mean here by "closed" forms? What you wrote below suggests you had something strict in mind (the actual de Rham closed forms) ... a lot of what's below seems like a detour. I'm not sure we need all this discussion to say the key fact.}
 
-\owen{I commented out much of the description below, which seemed irrelevant to the construction.}
+Because $\Omega^d(B \fg) \cong \clie^*(\fg, \Lambda^{d} \fg^\vee)$, 
+a $d$-form $\eta$ of cohomological degree $m$ determines a linear map
+\[
+\eta: \Lambda^d \fg \to \clie^m(\fg).
+\]
+We can extend this map over $\Omega^{0,*}$ to obtain a linear map
+\[
+\widetilde{\eta}: \Lambda^d \sG_d \to \clie^*(\sG_d),
+\]
+and an element of $\clie^*(\sG_d)$ can be evaluated on an element of $\sG_d$ to obtain a de Rham form.
+Hence, we define the element $\widetilde{\fj}(\eta)$ in $\clie^*(\sG_d)$ by 
+\[
+\widetilde{\fj} (\eta) (\alpha) = \widetilde{\eta}(\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
+\]
+We extend $\widetilde{\fj}$ to forms $\Omega^k(B\fg)$ with $k < d$ as the zero map.
+
+Direct computation then shows the following.
+
+\begin{lem}
+The construction above determines a cochain map $\widetilde{\fj}: \tau_{<d+1} DR_{\rm aug}(B\fg) \to \clie^*(\sG_d)$. \owen{I probably have the shift wrong ...} 
+\end{lem}
+
+As this truncated de Rham complex $\tau_{<d+1} DR_{\rm aug}(B\fg)$ is quasi-isomorphic to  $\Omega^d_{cl}(B\fg)$, 
+we obtain the existence of the desired map~(\ref{fj1}),
+although we do not provide an explicit formula.
+
+
+\owen{I commented out a lot below.}
 
 %Consider the map of cochain complexes
 %\[
@@ -122,29 +176,28 @@ that we now describe.
 %\] 
 %Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
 
-\owen{The behavior of $\widetilde{\fj}$ on $d+k$-forms is not described. Is that $k < d$ a typo? I }
+%The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
+%\[
+%\widetilde{\fj} : \Omega^{\leq d}(B \fg) \to \cloc^*(\sG_d) .
+%\] 
+%This map is zero on the graded pieces $\Omega^k (B \fg)$ for $k < d$. 
+%Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\widetilde{\fj}(\eta)$ by 
+%\[
+%\widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
+%\]
+%Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
+%\owen{I'm not sure this makes sense as written: you're ignoring all the stuff that comes from the $\clie^*(\fg)$ direction. Why should $\eta$ have the form you're asserting?}
+%We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
+%The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
+%\owen{Do you mean we integrate over $X$ or that we just drop all other degrees?}
+%
+%Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
+%\owen{No, we don't. We work with the de Rham complex of the Lagrangian densities.}
+%Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
 
-The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
-\[
-\widetilde{\fj} : \Omega^{\leq d}(B \fg) \to \cloc^*(\sG_d) .
-\] 
-This map is zero on the graded pieces $\Omega^k (B \fg)$ for $k < d$. 
-Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\widetilde{\fj}(\eta)$ by 
-\[
-\widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
-\]
-Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
-\owen{I'm not sure this makes sense as written: you're ignoring all the stuff that comes from the $\clie^*(\fg)$ direction. Why should $\eta$ have the form you're asserting?}
-We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
-The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
-\owen{Do you mean we integrate over $X$ or that we just drop all other degrees?}
+\subsection{The main result}
 
-Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
-\owen{No, we don't. We work with the de Rham complex of the Lagrangian densities.}
-Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
-
-
-\owen{We should explain what it is, at least briefly.}
+We now state the main result.
 
 \begin{prop}\label{prop: local def}
 The map $\fj$ factors through the subcomplex of invariants under rotation and holomorphic translation:
@@ -159,26 +212,21 @@ H^1(\fj) : \Sym^{d+1}(\fg^\vee)^\fg \xto{\cong} H^1  \left(\cloc^*(\sG_d)\right)
 
 Note that this result contains Proposition~\ref{prop: trans j}.
 
-\owen{As it was written, I'm confused about the proof of this proposition. We need to discuss.}
-
-\owen{Why do we take the detour through $\CC^{d}_{\rm hol}$ if we just end up working with the invariants for $\CC\{\partial/\partial z_i\}$?}
-
-\brian{It's in formula \ref{holtransinvt}. 
-I want to say that were taking the invariants of the actual space of local functionals with respect to some (dg) Lie algebra.  
-Of course, in holomorphic situations its natural to throw away anti-holomorphic factors, but this dg Lie algebra allows us to do that in a systematic way.}
-
 In brief, the proof involves two central ideas.
 The first is that the translation-invariant local functionals ought to be built from translation-invariant differential operators and translation-invariant measures,
 and such functionals are thus pinned down by their behavior at one point.
 The second is that rotation invariance then drastically cuts down the remaining possibilities.
 Indeed, as the proposition indicates, the only freedom is concentrated in the dependence on the Lie algebra $\fg$ and not on the spatial directions along~$\CC^d$.
 
+We start by ignoring the differentials and simply figure out the graded subspaces of invariant elements.
+Note that for a complex $V$, we use $V^\#$ to denote the underlying graded vector space.
+
 \begin{lem}
-The subcomplex $\cloc^*(\sG_d)^{\CC^d}$ of elements invariant under translation along $\CC^d$ is isomorphic to 
+The subspace $\cloc^\#(\sG_d)^{\CC^d}$ of elements invariant under translation along $\CC^d$ is isomorphic to 
 \[
-(\Omega^*(\CC^d))^{\CC^d}[d] \otimes \cred^*(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]]),
+(\Omega^\#(\CC^d))^{\CC^d}[d] \otimes \cred^\#(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]]).
 \]
-where the dg Lie algebra $\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_d]]$ has differential~$\dbar$.
+%where the graded Lie algebra $\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_d]]$ has differential~$\dbar$.
 \end{lem}
 
 Note the overall downward shift by degree~$d$.
@@ -186,7 +234,7 @@ The translation-invariant differential forms are
 \[
 \CC[\d z_1,\ldots, \d z_d, \d \zbar_1,\ldots, \d \zbar_d].
 \] 
-The dg Lie algebra is Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$,
+The graded Lie algebra underlies the dg Lie algebra of Dolbeault forms on the formal $d$-dimensional disk with values in~$\fg$,
 which we interpret at the fiber at the origin of the jet bundle of~$\sG_d$.
 
 %Somewhat abusively, we are using the $z_i$ and $\zbar_i$ for both coordinates on $\CC^d$ and in the jet direction.
@@ -216,15 +264,17 @@ which also makes sense on $\CC^d$ globally.
 The strict invariants for the extended Lie algebra $\CC^d_{\rm hol}$ are thus expressions that have no dependence on the antiholomorphic coordinates~$\zbar_i$.
 
 \begin{lem}
-The $\CC^d_{\rm hol}$-invariant subcomplex $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$ is isomorphic to 
+The underlying graded subspace of the $\CC^d_{\rm hol}$-invariants $\cloc^*(\sG_d)^{\CC^d_{\rm hol}}$ is isomorphic to 
 \[
-\CC[\d z_1,\ldots, \d z_d][d] \otimes \cred^*(\fg[[z_1,\ldots,z_n]]),
+\CC[\d z_1,\ldots, \d z_d][d] \otimes \cred^\#(\fg[[z_1,\ldots,z_n]]),
 \]
 the reduced Lie algebra cochains of the Lie algebra~$\fg[[z_1,\ldots,z_n]]$.
 \end{lem}
 
 Here $\CC[\d z_1,\ldots, \d z_d][d]$ forms the translation-invariant {\em holomorphic} differential forms, 
 shifted down by degree~$d$.
+
+\owen{I'm doing something a little subtle here. I'm imagining that we look at the strict invariants for the action of the dg Lie algebra on the dg vector space, and then we forget the differential. This is different than forgetting the differential and then taking the invariants ...}
 
 %In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
 %so it is convenient to isolate some of these results as lemmas.
@@ -244,10 +294,9 @@ shifted down by degree~$d$.
 %\]
 %\owen{Should we bother to justify this?}
 Thanks to Schur-Weyl duality, there is then a simple answer for which such elements are $U(d)$-invariant.
-\owen{Looking at what you wrote, I think this lemma isn't correct as stated (I wrote it, of course). We're supposed to be ignoring here some differential, I guess, but the full story picks out a truncated de Rham complex of~$B\fg$.}
 
 \begin{lem}
-The $U(d)$-invariant subcomplex of the $\CC^d_{hol}$-invariant subcomplex 
+The $U(d) \ltimes \CC^d_{hol}$-invariant subspace $\cloc^\#(\sG_d)^{U(d) \ltimes \CC^d}$
 is canonically isomorphic to the reduced de Rham forms
 \[
 \Omega^\sharp_{\rm red}(B\fg) = \sO_{red}(B \fg) \oplus \Omega^{1} (B \fg)[-1] \oplus \cdots \oplus \Omega^{d}(B \fg)[-d]. 
@@ -263,16 +312,32 @@ By $\sO_{red}(B \fg)$ we mean that we quotient out the copy $\Sym^0(\fg^\vee)$ o
 Sitting inside of $U(d)$ is its center, a copy of $U(1)$ as multiples of the identity.
 This group equips the $\CC^d_{hol}$-invariant subcomplex with a weight grading, as follows.
 The group $U(d)$ acts in the defining way on $\CC^d$,
-so each coordinate $z_i$ has weight $1$, 
-while both $z_i^\vee$ and $\frac{\partial}{\partial z_i}$ have weight~$-1$. 
+so each coordinate $z_i$ has weight $1$ and so $\d z_i$ also has weight 1.
 Each $k$-form has weight $k$; for instance, the volume element $\d^d z$ has weight~$d$.
+Let $\Lambda^k[\d z_1,\ldots,\d z_d]$ denote the vector space of translation-invariant holomorphic $k$-forms.
+Every element in this space has weight~$k$.
 
-It follows that in order to have total weight zero, a monomial in these terms must have its total number of $\frac{\partial}{\partial z_i}$, $z_i^\vee$, and $\d z_i$ add up to zero.
-Thus, as a graded vector space, the invariant subcomplex decomposes as a direct sum
+On the other hand, $z_i^\vee$ has weight~$-1$. 
+Let 
+\[
+\Sym \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right)_{(-k)}
+\]
+denote the subspace of elements with weight~$-k$.
+This space is spanned by symmetric words built from monomials of the form $x \otimes (z_1^\vee)^{i_1} \cdots (z_d^\vee)^{i_d}$, where $x \in \fg^\vee$,
+and the sum of the $z^\vee$-degrees over all the monomials must add to~$k$.
+\owen{Is that too cryptic?}
+
+Our complex is built from both kinds of elements.
+To have total weight zero, a monomial in these terms $z_i^\vee$ and $\d z_i$ must have an equal number of $z_i^\vee$ and $\d z_i$.
+In other words, the weight zero elements of our complex decomposes as a direct sum
 \beqn
-\CC[d] \tensor \left(\bigoplus_{i \leq d-k} \Sym^{i} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right) \right) .
+\bigoplus_{k = 0}^n \Lambda^k[\d z_1,\ldots,\d z_d] \otimes \Sym \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right)_{(-k)} .
 \eeqn
-It follows from Schur-Weyl that the space of $U(d)$ invariants of the $d$th tensor power of the fundamental representation $\CC^d$ is one-dimensional, spanned by the top exterior power. 
+But we wish to go a step further and pick out the invariants under the action of the entire group~$U(d)$.
+
+Recall that Schur-Weyl duality \owen{reference?} implies that if $\CC^d$ is the fundamental $U(d)$-representation, 
+the $U(d)$-invariants of the $d$th tensor power $(\CC^d)^{\otimes d}$ is one-dimensional and given by $\Lambda^d \CC^d$. 
+\owen{I don't understand what follows.}
 Thus, when we pass to the $U(d)$-invariants, only the unique totally antisymmetric tensor involving $\frac{\partial}{\partial z_i}$ and $z_i^\vee$ survives. 
 Thus, for each $k$, we have
 \begin{align}
@@ -295,6 +360,8 @@ We've omitted the extra factors for simplicity.
 \end{proof}
 
 \begin{proof}[Proof of Proposition~\ref{prop: local def}]
+\owen{All that would remain is to characterize the differential, which would be the de Rham differential on $B\fg$.}
+
 To compute the translation invariant deformation complex we will invoke Corollary 2.29 from \cite{BWhol}. 
 Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
 Thus, we see that the translation invariant local cochain complex is quasi-isomorphic to the following
