@@ -41,7 +41,7 @@ Before embarking on our main results, we take some time to motivate higher dimen
 
 \subsection*{A view from physics}
 
-\owen{I don't like this first paragraph. ``the" Kac-Moody is weird because there is not just one. Why does it take about an action of a group (and why doesn't it invoke Noether's theorem)? The second sentence seems out of place and not something that physicists would recognize.}
+\owen{I don't like this as a first paragraph. ``the" Kac-Moody is weird because there is not just one. Why does it take about an action of a group (and why doesn't it invoke Noether's theorem)? The second sentence seems out of place and not something that physicists would recognize; it would make more sense in the geometry intro. }
 
 In conformal field theory, the Kac-Moody algebra generically appears as the symmetry of a system with an action by a group. 
 This appears in Kac-Moody uniformization, for instance, whereby the affine algebra describes infinitesimal symmetries of a principal $G$-bundle inside the moduli space of all $G$-bundles. 
@@ -266,7 +266,7 @@ It serves as a higher dimensional analog of the chiral enveloping algebra of $\f
 and it yields a higher dimensional generalization of the vertex algebra of a Kac-Moody algebra. 
 
 Analogs of important objects over Riemann surfaces arise from this new construction.
-First, we obtain a version of bundles of conformal blocks:
+For instance, we obtain a version of bundles of conformal blocks from our higher Kac-Moody algebras:
 factorization algebras are local-to-global objects, and one can take the global sections
 (sometimes called the factorization or chiral homology).
 In this paper we explicitly examine the factorization homology on Hopf manifolds,
@@ -276,7 +276,17 @@ Due to the appearance $S^1$, one finds connections with traces.
 As one might hope, these Hopf manifolds form moduli and so one can obtain, in principle, generalizations of $q$-character formulas.
 (Giving explicit formulas is deferred to a future work.)
 
-\owen{Something about determinant lines}
+Another key generalization is given by natural determinant lines on moduli of bundles.
+Any finite-dimensional representation $V$ of the Lie algebra $\fg$ determines a line bundle over the moduli of bundles on a complex manifold~$X$: 
+take the determinant of the Dolbeault cohomology of the associated holomorphic vector bundle $\cV$ over~$X$.
+In \cite{FHK} they use derived algebraic geometry to provide a higher Kac-Moody uniformization for complex $d$-folds and discuss these determinant lines.
+We offer a complementary perspective: such a determinant line appears as the global sections of a certain factorization algebra on $X$ determined by the vector bundle~$\cV$.
+That is, there is another factorization algebra whose bundle of conformal blocks encodes this determinant.
+We construct this factorization algebra as observables of a quantum field theory,
+as generalizations of the $bc$ and $\beta\gamma$ systems.\footnote{To be more precise, our construction uses formal derived geometry and works on the formal neighborhood of any point on the moduli of bundles. 
+Properly taking into account the global geometry would require more discussion.}
+In short, by combining \cite{FHK} with our results, 
+there seems to emerge a systematic, higher-dimensional extension of the beautiful, rich dialogue between representation theory of infinite-dimensional Lie algebras, complex geometry, and conformal field theory.
 
 %The key idea is that we replace the commutative algebra $\sO^{alg}(\pAA^{d})$ by the derived space of sections $\RR \Gamma(\pAA^{d}, \sO)$. 
 %This complex has interesting cohomology and leads to nontrivial extensions of the dg Lie algebra $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, or its Dolbeault model $\Omega^{0,*}(\pAA^d)$.
