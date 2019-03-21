@@ -707,7 +707,7 @@ the commutation relations (on the algebra side) can be identified with contracti
 i.e., the two faces of Wick's formula.
 In the setting of factorization algebras,
 this relationship arises from our embedding of the algebra $U(\cH_{d,V})$ into the factorization algebra $r_* \Obs^q_V$.
-(A pedagogical discussion, with extensive examples, can be found in Chapter 4 of~\cite{CG}).
+(A pedagogical discussion, with extensive examples, can be found in Chapter 4 of~\cite{CG}.)
 We now spell out this relationship in some detail.
 
 First, it is useful for us present our algebras in terms of residues over the sphere $S^{2d-1}$. 
@@ -780,6 +780,8 @@ P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1
 \]
 We can finally examine the commutator-contraction relation.
 
+\owen{The following paragraph should be revised to say where things live.}
+
 Consider the quadratic observables in $U (\sH_{d,V})$ given~by
 \[
 F_a(b,c) = \oint_{S^3} \d^2 z\, \<b, (a \cdot c)\>_V 
@@ -843,11 +845,11 @@ In dimension $d = 2$, an $A_\infty$ model for the map (\ref{free field2}) of $E_
 \]
 with $\sJ_k = 0$ for~$k > 2$,
 \[
-\sJ_1 (\alpha) : (\beta,\gamma) \mapsto \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
+\sJ_1 (\alpha) = \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
 \]
 and 
 \[
-\sJ_2 (\alpha, \alpha') : (\beta,\gamma) \mapsto \oint_{z \in S^3} \int_{w \in N_{\epsilon}}  \<\beta(z), [\alpha(z),\alpha'(z)] \gamma(w) \>_V \rho(w) p(z-w) .
+\sJ_2 (\alpha, \alpha') = \oint_{z \in S^3} \int_{w \in N_{\epsilon}}  \<\beta(z), [\alpha(z),\alpha'(z)] \gamma(w) \>_V \, \rho(w) p(z-w) .
 \] 
 where $N_\epsilon$ is some neighborhood of $S^3$ and $\rho$ is a compactly supported function as in the  preceding computation. 
 \end{prop}
