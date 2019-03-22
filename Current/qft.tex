@@ -869,7 +869,7 @@ In that case, the desired identity simplifies to
 \]
 Above, we saw that the right-hand side~is
 \[
-\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \rho(w) p(z-w),
+\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \, \rho(w) p(z-w),
 \]
 which is precisely the functional~$\dbar \sJ_2(\alpha,\alpha')$. 
 \owen{Do we need to deal with the nonholomorphic cases too?}
@@ -878,13 +878,13 @@ It remains to show how $\sJ_2$ is compatible with the $L_\infty$ extension,
 i.e., that the $\ell_3$ term is the homotopy in the Jacobi relation up to homotopy.
 For $\alpha,\alpha',\alpha'' \in A_d \tensor \fg$: we want
 \beqn\label{relationsb}
-\oint_{S^3} \Tr_V \left(\alpha\wedge \partial \alpha' \wedge \partial \alpha''\right) = \displaystyle \left(\sJ_2(\alpha, [\alpha',\alpha'']) + \;{\rm permutations}) \right) + \left(\left[\sJ_1(\alpha), \sJ_2(\alpha',\alpha'') \right] + \; {\rm permutations} \right)
+\oint_{S^3} \Tr_V \left(\alpha\wedge \partial \alpha' \wedge \partial \alpha''\right) = \displaystyle \left(\sJ_2(\alpha, [\alpha',\alpha'']) + \;{\rm permutations} \right) + \left(\left[\sJ_1(\alpha), \sJ_2(\alpha',\alpha'') \right] + \; {\rm permutations} \right)
 \eeqn
 There are two types of terms present here. 
 
 First, there are the single contractions of the propagator, which contributes terms of the form
 \[
-\oint_{z \in S^3} \d^2 z\, \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \rho(w) p(z-w).
+\oint_{z \in S^3} \d^2 z\, \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \, \rho(w) p(z-w).
 \]
 These single contraction terms cancel the first term in parentheses in Equation~(\ref{relationsb}). 
 
@@ -894,7 +894,7 @@ It contributes terms of the form
 \oint_{z \in S^3} \int_{w \in N_\epsilon} \oint_{u \in S^3} \Tr_V(\alpha(z) \wedge \alpha'(w) \wedge \alpha''(w)) \rho(w) p(z-w) p(z-u) p(w-u) .
 \]
 We note the similarities of this term and the weight of the $3$-vertex wheel appearing the calculation of the anomaly to satisfying the equivariant quantum master equation. 
-In fact, similar manipulations as in Appendix \ref{sec: feynman} show that it equals the left-hand side of \ref{relationsb}, and hence the $A_\infty$-relation is satisfied.
+In fact, similar manipulations as in Appendix \ref{sec: feynman} show that it equals the left-hand side of (\ref{relationsb}), and hence the $A_\infty$-relation is satisfied.
 %\beqn
 %\begin{array}{lll}
 %\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permutations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
