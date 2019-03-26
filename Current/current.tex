@@ -1,4 +1,5 @@
 \section{Current algebras on complex manifolds}
+\label{sec: fact}
 
 This paper takes general definitions and constructions from \cite{CG1} and specializes them to the context of complex manifolds.
 In this subsection we will review some of the key ideas but refer to \cite{CG1} for foundational results.
@@ -303,9 +304,11 @@ When working with local Lie algebras, it is natural to focus on cocycles that ar
 After introducing the relevant construction, we turn to studying how such cocycles determine modified current algebras.
 
 \subsubsection{Local cochains of a local Lie algebra}
+\label{sec:cloc}
 
-In Appendix \ref{appx:locfncl} we define the local cochains of a local Lie algebra in some detail, 
+In Appendix~\ref{appx:locfncl} we define the local cochains of a local Lie algebra in some detail, 
 but we briefly recall it here.
+\owen{This opening sentence is misleading. We don't have that appendix anymore (and I don't think we should), so we should replace it with a reference to Kevin's book, CG2, and your paper.}
 The basic idea is that a local cochain is a Lagrangian density: 
 it takes in a section of the local Lie algebra and produces a smooth density on the manifold. 
 Such a cocycle determines a functional by integrating the density.
@@ -318,8 +321,6 @@ In other words, it is a left $D_X$-module, where $D_X$ denotes the sheaf of smoo
 For a local Lie algebra, this $JL$ obtains the structure of a dg Lie algebra in left $D_X$-modules.
 Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\clies(JL)$ in the category of left $D_X$-modules. 
 By taking the de Rham complex of this left $D_X$-module, we obtain the local cochains.
-\owen{I took the full de Rham complex, but if you prefer, we can just tensor with densities.}
-\brian{don't you have to use derived tensor product if you use full de Rham?}
 For a variety of reasons, it is useful to ignore the ``constants'' term and work with the reduced cochains.
 Hence we have the following definition.
 
@@ -327,10 +328,12 @@ Hence we have the following definition.
 Let $\sL$ be a local Lie algebra on $X$.
 The {\em local Chevalley-Eilenberg cochains}  of $\sL$~is 
 \[
-\cloc^*(\sL) = \Omega^{*,*}_X[2d] \tensor_{D_X} \cred^*(J L) .
+\cloc^*(\sL) = \Omega^{*}_X[2d] \tensor_{D_X} \cred^*(J L) .
 \]
 This sheaf of cochain complexes on $X$ has global sections that we denote by~$\cloc^*(\sL(X))$.
 \end{dfn}
+
+Note that we use the smooth de Rham forms, not the holomorphic de Rham forms.
 
 \begin{rmk}
 This construction $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology \cite{Fuks, LosikDiag},

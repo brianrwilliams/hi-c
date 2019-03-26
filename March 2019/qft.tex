@@ -1,0 +1,923 @@
+\section{The holomorphic charge anomaly} \label{sec: qft}
+
+In this section, we change our focus and exhibit a natural occurrence of the Kac-Moody factorization algebra as a symmetry of a simple class of higher dimensional quantum field theories. 
+This example generalizes the free field realization of the affine Kac-Moody algebra as a subalgebra of differential operators on the loop space. 
+
+Our approach is through the general machinery of perturbative quantum field theory developed by Costello \cite{CosRenorm} and Costello-Gwilliam \cite{CG1,CG2}.
+We study the quantization of a particular {\em free} field theory, which makes sense in any complex dimension.
+Classically, the theory depends on the data of a $G$-representation, and the holomorphic nature of the theory allows us the classical current algebra $\Cur^{\cl}(\sG_X)$ at ``zero level" to act as a symmetry. 
+We find that upon quantization, the symmetry is broken, but in a way that we can measure by an explicit anomaly, i.e., local cocycle for $\sG_X$. 
+This failure leads to a symmetry of the quantum theory via the quantum current algebra $\Cur^{\q}(\sG_X)$ twisted by this cocycle.  
+ 
+%For any BV theory $\sE$, the BV operator $\{S,-\}$, which satisfies $\{S,-\}^2 =0$ by the ordinary classical master equation, together with the BV bracket $\{-,-\}$ equip the space of local functionals $\oloc(\sE)$ with the structure of a dg Lie algebra. 
+%Another way to interpret the equivariant classical master equation is to view $I^{\sL}$ as an element in the dg Lie algebra $\oloc(\sE) \tensor \cloc^*(\sL)$.
+%
+%This section is mostly a cobbling together of know results above BV quantization for holomorphic theories found in the sources \cite{CG2, BWhol}. 
+%
+%%\subsection{The quantum master equation} 
+%
+%Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
+
+\subsection{Holomorphic bosons}
+
+We introduce a classical field theory on any complex manifold $X$ in the BV formalism whose equations of motion, in part, include holomorphic functions on $X$.
+When the complex dimension is $d = 1$, our theory is identical to the chiral $\beta\gamma$ system, 
+which is a bosonic version of the familiar $bc$ system in conformal field theory. 
+In dimensions $d=2$ and $d=3$, this class of theories is still of physical importance.
+They are equivalent to minimal twists of supersymmetric matter multiplets. 
+
+To start, we fix a finite dimensional $\fg$-module $V$ and an integer $d > 0$.
+There are two fields, a field $\gamma : \CC^d \to V$, given by a smooth function into $V$, and
+a field $\beta \in \Omega^{d,d-1}(\CC^d, V^\vee)$, 
+given by a differential form of Hodge type $(d,d-1)$, valued in the dual vector space $V^\vee$. 
+The action functional describing the classical field theory~is
+\beqn\label{actionfnl}
+S(\gamma,\beta) = \int \<\beta, \dbar\gamma\>_V
+\eeqn
+where $\<-,-\>_V$ denotes the evaluation pairing between $V$ and its dual. 
+The classical equations of motion of this theory are 
+\[
+\dbar \beta = 0 =\dbar \gamma
+\]
+and hence pick out pairs $(\gamma,\beta)$ that are holomorphic. 
+
+The symmetry we consider comes from the $\fg$-action on $V$. 
+It extends, in a natural way, to an action of the ``gauged'' Lie algebra $C^\infty(X, \fg)$ on the $\gamma$ fields: an element $x(z,\zbar) \in C^\infty(X,\fg)$ acts simply by $x(z,\zbar) \cdot \gamma(z,\zbar)$ where the dot indicates the pointwise action via the $\fg$-module structure on $V$. 
+There is a dual action on the $\beta$ fields.
+This Lie algebra action is compatible with the action functional (\ref{actionfnl})---that is, it preserves solutions to the equations of motion---precisely when $x(z,\zbar)$ is holomorphic: $\dbar x(z,\zbar) = 0$. 
+In other words, the natural Lie algebra of symmetries is $\cO_X \otimes \fg$, the holomorphic functions on $X$ with values in~$\fg$.
+
+Notice that the original action functional (\ref{actionfnl}) has an ``internal symmetry'' via the gauge transformation
+\[
+\beta \mapsto \beta + \dbar \beta' 
+\]
+with $\beta'$ an arbitrary element of $\Omega^{d,d-2} (X, V^*)$. 
+Thus, the space $\Omega^{d,d-2} (X, V^\vee)$ provide ghosts in the BRST formulation of this theory. 
+Moreover, there are ghosts for ghosts $\beta'' \in \Omega^{d,d-3}(X , V^\vee)$, and so on.
+Together with all of the antifields and antighosts, the full theory consists of two copies of a Dolbeault complex.
+The precise definition is the following.
+
+\begin{dfn}
+In the BV formalism the {\em classical $\beta\gamma$ system} on the complex manifold $X$ has space of fields
+\[
+\sE_V = \Omega^{0,*}(X , V) \oplus \Omega^{d,*}(X , V^*)[d-1],
+\]
+with the linear BRST operator given by $Q = \dbar$.
+We will write fields as pairs $(\gamma,\beta)$ to match with the notation above.
+There is a $(-1)$-shifted symplectic pairing is given by integration along $X$ combined with the evaluation pairing between $V$ and its dual: 
+\[
+\<\gamma, \beta\> = \int_X \<\gamma, \beta\>_V.
+\] 
+The action functional for this free theory is thus
+\[
+S_V (\beta,\gamma) = \int_X \<\beta, \dbar \gamma\>_{V} .
+\]
+\end{dfn}
+
+\begin{rmk}
+As usual in homological algebra, the notation $[d-1]$ means we shift that copy of the fields down by $d-1$. 
+Note that the elements in degree zero (i.e., the ``physical'' fields) are precisely maps $\gamma : X \to V$ and sections $\beta \in\Omega^{d,d-1} (X ; V^\vee)$, just as in the initial description of the theory. 
+The gauge symmetry $\beta \to \beta + \dbar \beta'$ has naturally been incorporated into our BRST complex (which only consists of a linear operator since the theory is free).
+We note that the pairing only makes sense when at least one of the inputs is compactly-supported or $X$ is closed;
+but, as usual in physics, it is the Lagrangian density that is important, rather than the putative functional it determines.
+\end{rmk}
+
+\owen{I modified the remarks to discuss technical features of the definition (first remark) and then to indicate your systematic generalization (next).}
+
+\begin{rmk}
+This theory is a special case of a nonlinear $\sigma$-model, where the linear target $V$ is replaced by an arbitrary complex manifold $Y$.
+When $d=1$ this theory is known as the (classical) curved $\beta\gamma$ system and has received extensive examination \cite{WittenCDO, WG2, Nek, GGW};
+when a quantization exists, the associated factorization algebra of quantum observables encodes the vertex algebra known as chiral differential operators of $Y$.
+The second author's thesis \cite{BWthesis} examines the theories when $d>1$ and uncovers a systematic generalization of chiral differential operators.
+\end{rmk}
+
+In parallel with our discussion above, once we include the full BV complex, 
+it is natural to encode the symmetry $\cO_X \otimes \fg$ by the action of  the {\em dg Lie algebra} $\sG_X^{sh} = \Omega^{0,*}(X, \fg)$. 
+The action by $\sG_X^{sh}$ extends to a natural action on the fields of the $\beta\gamma$ system in such a way that the shifted symplectic pairing is preserved. 
+In other words, $\alpha$ determines a symplectic vector field on the space of fields.
+
+This vector field is actually a Hamiltonian vector field, 
+and we will encode it by an element $\alpha \in \sG_X^{sh}$ by a {\em local} functional $I_\alpha^{\sG} \in \oloc(\sE_V)$. 
+It is a standard computation in the BV formalism to verify the following.
+
+\begin{dfn/lem}
+The {\em $\sG_X$-equivariant $\beta\gamma$ system} on $X$ with values in $V$ is defined by the local functional
+\[
+I^{\sG}(\alpha, \beta, \gamma) = \int \<\beta, \alpha \cdot \gamma\>_V \in \oloc(\sE_V \oplus \sG_X[1]) .
+\]
+This functional satisfies the $\sG_X$-equivariant classical master equation
+\[
+(\dbar + \d_{\sG}) I^{\sG} + \frac{1}{2} \{I^{\sG}, I^{\sG}\} = 0 .
+\] 
+\end{dfn/lem}
+
+The classical master equation encodes the claim that the function $I^{\sG}$ defines a dg Lie algebra action on the theory $\sE_V$. 
+In particular, $I^{\sG}$ determines a map of sheaves of dg Lie algebras 
+\[
+I^{\sG} : \sG^{sh}_X \to \oloc(\sE_V)[-1],
+\] 
+where the Lie bracket on the right hand side is defined by the BV bracket $\{-,-\}$. 
+If we post-compose with the map $\oloc(\sE_V)[-1] \to \Der_{\rm loc}(\sE_V)$ that sends a functional $f$ to the Hamiltonian vector field $\{f,-\}$,
+then we find the composite is precisely the action of $\sG^{sh}_X$ on fields already specified.
+
+We view the sum 
+\[
+S(\beta,\gamma) + I^{\sG}(\alpha, \beta, \gamma)
+\] 
+as the action functional of a field theory in which the $\alpha$ fields parametrize a family of field theories,
+i.e., provide a family of backgrounds for the $\beta\gamma$ system.
+We call it the equivariant classical action functional.
+
+\owen{I think we should promote this paragraph to a "nota bene" or something.} 
+
+\noindent {\bf Note:} For the remainder of the section we will restrict ourselves to the space $X =~\CC^d$. 
+
+\subsubsection{The $\beta\gamma$ factorization algebra}
+
+It is the central result of \cite{CG1,CG2} that the observables of a quantum field theory form a factorization algebra on the underlying spacetime. 
+
+For any theory, the factorization algebra of classical observables assigns to every open set $U$, the cochain complex of polynomial functions on the fields that only depend on the behavior of the fields in $U$.
+(In other words, each function must have support in $U$.)  
+For the $\beta\gamma$ system, the complex of classical observables\footnote{We work here with polynomial functions but it is possible to work with formal power series instead, which is typically necessary for interacting theories. We use $\Sym$ to denote polynomials and $\widehat{\Sym}$ to denote the completion, which are formal power series.} assigned to an open set $U \subset \CC^d$~is
+\[
+\Obs^{\cl}_V(U) = \left(\Sym \left(\Omega^{0,*}(U)^\vee \tensor V^\vee \oplus \Omega^{d,*}(U)^\vee \tensor V [-d+1]\right), \dbar\right) .
+\]
+As discussed following Definition~\ref{dfn: classical currents}, we use the completed tensor product when defining the symmetric products. 
+It follows from the general results of Chapter 6 of \cite{CG2} that this assignment defines a factorization algebra on $\CC^d$. 
+
+The functional $I^{\sG}$ defines a map of dg Lie algebras $I^{\sG} : \sG_d(\CC^d) \to \Obs^{\cl}_V(\CC^d)$.
+(Note  that we have switched here from $\sG^{sh}_d$ to $\sG_d$, and hence are working with compactly supported $\alpha$.)
+Thanks to the shifted symplectic pairing on the fields, 
+the factorization algebra $\Obs_V^{\cl}$ is equipped with a 1-shifted Poisson bracket and hence a $P_0$-structure. 
+In Section \ref{sec: envelopes} we also discussed how a local Lie algebra determines a $P_0$-factorization algebra via its classical current algebra. 
+The classical Noether's theorem, as proved in Theorem 11.0.1.1 of \cite{CG2}, then implies that $I^{\sG}$ determines a map between these factorization algebras. 
+
+\begin{prop}[\cite{CG2}, Classical Noether's Theorem]
+\label{prop:CNT}
+The assignment that sends an element $\alpha \in \Omega^{0,*}_c(U, \fg)$ to the observable
+\[
+\gamma \tensor \beta \in \Omega^{0,*}(U, V) \tensor \Omega^{d,*}(U, V^*) \mapsto \int_U \<\beta, \alpha \cdot \gamma\>_V
+\]
+determines a map of $P_0$-factorization algebras 
+\[
+J^{\cl} : \Cur^{\cl} (\sG_d) \to \Obs^{\cl}_V 
+\]
+on the manifold $\CC^d$.
+\end{prop}
+
+This formula for $J^{\cl}$ is identical to that of the local functional $I^\fg(\alpha)$ defining the action of $\sG_d$ on the $\beta\gamma$ system,
+but it is only defined for compactly supported sections $\alpha$.
+Note an important point here: if $\alpha$ is not compactly supported, then $I^\fg(\alpha)$ is not a functional on arbitrary fields because the density $\<\beta, \alpha \cdot \gamma\>_V$ may not be integrable.
+In general, a local functional need not determine an observable on an open set since the integral may not exist.
+When $\alpha$ is compactly supported on $U$, however, then $I^\sG (\alpha)$ does determine an observable on $U$, namely the observable~$J^{\cl}(\alpha)$. 
+We also want to note that the map $J^{\cl}$ is quadratic.
+
+The challenge is to extend this relationship to the quantum situation. 
+Being a free field theory, the $\beta\gamma$ system admits a natural quantization and hence a factorization algebra $\Obs^{\q}_V$ of quantum observables (whose definition we recall below). 
+The natural question arises whether the symmetry by the dg Lie algebra $\sG_d$ persists upon quantization. 
+We are asking if we can lift $J^{\cl}$ to a ``quantum current" $J^{\q} : \Cur^\q(\sG_d) \to \Obs^\q_V$, where $\Cur^\q(\sG_d)$ is the factorization algebras of quantum currents of Definition~\ref{dfn: quantum currents}. 
+The existence of this map of factorization algebras is controlled by the equivariant quantum master equation, to which we now turn.
+
+\subsection{The equivariant quantization}
+
+The approach to quantum field theory we use follows Costello's theory of renormalization and the Batalin-Vilkovisky formalism developed in \cite{CosRenorm}.
+The formalism dictates that in order to define a quantization, it suffices to define the theory at each energy (or length) scale and to ask that these descriptions be compatible as we vary the scale.
+Concretely, this compatibility is through an exact {\em renormalization group (RG) flow} and is encoded by an operator $W(P_{\epsilon < L}, -)$ acting on the space of functionals. 
+The functional $W(P_{\epsilon < L},-)$ is defined as a sum over weights of graphs which is how Feynman diagrams appear in Costello's formalism.
+A theory that is compatible with the RG flow is called a ``prequantization". 
+In order to obtain a quantization, one must solve the quantum master equation (QME). 
+For us, the quantum master equation encodes the failure of lifting the classical $\sG_d$-symmetry to one on the prequantization.
+
+The quantization we work with follows Costello's approach quite closely, 
+but we will use a sophisticated version where some of the fields are ``background'' fields and hence are not integrated over.
+This allows us to study the equivariant theory we just introduced.
+(This version is discussed in more depth in \cite{CG2}.) 
+The two main ingredients to construct the weight are the propagator $P_{\epsilon < L}$ and the classical interaction $I^{\sG}$. 
+The propagator only depends on the underlying free theory, that is, the higher-dimensional $\beta\gamma$ system. 
+As above, the interaction describes how the linear currents $\sG_d$ act on the free theory. 
+
+The construction of $P_{\epsilon<L}$, which makes sense for a wide class theories of this holomorphic flavor, can be found in Section 3.2 of~\cite{BWhol}.
+For us, it is important to know that $P_{\epsilon<L}$ satisfies the following properties:
+
+\begin{enumerate}
+\item[(1)] For $0 < \epsilon < L < \infty$ the propagator 
+\[
+P_{\epsilon < L} \in \sE_V \Hat{\tensor} \sE_V 
+\]
+is a symmetric under the $\ZZ/2$-action.
+Moreover, $P_{0 < \infty} = \lim_{\epsilon \to 0}\lim_{L \to \infty}$ is a symmetric element of the distributional completion $\Bar{\sE}_V \Hat{\tensor} \Bar{\sE}_V$. 
+
+\item[(2)] 
+The propagator lies in the subspace
+\[
+\Omega^{d,*}(\CC^d \times \CC^d, V \tensor V^*) \oplus \Omega^{d,*}(\CC^d \times \CC^d, V^* \tensor V) \subset \sE_V \Hat{\tensor} \sE_V .
+\]
+If we use coordinates $(z,w) \in \CC^d \times \CC^d$, the propagator has the form
+\beqn
+P_{\epsilon<L} = P^{an}_{\epsilon<L}(z,w) \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
+\eeqn
+where ${\rm id}_V, {\rm id}_{V^*}$ are the elements in $V \tensor V^*, V^* \tensor V$ that represent identity maps. 
+Moreover, $P^{an}_{0 < \infty} (z,w)$ is the Green's function for the operator $\dbar$ on $\CC^d$:
+\[
+\dbar P^{an}_{0<\infty} (z,w) = \delta (z-w) .
+\]
+
+\item[(3)] Let $K_t \in C^\infty((0,\infty)_t) \tensor \sE_V \Hat{\tensor} \sE_V$ be the heat kernel for the Hodge Laplacian
+\[
+\triangle_{\rm Hodge} K_t + \frac{\partial}{\partial t} K_t = 0 .
+\]
+Thus, $P_{\epsilon < L}$ provides a $\dbar$-homotopy between $K_\epsilon$ and $K_L$:
+\[
+\dbar P_{\epsilon < L} = K_{t=L} - K_{t=\epsilon} .
+\]
+\end{enumerate}
+
+%The building block in Costello's approach to renormalization is an effective family of functionals $\{I[L]\}$ parametrized by a {\em length scale} $L > 0$. 
+%For each $L > 0$ the functional $I[L] \in \sO(\sE)[[\hbar]]$ must satisfy various conditions, which are carefully stated in Definition 8.2.9.1 of \cite{CG2}. 
+%We will recall some key aspects that will be useful for our purposes. 
+%The main condition is a compatibility between the functionals $I[L]$ as one changes the length scale; this is referred to as {\em homotopy renormalization group (RG) flow}.
+
+To define the quantization, we recall the definition of a weight of a Feynman diagram adjusted to this equivariant context.
+To simplify our discussion, we introduce the notation $\sO(\sG_d[1])$ to mean the underlying graded vector space of $\clie^*(\sG_d)$, which is the \owen{completed} symmetric algebra on the dual of~$\sG_d$. 
+
+For the free $\beta\gamma$ system, the homotopy RG flow from scale $L>0$ to $L'>0$ is an invertible linear map 
+\beqn\label{weight1}
+W(P_{L < L'} , -) : \sO(\sE) [[\hbar]] \to \sO(\sE)[[\hbar]]
+\eeqn
+defined as a sum of weights of graphs 
+\[
+W (P_{L<L'}, I) = \sum_{\Gamma} W_{\Gamma}(P_{L<L'}, I). 
+\]
+Here, $\Gamma$ denotes a graph, and the weight $W_\Gamma$ associated to $\Gamma$ is defined as follows.
+One labels the vertices of valence $k$ by the $k$th homogenous component of the functional $I$. 
+The edges of the graph are labeled by the propagator $P_{L<L'}$.
+The total weight is given by iterative contractions of the homogenous components of the interaction with the propagator. 
+Formally, we can write the weight as
+\[
+e^{W(P_{\epsilon <L}, I)} = e^{\hbar \partial_{P_{\epsilon <L}}} e^{I / \hbar}
+\]
+where $\partial_P$ denotes contraction with $P$. 
+(For a complete definition, see Chapter 2 of~\cite{CosRenorm}.)
+
+To define the equivariant version, we extend (\ref{weight1}) to a $\sO(\sG_d[1])$-linear map
+\[
+W^{\sG} (P_{L < L'} , -) : \sO(\sE \oplus \sG_d[1]) [[\hbar]] \to \sO(\sE \oplus \sG_d[1])[[\hbar]] .
+\]
+
+\begin{dfn/lem}
+A {\em prequantization} of the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is defined by the family of functionals $\{I^{\sG}[L]\}_{L > 0}$, where
+\beqn\label{prequant}
+I^{\sG} [L] = \lim_{\epsilon \to 0} W^{\sG} (P_{\epsilon<L} , I^{\sG}) .
+\eeqn 
+This family satisfies homotopy RG flow:  
+\[
+I[L'] = W(P_{L<L'}, I[L]) .
+\]
+for all $L < L'$.
+\end{dfn/lem}
+
+\begin{proof}
+The key claim to justify is why the $\epsilon \to 0$ limit of $W^{\sG} (P_{\epsilon<L} , I^{\sG})$ exists,
+since it implies immediately that we have a family of actions satisfying homotopy RG flow. 
+This key claim follows from the following two intermediate results:
+\begin{itemize}
+\item[(1)] 
+Only one-loop graphs appear in the weight expansion $W^{\sG} (P_{\epsilon < L}, I^{\sG})$. 
+
+\item[(2)] Let $\Gamma$ be a one-loop graph.
+Then
+\[
+\lim_{\epsilon \to 0} W^{\sG}_\Gamma(P_{\epsilon < L}, I^{\sG})
+\]
+exists.
+\end{itemize}
+
+Claim (1) is a direct combinatorial observation.
+\owen{We should replicate Figure 1 here to show the combinatorics.}
+Recall that the weight is defined as a sum over {\em connected} graphs,
+and only two types of graphs appear: 
+\begin{itemize}
+\item trees with a $\gamma$ leg, a $\beta$ leg, and arbitrarily many $\alpha$ legs or
+\item trivalent wheels with just $\alpha$ legs.
+\end{itemize}
+To see this, note that the inner edges that ared labeled by the propagator $P_{\epsilon < L}$, which only depends on the fields $\beta$ and $\gamma$. 
+The trivalent vertex has the form $\int \beta [\alpha, \gamma]$.
+If one connects two vertices, one is left with a single $\gamma$ leg and a single $\beta$ leg but two $\alpha$ legs.
+Similarly, if one connects $n$ vertices, one is left  with a single $\gamma$ leg and a single $\beta$ leg but $n$ $\alpha$ legs.
+If one uses a propagator to connect $\gamma$ and $\beta$ leg, one has a wheel with $n$ $\alpha$ legs,
+and no more propagators can be attached.
+
+Claim (2) follows from Theorem 3.4 of \cite{BWhol}, which asserts that the $\epsilon \to 0$ limit of the weights is finite. 
+\end{proof}
+
+As an immediate consequence of the proof, we see that only polynomial values of $\hbar$ occur in the expansion of $I^{\sG}[L]$, indeed the answer is linear in $\hbar$. 
+This fact will be used later on when we make sense of the ``free field realization" of the Kac-Moody granted by this equivariant quantization. 
+
+\begin{cor}
+For each $L > 0$, the functional $I^{\sG}[L]$ lies in the subspace 
+\[
+\sO(\sE \oplus \sG_d[1]) \oplus \hbar \sO(\sE \oplus \sG_d[1]) \subset \sO(\sE \oplus \sG_d[1]) [[\hbar]].
+\] 
+\end{cor}
+
+To define the quantum master equation, we must introduce the BV Laplacian $\Delta_L$ and the scale $L$ BV bracket $\{-,-\}_L$. 
+For $L > 0$, the operator $\Delta_L : \sO(\sE_V) \to \sO(\sE_V)$ is defined by contraction with the heat kernel $K_L$ defined above. 
+Similarly, $\{-,-\}_L$ is a bilinear operator on $\sO(\sE_V)$ defined by
+\[
+\{I,J\}_L = \Delta_L(IJ) - (\Delta_L I)J - (-1)^{|I|} I \Delta_L J .
+\] 
+There are equivariant versions of each of these operators given by extending $\sO(\sG_d[1])$-linearly.
+For instance, the BV Laplacian is a degree one operator of the form
+\[
+\Delta_L : \sO(\sE \oplus \sG_d[1]) \to \sO(\sE \oplus \sG_d[1]) .
+\]
+A functional $J \in \sO(\sE_V \oplus \sG_d[1])$ satisfies the $\sG_d$-{\em equivariant scale $L$ quantum master equation} (QME) if
+\[
+(\dbar + \d_{\sG}) J+ \frac{1}{2} \{J, J\}_L + \hbar \Delta_L J = 0 .
+\]
+
+The main object of study in this section is the {\em failure} for the quantization $I^{\sG}[L]$ to satisfy the equivariant QME. 
+
+\begin{dfn}
+The $\sG_d$-{\em equivariant charge anomaly} at scale $L$, denoted $ \Theta_V [L]$, is defined~by
+\[
+\hbar \Theta_V [L] = (\dbar + \d_{\sG}) I^{\sG} [L] + \frac{1}{2} \{I^{\sG}[L], I^{\sG}\}_L + \hbar \Delta I^{\sG}[L] .
+\]
+The operator $\d_{\sG}$ is the Chevalley-Eilenberg differential $\clie^*(\sG_d) = \left(\sO(\sG_d[1]), \d_{\sG}\right)$. 
+\end{dfn}
+
+
+\begin{rmk}
+Since the underlying non-equivariant BV theory $\sE_V$ is free, 
+in the Feynman graph expansion of $I^\sG$,
+{\em none} of the external edges of any 1-loop term are labeled by $\sE_V$. 
+In other words, the $\hbar$ contribution is a function only of the $\alpha$ fields (i.e., the symmetries).
+Similarly, the obstruction to solving the QME is only a function of the local Lie algebra~$\sG_d$.
+For this reason, the QME is automatically solved modulo the space of functionals $\clie^*(\sG_d) \subset \sO(\sE \oplus \sG_d[1])$,
+if we view those as the relevant ``constants.''
+We are interested, however, in making the action of $\sG_d$ ``inner'' (in the terminology of \cite{CG2}).
+in which case this obstruction term is relevant.
+\end{rmk}
+
+\subsection{The charge anomaly for $\beta\gamma$}
+
+To calculate this anomaly, we utilize a general result about the quantum master equation for holomorphic field theories formulated in \cite{BWhol}. 
+In general, since the effective field theory defining the prequantization $\{I^{\sG}[L]\}$ is given by a Feynman diagram expansion, the anomaly to solving the quantum master equation is also given by a potentially complicated sum of diagrams. 
+As an immediate corollary of Proposition 4.4 of \cite{BWhol} for holomorphic theories on $\CC^d$, we find that only a simple class of diagrams appear in the anomaly. 
+
+\begin{lem}\label{lem: obs}
+Let $\Theta_V[L]$ be the $\sG_d$-equivariant charge anomaly for the $\beta\gamma$ system with values in~$V$.
+Then 
+\begin{itemize}
+\item[(1)] the limit $\Theta_V = \lim_{L \to 0} \Theta_V[L]$ exists and is a {\em local} cocycle so that $\Theta_V \in \cloc^*(\sG_d)$.
+\item[(2)] This element $\Theta$ is computed by the following limit
+\[
+\hbar \Theta_V = \frac{1}{2} \lim_{L \to 0} \lim_{\epsilon \to 0} \sum_{\Gamma \in {\rm Wheel}_{d+1} \; , e} W_{\Gamma, e}(P_{\epsilon <L}, K_\epsilon, I^{\sG}) ,
+\] 
+where the sum is over all wheels of valency $(d+1)$ with a distinguished internal edge~$e$, and the weight puts $K_\epsilon$ on $e$ but the propagator on all other internal edges. 
+\end{itemize}
+\end{lem}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[line width=.2mm, scale=1.5]
+
+%\pgfmathsetmacro{\ex}{0}
+%\pgfmathsetmacro{\ey}{1}
+
+%\draw (\ex,\ey) ++(45:.8) arc (45:-45:.8);
+
+		\draw[fill=black] (0,0) circle (1cm);
+		%\draw[fill=red] (0,0) arc (145:215:1);
+		\draw[fill=white] (0,0) circle (0.99cm);
+		\draw[line width=0.35mm,red] ++(145:0.995) arc (145:215:0.995);
+		%\draw[red] (0,0) arc (30:60:3);
+
+		\draw[vector](145:2) -- (145:1);
+		\node at (145:2.3) {$\alpha^{(0)}$};
+			%\node at (145:0.85) {$v_0$};
+		\node at (60:0.75) {$P_{\epsilon<L}$};
+		\node at (-60:0.75) {$P_{\epsilon<L}$};
+		\draw[vector](215:2) -- (215:1cm);
+		\node at (215:2.3) {$\alpha^{(2)}$};
+			%\node at (215:0.85) {$v_{d}$};
+		\node[red] at (180:0.8) {$K_\epsilon$};
+		\draw[vector](0:2) -- (0:1);
+		\node at (0:2.3) {$\alpha^{(1)}$};
+			%\node at (35:0.85) {$v_{\alpha}$};
+		%\node at (0:0.8) {$P_{\epsilon<L}$};
+		%\node at (270:0.8) {$P_{\epsilon<L}$};
+	    	\clip (0,0) circle (1cm);
+\end{tikzpicture}
+\caption{The diagram representing the weight $W_{\Gamma, e}(P_{\epsilon<L}, K_\epsilon, I^\fg)$ in the case $d=2$. 
+On the black internal edges are we place the propagator $P_{\epsilon < L}$ of the $\beta\gamma$ system. 
+On the red edge labeled by $e$ we place the heat kernel $K_\epsilon$.
+The external edges are labeled by elements $\alpha^{(i)} \in \Omega^{0,*}_c(\CC^2)$.}
+\label{fig:liewheel}
+\end{center}
+\end{figure}
+
+%\begin{rmk}
+%If $\Gamma$ is a graph with a distinguished edge $e$ and $A,B$ are elements of the tensor square of fields $A, B \in \sE \tensor \sE$, we let $W_{\Gamma,e}(A,B, I)$ denotes the weight of the graph where we place $B$ at the internal edge labeled $e$ and $A$ on the remaining internal edges.
+%\end{rmk}
+
+This description of the local anomaly may seem obscure because it uses Feynman diagrams.
+It admits, however, a very elegant algebraic characterization, using the identification of Proposition~\ref{prop: trans j}. 
+
+\begin{prop}\label{prop: bg anomaly}
+The charge anomaly for quantizing the $\sG_d$-equivariant $\beta\gamma$ system on $\CC^d$ is equal to
+\[
+\Theta_V = \frac{1}{(2\pi i)^d} \fj (\ch_{d+1}^{\fg}(V)),
+\]
+where $\fj$ is the isomorphism from Proposition~\ref{prop: trans j}.
+\end{prop}
+
+Let us unravel $\Theta_V$ in even more explicit terms:
+for $\alpha_0$, \dots, $\alpha_d$ compactly-supported, $\fg$-valued Dolbeault forms,
+\[
+\Theta_V(\alpha_0, \ldots, \alpha_d) = \frac{1}{(2\pi i)^d} \int_{\CC^d} \Tr_V(\rho(\alpha_0) (\rho(\partial\alpha_1) \cdots \rho(\partial \alpha_d))
+\]
+where $\rho: \fg \to \End(V)$ denotes the action of $\fg$ on~$V$.
+\owen{Maybe add some comment about how this resembles ABJ?}
+
+Based on our analysis of the local Lie algebra cohomology of $\sG_d$, 
+it is clear that the obstruction must have this form, up to a scalar multiple. 
+But we provide a more detailed proof.
+
+\begin{proof}
+First, we note that the element $\Theta_V \in \cloc^*(\sG_d)$ sits in the subspace of $U(d)$-invariant, holomorphic translation invariant local cocycles because both the functional $I^{\sG}$ and propagator $P_{\epsilon<L}$ are $U(d)$-invariant, holomorphic translation invariant.
+By Proposition \ref{prop: trans j} we see that $\Theta_V$ must be cohomologous to a cocycle of the form
+\[
+(\alpha_0, \ldots, \alpha_d) \mapsto \int_{\CC^d} \theta(\alpha_0 \wedge \partial \alpha_1 \wedge \cdots \wedge \partial \alpha_d) 
+\]
+where $\theta$ is some element of $\Sym^{d+1}(\fg^*)^\fg$.
+To use the notation of Section~\ref{sec: current}, it is some element $\fJ_d (\theta)$. 
+This cocycle factors in the following way:
+\beqn
+\label{composition}
+\begin{tikzcd}
+\left(\Omega^{0,*}_c(\CC^d) \tensor \fg\right)^{\tensor (d+1)} \ar[r,"\fa \fn"] & \left(\Omega^{0,*}_c(\CC^d) \tensor \fg\right) \tensor \left(\Omega^{1,*}_c(\CC^d)\tensor \fg\right)^{\tensor d} \ar[r, "\theta"] & \Omega^{d, *}_c(\CC^d) \ar[r, "\int"] & \CC . 
+\end{tikzcd}
+\eeqn
+The first map is $\fa \fn : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \alpha_0 \tensor \partial \alpha_1 \tensor \cdots \tensor \partial \alpha_d$.
+The second map applies the symmetric function $\theta : \fg^{\tensor (d+1)} \to \CC$ to the Lie algebra factor and takes the wedge product of the differential forms. 
+%$\Omega^{0,*}(\CC^d) \otimes \fg$ by linearity over the Dolbeault forms:
+%\[
+%\underline{\theta} \left(\alpha_0 \tensor \alpha_1 \tensor \cdots \tensor \alpha_d\right) = \alpha_0 \wedge \theta(\alpha_1 \wedge \cdots \wedge \alpha_d) \in \Omega^{d,*}_c(\CC^d).
+%\]
+
+Lemma \ref{lem: obs} implies that the obstruction is given by the sum over Feynman weights associated to graphs of wheels of valency $(d+1)$.
+We can identify the algebraic component, corresponding to $\theta$ in the above composition (\ref{composition}), directly from the shape of this graph. 
+The propagator $P_{\epsilon<L}$ and heat kernel $K_\epsilon$ factor as
+\[
+P_{\epsilon<L} = P^{an}_{\epsilon<L} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right)
+\quad\quad\text{and}\quad\quad 
+K_{\epsilon} = K_{\epsilon}^{an} \tensor \left({\rm id}_{V} + {\rm id}_{V^*}\right),
+\]
+where ${\rm id}_V, {\rm id}_{V^*}$ are the elements in $V \tensor V^*, V^* \tensor V$ representing the respective identity maps. 
+The analytic factors $P^{an}_{\epsilon<L},  K_{\epsilon}^{an}$ only depend on the dimension $d$, and we recall their explicit form in Appendix~\ref{sec: feynman}. 
+
+Each trivalent vertex of the wheel is also labeled by both an analytic factor and Lie algebraic factor. 
+The Lie algebraic part of each vertex can be thought of as the defining map of the representation $\rho : \fg \to {\rm End}(V)$. 
+The diagrammatics of the wheel amounts to taking the trace of the symmetric $(d+1)$st power of this Lie algebra factor. 
+Thus, the Lie algebraic factor of the weight of the wheel is the $(d+1)$st component of the character of the representation
+\[
+{\rm ch}_{d+1}^\fg(V) = \frac{1}{(d+1)!} {\rm Tr}\left(\rho(X)^{d+1}\right) \in \Sym^{d+1}(\fg^*) .
+\]
+
+By these symmetry arguments, we know that the anomaly will be of the form $\Theta = A \fj (\ch_{d+1}^{\fg}(V))$ for some number $A \in \CC$.
+In Appendix \ref{sec: feynman}, we perform an explicit calculation of this constant $A$, which depend on the specific form of the analytic propagator and heat kernel. 
+\end{proof}
+
+
+\subsection{The quantum observables of the $\beta\gamma$ system}
+
+Before deducing the main consequence of the anomaly calculation, we introduce the quantum observables of the $\beta\gamma$ system. 
+The quantum observables $\Obs^{\q}_V$ define a quantization of the classical observables in the sense that
+as $\hbar \to 0$, they degenerate to $\Obs^\cl_V$.
+More precisely, 
+\[
+\Obs^{\cl}_V \cong \Obs^\q_V \tensor_{\CC[\hbar]} \CC[\hbar]/(\hbar).
+\]
+In practice, the Costello's version of the BV formalism suggests that the quantum observables arise by 
+\begin{enumerate}
+\item[(a)] tensoring the underlying graded vector space of $\Obs^\cl_n$ with $\CC[[\hbar]]$ and
+\item[(b)] deforming the differential to $\dbar +\hbar \Delta_L$, where $\Delta_L$ is the BV Laplacian.
+\end{enumerate}
+This construction actually defines a family of quantum observables, one for each length scale $L$. 
+A main idea of \cite{CG2} says that by considering the collection of functionals at all length scales $L$, the observables $\Obs^\q_V$ still define a factorization algebra. 
+
+The fact that this works is quite subtle, since naively the differential $\Delta_L$ seems to have support on all of $\CC^d$, so it is not obvious how to define the corestriction maps of the factorization algebra. 
+In the case of free theories, such as the $\beta\gamma$ system, there is a way to circumvent this difficulty. 
+One can work with an {\it a priori} smaller class of observables, namely those arising from smooth functionals, not distributional ones.
+(A physicist might say we used ``smeared'' observables.)
+The limit $\Delta = \lim_{L \to 0} \Delta_L$ then makes sense, and we just use this BV Laplacian and work at scale~0. 
+This approach is developed in detail for the free $\beta\gamma$ system on $\CC$ in Chapter 5, Section 3 of~\cite{CG1}. 
+The case for $\CC^d$ is essentially identical. 
+This approach yields a factorization algebra~$\Tilde{\Obs}^\q_V$, as we now explain.
+
+As shown in~\cite{CG1},
+a classical result of Atiyah and Bott~\cite{AB} can be extended to show that for any complex manifold $U$, 
+the inclusion
+\[
+\Omega^{p,*}_c(U) \subset \Bar{\Omega}^{p,*}_c(U)
+\]
+of compactly-supported smooth Dolbeault forms into compactly-supported smooth distributional Dolbeault forms is a quasi-isomorphism. 
+Consequently we introduce the subcomplex 
+\[
+\Tilde{\Obs}^{\cl}_V(U) =  \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right)
+\]
+of 
+\[
+\Obs_V^{\cl}(U) = \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right).
+\]
+The Atiyah-Bott lemma ensures that the inclusion $\Tilde{\Obs}^{\cl}_V(U) \hookrightarrow \Obs_V^{\cl}(U)$ is a quasi-isomorphism.
+%\[
+%\begin{tikzcd}    
+% \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
+%\end{tikzcd}
+%\]
+The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ defines a factorization algebra on $\CC^d$, 
+and so we have a quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
+
+%The second approach is what we will explain here, as it is the one that extends to the equivariant setting.
+
+\begin{dfn}\label{dfn: qobs}
+The {\em smoothed quantum observables} supported on $U \subset \CC^d$ is the cochain complex
+\[
+\Tilde{\Obs}^\q_V(U) = \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar + \hbar \Delta\right) .
+\]
+\end{dfn}
+
+By Theorem 5.3.10 of \cite{GwThesis}, the assignment $U \mapsto \Tilde{\Obs}^\q_V(U)$ defines a factorization algebra on $\CC^d$. 
+Just as in the classical case, there is an induced quasi-isomorphism of factorization algebras $\Tilde{\Obs}^\q_{V} \xto{\simeq} \Obs^\q_V$,
+as shown in the proof of Lemma 11.24 in~\cite{GGW}. 
+Hence this smoothed version $\Tilde{\Obs}^\q_{V}$ agrees with the construction $\Obs^\q_V$ of~\cite{CG2}.
+
+\subsection{Free field realization}
+
+Proposition~\ref{prop:CNT} provides a factorization version of the classical Noether construction: 
+there is a map of factorization algebras from the current algebra $\Cur^{\cl}(\sG_d)$ to the factorization algebra of classical observables $\Obs^\cl_V$.
+It is natural to ask whether this map lifts along the ``dequantization'' map $\Obs^\q_V \to \Obs^\cl_V$, or
+in other words, whether quantization preserves the symmetries.
+Theorem 12.1.0.2 \cite{CG2} provides a general result about lifting classical Noether maps.
+It says that if $\Theta$ is the obstruction to solving the the $\sL$-equivariant quantum master equation, 
+then there is a map from the {\em twisted} quantum current algebra $\Cur^\q_{\Theta}(\sL)$ to the observables of the quantum theory. 
+Thus, applied to our situation, it provides the following consequence of our Feynman diagram calculation above. 
+
+\begin{prop}
+Let $\hbar \Theta_V$ be the obstruction to satisfying the $\sG_d$-equivariant quantum master equation. 
+There is a map of factorization algebras on $\CC^d$ from the twisted quantum current algebra to the quantum observables
+\beqn\label{qnoether}
+J^\q : \Cur_{\hbar \Theta_V}^\q (\sG_d) \to \Obs^\q_V 
+\eeqn
+that fits into the diagram of factorization algebras
+\[
+\begin{tikzcd}
+\Cur^\q_{\hbar \Theta_V} (\sG_d) \ar[d, "\hbar \to 0"'] \ar[r, "J^\q"] & \Obs^\q_V \ar[d, "\hbar \to 0"] \\
+\Cur^\cl (\sG_d) \ar[r,"J^\cl"] & \Obs^{\cl}_V .
+\end{tikzcd}
+\]
+\end{prop}
+
+The quantum current algebra $\Cur^\q_{\hbar \Theta_V}$ is a $\CC[\hbar]$-linear factorization algebra on $\CC^d$. 
+It therefore makes sense to specialize the value of $\hbar$;
+our convention is to take
+\[
+\hbar = (2 \pi i)^d .
+\]
+From our calculation of the charge anomaly $\Theta_V$ above, once we specialize $\hbar$, we can realize the current algebra as an enveloping factorization algebra
+\[
+\left. \Cur^\q_{\hbar \Theta_V} (\sG_d) \right|_{\hbar = (2\pi i)^d} \cong \UU_{\ch_{d+1}^\fg(V)} (\sG_d) .
+\]
+Thus, as an immediate corollary of the above proposition, $J^\q$ specializes to a map of factorization algebras
+\beqn\label{free field}
+J^\q : \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d} .
+\eeqn
+We interpret this result as a {\em free field realization} of the higher Kac-Moody factorization algebra: 
+the map embeds the higher Kac-Moody algebra into the quantum observables of a free theory, namely the $\beta\gamma$ system. 
+
+\subsubsection{Sphere operators}
+
+This formulation may seem abstract because it uses factorization algebras,
+but we obtain a more concrete result once we specialize to the sphere operators. 
+It realizes a representation of $\Tilde{\fg}^\bullet_{d,\theta}$ inside a Weyl algebra determined by  the $\beta\gamma$ system.
+
+Recall from Section~\ref{sec:functionsofpunctureddspace} the dg algebra $A_d$ that provides a dg model for functions on punctured affine space.
+Indeed, we have an inclusion of cochain complexes $A_d \hookrightarrow \Omega^{0,*}(\CC^d \setminus 0)$ that is dense in cohomology.
+
+Consider the dg vector space
+\[
+A_d \tensor (V \oplus V^*[d-1])
+\]
+where $V$ is our $\fg$-representation. 
+The dual pairing between $V$ and $V^*$ combined with the higher residue defines a symplectic structure $\omega_V$ on this dg vector space via
+\[
+\omega_V(\alpha \tensor v, \beta \tensor v^*) = \<v, v^*\>_V \oint_{S^{2d-1}} \alpha \wedge \beta\, \d^d z .
+\]
+This structure leads to the following dg version of the usual canonical quantization story.
+
+\begin{dfn}
+The {\em Heisenberg dg Lie algebra} $\sH_{d,V}$ of this symplectic dg vector space $A_d \tensor (V \oplus V^*[d-1])$ is the central extension
+\[
+\CC \to \sH_{d,V} \to A_d \tensor (V^*[d-1] \oplus V) 
+\]
+determined by the $2$-cocycle $\omega_V$. 
+Explicitly, the nontrivial bracket is
+\[
+[c, b] =  \oint_{S^{2d-1}} \<c \wedge b\>_V\, \d^d z,
+\]
+where $\<c \wedge b\>_V$ refers to taking the wedge product in $A_d$ together with the pairing between $V$ and its dual. 
+\end{dfn}
+
+The universal enveloping algebra $U(\sH_{d,V})$ is a dg version of the Weyl algebra.
+We think of this algebra as an algebraic replacement of differential operators on the mapping space $\Map(S^{2d-1},V)$.
+
+The algebra $U(\sH_{d,V})$ is our algebraic replacement for the $E_1$ algebra associated to the pushforward factorization algebras $r_* \Obs^\q_{V}$. 
+Indeed, just as in the case of the current algebra, there is a map of $E_1$ algebras
+\[
+U(\sH_{d,V}) \hookrightarrow r_* \Obs^\q_{V}|_{\hbar = (2 \pi i)^d}
+\]
+that is dense at the level of cohomology. 
+
+In consequence there is a more concrete version of free field realization.
+
+\begin{cor} \label{cor: free}
+The map (\ref{free field}) determines a map 
+\beqn\label{free field2}
+\oint_{S^{2d-1}} J^\q : U\left(\Tilde{\fg}^{\bullet}_{d,\ch^\fg_{d+1}(V)}\right) \to U(\sH_{d,V}) 
+\eeqn
+of $E_1$-algebras.
+\end{cor}
+
+This theorem says that there is a homotopy-coherent map between two explicit algebras,
+but does not spell it out formulaically.
+For $d=1$ both the algebras are concentrated in degree zero and so there is no room for homological subtleties:
+the map is the well-known map from the affine Kac-Moody Lie algebra to the Weyl algebra of formal loops~\cite{FrenkelFree}.
+\owen{Let's be even more precise if we can.}
+In the next subsection we give explicit formulas in the case~$d=2$.
+
+\begin{proof}
+Let $r : \CC^d \setminus 0 \to \RR_{>0}$ be the radial projection. 
+Consider the induced map
+\[
+r_* J^\q :  r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \to  r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}  .
+\]
+Sitting inside the domain and codomain are locally constant subfactorization algebras that encode the enveloping algebras of $\Hat{\fg}_{d,\ch^\fg_{d+1}(V)}$ and $\sH_{d,V}$, respectively.
+We need to understand how the map $r_* J^\q$ intertwines these subalgebras.
+
+The key is to use the action of $U(d)$ by rotating $\CC^d$.
+The classical $\beta\gamma$ system on $\CC^d$ (and $\CC^d \setminus \{0\})$ is manifestly equivariant under this rotation action, as is the classical current algebra.
+The map $J^\cl$ preserves this action, and hence $_* J^\cl$ is $U(d)$-equivariant.
+This equivariance persists upon quantization, since the BV Laplacian is also compatible with this action. 
+Thus, $U(d)$-eigenspaces are preserved.
+
+On the Kac-Moody side, recall that there is subfactorization algebra of $\UU_{\ch_{d+1}^\fg(V)} (\sG_d)$ given by the sum of the $U(d)$-eigenspaces. 
+\owen{Am I interpreting you correctly?}
+It is precisely $\UU_{\ch_{d+1}^\fg(V)} \mathtt{G}_d$, where $\mathtt{G}_d = \Omega^*_{\RR_{>0},c} \otimes \fg^\bullet_d$, as in Section~\ref{sec: spheres}.
+
+On the observables side, the subfactorization algebra of $r_* \left. \Obs^\q_V \right|_{\hbar = (2\pi i)^d}$ consisting of $U(d)$-eigenspaces is also locally constant on $\RR$,
+and it is 
+\[
+\UU_\omega (\Omega^*_{\RR_{>0},c} \otimes (V \oplus V^*[d-1)).
+\]
+Analogously to the Kac-Moody case, it is straightforward to see that this factorization algebra is equivalent to $U(\sH_{d,V})$ as $E_1$ algebras.
+(A detailed proof is available in Chapter 3 of~\cite{BWthesis}).
+
+Finally, note that the family of functionals $\{I^{\sG}[L]\}$ defining the Noether map are all $U(d)$-invariant.
+Thus, $J^\q$ preserves the subfactorization algebras of $U(d)$-eigenspaces, and the result follows.
+\end{proof}
+
+\subsubsection{Explicit formulas for two-dimensional free field realization}
+
+We want to show that these results are not just abstract statements but lead to explicit, useful formulas.
+One can analyze this higher free field realization with bare hands.
+To keep things concrete, we will work out all the details only in the case $d=2$, but our methods work without difficulty (beyond careful bookkeeping) in arbitrary dimension.
+
+%Let us examine first where the desired map (\ref{free field}) comes from.
+%By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
+%a locally constant factorization algebra on $\RR$.
+%Following our approach in Section~\ref{sec: sphere ops},
+%one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+%Hence the map of factorization algebras on punctured affine space pushes forward to the map between the pushforward factorization algebras.
+%We now want to see how this map behaves on the dense, locally constant sub-factorization algebras.
+
+The essential idea is familiar from quantum mechanics and field theory:
+the commutation relations (on the algebra side) can be identified with contractions with the propagator (on the diagrammatic side),
+i.e., the two faces of Wick's formula.
+In the setting of factorization algebras,
+this relationship arises from our embedding of the algebra $U(\cH_{d,V})$ into the factorization algebra $r_* \Obs^q_V$.
+(A pedagogical discussion, with extensive examples, can be found in Chapter 4 of~\cite{CG}.)
+We now spell out this relationship in some detail.
+
+First, it is useful for us present our algebras in terms of residues over the sphere $S^{2d-1}$. 
+This presentation is completely analogous to the mode expansions in a vertex algebra via ordinary residues.
+
+Recall that the higher residue determines a pairing $(-,-)_{\oint}: A_d \tensor A_d \to   \CC$ with
+\[
+(a, b)_{\oint} = \oint_{S^{2d-1}} a \wedge b \wedge \d^d z ,
+\]
+and hence determines a map $A_d \to A_d^\vee [-d + 1]$ that sends an element $a$ to the linear functional $b \mapsto (a, b)_{\oint}$.
+This construction makes sense after tensoring with a vector space $V$,
+so an element $\alpha \in A_d \otimes V^*$ determines a functional 
+\[
+\begin{array}{cccc}
+\oint_{S^{2d-1}} a  : & A_d \tensor V & \to & \CC \\
+& a & \mapsto & \oint_{S^{2d-1}} \<a \wedge c\>_V \wedge \d^d z .
+\end{array}
+\]
+Setting $d=1$, the reader will recognize standard manipulations with the usual residue formula.
+
+We can now describe explicitly a simple linear operator in $U(\sH_{d,V})$ as an element of $r_* \Obs^q_V$ via residues.   
+Let $I \subset \RR_{>0}$ be an interval. 
+An element in the linear component 
+\[
+\rho \tensor a \in \Omega^*_c(I) \tensor \left(A_d \tensor V^*[d-1]\right)
+\] 
+determines the linear observable 
+\[
+\cO_{\rho \otimes a}(\gamma) = \int_{r^{-1}(I)} \rho(r) \<a(z,\zbar), \gamma(z,\zbar)\> \,\d^d z 
+\] 
+where $\gamma \in \Omega^{0,*}(r^{-1}(I)) \otimes V$ is a field on the shell~$r^{-1}(I)$.
+In this way, one can generate, in fact, a generating collection of linear operators for the whole enveloping algebra.
+
+We have seen how to embed simple operators,
+since $A_d$ is a subcomplex of $\Omega^{0,*}(\CC^d)$,
+so now we build toward describing how the commutator in $U(\sH_{d,V})$ in terms of contractions with the propagator $P = P_{0 < \infty}$ for~$\Omega^{0,*}(\CC^d)$. 
+
+Recall that the propagator is a distributional $(0,1)$-form on $\CC^d \times \CC^d$ with values in $V^* \tensor V$, 
+and it satisfies $\d^2 z\, \dbar P = \delta_{{\rm diag}} (z) \id_V$, where $\delta_{{\rm diag}}$ is the $\delta$-distribution along the diagonal $\CC^d$ in $\CC^{2d}$. 
+We view $\id_V$ as an element of $V^* \tensor V$. 
+We note that $P$ is smooth away from the diagonal; 
+its singularities lie only along the diagonal.
+%Notice this differs from our convention before where we included the holomorphic top form in $P$. 
+%We have absorbed this into the definition of the pairing defining $\sH_V$. 
+%\[
+%P \in (A_d \tensor V^*[d-1]) \Hat{\tensor} (A_d \tensor V) = (A_d \Hat{\tensor} A_d) \tensor (V^* \tensor V) [d-1] .
+%\] 
+%This is simply the Green's function for the Hodge Laplacian restricted to the space 
+%\[
+%A_d \Hat{\tensor} A_d \subset \Omega^{0,*}(\CC^d \setminus 0) \Hat{\tensor} \Omega^{0,*}(\CC^d \setminus 0) = \Omega^{0,*}((\CC^d \setminus 0) \times (\CC^d \setminus 0))
+%\]
+%tensored with the identity on $V$ viewed as an element in $V^* \tensor V$. 
+%For instance, when $d = 1$, so that $A_1 = \CC[z,z^{-1}]$ we have
+%\[
+%P = \frac{1}{z-w} \id_V
+%\]
+The analytic and the algebraic factors decouple, 
+so to simplify notations, let $P(z) = p(z) \tensor \id_V$, 
+where $p(z)$ is the differential form part of the propagator above. 
+Since $\d^d z \, \dbar p(z)$ is the $\delta$-function on $\CC^d \setminus 0$,
+one has the residue formula
+\[
+\oint_{S^{2d-1}} p(z) \,\d^d z = 1 .
+\]
+Thus, $p(z)$ is the $\delta$-function for the $(2d-1)$-sphere.
+In the case~$d=2$,
+the propagator is given by
+\[
+P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V}.
+\]
+We can finally examine the commutator-contraction relation.
+
+\owen{The following paragraph should be revised to say where things live.}
+
+Consider the quadratic observables in $U (\sH_{d,V})$ given~by
+\[
+F_a(b,c) = \oint_{S^3} \d^2 z\, \<b, (a \cdot c)\>_V 
+\]
+and
+\[
+F_{a'}(b,c) = \quad \oint_{S^3} \d^2 z\, \<b, (a'\cdot c)\>_V,
+\]
+where $a,a' \in A_2 \tensor \fg$. 
+The commutator bracket in $U (\sH_{d,V})$~is
+\beqn\label{bracket}
+\left[\oint_{z \in S^{3}} \<b , a \cdot c \>_V , \oint_{w \in S^{3}} \<b , a' \cdot c\>_V \right],
+%\oint_{z \in S^{3}} \oint_{w \in S^{3}} \<a \tensor b ,{\rm Cas}_{V} \cdot \omega_{BM}(z,w)\> .
+\eeqn
+and it should be computable as the sum of three types of terms: 
+\begin{itemize}
+\item the terms that arise by contracting one $b$ from one observable with one $c$ field from the other observable, using the propagator --- this yields a new quadratic observable;
+\item the term that contracts away all the fields --- this yields a constant term; and
+\item a contact term.
+\end{itemize}
+The first kind of term has the form
+\[
+\oint_{z \in S^3} \d^2 z\, \oint_{w \in S^3} \d^2 w\, p(z-w) \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \, c(w,\wbar)\>_V  .
+\]
+Let $\eta(z,\zbar;w,\wbar) = \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \cdot c(w,\wbar)\>_V$.
+Since $\d^2 w\, \dbar p(z-w) = \delta(z-w)$, we can write 
+\[
+\oint_{w \in S^3} \d^2 w\, p(z-w) \eta(z,\zbar;w,\wbar) = \eta(z,\zbar;z,\zbar)- \int_{N_{\epsilon}} \d^2 w\, p(z-w) \rho(w,\wbar) \dbar_w \eta(z,\zbar;w,\wbar) .
+\] 
+Here, $N_\epsilon$ is a neighborhood of the $3$-sphere inside of $\CC^2$ and $\rho(w,\wbar)$ is a compactly supported function that is identically $1$ near the inner boundary of the neighborhood and identically zero near the outer boundary.
+
+The second term in the above expression \owen{What do you have in mind here? It isn't written explicitly. I'm guessing you mean a "contact term"} spoils the compatibility of the bracket in $A_2 \tensor \fg$ and the commutator in the Heisenberg algebra.
+It arises precisely because our differential forms may not be holomorphic.
+By contrast, in the $d=1$ case, the model $A_1 = \CC[z,z^{-1}]$ consists of holomorphic Laurent polynomials, and so the Lie brackets agree on the nose. 
+The failure of this bracket is corrected by an $A_\infty$ morphism, as we will see in the section below.
+
+There is potentially another term in the expansion of (\ref{bracket}) involving a {\em double} contraction and hence has integrand proportional to $p(z-w)^2$. 
+In fact, this term vanishes identically since $p(z-w)$ is a $(0,1)$-form. 
+Thus, the double contraction does not appear when $d=2$ (but it could in other dimensions). \owen{Ok to add the parenthetical?}
+Again, this result differs from the $d=1$ case, where the double contraction produces the term equal proportional to the level of the affine Kac-Moody algebra. 
+
+This example of the commutator of quadratic observables encodes the key information in this situation.
+We now make a clean general statement.
+
+The map of interest
+\[
+\oint_{S^3} J^\q : U\left(\Tilde{\fg}_{2, \ch_3(V)}\right) \to U(\sH_{2})
+\] 
+goes from an $A_\infty$ algebra to the enveloping algebra of a strict dg Lie algebra, which is a strict dg associative algebra. 
+Indeed, by definition, $U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)$ is the enveloping algebra of an $L_\infty$ algebra, so it has nonzero higher multiplications
+\[
+m_k : \sA_2^{\tensor k} \to \sA_2 
+\] 
+for $k = 1, 2$, and $3$ because the $L_\infty$ algebra $\Tilde{\fg}_{2, \ch_3(V)}$ only has nonzero $\ell_1 = \dbar, \ell_2 = [-.-]$ and $\ell_3$. 
+The multiplications satisfy $m_k = 0$ for $k > 2$. 
+
+\begin{prop}\label{prop: ainfinty}
+In dimension $d = 2$, an $A_\infty$ model for the map (\ref{free field2}) of $E_1$-algebras is given by the sequence of maps $(\sJ_k)_{k = 1,2,\ldots}$, where
+\[
+\sJ_k : \sA_2^{\tensor k} \to U(\sH_V)[2-k],
+\]
+with $\sJ_k = 0$ for~$k > 2$,
+\[
+\sJ_1 (\alpha) = \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
+\]
+and 
+\[
+\sJ_2 (\alpha, \alpha') = \oint_{z \in S^3} \int_{w \in N_{\epsilon}}  \<\beta(z), [\alpha(z),\alpha'(z)] \gamma(w) \>_V \, \rho(w) p(z-w) .
+\] 
+where $N_\epsilon$ is some neighborhood of $S^3$ and $\rho$ is a compactly supported function as in the  preceding computation. 
+\end{prop}
+
+\begin{proof}
+In the computation of the commutator of quadratic observables,
+we saw that the $1$-ary map $\sJ_1$ fails to be compatible with the commutator.
+This failure is precisely corrected by the $2$-ary map $\sJ_2$: 
+we will show
+\[
+\dbar \sJ_2(\alpha, \alpha') \pm \sJ_2(\dbar \alpha, \alpha') \pm \sJ_2(\alpha, \dbar \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')] .
+\] 
+Suppose for simplicity that $\alpha,\alpha'$ are holomorphic.
+In that case, the desired identity simplifies to 
+\[
+\dbar \sJ_2(\alpha, \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')].
+\]
+Above, we saw that the right-hand side~is
+\[
+\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \, \rho(w) p(z-w),
+\]
+which is precisely the functional~$\dbar \sJ_2(\alpha,\alpha')$. 
+\owen{Do we need to deal with the nonholomorphic cases too?}
+
+It remains to show how $\sJ_2$ is compatible with the $L_\infty$ extension,
+i.e., that the $\ell_3$ term is the homotopy in the Jacobi relation up to homotopy.
+For $\alpha,\alpha',\alpha'' \in A_d \tensor \fg$: we want
+\beqn\label{relationsb}
+\oint_{S^3} \Tr_V \left(\alpha\wedge \partial \alpha' \wedge \partial \alpha''\right) = \displaystyle \left(\sJ_2(\alpha, [\alpha',\alpha'']) + \;{\rm permutations} \right) + \left(\left[\sJ_1(\alpha), \sJ_2(\alpha',\alpha'') \right] + \; {\rm permutations} \right)
+\eeqn
+There are two types of terms present here. 
+
+First, there are the single contractions of the propagator, which contributes terms of the form
+\[
+\oint_{z \in S^3} \d^2 z\, \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \, \rho(w) p(z-w).
+\]
+These single contraction terms cancel the first term in parentheses in Equation~(\ref{relationsb}). 
+
+The second type of term involves a double contraction of the propagator. 
+It contributes terms of the form
+\[
+\oint_{z \in S^3} \int_{w \in N_\epsilon} \oint_{u \in S^3} \Tr_V(\alpha(z) \wedge \alpha'(w) \wedge \alpha''(w)) \rho(w) p(z-w) p(z-u) p(w-u) .
+\]
+We note the similarities of this term and the weight of the $3$-vertex wheel appearing the calculation of the anomaly to satisfying the equivariant quantum master equation. 
+In fact, similar manipulations as in Appendix \ref{sec: feynman} show that it equals the left-hand side of (\ref{relationsb}), and hence the $A_\infty$-relation is satisfied.
+%\beqn
+%\begin{array}{lll}
+%\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permutations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
+%& = & \displaystyle \label{dbarstar} \left( \oint_{S^3} \<\dbar^*\beta, [a, [a',a'']]\>_V + \; {\rm permutations} \right) \\ & & \displaystyle + \left(\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right] + \; {\rm permutations}\right) 
+%\end{array}
+%\eeqn
+%A term labeled ``permutations'' is identical to the other term inside parentheses, but with the inputs $a,a',a''$ permuted (with appropriate signs). 
+%
+%In the very last line, we have commutators of the form  
+%\[
+%\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right]  .
+%\]
+%In general, there will be two types of terms in the expansion of this commutator. 
+%One involves a single contraction with the propagator $P$ and contributes terms of the form
+%\[
+%\oint_{S^3} \<\dbar^* \beta, [a,[a',a'']]\>
+%\]
+%plus permutations. 
+%These will cancel terms in the second line of Equation (\ref{dbarstar}). 
+%The second type of term involves a double contraction and contributes terms of the form
+%\[
+%\oint_{z \in S^3} \oint_{w \in S^3} \Tr_V(a \wedge a' \wedge a'') p(z-w) \dbar^* p(z-w)  .
+%\] 
+\end{proof}
+
+

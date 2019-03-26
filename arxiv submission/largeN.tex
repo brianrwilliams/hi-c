@@ -1,0 +1,141 @@
+\section{Large $N$ limits} \label{sec: largeN}
+
+
+\def\cycls{{\rm Cyc}_*}
+\def\lqt{{\ell q t}}
+\def\colim{{\rm colim}}
+\def\sl{\mathfrak{sl}}
+
+We take a slight detour from the main course of this paper to remark on something special that happens for the case of $\gl_N$ as $N$ goes to infinity.
+The observations we make here are borrowed from unpublished work of the first author with Greg Ginot and Mahmoud Zeinalian,
+but they are closely related to prior work of Costello-Li \cite{CLbcov2} and Movshev-Schwarz~\cite{} \brian{Not sure which ref you mean}.
+
+The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
+which yields a natural map \owen{ugly notation so lets find a better one}
+\[
+\lqt(A) :\colim_{N}\, \cliels(\gl_N(A)) \cong \cliels(\gl_\infty(A)) \to \Sym(\cycls(A)[1])
+\]
+for any dg algebra $A$ over a field $k$ of characteristic~0.
+(It works even for $A_\infty$ algebras.)
+Naturality here means that it works over the category of dg algebras and maps of dg algebras.
+When restricted to the $\sl_\infty(k)$-invariants, we obtain a quasi-isomorphism
+\[
+\lqt(A) :\cliels(\gl_\infty(A))^{\sl_\infty(k)} \xto{\simeq} \Sym(\cycls(A)[1]),
+\]
+even when $A$ is nonunital. 
+(When $A$ is unital, the $\sl_\infty(k)$-invariants are quasi-isomorphic to the full Chevalley-Eilenberg chains,
+making for a very nice relationship. 
+Note that it is potentially problematic to use strict invariants with a particular model for derived coinvariants of a Lie algebra,
+namely Chevalley-Eilenberg chains.)
+
+By taking $A$ to be the cosheaf $\Omega^{0,*}_c$ on a complex manifold $X$,
+we obtain the following, whose proof is deferred to the end of this section.
+
+\begin{prop}
+Let $\sG l_N$ denote the local Lie algebra $\Omega^{0,*} \otimes \gl_N$.
+For every $N$, there is a map of prefactorization algebras
+\[
+\lqt_N: \UU \sG l_N \to \Sym(\cycls(\Omega^{0,*}_c)[1])
+\]
+that factors through a map of prefactorization algebras
+\[
+\lqt: \UU \sG l_\infty \to \Sym(\cycls(\Omega^{0,*}_c)[1]).
+\]
+On any complex $d$-fold $X$, there is a quasi-isomorphism
+\[
+\lqt(X): \UU \sG l_\infty(X)^{\sl_\infty(\CC)} \to \Sym(\cycls(\Omega^{0,*}_c(X))[1]),
+\]
+and on closed $X$, there is a quasi-isomorphism
+\[
+\lqt(X): \UU \sG l_\infty(X) \to \Sym(\cycls(\Omega^{0,*}_c(X))[1]).
+\]
+\end{prop}
+
+\begin{rmk}
+We note that, as with the definition of the Chevalley-Eilenberg chains of a local Lie algebra,
+we use here a construction of cyclic chains that plays nicely with the kind of vector spaces relevant to this situation,
+namely smooth sections of vector bundles.
+Where the cyclic quotient $A^{\otimes n}/C_n$ would appear for an ordinary algebra in complex vector spaces,
+we take the $\Omega^{0,*}(X^n)/C_n$ and so on.
+\owen{I need to check that the $\Sym$ doesn't lead to issues \dots If we must, we can ignore the quasi-isomorphism and focus on the map just to cyclic homology.}
+\end{rmk}
+
+\brian{Would it also be a good idea to remark on the ``local cyclic cohomology"?
+I think that's even easier to compute in this case, and we could point to the extensions.
+I can put that in if you'd like.
+}
+
+\owen{Yes, we should do that. We could then relate to FHK again, the idea being that an extension of the cyclic jobby determines an extension of the $\gl_\infty$ jobby, which pulls back along the map to $\fg$ induced by any finite-dimensional representation. We would also obtain an interesting twist of the LQT set-up, I hope.}
+
+This result has teeth because it is possible to compute the relevant cyclic homology.
+For simplicity, consider the case where $X$ is closed, 
+so that we are working with the Dolbeault complex and hence are implicitly computing the cyclic homology of the structure sheaf $\cO$ on $X$.
+Standard results \owen{e.g., Thm 3.4.12 of Loday} then imply that
+\[
+H^*(\cycls(\Omega^{0,*}(X))) \cong \bigoplus_{n \geq 0} \left( H^*(X, \Omega^n_{hol}/\partial \Omega^{n-1}_{hol}) \oplus \bigoplus_{k > 0} H^{n-2k}_{dR}(X) \right)[-n]
+\]
+In conjunction with the proposition, we see that the large $N$ limit of the enveloping factorization algebras $\UU \sG l_\infty$ depends primarily on the underlying topology of the complex manifold $X$, 
+along with a subtle dependence on the complex geometry through the cohomology of the quotient sheaves $\Omega^n_{hol}/\partial \Omega^{n-1}_{hol}$.
+In the future we hope to pursue the consequences of this observation, 
+as it indicates that there is an important class of currents that can be understand through cyclic methods.
+In particular, it would be interesting to relate these results to aspects of the large $N$ limits of holomorphic gauge theories.
+
+\begin{rmk}
+Loday and Procesi proved variants of the Loday-Quillen-Tsygan theorem for the Lie algebras $\mathfrak{o}_n$ and $\mathfrak{sp}_{2n}$,
+in which cyclic homology of the algebra is replaced by its dihedral homology.
+As nothing substantive changes in proving analogous versions of our results above, 
+we do not spell out the details here.
+It would be interesting to pursue the analogues of questions just raised for these Lie algebras.
+\end{rmk}
+
+\begin{proof}
+The main issue is to show that $\Sym(\cycls(\Omega^{0,*}_c)[1])$ is a prefactorization algebra,
+since the Loday-Quillen-Tsygan construction then implies the rest of the claim.
+
+As $\cycls$ is a functor on the category of dg algebras, 
+we see that $\cycls(\Omega^{0,*}_c)$ is a precosheaf
+and hence $\cC = \Sym(\cycls(\Omega^{0,*}_c)[1])$ is also a precosheaf. 
+
+It remains to provide the structure maps of the putative prefactorization algebra~$\cC$.
+We note that for two algebras $A$ and $B$,
+\[
+\cycls(A) \oplus \cycls(B) \simeq \cycls(A \times B)
+\] 
+by \owen{find convenient reference (use the two idempotents)}.
+Hence, for the cosheaf $\Omega^{0,*}_c$ on pairwise disjoint opens $U_1,\ldots, U_n$,
+the isomorphism of dg algebras
+\[
+\Omega^{0,*}_c(U_1) \times \cdots \times \Omega^{0,*}_c(U_n) \cong \Omega^{0,*}_c(U_1 \sqcup \cdots \sqcup U_n),
+\]
+determines a quasi-isomorphism
+\beqn
+\label{eqn:cyccosheaf}
+\cycls(\Omega^{0,*}_c(U_1)) \oplus \cdots \oplus \cycls(\Omega^{0,*}_c(U_n)) \xto{\simeq} \cycls(\Omega^{0,*}_c(U_1 \sqcup \cdots \sqcup U_n)).
+\eeqn
+Now suppose these pairwise disjoint opens $U_1,\ldots, U_n$ sit inside a larger open $V$.
+We need to provide a multilinear structure map 
+\beqn
+\label{eqn: desiredmap}
+\cC(U_1) \times \cdots \times \cC(U_n) \to \cC(V)
+\eeqn
+to describe $\cC$ as a prefactorization algebra.
+The inclusion $U_1 \sqcup \cdots \sqcup U_n \hookrightarrow V$ provides a map
+\[
+\cycls(\Omega^{0,*}_c(U_1 \sqcup \cdots \sqcup U_n)) \to \cycls(V),
+\]
+via the precosheaf $\cycls(\Omega^{0,*}_c)$,
+and so applying $\Sym$ gives us
+\beqn
+\label{eqn:map2}
+\cC(U_1 \sqcup \cdots \sqcup U_n) \to \cC(V).
+\eeqn
+Likewise, applying $\Sym$ to map \eqref{eqn:cyccosheaf} provides
+\[
+\cC(U_1) \times \cdots \times \cC(U_n) \to \cC(U_1 \sqcup \cdots \sqcup U_n).
+\]
+We thus obtain the desired map \eqref{eqn: desiredmap} as a composite.
+This construction is automatically associative for nested inclusions of pairwise disjoint opens,
+and so $\cC$ is a prefactorization algebra.
+\end{proof}
+
+

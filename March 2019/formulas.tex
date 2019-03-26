@@ -1,0 +1,81 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros,slashed}
+
+\linespread{1.25}
+
+\def\sAd{\sA{\rm d}}
+
+\usepackage[final]{pdfpages}
+
+\setcounter{tocdepth}{3}
+
+\title{Formulas for Noether's map}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
+
+
+\begin{document}
+\maketitle
+
+%Let $\pi : \CC^d \setminus \{0\} \to \RR_{>0}$ be the projection.
+%For any interval $I \subset \RR$ we can consider the restriction $\pi|_{\pi^{-1}(I)} : \pi^{-1}(I) \to I$. 
+%
+%Let $I = (a,b) \subset \RR_{>0}$ and $f$ a bump function for $I$. 
+%This means that $f$ is supported on $I$, vanishes near $a$, takes value $1$ near $b$, and $\int_{\RR} f(r) \d r = 1$. 
+%With such a choice, we obtain a map of commutative dg algebras
+%\[
+%\pi_I : A_{d}[-1] \to \pi_* \Omega^{0,*}_c (I) = \Omega_c^{0,*}(\pi^{-1}(I))
+%\]
+%defined by sending an element $\alpha \in A_{d}$ to $\dbar(\pi^*f \alpha)$. 
+%Here, we recall that we can view any $\alpha \in A_d$ in the Dolbeualt complex on $\CC^d$. 
+%Since $f$ is a bump function, $\pi^*f \alpha$ is a compactly supported Dolbeualt form on $\pi^{-1}(I)$. 
+
+Recall the map of precosheaves of dg Lie algebras on $\RR_{>0}$
+\[
+\pi_{\fg,d} : \Omega^*_{\RR_{>0}, c} \tensor \fg_{d}^\bullet \to r_* \sG_d . 
+\]
+Specializing this map on an open interval $I \subset \RR$ yields a map of dg Lie algebras 
+\[
+\pi_{\fg,d}(I) : \Omega^*_c(I) \tensor \fg_{d}^\bullet \to \sG_d (r^{-1}(I)) .
+\]
+Since $\Omega^*_c(I) \simeq \CC[-1]$ for any open interval, this specialization results in a map of graded Lie algebras
+\[
+H^* \pi_{\fg,d}(I) : H^*(\fg_d^\bullet) [-1] = H^*(A_d) \tensor \fg [-1] \to H^* \sG_d (r^{-1}(I)) 
+\]
+at the level of cohomology. 
+
+With this notation set up, we have an explicit description of Noether's map when we evaluate on open sets of the form $r^{-1} (I) \subset \CC^d$. 
+
+\begin{lem}
+In cohomology, the composition of Noether's map $r_*J^{\cl}$ with $\pi_{\fg, d}(I)$ 
+\[
+H^*(A_d) \tensor \fg \xto{H^* \pi_{\fg, d}} H^* r_* \UU(\sG_d) \xto{r_*J^{\cl}} H^* r_* \Obs^{\q}_{\beta \gamma}
+\]
+sends an element $\alpha \tensor X \in H^*(A_d) \tensor \fg$ to the quadratic observable
+\[
+(\gamma \tensor v, \beta \tensor v^*) \mapsto \<v^*, X \cdot v\>_V \oint_{S^{2d-1}} \beta \wedge \alpha \wedge \gamma .
+\]
+\end{lem}
+
+In the quantum case, we have the following
+\begin{lem}
+In cohomology, the composition of Noether's map $r_*J^{\q}$ with $\UU\pi_{\fg, d}(I)$ 
+\beqn\label{composition}
+H^*\left(U \Hat{\fg}_{d, \ch_{d+1}^\fg(V)}\right) \xto{H^* \UU \pi_{\fg, d}} H^* r_* \UU_{\ch_{d+1}^\fg(V)} (\sG_d) \xto{r_*J^{\q}} H^* \left(\left. r_* \Obs^{\q}_{\beta \gamma} \right|_{\hbar = (2\pi i)^d}\right) 
+\eeqn
+sends a linear element $\alpha \tensor X \in H^*(A_d) \tensor \fg$ to the quadratic observable
+\[
+(\gamma \tensor v, \beta \tensor v^*) \mapsto \<v^*, X \cdot v\>_V \oint_{S^{2d-1}} \beta \wedge \alpha \wedge \gamma .
+\]
+\end{lem}
+
+Since each of the maps in (\ref{composition}) is a map of (graded) algebras, the composition is determined by its value on the linear elements $H^*(A_d) \tensor \fg$. 
+We also note that from the formula above, it is clear the composition factors through the cohomology of $U(\sH_{V})$ to give a map
+\[
+H^*\left(U \Hat{\fg}_{d, \ch_{d+1}^\fg(V)}\right) \to H^* U(\sH_V) .
+\]
+\brian{Maybe we should say why residues live in $U(\sH_V)$.}
+
+\end{document}

@@ -1,0 +1,216 @@
+\begin{thebibliography}{LMNS98}
+
+\bibitem[AB67]{AB}
+M.~F. Atiyah and R.~Bott.
+\newblock A {L}efschetz fixed point formula for elliptic complexes. {I}.
+\newblock {\em Ann. of Math. (2)}, 86:374--407, 1967.
+
+\bibitem[AF15]{AFTopMan}
+David Ayala and John Francis.
+\newblock Factorization homology of topological manifolds.
+\newblock {\em J. Topol.}, 8(4):1045--1084, 2015.
+
+\bibitem[BD04]{BD}
+Alexander Beilinson and Vladimir Drinfeld.
+\newblock {\em Chiral algebras}, volume~51 of {\em American Mathematical
+  Society Colloquium Publications}.
+\newblock American Mathematical Society, Providence, RI, 2004.
+
+\bibitem[Bor86]{BorcherdsVertex}
+Richard~E. Borcherds.
+\newblock Vertex algebras, {K}ac-{M}oody algebras, and the {M}onster.
+\newblock {\em Proc. Nat. Acad. Sci. U.S.A.}, 83(10):3068--3071, 1986.
+
+\bibitem[CG]{CG2}
+Kevin Costello and Owen Gwilliam.
+\newblock Factorization algebras in quantum field theory. {V}ol. 2.
+\newblock available at \url{http://people.mpim-bonn.mpg.de/gwilliam}.
+
+\bibitem[CG17]{CG1}
+Kevin Costello and Owen Gwilliam.
+\newblock {\em Factorization algebras in quantum field theory. {V}ol. 1},
+  volume~31 of {\em New Mathematical Monographs}.
+\newblock Cambridge University Press, Cambridge, 2017.
+
+\bibitem[CLa]{CLbcov2}
+Kevin Costello and Si~Li.
+\newblock {Q}uantization of open-closed {B}{C}{O}{V} theory, {I}.
+\newblock Available at \url{https://arxiv.org/abs/1505.06703}.
+
+\bibitem[CLb]{CostelloLiSUGRA}
+Kevin Costello and Si~Li.
+\newblock Twisted supergravity and its quantization.
+\newblock Available at \url{https://arxiv.org/abs/1606.00365}.
+
+\bibitem[Cos]{WG2}
+Kevin Costello.
+\newblock A geometric construction of the {W}itten genus, {II}.
+\newblock available at \url{http://arxiv.org/abs/1112.0816}.
+
+\bibitem[Cos11]{CosRenorm}
+Kevin Costello.
+\newblock {\em Renormalization and effective field theory}, volume 170 of {\em
+  Mathematical Surveys and Monographs}.
+\newblock American Mathematical Society, Providence, RI, 2011.
+
+\bibitem[FHK]{FHK}
+Giovanni Faonte, Benjamin Hennion, and Mikhail Kapranov.
+\newblock {Higher Kac-Moody algebras and moduli spaces of G-bundles}.
+\newblock Available at \url{https://arxiv.org/pdf/1701.01368.pdf}.
+
+\bibitem[FOT08]{Tanre}
+Yves F\'{e}lix, John Oprea, and Daniel Tanr\'{e}.
+\newblock {\em Algebraic models in geometry}, volume~17 of {\em Oxford Graduate
+  Texts in Mathematics}.
+\newblock Oxford University Press, Oxford, 2008.
+
+\bibitem[Fre85]{IgorKM}
+I.~B. Frenkel.
+\newblock Representations of {K}ac-{M}oody algebras and dual resonance models.
+\newblock In {\em Applications of group theory in physics and mathematical
+  physics ({C}hicago, 1982)}, volume~21 of {\em Lectures in Appl. Math.}, pages
+  325--353. Amer. Math. Soc., Providence, RI, 1985.
+
+\bibitem[Fre92]{FrenkelFree}
+Edward Frenkel.
+\newblock Determinant formulas for the free field representations of the
+  {V}irasoro and {K}ac-{M}oody algebras.
+\newblock {\em Phys. Lett. B}, 286(1-2):71--77, 1992.
+
+\bibitem[Fuk86]{Fuks}
+D.~B. Fuks.
+\newblock {\em Cohomology of infinite-dimensional {L}ie algebras}.
+\newblock Contemporary Soviet Mathematics. Consultants Bureau, New York, 1986.
+\newblock Translated from the Russian by A. B. Sosinski{\u\i}.
+
+\bibitem[GGW]{GGW}
+Owen Gwilliam, Vassily Gorbounov, and Brian Williams.
+\newblock {C}hiral differential operators via {B}atalin-{V}ilkovisky
+  quantization.
+\newblock Available at \url{https://arxiv.org/abs/1610.09657}.
+
+\bibitem[GH18]{GH}
+Owen Gwilliam and Rune Haugseng.
+\newblock Linear {B}atalin-{V}ilkovisky quantization as a functor of
+  {$\infty$}-categories.
+\newblock {\em Selecta Math. (N.S.)}, 24(2):1247--1313, 2018.
+
+\bibitem[Gwi12]{GwThesis}
+Owen Gwilliam.
+\newblock {\em Factorization {A}lgebras and {F}ree {F}ield {T}heories}.
+\newblock ProQuest LLC, Ann Arbor, MI, 2012.
+\newblock Thesis (Ph.D.)--Northwestern University.
+
+\bibitem[Hop48]{Hopf}
+H.~Hopf.
+\newblock Zur {T}opologie der komplexen {M}annigfaltigkeiten.
+\newblock In {\em Studies and {E}ssays {P}resented to {R}. {C}ourant on his
+  60th {B}irthday, {J}anuary 8, 1948}, pages 167--185. Interscience Publishers,
+  Inc., New York, 1948.
+
+\bibitem[Joh95]{JohansenKM}
+Andrei Johansen.
+\newblock Infinite conformal algebras in supersymmetric theories on
+  four-manifolds.
+\newblock {\em Nuclear Phys. B}, 436(1-2):291--341, 1995.
+
+\bibitem[Kac98]{KacVertex}
+Victor Kac.
+\newblock {\em Vertex algebras for beginners}, volume~10 of {\em University
+  Lecture Series}.
+\newblock American Mathematical Society, Providence, RI, second edition, 1998.
+
+\bibitem[Kas86]{KasselCliff}
+Christian Kassel.
+\newblock A {K}\"{u}nneth formula for the cyclic cohomology of {${\bf
+  Z}/2$}-graded algebras.
+\newblock {\em Math. Ann.}, 275(4):683--699, 1986.
+
+\bibitem[Knu]{Knudsen}
+Ben Knudsen.
+\newblock Higher {E}nveloping {A}lgebras.
+\newblock Available at \url{https://arxiv.org/abs/1605.01391}.
+
+\bibitem[LMNS96]{LMNS1}
+Andrei Losev, Gregory Moore, Nikita Nekrasov, and Samson Shatashvili.
+\newblock Four-dimensional avatars of two-dimensional {RCFT}.
+\newblock {\em Nuclear Phys. B Proc. Suppl.}, 46:130--145, 1996.
+\newblock $S$-duality and mirror symmetry (Trieste, 1995).
+
+\bibitem[LMNS97]{LMNS2}
+Andrei Losev, Gregory Moore, Nikita Nekrasov, and Samson Shatashvili.
+\newblock Chiral {L}agrangians, anomalies, supersymmetry, and holomorphy.
+\newblock {\em Nuclear Phys. B}, 484(1-2):196--222, 1997.
+
+\bibitem[LMNS98]{LMNS3}
+Andrei Losev, Gregory Moore, Nikita Nekrasov, and Samson Shatashvili.
+\newblock Central extensions of gauge groups revisited.
+\newblock {\em Selecta Math. (N.S.)}, 4(1):117--123, 1998.
+
+\bibitem[Lod98]{LodayCyclic}
+Jean-Louis Loday.
+\newblock {\em Cyclic homology}, volume 301 of {\em Grundlehren der
+  Mathematischen Wissenschaften [Fundamental Principles of Mathematical
+  Sciences]}.
+\newblock Springer-Verlag, Berlin, second edition, 1998.
+\newblock Appendix E by Mar\'{i}a O. Ronco, Chapter 13 by the author in
+  collaboration with Teimuraz Pirashvili.
+
+\bibitem[Los98]{LosikDiag}
+Mark~V. Losik.
+\newblock Diagonal cohomology of the {L}ie algebra of vector fields.
+\newblock {\em Differential Geom. Appl.}, 8(1):71--86, 1998.
+
+\bibitem[LQ84]{LQ}
+Jean-Louis Loday and Daniel Quillen.
+\newblock Cyclic homology and the {L}ie algebra homology of matrices.
+\newblock {\em Comment. Math. Helv.}, 59(4):569--591, 1984.
+
+\bibitem[Lur]{LurieHA}
+Jacob Lurie.
+\newblock Higher {A}lgebra.
+\newblock available at
+  \url{http://www.math.harvard.edu/~lurie/papers/higheralgebra.pdf}.
+
+\bibitem[MS15]{MovSch}
+M.~V. Movshev and A.~Schwarz.
+\newblock Generalized {C}hern-{S}imons action and maximally supersymmetric
+  gauge theories.
+\newblock In {\em String-{M}ath 2012}, volume~90 of {\em Proc. Sympos. Pure
+  Math.}, pages 327--340. Amer. Math. Soc., Providence, RI, 2015.
+
+\bibitem[Nek]{Nek}
+Nikita Nekrasov.
+\newblock Lectures on curved beta-gamma systems, pure spinors, and anomalies.
+\newblock available at \url{http://arxiv.org/abs/0511.3008}.
+
+\bibitem[Tsy83]{Tsy}
+B.~L. Tsygan.
+\newblock Homology of matrix {L}ie algebras over rings and the {H}ochschild
+  homology.
+\newblock {\em Uspekhi Mat. Nauk}, 38(2(230)):217--218, 1983.
+
+\bibitem[Wila]{BWthesis}
+Brian Williams.
+\newblock The higher dimensional holomorphic $\sigma$-model.
+\newblock {T}hesis (Ph.D.), {N}orthwestern {U}niversity. Available at
+  \url{https://web.northeastern.edu/brwilliams/Research}.
+
+\bibitem[Wilb]{BWhol}
+Brian Williams.
+\newblock Renormalization for holomorphic field theories.
+\newblock Available at \url{https://arxiv.org/abs/1809.02661}.
+
+\bibitem[Wilc]{Willwacher}
+Thomas Willwacher.
+\newblock Local {RRH}.
+\newblock available at
+  \url{https://people.math.ethz.ch/~wilthoma/docs/LRRH.pdf}.
+
+\bibitem[Wit07]{WittenCDO}
+Edward Witten.
+\newblock Two-dimensional models with {$(0,2)$} supersymmetry: perturbative
+  aspects.
+\newblock {\em Adv. Theor. Math. Phys.}, 11(1):1--63, 2007.
+
+\end{thebibliography}

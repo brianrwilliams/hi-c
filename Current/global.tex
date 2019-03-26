@@ -21,6 +21,20 @@ Finally, we return to the LMNS variants of the twisted higher Kac-Moody factoriz
 
 \subsection{Hopf manifolds and Hochschild homology}
 
+Given any (possibly dg) algebra $A$, a trace is a linear map
+\[
+\tr : A \to \CC
+\]
+which vanishes on pure commutators $\tr ([a,b]) = 0$, $a,b \in A$. 
+Thus, every trace determines a linear map $\tr : A / [A,A] \to \CC$. 
+
+There is a mathematical object associated to an algebra, called the {\em Hocschild homology} $HH_*(A)$ of $A$, which describes all traces simultaneously. 
+For an ordinary algebra, in degree zero the Hochschild homology is precisely $HH_0(A) = A / [A,A]$. 
+Thus, the space of all traces for $A$ can be identified with its dual $HH_0(A)^\vee$. 
+
+A natural source of traces, of course, come from modules. 
+Given a finite dimensional module, $V$, the ordinary trace is defined and hence determines an element $\tr_V \in HH_0(A)^\vee$. 
+
 \owen{Add opening: in particular explain (for physicists) that Hochschild homology is the home of all trace maps (and so of characters).}
 
 \subsubsection{Overview of Hopf manifolds}
@@ -353,7 +367,7 @@ It follows that there is a quasi-isomorphism of Hochschild homologies
 Peculiarly, this statement is purely algebraic as the dependence on the manifold for which the Kac-Moody factorization algebra lives has dropped out.
 \owen{I think this is misleading. The map depends on ${\bf q}$.}
 
-\subsection{Coupling to a free theory and character formulas}
+\subsection{Character formulas by coupling to a free theory}
 
 \def\Cl{{\rm Cl}}
 
@@ -619,21 +633,23 @@ Furthermore, this theory is natural in the complex manifold $X$, in the sense th
 we can pull back the $bc$ system on $X'$ to the $bc$ system on $X$. 
 In short, we can consider the ``universal'' $bc$ system as a functor
 \[
-\sE_{bc} : {\rm Hol}_d^{op} \to -1-{\rm PoisVect}
+\sE_{bc} : {\rm Hol}_d^{op} \to (-1){\rm PoisVect}
 \]
 where $(-1){\rm PoisVect}$ is an $\infty$-category of dg vector spaces with 1-shifted skew-symmetric invariant pairing. 
 \owen{what's above is not true, strictly speaking, since if $X$ is not compact, the pairing is ill-defined! It's fixable but I can't think of a really brief fix right at the moment}
-Since $\sG$ also determines a functor $\sG: {\rm Hol}_d^{op} \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the ``universal'' equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
+Since $\sG$ also determines a functor $\sG: {\rm Hol}_d^{op} \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the universal equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
 
 The anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME is encoded by a local functional of the form
 \[
 I_{\Theta_X}(\fc(X))=\int_X \fc(X) \wedge \Tilde{\fj}(\alpha),
 \]
-where $\fc(X) \in \Omega^*(X)$ and where $\Tilde{\fj}$ is a map
+where $\fc(X) \in \Omega^*(X)$ and where $\Tilde{\fj}$ is a linear map of the form
 \[
 \Tilde{\fj} : \Sym(\sG_X[1]) \to \Omega^*(X) .
 \]
 Universality puts restrictions on the differential forms that can appear in the one-loop anomaly. 
+
+Indeed, since the anomaly $\Theta_X$ must be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of $X$. 
 Indeed, since $\Theta_X$ must also be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of~$X$. 
 
 For a Hopf manifold $X$, the Chern classes $c_i(X)$ vanish when $i=1,\ldots,d-1$ for degree reasons. 
@@ -644,7 +660,6 @@ Thus, for $X$ a Hopf manifold, the anomaly $\Theta_X$ must be proportional to a 
 \]
 where $\theta \in \Sym^{d+1}(\fg^*)^\fg$ and $\alpha \in \sG_X$. 
 In other words, we know the anomaly up to a scalar factor, which depends in some way on the representation~$V$.
-\owen{Is that last sentence (which I added) accurate?}
 
 To summarize, we have argued that the local class representing the extension of $\sG_X$ acting on the quantization of the $bc$ system on any Hopf manifold must be of a multiple of $\fj_X(\ch_{d+1}^\fg(V))$. 
 To fully identify this class, we need machinery that we hope to develop in future work. 
@@ -686,9 +701,9 @@ The factorization algebra $\pi_* \UU_{\phi_{\kappa, \theta}} \left(\sG_{\Sigma \
 \eeqn
 where $\phi_{\kappa, \omega}|_{U \times \PP^{d-1}}$ is the restriction of the cocycle to the open set $U \times \PP^{d-1}$. 
 Projective space is Dolbeault formal: its Dolbeault complex is quasi-isomorphic to its cohomology.
-Thus, we have \owen{You can't use ordinary tensor product in that first (untrue) equality \dots}
+Thus, we have\footnote{Here, $\Hat{\tensor}$ is the completed projective tensor product.} 
 \[
-\Omega^{0,*} (U \times \PP^{d-1}) = \Omega^{0,*}(U) \tensor \Omega^{0,*}(\PP^{d-1}) \simeq \Omega^{0,*}(U) \tensor H^*(\PP^{d-1}, \sO) \cong \Omega^{0,*}(U) .
+\Omega^{0,*} (U \times \PP^{d-1}) = \Omega^{0,*}(U) \Hat{\tensor} \Omega^{0,*}(\PP^{d-1}) \simeq \Omega^{0,*}(U) \Hat{\tensor} H^*(\PP^{d-1}, \sO) \cong \Omega^{0,*}(U) .
 \]
 Under this quasi-isomorphism, the restricted cocycle has the form
 \[
@@ -719,9 +734,9 @@ According to the proposition above, for any symmetric invariant pairing $\kappa 
 \phi_{\kappa,\omega}(\alpha) = \int_{\Sigma_1 \times \Sigma_2} \omega \wedge \kappa(\alpha, \partial \alpha) 
 \]
 on the local Lie algebra $\sG_{\Sigma_1\times \Sigma_2}$.
-A similar calculation as in the previous example implies that the pushforward factorization algebra $\pi_{i*}\UU_{\phi_{\kappa, \omega}}\sG$, $i=1,2$, is isomorphic to the two-dimensional \owen{what does 2d mean here?} Kac-Moody factorization algebra on the Riemann surface $\Sigma_i$ with level equal to the Euler characteristic $\chi(\Sigma_j)$, where $j \ne i$. 
-This result was alluded to \owen{where precisely?} in the work of Johansen in \cite{JohansenKM}, 
-where he showed that there exists a copy of the Kac-Moody chiral algebra inside the operators of a twist of the $\cN=1$ supersymmetric multiplet (both the gauge and matter multiplets, in fact) on the K\"{a}hler manifold $\Sigma_1 \times \Sigma_2$. 
+A similar calculation as in the previous example implies that the pushforward factorization algebra $\pi_{i*}\UU_{\phi_{\kappa, \omega}}\sG$, $i=1,2$, is isomorphic to the Kac-Moody factorization algebra on the Riemann surface $\Sigma_i$ with level equal to the Euler characteristic $\chi(\Sigma_j)$, where $j \ne i$. 
+This result was alluded to in Section 5 of Johansen \cite{JohansenKM}, 
+where it is shown that there exists a copy of the Kac-Moody chiral algebra inside the operators of a twist of the $\cN=1$ supersymmetric multiplet (both the gauge and matter multiplets, in fact) on the K\"{a}hler manifold $\Sigma_1 \times \Sigma_2$. 
 In Section~\ref{sec: qft} we saw how the $d = 2$ Kac-Moody factorization algebra embeds inside the operators of a free holomorphic theory on a complex surface. 
 This holomorphic theory, the $\beta\gamma$ system, is the minimal twist of the $\cN=1$ chiral multiplet.
 Thus, we obtain an enhancement of Johansen's result to a two-dimensional current algebra.
