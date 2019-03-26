@@ -1,0 +1,621 @@
+\section{Current algebras on complex manifolds}
+\label{sec: fact}
+
+This paper takes general definitions and constructions from \cite{CG1} and specializes them to the context of complex manifolds.
+In this subsection we will review some of the key ideas but refer to \cite{CG1} for foundational results.
+
+\begin{rmk}
+It might help to bear in mind the one-dimensional case that we wish to extend. 
+Let $\Sigma$ be a Riemann surface, and let $\fg$ be a simple Lie algebra with Killing form $\kappa$.
+Consider the local Lie algebra $\sG_\Sigma = \Omega^{0,*}_c(\Sigma) \tensor \fg$ on $\Sigma$.
+There is a natural cocycle depending precisely on two inputs:
+\[
+\theta( \alpha \otimes M, \beta \otimes N) = \kappa(M,N) \, \int_\Sigma \alpha \wedge \partial \beta  ,
+\]
+where $\alpha, \beta \in \Omega^{0,*}_c(\Sigma)$ and $M,N \in \fg$.
+In Chapter 5 of \cite{CG1} it is shown how the twisted enveloping factorization algebra of $\sG_\Sigma$ for this cocycle recovers the Kac-Moody vertex algebra associated to the affine algebra extending~$L\fg = \fg[z,z^{-1}]$.
+\end{rmk}
+
+\owen{In the introduction (or somewhere else TBD), we should explain that while the symmetries of the fields and action functional are encoded by a sheaf of Lie algebras, the associated observables/operators (under a Noether-type relationship) for a (pre)cosheaf. This is a simple consequence of the fact that observables are covariant in spacetime while fields are contravariant.}
+
+
+\subsection{Local Lie algebras}
+
+A key notion for us is a sheaf of Lie algebras on a smooth manifold.
+These often appear as infinitesimal automorphisms of geometric objects,
+and hence as symmetries in classical field theories.
+
+\begin{dfn} 
+A {\em local Lie algebra} on a smooth manifold $X$ is 
+\begin{itemize}
+\item[(i)] a $\ZZ$-graded vector bundle $L$ on $X$ of finite total rank;
+\item[(ii)] a degree 1 operator $\ell_1:\sL^{sh} \to \sL^{sh}$ on the sheaf $\sL^{sh}$ of smooth sections of~$L$, and
+\item[(iii)] a degree 0 bilinear operator
+\[
+\ell_2 : \sL^{sh} \times \sL^{sh} \to \sL^{sh}
+\]
+\end{itemize}
+such that $\ell_1^2 = 0$, $\ell_1$ is a differential operator, $\ell_2$ is a bidifferential operator,
+\[
+\ell_1(\ell_2(x,y)) = \ell_2(\ell_1(x), y) + (-1)^{|x|} \ell_2(x, \ell_1(y))
+\]
+and the graded Jacobi identity holds
+\[
+(-1)^{|x||z|} \ell_2(x,\ell_2(y,z)) + (-1)^{|x||y|} \ell_2(y, \ell_2(z,x)) + (-1)^{|y||z|} \ell_2(z,(x,y)) = 0,
+\]
+for any sections $x,y,z$ of $\sL^{sh}$ of degree $|x|, |y|, |z|$, respectively. 
+We call $\ell_1$ the {\em differential} and $\ell_2$ the {\em bracket}.
+\end{dfn}
+
+In other words, a local Lie algebra is a sheaf of dg Lie algebras 
+where the underlying sections are smooth sections of a vector bundle and 
+where the operations are local in the sense of not enlarging support of sections. 
+(As we will see, such Lie algebras often appear by acting naturally on the local functionals from physics, namely functionals determined by Lagrangian densities.)
+
+\begin{rmk}
+For a local Lie algebra, we reserve the more succinct notation $\sL$ to denote the precosheaf of {\em compactly supported} sections of $L$,
+which assigns a dg Lie algebra to each open set $U \subset X$, 
+since the differential and bracket respect support.
+At times we will abusively refer to $\sL$ to mean the data determining the local Lie algebra,
+when the support of the sections is not relevant to the discussion at hand.
+\end{rmk}
+
+The key examples for this paper all arise from studying the symmetries of holomorphic principal bundles.
+We begin with the specific and then examine a modest generalization.
+
+Let $\pi : P \to X$ be a holomorphic principal $G$-bundle over a complex manifold.
+We use $\ad(P) \to X$ to denote the associated {\em adjoint bundle} $P \times^{G} \fg \to X$, 
+where the Borel construction uses adjoint action of $G$ on $\fg$ from the left. 
+The complex structure defines a $(0,1)$-connection $\dbar_P : \Omega^{0,q}(X ; \ad(P)) \to \Omega^{0,q+1}(X ; \ad(P))$
+on the Dolbeault forms with values in the adjoint bundle,
+and this connection satisfies $\dbar_P^2 = 0$.
+Note that the Lie bracket on $\fg$ induces a pointwise bracket on smooth sections of $\ad(P)$~by
+\[
+[s,t](x) = [s(x),t(x)]
+\]
+where $s, t$ are sections and $x$ is a point in $X$.
+This bracket naturally extends to Dolbeault forms with values in the adjoint bundle,
+as the Dolbeault forms are a graded-commutative algebra.
+
+\begin{dfn}\label{dfn: adjoint local}
+For $\pi : P \to X$ a holomorphic principal $G$-bundle,
+let $\sAd(P)^{sh}$ denote the local Lie algebra whose sections are $\Omega^{0,*}(X,\ad(P))$,
+whose differential is $\dbar_P$, and whose bracket is the pointwise operation just defined above.
+\end{dfn}
+
+\owen{We should add some remark about Atiyah algebras \dots We could also add a comment about the deformation-theoretic content of this dg Lie algebra.}
+\brian{We can say more than what I did below, but I wanted to get something down for now.}
+
+The dg Lie algebra $\sAd(P)^{sh}(X)$ controls formal deformations of the holomorphic principal $G$-bundle $P$. 
+Indeed, given a Maurer-Cartan element $\alpha \in \sAd(P)^{sh}(X)^1 = \Omega^{0,1}(X, {\rm ad}(P))$ one considers the new complex structure defined by the connection $\dbar_P + \alpha$. 
+The Maurer-Cartan condition is equivalent to $(\dbar_P + \alpha)^2 = 0$. 
+
+This construction admits important variations.
+For example, we can move from working over a fixed manifold $X$ to working over a site.
+Let ${\rm Hol}_d$ denote the category whose objects are complex $d$-folds and whose morphisms are local biholomorphisms,\footnote{A biholomorphism is a bijective map $\phi: X \to Y$ such that both $\phi$ and $\phi^{-1}$ are holomorphic. A {\em local} biholomorphism means a map $\phi: X \to Y$ such that every point $x \in X$ has a neighborhood on which $\phi$ is a biholomorphism.}
+This category admits a natural Grothendieck topology where a cover $\{\phi_i: U_i \to X\}$ means a collection of morphisms into $X$ such that union of the images is all of $X$.
+It then makes sense to talk about a local Lie algebra on the site ${\rm Hol}_d$.
+Here is a particularly simple example that appears throughout the paper.
+
+\begin{dfn}
+Let $G$ be a complex Lie group and let $\fg$ denote its ordinary Lie algebra.
+There is a natural functor 
+\[
+\begin{array}{cccc}
+\sG^{sh} :&  {\rm Hol}_d^\opp & \to & {\dgLie}\\
+& X & \mapsto &\Omega^{0,*}(X) \otimes \fg,
+\end{array}
+\]
+which defines a sheaf of dg Lie algebras.
+Restricted to each slice ${{\rm Hol}_d}_{/X}$, it determines the local Lie algebra for the trivial principal bundle $G \times X \to X$, in the sense described above.
+We use $\sG$ to denote the cosheaf of compactly supported sections $\Omega^{0,*}_c \otimes \fg$ on this site.
+\end{dfn}
+
+%\owen{Should we call this $\sG_d$ or just the restriction to submanifolds of $\CC^d$?}
+
+\begin{rmk}
+It is not necessary to start with a complex Lie group: 
+the construction makes sense for a dg Lie algebra over $\CC$ of finite total dimension.
+We lose, however, the interpretation in terms of infinitesimal symmetries of the principal bundle.
+\end{rmk}
+
+\begin{rmk}
+For any complex manifold $X$ we can restrict the functor $\sG^{sh}$ to the overcategory of opens in $X$, that we denote by $\sG^{sh}_X$. 
+In this case, $\sG^{sh}_X$, or its compactly supported version $\sG_X$, comes from the local Lie algebra of Definition \ref{dfn: adjoint local} in the case of the trivial $G$-bundle on $X$. 
+In the case that $X = \CC^d$ we will denote the sheaves and cosheaves of the local Lie algebra by $\sG_d^{sh}, \sG_d$ respectively.
+\end{rmk}
+
+\subsection{Current algebras as enveloping factorization algebras of local Lie algebras}
+\label{sec: envelopes}
+
+Local Lie algebras often appear as symmetries of classical field theories.
+For instance, as we will show in Section \ref{sec: qft}, 
+each finite-dimensional complex representation $V$ of a Lie algebra $\fg$
+determines a charged $\beta\gamma$-type system on a complex $d$-fold $X$ with choice of holomorphic principal bundle $\pi: P \to X$.
+Namely, the on-shell $\gamma$ fields are holomorphic sections for the associated bundle $P \times^G V \to X$, 
+and the on-shell $\beta$ fields are holomorphic $d$-forms with values in the associated bundle $P \times^G V^* \to X$.
+It should be plausible that $\sAd(P)^{sh}$ acts as symmetries of this classical field theory,
+since holomorphic sections of the adjoint bundle manifestly send on-shell fields to on-shell fields.
+
+Such a symmetry determines currents, which we interpret as observables of the classical theory.
+Note, however, a mismatch: 
+while fields are contravariant in space(time) because fields pull back along inclusions of open sets, 
+observables are covariant because an observable on a smaller region extends to any larger region containing it.
+The currents, as observables, thus do not form a sheaf but a precosheaf.
+We introduce the following terminology.
+
+\begin{dfn}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its precosheaf $\sL[1]$ of {\em linear currents} is given by taking compactly supported sections of~$L$.
+\end{dfn}
+
+There are a number of features of this definition that may seem peculiar on first acquaintance.
+First, we work with $\sL[1]$ rather than $\sL$.
+This shift is due to the Batalin-Vilkovisky formalism. 
+In that formalism the observables in the classical field theory possesses a 1-shifted Poisson bracket $\{-,-\}$ (also known as the antibracket), and so if the current $J(s)$ associated to a section $s \in \sL$ encodes the action of $s$ on the observables, i.e.,
+\[
+\{J(s), F\} = s \cdot F,
+\]
+then we need the cohomological degree of $J(s)$ to be 1 less than the degree of $s$.
+In short, we want a map of dg Lie algebras $J: \sL \to \Obs^\cl[-1]$,
+or equivalently a map of 1-shifted dg Lie algebras $J: \sL[1] \to \Obs^\cl$,
+where $\Obs^\cl$ denotes the algebra of classical observables.
+
+Second, we use the term ``linear'' here because the product of two such currents is not in $\sL[1]$ itself, 
+although such a product will exist in the larger precosheaf $\Obs^\cl$ of observables.
+In other words, if we have a Noether map of dg Lie algebras $J: \sL \to \Obs^\cl[-1]$,
+it extends to a map of 1-shifted Poisson algebras
+\[
+J: \Sym(\sL[1]) \to \Obs^\cl
+\]
+as $\Sym(\sL[1])$ is the 1-shifted Poisson algebra freely generated by the 1-shifted dg Lie algebra $\sL[1]$.
+We hence call $\Sym(\fg[1])$ the {\em enveloping 1-shifted Poisson algebra} of a dg Lie algebra~$\fg$.\footnote{\owen{Add some references?}}
+
+For any particular field theory, the currents generated by the symmetry for {\em that} theory are given by the image of this map $J$ of 1-shifted Poisson algebras.
+To study the general structure of such currents, without respect to a particular theory,
+it is natural to study this enveloping algebra by itself.
+
+\begin{dfn}\label{dfn: classical currents}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, its {\em classical currents} $\Cur^\cl(\sL)$ is the precosheaf $\Sym(\sL[1])$ given by taking the enveloping 1-shifted Poisson algebra of the compactly supported sections of~$L$.
+It assigns
+\[
+\Cur^\cl(\sL)(U) = \Sym(\sL(U)[1])
+\]
+to an open subset $U \subset X$. 
+\end{dfn}
+
+We emphasize here that by $\Sym(\sL(U)[1])$ we do {\em not} mean the symmetric algebra in the purely algebraic sense, but rather a construction that takes into account the extra structures on sections of vector bundles (e.g., the topological vector space structure).
+Explicitly, the $n$th symmetric power  $\Sym^n(\sL(U)[1])$ means the smooth, compactly supported, and $S_n$-invariant sections of the graded vector bundle 
+\[
+L[1]^{\boxtimes n} \to U^n.
+\]
+For further discussion of functional analytic aspects (which play no tricky role in our work here),
+see \cite{CG1}, notably the appendices.
+
+A key result of \cite{CG1}, namely Theorem 5.6.0.1, is that this precosheaf of currents forms a factorization algebra. 
+From hereon we refer to  $\Cur^\cl(\sL)$ as the {\em factorization algebra of classical currents}.
+If the local Lie algebra acts as symmetries on some classical field theory,
+we obtain a map of factorization algebras $J: \Cur^\cl(\sL) \to \Obs^\cl$ that encodes each current as a classical observable.
+
+There is a quantum counterpart to this construction, in the Batalin-Vilkovisky formalism.
+The idea is that for a dg Lie algebra $\fg$, 
+the enveloping 1-shifted Poisson algebra $\Sym(\fg[1])$ admits a natural BV quantization via the Chevalley-Eilenberg chains $C_*(\fg)$.  
+This assertion is transparent by examining the Chevalley-Eilenberg differential:
+\[
+\d_{CE}(xy) = \d_\fg(x)y \pm x\, \d_\fg(y) + [x,y]
+\]
+for $x,y$ elements of $\fg[1]$.
+The first two terms behave like a derivation of $\Sym(\fg[1])$, 
+and the last term agrees with the shifted Poisson bracket.
+More accurately, to keep track of the $\hbar$-dependency in quantization,
+we introduce a kind of Rees construction.
+\owen{cross ref stuff with Rune and the other paper}
+
+\begin{dfn}
+\label{def: BD envelope}
+The {\em enveloping $BD$ algebra} $U^{BD}(\fg)$ of a dg Lie algebra $\fg$ is given by the graded-commutative algebra in $\CC[\hbar]$-modules
+\[
+\Sym(\fg[1])[\hbar] \cong \Sym_{\CC[\hbar]}(\fg[\hbar][1]),
+\]
+but the differential is defined as a coderivation with respect to the natural graded-cocommutative coalgebra structure,
+by the condition
+\[
+\d(xy) = \d_\fg(x)y \pm x\, \d_\fg(y) + \hbar [x,y].
+\]
+\end{dfn}
+
+This construction determines a BV quantization of the enveloping 1-shifted Poisson algebra,
+as can be verified directly from the definitions.
+(For further discussion see \cite{GH} and \cite{CG2}.)
+It is also straightforward to extend this construction to ``quantize'' the factorization algebra of classical currents.
+
+\begin{dfn}
+\label{dfn: quantum currents}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
+its {\em factorization algebra of quantum currents} $\Cur^\q(\sL)$ is given by taking the enveloping $BD$   algebra of the compactly supported sections of~$L$.
+It assigns
+\[
+\Cur^\q(\sL)(U) = U^{BD}(\sL(U))
+\]
+to an open subset $U \subset X$.
+\end{dfn}
+
+As mentioned just after the definition of the classical currents, 
+the symmetric powers here mean the construction involving sections of the external tensor product.
+Specializing $\hbar = 1$, we recover the following construction.
+
+\begin{dfn}
+For a local Lie algebra $(L\to X, \ell_1,\ell_2)$, 
+its {\em enveloping factorization algebra} $\UU(\sL)$ is given by taking the Chevalley-Eilenberg chains $\cliels(\sL)$ of the compactly supported sections of~$L$.
+\end{dfn}
+
+Here the symmetric powers use sections of the external tensor powers, just as with the classical or quantum currents.
+
+When a local Lie algebra acts as symmetries of a classical field theory,
+it sometimes also lifts to symmetries of a BV quantization.
+In that case the map $J: \Sym(\sL[1]) \to \Obs^\cl$ of 1-shifted Poisson algebras lifts to a cochain map $J^\q: \Cur^\q(\sL) \to \Obs^\q$ realizing quantum currents as quantum observables.
+Sometimes, however, the classical symmetries do not lift directly to quantum symmetries.
+We turn to discussing the natural home for the obstructions to such lifts after a brief detour to offer a structural perspective on the enveloping construction.
+
+\subsubsection{A digression on the enveloping $E_n$ algebras}
+\label{sec:knudsen}
+
+\owen{I added this here because it feels natural and then we can refer to it easily later.}
+
+This construction $\UU(\sL)$ has a special feature when the local Lie algebra is obtained by taking the de Rham forms with values in a dg Lie algebra $\fg$, i.e., when $\sL = \Omega^*_c \otimes \fg$.
+In that case the enveloping factorization algebra is locally constant and, on the $d$-dimensional real manifold $\RR^d$, determines an $E_d$ algebra, also known as an algebra over the little $d$-disks operad, by a result of Lurie (see Theorem 5.5.4.10 of \cite{LurieHA}).
+This construction satisfies a universal property: 
+it is the $d$-dimensional generalization of the universal enveloping algebra of a Lie algebra.
+
+To state this result of Knudsen precisely, we need to be in the context of $\infty$-categories.
+
+\begin{thm}[\cite{Knudsen}] 
+\label{thm:knudsen}
+Let $\sC$ be a stable, $\CC$-linear, presentable, symmetric monoidal $\infty$-category.
+There is an adjunction
+\[
+U^{E_d} : {\rm LieAlg}(\sC) \leftrightarrows E_d{\rm Alg} (\sC): F
+\]
+between Lie algebra objects in $\sC$ and $E_d$ algebra objects in $\sC$.
+This adjunction intertwines with the free-forget adjunctions from Lie and $E_d$ algebras in $\sC$ to $\sC$ 
+so that 
+\[
+{\rm Free}_{E_d}(X) \simeq U^{E_d} {\rm Free}_{Lie}(\Sigma^{d-1} X)
+\]
+for any object $X \in \sC$. 
+
+When $\sC$ is the $\infty$-category of chain complexes over a field of characteristic zero,
+the $E_d$ algebra $U^{E_d} \fg$ is modeled by the locally constant factorization algebra $\UU(\Omega^*_c \otimes \fg)$ on~$\RR^d$.
+\end{thm}
+
+This theorem is highly suggestive for us:
+our main class of examples is $\sG_d$ and $\UU \sG_d$,
+which replaces the de Rham complex with the Dolbeault complex.
+In other words, we anticipate that $\UU \sG_d$ should behave like a holomorphic version of an $E_d$ algebra
+and that it should be the canonical such algebra determined by a dg Lie algebra.
+We do not pursue this structural result in this paper,
+but it provides some intuition behind our constructions.
+
+\subsection{Local cocycles and shifted extensions}
+\label{sec: localcocycle}
+
+Some basic questions about a dg Lie algebra $\fg$, such as the classification of extensions and derivations, are encoded cohomologically, typically as cocycles in the Chevalley-Eilenberg cochains $\clies(\fg,V)$ with coefficients in some $\fg$-representation~$V$.
+When working with local Lie algebras, it is natural to focus on cocycles that are also local in the appropriate sense.
+(Explicitly, we want to restrict to cocycles that are built out of polydifferential operators.)
+After introducing the relevant construction, we turn to studying how such cocycles determine modified current algebras.
+
+\subsubsection{Local cochains of a local Lie algebra}
+\label{sec:cloc}
+
+In Appendix~\ref{appx:locfncl} we define the local cochains of a local Lie algebra in some detail, 
+but we briefly recall it here.
+\owen{This opening sentence is misleading. We don't have that appendix anymore (and I don't think we should), so we should replace it with a reference to Kevin's book, CG2, and your paper.}
+The basic idea is that a local cochain is a Lagrangian density: 
+it takes in a section of the local Lie algebra and produces a smooth density on the manifold. 
+Such a cocycle determines a functional by integrating the density.
+As usual with Lagrangian densities, we wish to work with them up to total derivatives,
+i.e., we identify Lagrangian densities related using integration by parts and hence ignore boundary terms.
+
+In a bit more detail, for $L$ is a graded vector bundle, let $JL$ denote the corresponding $\infty$-jet bundle,
+which has a canonical flat connection.
+In other words, it is a left $D_X$-module, where $D_X$ denotes the sheaf of smooth differential operators on $X$.
+For a local Lie algebra, this $JL$ obtains the structure of a dg Lie algebra in left $D_X$-modules.
+Thus, we may consider its reduced Chevalley-Eilenberg cochain complex $\clies(JL)$ in the category of left $D_X$-modules. 
+By taking the de Rham complex of this left $D_X$-module, we obtain the local cochains.
+For a variety of reasons, it is useful to ignore the ``constants'' term and work with the reduced cochains.
+Hence we have the following definition.
+
+\begin{dfn}
+Let $\sL$ be a local Lie algebra on $X$.
+The {\em local Chevalley-Eilenberg cochains}  of $\sL$~is 
+\[
+\cloc^*(\sL) = \Omega^{*}_X[2d] \tensor_{D_X} \cred^*(J L) .
+\]
+This sheaf of cochain complexes on $X$ has global sections that we denote by~$\cloc^*(\sL(X))$.
+\end{dfn}
+
+Note that we use the smooth de Rham forms, not the holomorphic de Rham forms.
+
+\begin{rmk}
+This construction $\cloc^*(\sL)$ is just a version of diagonal Gelfand-Fuks cohomology \cite{Fuks, LosikDiag},
+where the adjective ``diagonal'' indicates that we are interested in continuous cochains whose integral kernels are supported on the small diagonals.
+\end{rmk}
+
+\subsubsection{Shifted extensions}
+
+For an ordinary Lie algebra $\fg$, central extensions are parametrized by 2-cocycles on $\fg$ valued in the trivial module~$\CC$. 
+It is possible to interpret arbitrary cocycles as determining as determining {\em shifted} central extensions as {\em $L_\infty$ algebras}.
+Explicitly, a $k$-cocycle $\Theta$ of degree $n$ on a dg Lie algebra $\fg$ determines an $L_\infty$ algebra structure on the direct sum $\fg \oplus \CC[n-k]$ with the following brackets $\{\Hat{\ell}_m\}_{m \geq 1}$: $\Hat{\ell}_1$ is simply the differential on $\fg$, $\Hat{\ell}_2$ is the bracket on $\fg$, $\Hat{\ell}_m = 0$ for $m >2$ except
+\[
+\Hat{\ell}_k(x_1 + a_1, \ldots, x_k + a_k) = 0+ \Theta(x_1,x_2,\ldots, x_k).
+\]
+(See \owen{add ref} for further discussion. Note that $n=2$ for $k=2$ with ordinary Lie algebras.)
+Similarly, local cocycles provide shifted central extensions of local Lie algebras.
+
+\begin{dfn}
+For a local Lie algebra $(L, \ell_1,\ell_2)$, a cocycle $\Theta$ of degree $2+k$ in $\cloc^*(\sL)$ determines a {\em $k$-shifted central extension}
+\beqn\label{kext}
+0 \to \CC[k] \to \Hat{\sL}_\Theta \to \sL \to 0
+\eeqn
+of precosheaves of $L_\infty$ algebras, where the $L_\infty$ structure maps are defined by
+\[
+\Hat{\ell}_n(x_1,\ldots,x_n) = (\ell_n(x_1,\ldots,x_n), \int \Theta(x_1,\ldots,x_n)).
+\]
+Here we set $\ell_n = 0$ for $n > 2$.
+\end{dfn}
+
+As usual, cohomologous cocycles determine quasi-isomorphic extensions. 
+Much of the rest of the section is devoted to constructing and analyzing various cocycles and the resulting extensions.
+
+\subsubsection{Twists of the current algebras}
+
+Local cocycles give a direct way of deforming the various current algebras a local Lie algebra.
+For example, we have the following construction.
+
+\begin{dfn} 
+Let $\Theta$ be a degree 1 local cocycle for a local Lie algebra $(L \to X, \ell_1,\ell_2)$. 
+Let $K$ denote a degree zero parameter so that $\CC[K]$ is a polynomial algebra concentrated in degree zero.
+The {\em twisted enveloping factorization algebra} $\UU_\Theta(\sL)$ assigns to an open $U \subset X$, the cochain complex
+\begin{align*}
+\UU_\Theta(\sL)(U) & = \left(\Sym(\sL(U)[1] \oplus \CC \cdot K), \d_{\sL} + K \cdot \Theta\right) \\
+& = \left(\Sym(\sL(U)[1])[K] , \d_{\sL} + K \cdot \Theta\right),
+\end{align*}
+where $\d_{\sL}$ denotes the differential on the untwisted enveloping factorization algebra and $\Theta$ is the operator extending the cocycle $\Theta : \Sym(\sL(U)[1]) \to \CC \cdot K$ to the symmetric coalgebra as a graded coderivation.
+This twisted enveloping factorization algebra is module for the commutative ring~$\CC[K]$,
+and so specializing the value of $K$ determines nontrivial modifications of~$\UU(\sL)$. 
+\end{dfn}
+
+An analogous construction applies to the quantum currents, which we will denote~$\Cur^\q_\Theta(\sL)$.
+
+\subsubsection{A special class of cocycles: the $\fj$ functional} 
+\label{sec: g j functional}
+
+There is a particular family of local cocycles that has special importance in studying symmetries of higher dimensional holomorphic field theories. 
+
+Consider 
+\[
+\theta \in \Sym^{d+1}(\fg^*)^\fg,
+\]
+so that $\theta$ is a $\fg$-invariant polynomial on $\fg$ of homogenous degree $d+1$. 
+This data determines a local functional for $\sG = \Omega^{0,*} \otimes \fg$ on any complex $d$-fold as follows.
+
+\begin{dfn}
+For any complex $d$-fold $X$, extend $\theta$ to a functional $\fJ_X(\theta)$ on $\sG_X = \Omega^{0,*}_c(X) \tensor \fg$ by the formula
+\beqn\label{j g formula}
+\fJ_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \int_X \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d),
+\eeqn
+where $\partial$ denotes the holomorphic de Rham differential.
+In this formula, we define the integral to be zero whenever the integrand is not a $(d,d)$-form.
+\end{dfn}
+
+To make this formula as clear as possible, suppose the $\alpha_i$ are pure tensors of the form $\omega_i \otimes y_i$ with $\omega_i \in \Omega^{0,*}_c(X)$ and $y_i \in \fg$.
+Then
+\beqn\label{jthetafactored}
+\fJ_X(\theta) (\omega_0 \tensor y_0,\ldots,\omega_{d} \tensor y_{d}) = \theta(y_0,\ldots,y_{d}) \int_X \omega_0\wedge \partial \omega_1 \cdots \wedge \partial \omega_{d}.
+\eeqn
+Note that we use $d$ copies of the holomorphic derivative $\partial: \Omega^{0,*} \to \Omega^{1,*}$ to obtain an element of $\Omega^{d,*}_c$ in the integrand and hence something that can be integrated.
+
+This formula manifestly makes sense for any complex $d$-fold $X$, 
+and since integration is local on $X$, 
+it intertwines nicely with the structure maps of~$\sG_X$.
+
+\begin{dfn}\label{dfn: j}
+For any complex $d$-fold $X$ and any $\theta \in \Sym^{d+1}(\fg^*)^\fg$, 
+let $\fj_X(\theta)$ denote the local cochain in $\cloc^*(\sG_X)$ defined~by
+\[
+\fj_X(\theta)(\alpha_0 ,\ldots,\alpha_d) = \theta(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d).
+\]
+Hence $\fJ_X(\theta) = \int_X \fj_X(\theta)$.
+\end{dfn}
+
+This integrand $\fj_X(\theta)$ is in fact a local cocycle, and 
+in a moment we will use it to produce an important shifted central extension of~$\sG_X$.
+
+\begin{prop}\label{prop j map} 
+The assignment 
+\[
+\begin{array}{cccc}
+\fj_X : & \Sym^{d+1} (\fg^*)^\fg [-1]  & \to & \cloc^*(\sG_X) \\ 
+& \theta &\mapsto & \fj_X(\theta)
+\end{array}
+\]
+is an cochain map.
+\end{prop}
+
+\begin{proof} 
+The element $\fj_X(\theta)$ is local as it is expressed as a density produced by polydifferential operators.
+We need to show that $\fj_X(\theta)$ is closed for the differential on $\cloc^*(\sG_X)$. 
+Note that $\sG_X$ is the tensor product of the dg commutative algebra $\Omega^{0,*}_X$ and the Lie algebra $\fg$.
+Hence the differential on the local cochains of $\sG_X$ splits as a sum $\dbar + \d_{\fg}$ where $\dbar$ denotes the differential on local cochains induced from the $\dbar$ differential on the Dolbeault forms and $\d_{\fg}$ denotes the differential induced from the Lie bracket on~$\fg$. 
+We now analyze each term separately.
+
+Observe that for any collection of $\alpha_i \in \sG$, we have
+\begin{align*}
+\dbar(\fj_X(\theta)(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) 
+&= \fj_X(\theta)(\dbar\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d) \pm \fj_X(\theta)(\alpha_0,\dbar \partial \alpha_1,\ldots,\partial \alpha_d) \pm \cdots \\ & \;\;\;\; \cdots \pm \fj_X(\theta)(\alpha_0,\partial \alpha_1,\ldots,\dbar\partial \alpha_d)\\
+&= (\dbar \fj_X(\theta))(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)
+\end{align*}
+because $\dbar$ is a derivation and $\theta$ wedges the form components.
+(It is easy to see this assertion when one works with inputs like in equation \eqref{jthetafactored}.)
+Hence viewing $\fj_X(\theta)$ as a map from $\sG$ to the Dolbeault complex, 
+it commutes with the differential $\dbar$.
+This fact is equivalent to $\dbar \fj_X(\theta) = 0$ in local cochains.
+
+Similarly, observe that for any collection of $\alpha_i \in \sG$, we have
+\begin{align*}
+(\d_\fg \fj_X(\theta))(\alpha_0, \alpha_1,\ldots, \alpha_d)
+&= (\d_\fg\fj_X(\theta))(\alpha_0,\partial \alpha_1,\ldots,\partial \alpha_d)) \\
+&= 0
+\end{align*}
+since $\theta$ is closed for the Chevalley-Eilenberg differential for $\fg$. 
+\end{proof}
+
+As should be clear from the construction, everything here works over the site ${\rm Hol}_d$ of complex $d$-folds, and hence we use $\fj(\theta)$ to denote the local cocycle for the local Lie algebra $\sG$ on~${\rm Hol}_d$.
+
+This construction works nicely for an arbitrary holomorphic $G$-bundle $P$ on $X$,
+because the cocycle is expressed in a coordinate-free fashion.
+To be explicit, on a coordinate patch $U_i \subset X$ with a choice of trivialization of the adjoint bundle $\ad(P)$,
+the formula for $\fj_X(\theta)$ makes sense.
+On an overlap $U_i \cap U_j$, the cocycles patch because $\fj_X(\theta)$ is independent of the choice of coordinates.
+Hence we can glue over any sufficiently refined cover to obtain a global cocycle. 
+Thus, we have a cochain map
+\[
+\fj_X^P : \Sym^{d+1} (\fg^*)^\fg [-1] \to \cloc^*(\sAd(P)(X))
+\]
+given by the same formula as in~\eqref{j g formula}.
+
+\subsubsection{Another special class: the LMNS extensions}
+\label{sec: nekext}
+
+Much of this paper focuses on local cocycles of type $\fj_X(\theta)$, where $\theta \in \Sym^{d+1}(\fg^*)^\fg$.
+But there is another class of local cocycles that appear naturally when studying symmetries of holomorphic theories. 
+Unlike the cocycle $\fj_X(\theta)$, which only depend on the manifold $X$ through its dimension, 
+this class of cocycles depends on the geometry.
+
+In complex dimension two, this class of cocycles has appeared in the work of Losev-Moore-Nekrasov-Shatashvili (LMNS) \cite{LMNS1,LMNS2,LMNS3} in their construction of a higher analog of the ``chiral WZW theory". 
+Though our approaches differ, we share their ambition to formulate a higher analogs of constructions and ideas in chiral CFT. 
+
+Let $X$ be a complex manifold of dimension $d$ with a choice of $(k,k)$-form~$\eta$. 
+Choose a form $\theta_{d+1-k} \in \Sym(\fg^*)^\fg$.
+This data determines a local cochain on~$\sG_X$ whose local functional~is:
+\[
+\begin{array}{cccc}
+\displaystyle \phi_{\theta, \eta} : & \sG(X)^{\tensor d + 1 - k} & \to & \CC \\
+\displaystyle & \alpha_0 \tensor\cdots \tensor \alpha_{d-k} & \mapsto & \displaystyle \int_X \eta \wedge \theta_{d+1-k}(\alpha_0, \partial\alpha_1,\ldots,\partial \alpha_{d-k})
+\end{array}.
+\]
+Such a cochain is a cocycle only if $\dbar \eta = 0$, because $\eta$ does not interact with the Lie structure.
+
+Note that a K\"{a}hler manifold always produces natural choices of $\eta$ by taking $\eta = \omega^{k}$, where $\omega$ is the symplectic form.
+In this way, K\"{a}hler geometry determines an important class of extensions.
+It would be interesting to explore what aspects of the geometry are reflected by these associated current algebras.
+The following is a direct calculation.
+
+\begin{lem}\label{lem: cocycle KM}
+Fix $\theta \in \Sym^{d+1-k}(\fg^*)^\fg$.
+If a form $\eta \in \Omega^{k,k}(X)$ satisfies $\dbar \eta = 0$ and $\partial \eta = 0$,
+then the local cohomology class $[\phi_{\theta,\omega}] \in H^1_{\rm loc}(\sG_X)$  depends only on the cohomology class $[\omega] \in H^{k}(X , \Omega^k_{cl})$.
+\end{lem}
+
+When $\eta = 1$, it trivially satisfies the conditions of the lemma. 
+In this case $\phi_{\theta, 1} = \fj_X(\theta)$ in the notation of the last section. 
+
+%\owen{Should we add a proof?}
+
+\subsection{The higher Kac-Moody factorization algebra}
+
+Finally, we can introduce the central object of this paper.
+
+\begin{dfn}
+Let $X$ be a complex manifold of complex dimension $d$ equipped with a holomorphic principal $G$-bundle $P$.
+Let $\Theta$ be a degree 1 cocycle in $\cloc^*(\sAd(P))$, 
+which determines a 1-shifted central extension $\sAd(P)_\Theta$.
+The {\em Kac-Moody factorization algebra on $X$ of type $\Theta$} is the twisted enveloping factorization algebra $\UU_\Theta (\sAd(P))$ that assigns
+\[
+\left(\Sym\left(\Omega^{0,*}_c(U, \ad(P))[1]\right) [K] , \dbar + \d_{CE} + \Theta\right) 
+\]
+to an open set $U \subset X$.
+\end{dfn}
+
+\begin{rmk} 
+As in the definition of twisted enveloping factorization algebras, the factorization algebras $\UU_\Theta(\sAd(P))$ are modules for the ring $\CC[K]$. 
+In keeping with conventions above, when $P$ is the trivial bundle on $X$, 
+we will denote the Kac-Moody factorization algebra by $\UU_\Theta(\sG_X)$. 
+\end{rmk}
+
+The most important class of such higher Kac-Moody algebras makes sense over the site ${\rm Hol}_d$ of all complex $d$-folds.
+
+\begin{dfn}
+Let $\fg$ be an ordinary Lie algebra and let $\theta \in \Sym^{d+1}(\fg^*)^\fg$.  
+Let $\sG_{d,\theta}$ denote the 1-shifted central extension of $\sG_d$ determined by the local cocycle $\fj(\theta)$.
+Let $\UU_\theta (\sG)$ denote the {\em $\theta$-twisted enveloping factorization algebra} $\UU_{\fj(\theta)} (\sG)$ for the local Lie algebra $\sG = \Omega^{0,*}_c \otimes \fg$ on the site ${\rm Hol}_d$ of complex $d$-folds.
+\end{dfn}
+
+In the case $d = 1$ the definition above agrees with the Kac-Moody factorization algebra on Riemann surfaces given in \cite{CG1}.
+There, it is shown that this factorization algebra, restricted to the complex manifold $\CC$, recovers a vertex algebra isomorphic to that of the ordinary Kac-Moody vertex algebra.
+(See Section 5 of Chapter 5.)
+Thus, we think of the object $\UU_\Theta(\sAd(P))$ as a higher dimensional version of the Kac-Moody vertex algebra.
+
+\subsubsection{Holomorphic translation invariance and higher dimensional vertex algebras} \label{sec: hol trans main}
+
+To put some teeth into the previous paragraph,
+we note that \cite{CG1} introduces a family of colored operads ${\rm PDiscs_d}$, the little $d$-dimensional polydiscs operads,
+that provide a holomorphic analog of the little $d$-disks operads~$E_d$.
+Concretely, this operad ${\rm PDiscs_d}$ encodes the idea of the operator product expansion, 
+where one now understands observables supported in small disks mapping into observables in large disks, rather than point-like observables.
+
+\owen{Should we hark back to Knudsen's theorem here? I feel like it might be possible to find a nice analog using PDisks.}
+
+In the case $d=1$, Theorem 5.3.3 of \cite{CG1} shows that a ${\rm PDiscs_1}$-algebra $\cA$ determines a vertex algebra $\VV(\cA)$ so long as $\cA$ is suitably equivariant under rotation .
+This construction $\VV$ is functorial.
+As shown in \cite{CG1}, many vertex algebras appear this way, and any vertex algebras that arise from physics should, in light of the main results of~\cite{CG1,CG2}.
+
+For this reason, one can interpret ${\rm PDiscs_d}$-algebras, particularly when suitably equivariant under rotation, as providing a systematic and operadic generalization of vertex algebras to higher dimensions. 
+Proposition 5.2.2 of \cite{CG1} provides a useful mechanism for producing ${\rm PDiscs_d}$-algebra: 
+it says that if a factorization algebra is equivariant under translation in a holomorphic manner, then it determines such an algebra.
+
+Hence it is interesting to identify when the higher Kac-Moody factorization algebras are invariant in the sense needed to produce ${\rm PDiscs_d}$-algebras.
+We now address this question.
+
+First, note that on the complex $d$-fold $X = \CC^d$, 
+the local Lie algebra $\sG_{d}$ is manifestly equivariant under translation.
+
+It is important to recognize that this translation action is holomorphic in the sense that the infinitesimal action of the (complexified) vector fields $\partial/\partial \Bar{z}_i$ is homotopically trivial.
+Explicitly, consider the operator $\eta_i = \iota_{\partial/\partial \Bar{z}_i}$ on Dolbeault forms
+(and which hence extends to $\sG_{\CC^d}$), and
+note that
+\[
+[\dbar, \eta_i] = \partial/\partial \Bar{z}_i.
+\]
+Both the infinitesimal actions and this homotopical trivialization extend canonically to the Chevalley-Eilenberg chains of $\sG_{\CC^d}$ and hence to the enveloping factorization algebra and the current algebras.
+(For more discussion of these ideas see \cite{BWhol} and Chapter 10 of \cite{CG2}.)
+
+A succinct way to express this feature is to introduce a dg Lie algebra  
+\[
+\CC^d_{\rm hol} = \text{span}_\CC\{\partial/\partial z_1, \ldots, \partial/\partial z_d, \partial/\partial \Bar{z}_1,\ldots,\partial/\partial \Bar{z}_d, \eta_1,\ldots, \eta_d\}
+\]
+where the partial derivatives have degree 0 and the $\eta_i$ have degree $-1$,
+where the brackets are all trivial, 
+and where the differential behaves like $\dbar$ in the sense that the differential of $\eta_i$ is $\partial/\partial \Bar{z}_i$.
+We just argued in the preceding paragraph that $\sG_{\CC^d}$ and its current algebras are all strictly $\CC^d_{\rm hol}$-invariant. 
+
+When studying shifted extensions of $\sG_{\CC^d}$, 
+it then makes sense to consider local cocycles that are also translation invariant in this sense.
+Explicitly, we ask to work with cocycles~in
+\[
+\cloc^*(\sG_{d})^{\CC^d_{\rm hol}} \subset \cloc^*(\sG_{d}).
+\]
+Local cocycles here determine higher Kac-Moody algebras that are holomorphically translation invariant and hence yield ${\rm PDiscs}_d$-algebras.
+
+The following result indicates tells us that we have already encountered all the relevant cocycles so long as we also impose rotation invariance, which is a natural condition.
+
+\begin{prop}
+\label{prop: trans j}
+The map $\fj_{\CC^d} :  \Sym^{d+1}(\fg^*)^\fg [-1] \to \cloc^*(\sG_{d})$ factors through the  subcomplex of local cochains that are rotationally and holomorphically translation invariant.
+Moreover, it determines an isomorphism on $H^1$:
+\[
+H^1(\fj_{\CC^d}) : \Sym^{d+1}(\fg^*)^\fg \xto{\cong} H^1 \left(\cloc^*(\sG_d))^{\CC^{d}_{\rm hol}}\right)^{U(d)} .
+\]
+\end{prop}
+
+As the proof is rather lengthy, we provide it in Appendix~\ref{sec: hol trans}.
+

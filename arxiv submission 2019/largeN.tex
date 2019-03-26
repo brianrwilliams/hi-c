@@ -1,0 +1,548 @@
+\section{Large $N$ limits} \label{sec: largeN}
+
+
+\def\cycls{{\rm Cyc}_*}
+\def\lqt{{\ell q t}}
+\def\colim{{\rm colim}}
+\def\sl{\mathfrak{sl}}
+
+We take a detour from the main course of this paper to examine the case that the ordinary Lie algebra underlying the current algebra is $\gl_N$, and study the behavior as $N$ goes to infinity.
+This provides a clean explanation for the nature of the most important local cocycles that we have studied throughout this work.
+
+The essential fact is the remarkable theorem of Loday-Quillen \cite{LQ} and Tsygan~\cite{Tsy},
+which yields a natural map \owen{ugly notation so lets find a better one}
+\[
+\lqt(A) : \underset{N \to \infty}{\colim} \, \cliels(\gl_N(A)) \cong \cliels(\gl_\infty(A)) \to \Sym(\cycls(A)[1])
+\]
+for any dg algebra $A$ over a field $k$ of characteristic~0.
+Naturality here means that it works over the category of dg algebras and maps of dg algebras.
+(This construction works even for $A_\infty$ algebras.)
+When $A$ is unital, this map is a quasi-isomorphism.
+
+This construction makes sense even when working with the {\em local} Lie algebra cochains,
+once we introduce a local version of the cyclic cochains.
+In consequence we obtain natural local cocycles for all $\sG \ell_{N} = \fgl_N \tensor \Omega^{0,*}$
+from cyclic cocycles of $\Omega^{0,*}$.
+This uniform-in-$N$ construction illuminates the simplicity of the chiral anomaly.
+
+Our approach here is modeled on prior work of Costello-Li \cite{CLbcov2} and Movshev-Schwarz~\cite{MovSch},
+but it is also satisfyingly parallel to the approach of \cite{FHK},
+as we explain below.
+
+\subsection{Local cyclic cohomology}
+
+We need a local notion of a cyclic cocycle. 
+Our approach is modeled on the work we undertook earlier in this paper,
+where we used the concept of a local Lie algebra earlier as a natural setting for currents. 
+In practice, we replace a (dg) Lie algebra with a (dg) associative algebra and replace Lie algebra cochains with cyclic cochains, 
+always keeping locality in place.
+
+\begin{dfn}\label{def: localalg}
+A {\em $C^\infty$-local dg algebra} on a smooth manifold $X$~is:
+\begin{enumerate}
+\item[(i)] a $\ZZ$-graded vector bundle $A$ on $X$ of finite total rank, whose sheaf of sections we denote~$\sA^{sh}$;
+\item[(ii)] a degree one differential operator $\d : \sA^{sh} \to \sA^{sh}$;
+\item[(iii)] a degree zero bidifferential operator $\cdot : \sA^{sh} \times \sA^{sh} \to \sA^{sh}$
+\end{enumerate}
+such that the collection $(\sA^{sh}, \d, \cdot)$ has the structure of a sheaf of associative dg algebras.
+\end{dfn}
+
+\begin{rmk}
+It's perhaps abusive to use the term ``local algebra" here, since in the conventional mathematical sense a local algebra refers to an ordinary algebra with a unique maximal ideal. 
+We choose the terminology in analogy with the concept of a local Lie algebra on a manifold but stress the difference with the usual commutative algebra definition by adding the adjective~$C^\infty$. 
+\end{rmk}
+
+We reserve the notation $\sA$ for the cosheaf of compactly supported sections of the bundle $A \to X$.
+By the assumptions, this is a cosheaf of dg associative algebras. 
+We will abusively refer to a $C^\infty$-local algebra $(A, \d, \cdot)$ simply by its cosheaf $\sA$.
+
+\begin{eg}
+The sheaf of smooth functions provides a trivial example of a $C^\infty$-local algebra on any manifold. 
+On a complex manifold, the basic example for us is the Dolbeault complex $\Omega^{0,*}_X$.
+This example is, of course, also commutative. 
+\end{eg}
+
+Any bundle of finite dimensional associative (dg) algebras defines a $C^\infty$-local algebra where the structure maps are differential operators of order zero. 
+
+%For a noncommutative example, start with the sheaf of holomorphic differential operators and take its Dolbeault resolution.
+%\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
+
+There is a forgetful functor from $C^\infty$-local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
+Thus, every $C^\infty$-local algebra is a local Lie algebra (with same underlying bundle). 
+
+%Now, if $\sA$ is a local algebra on $\sL$ is a local Lie algebra we can consider the vector bundle $A \tensor L$. 
+%The sheaf of smooth sections of this bundle is $\sL \tensor_{C^\infty_X} \sA$.
+%In general, the Lie bracket on $\sL$ will not endow $A \tenso L$ with the structure of a local Lie algebra, since the bracket may not be $C^\infty$-linear. 
+%But, we have the following.
+%
+%\begin{lem}
+%Suppose $\sA$ is a local algebra and $\sL$ is a local Lie algebra such that the bracket $[-,-]_\sL$ is a degree zero differential operator. 
+%Then $[-,-]_{\sL}$ endows $\sA \tensor \sL$ with the structure of a local Lie algebra. 
+%\end{lem} 
+%
+%\owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
+%\brian{You're right. What should we say then? Tensoring $\sA$ with a bundle of Lie algebras is a local Lie algebra? I guess that's all we use.}
+
+For $C^\infty$-local algebras, there is an appropriate notion of cohomology respecting the locality, 
+analogous to local Lie algebra cohomology. 
+To define it, first consider the underlying $\ZZ$-graded vector bundle $A$ of a $C^\infty$-local algebra. 
+The $\infty$-jet bundle $JA$ of $A$ is a graded left $D_X$-module via the canonical Grothendieck connection on $\infty$-jets,
+as is true for any graded vector bundle,
+but it has additional structure as well.
+Because the differential and product on $A$ are differential operators, 
+they intertwine with the $D_X$-module structure on $JA$.
+Hence $JA$ is also a dg associative algebra in the category of dg $D_X$-modules,
+using the symmetric monoidal product~$- \otimes_{C^\infty_X} -$. 
+
+%\owen{I'm not so happy with how I wrote things below. I found what was there a bit confusing, because it meant something different by Hochschild cochains than many people mean.}
+%\brian{What you wrote is the dual to hochschild homology of $JA$, which is the thing we want.
+%I agree it's not the hochschild cochains of the algebra with trivial coefficients (which might be what you think could be confusing), but you're clear about that.} 
+
+
+In this symmetric monoidal dg category, 
+one can mimic many standard constructions from homological algebra.
+For our current purposes, we are interested in cyclic cohomology,
+and hence as a first step, in $\Hoch^*(R,R^*)$, the Hochschild cohomology of an algebra $R$ with coefficients in its linear dual $R^*$.
+The usual formulas apply verbatim in the dg category of dg $D_X$-modules.
+Hence, the dg $D$-module of Hochschild cochains on $JA$~is 
+\[
+\Hoch^* (JA, JA^\vee) = \prod_{n \geq 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X)[-n]
+\]
+with the usual Hochschild differential.
+(We note that the superscript $\otimes n$ means $\otimes_{C^\infty_X}$ iterated $n$ times.)
+
+The {\em reduced} Hochschild cochains is the product without the $n=0$ component. 
+
+\def\Hoch{{\rm Hoch}}
+\def\Hochloc{{\rm Hoch}_{\rm loc}}
+\def\Cyc{{\rm Cyc}}
+\def\Cycloc{{\rm Cyc}_{\rm loc}}
+
+\begin{dfn}\label{dfn: hochloc}
+The {\em $C^\infty$-local Hochschild cochains} of a $C^\infty$-local algebra $\sA$ on $X$~is the sheaf
+\[
+\Hochloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Hoch^*_{red} (JA, JA^\vee) .
+\] 
+We denote the global sections of this sheaf of cochain complexes by~$\Hochloc^*(\sA(X))$.
+\end{dfn}
+
+The reader will observe its similarity to its counterpart in local Lie algebra cohomology introduced in Section~\ref{sec: localcocycle}. 
+Just as in local Lie algebra cohomology, we can concretely understand an element in $\Hochloc^*(\sA(X))$ as follows.
+It is a power series on $\sA(X)$ that is a sum of functionals of the form
+\[
+\alpha_1 \tensor \cdots \otimes \alpha_k \mapsto \int_X  D_1(\alpha_1) \cdots D_k(\alpha_k) \, \omega_X
+\]
+where each $D_i$ is a differential operator from $\sA$ to~$C^\infty(X)$ and $\omega_X$ is a smooth top form on~$X$. 
+
+There is a cyclic version of this cohomology.
+For each $n$, there is an action of the cyclic group $C_n$ on $JA^{\tensor n}$,
+and hence on the $n$th component of the reduced Hochschild complex $\Hoch_{red}^* (JA, JA^\vee)$.
+Taking the termwise quotient $D_X$-module, we obtain the {\em reduced cyclic cochains}
+\[
+\Cyc_{red}^* (JA, JA^\vee) = \prod_{n > 0} {\rm Hom}_{C^\infty_X} (JA^{\tensor n}, C^\infty_X) / C_n .
+\]
+The Hochschild differential restricts to this subspace to yield a dg $D_X$-module. 
+We mimic Definition~\ref{dfn: hochloc} for the $C^\infty$-local version of cyclic cohomology of a $C^\infty$-local algebra~$\sA$. 
+
+\begin{dfn}\label{dfn: cycloc}
+The {\em $C^\infty$-local cyclic cochains} of a $C^\infty$-local algebra $\sA$ on $X$ is the sheaf
+\[
+\Cycloc^*(\sA) = \Omega^*_X[2d] \tensor_{D_X} \Cyc^*_{red} (JA) .
+\] 
+We denote the global sections of this sheaf of cochain complexes by~$\Cycloc^*(\sA(X))$.
+\end{dfn}
+
+To make things concrete, 
+consider the most relevant $C^\infty$-local algebra for us: the Dolbeault complex $\Omega^{0,*}_X$ on a complex manifold $X$. 
+For this $C^\infty$-local Lie algebra, there is a natural degree zero cocycle in $C^\infty$-local cyclic cohomology.
+
+\begin{lem}
+\label{lem: univ}
+In complex dimension $d$, 
+the functional on $\Omega^{0,*}$ defined by
+\[
+\Theta^\infty_d (\alpha_0 \tensor \cdots \tensor \alpha_d) = \alpha_0 \wedge \partial \alpha_1 \cdots \wedge \partial \alpha_d
+\]
+is a degree zero cocycle in $\Cycloc^*(\Omega^{0,*})$. 
+\end{lem}
+
+This cocycle is ``universal'' in the sense that it only depends on dimension.
+
+\begin{proof}
+The proof is similar to that of Proposition \ref{prop j map}. 
+Note that the differential on $C^\infty$-local cochains consists of two terms: the $\dbar$ operator and the ordinary Hochschild differential. 
+It follows from graded commutativity of the wedge product that the cochain is cyclic and closed for the Hochschild differential. 
+To see that it is closed for the other piece of the differential, observe that
+\[
+\dbar \Theta^\infty_d(\alpha_0,\cdots,\alpha_d) = \Theta^\infty_d(\dbar \alpha_0, \alpha_1,\ldots,\alpha_d) \pm \Theta_d^\infty(\alpha_0, \dbar \alpha_1,\ldots \alpha_d) \pm \cdots \pm \Theta_d^\infty(\alpha_0, \alpha_1,\ldots \dbar \alpha_d) .
+\]
+The right hand side is the cocycle $\Theta_d^\infty$ evaluated on the derivation $\dbar$ applied to the element $\alpha_0 \tensor \cdots \tensor \alpha_d$. 
+The left hand side is a total derivative and hence vanishes in the $C^\infty$-local cochain complex. 
+\end{proof}
+
+\subsection{Local Loday-Quillen-Tsygan theorem and the chiral anomaly}
+
+We now turn to the relationship between cyclic cocycles for a $C^\infty$-local algebra $\sA$ and cocycles for the local Lie algebras $\gl_N( \sA)$ and~$\gl_\infty (\sA)$.
+The Loday-Quillen-Tsygan theorem implies the following,
+since the map $\lqt$ is natural and hence respects locality everywhere.
+
+\begin{prop}
+\label{prop: cycloc}
+Let $\sA$ be a $C^\infty$-local algebra.
+For every positive integer $N$, there is a map of sheaves
+\[
+\lqt_N^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_N( \sA)) 
+\] 
+that factors through a map of sheaves
+\[
+\lqt^* : \Cycloc^*(\sA)[-1] \to \cloc^*(\gl_\infty( \sA)) = \lim_{N \to \infty} \cloc^*(\gl_N( \sA))  .
+\]
+\end{prop}
+
+\begin{rmk}
+A version of this result was given in \cite{CL1} for $\sA = \Omega^{0,*}(X)$, 
+where $X$ is a Calabi-Yau manifold.
+They interpret $C^\infty$-local cocycles for $\Omega^{0,*}(X) \tensor \fgl_\infty$ as the space of ``admissible'' deformations for holomorphic Chern-Simons theory on $X$,
+and they identify the cyclic side in terms of Kodaira-Spencer gravity on~$X$.
+\end{rmk}
+
+Proposition \ref{prop: cycloc} sends a degree zero $C^\infty$-local cyclic cocycle to a degree one local Lie algebra cocycles for $\fgl_N(\sA)$.
+Of particular interest is the case $\sG l_{N} = \fgl_N \tensor \Omega^{0,*}$. 
+The degree zero cocycle $\Theta_d^\infty \in \Cycloc^*(\Omega^{0,*})$ from Lemma~\ref{lem: univ} thus determines a degree one cocycle 
+\[
+\lqt^*_N(\Theta_d^\infty) \in \cloc^*(\sG l_N)
+\]
+for each $N > 0$. 
+In fact, we have already met this class of cocycles for~$\sG l_{N}$. 
+
+\begin{dfn}
+For each $N$ and $k$, the functional $\theta_{k,N}(A) = {\rm tr}_{\fgl_N} (A^k)$ defines a homogenous degree $k$ polynomial on $\fgl_N$ that is $\fgl_N$-invariant.
+\end{dfn}
+
+\begin{lem}
+\label{lem:pullbackofthetainfinity}
+For every $N$, 
+\[
+\lqt_N^*(\Theta_d^\infty) = \fj(\theta_{d+1, N})
+\]
+where $\fj$ from Definition~\ref{dfn: j}.
+\end{lem}
+
+In a sense $\Theta^\infty_d$ is the ``universal'' cocycle --- in that it only depends on the complex dimension and not on any Lie algebraic data --- that determines the most important local cocycles we have encountered before.
+
+This universality is perhaps most apparent when we view cocycles as anomalies to solving the quantum master equation. 
+For concreteness, consider the $\beta\gamma$ system with values in $V$ as in Section \ref{sec: qft}.
+This theory is natural in the vector space $V$ in the sense that if $V \to W$ is a map of vector spaces, then there is an induced map of theories from the theory based on $V$ to the theory based on $W$.\footnote{This means, for instance, that there is an induced map between the spaces of solutions to the equations of motion.}
+Formal aspects of BV quantization implies that anomalies to solving the QME get pulled back along such maps between theories. 
+
+If we choose an identification $V \cong \CC^N$, this implies the the anomaly to solving the $\gl_N = \gl(V)$-equivariant QME is pulled back from the anomaly to solving the $\gl_\infty$-equivariant QME. 
+For the $\beta\gamma$ system on $\CC^d$ with values in $\CC^\infty = \cup_{N > 0} \CC^N$, the anomaly to solving the $\gl_\infty$-equivariant QME is precisely the class $\Theta_{d}^\infty$. 
+
+This is consistent with our calculations in Section \ref{sec: qft} and this Lemma \ref{lem:pullbackofthetainfinity}. 
+Indeed, if $V$ is additionally a $\fg$-representation, we can further pull-back the anomaly along the map of theories induced by the defining map $\rho : \fg \to \fgl(V)$ of the representation. 
+
+\begin{proof}(of Lemma \ref{lem:pullbackofthetainfinity})
+Let $A$ be a dg algebra.
+Consider the Lie algebra $\fgl_N(A)$ and the colimit $\gl_\infty(A) = {\rm colim} \; \fgl (A)$. 
+At the level of homology, the ordinary Loday-Quillen-Tsygan map is of the form
+\[
+\begin{array}{ccl}
+\clieu_{*+1}(\fgl_N(A)) & \to & {\rm Cyc}_{*}(A) \\
+X_0 \wedge \cdots \wedge X_n & \mapsto & \sum_{\sigma \in S_n} (-1)^{\sigma} {\rm tr} \left(X_0 \tensor X_{\sigma(1)} \tensor\cdots \tensor X_{\sigma(n)} \right), 
+\end{array}
+\] 
+which induces a dual map in cohomology ${\rm Cyc}^*(A, A^\vee) \to \clie^{*+1}(\fgl_N(A))$. 
+In the formula, we have used the generalized trace map
+\[
+{\rm tr} : {\rm Mat}_N(A)^{\tensor(n+1)} \to A^{\tensor (n+1)} 
+\]
+that maps an $(n+1)$-tuple $X_0\tensor \cdots \tensor X_d$ to 
+\[
+\sum_{i_0,\ldots,i_n} (X_0)_{i_0 i_1} \tensor (X_1)_{i_1i_2} \tensor \cdots \tensor (X_n)_{i_n i_0}
+\]
+where $(X_k)_{ij} \in A$ denotes the $ij$ matrix entry of~$X_k$.
+
+The map on local functionals is essentially this ordinary (dual) Loday-Quillen-Tsygan map applied to the $\infty$-jets of the commutative algebra $\Omega^{0,*}$. 
+Since $\Omega^{0,*}$ is commutative, the generalized trace is simply the trace of the product.
+%so that for any $\varphi \in \Cycloc^*(\Omega^{0,*})$ of homogenous degree $n$, one has
+%\[
+%\lqt_N^*(\varphi) (\alpha_0,\ldots,\alpha_n) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \cdots \wedge \alpha_d) . 
+%\]
+%\[
+%\begin{array}{ccccc}
+%{\rm tr} & : & {\rm Mat}_N(\Omega^{0,*})^{\tensor (n+1)} & \to & (\Omega^{0,*})^{\tensor (n+1)} \\
+%& & \alpha_0 \tensor \cdots \alpha_d
+%\end{array}
+%\]
+We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as the local Lie algebra cocycle
+\begin{align*}
+\ell q t_N^*(\Theta_d^\infty)\left(\alpha_0, \cdots, \alpha_d) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \partial \alpha_1\wedge \cdots \wedge \partial \alpha_d\right),
+\end{align*}
+which is precisely $\fj(\theta_{d+1,N})$. 
+\end{proof}
+
+\subsection{Holomorphic translation invariant cohomology}
+
+We turn our attention to $C^\infty$-local cyclic cocycles defined on affine space $\CC^d$ that are both translation invariant and $U(d)$-invariant. 
+We show that up to homotopy there is a unique such cyclic cocycle on the $C^\infty$-local algebra  $\Omega^{0,*}(\CC^d)$ given by $\Theta^\infty_d$. 
+
+\begin{prop}\label{prop: cyctrans}
+%There is a unique, up to scale, $U(d)$-invariant, holomorphic translation invariant, degree zero local cohomology class in the local cyclic cohomology of $\Omega^{0,*}(\CC^d)$.
+The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, $C^\infty$-local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
+Thus
+\[
+H^0\left(\Cycloc^*(\Omega^{0,*}(\CC^d))^{U(d) \ltimes \CC^d_{hol}} \right) \cong \CC .
+\] 
+\end{prop}
+
+For a definition of the notation used in the proposition we refer to Appendix \ref{sec: hol trans}.
+
+\begin{proof}
+The calculation is similar to that of the holomorphic translation invariant local Lie algebra cohomology of $\sG_d$ given in Appendix \ref{sec: hol trans}. 
+We list the steps of the calculation first, and we will justify them below. 
+\begin{enumerate}
+\item[(1)] There is an identification of the holomorphic translation invariant deformation complex 
+\beqn\label{step1}
+\Cycloc^*(\Omega^{0,*}(\CC^d)) \simeq \CC \cdot \d^d z \tensor^{\mathbb{L}}_{\CC[\partial_{z_i}]} {\rm Cyc}_{red}^*(\CC[[z_1,\ldots,z_d]])[d] .
+\eeqn
+Notice the overall shift down by the dimension $d$. 
+\item[(2)] We can recast the right-hand side as the Lie algebra homology of the $d$-dimensional abelian Lie algebra $\CC^d = {\rm span}\left\{\partial_{z_i}\right\}$ with coefficients in the module 
+
+\noindent$\Cyc_{red}^*(\CC[[z_1,\ldots,z_d]]) \d^d z [d]$:
+\[
+\CC \cdot \d^d z \tensor^{\mathbb{L}}_{\CC[\partial_{z_i}]} {\rm Cyc}_{red}^*(\CC[[z_1,\ldots,z_d]])[d] \cong {\rm C}^{\rm Lie}_*\left(\CC^d ; \Cyc_{red}^*(\CC[[z_1,\ldots,z_d]]) \d^d z \right)[d] .
+\] 
+\item[(3)] The $U(d)$-invariant subcomplex is quasi-isomorphic to $\left(\CC[t] / \CC\right) [2d]$, where $t$ is a formal variable of degree $+2$. 
+From this, the claim follows. 
+\end{enumerate}
+
+Step (1) follows from a result completely analogous to Corollary 2.29 in \cite{BWthesis} for local Lie algebra cohomology. 
+The commutative algebra $\CC[\partial_{z_i}]$ is equal to the enveloping algebra of the abelian Lie algebra $\CC^d = {\rm span} \{\partial_{z_i}\}$. 
+Hence, the right hand side of Equation (\ref{step1}) is precisely the Lie algebra homology in step (2). 
+
+We now justify Step (3). 
+First, we apply the Hochschild-Kostant-Roesenberg theorem to the cyclic homology of the ring $\CC[[z_1,\ldots,z_d]]$.
+It asserts a quasi-isomorphism 
+\[
+{\rm Cyc}_*(\CC[[z_1,\ldots,z_d]]) \simeq \left(\CC[[z_i]][\d z_i] [t^{-1}], t \d_{dR}\right)
+\]
+where the $\d z_i$ have degree $-1$ and $t$ is a formal parameter of degree $+2$ (note that the operator $t \d_{dR}$ is of degree $+1$). 
+The formal Poincar\'{e} lemma applied to $\hD^d$ then implies a quasi-isomorphism
+\[
+{\rm Cyc}_*(\CC[[z_1,\ldots,z_d]]) \simeq \CC [t^{-1}] .
+\]
+Thus, the holomorphic invariant subcomplex is quasi-isomorphic to
+\beqn\label{step3}
+\clieu_*(\CC^d ; (\CC [t] / \CC) \cdot \d^d z) [d] .
+\eeqn
+Here, we have identified the dual of $\CC[t^{-1}]$ with $\CC[t]$ and quotiented out by the constant term since we are taking reduced cohomology. 
+Notice that $(\CC [t] / \CC) \cdot \d^d z$ has a trivial $\CC^d$-action. 
+
+We have yet to take $U(d)$-invariants. 
+The complex (\ref{step3}) is equal to
+\[
+\Sym^* \left(\CC^d[1]\right) \tensor (\CC [t] / \CC) \cdot \d^d z) [d] .
+\]
+A $U(d)$-invariant element must be proportional to the factor $\partial_{z_1} \cdots \partial_{z_d} \in \Sym^d(\CC^d[1])$.
+Hence, the $U(d)$-invariant subcomplex is
+\[
+\CC \cdot (\partial_{z_1} \cdots \partial_{z_d}) \tensor (\CC [t] / \CC) \cdot \d^d z) [2d] = \left(\CC[t] / \CC\right) [2d]
+\] 
+as desired. 
+The class of $\Theta^\infty_d$ corresponds to the element $t^{d}$ in this presentation. 
+\end{proof}
+
+Consider the dg algebra $A_d$ that we have used as an algebraic model for the Dolbeault complex of punctured affine space $\Omega^{0,*}(\CC^d \setminus 0)$. 
+In Theorem 2.3.5 of \cite{FHK}, they show that there is a unique $U(d)$-invariant class in the cyclic cohomology of $A_d$ in degree one given by the functional
+\[
+a_0 \tensor \cdots \tensor a_d \mapsto \oint a_0 \wedge \partial a_1 \cdots \wedge \partial a_d .
+\]
+Up to our conventional degree shifts, we are seeing the analogous uniqueness result at the level of local functionals. 
+
+
+\subsection{A noncommutative example}
+
+%Suppose $(X,\omega)$ is a holomorphic symplectic manifold, and let $\{-,-\}_\omega$ be the Poisson bracket on holomorphic functions. 
+%This bracket extends to one on the Dolbeault complex $\Omega^{0,*}(X)$. 
+%For any $N$, we then obtain the dg Lie algebra
+%\[
+%\sL(X,\omega) = \left(\Omega^{0,*}(X) \tensor \fgl_N , \{-,-\}_\omega\right) .
+%\]
+%This is clearly a local Lie algebra. 
+
+The main objects that have appeared in this section so far are the cyclic chains and cochains of the commutative dg algebra $\Omega^{0,*}(X)$. 
+In this subsection, we display a variant of the above examples where we introduce a noncommutative deformation of this algebra. 
+Specifically, we assume $X$ is a holomorphic symplectic manifold and assume we have a deformation quantization of holomorphic functions.
+This introduces a dg algebra deformation of the Dolbeault complex, and we can consider the resulting deformation of the current algebra.
+We display the flexibility of our techniques by exhibiting a free field realization of the resulting current algebra using a noncommutative version of the $\beta\gamma$ system. 
+
+Noncommutative gauge theories appear in the description of the open sectors of superstring theories \cite{WittenNonComm}, and our primary interest in this class of examples is that we expect them to appear as a symmetries in the corresponding sectors of supergravity and $M$-theory. 
+More definitive results in this direction have appeared in the program for studying the superstring theory through its holomorphic twists developed in the papers of Costello and Li in \cite{CostelloLiSUGRA} and by Costello in \cite{MTheory1, MTheory2}. 
+%We hope to return to studying \brian{finish}, but for now we hope this example elucidates the flexibility of our constructions. 
+
+As usual, suppose $X$ is a complex manifold, and as above, consider the local Lie algebra $\sG l_N = \Omega^{0,*}(X) \tensor \fg$ on $X$ for every $N > 0$. 
+If $X$ is additionally holomorphic symplectic, we obtain a deformation of this family of local Lie algebras described in the following way. 
+Suppose that $\star_\epsilon$ is a formal holomorphic deformation quantization of $(X,\omega)$. 
+This is an $\epsilon$-dependent associative product on holomorphic functions 
+\[
+\star_\epsilon : \sO^{hol}(X) \times \sO^{hol}(X) \to \sO^{hol}(X)[[\epsilon]]
+\]
+where, term-by-term in $\epsilon$, the product is given by a holomorphic bidifferential operator. 
+This associative product on $\sO^{hol}(X)[[\epsilon]]$ extends to one on the Dolbeault complex, giving the following definition. 
+
+\begin{dfn}
+Define the sheaf of associative dg algebras
+\[
+\sA_\epsilon := (\Omega^{0,*}(X)[[\epsilon]], \dbar, \star_{\epsilon})
+\]
+where the differential is the usual $\dbar$ operator, and $\star_{\epsilon}$ is the Moyal product induced from the deformation quantization.
+\end{dfn}
+
+In fact, $\sA_\epsilon$ is essentially a $C^\infty$-local algebra in the sense of Definition~\ref{def: localalg}. 
+The only subtlety is that $\sA_\epsilon$ is not given by the sections of a finite rank vector bundle.
+However, it is a pro-$C^\infty$-local algebra in the sense that it can be expressed as a limit of $C^\infty$-local algebras
+\[
+\sA_\epsilon = \lim_{k \to \infty} \sA_\epsilon / \epsilon^{k+1} .
+\] 
+%where $\sA_\epsilon / \epsilon^{k+1}$ is the local algebra given by sections of the finite rank vector bundle $\left(\Wedge^* T^{0,1*}\right) \tensor \ul{\CC[\epsilon]/\epsilon^{k+1}} = \left(\Wedge^* T^{0,1*}\right)^{\oplus k}$.
+%The algebra structure on $\sA_\epsilon / \epsilon^{k+1}$ is given by the reduction of $\star_{\epsilon}$ modulo $\epsilon^{k+1}$. 
+
+This algebra allows us to define a non-commutative variant of the current algebra. 
+Namely, we can consider the Lie algebra of $N \times N$ matrices with values in $\sA_\epsilon$ that we denote by $\gl_N(\sA_{\epsilon})$. 
+Again, this is not a local Lie algebra in the strict sense, since the underlying vector bundle is infinite dimensional. 
+However, it is finite rank over the ring $\CC[[\epsilon]]$, and all of the same constructions of local Lie algebras still make sense in this context. 
+Note that this current algebra reduces modulo $\epsilon$ to the local Lie algebra $\sG l_N = \Omega^{0,*}_X \tensor \gl_N$:
+\[
+\sG l_N = \lim_{\epsilon \to 0} \gl_N(\sA_{\epsilon})  .
+\]
+%In other words, $\gl_N(\sA_{\epsilon})$ is a deformation of $\sG l_N$. 
+
+\subsubsection{Classical Noether current}
+
+Just like in the case of the ordinary current algebra associated to $\sG l_N$, we can contemplate a free field realization of $\gl_N(\sA_{\epsilon})$.
+The simplest way to do this is to consider the analogue of the $\beta\gamma$ system in this noncommutative context. 
+The $\beta\gamma$ system was built from the Dolbeault complex on the complex manifold $X$. 
+The non-commutative variant is obtained by replacing the Dolbeault complex with the dg algebra~$\sA_\epsilon$. 
+
+Let $V$ be a finite dimensional $\CC$-vector space.
+The free theory we consider has fields 
+\[
+(\gamma, \beta) \in \sA_\epsilon \tensor V \oplus \sA_\epsilon \tensor V^* [d-1] 
+\]
+and action functional
+\[
+S(\beta,\gamma) = \int_X \Tr_V(\beta \star_{\epsilon} \dbar \gamma)
+\]
+By trace we mean the usual map $\Tr_V : \End(V) = V \tensor V^* \to \CC$. 
+We will refer to this as the ``non-commutative $\beta\gamma$ system" on $X$ with values in $V$.
+
+\begin{rmk}
+Note that this is not a classical theory in a strict sense because the space of fields is not the sections of a {\em finite} rank vector bundle. 
+We can make sense of this rigorously by considering our theory as one defined over the base ring $\CC[[\epsilon]]$. 
+In other words, we have defined a family of field theories over the formal disk with coordinate~$\epsilon$. 
+\end{rmk}
+
+\begin{lem}\label{lem: nonbg}
+Locally on $\CC^d$, the non-commutative $\beta\gamma$ system with values in $V$ is equivalent to the ordinary $\beta\gamma$ system with values in $V$ (considered as a trivial family over the formal disk with coordinate $\epsilon$). 
+\end{lem}
+
+\begin{proof}
+Locally, on $\CC^d$, the $\star_{\epsilon}$-product has the form
+\[
+f \star_{\epsilon} g = fg + \epsilon \varepsilon_{ij} \frac{\partial f}{\partial z_i} \frac{\partial g}{\partial z_j} + \cdots
+\]
+From this, we see that $\beta \star_{\epsilon} \dbar \gamma$ and $\beta \dbar \gamma$ differ by a total derivative. 
+Thus, locally, this non-commutative $\beta\gamma$ system is equivalent to the usual one (up to adjoining the formal parameter~$\epsilon$).
+\end{proof}
+
+It appears that adding the non-commutative deformation does not deform the free holomorphic field theory. 
+Once we consider symmetries, however, we see a deformation of the usual free field realization. 
+
+Fix an identification of $V \cong \CC^N$, for some $N \geq 1$. 
+As in the non-commutative case, there is a symmetry of this $\beta\gamma$ system by the current algebra built from the ordinary local Lie algebra $\sG l_N$, but this does not use the symplectic structure on $X$. 
+However, once we turn on the non-commutative deformation, we see that the $\beta\gamma$ system has a symmetry by the deformed current algebra built from $\gl_N(\sA_{\epsilon})$. 
+
+Indeed, there is a Noether current in this setup given by
+\[
+I_{\epsilon,N} (\alpha, \beta,\gamma) = \int \Tr_{V}(\beta \wedge (\alpha \star_{\epsilon} \gamma)) 
+\]
+where $\alpha \in \gl_N(\sA_{\epsilon})$.
+By $\alpha \star_\epsilon \gamma$ we mean the algebra action of $\gl_N(\sA_{\epsilon})$ on $\sA_\epsilon \tensor V$. 
+
+\begin{lem}
+This Noether current determines a map of factorization algebras on $X$
+\[
+J^\cl_\epsilon: \UU(\gl_N(\sA_{\epsilon})) \to \Obs^{\cl}_{\epsilon, N}
+\]
+where $\Obs^{\cl}_{\epsilon, N}$ is the factorization algebra of classical observables of the non-commutative $\beta\gamma$ system with values in $V = \CC^N$.
+Modulo $\epsilon$, this reduces to the map of factorization algebras in Proposition~\ref{prop:CNT}.
+\end{lem}
+
+\subsubsection{Equivariant quantization}
+
+Since the noncommutative $\beta\gamma$ system is still free, there exists a unique quantization $\Obs^\q_{\epsilon, N}$ as a factorization algebra on $X$ for each $N$. 
+
+Let's turn to the quantization of the classical $\fgl_N(\sA_\epsilon)$ symmetry, where the situation is similar to the $\sG_X$-equivariant $\beta\gamma$ system studied in Section \ref{sec: qft}.
+Although the global case is interesting, we will restrict ourselves to the simplified local situation where 
+\[
+X = \CC^d = \CC^{2n}
+\] 
+and $\omega$ is the standard symplectic form. 
+We can employ analogous Feynman diagrammatic methods to contemplate quantum equivariance in the noncommutative context.
+
+We ask that the Noether current $I_{\epsilon,N}$ solves the $\fgl_N(\sA_{\epsilon})$-equivariant quantum master equation.
+Locally, on $\CC^d$, the obstruction to satisfying the QME is given by the following local cocycle 
+\beqn\label{noncommobs}
+\int \Tr_{\fgl_N} (\alpha \star_{\epsilon} \partial \alpha \star_{\epsilon} \cdots \star_{\epsilon} \partial \alpha) \in \cloc^*(\fgl_N(\sA_\epsilon)) .
+\eeqn
+In the ordinary commutative case, we were able to characterize this anomaly as being determined by an element in $\Sym^{d+1}(\fg^\vee)$.
+For the noncommutative situation, we do not have a direct way of identifying this local cocycle.
+
+We arrive at an explicit characterization by taking the large $N$ limit, where we are able to identify this anomaly algebraically. 
+Indeed, we have the Loday-Quillen-Tsygan map for local functionals
+\[
+\lqt^* : \Cycloc^*(\sA_\epsilon)[-1] \to \cloc^*(\gl_\infty(\sA_\epsilon)) = \lim_{N \to \infty} \cloc^*(\gl_N( \sA))  .
+\]
+Thus, the large $N$ anomaly must come from a class in $\Cycloc^*(\sA_\epsilon)$ of cohomological degree zero. 
+
+By a similar proof as in Proposition \ref{prop: cyctrans}, one can show that the cohomology of the translation invariant subcomplex of $\Cycloc^*(\sA_\epsilon)$ is equal to (a shift of) the cyclic cohomology of the formal Weyl algebra
+\[
+\Cyc^*(\Hat{A}_{2n}, \Hat{A}_{2n}^\vee) [2n] .
+\]
+Here, $\Hat{A}_{2n}$ is the formal Weyl algebra on generators $\{x_1,\ldots, x_n, y_1,\ldots y_n\}$ satisfying the commutation relation
+\[
+[x_i, y_j] = \epsilon \delta_{ij} .
+\] 
+This cyclic cohomology is studied in depth in \cite{Willwacher}, where it is shown that there is {\em unique}, up to scaling, nontrivial class in the cyclic cohomology
+\[
+\Theta_{\epsilon}^\infty \in HC^{2n} (\Hat{A}_{2n}, \Hat{A}_{2n}^\vee) .
+\]
+For us, a multiple of this class represents the anomaly to the equivariant quantization the noncommutative $\beta\gamma$ system at large $N$. 
+
+We can now use the universal nature of this class to characterize anomalies at finite $N$ to obtain the following quantum Noether map. 
+
+\begin{prop}
+The $\fgl_N(\sA_\epsilon)$-equivariant quantization determines a map of factorization algebras on $\CC^d = \CC^{2n}$: 
+\[
+J^\q_\epsilon: \UU_{a \Theta_{\epsilon, N}} (\fgl_N(\sA_\epsilon)) \to \Obs^\q_{\epsilon, N}
+\]
+where $a \Theta_{\epsilon, N} \in H^1_{loc}(\fgl_N(\sA_{\epsilon}))$ is scalar multiple the class obtained from the universal cyclic cocycle $\Theta_{\epsilon}^\infty$ under the Loday-Quillen-Tsygan map
+\[
+\lqt^* : \Cycloc^*(\sA_\epsilon)[-1] \to \cloc^*(\gl_N( \sA))  .
+\]
+\end{prop}
+
+\begin{rmk}
+In order to nail down the constant $a$ would require a tedious, albeit seemingly straightforward, Feynman diagram analysis akin to Section \ref{sec: qft}. 
+\end{rmk}
+
+By Lemma \ref{lem: nonbg}, we see that on $\CC^{2n}$ the factorization algebra of the noncommutative $\beta\gamma$ system $\Obs^\q_{\epsilon, N}$ is actually isomorphic to the factorization algebra
+\[
+\Obs^\q_{\CC^{N}} \tensor_{\CC} \CC[[\epsilon]]
+\]
+where $\Obs^\q_{\CC^{N}}$ is the ordinary $\beta\gamma$ system of maps $\CC^{2n} \to \CC^N$. 
+Thus, as an immediate corollary, we see that the quantum Noether map is of the form
+\[
+\UU_{a \Theta_{\epsilon, N}} (\fgl_N(\sA_\epsilon)) \to \Obs^\q_{\CC^{N}} \tensor_{\CC} \CC[[\epsilon]] .
+\]
+This means that inside the $\beta\gamma$ system we have {\em two} different free field realizations: (1) the one from Section \ref{sec: qft} where we realized the ordinary current algebra at some central extension in $\Obs^\q_{\CC^{N}}$, and (2) the one we have just exhibited, which realizes a central extension of the algebra $\fgl_N(\sA_{\epsilon})$. 
