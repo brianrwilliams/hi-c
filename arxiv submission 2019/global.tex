@@ -61,8 +61,6 @@ In other words, we quotient by the equivalence relation
 where $n$ runs over $\ZZ$.
 \end{dfn}
 
-\owen{I removed the $2 \pi i$ factors from the exponent, if that's OK.}
-
 We denote the obvious quotient map by $p_{\bf q} : \CC^d \setminus \{0\} \to X_{\bf q}$. 
 It is a straightforward exercise to check that $X_{\bf q}$ is diffeomorphic to $S^{2d-1} \times S^1$ as smooth manifolds;
 the clearest situation is where $q_1 = q_2 = \cdots = q_d$,
@@ -282,7 +280,7 @@ We wish to show that this cochain complex admits a quasi-isomorphism to $\Hoch_*
 The twisted complex is a $K$-linear deformation of the ordinary Lie algebra homology of $\sG(X)$. 
 In particular, it does not follow that the orthogonal projection (\ref{Lieproj}) defines a quasi-isomorphism to $\Hoch_*(U \fg)[K]$.
 In order to find an explicit quasi-isomorphism, we appeal to the homological perturbation lemma.
-For more details on this result, see Section 2.5 of \cite{OwenThesis}. 
+For more details on this result, see Section 2.5 of~\cite{GwThesis}. 
 
 In the untwisted case, upon tensoring with $\CC[K]$, Remark \ref{rmk: hpl1} implies that we have a deformation retraction of cochain complexes
 \begin{equation*}\tag{$\ast$}
@@ -386,7 +384,6 @@ Thus, we will work with super vector spaces and super cochain complexes.
 These lead to minor modifications to the approach of Section~\ref{sec: qft}, 
 but yields a statement that is easiest to understand.
 
-\owen{What do you think?}
 Before delving into the details, 
 we note for physicists that we develop here a holomorphic version of the Adler-Bardeen-Jackiw anomaly,
 as we are studying fermionic matter fields coupled to a background holomorphic gauge field.
@@ -518,9 +515,9 @@ We denote the small complex on the right hand side by~$\widetilde{\sL}$.
 
 The bracket for $\widetilde{\sL}$ is determined by the formula
 \[
-[1 \tensor w^* , \alpha \tensor w] = \hbar \<w^*, w\> .
+[1 \tensor w^* , \alpha \tensor w] = \hbar \<w^*, w\>,
 \]
-\owen{And also the formula with $w$ and $w^*$ swapped, right?}
+and the analogous formula with the roles of $w$ and $w^*$ swapped.
 By directly unraveling the definitions, one finds
 \[
 \clieu_*(\widetilde{\sL}) = \clieu_*({\rm Heis}_\hbar(W \oplus W^*), U({\rm Heis}_\hbar(W \oplus W^*))).
@@ -563,8 +560,7 @@ After inverting $\hbar$ and invoking Lemma \ref{lem: hopfcliff}, we obtain a com
 \beqn\label{hopfcliffquasi}
 \Obs^\q_{bc} (X) [\hbar^{-1}] \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar (V \oplus V^*)[\hbar^{-1}]) \xto{\simeq}\CC[\hbar,\hbar^{-1}] .
 \eeqn
-\owen{I inverted $\hbar$ for the Clifford algebra too, so we can invoke Morita triviality.}
-The first quasi-isomorphism is the one from Lemma \ref{lem: hopfcliff}, and the second is Berezin integration. 
+The first quasi-isomorphism is the one from Lemma~\ref{lem: hopfcliff}, and the second is Berezin integration. 
 We summarize our computations as follows.
 
 \begin{lem}
@@ -607,7 +603,6 @@ The $\sG_X$-equivariant quantization of the $bc$ system on $X$ valued in the $\f
 This map is natural in the representation~$V$.
 \end{prop}
 
-\owen{What do you think about the following addition?}
 As discussed earlier, a character of $\fg$ is a linear functional on ${\rm HH}_0(U \fg)$,
 so we have produced an $\hbar$-dependent character from each Hopf manifold~$X$ and finite-dimensional $\fg$-representation~$V$.
 Although we will not pursue an explicit formula here, 
@@ -623,21 +618,12 @@ so that one can obtain $q$-character formulas.
 
 The $bc$ system on any manifold $X$ is {\em free}, and the anomaly $\Theta_X$ to solving the $\sG_X$-equivariant QME parametrizes the central extension of $\sG_X$ that acts on the quantum theory.
 
-%That is, analogously to the flat case, we know that there exists a $\Theta_X \in \hbar H^1_{\rm loc}(\sG_X)[[\hbar]]$ and a quantum Noether map
-%\[
-%J^\q : \UU_{\Theta_X} (\sG_X) \to \Obs^{\q}_{bc}(X) .
-%\] 
-
-We stress that for {\em any} complex $d$-fold $X$ we can consider the higher $bc$ system on $X$ with values in the $g$-representation $\Pi(V)$. 
-Furthermore, this theory is natural in the complex manifold $X$, in the sense that given any local biholomorphism of complex $d$-folds $f : X \to X'$, 
-we can pull back the $bc$ system on $X'$ to the $bc$ system on $X$. 
-In short, we can consider the ``universal'' $bc$ system as a functor
-\[
-\sE_{bc} : {\rm Hol}_d^{op} \to (-1){\rm PoisVect}
-\]
-where $(-1){\rm PoisVect}$ is an $\infty$-category of dg vector spaces with 1-shifted skew-symmetric invariant pairing. 
-\owen{what's above is not true, strictly speaking, since if $X$ is not compact, the pairing is ill-defined! It's fixable but I can't think of a really brief fix right at the moment}
-Since $\sG$ also determines a functor $\sG: {\rm Hol}_d^{op} \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the universal equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
+We stress that these constructions work for {\em any} complex $d$-fold $X$, 
+so we can consider the higher $bc$ system on $X$ with values in the $g$-representation $\Pi(V)$. 
+Furthermore, this theory is natural in the complex manifold $X$, in the sense that any holomorphic embedding of complex $d$-folds $f : X \to X'$ pulls back the $bc$ system on $X'$ to the $bc$ system on $X$. 
+There is thus a ``universal'' $bc$ system on a site ${\rm Hol}_d$ of complex $d$-folds and local biholomorphisms (maps that are locally holomorphic isomorphisms).
+The construction $\sG$ also determines a sheaf on this site, sending $X$ to $\Omega^{0,*}(X, \fg)$, 
+and so we can consider the universal equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
 
 The anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME is encoded by a local functional of the form
 \[
@@ -647,7 +633,7 @@ where $\fc(X) \in \Omega^*(X)$ and where $\Tilde{\fj}$ is a linear map of the fo
 \[
 \Tilde{\fj} : \Sym(\sG_X[1]) \to \Omega^*(X) .
 \]
-Universality puts restrictions on the differential forms that can appear in the one-loop anomaly. 
+Universality then puts restrictions on the differential forms that can appear in the one-loop anomaly. 
 
 Indeed, since the anomaly $\Theta_X$ must be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of $X$. 
 Indeed, since $\Theta_X$ must also be natural with respect to holomorphic embeddings, we see that $\fc(X)$ must be some polynomial in the Chern classes of~$X$. 

@@ -35,7 +35,7 @@ The canonical inclusion of enveloping algebras
 \[
 \CC[\partial / \partial z_1, \ldots, \partial / \partial z_d] \hookrightarrow U(\CC^{d}_{\rm hol})
 \]
-that is a quasi-isomorphism.
+is a quasi-isomorphism.
 \end{lem}
 
 In other words, $U(\CC^{d}_{\rm hol})$ is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators on~$\CC^d$. 
@@ -152,7 +152,7 @@ We extend $\widetilde{\fj}$ to forms $\Omega^k(B\fg)$ with $k < d$ as the zero m
 Direct computation then shows the following.
 
 \begin{lem}
-The construction above determines a cochain map $\widetilde{\fj}: \tau_{<d+1} DR_{\rm aug}(B\fg) \to \cloc^*(\sG_d)$. \owen{I probably have the shift wrong ...} 
+The construction above determines a cochain map $\widetilde{\fj}: \tau_{<d+1} DR_{\rm aug}(B\fg)[d] \to \cloc^*(\sG_d)$. 
 \end{lem}
 
 As this truncated de Rham complex $\tau_{<d+1} DR_{\rm aug}(B\fg)$ is quasi-isomorphic to  $\Omega^d_{cl}(B\fg)$, 
@@ -348,32 +348,32 @@ W can rewrite the decomposition (\ref{decomp}) as
 \bigoplus_{k = 0}^n \Lambda^k(V)[-k] \tensor \Sym^{>0} \left(\fg^\vee [-1] \tensor \Sym(V^\vee)\right)_{(-k)} .
 \]
 We expand the term $\Sym^{>0} \left(\fg^\vee [-1] \tensor \Sym(V^\vee)\right)$ as
-\[
+\beqn\label{gack}
 \Sym^{>0} \left(\fg^\vee[-1] \tensor \left(\CC \oplus V^\vee  \oplus \Sym^2(V^\vee)\oplus \cdots \right)\right) .
-\]
+\eeqn
 Using the relation 
 \beqn\label{symrel}
-\Sym^{>0} (W \oplus Z) = \Sym^{>0} (W) \oplus \Sym(W) \tensor \Sym^{>0}(Z),
+\Sym^{>0} (W \oplus Z) = \Sym^{>0} (W) \oplus (\Sym(W) \tensor \Sym^{>0}(Z)),
 \eeqn
-we see that this expression is equal to 
+we see that this expression~(\ref{gack}) is equal to 
 \begin{align}
-& \Sym^{>0} \left(\fg^\vee[-1] \oplus \fg^\vee [-1] \tensor V^\vee\right) \oplus \label{sym1} \\
+\Sym^{>0} & \left(\fg^\vee[-1] \oplus \fg^\vee [-1] \tensor V^\vee \right) \oplus \label{sym1} \\
 & \Sym \left(\fg^\vee[-1] \oplus \fg^\vee [-1] \tensor V^\vee\right) \tensor \Sym^{>0} \left(\fg^\vee[-1] \tensor \left(\Sym^2(V^\vee)\oplus \cdots \right) \label{sym2} \right)
 \end{align}
-Note that we are taking invariants of the tensor product of the above vector space with the totally antisymmetric representation $\Lambda^*(V)$. 
-Thus, none of the terms $\Sym^k(V^\vee)$ can contribute, so we can forget about the second line (\ref{sym2}) when we take $U(d)$ invariants. 
+In fact, we want to the $U(d)$-invariants of the tensor product of this enormous mess with the totally antisymmetric representation~$\Lambda^*(V)$. 
+Thus, none of the terms $\Sym^k(V^\vee)$ can contribute, so we can forget about the second line~(\ref{sym2}) when we taking $U(d)$-invariants. 
+\owen{Naughty!}
 
-Using the relation (\ref{symrel}) again, we expand the first line (\ref{sym1}) as
+Using the relation~(\ref{symrel}) again, we expand the first line~(\ref{sym1}) as
 \[
  \Sym^{>0} \left(\fg^\vee[-1]\right) \oplus \Sym \left(\fg^\vee[-1]\right) \tensor \Sym^{>0} \left(\fg^\vee [-1] \tensor V^\vee\right) .
  \]
 Note that the first term has $U(d)$-weight zero. 
-Thus, we find that the space of $U(d)$ invariants is equal to the $U(d)$-invariants of
+Thus, we find that the space of $U(d)$-invariants is equal to the $U(d)$-invariants of
 \[
  \Sym^{>0} \left(\fg^\vee[-1]\right) \oplus \bigoplus_{k = 1}^n \Lambda^k(V) [-k] \tensor \left(\Sym \left(\fg^\vee[-1]\right) \tensor \Sym^{>0} \left(\fg^\vee [-1] \tensor V^\vee\right) \right)_{(-k)} .
 \]
-
-Once we turn on the Lie differential, the first term above (corresponding to $k=0$ in our old notation) is precisely 
+Once we turn on the Lie differential, the first term above (corresponding to $k=0$ in our original notation) is precisely 
 \[
 \left(\Sym^{>0}(\fg^\vee[-1]), \d_{CE}\right) = \sO_{red}(B \fg) .
 \]
