@@ -8,6 +8,15 @@ We study the quantization of a particular {\em free} field theory, which makes s
 Classically, the theory depends on the data of a $G$-representation, and the holomorphic nature of the theory allows us the classical current algebra $\Cur^{\cl}(\sG_X)$ at ``zero level" to act as a symmetry. 
 We find that upon quantization, the symmetry is broken, but in a way that we can measure by an explicit anomaly, i.e., local cocycle for $\sG_X$. 
 This failure leads to a symmetry of the quantum theory via the quantum current algebra $\Cur^{\q}(\sG_X)$ twisted by this cocycle.  
+ 
+%For any BV theory $\sE$, the BV operator $\{S,-\}$, which satisfies $\{S,-\}^2 =0$ by the ordinary classical master equation, together with the BV bracket $\{-,-\}$ equip the space of local functionals $\oloc(\sE)$ with the structure of a dg Lie algebra. 
+%Another way to interpret the equivariant classical master equation is to view $I^{\sL}$ as an element in the dg Lie algebra $\oloc(\sE) \tensor \cloc^*(\sL)$.
+%
+%This section is mostly a cobbling together of know results above BV quantization for holomorphic theories found in the sources \cite{CG2, BWhol}. 
+%
+%%\subsection{The quantum master equation} 
+%
+%Suppose that $\fg$ is an ordinary Lie algebra that exists as a symmetry of a particular classical field theory. 
 
 \subsection{Holomorphic bosons}
 
@@ -219,6 +228,11 @@ Thus, $P_{\epsilon < L}$ provides a $\dbar$-homotopy between $K_\epsilon$ and $K
 \]
 \end{enumerate}
 
+%The building block in Costello's approach to renormalization is an effective family of functionals $\{I[L]\}$ parametrized by a {\em length scale} $L > 0$. 
+%For each $L > 0$ the functional $I[L] \in \sO(\sE)[[\hbar]]$ must satisfy various conditions, which are carefully stated in Definition 8.2.9.1 of \cite{CG2}. 
+%We will recall some key aspects that will be useful for our purposes. 
+%The main condition is a compatibility between the functionals $I[L]$ as one changes the length scale; this is referred to as {\em homotopy renormalization group (RG) flow}.
+
 To define the quantization, we recall the definition of a weight of a Feynman diagram adjusted to this equivariant context.
 To simplify our discussion, we introduce the notation $\sO(\sG_d[1])$ to mean the underlying graded vector space of $\clie^*(\sG_d)$, which is the (completed) symmetric algebra on the dual of~$\sG_d$. 
 
@@ -398,6 +412,9 @@ The external edges are labeled by elements $\alpha^{(i)} \in \Omega^{0,*}_c(\CC^
 \end{center}
 \end{figure}
 
+%\begin{rmk}
+%If $\Gamma$ is a graph with a distinguished edge $e$ and $A,B$ are elements of the tensor square of fields $A, B \in \sE \tensor \sE$, we let $W_{\Gamma,e}(A,B, I)$ denotes the weight of the graph where we place $B$ at the internal edge labeled $e$ and $A$ on the remaining internal edges.
+%\end{rmk}
 
 This description of the local anomaly may seem obscure because it uses Feynman diagrams.
 It admits, however, a very elegant algebraic characterization, using the identification of Proposition~\ref{prop: trans j}. 
@@ -438,6 +455,10 @@ This cocycle factors in the following way:
 \eeqn
 The first map is $\fa \fn : \alpha_0 \tensor \cdots \tensor \alpha_d \mapsto \alpha_0 \tensor \partial \alpha_1 \tensor \cdots \tensor \partial \alpha_d$.
 The second map applies the symmetric function $\theta : \fg^{\tensor (d+1)} \to \CC$ to the Lie algebra factor and takes the wedge product of the differential forms. 
+%$\Omega^{0,*}(\CC^d) \otimes \fg$ by linearity over the Dolbeault forms:
+%\[
+%\underline{\theta} \left(\alpha_0 \tensor \alpha_1 \tensor \cdots \tensor \alpha_d\right) = \alpha_0 \wedge \theta(\alpha_1 \wedge \cdots \wedge \alpha_d) \in \Omega^{d,*}_c(\CC^d).
+%\]
 
 Lemma \ref{lem: obs} implies that the obstruction is given by the sum over Feynman weights associated to graphs of wheels of valency $(d+1)$.
 We can identify the algebraic component, corresponding to $\theta$ in the above composition (\ref{composition}), directly from the shape of this graph. 
@@ -505,9 +526,15 @@ of
 \Obs_V^{\cl}(U) = \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right).
 \]
 The Atiyah-Bott lemma ensures that the inclusion $\Tilde{\Obs}^{\cl}_V(U) \hookrightarrow \Obs_V^{\cl}(U)$ is a quasi-isomorphism.
-
+%\[
+%\begin{tikzcd}    
+% \left(\Sym(\Omega^{d,*}_c(U,V^*)[d] \oplus \Omega^{0,*}_c(U,V)[1]), \dbar\right) \arrow[hook]{r}{\simeq} & \left(\Sym(\Bar{\Omega}^{d,*}_c(U,V^*)[d] \oplus \Bar{\Omega}^{0,*}_c(U,V)[1]), \dbar \right) \\ \Tilde{\Obs}^{\cl}_V(U) \arrow[equals]{u} \arrow[hook]{r}{\simeq} & \Obs_V^{\cl}(U)  \arrow[equals]{u} .
+%\end{tikzcd}
+%\]
 The assignment $U \mapsto \Tilde{\Obs}^{\cl}_V(U)$ defines a factorization algebra on $\CC^d$, 
 and so we have a quasi-isomorphism of factorization algebras $\Tilde{\Obs}^{\cl}_V \xto{\simeq} \Obs^{\cl}_V$.
+
+%The second approach is what we will explain here, as it is the one that extends to the equivariant setting.
 
 \begin{dfn}\label{dfn: qobs}
 The {\em smoothed quantum observables} supported on $U \subset \CC^d$ is the cochain complex
@@ -664,6 +691,14 @@ We want to show that these results are not just abstract statements but lead to 
 One can analyze this higher free field realization with bare hands.
 To keep things concrete, we will work out all the details only in the case $d=2$, but our methods work without difficulty (beyond careful bookkeeping) in arbitrary dimension.
 
+%Let us examine first where the desired map (\ref{free field}) comes from.
+%By Theorem \ref{thm:knudsen} the universal enveloping algebra $U(\sH_{d,V})$ is naturally encoded by the enveloping factorization algebra $\UU(\Omega^*_c \otimes \sH_{d,V})$,
+%a locally constant factorization algebra on $\RR$.
+%Following our approach in Section~\ref{sec: sphere ops},
+%one can produce a dense inclusion of factorization algebras on~$\RR$ from $\UU(\Omega^*_c \otimes \sH_{d,V})$ into the pushforward $r_* \Obs^\q_{V}$ along the radial projection map $r: \pAA^d \to (0,\infty)$.
+%Hence the map of factorization algebras on punctured affine space pushes forward to the map between the pushforward factorization algebras.
+%We now want to see how this map behaves on the dense, locally constant sub-factorization algebras.
+
 The essential idea is familiar from quantum mechanics and field theory:
 the commutation relations (on the algebra side) can be identified with contractions with the propagator (on the diagrammatic side),
 i.e., the two faces of Wick's formula.
@@ -712,7 +747,20 @@ and it satisfies $\d^2 z\, \dbar P = \delta_{{\rm diag}} (z) \id_V$, where $\del
 We view $\id_V$ as an element of $V^* \tensor V$. 
 We note that $P$ is smooth away from the diagonal; 
 its singularities lie only along the diagonal.
-
+%Notice this differs from our convention before where we included the holomorphic top form in $P$. 
+%We have absorbed this into the definition of the pairing defining $\sH_V$. 
+%\[
+%P \in (A_d \tensor V^*[d-1]) \Hat{\tensor} (A_d \tensor V) = (A_d \Hat{\tensor} A_d) \tensor (V^* \tensor V) [d-1] .
+%\] 
+%This is simply the Green's function for the Hodge Laplacian restricted to the space 
+%\[
+%A_d \Hat{\tensor} A_d \subset \Omega^{0,*}(\CC^d \setminus 0) \Hat{\tensor} \Omega^{0,*}(\CC^d \setminus 0) = \Omega^{0,*}((\CC^d \setminus 0) \times (\CC^d \setminus 0))
+%\]
+%tensored with the identity on $V$ viewed as an element in $V^* \tensor V$. 
+%For instance, when $d = 1$, so that $A_1 = \CC[z,z^{-1}]$ we have
+%\[
+%P = \frac{1}{z-w} \id_V
+%\]
 The analytic and the algebraic factors decouple, 
 so to simplify notations, let $P(z) = p(z) \tensor \id_V$, 
 where $p(z)$ is the differential form part of the propagator above. 
@@ -728,6 +776,8 @@ the propagator is given by
 P (z,\zbar) = \frac{1}{(2\pi i)^d} \frac{\zbar_1 \d \zbar_2 - \zbar_2 \d \zbar_1}{|z|^4} \tensor \id_{V}.
 \]
 We can finally examine the commutator-contraction relation.
+
+\owen{The following paragraph should be revised to say where things live.}
 
 Consider the quadratic observables in $U (\sH_{d,V})$ given~by
 \[
@@ -843,6 +893,29 @@ It contributes terms of the form
 \]
 We note the similarities of this term and the weight of the $3$-vertex wheel appearing the calculation of the anomaly to satisfying the equivariant quantum master equation. 
 In fact, similar manipulations as in Appendix \ref{sec: feynman} show that it equals the left-hand side of (\ref{relationsb}), and hence the $A_\infty$-relation is satisfied.
+%\beqn
+%\begin{array}{lll}
+%\displaystyle \oint_{S^3} \Tr_V \left(a \wedge \partial a' \wedge \partial a''\right) & = & \displaystyle \left(\sJ_2(a, [a',a''] + \;{\rm permutations}) \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)\\
+%& = & \displaystyle \label{dbarstar} \left( \oint_{S^3} \<\dbar^*\beta, [a, [a',a'']]\>_V + \; {\rm permutations} \right) \\ & & \displaystyle + \left(\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right] + \; {\rm permutations}\right) 
+%\end{array}
+%\eeqn
+%A term labeled ``permutations'' is identical to the other term inside parentheses, but with the inputs $a,a',a''$ permuted (with appropriate signs). 
+%
+%In the very last line, we have commutators of the form  
+%\[
+%\left[\oint_{S^3} \<\beta, a \cdot \gamma\>_V , \oint_{S^3} \<\dbar^*\beta, [a', a'']\>_V\right]  .
+%\]
+%In general, there will be two types of terms in the expansion of this commutator. 
+%One involves a single contraction with the propagator $P$ and contributes terms of the form
+%\[
+%\oint_{S^3} \<\dbar^* \beta, [a,[a',a'']]\>
+%\]
+%plus permutations. 
+%These will cancel terms in the second line of Equation (\ref{dbarstar}). 
+%The second type of term involves a double contraction and contributes terms of the form
+%\[
+%\oint_{z \in S^3} \oint_{w \in S^3} \Tr_V(a \wedge a' \wedge a'') p(z-w) \dbar^* p(z-w)  .
+%\] 
 \end{proof}
 
 

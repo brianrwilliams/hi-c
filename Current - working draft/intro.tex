@@ -1,5 +1,7 @@
 \section*{}
 
+%\chapter{Local symmetries of holomorphic theories}\label{chap: symmetries}
+
 The loop algebra $L\fg = \fg[z,z^{-1}]$, consisting of Laurent polynomials valued in a Lie algebra $\fg$,
 admits a non-trivial central extension $\Hat{\fg}$ for each choice of invariant pairing on $\fg$.
 This affine Lie algebra and its cousin, the Kac-Moody vertex algebra, are foundational objects in representation theory and conformal field theory. 
@@ -291,6 +293,55 @@ Properly taking into account the global geometry would require more discussion.}
 In short, by combining \cite{FHK} with our results, 
 there seems to emerge a systematic, higher-dimensional extension of the beautiful, rich dialogue between representation theory of infinite-dimensional Lie algebras, complex geometry, and conformal field theory.
 
+%The key idea is that we replace the commutative algebra $\sO^{alg}(\pAA^{d})$ by the derived space of sections $\RR \Gamma(\pAA^{d}, \sO)$. 
+%This complex has interesting cohomology and leads to nontrivial extensions of the dg Lie algebra $\RR \Gamma(\pAA^{d}, \sO) \tensor \fg$, or its Dolbeault model $\Omega^{0,*}(\pAA^d)$.
+%Further, there is a tangential Dolbeault complex of the $(2d-1)$-sphere inside of the Dolbeault complex of $\CC^d \setminus \{0\}$:
+%\[
+%\Omega_b^{0,*}(S^{2d-1}) \subset \Omega^{0,*}(\pAA^d) .
+%\]
+%See \cite{DragomirTomassini} for details on the definition of $\Omega_b^{0,*}(S^{2d-1})$. 
+%The degree zero part of $\Omega_b^{0,*}(S^{2d-1})$ is $C^\infty(S^{2d-1})$, and we can view it as a derived enhancement of the mapping space in (\ref{mapping space}). 
+%The key fact is that the dg Lie algebra $\Omega^{0,*}(S^{2d-1}) \tensor \fg$ {\em does} have nontrivial central extensions. 
+%
+%Our starting point is to step back, and consider the full sheaf of $\fg$-valued Dolbeualt forms $\Omega^{0,*}(X, \fg)$ defined on any complex manifold $X$. 
+%We deem this sheaf of dg Lie algebras, or rather its cosheaf version $\sG_X := \Omega^{0,*}_c(X, \fg)$, the {\em holomorphic $\fg$-valued currents} on $X$. 
+%The Lie algebra homology, $\clieu_*\sG_X$, of this cosheaf determines the structure of a {\em factorization algebra} on the manifold $X$.
+%It serves as a higher dimensional analog of the chiral enveloping algebra of $\fg$ introduced by Beilinson-Drinfeld \cite{BD}, and will or model for the higher dimensional Kac-Moody algebra. 
+
+%\begin{thm}\label{thm sphere alg} The associative algebra $U(\Hat{\fg}_{d,\theta})$ determines a locally constant factorization algebra on the real one-manifold $\RR$ that we denote $U(\Hat{\fg}_{d,\theta})^{fact}$. 
+%Moreover, there is an injective dense map of factorization algebras on $\RR$:
+%\[
+%\Phi^{S^{2d-1}} : \left(U \Hat{\fg}_{d,\theta} \right)^{fact} \to r_*\left(\sF^{\CC^d \setminus \{0\}}_{\fg,\theta} \right)  .
+%\]
+%where the right-hand side is the push-forward of the Kac-Moody factorization algebra on $\CC^{d}\setminus \{0\}$ along the radial projection map.
+%\end{thm}
+
+%In the final part of this section we specialize to the manifold $X = (\CC \setminus \{0\})^d$. 
+%Note that when $d=1$ this is the same as the algebra above, but for $d>1$ this factorization algebra has a different flavor. 
+%We will show how to extract the data of an $E_d$-algebra from this configuration, and discuss its role in the theory of higher dimensional vertex algebras. 
+
+%In a similar way in Section \ref{sec: ...} we will see how the Kac-Moody factorization algebra on $(\CC \setminus \{0\})^d$ are related to extensions of higher loop Lie algebras
+%\[
+%L^d \fg = L ( \cdots (L \fg) \cdots ) = {\rm Map}(S^{1} \times S^1 , \fg).
+%\]
+
+%\[
+%\cA_{d, \fg,\theta} := \bigoplus_{k \in \ZZ} r_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) ^{(k)} \subset r_*\left(\sF^{\CC^d}_{\fg,\theta} |_{\CC^d \setminus 0} \right) .
+%\]
+%\end{thm}
+
+%\begin{dfn} Fix an element $\theta \in \Sym^{d+1}(\fg)^{\fg}$. 
+%Let $\Hat{\fg}_{d,\theta}$ be the $L_\infty$ central extension
+%\[
+%\CC \to \Hat{\fg}_{d,\theta} \to A_d \tensor \fg
+%\]
+%determined by the degree two cocycle $\theta_{\rm FHK} \in \clie^*(A_d \tensor \fg)$ defined by
+%\[
+%\theta_{\rm FHK}(a_0\tensor X_0,\dots,a_d\tensor X_d) = \Reszero \left(a_0 \wedge \d a_1 \wedge \cdots \wedge \d a_d \right) \theta(X_0,\ldots,X_d)
+%\]
+%where $a_i \tensor X_i \in A_d \tensor \fg$. 
+%\end{dfn}
+
 \subsection*{Acknowledgements}
 
 We have intermittently worked on this project for several years,
@@ -301,6 +352,38 @@ of which this paper is a revised and enhanced version.
 The second author would therefore like to thank Northwestern University, where he received support as a graduate student whilst most of this work took place.
 In addition, the second author enjoyed support as a graduate student research fellow under NSF Award DGE-1324585. 
 
-In addition to institutional support, we received guidance and feedback from Kevin Costello, Giovanni Faonte, Benjamin Hennion, and Mikhail Kapranov. 
-We are also grateful for Eugene Rabinovich's careful reading of the first arXiv submitted version of this paper, his helpful suggestions and feedback improved the overall quality of the exposition. 
-Thank you!
+In addition to institutional support, we received guidance and feedback from Kevin Costello, Giovanni Faonte, Benjamin Hennion, and Mikhail Kapranov. Thank you!
+
+%Infinitesimally speaking, a symmetry is encoded by the action of a Lie algebra.
+%For the holomorphic gauge symmetry this will become a sort of current algebra which is equivalent to holomorphic functions on the complex manifold with values in a Lie algebra.
+%For the holomorphic diffeomorphisms this Lie algebra is that of holomorphic vector fields.
+%Locality implies that this actually extends to a symmetry by a sheafy version of a Lie algebra. 
+%The precise sheafy version we mean is called a {\em local Lie algebra}, which we will recall in the main body of the text. 
+%To every local Lie algebra we can assign a factorization algebra through the so-called enveloping factorization algebra:
+%\[
+%\mathbb{U} : {\rm Lie}_X \to {\rm Fact}_X .
+%\]
+%Here, ${\rm Lie}_X$ is the category of local Lie algebras.
+%By this construction, we see that the Lie algebra of symmetries of a theory define a factorization algebra on the manifold where the theory lives. 
+%
+%One compelling reason for constructing a factorization algebra model for Lie algebras encoding the symmetries of a theory is that it allows one to consider universal versions of such objects.
+%There is a variation of the definition of a factorization algebra that lives, in some sense, on the entire category of manifolds (or complex manifolds). 
+%Such a perspective has been developed in great generality by Ayala-Francis in \cite{AFTopMan}.
+%In the case of the symmetry by a current algebra on Riemann surfaces a universal version of the Kac-Moody has been studied in \cite{CG1}.
+%For the case of conformal symmetry our work in \cite{BWVir} provides a factorization algebra lift of the ordinary Virasoro vertex algebra that exists uniformly on the site of Riemann surfaces. 
+%In this chapter, we extend each of these objects to arbitrary complex dimensions.
+%Our formulation lends itself to an explicit computation of the factorization homology along certain complex manifolds, for which we will focus on a class of examples called {\em Hopf manifolds}.
+%
+%For this reason, an essential aspect of studying the local symmetries of holomorphic field theories we mentioned above is to characterize the possible cocycles that give rise to central extensions. 
+%As we have already mentioned, for vector fields in complex dimension one this is related to the central charge and the central extension of the Witt algebra (vector fields on the circle) known as the Virasoro Lie algebra.
+%In the case of a current algebra associated to a Lie algebra, central extensions are related to the {\em level} and the corresponding central extensions are called affine algebras. 
+
+%\begin{thm}
+%Let $V$ be a finite dimensional $\fg$-module and $X$ any compact affine complex manifold. 
+%There exists a BV quantization of the $\beta\gamma$-system on $X$ with values in $V$ that is equivariant for the local Lie algebra $\fg^X$. 
+%Moreover, the first Chern class of the line bundle on $B \fg^X$ defined by the factorization homology of the quantization is equal to
+%\[
+%c_1(\Obs^\q(X)) = C \ch_{d+1}(V) \in \Sym^{d+1}(\fg^\vee)^\fg 
+%\]
+%where $C$ is some nonzero number.
+%\end{thm}
