@@ -15,7 +15,6 @@ In the next section, we provide examples of such characters using field theory.
 In physical terms, the factorization homology is related to the partition function of $\sG$-equivariant holomorphic field theories, such as the higher dimensional $\beta\gamma$ and $bc$ systems.
 We compute the partition functions on these Hopf manifolds, which are close cousins to superconformal indices, 
 and give a concise description in terms of Hochschild homology, in Proposition~\ref{prop: hopf}. 
-\brian{more on index/character}
 
 Finally, we return to the LMNS variants of the twisted higher Kac-Moody factorization algebra that exist on other closed $d$-folds and assert a relationship to the ordinary Kac-Moody algebra on Riemann surfaces. 
 
@@ -26,16 +25,21 @@ Given any (possibly dg) algebra $A$, a trace is a linear map
 \tr : A \to \CC
 \]
 which vanishes on pure commutators $\tr ([a,b]) = 0$, $a,b \in A$. 
-Thus, every trace determines a linear map $\tr : A / [A,A] \to \CC$. 
+Thus, every trace determines (and is determined by) a linear map $\tr : A / [A,A] \to \CC$. 
 
 There is a mathematical object associated to an algebra, called the {\em Hocschild homology} $HH_*(A)$ of $A$, which describes all traces simultaneously. 
-For an ordinary algebra, in degree zero the Hochschild homology is precisely $HH_0(A) = A / [A,A]$. 
+For an ordinary algebra, in degree zero, the Hochschild homology is precisely $HH_0(A) = A / [A,A]$. 
 Thus, the space of all traces for $A$ can be identified with its dual $HH_0(A)^\vee$. 
-
 A natural source of traces, of course, come from modules. 
 Given a finite dimensional module, $V$, the ordinary trace is defined and hence determines an element $\tr_V \in HH_0(A)^\vee$. 
 
-\owen{Add opening: in particular explain (for physicists) that Hochschild homology is the home of all trace maps (and so of characters).}
+A (possibly $A_\infty$) associative algebra is equivalent to the data of a locally constant factorization algebra on $\RR$. 
+The global sections, or factoriation homology, of the factorization algebra along the circle $S^1$ is precisely the Hochschild homology. 
+
+In this section, we view the higher Kac-Moody factorization algebra as a factorization algebra on $\CC^d \setminus 0 \cong S^{2d-1} \times \RR$. 
+By $U(d)$-equivariance, this determines a factorization algebra on any Hopf manifold (which we define momentarily), which is topologically a product of odd spheres $S^{2d-1} \times S^1$. 
+Pushing forward along the radial projection map allows us to view the global sections of the factorization homology as the Hochshild homology of the $A_\infty$ algebra $U(\Tilde{\fg}^{\bullet}_{d,\theta})$.
+Combining techniques of factorization algebras and ordinary algebra, we thus arrive at complete description of traces for the higher modes algebra.
 
 \subsubsection{Overview of Hopf manifolds}
 
@@ -45,7 +49,7 @@ We will denote this multiplicative action with the succinct notation $q^\ZZ$.
 The quotient space $\CC^\times/q^\ZZ$ is then an elliptic curve,
 and the punctured unit disk $\{0< |q|<1\}$ parametrizes elliptic curves in a convenient way.
 
-This story admits an obvious higher dimensional generalization, first explored by Hopf~\cite{Hopf}.
+This story admits an obvious higher dimensional generalization, first explored by \\Hopf~\cite{Hopf}.
 
 \begin{dfn}
 Let $d$ be a positive integer.
@@ -60,8 +64,6 @@ In other words, we quotient by the equivalence relation
 \]
 where $n$ runs over $\ZZ$.
 \end{dfn}
-
-\owen{I removed the $2 \pi i$ factors from the exponent, if that's OK.}
 
 We denote the obvious quotient map by $p_{\bf q} : \CC^d \setminus \{0\} \to X_{\bf q}$. 
 It is a straightforward exercise to check that $X_{\bf q}$ is diffeomorphic to $S^{2d-1} \times S^1$ as smooth manifolds;
@@ -172,8 +174,6 @@ There is a quasi-isomorphism of $\CC[K]$-modules
 \]
 \end{prop}
 
-\owen{I'm drafting a remark on how to understand this result. Perhaps it should go as the intro to this section.}
-
 \begin{rmk}
 A character on $\fg$ is a conjugation-invariant function of $\fg$, and so an element of $\Sym(\fg^*)^\fg$.
 It thus determines a linear functional on the Hochschild homology group 
@@ -214,7 +214,7 @@ of dg Lie algebras, where the target has trivial differential.
 
 \begin{rmk}\label{rmk: hpl1}
 In fact, by ellipticity, the orthogonal projection extends to a deformation retraction of dg Lie algebras
-\begin{equation*}\label{contraction}\tag{$\ast$}
+\begin{equation*}\label{contraction}
   \begin{tikzpicture}[baseline=(L.base),anchor=base,->,auto,swap]
      \path node (L) {$(\fg[\alpha],0)$} ++(3,0) node (M) {$(\sG (X), \dbar)$} 
      (M.mid) +(0,.075) coordinate (raise) +(0,-.075) coordinate (lower);
@@ -285,7 +285,7 @@ In order to find an explicit quasi-isomorphism, we appeal to the homological per
 For more details on this result, see Section 2.5 of \cite{OwenThesis}. 
 
 In the untwisted case, upon tensoring with $\CC[K]$, Remark \ref{rmk: hpl1} implies that we have a deformation retraction of cochain complexes
-\begin{equation*}\tag{$\ast$}
+\begin{equation*}
   \begin{tikzpicture}[baseline=(L.base),anchor=base,->,auto,swap]
      \path node (L) {$\clieu_*(\fg[\alpha])[K]$} ++(4,0) node (M) {$\clieu_*(\sG (X))[K]$} 
      (M.mid) +(0,.075) coordinate (raise) +(0,-.075) coordinate (lower);
@@ -310,7 +310,7 @@ With this operator in hand, we define the maps
 Note that modulo $K$, these reduce to the original maps above. 
 The inclusion map $\iota$ and the differential on $\clieu_*(\fg[\alpha])$ do not get deformed in our situation because the perturbed piece of the differential $\d_{\theta}$ vanishes identically on the harmonic forms. 
 The homological perturbation lemma implies that the resulting diagram
-\begin{equation*}\tag{$\ast$}
+\begin{equation*}
   \begin{tikzpicture}[baseline=(L.base),anchor=base,->,auto,swap]
      \path node (L) {$\clieu_*(\fg[\alpha])[K]$} ++(3,0) node (M) {$\UU_\theta (\sG)(X) $} 
      (M.mid) +(0,.075) coordinate (raise) +(0,-.075) coordinate (lower);
@@ -365,7 +365,7 @@ It follows that there is a quasi-isomorphism of Hochschild homologies
 \Hoch_*(U(\Tilde{\fg}^\bullet_{d,\theta}), {\bf q}) \simeq \Hoch_* (U\fg)[K] .
 \eeqn
 Peculiarly, this statement is purely algebraic as the dependence on the manifold for which the Kac-Moody factorization algebra lives has dropped out.
-\owen{I think this is misleading. The map depends on ${\bf q}$.}
+The thing to note is that the quasi-isomorphism {\em does} depend on ${\bf q}$. 
 
 \subsection{Character formulas by coupling to a free theory}
 
@@ -386,7 +386,7 @@ Thus, we will work with super vector spaces and super cochain complexes.
 These lead to minor modifications to the approach of Section~\ref{sec: qft}, 
 but yields a statement that is easiest to understand.
 
-\owen{What do you think?}
+
 Before delving into the details, 
 we note for physicists that we develop here a holomorphic version of the Adler-Bardeen-Jackiw anomaly,
 as we are studying fermionic matter fields coupled to a background holomorphic gauge field.
@@ -520,7 +520,6 @@ The bracket for $\widetilde{\sL}$ is determined by the formula
 \[
 [1 \tensor w^* , \alpha \tensor w] = \hbar \<w^*, w\> .
 \]
-\owen{And also the formula with $w$ and $w^*$ swapped, right?}
 By directly unraveling the definitions, one finds
 \[
 \clieu_*(\widetilde{\sL}) = \clieu_*({\rm Heis}_\hbar(W \oplus W^*), U({\rm Heis}_\hbar(W \oplus W^*))).
@@ -563,7 +562,6 @@ After inverting $\hbar$ and invoking Lemma \ref{lem: hopfcliff}, we obtain a com
 \beqn\label{hopfcliffquasi}
 \Obs^\q_{bc} (X) [\hbar^{-1}] \xto{\simeq} {\rm Hoch}_*(\Cl_\hbar (V \oplus V^*)[\hbar^{-1}]) \xto{\simeq}\CC[\hbar,\hbar^{-1}] .
 \eeqn
-\owen{I inverted $\hbar$ for the Clifford algebra too, so we can invoke Morita triviality.}
 The first quasi-isomorphism is the one from Lemma \ref{lem: hopfcliff}, and the second is Berezin integration. 
 We summarize our computations as follows.
 
@@ -583,10 +581,13 @@ We now give our fermionic fields charge, by equipping the odd vector space $W = 
 The objective is to extract a character on the observables of the $bc$ system from the $\sG_X$-equivariant quantization. 
 By the same formalism as in Section~\ref{sec: qft}, the equivariant quantization determines a quantum Noether map
 \[
-J_X^\q : \UU_{\Theta_X}\sG(X) [\hbar^{-1}]  \to \Obs^\q_{bc}(X) [\hbar^{-1}] ,
+J_X^\q : \Cur^\q_{\Theta_X}\sG(X) [\hbar^{-1}]  \to \Obs^\q_{bc}(X) [\hbar^{-1}] ,
 \]
 where $\Theta_X$ is the obstruction to solving the $\sG_X$-equivariant quantization. 
-\owen{Should we be using $\Cur^\q$ here rather than $\UU$?}
+Recall that as a plain factorization algebra, there is an isomorphism
+\[
+\UU_{\Theta_X}\sG(X) [\hbar^{-1}]  \cong \Cur^\q_{\Theta_X}\sG(X) [\hbar^{-1}] .
+\]
 The explicit form of the obstruction is irrelevant in what immediately follows, but we discuss it in more detail in Section~\ref{sec: hopfobs} below. 
 
 Combining the quasi-isomorphisms of Lemma \ref{prop: hopf} and Equation (\ref{hopfcliffquasi}), we obtain a commutative diagram
@@ -607,7 +608,6 @@ The $\sG_X$-equivariant quantization of the $bc$ system on $X$ valued in the $\f
 This map is natural in the representation~$V$.
 \end{prop}
 
-\owen{What do you think about the following addition?}
 As discussed earlier, a character of $\fg$ is a linear functional on ${\rm HH}_0(U \fg)$,
 so we have produced an $\hbar$-dependent character from each Hopf manifold~$X$ and finite-dimensional $\fg$-representation~$V$.
 Although we will not pursue an explicit formula here, 
@@ -636,7 +636,6 @@ In short, we can consider the ``universal'' $bc$ system as a functor
 \sE_{bc} : {\rm Hol}_d^{op} \to (-1){\rm PoisVect}
 \]
 where $(-1){\rm PoisVect}$ is an $\infty$-category of dg vector spaces with 1-shifted skew-symmetric invariant pairing. 
-\owen{what's above is not true, strictly speaking, since if $X$ is not compact, the pairing is ill-defined! It's fixable but I can't think of a really brief fix right at the moment}
 Since $\sG$ also determines a functor $\sG: {\rm Hol}_d^{op} \to {\rm dgLie}$ sending $X$ to $\Omega^{0,*}(X, \fg)$, we can consider the universal equivariant $bc$ system of $\sG$ acting on~$\sE_{bc}$. 
 
 The anomaly $\Theta_X$ to solving the one-loop $\sG_X$-equivariant QME is encoded by a local functional of the form

@@ -806,19 +806,19 @@ The first kind of term has the form
 \]
 Let $\eta(z,\zbar;w,\wbar) = \<b(z,\zbar), [a(z,\zbar), a'(w,\wbar)] \cdot c(w,\wbar)\>_V$.
 Since $\d^2 w\, \dbar p(z-w) = \delta(z-w)$, we can write 
-\[
+\beqn\label{contact}
 \oint_{w \in S^3} \d^2 w\, p(z-w) \eta(z,\zbar;w,\wbar) = \eta(z,\zbar;z,\zbar)- \int_{N_{\epsilon}} \d^2 w\, p(z-w) \rho(w,\wbar) \dbar_w \eta(z,\zbar;w,\wbar) .
-\] 
+\eeqn
 Here, $N_\epsilon$ is a neighborhood of the $3$-sphere inside of $\CC^2$ and $\rho(w,\wbar)$ is a compactly supported function that is identically $1$ near the inner boundary of the neighborhood and identically zero near the outer boundary.
 
-The second term in the above expression \owen{What do you have in mind here? It isn't written explicitly. I'm guessing you mean a "contact term"} spoils the compatibility of the bracket in $A_2 \tensor \fg$ and the commutator in the Heisenberg algebra.
-It arises precisely because our differential forms may not be holomorphic.
+The second term in the expression (\ref{contact}) spoils the compatibility of the bracket in $A_2 \tensor \fg$ and the commutator in the Heisenberg algebra.
+It arises precisely because our differential form s may not be holomorphic.
 By contrast, in the $d=1$ case, the model $A_1 = \CC[z,z^{-1}]$ consists of holomorphic Laurent polynomials, and so the Lie brackets agree on the nose. 
 The failure of this bracket is corrected by an $A_\infty$ morphism, as we will see in the section below.
 
 There is potentially another term in the expansion of (\ref{bracket}) involving a {\em double} contraction and hence has integrand proportional to $p(z-w)^2$. 
 In fact, this term vanishes identically since $p(z-w)$ is a $(0,1)$-form. 
-Thus, the double contraction does not appear when $d=2$ (but it could in other dimensions). \owen{Ok to add the parenthetical?}
+Thus, the double contraction does not appear when $d=2$ (but it could in other dimensions).
 Again, this result differs from the $d=1$ case, where the double contraction produces the term equal proportional to the level of the affine Kac-Moody algebra. 
 
 This example of the commutator of quadratic observables encodes the key information in this situation.
@@ -831,7 +831,7 @@ The map of interest
 goes from an $A_\infty$ algebra to the enveloping algebra of a strict dg Lie algebra, which is a strict dg associative algebra. 
 Indeed, by definition, $U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)$ is the enveloping algebra of an $L_\infty$ algebra, so it has nonzero higher multiplications
 \[
-m_k : \sA_2^{\tensor k} \to \sA_2 
+m_k : U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)^{\tensor k} \to U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)
 \] 
 for $k = 1, 2$, and $3$ because the $L_\infty$ algebra $\Tilde{\fg}_{2, \ch_3(V)}$ only has nonzero $\ell_1 = \dbar, \ell_2 = [-.-]$ and $\ell_3$. 
 The multiplications satisfy $m_k = 0$ for $k > 2$. 
@@ -839,15 +839,15 @@ The multiplications satisfy $m_k = 0$ for $k > 2$.
 \begin{prop}\label{prop: ainfinty}
 In dimension $d = 2$, an $A_\infty$ model for the map (\ref{free field2}) of $E_1$-algebras is given by the sequence of maps $(\sJ_k)_{k = 1,2,\ldots}$, where
 \[
-\sJ_k : \sA_2^{\tensor k} \to U(\sH_V)[2-k],
+\sJ_k : U\left(\Tilde{\fg}_{2, \ch_3(V)}\right)^{\tensor k} \to U(\sH_V)[2-k],
 \]
 with $\sJ_k = 0$ for~$k > 2$,
 \[
-\sJ_1 (\alpha) = \oint_{S^3} \<\beta, \alpha \cdot \gamma\>_V
+\sJ_1 (a) = \oint_{S^3} \<b, a \cdot c\>_V
 \]
 and 
 \[
-\sJ_2 (\alpha, \alpha') = \oint_{z \in S^3} \int_{w \in N_{\epsilon}}  \<\beta(z), [\alpha(z),\alpha'(z)] \gamma(w) \>_V \, \rho(w) p(z-w) .
+\sJ_2 (a, a') = \oint_{z \in S^3} \int_{w \in N_{\epsilon}}  \<b(z), [a(z),a'(z)] c(w) \>_V \, \rho(w) p(z-w) .
 \] 
 where $N_\epsilon$ is some neighborhood of $S^3$ and $\rho$ is a compactly supported function as in the  preceding computation. 
 \end{prop}
@@ -857,39 +857,40 @@ In the computation of the commutator of quadratic observables,
 we saw that the $1$-ary map $\sJ_1$ fails to be compatible with the commutator.
 This failure is precisely corrected by the $2$-ary map $\sJ_2$: 
 we will show
-\[
-\dbar \sJ_2(\alpha, \alpha') \pm \sJ_2(\dbar \alpha, \alpha') \pm \sJ_2(\alpha, \dbar \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')] .
-\] 
-Suppose for simplicity that $\alpha,\alpha'$ are holomorphic.
+\beqn\label{infinity relation}
+\dbar \sJ_2(a, a') \pm \sJ_2(\dbar a, a') \pm \sJ_2(a, \dbar a') = \sJ_1([a,a']) - [\sJ_1(a), \sJ_1(a')] .
+\eeqn
+Suppose for simplicity that $a,a'$ are holomorphic.
 In that case, the desired identity simplifies to 
 \[
-\dbar \sJ_2(\alpha, \alpha') = \sJ_1([\alpha,\alpha']) - [\sJ_1(\alpha), \sJ_1(\alpha')].
+\dbar \sJ_2(a, a') = \sJ_1([a,a']) - [\sJ_1(a), \sJ_1(a')].
 \]
 Above, we saw that the right-hand side~is
 \[
-\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z),\alpha'(z)] \dbar_w \gamma(w) \>_V \, \rho(w) p(z-w),
+\oint_{z \in S^3} \int_{w \in N_{\epsilon}} \d^2 w\,  \<b(z), [a(z),a'(z)] \dbar_w c(w) \>_V \, \rho(w) p(z-w),
 \]
-which is precisely the functional~$\dbar \sJ_2(\alpha,\alpha')$. 
-\owen{Do we need to deal with the nonholomorphic cases too?}
+which is precisely the functional~$\dbar \sJ_2(a,a')$. 
+
+If $a,a'$ are not holomorphic, there are extra contact terms in the expansion of $[\sJ_1(a), \sJ_1(a')]$ which exactly cancel the terms  $\sJ_2(\dbar a, a') \pm \sJ_2(a, \dbar a')$ on the left-hand side of (\ref{infinity relation}).
 
 It remains to show how $\sJ_2$ is compatible with the $L_\infty$ extension,
 i.e., that the $\ell_3$ term is the homotopy in the Jacobi relation up to homotopy.
-For $\alpha,\alpha',\alpha'' \in A_d \tensor \fg$: we want
+For $a,a',a'' \in A_d \tensor \fg$: we want
 \beqn\label{relationsb}
-\oint_{S^3} \Tr_V \left(\alpha\wedge \partial \alpha' \wedge \partial \alpha''\right) = \displaystyle \left(\sJ_2(\alpha, [\alpha',\alpha'']) + \;{\rm permutations} \right) + \left(\left[\sJ_1(\alpha), \sJ_2(\alpha',\alpha'') \right] + \; {\rm permutations} \right)
+\oint_{S^3} \Tr_V \left(a\wedge \partial a' \wedge \partial a''\right) = \displaystyle \left(\sJ_2(a, [a',a'']) + \;{\rm permutations} \right) + \left(\left[\sJ_1(a), \sJ_2(a',a'') \right] + \; {\rm permutations} \right)
 \eeqn
 There are two types of terms present here. 
 
 First, there are the single contractions of the propagator, which contributes terms of the form
 \[
-\oint_{z \in S^3} \d^2 z\, \int_{w \in N_{\epsilon}} \d^2 w\,  \<\beta(z), [\alpha(z), [\alpha(z),\alpha'(z)] ] \gamma(w) \>_V \, \rho(w) p(z-w).
+\oint_{z \in S^3} \d^2 z\, \int_{w \in N_{\epsilon}} \d^2 w\,  \<b(z), [a(z), [a(z),a'(z)] ] c(w) \>_V \, \rho(w) p(z-w).
 \]
 These single contraction terms cancel the first term in parentheses in Equation~(\ref{relationsb}). 
 
 The second type of term involves a double contraction of the propagator. 
 It contributes terms of the form
 \[
-\oint_{z \in S^3} \int_{w \in N_\epsilon} \oint_{u \in S^3} \Tr_V(\alpha(z) \wedge \alpha'(w) \wedge \alpha''(w)) \rho(w) p(z-w) p(z-u) p(w-u) .
+\oint_{z \in S^3} \int_{w \in N_\epsilon} \oint_{u \in S^3} \Tr_V(a(z) \wedge a'(w) \wedge a''(w)) \rho(w) p(z-w) p(z-u) p(w-u) .
 \]
 We note the similarities of this term and the weight of the $3$-vertex wheel appearing the calculation of the anomaly to satisfying the equivariant quantum master equation. 
 In fact, similar manipulations as in Appendix \ref{sec: feynman} show that it equals the left-hand side of (\ref{relationsb}), and hence the $A_\infty$-relation is satisfied.

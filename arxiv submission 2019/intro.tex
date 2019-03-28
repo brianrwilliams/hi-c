@@ -32,20 +32,26 @@ This perspective allows us to realize the higher Kac-Moody algebra inside of fam
 In particular, this philosophy leads to higher dimensional analogs of free field realization via a quantum field theory called the $\beta\gamma$ system, which is defined on any complex manifold. 
 
 In complex dimension one, a vertex algebra is a gadget associated to any conformal field theory that completely determines the algebra of local operators.  
-More recently, vertex algebras have been extracted from higher dimensional field theories, such as $4$-dimensional gauge theories \cite{Beem1,Beem2}. 
+More recently, vertex algebras have been extracted from higher dimensional field theories, such as $4$-dimensional gauge theories \cite{Beem1, Beem2}. 
 A future direction, which we do not undertake here, would be to use these higher dimensional vertex algebras as a more refined invariant of the quantum field theory. 
 
 Before embarking on our main results, we take some time to motivate higher dimensional current algebras from two different perspectives. 
 
-\brian{Say a word about higher SUGRA and role of KM. Compare to class S theories associated to vertex algebras.}
-
 \subsection*{A view from physics}
 
-\owen{I don't like this as a first paragraph. ``the" Kac-Moody is weird because there is not just one. Why does it take about an action of a group (and why doesn't it invoke Noether's theorem)? The second sentence seems out of place and not something that physicists would recognize; it would make more sense in the geometry intro. }
+In conformal field theory, the Kac-Moody algebra appears as the symmetry of a system with an action by a Lie algebra. 
+A generic example is a flavor symmetry of a field theory where the matter takes values in some representation.
+In ordinary 2d chiral CFT, the central extension appears as the failure of the classical Lie bracket on $\fg$-valued currents to be compatible with the OPE. 
+This is measured by the charge anomaly, which occurs as a $2$-point function in the CFT. 
 
-In conformal field theory, the Kac-Moody algebra generically appears as the symmetry of a system with an action by a group. 
-This appears in Kac-Moody uniformization, for instance, whereby the affine algebra describes infinitesimal symmetries of a principal $G$-bundle inside the moduli space of all $G$-bundles. 
-The higher Kac-Moody algebra we propose arises naturally as the symmetries of higher dimensional quantum field theories that have a {\em holomorphic} flavor. 
+This paper is concerned with symmetries for holomorphic theories in any complex dimension. 
+Classically, the story is completely analogous to the ordinary picture in chiral CFT: for holomorphic theories, the action by a Lie algebra is enhanced to a symmetry by an infinite dimensional Lie algebra of currents on the $S^{2d-1}$-modes of the holomorphic theory. 
+This current algebra is an algebraic version of the sphere mapping space $\Map(S^{2d-1}, \fg)$. 
+
+In any dimension, there is a chiral charge anomaly for the class of holomorphic field theories that we study, which measures the failure of quantizing the classical symmetry. 
+In complex dimension $2$ (real dimension $4$), for instance, the anomaly is a holomorphic version of the Adler-Bardeen-Jackiw anomaly \cite{Adler, BJ}.
+In terms of supersymmetric field theory, the anomaly is the holomorphic twist of the Konishi anomaly \cite{Konishi}. 
+For a general form of the anomaly in our situation, we refer to Section \ref{sec: qft}, where we consider a general class of theories with ``holomorphic matter". 
 
 Throughout this paper, we use ideas and techniques from the Batalin-Vilkovisky formalism, as articulated by Costello, and from the theory of factorization algebras, following \cite{CG1,CG2}.
 In this introduction, however, we will try to explain the key objects and constructions with a light touch,
@@ -143,7 +149,7 @@ Third---and this reason will become clearer in a moment---the anomaly that appea
 Such a density only defines a functional on compactly supported sections,
 since when evaluated a noncompactly supported section $f$, the density $L(f)$ may be non-integrable.
 Thus $L$ determines a central extension of $\sAd(P)_c$ as a precosheaf of dg Lie algebras,
-but not as a sheaf.\footnote{We remark that to stick with sheaves, one must turn to quite sophisticated tools \cite{WittenGr,GetzlerGM,ManBeilSch} that can be tricky to interpret, much less generalize to higher dimension, whereas the cosheaf-theoretic version is quite mundane and easy to generalize, as we'll see.}
+but not as a sheaf.\footnote{We remark that to stick with sheaves, one must turn to quite sophisticated tools \cite{WittenGr, GetzlerGM, ManBeilSch} that can be tricky to interpret, much less generalize to higher dimension, whereas the cosheaf-theoretic version is quite mundane and easy to generalize, as we'll see.}
 
 Let us sketch how to make these reasons explicit.
 The first step is to understand how $\sAd(P)_c$ acts on the observables of this theory.
@@ -191,7 +197,6 @@ In this case, there is such a map:
 J(f)(\gamma,\beta) = \int_U \langle\beta, f \gamma\rangle.
 \]
 This functional is local, and it is natural to view it as describing the ``minimal coupling'' between our free $\beta\gamma$ system and a kind of gauge field implicit in $\sAd(P)$.
-\owen{This is a little misleading, given the nature of the forms, but I think it is fixable.}
 This construction thus shows again that it is natural to work with compactly supported sections of $\sAd(P)$,
 since it allows one to encode the Noether map in a natural way.
 We call $\sAd(P)_c$ the Lie algebra of {\em classical currents} as we have explained how, via $J$, we realize these symmetries as classical observables.
@@ -226,7 +231,6 @@ ob(f) = \int \langle f K_\Delta \rangle,
 where $K_\Delta$ is the integral kernel for the identity with respect to the pairing $\langle-,-\rangle$.
 (It encodes a version of the trace of $f$ over $\cE$.)
 This obstruction should resemble standard anomalies.
-\owen{Is that transition too abrupt? Should we provide an example?}
 
 This functional $ob$ is a cocycle in Lie algebra cohomology for $\sAd(P)$ and hence determines a central extension $\widehat{\sAd(P)}_c$ as precosheaves of dg Lie algebras.
 It is the Lie algebra of {\em quantum} currents, as there is a lift of $J$ to a map $J^q$ out of this extension to the quantum observables.
