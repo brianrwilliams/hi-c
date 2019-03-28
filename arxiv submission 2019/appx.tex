@@ -1,5 +1,7 @@
 \appendix
 
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
 \section{Computing the deformation complex}\label{sec: hol trans}
 
 In this appendix we prove Proposition~\ref{prop: trans j}. 
@@ -33,7 +35,7 @@ The canonical inclusion of enveloping algebras
 \[
 \CC[\partial / \partial z_1, \ldots, \partial / \partial z_d] \hookrightarrow U(\CC^{d}_{\rm hol})
 \]
-that is a quasi-isomorphism.
+is a quasi-isomorphism.
 \end{lem}
 
 In other words, $U(\CC^{d}_{\rm hol})$ is quasi-isomorphic to the algebra of constant coefficient holomorphic differential operators on~$\CC^d$. 
@@ -99,7 +101,6 @@ The space of {\em closed} $k$-forms is defined by the totalization of the double
 \Omega^{k}_{cl}(B \cL) = {\rm Tot}\left( \Omega^k(B\cL) \xto{\partial} \Omega^{k+1}(B \cL)[-1] \to \cdots \right).
 \]
 The case where $k=0$ is the usual de Rham complex, which we will denote by~$DR(B\cL)$.
-%Note that there is a canonical truncation map $\Omega^{k}_{cl}(B \cL) \to \Omega^{k}(B \cL)$ that provides the ``underlying'' $k$-form of any closed $k$-form.
 
 The constant functions on $B\fg$ can be appended to obtain a complex
 \[
@@ -150,48 +151,12 @@ We extend $\widetilde{\fj}$ to forms $\Omega^k(B\fg)$ with $k < d$ as the zero m
 Direct computation then shows the following.
 
 \begin{lem}
-The construction above determines a cochain map $\widetilde{\fj}: \tau_{<d+1} DR_{\rm aug}(B\fg) [2d] \to \cloc^*(\sG_d)$.
+The construction above determines a cochain map $\widetilde{\fj}: \tau_{<d+1} DR_{\rm aug}(B\fg)[2d] \to \cloc^*(\sG_d)$. 
 \end{lem}
 
 As this truncated de Rham complex $\tau_{<d+1} DR_{\rm aug}(B\fg)$ is quasi-isomorphic to  $\Omega^d_{cl}(B\fg)$, 
 we obtain the existence of the desired map~(\ref{fj1}),
 although we do not provide an explicit formula.
-
-%Consider the map of cochain complexes
-%\[
-%\CC[1] \to \Omega^*(B \fg)
-%\]
-%where we are viewing $\CC$ as sitting inside $\Omega^0(B \fg) = \clie^*(\fg)$ as the constant functions. 
-%The totalization of this map of complexes is acyclic. 
-%
-%Let $\Omega^{\leq d}(B \fg)$ denote the cokernel of the injective map of cochain complexes
-%\[
-%\Omega^{d+1}_{cl} (B \fg) [-d-1] \hookrightarrow {\rm Tot}\left(\CC[1] \to \Omega^*(B \fg)\right)  .
-%\]
-%Notice, by acyclicity of the target of this map, the de Rham differential induces a quasi-isomorphism
-%\[
-%\partial : \Omega^{\leq d}(B \fg) \xto{\simeq} \Omega^{d+1}_{cl}(B \fg) .
-%\] 
-%Notice that on the formal disk $\fg = \CC^n[-1]$, this quasi-ismorphism implies the standard fact that every closed $(d+1)$-form can be written as the de Rham differential applied to a $d$-form. 
-
-%The map we want (\ref{fj1}) is induced from a map defined on this quasi-isomorphic complex
-%\[
-%\widetilde{\fj} : \Omega^{\leq d}(B \fg) \to \cloc^*(\sG_d) .
-%\] 
-%This map is zero on the graded pieces $\Omega^k (B \fg)$ for $k < d$. 
-%Given a $d$-form, $\eta \in \Omega^d(B \fg)$ we define the local functional $\widetilde{\fj}(\eta)$ by 
-%\[
-%\widetilde{\fj} (\eta) (\alpha) = \eta (\partial \alpha \wedge \cdots \wedge \partial \alpha) (\alpha) .
-%\]
-%Here, $\eta (\partial \alpha \wedge \cdots \partial \alpha)$ denotes the pairing of $\Wedge^d \fg^\vee$ with the $d$th exterior power of $\Omega^{1,*}(X) \tensor \fg$ which results in an element of $\Omega^{d,*} \tensor \clie^*(\fg)$. 
-%\owen{I'm not sure this makes sense as written: you're ignoring all the stuff that comes from the $\clie^*(\fg)$ direction. Why should $\eta$ have the form you're asserting?}
-%We then use the remaining Lie algebra factors of $\eta$ to pair with $\Omega^{0,*}(X) \tensor \fg$. 
-%The result is an element in $\Omega^{d,*}(X)$, and by our usual conventions, our local functional only remembers the top component $\Omega^{d,d}(X)$. 
-%\owen{Do you mean we integrate over $X$ or that we just drop all other degrees?}
-%
-%Note that if the $d$-form $\eta$ is exact, given by the de Rham differential of a $(d-1)$-form, then the functional $\widetilde{\eta}$ is identically zero since we quotient out by total derivatives in our definition of local functionals. 
-%\owen{No, we don't. We work with the de Rham complex of the Lagrangian densities.}
-%Thus, we see that $\widetilde{\fj}$ descends, along the de Rham differential $\partial$, to a cochain map (\ref{fj1}) as desired. 
 
 \subsection{The main result}
 
@@ -227,7 +192,6 @@ The subspace $\cloc^\#(\sG_d)^{\CC^d}$ of elements invariant under translation a
 \[
 (\Omega^\#(\CC^d))^{\CC^d}[2d] \otimes \cred^\#(\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_d, \d\zbar_1,\ldots, \d\zbar_n]]).
 \]
-%where the graded Lie algebra $\fg[[z_1,\ldots,z_d, \zbar_1,\ldots, \zbar_n, \d\zbar_1,\ldots, \d\zbar_d]]$ has differential~$\dbar$.
 \end{lem}
 
 Note the overall downward shift by degree~$d$.
@@ -280,25 +244,6 @@ This is the underlying associated graded of the translation invariant subcomplex
 where $M$ is the $D$-module $\cred^*(J \sO^{hol}(\CC^d))$. 
 The flat connection on this $D$-module is induced from the canonical one on the $\infty$-jets of the trivial bundle. 
 
-%\owen{I'm doing something a little subtle here. I'm imagining that we look at the strict invariants for the action of the dg Lie algebra on the dg vector space, and then we forget the differential. This is different than forgetting the differential and then taking the invariants ...}
-
-%In practice the proof involves a number of quasi-isomorphisms and a spectral sequence,
-%so it is convenient to isolate some of these results as lemmas.
-%We begin by describing the situation on a formal $d$-dimensional disk with formal coordinates $z_1,\ldots, z_d$.
-%In this case $\sG_d$ has the form $\fg[[z_1,\ldots,z_n]]$, and 
-%\beqn
-%\cred^*(\fg[[z_1,\ldots,z_n]]) = \left(\Sym^{\geq 1} \left(\fg^\vee [z_1^\vee,\ldots,z_d^\vee][-1] \right), \d_{\fg}\right),
-%\eeqn
-%where $z_i^\vee$ denotes the dual variable to $z_i$. 
-%A cocycle in this complex encodes the jet of a Lagrangian on the formal disk.
-%To get the jet of a Lagrangian density, we pair such a cocycle with a top form, namely~$\d^d z$,
-%but we want to consider such Lagrangian densities up to total derivatives,
-%i.e., modulo integration by parts.
-%This relation is cleanly encoded as the relative (derived) tensor product
-%\[
-%\CC \, \d^d z \tensor^\LL_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]]).
-%\]
-%\owen{Should we bother to justify this?}
 Thanks to some standard results in invariant theory, there is then a simple answer for which such elements are $U(d)$-invariant.
 
 \begin{lem}
@@ -346,32 +291,32 @@ W can rewrite the decomposition (\ref{decomp}) as
 \bigoplus_{k = 0}^n \Lambda^k(V)[-k] \tensor \Sym^{>0} \left(\fg^\vee [-1] \tensor \Sym(V^\vee)\right)_{(-k)} .
 \]
 We expand the term $\Sym^{>0} \left(\fg^\vee [-1] \tensor \Sym(V^\vee)\right)$ as
-\[
+\beqn\label{gack}
 \Sym^{>0} \left(\fg^\vee[-1] \tensor \left(\CC \oplus V^\vee  \oplus \Sym^2(V^\vee)\oplus \cdots \right)\right) .
-\]
+\eeqn
 Using the relation 
 \beqn\label{symrel}
-\Sym^{>0} (W \oplus Z) = \Sym^{>0} (W) \oplus \Sym(W) \tensor \Sym^{>0}(Z),
+\Sym^{>0} (W \oplus Z) = \Sym^{>0} (W) \oplus (\Sym(W) \tensor \Sym^{>0}(Z)),
 \eeqn
-we see that this expression is equal to 
+we see that this expression~(\ref{gack}) is equal to 
 \begin{align}
-& \Sym^{>0} \left(\fg^\vee[-1] \oplus \fg^\vee [-1] \tensor V^\vee\right) \oplus \label{sym1} \\
+\Sym^{>0} & \left(\fg^\vee[-1] \oplus \fg^\vee [-1] \tensor V^\vee \right) \oplus \label{sym1} \\
 & \Sym \left(\fg^\vee[-1] \oplus \fg^\vee [-1] \tensor V^\vee\right) \tensor \Sym^{>0} \left(\fg^\vee[-1] \tensor \left(\Sym^2(V^\vee)\oplus \cdots \right) \label{sym2} \right)
 \end{align}
-Note that we are taking invariants of the tensor product of the above vector space with the totally antisymmetric representation $\Lambda^*(V)$. 
-Thus, none of the terms $\Sym^k(V^\vee)$ can contribute, so we can forget about the second line (\ref{sym2}) when we take $U(d)$ invariants. 
+In fact, we want to the $U(d)$-invariants of the tensor product of this enormous mess with the totally antisymmetric representation~$\Lambda^*(V)$. 
+Thus, none of the terms $\Sym^k(V^\vee)$ can contribute, so we can forget about the second line~(\ref{sym2}) when we taking $U(d)$-invariants. 
+\owen{Naughty!}
 
-Using the relation (\ref{symrel}) again, we expand the first line (\ref{sym1}) as
+Using the relation~(\ref{symrel}) again, we expand the first line~(\ref{sym1}) as
 \[
  \Sym^{>0} \left(\fg^\vee[-1]\right) \oplus \Sym \left(\fg^\vee[-1]\right) \tensor \Sym^{>0} \left(\fg^\vee [-1] \tensor V^\vee\right) .
  \]
 Note that the first term has $U(d)$-weight zero. 
-Thus, we find that the space of $U(d)$ invariants is equal to the $U(d)$-invariants of
+Thus, we find that the space of $U(d)$-invariants is equal to the $U(d)$-invariants of
 \[
  \Sym^{>0} \left(\fg^\vee[-1]\right) \oplus \bigoplus_{k = 1}^n \Lambda^k(V) [-k] \tensor \left(\Sym \left(\fg^\vee[-1]\right) \tensor \Sym^{>0} \left(\fg^\vee [-1] \tensor V^\vee\right) \right)_{(-k)} .
 \]
-
-Once we turn on the Lie differential, the first term above (corresponding to $k=0$ in our old notation) is precisely 
+Once we turn on the Lie differential, the first term above (corresponding to $k=0$ in our original notation) is precisely 
 \[
 \left(\Sym^{>0}(\fg^\vee[-1]), \d_{CE}\right) = \sO_{red}(B \fg) .
 \]
@@ -423,90 +368,6 @@ This is precisely the de Rham differential, as one can immediately verify, on $B
 \]
 which completes are proof. 
 \end{proof} 
-
-%\owen{All that would remain is to characterize the remaining differential, which would be the de Rham differential on $B\fg$.}
-%
-%
-%To compute the translation invariant deformation complex we will invoke Corollary 2.29 from \cite{BWhol}. 
-%Note that the deformation complex is simply the (reduced) local cochains on the local Lie algebra $\Omega^{0,*}_{\CC^d} \tensor \fg$. 
-%Thus, we see that the translation invariant local cochain complex is quasi-isomorphic to the following
-%\beqn\label{holtransinvt}
-%\left(\cloc^*(\sG_d)\right)^{\CC^{d}_{\rm hol}} \; \simeq \; \CC \cdot \d^d z \tensor^{\LL}_{\CC\left[\frac{\partial}{\partial z_i}\right]} \cred^*(\fg[[z_1,\ldots,z_d]])  [d] .
-%\eeqn
-%We'd like to recast the right-hand side in a more geometric way. 
-%
-%Note that the the algebra $\CC\left[\frac{\partial}{\partial z_i}\right]$ is the enveloping algebra of the abelian Lie algebra $\CC^d = \CC\left\{\frac{\partial}{\partial z_i}\right\}$. 
-%Thus, the complex we are computing is of the form
-%\beqn
-%\CC \cdot \d^d z \tensor^{\LL}_{U(\CC^d)} \cred^*(\fg[[z_1,\ldots,z_d]]) [d] .
-%\eeqn
-%Since $\CC \cdot \d^d z$ is the trivial module, this is precisely the Chevalley-Eilenberg cochain complex computing Lie algebra homology of $\CC^d$ with values in the module $\cred^*(\fg[[z_1,\ldots,z_d]])$:
-%\beqn
-%\clieu_*\left(\CC^d ; \cred^*(\fg[[z_1,\ldots,z_d]]) \d^d z\right) [d] .
-%\eeqn
-%We will keep $\d^d z$ in the notation since below we are interested in computing the $U(d)$-invariants, and it has non-trivial weight under the action of this group.
-%
-%To compute the cohomology of this complex, we will first describe the differential explicitly. 
-%There are two components to the differential.
-%The first is the ``internal" differential coming from the Lie algebra cohomology of $\fg [[z_1,\ldots,z_d]]$, we will write this as $\d_{\fg}$. 
-%The second comes from the $\CC^d$-module structure on $\clie^*(\fg[[z_1,\ldots,z_n]])$ and is the differential computing the Lie algebra homology, which we denote $\d_{\CC^d}$. 
-%We will employ a spectral sequence whose first term turns on the $\d_{\fg}$ differential.
-%The next term turns on the differential $\d_{\CC^d}$.
-%
-%As a graded vector space, the cochain complex we are trying to compute has the form
-%\beqn
-%\Sym(\CC^d [1]) \tensor \cred^*\left(\fg[[z_1,\ldots,z_d]])\right) \d^d z [d] .
-%\eeqn
-%The spectral sequence is induced by the increasing filtration of $\Sym(\CC^d [1])$ by symmetric powers
-%\beqn
-%F^k = \Sym^{\leq k}(\CC^d[1]) \tensor \cred^*\left(\fg[[z_1,\ldots,z_d]])\right) \d^d z [d] .
-%\eeqn
-%
-%%\begin{rmk}
-%%In the examples we are most interested in (namely $\fg = \CC^n[-1]$ and $\fg = \fg_{X_{\dbar}}$) we can understand the spectral sequence we are using as a version of the Hodge-to-de Rham spectral sequence.
-%%\end{rmk}
-%
-%
-%
-%
-%We now turn on the differential $\d_{\CC^d}$ coming from the Lie algebra homology of $\CC^d = \CC\left\{\frac{\partial}{\partial z_i}\right\}$ with values in the above module. 
-%Since this Lie algebra is abelian the differential is completely determined by how the operators $\frac{\partial}{\partial z_i}$ act.
-%We can understand this action explicitly as follows.
-%Note that $\frac{\partial}{\partial z_i} z_j = \delta_{ij}$, thus we may as well think of $z_i^\vee$ as the element $\frac{\partial}{\partial z_i}$. 
-%Consider the subspace corresponding to $k=d$ in Equation (\ref{U(d) invariants}):
-%\beqn
-%\frac{\partial}{\partial z_1} \cdots \frac{\partial}{\partial z_d} \cred^*(\fg) \d^d z .
-%\eeqn 
-%Then, if $x \in \fg^\vee [-1] \subset \cred^*(\fg)$ we observe that
-%\beqn
-%\d_{\CC^d} \left(\frac{\partial}{\partial z_1} \cdots \frac{\partial}{\partial z_d} \tensor f \tensor \d^d z \right) = \det (\partial_i, z_j^\vee) \tensor 1 \tensor x \tensor \d^d z \in  \wedge^{d-1}\left(\frac{\partial}{\partial z_i}\right) \wedge \CC \{z_i^\vee\} \clie^*\left(\fg , \fg^\vee \right) \d^d z.
-%\eeqn
-%This follows from the fact that the action of $\frac{\partial}{\partial z_i}$ on $x = x \tensor 1 \in \fg^\vee \tensor \CC[z_i^\vee]$ is given by
-%\beqn
-%\frac{\partial}{\partial z_i} \cdot (x \tensor 1) = 1 \tensor x \tensor z_i^\vee \in \clie^*(\fg , \fg^\vee) z_i^\vee .
-%\eeqn
-%By the Leibniz rule we can extend this to get the formula for general elements $f \in \cred^*(\fg)$. 
-%We find that getting rid of all the factors of $z_i$ we recover precisely the de Rham differential 
-%\beqn
-%\xymatrix{ 
-%\cred^*(\fg) [2d] \ar@{=}[d] \ar[r]^-{\d_{\CC^d}} & \clie^*(\fg , \fg^\vee) [2d-1] \ar@{=}[d] \\
-%\sO_{red}(B\fg) \ar[r]^-{\partial} & \Omega^1(B \fg) .
-%}
-%\eeqn
-%A similar argument shows that $\d_{\CC^d}$ agrees with the de Rham differential on each $\Omega^k(B \fg)$. 
-%
-%
-%We conclude that the $E_2$ page of this spectral sequence is quasi-isomorphic to the following truncated de Rham complex.
-%\[
-%\label{bg def complex2}
-%\xymatrix{
-%\ul{-2d} & \ul{-2d+1} & \cdots & \ul{-d-1} & \ul{-d} \\
-%\sO_{red}(B \fg) \ar[r]^-{\partial} & \Omega^1(B \fg) \ar[r] & \cdots \ar[r] & \Omega^{d-1} (B \fg) \ar[r]^-{\partial} & \Omega^{d}(B \fg) .
-%}
-%\]
-%This complex is quasi-isomorphic, through the de Rham differential, to $\Omega^{d+1}_{cl}[d]$. 
-%This completes the proof.
-%\end{proof}
 
 \section{Normalizing the charge anomaly} \label{sec: feynman}
 
