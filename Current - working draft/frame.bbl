@@ -1,9 +1,16 @@
-\begin{thebibliography}{DGMS75}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BPRvR15}
 
 \bibitem[AB67]{AB}
 M.~F. Atiyah and R.~Bott.
 \newblock A {L}efschetz fixed point formula for elliptic complexes. {I}.
 \newblock {\em Ann. of Math. (2)}, 86:374--407, 1967.
+
+\bibitem[Adl69]{Adler}
+Stephen~L. Adler.
+\newblock {Axial vector vertex in spinor electrodynamics}.
+\newblock {\em Phys. Rev.}, 177:2426--2438, 1969.
+\newblock [,241(1969)].
 
 \bibitem[AF15]{AFTopMan}
 David Ayala and John Francis.
@@ -16,6 +23,22 @@ Alexander Beilinson and Vladimir Drinfeld.
   Society Colloquium Publications}.
 \newblock American Mathematical Society, Providence, RI, 2004.
 
+\bibitem[BJ69]{BJ}
+J.~S. Bell and R.~Jackiw.
+\newblock {A PCAC puzzle: pi0 --> gamma gamma in the sigma model}.
+\newblock {\em Nuovo Cim.}, A60:47--61, 1969.
+
+\bibitem[BL13]{BrLaz}
+C.~Braun and A.~Lazarev.
+\newblock Homotopy {BV} algebras in {P}oisson geometry.
+\newblock {\em Trans. Moscow Math. Soc.}, pages 217--227, 2013.
+
+\bibitem[BLL{\etalchar{+}}15]{Beem1}
+Christopher Beem, Madalena Lemos, Pedro Liendo, Wolfger Peelaers, Leonardo
+  Rastelli, and Balt~C. van Rees.
+\newblock Infinite chiral symmetry in four dimensions.
+\newblock {\em Comm. Math. Phys.}, 336(3):1359--1433, 2015.
+
 \bibitem[BMS87]{ManBeilSch}
 A.~A. Be\u{\i}linson, Yu.~I. Manin, and V.~V. Schechtman.
 \newblock Sheaves of the {V}irasoro and {N}eveu-{S}chwarz algebras.
@@ -27,6 +50,16 @@ A.~A. Be\u{\i}linson, Yu.~I. Manin, and V.~V. Schechtman.
 Richard~E. Borcherds.
 \newblock Vertex algebras, {K}ac-{M}oody algebras, and the {M}onster.
 \newblock {\em Proc. Nat. Acad. Sci. U.S.A.}, 83(10):3068--3071, 1986.
+
+\bibitem[BPRvR15]{Beem2}
+Christopher Beem, Wolfger Peelaers, Leonardo Rastelli, and Balt~C. van Rees.
+\newblock Chiral algebras of class s.
+\newblock {\em J. High Energy Phys.}, (5):020, front matter+67, 2015.
+
+\bibitem[BV17]{BashVor}
+Denis Bashkirov and Alexander~A. Voronov.
+\newblock The {BV} formalism for {$L_\infty$}-algebras.
+\newblock {\em J. Homotopy Relat. Struct.}, 12(2):305--327, 2017.
 
 \bibitem[CG]{CG2}
 Kevin Costello and Owen Gwilliam.
@@ -49,10 +82,21 @@ Kevin Costello and Si~Li.
 \newblock Twisted supergravity and its quantization.
 \newblock Available at \url{https://arxiv.org/abs/1606.00365}.
 
-\bibitem[Cos]{WG2}
+\bibitem[Cosa]{WG2}
 Kevin Costello.
 \newblock A geometric construction of the {W}itten genus, {II}.
-\newblock available at \url{http://arxiv.org/abs/1112.0816}.
+\newblock Available at \url{http://arxiv.org/abs/1112.0816}.
+
+\bibitem[Cosb]{CosM2}
+Kevin Costello.
+\newblock Holography and koszul duality: the example of the $m$2 brane.
+\newblock Available at \url{https://arxiv.org/abs/1705.02500}.
+
+\bibitem[Cosc]{CosOmega}
+Kevin Costello.
+\newblock M-theory in the omega-background and 5-dimensional non-commutative
+  gauge theory.
+\newblock Available at \url{https://arxiv.org/abs/1610.04144}.
 
 \bibitem[Cos11]{CosRenorm}
 Kevin Costello.
@@ -65,10 +109,20 @@ Pierre Deligne, Phillip Griffiths, John Morgan, and Dennis Sullivan.
 \newblock Real homotopy theory of {K}\"{a}hler manifolds.
 \newblock {\em Invent. Math.}, 29(3):245--274, 1975.
 
-\bibitem[FHK]{FHK}
+\bibitem[FF88]{FF1}
+B.~L. Feigin and E.~V. Frenkel.
+\newblock A family of representations of affine {L}ie algebras.
+\newblock {\em Uspekhi Mat. Nauk}, 43(5(263)):227--228, 1988.
+
+\bibitem[FF90]{FF2}
+Boris~L. Feigin and Edward~V. Frenkel.
+\newblock Affine {K}ac-{M}oody algebras and semi-infinite flag manifolds.
+\newblock {\em Comm. Math. Phys.}, 128(1):161--189, 1990.
+
+\bibitem[FHK19]{FHK}
 Giovanni Faonte, Benjamin Hennion, and Mikhail Kapranov.
-\newblock {Higher Kac-Moody algebras and moduli spaces of G-bundles}.
-\newblock Available at \url{https://arxiv.org/pdf/1701.01368.pdf}.
+\newblock Higher {K}ac-{M}oody algebras and moduli spaces of {$G$}-bundles.
+\newblock {\em Adv. Math.}, 346:389--466, 2019.
 
 \bibitem[FOT08]{Tanre}
 Yves F\'{e}lix, John Oprea, and Daniel Tanr\'{e}.
@@ -101,7 +155,7 @@ Owen Gwilliam, Vassily Gorbounov, and Brian Williams.
   quantization.
 \newblock Available at \url{https://arxiv.org/abs/1610.09657}.
 
-\bibitem[GH18]{GH}
+\bibitem[GH18]{GwHaug}
 Owen Gwilliam and Rune Haugseng.
 \newblock Linear {B}atalin-{V}ilkovisky quantization as a functor of
   {$\infty$}-categories.
@@ -143,15 +197,21 @@ Christian Kassel.
   Z}/2$}-graded algebras.
 \newblock {\em Math. Ann.}, 275(4):683--699, 1986.
 
-\bibitem[Knu]{Knudsen}
+\bibitem[Knu18]{Knudsen}
 Ben Knudsen.
-\newblock Higher {E}nveloping {A}lgebras.
-\newblock Available at \url{https://arxiv.org/abs/1605.01391}.
+\newblock Higher enveloping algebras.
+\newblock {\em Geom. Topol.}, 22(7):4013--4066, 2018.
 
 \bibitem[KS]{KonSoi}
 Maxim Kontsevich and Yan Soibelman.
 \newblock Deformation theory, vol. 1.
 \newblock available at \url{https://www.math.ksu.edu/~soibel/}.
+
+\bibitem[KS85]{Konishi}
+K.~Konishi and K.~Shizuya.
+\newblock Functional-integral approach to chiral anomalies in supersymmetric
+  gauge theories.
+\newblock {\em Nuovo Cimento A (11)}, 90(2):111--134, 1985.
 
 \bibitem[LMNS96]{LMNS1}
 Andrei Losev, Gregory Moore, Nikita Nekrasov, and Samson Shatashvili.
@@ -211,7 +271,7 @@ M.~V. Movshev and A.~Schwarz.
 \bibitem[Nek]{Nek}
 Nikita Nekrasov.
 \newblock Lectures on curved beta-gamma systems, pure spinors, and anomalies.
-\newblock available at \url{http://arxiv.org/abs/0511.3008}.
+\newblock Available at \url{http://arxiv.org/abs/0511.3008}.
 
 \bibitem[Rab18]{Rabinovich}
 Eugene Rabinovich.
@@ -223,6 +283,11 @@ B.~L. Tsygan.
 \newblock Homology of matrix {L}ie algebras over rings and the {H}ochschild
   homology.
 \newblock {\em Uspekhi Mat. Nauk}, 38(2(230)):217--218, 1983.
+
+\bibitem[Wak86]{Wakimoto}
+Minoru Wakimoto.
+\newblock Fock representations of the affine {L}ie algebra {$A^{(1)}_1$}.
+\newblock {\em Comm. Math. Phys.}, 104(4):605--609, 1986.
 
 \bibitem[Wila]{BWthesis}
 Brian Williams.
@@ -238,8 +303,13 @@ Brian Williams.
 \bibitem[Wilc]{Willwacher}
 Thomas Willwacher.
 \newblock Local {RRH}.
-\newblock available at
+\newblock Available at
   \url{https://people.math.ethz.ch/~wilthoma/docs/LRRH.pdf}.
+
+\bibitem[Wit86]{WittenNonComm}
+Edward Witten.
+\newblock Noncommutative geometry and string field theory.
+\newblock {\em Nuclear Phys. B}, 268(2):253--294, 1986.
 
 \bibitem[Wit88]{WittenGr}
 Edward Witten.

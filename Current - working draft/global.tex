@@ -148,6 +148,15 @@ concentrated between bidegrees $(d,d-1)$ and $(d,d+1)$.
 As $\delta(a^{d-1} \alpha \beta) = a^d \alpha$, and $\delta(a^{d-1} \beta) = a^d$, 
 we see that the cohomology is spanned by $b$ in bidegree $(d,d-1)$ and $b \alpha$ in bidegree~$(d,d)$.
 
+%For any $d$ and tuple $(q_1,\ldots, q_d)$ as above, we see that as a smooth manifold there is a diffeomorphism $X_{\bf q} \cong S^{2d-1} \times S^1$. 
+%Indeed, the radial projection map $\CC^d \setminus \{0\} \to \RR_{>0}$ defines a smooth $S^{2d-1}$-fibration over $\RR_{>0}$. 
+%Passing to the quotient, we obtain an $S^{2d - 1}$-fibration 
+%\[
+%X_{\bf q} \to \left. \RR_{>0} \right/ \left(r \sim \lambda^{\ZZ} \cdot r \right) \cong S^1 .
+%\]
+%Here, $\lambda = (|q_1|^2 + \cdots + |q_d|^2)^{1/2} > 0$. 
+%Since there are no non-trivial $S^{2d-1}$ fibrations over $S^1$ we obtain $X_{\bf q} = S^{2d-1} \times S^1$ as smooth manifolds. 
+
 \subsubsection{Current algebras on Hopf manifolds}
 
 For any choice of ${\bf q} = (q_1,\ldots,q_d)$, we have the local Lie algebra $\sG_{X_{\bf q}} = \Omega^{0,*}(X_{\bf q}, \fg)$, and the corresponding Kac-Moody factorization algebra obtained by the enveloping factorization algebra $\UU\sG_{X_{\bf q}}$.
@@ -231,6 +240,9 @@ This data satisfies the homotopy retraction condition
 \]
 and hence ensures that we know precisely how $\sG(X)$ retracts onto its cohomology~$\fg[\alpha]$.
 \end{rmk}
+
+
+%Here, we view $\CC[\epsilon,\delta]$ as a cochain complex with zero differential. 
 
 
 Applying Chevalley-Eilenberg chains to Equation (\ref{Lieproj}), we obtain the following quasi-isomorphism for the global sections of the untwisted Kac-Moody factorization algebra:
@@ -721,3 +733,5 @@ where it is shown that there exists a copy of the Kac-Moody chiral algebra insid
 In Section~\ref{sec: qft} we saw how the $d = 2$ Kac-Moody factorization algebra embeds inside the operators of a free holomorphic theory on a complex surface. 
 This holomorphic theory, the $\beta\gamma$ system, is the minimal twist of the $\cN=1$ chiral multiplet.
 Thus, we obtain an enhancement of Johansen's result to a two-dimensional current algebra.
+
+%\brian{relate to work of Nekrasov et al}

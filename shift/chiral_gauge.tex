@@ -1,0 +1,136 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{macros,slashed}
+
+\linespread{1.25}
+
+\def\sAd{\sA{\rm d}}
+
+\usepackage[final]{pdfpages}
+
+\setcounter{tocdepth}{2}
+
+\title{CS in chiral gauge}
+
+%\author{Brian Williams}
+
+\def\brian{\textcolor{blue}{BW: }\textcolor{blue}}
+\def\owen{\textcolor{magenta}{OG: }\textcolor{magenta}}
+
+\def\ctensor{\Hat{\tensor}}
+\def\Cas{{\sf Cas}}
+
+\newcommand{\changelocaltocdepth}[1]{%
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{#1}}%
+  \setcounter{tocdepth}{#1}%
+}
+
+\begin{document}
+\maketitle
+
+Fix a holomorphic volume form on $\Sigma$. 
+Typically, when $\Sigma = \CC$ we will pick the form $\d z$. 
+
+In this section, we will work on flat space $\RR^3$ which we will identify with $\CC \times \RR$. 
+Choose holomorphic coordinates
+\[
+(z,\zbar, t) \in \CC \times \RR
+\]
+
+The fields of critical Chern-Simons theory are 
+\[
+(\gamma, \beta) \in \Omega^{0,*}(\CC) \ctensor \Omega^*(\RR) \tensor \fg[1] \oplus \Omega^{0,*}(\CC) \ctensor \Omega^*(\RR) \tensor \fg .
+\]
+The action is
+\[
+S(\gamma, \beta) = \int_{\CC \times \RR} \d z \wedge \left(\<\beta, \d \gamma\> + \frac{1}{2} \<\beta, [\gamma,\gamma]\> \right) .
+\]
+
+\section{The chiral gauge}
+
+We use the gauge fixing condition
+\[
+Q^{GF} = \dbar^*_{\CC} + \d_{\RR}^* .
+\]
+\brian{might need to adjust factors in this equation so that $[Q,Q^{GF}]$ is the standard flat Laplacian in each degree.}
+In this gauge, we can write the heat kernel as
+\[
+K_T ((z,\zbar, t), (w,\wbar, s)) = k_T^{an} ((z,\zbar, t), (w,\wbar, s)) (\d \zbar - \d \wbar) (\d t - \d s) \tensor \Cas_\fg,
+\]
+where $k_T^{an} \in C^\infty((\CC \times \RR) \times (\CC \times \RR))$, $T > 0$, is the heat kernel for the flat Laplacian on $\RR^3$. 
+Explicitly 
+\[
+ k_T^{an} ((z,\zbar, t), (w,\wbar, s)) = \frac{1}{(4 \pi T)^{3/2}} e^{-|z-w|^2/ 4T - |t-s|^2/4T} . 
+ \]
+
+\section{One-loop quantization}
+
+\begin{thm}
+Critical Chern-Simons admits a one-loop exact and finite quantization on $\RR^3 = \CC \times \RR$. 
+The space of one-loop quantizations is a torsor for the group $H^3_{\rm Lie}(\fg)$.
+\end{thm}
+
+\begin{prop}
+The following limit 
+\[
+\lim_{\epsilon \to 0} W(P_{\epsilon < L}, I)
+\]
+exists for all $L > 0$. 
+Thus, in the holomorphic gauge, critical Chern-Simons admits a finite prequantization. 
+\end{prop}
+
+\begin{lem}
+In the holomorphic gauge, only diagrams of at most one-loop are nonzero in the expansion of $W(P_{\epsilon < L}, I)$. 
+\end{lem}
+
+The strategy is to analyze the one-loop diagram by the order of the number of vertices. 
+There is a special diagram that could potentially give rise to issues. 
+
+\begin{lem}
+Let $\Gamma_2$ be the wheel with two trivalent vertices. 
+Then $W_{\Gamma_2}(P_{\epsilon < L}, I) = 0$ identically as a distribution for all $\epsilon , L > 0$. 
+\end{lem}
+\begin{proof}
+Note that the propagator is of the form
+\[
+P_{\epsilon < L} ((z,\zbar, t), (w,\wbar, s)) = p^{an}_{\epsilon < L} \cdot \left((\d \zbar - \d \wbar) - (\d t - \d s)\right)
+\]
+where $p^{an}_{\epsilon < L}$ is some smooth function on $(\CC \times \RR)^2$. 
+For any fields $\alpha_1,\alpha_2$, the weight $W_{\Gamma_2}(P_{\epsilon < L}, I)(\alpha_1,\alpha_2)$ is given by some integral over $(\CC \times \RR)^2 = \CC_z \times \RR_t \times \CC_{w} \times \RR_s$, but the integrand is proportional to 
+\[
+P_{\epsilon < L} ((z,\zbar, t), (w,\wbar, s)) \wedge P_{\epsilon < L} ((w,\wbar, s), (z, \zbar, t)) .
+\]
+This expression is identically zero being the wedge product of proportional one-forms on the same space.
+\end{proof}
+
+\begin{lem}
+Let $\Gamma_k$ be the wheel with $k$ trivalent vertices. 
+Then, for $k > 2$ the limit
+\[
+\lim_{\epsilon \to 0} W_{\Gamma_k} (P_{\epsilon < L}, I)
+\]
+exists for all $L > 0$.
+\end{lem}
+
+When $\fg$ is semi-simple, one can see in a similar way to the observations made for ordinary Chern-Simons that the obstruction deformation complex guarantees the existence of a quantization of critical Chern-Simons. 
+However, we can see that the anomaly for critical Chern-Simons vanishes directly using the holomorphic gauge. 
+
+\begin{lem}
+As above, let $\Gamma_k$ denote the wheel with $k$ trivalent vertices. 
+When $k=2$, one has
+\[
+W_{\Gamma_k} (P_{\epsilon < L}, K_\epsilon , I) = 0
+\]
+identically as a distribution. 
+When $k > 2$, then
+\[
+\lim_{\epsilon \to 0} W_{\Gamma_k} (P_{\epsilon < L}, K_\epsilon , I) = 0 .
+\]
+\end{lem}
+
+This lemma shows that the one-loop obstruction to solving the quantum master equation of critical Chern-Simons on $\CC \times \RR$ in the holomorphic gauge vanishes for any Lie algebra $\fg$. 
+Since the quantization is one-loop exact, this is enough to guarantee a full quantization. 
+
+
+
+\end{document}

@@ -64,9 +64,24 @@ This example is, of course, also commutative.
 
 Any bundle of finite dimensional associative (dg) algebras defines a $C^\infty$-local algebra where the structure maps are differential operators of order zero. 
 
+%For a noncommutative example, start with the sheaf of holomorphic differential operators and take its Dolbeault resolution.
+%\owen{This is {\em not} an example because it is not sections of a finite-rank vector bundle.}
 
 There is a forgetful functor from $C^\infty$-local algebras to local Lie algebras, by remembering only the commutator determined by $\cdot$. 
 Thus, every $C^\infty$-local algebra is a local Lie algebra (with same underlying bundle). 
+
+%Now, if $\sA$ is a local algebra on $\sL$ is a local Lie algebra we can consider the vector bundle $A \tensor L$. 
+%The sheaf of smooth sections of this bundle is $\sL \tensor_{C^\infty_X} \sA$.
+%In general, the Lie bracket on $\sL$ will not endow $A \tenso L$ with the structure of a local Lie algebra, since the bracket may not be $C^\infty$-linear. 
+%But, we have the following.
+%
+%\begin{lem}
+%Suppose $\sA$ is a local algebra and $\sL$ is a local Lie algebra such that the bracket $[-,-]_\sL$ is a degree zero differential operator. 
+%Then $[-,-]_{\sL}$ endows $\sA \tensor \sL$ with the structure of a local Lie algebra. 
+%\end{lem} 
+%
+%\owen{Is this true? I think this might depend on the order of the bidifferential operator that determines the bracket.}
+%\brian{You're right. What should we say then? Tensoring $\sA$ with a bundle of Lie algebras is a local Lie algebra? I guess that's all we use.}
 
 For $C^\infty$-local algebras, there is an appropriate notion of cohomology respecting the locality, 
 analogous to local Lie algebra cohomology. 
@@ -78,6 +93,11 @@ Because the differential and product on $A$ are differential operators,
 they intertwine with the $D_X$-module structure on $JA$.
 Hence $JA$ is also a dg associative algebra in the category of dg $D_X$-modules,
 using the symmetric monoidal product~$- \otimes_{C^\infty_X} -$. 
+
+%\owen{I'm not so happy with how I wrote things below. I found what was there a bit confusing, because it meant something different by Hochschild cochains than many people mean.}
+%\brian{What you wrote is the dual to hochschild homology of $JA$, which is the thing we want.
+%I agree it's not the hochschild cochains of the algebra with trivial coefficients (which might be what you think could be confusing), but you're clear about that.} 
+
 
 In this symmetric monoidal dg category, 
 one can mimic many standard constructions from homological algebra.
@@ -244,7 +264,16 @@ where $(X_k)_{ij} \in A$ denotes the $ij$ matrix entry of~$X_k$.
 
 The map on local functionals is essentially this ordinary (dual) Loday-Quillen-Tsygan map applied to the $\infty$-jets of the commutative algebra $\Omega^{0,*}$. 
 Since $\Omega^{0,*}$ is commutative, the generalized trace is simply the trace of the product.
-
+%so that for any $\varphi \in \Cycloc^*(\Omega^{0,*})$ of homogenous degree $n$, one has
+%\[
+%\lqt_N^*(\varphi) (\alpha_0,\ldots,\alpha_n) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \cdots \wedge \alpha_d) . 
+%\]
+%\[
+%\begin{array}{ccccc}
+%{\rm tr} & : & {\rm Mat}_N(\Omega^{0,*})^{\tensor (n+1)} & \to & (\Omega^{0,*})^{\tensor (n+1)} \\
+%& & \alpha_0 \tensor \cdots \alpha_d
+%\end{array}
+%\]
 We can thus read off the image of $\Theta^\infty_d$ under the $\ell q t_N^*$ as the local Lie algebra cocycle
 \begin{align*}
 \ell q t_N^*(\Theta_d^\infty)\left(\alpha_0, \cdots, \alpha_d) = {\rm tr}_{\fgl_N}(\alpha_0 \wedge \partial \alpha_1\wedge \cdots \wedge \partial \alpha_d\right),
@@ -258,6 +287,7 @@ We turn our attention to $C^\infty$-local cyclic cocycles defined on affine spac
 We show that up to homotopy there is a unique such cyclic cocycle on the $C^\infty$-local algebra  $\Omega^{0,*}(\CC^d)$ given by $\Theta^\infty_d$. 
 
 \begin{prop}\label{prop: cyctrans}
+%There is a unique, up to scale, $U(d)$-invariant, holomorphic translation invariant, degree zero local cohomology class in the local cyclic cohomology of $\Omega^{0,*}(\CC^d)$.
 The class $\Theta^\infty_d$ spans the $U(d)$-invariant, holomorphic translation invariant, $C^\infty$-local cyclic cohomology of $\Omega^{0,*}(\CC^d)$ in degree zero.
 Thus
 \[
@@ -332,6 +362,14 @@ Up to our conventional degree shifts, we are seeing the analogous uniqueness res
 
 \subsection{A noncommutative example}
 
+%Suppose $(X,\omega)$ is a holomorphic symplectic manifold, and let $\{-,-\}_\omega$ be the Poisson bracket on holomorphic functions. 
+%This bracket extends to one on the Dolbeault complex $\Omega^{0,*}(X)$. 
+%For any $N$, we then obtain the dg Lie algebra
+%\[
+%\sL(X,\omega) = \left(\Omega^{0,*}(X) \tensor \fgl_N , \{-,-\}_\omega\right) .
+%\]
+%This is clearly a local Lie algebra. 
+
 The main objects that have appeared in this section so far are the cyclic chains and cochains of the commutative dg algebra $\Omega^{0,*}(X)$. 
 In this subsection, we display a variant of the above examples where we introduce a noncommutative deformation of this algebra. 
 Specifically, we assume $X$ is a holomorphic symplectic manifold and assume we have a deformation quantization of holomorphic functions.
@@ -340,6 +378,7 @@ We display the flexibility of our techniques by exhibiting a free field realizat
 
 Noncommutative gauge theories appear in the description of the open sectors of superstring theories~\cite{WittenNonComm}, and our primary interest in this class of examples is that we expect them to appear as a symmetries in the corresponding sectors of supergravity and $M$-theory. 
 More definitive results in this direction have appeared in the program for studying the superstring theory through its holomorphic twists developed in the papers of Costello and Li in~\cite{CostelloLiSUGRA} and by Costello in~\cite{CosOmega, CosM2}. 
+%We hope to return to studying \brian{finish}, but for now we hope this example elucidates the flexibility of our constructions. 
 
 As usual, suppose $X$ is a complex manifold, and as above, consider the local Lie algebra $\sG l_N = \Omega^{0,*}(X) \tensor \fg$ on $X$ for every $N > 0$. 
 If $X$ is additionally holomorphic symplectic, we obtain a deformation of this family of local Lie algebras described in the following way. 
@@ -365,6 +404,8 @@ However, it is a pro-$C^\infty$-local algebra in the sense that it can be expres
 \[
 \sA_\epsilon = \lim_{k \to \infty} \sA_\epsilon / \epsilon^{k+1} .
 \] 
+%where $\sA_\epsilon / \epsilon^{k+1}$ is the local algebra given by sections of the finite rank vector bundle $\left(\Wedge^* T^{0,1*}\right) \tensor \ul{\CC[\epsilon]/\epsilon^{k+1}} = \left(\Wedge^* T^{0,1*}\right)^{\oplus k}$.
+%The algebra structure on $\sA_\epsilon / \epsilon^{k+1}$ is given by the reduction of $\star_{\epsilon}$ modulo $\epsilon^{k+1}$. 
 
 This algebra allows us to define a non-commutative variant of the current algebra. 
 Namely, we can consider the Lie algebra of $N \times N$ matrices with values in $\sA_\epsilon$ that we denote by $\gl_N(\sA_{\epsilon})$. 
@@ -374,6 +415,7 @@ Note that this current algebra reduces modulo $\epsilon$ to the local Lie algebr
 \[
 \sG l_N = \lim_{\epsilon \to 0} \gl_N(\sA_{\epsilon})  .
 \]
+%In other words, $\gl_N(\sA_{\epsilon})$ is a deformation of $\sG l_N$. 
 
 \subsubsection{Classical Noether current}
 

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 MAR 2019 10:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 JAN 2019 17:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**frame.tex
-(./frame.tex
+**chiral_gauge.tex
+(./chiral_gauge.tex
 LaTeX2e <2018-04-01> patch level 2
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsart.cls
@@ -208,6 +208,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layouthoffset=\dimen127
 \Gm@layoutvoffset=\dimen128
 \Gm@dimlist=\toks30
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup7
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
@@ -906,36 +910,66 @@ File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
 \c@dfn/lem=\count152
 \c@assumption=\count153
 )
-(./frame.aux)
-\openout1 = `frame.aux'.
+(./chiral_gauge.aux)
+\openout1 = `chiral_gauge.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
- (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 28.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 28.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 28.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 28.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 28.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 18.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 28.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 28.
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1002,7 +1036,7 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring ON on input line 18.
+Package hyperref Info: Link coloring ON on input line 28.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1011,16 +1045,29 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count160
 )
-LaTeX Info: Redefining \ref on input line 18.
-LaTeX Info: Redefining \pageref on input line 18.
-LaTeX Info: Redefining \nameref on input line 18.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 
-(./frame.out) (./frame.out)
+(./chiral_gauge.out) (./chiral_gauge.out)
 \@outlinefile=\write5
-\openout5 = `frame.out'.
+\openout5 = `chiral_gauge.out'.
 
-Package xypdf Info: Line width: 0.43799pt on input line 18.
- ABD: EveryShipout initializing macros
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 28.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 28.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 28.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 28.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 28.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 6.25204pt on input line 28.
+Package xypdf Info: Line width: 0.43799pt on input line 28.
+
+ABD: EveryShipout initializing macros
 (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
 
@@ -1029,252 +1076,50 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-(./frame.toc)
-\tf@toc=\write6
-\openout6 = `frame.toc'.
-
- (./intro.tex
-LaTeX Font Info:    Try loading font information for U+euf on input line 5.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \vbox (badness 1014) has occurred while \output is active []
-
- [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `Beem1' on page 2 undefined on input line 35.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 30.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 32.
 
 
-LaTeX Warning: Citation `Beem2' on page 2 undefined on input line 35.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 136.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 136.
 
-
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
- [2]
-LaTeX Font Info:    Try loading font information for U+eus on input line 66.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
-Overfull \vbox (1.7227pt too high) has occurred while \output is active []
-
-
-[3] [4] [5]
-Overfull \hbox (3.45517pt too wide) in paragraph at lines 209--210
-[]\OT1/cmr/m/n/10.95 the dif-fer-en-tial sat-is-fies a \OT1/cmr/m/it/10.95 quan
--tum mas-ter equa-tion\OT1/cmr/m/n/10.95 , which en-sures that $[][](\OML/cmm/m
-/it/10.95 U\OT1/cmr/m/n/10.95 )[\OMS/cmsy/m/n/10.95 ^^@\OT1/cmr/m/n/10.95 1]$
- []
-
-[6] [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8])
-(./current.tex [9]
-Overfull \hbox (10.16278pt too wide) in paragraph at lines 83--86
-\OT1/cmr/m/n/10.95 pal $\OML/cmm/m/it/10.95 G$\OT1/cmr/m/n/10.95 -bundle $\OML/
-cmm/m/it/10.95 P$\OT1/cmr/m/n/10.95 . In-deed, given a Maurer-Cartan el-e-ment 
-$\OML/cmm/m/it/10.95  \OMS/cmsy/m/n/10.95 2 \U/eus/m/n/10.95 A\OT1/cmr/m/n/10.
-95 d(\OML/cmm/m/it/10.95 P\OT1/cmr/m/n/10.95 )[](\OML/cmm/m/it/10.95 X\OT1/cmr/
-m/n/10.95 )[] = 
-[](\OML/cmm/m/it/10.95 X; []\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 P\OT1/cmr/m
-/n/10.95 ))$
- []
-
-[10] [11] [12]
-Overfull \hbox (26.23845pt too wide) in paragraph at lines 211--214
-\OT1/cmr/m/n/10.95 but the dif-fer-en-tial is de-fined as a coderiva-tion with 
-re-spect to the nat-u-ral graded-cocommutative
- []
-
-[13] [14]
-Overfull \hbox (4.70667pt too wide) in paragraph at lines 335--338
- \OT1/cmr/m/n/10.95 1.3.2.\OT1/cmr/m/it/10.95 Shifted ex-ten-sions.[] \OT1/cmr/
-m/n/10.95 For an or-di-nary Lie al-ge-bra $\U/euf/m/n/10.95 g$\OT1/cmr/m/n/10.9
-5 , cen-tral ex-ten-sions are parametrized
- []
-
-[15]
-Overfull \hbox (11.1782pt too wide) in paragraph at lines 377--378
-[]\OT1/cmr/m/n/10.95 An anal-o-gous con-struc-tion ap-plies to the quan-tum cur
--rents, which we will de-note $[][](\U/eus/m/n/10.95 L\OT1/cmr/m/n/10.95 )$. 
- []
-
-[16] [17] [18] [19] [20]) (./local.tex [21] [22] [23]
-Overfull \hbox (1.41072pt too wide) in paragraph at lines 146--149
-\OML/cmm/m/it/10.95 d > \OT1/cmr/m/n/10.95 1$, Har-tog's lemma tells us that ev
--ery holo-mor-phic func-tion on punc-tured $\OML/cmm/m/it/10.95 d$\OT1/cmr/m/n/
-10.95 -dimensional
- []
-
-[24] [25] [26] [27] <xymatrix 5x2 437>
-Overfull \hbox (12.99281pt too wide) detected at line 442
-[]
- []
-
-[28] [29] [30] <xymatrix 5x2 437> [31] [32] [33]) (./qft.tex [34] [35] [36]
-[37]
-Underfull \vbox (badness 3895) has occurred while \output is active []
-
- [38]
-[39] [40] [41] [42]
-Overfull \hbox (13.27016pt too wide) detected at line 455
-[][]
- []
-
-[43] [44] [45]
-
-LaTeX Warning: Citation `Wakimoto' on page 46 undefined on input line 653.
-
-[46] [47] [48] [49] [50]
-Overfull \hbox (42.30309pt too wide) detected at line 880
-[] [][] [][] [] \OT1/cmr/m/n/10.95 = [] + []
- []
-
-) (./global.tex [51]
-Overfull \hbox (30.14763pt too wide) in paragraph at lines 48--49
-[]\OT1/cmr/m/n/10.95 This story ad-mits an ob-vi-ous higher di-men-sional gen-e
-r-al-iza-tion, first ex-plored by Hopf [[]]. 
- []
-
-[52] [53] [54] [55]
-
-LaTeX Warning: Citation `OwenThesis' on page 56 undefined on input line 285.
-
-[56] <xymatrix 2x2 191> [57] [58] [59] [60] [61]
-Overfull \hbox (12.93686pt too wide) in paragraph at lines 559--561
-[]\OT1/cmr/m/n/10.95 It is a stan-dard fact that the Clif-ford al-ge-bra is Mor
-ita triv-ial [[]], so that $[][]([](\OML/cmm/m/it/10.95 V \OMS/cmsy/m/n/10.95 ^
-^H
- []
-
-
-Overfull \hbox (11.76067pt too wide) in paragraph at lines 562--563
-[]\OT1/cmr/m/n/10.95 After in-vert-ing $\U/msb/m/n/10.95 ~$ \OT1/cmr/m/n/10.95 
-and in-vok-ing Lemma [][]4.15[][], we ob-tain a com-po-si-tion of quasi-isomorp
-hisms 
- []
-
-[62] [63] [64] [65]) (./largeN.tex
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1.
-
-
-Overfull \hbox (5.75343pt too wide) in paragraph at lines 12--14
-[]\OT1/cmr/m/n/10.95 The es-sen-tial fact is the re-mark-able the-o-rem of Loda
-y-Quillen [[]] and Tsy-gan [[]],
- []
-
-
-Overfull \hbox (30.0867pt too wide) in paragraph at lines 28--31
-[]\OT1/cmr/m/n/10.95 Our ap-proach here is mod-eled on prior work of Costello-L
-i [[]] and Movshev-Schwarz [[]],
- []
-
-[66] [67] [68]
-
-LaTeX Warning: Citation `CL1' on page 69 undefined on input line 203.
-
-[69] [70] [71]
-
-LaTeX Warning: Citation `WittenNonComm' on page 72 undefined on input line 379.
-
-
-
-LaTeX Warning: Citation `MTheory1' on page 72 undefined on input line 380.
-
-
-LaTeX Warning: Citation `MTheory2' on page 72 undefined on input line 380.
-
-[72] [73] [74] [75]) (./appx.tex [76] [77] [78] [79] [80] [81] <xymatrix 4x2
-34> [82] [83]
-Overfull \hbox (22.23705pt too wide) detected at line 556
-\OML/cmm/m/it/10.95 W[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 []; [] ; []\OT
-1/cmr/m/n/10.95 ) = [] [][] [] \OML/cmm/m/it/10.95 K[]\OT1/cmr/m/n/10.95 (\OML/
-cmm/m/it/10.95 z[]; z[]\OT1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.95 P[]\OT1/cmr/
-m/n/10.95 (\OML/cmm/m/it/10.95 z[]; z[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 
-:
- []
-
-
-Overfull \hbox (32.67981pt too wide) detected at line 568
-[]
- []
-
-[84]) (./frame.bbl [85]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [86])
-[87]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
- (./frame.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
-
-
-Package rerunfilecheck Warning: File `frame.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `frame.out':
-(rerunfilecheck)             Before: B4B55D33CB226CEFE2451DA6EC19614D;2742
-(rerunfilecheck)             After:  11FC0231E26D5BB5EF6949976F4F8E53;638.
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
+(./chiral_gauge.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 136.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 136.
+Package rerunfilecheck Info: File `chiral_gauge.out' has not changed.
+(rerunfilecheck)             Checksum: EAC41211C59AB4B9FA5F47474A4BCB08;113.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 136.
  ) 
 Here is how much of TeX's memory you used:
- 25560 strings out of 492649
- 495394 string characters out of 6129622
- 627038 words of memory out of 5000000
- 28384 multiletter control sequences out of 15000+600000
- 18307 words of font info for 78 fonts, out of 8000000 for 9000
+ 24761 strings out of 492649
+ 482775 string characters out of 6129622
+ 616261 words of memory out of 5000000
+ 27933 multiletter control sequences out of 15000+600000
+ 33745 words of font info for 109 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 63i,15n,84p,3217b,1000s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
-local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb>
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
-sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/l
-ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
-al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
-texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texliv
+ 63i,6n,84p,3224b,414s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
-/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/201
-8/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/local/texlive/2018/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
-ve/2018/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (87 pages, 699997 bytes).
+/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/local/texlive/2
+018/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/urw/palatino/uplri8a.pfb>
+Output written on chiral_gauge.pdf (2 pages, 121603 bytes).
 PDF statistics:
- 1245 PDF objects out of 1440 (max. 8388607)
- 1112 compressed objects within 12 object streams
- 361 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 90 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
