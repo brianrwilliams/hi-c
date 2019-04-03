@@ -1,4 +1,4 @@
-\begin{thebibliography}{LMNS98}
+\begin{thebibliography}{DGMS75}
 
 \bibitem[AB67]{AB}
 M.~F. Atiyah and R.~Bott.
@@ -15,6 +15,13 @@ Alexander Beilinson and Vladimir Drinfeld.
 \newblock {\em Chiral algebras}, volume~51 of {\em American Mathematical
   Society Colloquium Publications}.
 \newblock American Mathematical Society, Providence, RI, 2004.
+
+\bibitem[BMS87]{ManBeilSch}
+A.~A. Be\u{\i}linson, Yu.~I. Manin, and V.~V. Schechtman.
+\newblock Sheaves of the {V}irasoro and {N}eveu-{S}chwarz algebras.
+\newblock In {\em {$K$}-theory, arithmetic and geometry ({M}oscow,
+  1984--1986)}, volume 1289 of {\em Lecture Notes in Math.}, pages 52--66.
+  Springer, Berlin, 1987.
 
 \bibitem[Bor86]{BorcherdsVertex}
 Richard~E. Borcherds.
@@ -53,6 +60,11 @@ Kevin Costello.
   Mathematical Surveys and Monographs}.
 \newblock American Mathematical Society, Providence, RI, 2011.
 
+\bibitem[DGMS75]{DGMS}
+Pierre Deligne, Phillip Griffiths, John Morgan, and Dennis Sullivan.
+\newblock Real homotopy theory of {K}\"{a}hler manifolds.
+\newblock {\em Invent. Math.}, 29(3):245--274, 1975.
+
 \bibitem[FHK]{FHK}
 Giovanni Faonte, Benjamin Hennion, and Mikhail Kapranov.
 \newblock {Higher Kac-Moody algebras and moduli spaces of G-bundles}.
@@ -71,17 +83,17 @@ I.~B. Frenkel.
   physics ({C}hicago, 1982)}, volume~21 of {\em Lectures in Appl. Math.}, pages
   325--353. Amer. Math. Soc., Providence, RI, 1985.
 
-\bibitem[Fre92]{FrenkelFree}
-Edward Frenkel.
-\newblock Determinant formulas for the free field representations of the
-  {V}irasoro and {K}ac-{M}oody algebras.
-\newblock {\em Phys. Lett. B}, 286(1-2):71--77, 1992.
-
 \bibitem[Fuk86]{Fuks}
 D.~B. Fuks.
 \newblock {\em Cohomology of infinite-dimensional {L}ie algebras}.
 \newblock Contemporary Soviet Mathematics. Consultants Bureau, New York, 1986.
 \newblock Translated from the Russian by A. B. Sosinski{\u\i}.
+
+\bibitem[Get88]{GetzlerGM}
+Ezra Getzler.
+\newblock Cyclic homology and the {B}e\u{\i}linson-{M}anin-{S}chechtman central
+  extension.
+\newblock {\em Proc. Amer. Math. Soc.}, 104(3):729--734, 1988.
 
 \bibitem[GGW]{GGW}
 Owen Gwilliam, Vassily Gorbounov, and Brian Williams.
@@ -114,6 +126,11 @@ Andrei Johansen.
   four-manifolds.
 \newblock {\em Nuclear Phys. B}, 436(1-2):291--341, 1995.
 
+\bibitem[Kac85]{KacInf}
+Victor~G. Kac.
+\newblock {\em Infinite-dimensional {L}ie algebras}.
+\newblock Cambridge University Press, Cambridge, second edition, 1985.
+
 \bibitem[Kac98]{KacVertex}
 Victor Kac.
 \newblock {\em Vertex algebras for beginners}, volume~10 of {\em University
@@ -130,6 +147,11 @@ Christian Kassel.
 Ben Knudsen.
 \newblock Higher {E}nveloping {A}lgebras.
 \newblock Available at \url{https://arxiv.org/abs/1605.01391}.
+
+\bibitem[KS]{KonSoi}
+Maxim Kontsevich and Yan Soibelman.
+\newblock Deformation theory, vol. 1.
+\newblock available at \url{https://www.math.ksu.edu/~soibel/}.
 
 \bibitem[LMNS96]{LMNS1}
 Andrei Losev, Gregory Moore, Nikita Nekrasov, and Samson Shatashvili.
@@ -172,6 +194,13 @@ Jacob Lurie.
 \newblock available at
   \url{http://www.math.harvard.edu/~lurie/papers/higheralgebra.pdf}.
 
+\bibitem[LV12]{LodVal}
+Jean-Louis Loday and Bruno Vallette.
+\newblock {\em Algebraic operads}, volume 346 of {\em Grundlehren der
+  Mathematischen Wissenschaften [Fundamental Principles of Mathematical
+  Sciences]}.
+\newblock Springer, Heidelberg, 2012.
+
 \bibitem[MS15]{MovSch}
 M.~V. Movshev and A.~Schwarz.
 \newblock Generalized {C}hern-{S}imons action and maximally supersymmetric
@@ -183,6 +212,11 @@ M.~V. Movshev and A.~Schwarz.
 Nikita Nekrasov.
 \newblock Lectures on curved beta-gamma systems, pure spinors, and anomalies.
 \newblock available at \url{http://arxiv.org/abs/0511.3008}.
+
+\bibitem[Rab18]{Rabinovich}
+Eugene Rabinovich.
+\newblock A mathematical analysis of the axial anomaly.
+\newblock {\em Letters in {M}athematical {P}hysics}, Nov 2018.
 
 \bibitem[Tsy83]{Tsy}
 B.~L. Tsygan.
@@ -206,6 +240,11 @@ Thomas Willwacher.
 \newblock Local {RRH}.
 \newblock available at
   \url{https://people.math.ethz.ch/~wilthoma/docs/LRRH.pdf}.
+
+\bibitem[Wit88]{WittenGr}
+Edward Witten.
+\newblock Quantum field theory, {G}rassmannians, and algebraic curves.
+\newblock {\em Comm. Math. Phys.}, 113(4):529--600, 1988.
 
 \bibitem[Wit07]{WittenCDO}
 Edward Witten.

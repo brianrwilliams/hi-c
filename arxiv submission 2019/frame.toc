@@ -48,6 +48,7 @@
 \contentsline {subsection}{\tocsubsection {}{5.4}{A noncommutative example}}{72}{subsection.5.4}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.1}{Classical Noether current}}{73}{subsubsection.5.4.1}
 \contentsline {subsubsection}{\tocsubsubsection {}{5.4.2}{Equivariant quantization}}{74}{subsubsection.5.4.2}
+\setcounter {tocdepth}{1}
 \contentsline {section}{\tocsection {Appendix}{A}{Computing the deformation complex}}{76}{appendix.A}
 \contentsline {subsection}{\tocsubsection {}{A.1}{Holomorphic translation invariance}}{76}{subsection.A.1}
 \contentsline {subsection}{\tocsubsection {}{A.2}{Language to phrase the main result}}{77}{subsection.A.2}

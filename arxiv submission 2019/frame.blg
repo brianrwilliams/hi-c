@@ -5,58 +5,51 @@ The style file: alpha.bst
 Database file #1: hic.bib
 Warning--I didn't find a database entry for "Beem1"
 Warning--I didn't find a database entry for "Beem2"
-Warning--I didn't find a database entry for "WittenGr"
-Warning--I didn't find a database entry for "GetzlerGM"
-Warning--I didn't find a database entry for "ManBeilSch"
-Warning--I didn't find a database entry for "KonSoi"
-Warning--I didn't find a database entry for "LodVal"
-Warning--I didn't find a database entry for "CG"
-Warning--I didn't find a database entry for "DGMS"
+Warning--I didn't find a database entry for "Wakimoto"
 Warning--I didn't find a database entry for "OwenThesis"
-Warning--I didn't find a database entry for "Rabinovich"
 Warning--I didn't find a database entry for "CL1"
 Warning--I didn't find a database entry for "WittenNonComm"
 Warning--I didn't find a database entry for "MTheory1"
 Warning--I didn't find a database entry for "MTheory2"
-You've used 37 entries,
+You've used 44 entries,
             2543 wiz_defined-function locations,
-            847 strings with 10209 characters,
-and the built_in function-call counts, 12864 in all, are:
-= -- 1317
-> -- 526
-< -- 32
-+ -- 172
-- -- 165
-* -- 885
-:= -- 2157
-add.period$ -- 119
-call.type$ -- 37
-change.case$ -- 204
-chr.to.int$ -- 34
-cite$ -- 37
-duplicate$ -- 534
-empty$ -- 926
-format.name$ -- 223
-if$ -- 2579
+            880 strings with 11021 characters,
+and the built_in function-call counts, 15477 in all, are:
+= -- 1578
+> -- 644
+< -- 38
++ -- 212
+- -- 204
+* -- 1073
+:= -- 2592
+add.period$ -- 141
+call.type$ -- 44
+change.case$ -- 245
+chr.to.int$ -- 41
+cite$ -- 44
+duplicate$ -- 644
+empty$ -- 1115
+format.name$ -- 272
+if$ -- 3107
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 33
-newline$ -- 192
-num.names$ -- 111
-pop$ -- 201
+missing$ -- 41
+newline$ -- 227
+num.names$ -- 132
+pop$ -- 244
 preamble$ -- 1
-purify$ -- 247
+purify$ -- 296
 quote$ -- 0
-skip$ -- 396
+skip$ -- 478
 stack$ -- 0
-substring$ -- 706
-swap$ -- 68
-text.length$ -- 32
-text.prefix$ -- 21
+substring$ -- 836
+swap$ -- 85
+text.length$ -- 38
+text.prefix$ -- 24
 top$ -- 0
-type$ -- 264
+type$ -- 312
 warning$ -- 0
-while$ -- 127
-width$ -- 39
-write$ -- 475
-(There were 15 warnings)
+while$ -- 152
+width$ -- 48
+write$ -- 565
+(There were 8 warnings)

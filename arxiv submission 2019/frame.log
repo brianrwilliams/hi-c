@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  25 MAR 2019 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 MAR 2019 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1033,33 +1033,34 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 \tf@toc=\write6
 \openout6 = `frame.toc'.
 
- (./intro.tex [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdft
-ex.map}]
+ (./intro.tex
 LaTeX Font Info:    Try loading font information for U+euf on input line 5.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [2]
+)
+Underfull \vbox (badness 1014) has occurred while \output is active []
 
-LaTeX Warning: Citation `Beem1' on page 3 undefined on input line 35.
+ [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `Beem1' on page 2 undefined on input line 35.
 
 
-LaTeX Warning: Citation `Beem2' on page 3 undefined on input line 35.
+LaTeX Warning: Citation `Beem2' on page 2 undefined on input line 35.
 
+
+Underfull \vbox (badness 1077) has occurred while \output is active []
+
+ [2]
 LaTeX Font Info:    Try loading font information for U+eus on input line 66.
+
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
-) [3] [4]
-
-LaTeX Warning: Citation `WittenGr' on page 5 undefined on input line 146.
-
-
-LaTeX Warning: Citation `GetzlerGM' on page 5 undefined on input line 146.
+)
+Overfull \vbox (1.7227pt too high) has occurred while \output is active []
 
 
-LaTeX Warning: Citation `ManBeilSch' on page 5 undefined on input line 146.
-
-[5]
+[3] [4] [5]
 Overfull \hbox (3.45517pt too wide) in paragraph at lines 209--210
 []\OT1/cmr/m/n/10.95 the dif-fer-en-tial sat-is-fies a \OT1/cmr/m/it/10.95 quan
 -tum mas-ter equa-tion\OT1/cmr/m/n/10.95 , which en-sures that $[][](\OML/cmm/m
@@ -1112,73 +1113,21 @@ Overfull \hbox (12.99281pt too wide) detected at line 442
 []
  []
 
-[28] [29] [30]
-
-LaTeX Warning: Citation `KonSoi' on page 31 undefined on input line 637.
-
-
-LaTeX Warning: Citation `LodVal' on page 31 undefined on input line 637.
-
-<xymatrix 5x2 437> [31] [32] [33]) (./qft.tex [34] [35] [36] [37]
+[28] [29] [30] <xymatrix 5x2 437> [31] [32] [33]) (./qft.tex [34] [35] [36]
+[37]
 Underfull \vbox (badness 3895) has occurred while \output is active []
 
  [38]
-[39] [40]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 359.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 359.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 359.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 359.
-
-[41] [42]
-
-LaTeX Warning: Reference `sec: current' on page 43 undefined on input line 448.
-
-
-
+[39] [40] [41] [42]
 Overfull \hbox (13.27016pt too wide) detected at line 455
 [][]
  []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 489.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\beta' on input line 489.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\gamma' on input line 489.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 489.
 
 [43] [44] [45]
 
 LaTeX Warning: Citation `Wakimoto' on page 46 undefined on input line 653.
 
-[46]
-
-LaTeX Warning: Citation `KacInf' on page 47 undefined on input line 655.
-
-[47]
-
-LaTeX Warning: Citation `CG' on page 48 undefined on input line 708.
-
-[48] [49] [50]
+[46] [47] [48] [49] [50]
 Overfull \hbox (42.30309pt too wide) detected at line 880
 [] [][] [][] [] \OT1/cmr/m/n/10.95 = [] + []
  []
@@ -1189,19 +1138,11 @@ Overfull \hbox (30.14763pt too wide) in paragraph at lines 48--49
 r-al-iza-tion, first ex-plored by Hopf [[]]. 
  []
 
-[52]
-
-LaTeX Warning: Citation `DGMS' on page 53 undefined on input line 98.
-
-[53] [54] [55]
+[52] [53] [54] [55]
 
 LaTeX Warning: Citation `OwenThesis' on page 56 undefined on input line 285.
 
-[56] <xymatrix 2x2 191> [57] [58]
-
-LaTeX Warning: Citation `Rabinovich' on page 59 undefined on input line 393.
-
-[59] [60] [61]
+[56] <xymatrix 2x2 191> [57] [58] [59] [60] [61]
 Overfull \hbox (12.93686pt too wide) in paragraph at lines 559--561
 []\OT1/cmr/m/n/10.95 It is a stan-dard fact that the Clif-ford al-ge-bra is Mor
 ita triv-ial [[]], so that $[][]([](\OML/cmm/m/it/10.95 V \OMS/cmsy/m/n/10.95 ^
@@ -1253,7 +1194,7 @@ LaTeX Warning: Citation `MTheory2' on page 72 undefined on input line 380.
 
 [72] [73] [74] [75]) (./appx.tex [76] [77] [78] [79] [80] [81] <xymatrix 4x2
 34> [82] [83]
-Overfull \hbox (22.23705pt too wide) detected at line 554
+Overfull \hbox (22.23705pt too wide) detected at line 556
 \OML/cmm/m/it/10.95 W[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 []; [] ; []\OT
 1/cmr/m/n/10.95 ) = [] [][] [] \OML/cmm/m/it/10.95 K[]\OT1/cmr/m/n/10.95 (\OML/
 cmm/m/it/10.95 z[]; z[]\OT1/cmr/m/n/10.95 ) [] \OML/cmm/m/it/10.95 P[]\OT1/cmr/
@@ -1262,36 +1203,39 @@ m/n/10.95 (\OML/cmm/m/it/10.95 z[]; z[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95
  []
 
 
-Overfull \hbox (32.67981pt too wide) detected at line 566
+Overfull \hbox (32.67981pt too wide) detected at line 568
 []
  []
 
-[84]) (./frame.bbl [85])
+[84]) (./frame.bbl [85]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [86]
+ [86])
+[87]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 34.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 34.
-
-(./frame.aux)
+ (./frame.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 34.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 34.
-Package rerunfilecheck Info: File `frame.out' has not changed.
-(rerunfilecheck)             Checksum: B4B55D33CB226CEFE2451DA6EC19614D;2742.
 
+
+Package rerunfilecheck Warning: File `frame.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `frame.out':
+(rerunfilecheck)             Before: B4B55D33CB226CEFE2451DA6EC19614D;2742
+(rerunfilecheck)             After:  11FC0231E26D5BB5EF6949976F4F8E53;638.
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 34.
  ) 
 Here is how much of TeX's memory you used:
- 25546 strings out of 492649
- 495256 string characters out of 6129622
- 626811 words of memory out of 5000000
- 28378 multiletter control sequences out of 15000+600000
+ 25560 strings out of 492649
+ 495394 string characters out of 6129622
+ 627038 words of memory out of 5000000
+ 28384 multiletter control sequences out of 15000+600000
  18307 words of font info for 78 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  63i,15n,84p,3217b,1000s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1327,10 +1271,10 @@ texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/xypic/xycmat10.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/xypic/xycmbt10.pfb>
-Output written on frame.pdf (86 pages, 697287 bytes).
+Output written on frame.pdf (87 pages, 699997 bytes).
 PDF statistics:
- 1221 PDF objects out of 1440 (max. 8388607)
- 1090 compressed objects within 11 object streams
- 353 named destinations out of 1000 (max. 500000)
+ 1245 PDF objects out of 1440 (max. 8388607)
+ 1112 compressed objects within 12 object streams
+ 361 named destinations out of 1000 (max. 500000)
  277 words of extra memory for PDF output out of 10000 (max. 10000000)
 
